@@ -1,0 +1,50 @@
+/* ===================================================================
+   AWFLWIKIWORLD — Skin/AEDTPWORLDForest.css
+   Developer: AEDTP WORLD
+   Skin Name: AEDTPWORLD Forest (Deep Green / Beige)
+   License: AWFL
+   Version: 2.0 - Double-Locked
+   Palette: 10+5 - Forest Green
+   =================================================================== */
+:root {
+    --awfl-header-bg: #1B3329!important;       /* 1 deep forest */
+    --awfl-header-text: #E8F5E9!important;    /* 2 mint white */
+    --awfl-button-bg: #2E7D32!important;      /* 3 forest green button */
+    --awfl-button-text: #FFFFFF!important;    /* 4 */
+    --awfl-page-text: #1B3329!important;      /* 5 */
+    --awfl-link: #2E7D32!important;           /* 6 green link */
+    --awfl-link-visited: #4A148C!important;   /* 7 */
+    --awfl-border: #A5D6A7!important;         /* 8 light leaf */
+    --awfl-bg: #F1F8E9!important;             /* 9 light leaf wash */
+    --awfl-content-bg: #FFFFFF!important;     /* 10 */
+}
+
+html, body { background: var(--awfl-bg)!important; color: var(--awfl-page-text)!important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif!important; line-height: 1.7!important; font-size: 14.4px!important; }
+.awfl-body { background: var(--awfl-bg)!important; }
+
+.awfl-header { background: var(--awfl-header-bg)!important; border-bottom: 3px solid #2E7D32!important; } /* 11 */
+.awfl-header-inner { background: var(--awfl-header-bg)!important; }
+html body .awfl-header a { color: #A5D6A7!important; -webkit-text-fill-color: #A5D6A7!important; } /* 12 light green on dark */
+
+.awfl-main { background: var(--awfl-content-bg)!important; border: 1px solid var(--awfl-border)!important; box-shadow: 0 4px 16px rgba(27,51,41,0.08)!important; }
+.awfl-footer { background: #1B3329!important; border-top: 3px solid #2E7D32!important; }
+.awfl-footer-inner { color: #A5D6A7!important; } /* 13 */
+.awfl-footer a { color: #81C784!important; } /* 14 */
+
+.infobox { background: #F1F8E9!important; border: 1px solid #A5D6A7!important; }
+.infobox th { background: #1B3329!important; color: #FFFFFF!important; }
+.infobox-title { background: #2E7D32!important; color: #FFFFFF!important; }
+table.awfl-datatable th { background: #2E7D32!important; color: #FFFFFF!important; }
+
+a { color: var(--awfl-link)!important; }
+a:visited { color: var(--awfl-link-visited)!important; }
+
+::selection { background: #A5D6A7!important; color: #1B3329!important; } /* 15 */
+
+
+
+
+
+
+
+

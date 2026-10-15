@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trending | BIZIMI (Business Intelligence Zone Innovation Media Integration) Advanced Social Media Networking</title>
+<meta name="description" content="Discover All Trending Videos, Music And Images on BIZIMI, Top-liked videos and images on BIZIMI right now. BIZIMI (Business Intelligence Zone Innovation Media Integration) Advanced Social Media Networking" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://aedtpworld.com/social/trending/index.html">
+<link rel="icon" href="https://aedtpworld.com/icons/bizimi.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D10303;--yellow:#FFDE2C;--ink:#181818;--bg:#faf9f6;--card:#ffffff;--muted:#6b6b6b;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);}
+a{color:inherit;}
+header{background:var(--red);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;}
+header a.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.2rem;}
+header a.back{color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;}
+main{max-width:1000px;margin:0 auto;padding:20px 16px 60px;}
+h1{text-align:center;}
+.tabs{display:flex;gap:8px;justify-content:center;padding:16px 0;flex-wrap:wrap;}
+.tabs button{padding:8px 18px;border-radius:20px;border:2px solid var(--red);background:#fff;color:var(--red);font-weight:700;cursor:pointer;}
+.tabs button.active{background:var(--red);color:#fff;}
+.feed-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;}
+.card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.08);text-decoration:none;color:var(--ink);display:flex;flex-direction:column;}
+.card .frame{width:100%;aspect-ratio:16/9;background:#000;overflow:hidden;}
+.card .frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.card .body{padding:12px 14px;}
+.card .title{font-weight:700;font-size:.98rem;margin:0 0 6px;}
+.card .by{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted);}
+.card .likes{font-size:.8rem;color:var(--muted);margin-top:6px;}
+.badge-icon{vertical-align:middle;}
+.rank-extra{font-size:.68rem;font-weight:800;color:var(--red);}
+.empty{text-align:center;padding:60px 20px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header><a href="/social/index.html" class="brand">BIZIMI</a><a href="/social/index.html" class="back">Back to feed</a></header>
+<main>
+<h1>🔥 Trending</h1>
+<div class="tabs">
+    <button class="active" data-type="all" onclick="load('all', this)">All</button>
+    <button data-type="video" onclick="load('video', this)">Videos</button>
+    <button data-type="image" onclick="load('image', this)">Images</button>
+</div>
+<div class="feed-grid" id="grid"></div>
+<div class="empty" id="empty" style="display:none;">Nothing trending yet.</div>
+</main>
+<script>
+const API = '/social/api.php';
+const BADGE_IMG = '/social/verifiedbadges/blue.png';
+function badgeHtml(rank) {
+    if (rank < 1) return '';
+    const extra = rank - 1;
+    let out = `<img class="badge-icon" src="${BADGE_IMG}" width="14" height="14" alt="Verified"/>`;
+    if (extra > 0) out += `<span class="rank-extra">+${extra}</span>`;
+    return out;
+}
+function escH(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function ytEmbed(url){ const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]+)/); return m ? m[1] : null; }
+
+async function load(type, btn){
+    document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    const res = await fetch(`${API}?action=get_feed&type=all`);
+    const json = await res.json();
+    const grid = document.getElementById('grid');
+    const empty = document.getElementById('empty');
+    grid.innerHTML = '';
+
+    let items = json.ok ? json.data.feed : [];
+    if (type === 'video') items = items.filter(i => i.contentType === 'video');
+    if (type === 'image') items = items.filter(i => i.contentType === 'image');
+
+    if (items.length === 0) { empty.style.display = 'block'; return; }
+    const maxLikes = Math.max(...items.map(i => i.likes || 0));
+    const threshold = maxLikes * 0.9;
+    const top = items.filter(i => (i.likes || 0) >= threshold && maxLikes > 0);
+    const list = top.length ? top : items.slice(0, 1);
+
+    if (list.length === 0) { empty.style.display = 'block'; return; }
+    empty.style.display = 'none';
+
+    list.forEach(item => {
+        const isVideo = item.contentType === 'video';
+        const href = `/social/${item.username}/${isVideo ? 'videos' : 'images'}/${item.slug}.html`;
+        const thumb = isVideo
+            ? (() => { const yt = ytEmbed(item.videoUrl); return yt ? `https://img.youtube.com/vi/${yt}/hqdefault.jpg` : ''; })()
+            : item.imageUrl;
+        const card = document.createElement('a');
+        card.href = href;
+        card.className = 'card';
+        card.innerHTML = `
+            <div class="frame"><img src="${escH(thumb)}" loading="lazy"/></div>
+            <div class="body">
+                <p class="title">${escH(item.title)}</p>
+                <span class="by">@${escH(item.username)} ${badgeHtml(item.rank)}</span>
+                <div class="likes">♥ ${item.likes || 0} likes</div>
+            </div>`;
+        grid.appendChild(card);
+    });
+}
+load('all');
+</script>
+</body>
+</html>

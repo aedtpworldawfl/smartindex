@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="AEDTP WORLD HOME Search App: Search Online , Free Quick Results, Relevant Information Provider. A Multihomed Full Of Apps, Productivity, Business, Educational by AEDTP WORLD">
+
+<title>AEDTP WORLD HOME Search App</title>
+
+<link rel="icon" type="image/png" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    transition: 0.3s;
+}
+
+body.light {
+    background: #f4f4f4;
+    color: #111;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0,0,0,0.7);
+}
+
+body.light header {
+    background: rgba(255,255,255,0.8);
+}
+
+button {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.container {
+    padding: 10px;
+}
+
+iframe {
+    width: 100%;
+    height: calc(100vh - 80px);
+    border: none;
+    background: #fff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div>Search App</div>
+    <div>
+        <button onclick="toggleMode()">Toggle Mode</button>
+        <button onclick="goHome()">Home</button>
+        <button onclick="toggleFullscreen()">Fullscreen</button>
+
+    </div>
+</header>
+
+<div class="container">
+    <iframe 
+        id="searchFrame"
+        src="https://www.bing.com/search?q=AEDTP+WORLD+full+business+and+apps+softwares">
+    </iframe>
+</div>
+
+<script>
+/* Toggle light/dark mode */
+function toggleMode() {
+    document.body.classList.toggle("light");
+}
+
+/* Reload iframe to default search */
+function goHome() {
+    document.getElementById("searchFrame").src =
+        "https://www.bing.com/search?q=AEDTP+WORLD+full+business+and+apps+softwares";
+}
+
+function toggleFullscreen() {
+    const iframe = document.getElementById("searchFrame");
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* ===================================================================
+   AWFLWIKIWORLD — AEDTP WORLD Wiki engine:Skin/AEDTPWORLDDayEase.css
+   Developer: AEDTP WORLD
+   Skin Name: AEDTPWORLD DayEase (Light Eye-Ease Sepia Reading)
+   License: AEDTP WORLD FREE LICENSE (AWFL)
+   Version: 2.0 - Double-Locked Template
+   Palette: 10+5 colors - Warm Sepia Paper - Best for Eyes in Day
+
+   ⚠️  DO NOT DELETE THIS FILE:
+
+   1. Part of AWFLWIKIWORLD engine skin pack.
+   2. If deleted, engine falls back to assets/site.css (no crash).
+   3. Keep it - users need light sepia option besides Vector2022 white
+      and NightEase dark.
+   4. This skin is DAY EYE-CARE optimized - warm sepia paper
+      reduces blue light and glare vs pure white #FFFFFF.
+   5. Double-locked with !important on :root + properties to WIN over
+      site.css, same template as Vector2022, AEDTPWORLD, NightEase.
+
+   Best for: Day reading, sunlight, long articles, sensitive eyes
+   Install More: https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/Skins
+   © 2026 AEDTP WORLD - All Rights Reserved
+   =================================================================== */
+
+/* ---- 10 Root Colors - Same Count ---- */
+:root {
+    --awfl-header-bg: #E9DCC1!important;      /* warm sand header - not white */
+    --awfl-header-text: #4A3728!important;    /* dark brown text on header */
+    --awfl-button-bg: #D8C4A0!important;       /* muted sand button */
+    --awfl-button-text: #4A3728!important;
+    --awfl-page-text: #5B4636!important;      /* sepia ink - softer than black */
+    --awfl-link: #5B7FA6!important;           /* soft muted blue */
+    --awfl-link-visited: #8B6B6B!important;   /* soft dusty brown-rose */
+    --awfl-border: #E0D3B8!important;         /* light sand border */
+    --awfl-bg: #FDF6E3!important;             /* main sepia paper */
+    --awfl-content-bg: #FEF9E8!important;     /* content slightly whiter */
+}
+
+/* ---- Double-Lock Override ---- */
+html, body {
+    background: var(--awfl-bg)!important;
+    color: var(--awfl-page-text)!important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif!important;
+    line-height: 1.85!important;
+    font-size: 16.6px!important;
+    -webkit-font-smoothing: antialiased!important;
+}
+
+.awfl-body { background: var(--awfl-bg)!important; }
+
+.awfl-header {
+    background: var(--awfl-header-bg)!important;
+    color: var(--awfl-header-text)!important;
+    border-bottom: 1px solid var(--awfl-border)!important;
+}
+
+.awfl-header-inner { background: var(--awfl-header-bg)!important; }
+.awfl-header a { color: var(--awfl-header-text)!important; }
+
+.awfl-main {
+    background: var(--awfl-content-bg)!important;
+    border: 1px solid var(--awfl-border)!important;
+    box-shadow: 0 2px 10px rgba(91,70,54,0.08)!important;
+}
+
+.awfl-footer {
+    background: #E9DCC1!important; /* 11th - footer sand */
+    border-top: 1px solid var(--awfl-border)!important;
+}
+
+.awfl-footer-inner { color: #7A6652!important; } /* 12th - footer text */
+.awfl-footer a { color: #5B7FA6!important; }
+
+/* ---- Infobox - 3 colors extra ---- */
+.infobox {
+    background: #F5ECD7!important; /* 13th - card */
+    border: 1px solid var(--awfl-border)!important;
+    color: var(--awfl-page-text)!important;
+}
+
+.infobox th { background: #EDE0C0!important; } /* 14th */
+.infobox-title { background: #E6D8B5!important; color: #4A3728!important; } /* 15th */
+
+table.awfl-datatable th { background: #D8C4A0!important; color: #4A3728!important; }
+table.awfl-datatable td { background: var(--awfl-content-bg)!important; border-color: var(--awfl-border)!important; }
+
+a { color: var(--awfl-link)!important; }
+a:visited { color: var(--awfl-link-visited)!important; }
+
+::selection { background: #E0D3B8!important; color: #4A3728!important; }
+
+
+
+
+
+
+
+

@@ -1,0 +1,131 @@
+/* Admin panel — layered on top of style.css tokens */
+
+body.admin { background: var(--bg); }
+
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+
+/* ---- Top bar ------------------------------------------------------------ */
+.admin-topbar { border-bottom: 1px solid var(--line); background: var(--bg-raised); }
+.admin-topbar .wrap { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; }
+.admin-nav { display: flex; align-items: center; gap: 18px; }
+.admin-nav a { color: var(--text-muted); font-size: .9rem; }
+.admin-nav a:hover { color: var(--text); }
+.admin-user { color: var(--text-muted); font-size: .85rem; }
+.btn-logout {
+  color: var(--red-bright) !important; border: 1px solid var(--red); border-radius: 6px;
+  padding: 6px 12px; font-size: .85rem;
+}
+.btn-logout:hover { background: var(--red); color: #fff !important; text-decoration: none; }
+
+.admin-main { padding: 40px 24px 80px; }
+.admin-footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--text-muted); font-size: .8rem; }
+
+/* ---- Flash messages ------------------------------------------------------ */
+.flash { padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: .92rem; }
+.flash-success { background: rgba(46, 160, 67, .12); border: 1px solid rgba(46,160,67,.4); color: #7ee2a8; }
+.flash-error { background: rgba(209, 3, 3, .12); border: 1px solid rgba(209,3,3,.5); color: #ff9d9d; }
+
+/* ---- Page head ------------------------------------------------------------ */
+.page-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.page-head h1 { font-family: var(--font-display); font-weight: 400; letter-spacing: .3px; margin: 0 0 4px; font-size: 1.7rem; }
+.page-head-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ---- Buttons ------------------------------------------------------------ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 10px 16px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--bg-card); color: var(--text); font-size: .9rem; cursor: pointer;
+  font-family: var(--font-body); text-decoration: none;
+}
+.btn:hover { border-color: var(--red); text-decoration: none; }
+.btn-primary { background: var(--red); border-color: var(--red); color: #fff; font-weight: 600; }
+.btn-primary:hover { background: var(--red-bright); border-color: var(--red-bright); }
+.btn-ghost { background: transparent; }
+.btn-danger { background: transparent; color: #ff6b6b; border-color: rgba(255,107,107,.4); }
+.btn-danger:hover { background: rgba(255,107,107,.12); border-color: #ff6b6b; }
+.btn-sm { padding: 6px 10px; font-size: .8rem; }
+.btn-block { width: 100%; }
+.inline-form { display: inline-block; margin: 0 2px; }
+
+/* ---- Table ------------------------------------------------------------ */
+.filter-box {
+  width: 100%; max-width: 420px; padding: 10px 14px; margin-bottom: 18px;
+  background: var(--bg-card); border: 1px solid var(--line); border-radius: 8px; color: var(--text);
+}
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+.files-table { width: 100%; border-collapse: collapse; background: var(--bg-card); font-size: .92rem; }
+.files-table th, .files-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+.files-table th { color: var(--text-muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+.files-table tr:last-child td { border-bottom: none; }
+.files-table code { font-family: var(--font-mono); font-size: .82rem; color: var(--text-muted); }
+.col-actions { white-space: nowrap; }
+.empty-row { text-align: center; color: var(--text-muted); padding: 32px 16px; }
+
+/* ---- Forms ------------------------------------------------------------ */
+.editor-form { max-width: 780px; }
+.editor-form label { display: block; font-weight: 600; margin: 22px 0 8px; font-size: .9rem; }
+.editor-form label:first-of-type { margin-top: 0; }
+.editor-form input[type="text"],
+.editor-form input[type="password"],
+.editor-form textarea {
+  width: 100%; padding: 12px 14px; background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: 8px; color: var(--text); font-family: var(--font-body); font-size: .96rem;
+}
+.editor-form textarea { resize: vertical; }
+.editor-form input:focus, .editor-form textarea:focus { border-color: var(--red); }
+.hint { color: var(--text-muted); font-size: .82rem; margin: 6px 0 0; }
+.form-actions { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
+.divider { border: none; border-top: 1px solid var(--line); margin: 40px 0 24px; }
+
+/* ---- Rich text editor ---------------------------------------------------- */
+.editor-toolbar {
+  display: flex; flex-wrap: wrap; gap: 4px; align-items: center;
+  background: var(--bg-card); border: 1px solid var(--line); border-bottom: none;
+  border-radius: 8px 8px 0 0; padding: 8px;
+}
+.editor-toolbar button, .editor-toolbar select {
+  background: transparent; border: 1px solid transparent; color: var(--text);
+  border-radius: 6px; padding: 6px 10px; font-size: .85rem; cursor: pointer;
+  font-family: var(--font-body);
+}
+.editor-toolbar button:hover { background: var(--bg-raised); border-color: var(--line); }
+.editor-toolbar select { background: var(--bg-raised); border-color: var(--line); }
+.tb-sep { width: 1px; height: 22px; background: var(--line); margin: 0 4px; }
+
+.editor-area {
+  min-height: 340px; padding: 18px; background: var(--bg-card);
+  border: 1px solid var(--line); border-radius: 0 0 8px 8px; color: var(--text);
+  font-size: 1rem; line-height: 1.65;
+}
+.editor-area:empty::before { content: attr(data-placeholder); color: var(--text-muted); }
+.editor-area h2, .editor-area h3, .editor-area h4 { font-family: var(--font-display); font-weight: 400; }
+.editor-area blockquote { border-left: 3px solid var(--red); margin: 1em 0; padding: 2px 16px; color: var(--text-muted); }
+.editor-area pre { background: var(--bg-raised); border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; font-family: var(--font-mono); overflow-x: auto; }
+.editor-raw-view {
+  width: 100%; min-height: 340px; font-family: var(--font-mono); font-size: .88rem;
+  background: var(--bg-card); color: var(--text); border: 1px solid var(--line);
+  border-radius: 0 0 8px 8px; padding: 16px;
+}
+
+/* ---- Login page ------------------------------------------------------- */
+.login-page { display: flex; min-height: 100vh; align-items: center; justify-content: center; padding: 24px; }
+.login-wrap { width: 100%; }
+.login-card {
+  max-width: 380px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 36px 32px; box-shadow: var(--shadow);
+}
+.login-brand { display: flex; justify-content: center; margin-bottom: 16px; }
+.login-brand .brand-mark { width: 48px; height: 48px; font-size: 1.2rem; }
+.login-card h1 { font-family: var(--font-display); font-weight: 400; text-align: center; font-size: 1.4rem; margin: 0 0 4px; }
+.login-card > p.muted { text-align: center; margin: 0 0 24px; }
+.login-card label { display: block; font-size: .85rem; font-weight: 600; margin: 16px 0 6px; }
+.login-card input {
+  width: 100%; padding: 11px 14px; background: var(--bg-raised); border: 1px solid var(--line);
+  border-radius: 8px; color: var(--text); font-family: var(--font-body);
+}
+.login-card input:focus { border-color: var(--red); }
+.login-card button { margin-top: 22px; }
+.login-footnote { text-align: center; color: var(--text-muted); font-size: .78rem; margin: 22px 0 0; }

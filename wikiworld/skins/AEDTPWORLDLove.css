@@ -1,0 +1,53 @@
+/* ===================================================================
+   AWFLWIKIWORLD — Skin/AEDTPWORLDLove.css
+   Developer: AEDTP WORLD
+   Skin Name: AEDTPWORLD Love (Pink / Lavender / Eye-Safe)
+   License: AWFL
+   Version: 2.0 - Double-Locked
+   Palette: 10+5 - Love Soft
+   Primary: Pink #E91E63, White #FFFFFF, Black #1A1A1A, Blue #3366CC, Lavender #E6E6FA
+   =================================================================== */
+:root {
+    --awfl-header-bg: #FFFFFF!important;       /* 1 white header - clean */
+    --awfl-header-text: #1A1A1A!important;    /* 2 black ink */
+    --awfl-button-bg: #E91E63!important;      /* 3 LOVE PINK primary button */
+    --awfl-button-text: #FFFFFF!important;    /* 4 */
+    --awfl-page-text: #1E1E1E!important;      /* 5 soft black for eyes */
+    --awfl-link: #3366CC!important;           /* 6 BLUE for safe reading - not pink */
+    --awfl-link-visited: #7B5EAA!important;   /* 7 lavender purple visited */
+    --awfl-border: #E6E6FA!important;         /* 8 LAVENDER border */
+    --awfl-bg: #FFF5F8!important;             /* 9 very light pink wash - easy on eyes */
+    --awfl-content-bg: #FFFFFF!important;     /* 10 pure white paper */
+}
+
+html, body { background: var(--awfl-bg)!important; color: var(--awfl-page-text)!important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif!important; line-height: 1.75!important; font-size: 14.6px!important; letter-spacing: 0.1px!important; }
+.awfl-body { background: var(--awfl-bg)!important; }
+
+/* HEADER - white with pink accent line */
+.awfl-header { background: var(--awfl-header-bg)!important; border-bottom: 2px solid #F8BBD0!important; box-shadow: 0 2px 8px rgba(233,30,99,0.08)!important; } /* 11 */
+.awfl-header-inner { background: var(--awfl-header-bg)!important; }
+html body .awfl-header a { color: #E91E63!important; -webkit-text-fill-color: #E91E63!important; font-weight: 600!important; } /* 12 pink on white */
+
+.awfl-main { background: var(--awfl-content-bg)!important; border: 1px solid var(--awfl-border)!important; box-shadow: 0 2px 16px rgba(230,230,250,0.5)!important; border-radius: 8px!important; }
+.awfl-footer { background: #1A1A1A!important; border-top: 3px solid #E91E63!important; } /* black footer for contrast */
+.awfl-footer-inner { color: #E6E6FA!important; } /* 13 lavender text */
+.awfl-footer a { color: #FF8A9D!important; } /* 14 soft pink visible on black */
+
+/* INFOBOX - lavender love */
+.infobox { background: #FDF2F8!important; border: 1px solid #E6E6FA!important; border-radius: 8px!important; }
+.infobox th { background: #E91E63!important; color: #FFFFFF!important; }
+.infobox-title { background: #AD1457!important; color: #FFFFFF!important; } /* 15 deeper pink */
+table.awfl-datatable th { background: #E6E6FA!important; color: #1A1A1A!important; border-bottom: 2px solid #E91E63!important; }
+
+a { color: var(--awfl-link)!important; }
+a:visited { color: var(--awfl-link-visited)!important; }
+
+::selection { background: #F8BBD0!important; color: #1A1A1A!important; }
+
+
+
+
+
+
+
+

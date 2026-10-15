@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Top Creators | BIZIMI (Business Intelligence Zone Innovation Media Integration) Advanced Social Media Networking</title>
+<meta name="description" content="Top-ranked creators on BIZIMI, sorted by verified rank. BIZIMI (Business Intelligence Zone Innovation Media Integration) Advanced Social Media Networking" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://aedtpworld.com/social/trends/index.html">
+<link rel="icon" href="https://aedtpworld.com/icons/bizimi.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D10303;--yellow:#FFDE2C;--ink:#181818;--bg:#faf9f6;--card:#ffffff;--muted:#6b6b6b;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);}
+a{color:inherit;}
+header{background:var(--red);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;}
+header a.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.2rem;}
+header a.back{color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;}
+main{max-width:700px;margin:0 auto;padding:20px 16px 60px;}
+h1{text-align:center;}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.08);}
+th{background:var(--red);color:#fff;padding:10px;font-size:.82rem;text-transform:uppercase;}
+td{padding:10px;border-bottom:1px solid #eee;text-align:center;}
+tr:last-child td{border-bottom:none;}
+tr a{text-decoration:none;color:inherit;font-weight:700;}
+img.avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;}
+.badge-icon{vertical-align:middle;}
+.rank-extra{font-size:.68rem;font-weight:800;color:var(--red);}
+.empty{text-align:center;padding:60px 20px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header><a href="/social/index.html" class="brand">BIZIMI</a><a href="/social/index.html" class="back">Back to feed</a></header>
+<main>
+<h1>🏆 Top Creators</h1>
+<table id="tbl" style="display:none;">
+<thead>
+<tr><th>USERS</th><th>USERNAMES</th><th>BADGES</th><th>RANKS</th></tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+<div class="empty" id="empty" style="display:none;">No creators yet.</div>
+<script>
+const API = '/social/api.php';
+const BADGE_IMG = '/social/verifiedbadges/blue.png';
+function badgeHtml(rank) {
+    if (rank < 1) return '';
+    const extra = rank - 1;
+    let out = `<img class="badge-icon" src="${BADGE_IMG}" width="14" height="14" alt="Verified"/>`;
+    if (extra > 0) out += `<span class="rank-extra">+${extra}</span>`;
+    return out;
+}
+function escH(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+async function load(){
+    const res = await fetch(`${API}?action=get_feed&type=all`);
+    const json = await res.json();
+    if (!json.ok) return;
+    const byUser = {};
+    json.data.feed.forEach(item => {
+        if (!byUser[item.username]) byUser[item.username] = item.rank;
+    });
+    const users = Object.entries(byUser).sort((a, b) => b[1] - a[1]);
+    if (users.length === 0) { document.getElementById('empty').style.display = 'block'; return; }
+    document.getElementById('tbl').style.display = 'table';
+    const tbody = document.getElementById('tbody');
+    for (const [username, rank] of users) {
+        const ures = await fetch(`${API}?action=get_user&username=${encodeURIComponent(username)}`);
+        const ujson = await ures.json();
+        const img = ujson.ok ? (ujson.data.account.profileImage || 'https://aedtpworld.com/icons/bizimi.png') : 'https://aedtpworld.com/icons/bizimi.png';
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><a href="/social/${escH(username)}/index.html"><img class="avatar" src="${escH(img)}"/></a></td>
+            <td><a href="/social/${escH(username)}/index.html">@${escH(username)}</a></td>
+            <td>${badgeHtml(rank) || '—'}</td>
+            <td>${rank}</td>`;
+        tbody.appendChild(tr);
+    }
+}
+load();
+</script>
+</main>
+</body>
+</html>

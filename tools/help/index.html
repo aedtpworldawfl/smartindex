@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Center — TOOLS — AEDTP WORLD</title>
+    <meta name="description" content="Help center for the TOOLS platform: how to open tools, and how admins upload, rename, delete, fix, and claim accounts." />
+    <meta name="keywords" content="TOOLS help, AEDTP WORLD help, how to use TOOLS" />
+    <meta name="application-name" content="AEDTP WORLD" />
+    <meta name="version" content="1.0.0.0" />
+    <meta name="theme-color" content="#091529" />
+    <meta name="author" content="AEDTP WORLD, Emmanuel Deliver Amable" />
+    <meta name="copyright" content="© AEDTP WORLD" />
+    <meta name="publisher" content="AEDTP WORLD" />
+    <meta name="creator" content="@aedtpworld" />
+    <meta name="alias" content="aedtpworld" />
+    <link rel="canonical" href="https://aedtpworld.com/tools/help/">
+    <meta name="app-id" content="com.aedtpworld.awfl" />
+    <meta name="type" content="Web, Business, content discovery, Application" />
+    <meta name="robots" content="index, follow" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta property="og:title" content="Help Center — TOOLS — AEDTP WORLD" />
+    <meta property="og:description" content="How to use the TOOLS directory, and how admins manage it." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://aedtpworld.com/icons/aedtpworld.png" />
+    <link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/tools/assets/style.css" />
+</head>
+<body>
+    <header class="topbar">
+        <a href="/tools/" class="brand">TOOLS <span class="brand-tag">AEDTP WORLD</span></a>
+        <nav class="nav-links" id="nav-auth-slot">
+            <a href="/tools/about/">About</a>
+        </nav>
+    </header>
+
+    <main class="wrap">
+        <p class="eyebrow">Help center</p>
+        <h1>How <span>TOOLS</span> works</h1>
+        <p class="lede">Everything here is a plain folder of files. No database, no build step — pick a tool and go.</p>
+
+        <div class="card" style="margin-bottom:16px;">
+            <h2 style="font-family:var(--font-display); margin-top:0;">Opening a tool</h2>
+            <p class="muted">Every tile on the <a href="/tools/">directory</a> opens <code class="mono">/tools/{folder-name}/</code> directly. Nothing to install or sign in for — just tap and it loads.</p>
+        </div>
+
+        <div class="card" style="margin-bottom:16px;">
+            <h2 style="font-family:var(--font-display); margin-top:0;">For admins</h2>
+            <div class="stack">
+                <div>
+                    <strong class="mono small">/tools/login.php</strong>
+                    <p class="muted small">Log in with the admin username and password. There's no self-registration.</p>
+                </div>
+                <div>
+                    <strong class="mono small">/tools/upload.php</strong>
+                    <p class="muted small">Publish a new tool, or update an existing one, by uploading a folder (or a single file) of files. The tool name becomes the folder name — spaces turn into underscores.</p>
+                </div>
+                <div>
+                    <strong class="mono small">/tools/allfiles.php</strong>
+                    <p class="muted small">Rename, delete a single tool, or clear every tool at once.</p>
+                </div>
+                <div>
+                    <strong class="mono small">/tools/toolsfix.php</strong>
+                    <p class="muted small">Re-syncs the tools index with what's actually on disk — fixes missing entries and removes broken/empty ones.</p>
+                </div>
+                <div>
+                    <strong class="mono small">/tools/claim/</strong>
+                    <p class="muted small">Lost access to the admin account? Search the username, verify your 12-character claim code, then set a new username and password.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="font-family:var(--font-display); margin-top:0;">Still stuck?</h2>
+            <p class="muted">Reach out via <a href="https://x.com/aedtpworld" target="_blank" rel="noopener">@aedtpworld</a>.</p>
+        </div>
+    </main>
+
+    <footer>© AEDTP WORLD</footer>
+
+    <script src="/tools/assets/app.js"></script>
+    <script>mountAuthNav();</script>
+</body>
+</html>

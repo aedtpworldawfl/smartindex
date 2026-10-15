@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOOLS — AEDTP WORLD</title>
+    <meta name="description" content="A growing directory of free productivity tools and mini web apps from AEDTP WORLD. Open any tool instantly, no installs, no accounts." />
+    <meta name="keywords" content="AEDTP WORLD tools, productivity tools, free web tools, online utilities, mini apps" />
+    <meta name="application-name" content="AEDTP WORLD" />
+    <meta name="version" content="1.0.0.0" />
+    <meta name="theme-color" content="#091529" />
+    <meta name="author" content="AEDTP WORLD, Emmanuel Deliver Amable" />
+    <meta name="copyright" content="© AEDTP WORLD" />
+    <meta name="publisher" content="AEDTP WORLD" />
+    <meta name="creator" content="@aedtpworld" />
+    <meta name="alias" content="aedtpworld" />
+    <link rel="canonical" href="https://aedtpworld.com/tools/">
+    <meta name="app-id" content="com.aedtpworld.awfl" />
+    <meta name="type" content="Web, Business, content discovery, Application" />
+    <meta name="robots" content="index, follow" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta property="og:title" content="TOOLS — AEDTP WORLD" />
+    <meta property="og:description" content="A growing directory of free productivity tools and mini web apps from AEDTP WORLD." />
+    <meta property="og:site_name" content="AEDTP WORLD TOOLS" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://aedtpworld.com/icons/aedtpworld.png" />
+    <link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png" type="image/png" />
+<link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/tools/assets/style.css" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "TOOLS — AEDTP WORLD",
+      "url": "https://aedtpworld.com/tools/",
+      "publisher": { "@type": "Organization", "name": "AEDTP WORLD" }
+    }
+    </script>
+</head>
+<body>
+    <header class="topbar">
+        <a href="/tools/" class="brand">TOOLS <span class="brand-tag">AEDTP WORLD</span></a>
+        <nav class="nav-links" id="nav-auth-slot">
+            <a href="/tools/help/">Help</a>
+            <a href="/tools/about/">About</a>
+        </nav>
+    </header>
+
+    <main class="wrap">
+        <p class="eyebrow">Directory</p>
+        <h1>Open a tool <span>instantly</span>.</h1>
+        <p class="lede">Every tile below is a self-contained tool folder. Tap one to open it — nothing to install, nothing to sign up for.</p>
+
+        <div id="tool-grid" class="tool-grid" aria-live="polite">
+            <div class="empty-state">Loading tools…</div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="/tools/help/">Help center</a> · <a href="/tools/about/">About TOOLS</a> · © AEDTP WORLD
+    </footer>
+
+    <script src="/tools/assets/app.js"></script>
+    <script>
+      async function loadTools() {
+        const grid = document.getElementById('tool-grid');
+        const { data } = await apiCall('list_tools');
+        const tools = (data && data.ok && Array.isArray(data.tools)) ? data.tools : [];
+
+        if (tools.length === 0) {
+          grid.innerHTML = `<div class="empty-state">No tools uploaded yet. Check back soon.</div>`;
+          return;
+        }
+
+        grid.innerHTML = tools.map(t => `
+          <a class="tool-tile" href="/tools/${encodeURIComponent(t.link)}/">
+            <span class="tt-name">${escapeHtml(t.name)}</span>
+            <span class="tt-path">/tools/${escapeHtml(t.link)}/</span>
+            <span class="tt-open">Open tool →</span>
+          </a>
+        `).join('');
+      }
+
+      function escapeHtml(s) {
+        const div = document.createElement('div');
+        div.textContent = s;
+        return div.innerHTML;
+      }
+
+      loadTools();
+      mountAuthNav();
+    </script>
+</body>
+</html>

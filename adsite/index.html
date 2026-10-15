@@ -1,0 +1,990 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World On Advertisements on AEDTP WORLD</title>
+<meta name="description" content="Check live sponsored ads on AEDTP WORLD. Try advertising free for 24 hours, or go live from ₵150/week — instant approval, live in minutes.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#0f172a">
+<link rel="canonical" href="https://aedtpworld.com/adsite/">
+<link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="sitemap" type="application/xml" title="Sitemap" >
+<href="https://aedtpworld.com/advertise/sitemap.php">
+<href="https://aedtpworld.com/advertise/sitemap.xml">
+<href="https://aedtpworld.com/sitemap.xml">
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Advertise on AEDTP WORLD | Featured Ads &amp; Sponsored Listings">
+<meta property="og:description" content="Browse live sponsored ads on AEDTP WORLD. Try advertising free for 24 hours, or go live from ₵150/week — instant approval, live in minutes.">
+<meta property="og:url" content="https://aedtpworld.com/adsite/">
+<meta property="og:image" content="https://aedtpworld.com/icons/aedtpworld.png">
+<meta property="og:site_name" content="AEDTP WORLD ADS">
+<meta property="og:locale" content="en_GH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Advertise on AEDTP WORLD | Featured Ads &amp; Sponsored Listings">
+<meta name="twitter:description" content="Browse live sponsored ads on AEDTP WORLD. Try advertising free for 24 hours, or go live from ₵150/week — instant approval, live in minutes.">
+<meta name="twitter:image" content="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+<!-- Structured data: ItemList of ads, for rich indexing -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[]}</script>
+   
+    
+    
+    <style>
+        /* ----- RESET & BASE ----- */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0b0d10;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            color: #e8edf2;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        /* ----- FIXED HEADER ----- */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(11, 13, 16, 0.88);
+            backdrop-filter: blur(14px) saturate(1.3);
+            -webkit-backdrop-filter: blur(14px) saturate(1.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 0 2rem;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            transition: background 0.2s;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .brand-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #f0b45a, #f7d78c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(240, 180, 90, 0.15);
+        }
+
+        .brand-link {
+            font-size: 0.85rem;
+            font-weight: 450;
+            color: #a8b3c9;
+            text-decoration: none;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            padding-left: 0.9rem;
+            transition: color 0.2s, border-color 0.2s;
+            letter-spacing: 0.01em;
+        }
+        .brand-link:hover {
+            color: #f0d48a;
+            border-color: rgba(240, 180, 90, 0.3);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        nav a {
+            color: #a8b3c9;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 480;
+            padding: 0.4rem 0.9rem;
+            border-radius: 40px;
+            transition: all 0.2s ease;
+            letter-spacing: 0.01em;
+            background: transparent;
+        }
+        nav a:hover {
+            color: #f0f4fa;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        nav a.active {
+            color: #fff;
+            background: rgba(240, 180, 90, 0.18);
+            box-shadow: inset 0 0 0 1px rgba(240, 180, 90, 0.15);
+        }
+
+        /* ----- SPACER FOR FIXED HEADER ----- */
+        .header-spacer {
+            height: 68px;
+            /* matches header height */
+        }
+
+        /* ----- MAIN CONTAINER ----- */
+        #awflmeta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.8rem 2rem 4rem;
+        }
+
+        /* ----- LOADER / STATUS ----- */
+        #status {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+            font-size: 1rem;
+            color: #7a879e;
+            letter-spacing: 0.02em;
+        }
+
+        .loader-dots {
+            display: inline-flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .loader-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #f0b45a;
+            display: inline-block;
+            animation: pulse-dot 1.2s ease-in-out infinite;
+        }
+        .loader-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .loader-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes pulse-dot {
+            0%,
+            80%,
+            100% {
+                transform: scale(0.6);
+                opacity: 0.3;
+            }
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* ----- AWFLMETA CARD ----- */
+        .awflmeta-card {
+            background: rgba(22, 26, 34, 0.75);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+            padding: 2rem 2.2rem;
+            margin-bottom: 3rem;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            min-height: 100vh;
+            /* 100vh per fetch as requested */
+            display: flex;
+            flex-direction: column;
+        }
+        .awflmeta-card:hover {
+            border-color: rgba(240, 180, 90, 0.12);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.55);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.5rem;
+            padding-bottom: 1.2rem;
+            margin-bottom: 1.6rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .card-header h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #e8edf2, #bcc7dc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            word-break: break-word;
+        }
+        .card-tag {
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #f0b45a;
+            background: rgba(240, 180, 90, 0.12);
+            padding: 0.25rem 0.9rem;
+            border-radius: 40px;
+            border: 1px solid rgba(240, 180, 90, 0.12);
+            white-space: nowrap;
+        }
+        .card-tag.error {
+            color: #ff6b4a;
+            background: rgba(255, 80, 50, 0.12);
+            border-color: rgba(255, 80, 50, 0.15);
+        }
+
+        /* ----- CONTENT INSIDE CARD (from fetched HTML) ----- */
+        .awflmeta-content {
+            flex: 1;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: #d0d8e6;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        /* style any raw HTML from the fetched wiki pages */
+        .awflmeta-content h1,
+        .awflmeta-content h2,
+        .awflmeta-content h3,
+        .awflmeta-content h4 {
+            color: #f0f4fa;
+            margin: 1.4rem 0 0.6rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+        .awflmeta-content h1 {
+            font-size: 2rem;
+        }
+        .awflmeta-content h2 {
+            font-size: 1.6rem;
+        }
+        .awflmeta-content h3 {
+            font-size: 1.3rem;
+        }
+        .awflmeta-content p {
+            margin: 0.75rem 0;
+        }
+        .awflmeta-content a {
+            color: #f0b45a;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .awflmeta-content a:hover {
+            border-bottom-color: #f0b45a;
+        }
+        .awflmeta-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 0.8rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .awflmeta-content ul,
+        .awflmeta-content ol {
+            padding-left: 1.6rem;
+            margin: 0.6rem 0;
+        }
+        .awflmeta-content li {
+            margin: 0.3rem 0;
+        }
+        .awflmeta-content blockquote {
+            border-left: 3px solid rgba(240, 180, 90, 0.3);
+            padding-left: 1.2rem;
+            margin: 1rem 0;
+            color: #b0bacf;
+        }
+        .awflmeta-content pre,
+        .awflmeta-content code {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 8px;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.9em;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            color: #e8edf2;
+        }
+        .awflmeta-content pre {
+            padding: 1rem;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .awflmeta-content table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1rem 0;
+        }
+        .awflmeta-content th,
+        .awflmeta-content td {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.5rem 0.8rem;
+            text-align: left;
+        }
+        .awflmeta-content th {
+            background: rgba(255, 255, 255, 0.04);
+            font-weight: 500;
+        }
+
+        /* ----- DIVIDER (accent) ----- */
+        .awfl-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 1.2rem 0 2.8rem;
+            color: rgba(255, 255, 255, 0.08);
+            user-select: none;
+        }
+        .awfl-divider hr {
+            flex: 1;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(240, 180, 90, 0.2), rgba(240, 180, 90, 0.08), transparent);
+        }
+        .awfl-divider .divider-icon {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: rgba(240, 180, 90, 0.2);
+            font-weight: 300;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 820px) {
+            .fixed-header {
+                padding: 0 1.2rem;
+                height: 62px;
+                flex-wrap: wrap;
+            }
+            .header-spacer {
+                height: 62px;
+            }
+            .brand {
+                gap: 0.3rem;
+            }
+            .brand-name {
+                font-size: 1.1rem;
+            }
+            .brand-link {
+                font-size: 0.7rem;
+                padding-left: 0.5rem;
+            }
+            nav a {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
+            }
+            #awflmeta-container {
+                padding: 1rem 1rem 3rem;
+            }
+            .awflmeta-card {
+                padding: 1.4rem 1.2rem;
+                min-height: 90vh;
+            }
+            .card-header h2 {
+                font-size: 1.3rem;
+            }
+            .card-tag {
+                font-size: 0.6rem;
+                padding: 0.2rem 0.6rem;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .fixed-header {
+                height: 56px;
+                padding: 0 0.8rem;
+            }
+            .header-spacer {
+                height: 56px;
+            }
+            .brand-name {
+                font-size: 0.95rem;
+            }
+            .brand-link {
+                font-size: 0.6rem;
+                padding-left: 0.4rem;
+                max-width: 130px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            nav a {
+                font-size: 0.6rem;
+                padding: 0.2rem 0.5rem;
+            }
+            .awflmeta-card {
+                padding: 1rem 0.9rem;
+                min-height: 80vh;
+                border-radius: 14px;
+            }
+            .card-header h2 {
+                font-size: 1.1rem;
+            }
+            #awflmeta-container {
+                padding: 0.8rem 0.6rem 2rem;
+            }
+            .awfl-divider .divider-icon {
+                font-size: 0.6rem;
+            }
+        }
+
+        /* scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0d10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(240, 180, 90, 0.3);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(240, 180, 90, 0.5);
+        }
+
+        /* utility */
+        .text-muted {
+            color: #7a879e;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        /* =====================================================================
+           AD PAGE CONTENT SUPPORT
+           -----------------------------------------------------------------------
+           Every /advertise/ads/*.html page is fetched, its <body> markup is
+           extracted, and dropped into an .awflmeta-content wrapper (see the
+           loader script below). Because content injected via innerHTML never
+           executes <script> tags or picks up the ad page's own <head><style>,
+           an ad.html page must NOT rely on inline <style>/<script> for its
+           effects — instead it marks itself up with the classes and
+           data-attributes below, and this parent page supplies the CSS/JS
+           that brings those markers to life. Expected ad.html contract:
+
+             <div class="ad-page"
+                  data-ad-id="username_1699999999"
+                  data-enhanced-visibility="true|false"
+                  data-magic-effect="true|false"
+                  data-magic-text="true|false"
+                  data-magic-texts='["🔥 Hot deal","🎉 Sale"]'>
+               <div class="ad-header">
+                 <h1 class="ad-title">Ad title</h1>
+                 <p class="ad-description">Desc with <b>bold</b>/<i>italic</i></p>
+               </div>
+               <div class="ad-image-wrap">
+                 <img class="ad-image" src="..." alt="...">
+               </div>
+               <div class="ad-buttons">
+                 <a class="ad-btn" href="...">Label</a>
+               </div>
+             </div>
+           ===================================================================== */
+
+        .ad-page {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            padding: 1.4rem;
+            isolation: isolate;
+        }
+
+        /* ---- enhanced_visibility: animated gradient border + bg pattern ---- */
+        .ad-page[data-enhanced-visibility="true"] {
+            background:
+                linear-gradient(#12151b, #12151b) padding-box,
+                linear-gradient(120deg, #D10303, #FFDE2C, #D10303) border-box;
+            border: 2px solid transparent;
+            background-size: 100% 100%, 300% 300%;
+            animation: ad-border-flow 6s ease infinite;
+        }
+        .ad-page[data-enhanced-visibility="true"]::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            opacity: 0.10;
+            background-image:
+                radial-gradient(circle at 20% 20%, #FFDE2C 0, transparent 40%),
+                radial-gradient(circle at 80% 60%, #D10303 0, transparent 45%),
+                repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 14px);
+            pointer-events: none;
+        }
+        @keyframes ad-border-flow {
+            0%, 100% { background-position: 0 0, 0% 50%; }
+            50%      { background-position: 0 0, 100% 50%; }
+        }
+
+        .ad-header { margin-bottom: 0.9rem; }
+        .ad-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #f0f4fa;
+            margin-bottom: 0.4rem;
+            word-break: break-word;
+        }
+        .ad-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #c3cbdb;
+        }
+        .ad-description b,
+        .ad-description strong { color: #f0f4fa; font-weight: 700; }
+        .ad-description i,
+        .ad-description em { color: #e6c67a; font-style: italic; }
+
+        /* ---- image + broken-image colored-pattern fallback ---- */
+        .ad-image-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            max-width: 300px;
+            max-height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 0.9rem 0;
+            background: #1b1f27;
+        }
+        .ad-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .ad-image.is-broken { display: none; }
+        .ad-pattern-fallback {
+            display: none;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+        }
+        .ad-pattern-fallback.is-active { display: flex; }
+        .ad-pattern-0 { background: linear-gradient(135deg, #D10303, #FF6B6B); }
+        .ad-pattern-1 { background: linear-gradient(135deg, #FFDE2C, #FF9F1C); }
+        .ad-pattern-2 { background: linear-gradient(135deg, #0F2027, #2C5364); }
+        .ad-pattern-3 { background: linear-gradient(135deg, #8E2DE2, #4A00E0); }
+        .ad-pattern-4 { background: linear-gradient(135deg, #11998E, #38EF7D); }
+        .ad-pattern-5 { background: linear-gradient(135deg, #F953C6, #B91D73); }
+        .ad-pattern-6 { background: linear-gradient(135deg, #F7971E, #FFD200); }
+        .ad-pattern-7 { background: linear-gradient(135deg, #3A1C71, #D76D77); }
+
+        /* ---- buttons ---- */
+        .ad-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.8rem;
+        }
+       .ad-btn {
+            display: inline-block;
+            padding: 0.6rem 1.1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #0b0d10;
+            background: linear-gradient(135deg, #1371AB, #000);
+            text-decoration: none;
+            border: none;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .ad-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(240, 180, 90, 0.25);
+        }
+
+        /* ---- magic_effect: floating particles ---- */
+        .ad-particles-layer {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .ad-particle {
+            position: absolute;
+            bottom: -10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 222, 44, 0.55);
+            animation-name: ad-particle-float;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+        }
+        @keyframes ad-particle-float {
+            0%   { transform: translateY(0) translateX(0); opacity: 0; }
+            10%  { opacity: 0.8; }
+            100% { transform: translateY(-420px) translateX(var(--drift, 20px)); opacity: 0; }
+        }
+
+        /* ---- magic_text: up to 20 floating text labels ---- */
+        .ad-magic-text-layer {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .ad-magic-text-item {
+            position: absolute;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #FFDE2C;
+            white-space: nowrap;
+            opacity: 0;
+            animation-name: ad-magic-text-float;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            text-shadow: 0 0 8px rgba(255, 222, 44, 0.4);
+        }
+        @keyframes ad-magic-text-float {
+            0%   { opacity: 0; transform: translate(0, 0); }
+            15%  { opacity: 0.9; }
+            85%  { opacity: 0.9; }
+            100% { opacity: 0; transform: translate(var(--dx, 30px), var(--dy, -60px)); }
+        }
+
+        /* content above the effect layers */
+        .ad-header, .ad-image-wrap, .ad-buttons { position: relative; z-index: 2; }
+
+        @media (max-width: 520px) {
+            .ad-page { padding: 1rem; }
+            .ad-title { font-size: 1.1rem; }
+            .ad-image-wrap { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== FIXED HEADER ===== -->
+    <header class="fixed-header" role="banner">
+        <div class="header-left">
+            <div class="brand">
+                <span class="brand-name">AEDTP WORLD ADS</span>
+                <a class="brand-link" href="https://aedtpworld.com/adsite/">
+                    AEDTP WORLD FREE LICENSE (AWFL)
+                </a>
+            </div>
+
+        </div>
+        <nav aria-label="Main navigation">
+            <a href="https://aedtpworld.com/adsite/">Home</a>
+ 
+            <a href="https://aedtpworld.com/advertise/awflmeta.php" class="active">Update ADS</a>
+
+            <a href="https://aedtpworld.com/advertise/create.php"    target="_blank" >Create</a>
+
+            <a href="https://aedtpworld.com/advertise/create.php"    target="_blank" >Upload</a>
+            
+            <a href="https://aedtpworld.com/advertise/create.php"    target="_blank" >Distribute ADS</a>
+            
+            <a href="https://aedtpworld.com/advertise/awflmeta.php">Refresh</a>
+       
+
+            <a href="https://aedtpworld.com/advertise/create.php"    target="_blank" >Publish Free</a>
+            
+            <a href="https://aedtpworld.com/advertise/awflmeta.php">Trending</a>
+            
+            <a href="https://aedtpworld.com/searchengine/">Search</a>
+
+
+        </nav>
+    </header>
+
+    <!-- ===== SPACER (prevents content from hiding behind fixed header) ===== -->
+    <div class="header-spacer"></div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main id="awflmeta-container" role="main">
+        <!-- status / loader -->
+        <div id="status" aria-live="polite">
+            <span class="loader-dots">
+                <span></span><span></span><span></span>
+            </span>
+            &nbsp; loading AWFLMETA pages …
+        </div>
+
+        <!-- cards will be injected here -->
+    </main>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        (function() {
+            'use strict';
+
+            const container = document.getElementById('awflmeta-container');
+            const status = document.getElementById('status');
+
+            /**
+             * Create an accent divider (hr with decoration)
+             */
+            function createDivider() {
+                const div = document.createElement('div');
+                div.className = 'awfl-divider';
+                div.innerHTML = `
+                    <hr />
+                    <span class="divider-icon">🌐</span>
+                    <hr />
+                `;
+                return div;
+            }
+
+            /**
+             * Load and render all AEDTP WORLD ADS pages
+             */
+            async function loadawflmetaPages() {
+                try {
+                    // 1. Fetch index.json
+                    const indexRes = await fetch('https://aedtpworld.com/advertise/awflmeta.json');
+                    if (!indexRes.ok) throw new Error(`index.json fetch failed: ${indexRes.status}`);
+                    const pages = await indexRes.json();
+
+                    // Hide loader
+                    status.style.display = 'none';
+
+                    if (!pages || !pages.length) {
+                        container.innerHTML =
+                            `<p style="padding:40px 0; color:#7a879e; font-family:monospace; text-align:center;">No AEDTP WORLD ADS pages found.</p>`;
+                        return;
+                    }
+
+                    // 2. Loop through each awflmeta entry
+                    for (let i = 0; i < pages.length; i++) {
+                        const item = pages[i];
+                        try {
+                            const htmlRes = await fetch(`https://aedtpworld.com/advertise/ads/${item.file}`);
+                            if (!htmlRes.ok) throw new Error(`${item.file} fetch failed: ${htmlRes.status}`);
+                            const rawHtml = await htmlRes.text();
+
+                            // 3. Parse and extract body content only
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(rawHtml, 'text/html');
+                            const bodyContent = doc.body ? doc.body.innerHTML : rawHtml;
+
+                            // 4. Inject card
+                            const card = document.createElement('div');
+                            card.className = 'awflmeta-card';
+                            card.innerHTML = `
+                                <div class="card-header">
+                                    <h2>${escapeHtml(item.name)}</h2>
+                                    <span class="card-tag">AWFLMETA</span>
+                                </div>
+                                <div class="awflmeta-content">
+                                    ${bodyContent}
+                                </div>
+                            `;
+                            container.appendChild(card);
+
+                            // 4b. Bring the injected ad-page markup to life —
+                            // innerHTML never runs <script> tags, so effects
+                            // (particles/magic text/image fallback) are wired
+                            // up manually here instead.
+                            enhanceAdCard(card);
+
+                        } catch (err) {
+                            console.warn(`Could not load https://aedtpworld.com/advertise/ads/${item.file}:`, err);
+                            const errCard = document.createElement('div');
+                            errCard.className = 'awflmeta-card';
+                            errCard.innerHTML = `
+                                <div class="card-header">
+                                    <h2>${escapeHtml(item.name)}</h2>
+                                    <span class="card-tag error">ERROR</span>
+                                </div>
+                                <div class="awflmeta-content" style="color:#7a879e;font-family:monospace;font-size:0.9rem;padding:1.2rem 0;">
+                                    ⚠ Could not load AEDTP WORLD ADS for <strong style="color:#a8b3c9;">${escapeHtml(item.name)}</strong>.
+                                    <br /><span style="font-size:0.8rem;color:#5a677e;">${escapeHtml(err.message || 'unknown error')}</span>
+                                </div>
+                            `;
+                            container.appendChild(errCard);
+                        }
+
+                        // 5. Add divider after every fetch (except the last one)
+                        if (i < pages.length - 1) {
+                            container.appendChild(createDivider());
+                        }
+                    }
+
+                } catch (err) {
+                    status.innerHTML =
+                        `<span style="color:#ff6b4a; display:flex; align-items:center; gap:0.5rem;">⚠ Failed to load AEDTP WORLD ADS index: ${escapeHtml(err.message)}</span>`;
+                    console.error(err);
+                }
+            }
+
+            /**
+             * Deterministic small hash — same ad id always maps to the same
+             * fallback pattern, instead of a new random color every reload.
+             */
+            function hashSeed(str) {
+                let h = 0;
+                for (let i = 0; i < str.length; i++) {
+                    h = (h << 5) - h + str.charCodeAt(i);
+                    h |= 0;
+                }
+                return Math.abs(h);
+            }
+
+            /**
+             * For every .ad-image inside scopeEl: if it fails to load, hide
+             * it and reveal the matching .ad-pattern-fallback block instead
+             * (colored gradient seeded from data-ad-id, 8 palettes total).
+             */
+            function wireImageFallback(scopeEl) {
+                const wraps = scopeEl.querySelectorAll('.ad-image-wrap');
+                wraps.forEach(wrap => {
+                    const img = wrap.querySelector('.ad-image');
+                    if (!img) return;
+                    const page = scopeEl.querySelector('.ad-page');
+                    const seed = (page && page.dataset.adId) || img.src || 'ad';
+                    const patternIndex = hashSeed(seed) % 8;
+
+                    const showFallback = () => {
+                        img.classList.add('is-broken');
+                        let fallback = wrap.querySelector('.ad-pattern-fallback');
+                        if (!fallback) {
+                            fallback = document.createElement('div');
+                            fallback.className = `ad-pattern-fallback ad-pattern-${patternIndex}`;
+                            fallback.textContent = '📢';
+                            wrap.appendChild(fallback);
+                        }
+                        fallback.classList.add('is-active');
+                    };
+
+                    if (!img.getAttribute('src')) {
+                        showFallback();
+                        return;
+                    }
+                    if (img.complete && img.naturalWidth === 0) {
+                        showFallback();
+                    }
+                    img.addEventListener('error', showFallback, { once: true });
+                });
+            }
+
+            /**
+             * magic_effect: spawns small floating particles that drift
+             * upward inside the ad-page, on a dedicated absolutely
+             * positioned layer so they never affect card layout/height.
+             */
+            function wireParticles(pageEl) {
+                if (pageEl.dataset.magicEffect !== 'true') return;
+                const layer = document.createElement('div');
+                layer.className = 'ad-particles-layer';
+                const COUNT = 16;
+                for (let i = 0; i < COUNT; i++) {
+                    const p = document.createElement('span');
+                    p.className = 'ad-particle';
+                    p.style.left = `${Math.random() * 100}%`;
+                    p.style.setProperty('--drift', `${(Math.random() * 60 - 30).toFixed(0)}px`);
+                    p.style.animationDuration = `${(4 + Math.random() * 4).toFixed(2)}s`;
+                    p.style.animationDelay = `${(Math.random() * 5).toFixed(2)}s`;
+                    p.style.opacity = (0.3 + Math.random() * 0.5).toFixed(2);
+                    layer.appendChild(p);
+                }
+                pageEl.appendChild(layer);
+            }
+
+            /**
+             * magic_text: reads data-magic-texts (JSON array, hard-capped at
+             * 20 items / 20 chars each to match the create.php limits) and
+             * creates one floating text div per entry, each drifting in a
+             * random direction so they never lag or overlap identically.
+             */
+            function wireMagicText(pageEl) {
+                if (pageEl.dataset.magicText !== 'true') return;
+                let texts = [];
+                try {
+                    texts = JSON.parse(pageEl.dataset.magicTexts || '[]');
+                } catch (e) {
+                    return;
+                }
+                if (!Array.isArray(texts) || !texts.length) return;
+                texts = texts.slice(0, 20);
+
+                const layer = document.createElement('div');
+                layer.className = 'ad-magic-text-layer';
+                texts.forEach((raw, i) => {
+                    const text = String(raw).slice(0, 20);
+                    const el = document.createElement('span');
+                    el.className = 'ad-magic-text-item';
+                    el.textContent = text; // textContent, not innerHTML — emoji-safe, XSS-safe
+                    el.style.left = `${Math.random() * 80}%`;
+                    el.style.top = `${Math.random() * 80}%`;
+                    el.style.setProperty('--dx', `${(Math.random() * 80 - 40).toFixed(0)}px`);
+                    el.style.setProperty('--dy', `${(-40 - Math.random() * 60).toFixed(0)}px`);
+                    el.style.animationDuration = `${(5 + Math.random() * 4).toFixed(2)}s`;
+                    el.style.animationDelay = `${(i * 0.15 + Math.random()).toFixed(2)}s`;
+                    layer.appendChild(el);
+                });
+                pageEl.appendChild(layer);
+            }
+
+            /**
+             * Entry point called once per injected ad card. Safe to call on
+             * cards that aren't an ad.html page at all (e.g. wiki content) —
+             * it simply finds nothing to enhance and does nothing.
+             */
+            function enhanceAdCard(cardEl) {
+                wireImageFallback(cardEl);
+                const pageEl = cardEl.querySelector('.ad-page');
+                if (!pageEl) return;
+                wireParticles(pageEl);
+                wireMagicText(pageEl);
+            }
+
+            /**
+             * Simple escape to prevent XSS from page names
+             */
+            function escapeHtml(str) {
+                if (!str) return '';
+                const map = {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#039;'
+                };
+                return String(str).replace(/[&<>"']/g, function(m) { return map[m]; });
+            }
+
+            // kick off
+            loadawflmetaPages();
+
+        })();
+    </script>
+
+</body>
+</html>
+
+
+    

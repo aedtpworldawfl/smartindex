@@ -1,0 +1,50 @@
+/* ===================================================================
+   AWFLWIKIWORLD — Skin/AEDTPWORLDPaper.css
+   Developer: AEDTP WORLD
+   Skin Name: AEDTPWORLD Paper (Warm Book / Ink)
+   License: AWFL
+   Version: 2.0 - Double-Locked
+   Palette: 10+5 - Sepia Paper
+   =================================================================== */
+:root {
+    --awfl-header-bg: #F5F1E8!important;       /* 1 warm paper header */
+    --awfl-header-text: #2B2117!important;    /* 2 ink brown black */
+    --awfl-button-bg: #2B2117!important;      /* 3 ink button */
+    --awfl-button-text: #F5F1E8!important;    /* 4 */
+    --awfl-page-text: #3E352A!important;      /* 5 sepia ink text */
+    --awfl-link: #8B4513!important;           /* 6 saddle brown link */
+    --awfl-link-visited: #5D4037!important;   /* 7 dark brown */
+    --awfl-border: #D7CCC8!important;         /* 8 paper border */
+    --awfl-bg: #FDF6E3!important;             /* 9 old paper wash */
+    --awfl-content-bg: #FFFEF9!important;     /* 10 pure paper */
+}
+
+html, body { background: var(--awfl-bg)!important; color: var(--awfl-page-text)!important; font-family: Georgia, "Times New Roman", serif!important; line-height: 1.85!important; font-size: 15px!important; }
+.awfl-body { background: var(--awfl-bg)!important; }
+
+.awfl-header { background: var(--awfl-header-bg)!important; border-bottom: 2px solid #D7CCC8!important; } /* 11 */
+.awfl-header-inner { background: var(--awfl-header-bg)!important; }
+html body .awfl-header a { color: #8B4513!important; -webkit-text-fill-color: #8B4513!important; font-weight: 600!important; } /* 12 */
+
+.awfl-main { background: var(--awfl-content-bg)!important; border: 1px solid var(--awfl-border)!important; box-shadow: 0 2px 12px rgba(62,53,42,0.07)!important; }
+.awfl-footer { background: #2B2117!important; border-top: 3px solid #8B4513!important; }
+.awfl-footer-inner { color: #D7CCC8!important; } /* 13 */
+.awfl-footer a { color: #FFCC80!important; } /* 14 warm yellow on dark */
+
+.infobox { background: #F5F1E8!important; border: 1px solid #BCAAA4!important; }
+.infobox th { background: #2B2117!important; color: #F5F1E8!important; }
+.infobox-title { background: #3E352A!important; color: #FDF6E3!important; }
+table.awfl-datatable th { background: #8B4513!important; color: #FFFFFF!important; }
+
+a { color: var(--awfl-link)!important; }
+a:visited { color: var(--awfl-link-visited)!important; }
+
+::selection { background: #FFCC80!important; color: #2B2117!important; } /* 15 */
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+/* ===================================================================
+   AWFLWIKIWORLD — Skin/AEDTPWORLDAi.css - FIXED VISIBLE
+   Developer: AEDTP WORLD
+   Skin Name: AEDTPWORLD AI FIXED
+   License: AWFL
+   Version: 3.1 - Visibility Fix
+   =================================================================== */
+:root {
+    --awfl-header-bg: #0F0F0F!important;
+    --awfl-header-text: #FAFAFA!important;
+    --awfl-button-bg: #0A84FF!important;
+    --awfl-button-text: #FFFFFF!important;
+    --awfl-page-text: #1D1D1F!important;
+    --awfl-link: #0A84FF!important;
+    --awfl-link-visited: #AF52DE!important;
+    --awfl-border: #E5E5E7!important;
+    --awfl-bg: #F5F5F7!important;
+    --awfl-content-bg: #FFFFFF!important;
+}
+
+html, body { background: var(--awfl-bg)!important; color: var(--awfl-page-text)!important; font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif!important; line-height: 1.8!important; font-size: 15px!important; }
+.awfl-body { background: var(--awfl-bg)!important; }
+
+.awfl-header { background: #0F0F0F!important; border-bottom: 1px solid #1F1F1F!important; }
+.awfl-header::after { content: ''!important; position: absolute!important; bottom: -1px!important; left: 0!important; right: 0!important; height: 1px!important; background: linear-gradient(90deg, transparent, #0A84FF 20%, #AF52DE 50%, #FF375F 80%, transparent)!important; }
+.awfl-header-inner { background: transparent!important; }
+html body .awfl-header a { color: #A1A1A6!important; -webkit-text-fill-color: #A1A1A6!important; }
+html body .awfl-header a:hover { color: #FFFFFF!important; -webkit-text-fill-color: #FFFFFF!important; }
+
+.awfl-main { background: var(--awfl-content-bg)!important; border: 1px solid var(--awfl-border)!important; border-radius: 12px!important; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 12px 40px rgba(0,0,0,0.06)!important; }
+
+/* === FIX FOR YOUR SCREENSHOT === */
+/* 1. MAIN TITLE - was transparent, now SOLID BLACK visible */
+.awfl-main h1, .awfl-page-title, h1#firstHeading {
+    background: none!important;
+    -webkit-background-clip: unset!important;
+    background-clip: unset!important;
+    -webkit-text-fill-color: #0F0F0F!important;
+    color: #0F0F0F!important;
+    font-weight: 800!important;
+    letter-spacing: -0.03em!important;
+}
+
+/* 2. LEFT BEIGE PILL - category/tag */
+.awfl-category, .catlinks, .mw-category, span.awfl-pill, .awfl-tag {
+    background: #FFF3CD!important;
+    color: #1D1D1F!important;
+    border: 1px solid #FFE69C!important;
+}
+.awfl-category a, .catlinks a { color: #1D1D1F!important; -webkit-text-fill-color: #1D1D1F!important; }
+
+/* 3. RIGHT GREY PILL - meta/protected */
+.awfl-meta, .mw-indicators, .page-info, .awfl-badge {
+    background: #E9E9EB!important;
+    color: #1D1D1F!important;
+    border: 1px solid #D2D2D7!important;
+}
+.awfl-meta a { color: #1D1D1F!important; -webkit-text-fill-color: #1D1D1F!important; }
+
+/* FORCE ALL Pills inside main visible */
+.awfl-main .awfl-header-card span, .awfl-main > div > span {
+    color: #1D1D1F!important;
+    -webkit-text-fill-color: #1D1D1F!important;
+    opacity: 1!important;
+}
+
+input[type="search"] { background: #1C1C1E!important; border: 1px solid #2C2C2E!important; color: #FFFFFF!important; }
+input[type="search"]:focus { border-color: #0A84FF!important; box-shadow: 0 0 0 4px rgba(10,132,255,0.2)!important; }
+
+.infobox { background: #FAFAFA!important; border: 1px solid #E5E5E7!important; border-radius: 12px!important; }
+.infobox th { background: #0F0F0F!important; color: #FAFAFA!important; }
+.infobox-title { background: linear-gradient(135deg, #0A84FF, #AF52DE)!important; color: #FFFFFF!important; }
+.awfl-footer { background: #0F0F0F!important; border-top: 1px solid #1F1F1F!important; }
+.awfl-footer-inner { color: #8E8E93!important; }
+.awfl-footer a { color: #0A84FF!important; }
+a { color: var(--awfl-link)!important; }
+
+
+
+
+
+
+
+

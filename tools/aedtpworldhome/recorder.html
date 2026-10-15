@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="AEDTP WORLD HOME Recorder App: Record Voices (Microphone) And System Sounds. A Multihomed Full Of Apps, Productivity, Business, Educational by AEDTP WORLD">
+
+<title>AEDTP WORLD HOME Sound Recorder App</title>
+
+<link rel="icon" type="image/png" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    transition: 0.3s;
+}
+
+body.light {
+    background: #f4f4f4;
+    color: #111;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgba(0,0,0,0.7);
+}
+
+body.light header {
+    background: rgba(255,255,255,0.8);
+}
+
+button {
+    padding: 8px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.container {
+    padding: 15px;
+}
+
+/* Waveform bars */
+#waveform {
+    display: flex;
+    align-items: flex-end;
+    height: 120px;
+    background: #222;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+.bar {
+    width: 4px;
+    margin: 1px;
+    background: lime;
+    height: 10px;
+    transition: height 0.1s;
+}
+
+/* Recordings list */
+#recordings {
+    margin-top: 20px;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div><a href="index.html" style="color:inherit;text-decoration:none;"></a></div>
+    <div>
+        <button onclick="toggleMode()">Toggle Mode</button>
+    </div>
+</header>
+
+<div class="container">
+
+    <h2>Sound Recorder</h2>
+
+    <button onclick="startRecording()">Start Recording</button>
+    <button onclick="stopRecording()">Stop Recording</button>
+
+    <p>
+        Mode:
+        <select id="mode">
+            <option value="mic">Microphone</option>
+            <option value="system">System (if supported)</option>
+            <option value="both">Microphone + System</option>
+        </select>
+    </p>
+
+    <!-- Waveform -->
+    <div id="waveform"></div>
+
+    <!-- Recordings -->
+    <div id="recordings">
+        <h3>Recordings</h3>
+    </div>
+
+</div>
+
+<footer>
+</footer>
+
+<script>
+let mediaRecorder;
+let audioChunks = [];
+let stream;
+let analyser;
+let audioContext;
+let dataArray;
+let animationId;
+
+/* Mode handling */
+async function getStream() {
+    const mode = document.getElementById("mode").value;
+
+    try {
+        if (mode === "mic") {
+            return await navigator.mediaDevices.getUserMedia({ audio: true });
+        } else if (mode === "system") {
+            return await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
+        } else {
+            const mic = await navigator.mediaDevices.getUserMedia({ audio: true });
+            const system = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
+
+            const combined = new MediaStream([
+                ...mic.getAudioTracks(),
+                ...system.getAudioTracks()
+            ]);
+            return combined;
+        }
+    } catch (err) {
+        alert("Recording not supported or permission denied.");
+        throw err;
+    }
+}
+
+/* Waveform visualization */
+function setupVisualizer(stream) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const source = audioContext.createMediaStreamSource(stream);
+    analyser = audioContext.createAnalyser();
+    source.connect(analyser);
+
+    analyser.fftSize = 64;
+    const bufferLength = analyser.frequencyBinCount;
+    dataArray = new Uint8Array(bufferLength);
+
+    const waveform = document.getElementById("waveform");
+    waveform.innerHTML = "";
+
+    for (let i = 0; i < bufferLength; i++) {
+        const bar = document.createElement("div");
+        bar.className = "bar";
+        waveform.appendChild(bar);
+    }
+
+    const bars = document.querySelectorAll(".bar");
+
+    function draw() {
+        animationId = requestAnimationFrame(draw);
+        analyser.getByteFrequencyData(dataArray);
+
+        bars.forEach((bar, i) => {
+            const height = dataArray[i];
+            bar.style.height = height + "px";
+        });
+    }
+
+    draw();
+}
+
+/* Start recording */
+async function startRecording() {
+    stream = await getStream();
+
+    setupVisualizer(stream);
+
+    mediaRecorder = new MediaRecorder(stream);
+    audioChunks = [];
+
+    mediaRecorder.ondataavailable = e => {
+        audioChunks.push(e.data);
+    };
+
+    mediaRecorder.onstop = () => {
+        const blob = new Blob(audioChunks, { type: "audio/webm" });
+        const url = URL.createObjectURL(blob);
+
+        const container = document.getElementById("recordings");
+
+        const audio = document.createElement("audio");
+        audio.controls = true;
+        audio.src = url;
+
+        const downloadBtn = document.createElement("a");
+        downloadBtn.href = url;
+        downloadBtn.download = "recording.webm";
+        downloadBtn.innerText = "Download";
+        downloadBtn.style.display = "block";
+
+        container.appendChild(audio);
+        container.appendChild(downloadBtn);
+    };
+
+    mediaRecorder.start();
+}
+
+/* Stop recording */
+function stopRecording() {
+    if (mediaRecorder && mediaRecorder.state !== "inactive") {
+        mediaRecorder.stop();
+    }
+
+    if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+    }
+
+    cancelAnimationFrame(animationId);
+}
+
+/* Toggle light/dark mode */
+function toggleMode() {
+    document.body.classList.toggle("light");
+}
+</script>
+
+</body>
+</html>

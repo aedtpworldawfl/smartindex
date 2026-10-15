@@ -1,0 +1,95 @@
+/* ===================================================================
+   AWFLWIKIWORLD — AEDTP WORLD Wiki engine:Skin/Vector2022Dark.css
+   Developer: AEDTP WORLD
+   Skin Name: Vector2022 Dark (True Wiki Dark)
+   License: AEDTP WORLD FREE LICENSE (AWFL)
+   Version: 2.0 - Double-Locked Template
+   Palette: 10+5 colors - True Dark - Wikipedia Dark Mode
+
+   ⚠️  DO NOT DELETE THIS FILE:
+
+   1. Part of AWFLWIKIWORLD engine skin pack.
+   2. If deleted, engine falls back to assets/site.css (no crash).
+   3. Keep it - users expect true Wikipedia dark besides EyeEase skins.
+   4. This is TRUE DARK #101418 - not soft EyeEase, pure wiki dark.
+   5. Double-locked with !important on :root + properties to WIN over
+      site.css, same template as Vector2022 light.
+
+   Best for: OLED, night wiki lovers, true dark mode
+   Install More: https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/Skins
+   © 2026 AEDTP WORLD - All Rights Reserved
+   =================================================================== */
+
+/* ---- 10 Root Colors ---- */
+:root {
+    --awfl-header-bg: #101418!important;      /* true dark header */
+    --awfl-header-text: #E8EAED!important;    /* off-white header text */
+    --awfl-button-bg: #2A3038!important;      /* dark gray button */
+    --awfl-button-text: #E8EAED!important;
+    --awfl-page-text: #E3E6E8!important;      /* light gray text */
+    --awfl-link: #8AB4F8!important;           /* google wiki dark blue */
+    --awfl-link-visited: #C58AF9!important;   /* soft purple visited */
+    --awfl-border: #3C4043!important;         /* dark border */
+    --awfl-bg: #101418!important;             /* main true dark */
+    --awfl-content-bg: #1A1D21!important;     /* content slightly lighter */
+}
+
+/* ---- Double-Lock ---- */
+html, body {
+    background: var(--awfl-bg)!important;
+    color: var(--awfl-page-text)!important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif!important;
+    line-height: 1.7!important;
+    font-size: 14.4px!important;
+    -webkit-font-smoothing: antialiased!important;
+}
+
+.awfl-body { background: var(--awfl-bg)!important; }
+
+.awfl-header {
+    background: var(--awfl-header-bg)!important;
+    color: var(--awfl-header-text)!important;
+    border-bottom: 1px solid var(--awfl-border)!important;
+}
+
+.awfl-header-inner { background: var(--awfl-header-bg)!important; }
+.awfl-header a { color: var(--awfl-header-text)!important; }
+
+.awfl-main {
+    background: var(--awfl-content-bg)!important;
+    border: 1px solid var(--awfl-border)!important;
+    box-shadow: none!important;
+}
+
+.awfl-footer {
+    background: #101418!important; /* 11th */
+    border-top: 1px solid var(--awfl-border)!important;
+}
+
+.awfl-footer-inner { color: #9AA0A6!important; } /* 12th */
+.awfl-footer a { color: #8AB4F8!important; }
+
+.infobox {
+    background: #202124!important; /* 13th */
+    border: 1px solid var(--awfl-border)!important;
+    color: var(--awfl-page-text)!important;
+}
+
+.infobox th { background: #2D2E30!important; } /* 14th */
+.infobox-title { background: #303134!important; color: #E8EAED!important; } /* 15th */
+
+table.awfl-datatable th { background: #2A3038!important; color: #E8EAED!important; }
+table.awfl-datatable td { background: var(--awfl-content-bg)!important; border-color: var(--awfl-border)!important; }
+
+a { color: var(--awfl-link)!important; }
+a:visited { color: var(--awfl-link-visited)!important; }
+
+::selection { background: #3C4043!important; color: #E8EAED!important; }
+
+
+
+
+
+
+
+

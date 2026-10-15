@@ -1,0 +1,292 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AEDTP WORLD HOME Notepad App</title>
+
+<meta name="description" content="AEDTP WORLD HOME Notepad App: Take Notes, Save Texts, Open Files, Use Text Files Free. A Multihomed Full Of Apps, Productivity, Business, Educational by AEDTP WORLD">
+
+<!-- Icons -->
+<link rel="icon" type="image/png" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+
+<style>
+/* AEDTP WORLD + BASE */
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #fdf6ee;
+  color: #000;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dark {
+  background: #121212;
+  color: #fff;
+}
+
+/* HEADER */
+header {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: bold;
+}
+
+.home-btn {
+  position: absolute;
+  left: 15px;
+  cursor: pointer;
+}
+
+/* TOOLBAR */
+.toolbar {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+}
+
+button {
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* MAIN EDITOR */
+.editor-container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* TEXT AREA */
+textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+  outline: none;
+  padding: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background: transparent;
+  color: inherit;
+}
+
+/* SIDE PANEL */
+.side {
+  width: 200px;
+  border-left: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.side h4 {
+  margin: 10px;
+}
+
+/* RECENT LIST */
+.recent-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.recent-item:hover {
+  background: #ddd;
+}
+
+.dark .recent-item:hover {
+  background: #333;
+}
+
+/* FOOTER */
+footer {
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* TOGGLE */
+.toggle {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  padding: 8px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="home-btn" onclick="goHome()"></div>
+  NOTEPAD
+</header>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <button onclick="newFile()">New</button>
+  <button onclick="openFile()">Open File</button>
+  <button onclick="saveFile()">Save</button>
+  <button onclick="copyAll()">Copy All</button>
+
+
+</div>
+
+<!-- MAIN -->
+<div class="editor-container">
+
+  <!-- TEXT AREA -->
+  <textarea id="editor" placeholder="Start typing your notes..."></textarea>
+
+  <!-- RECENT FILES -->
+  <div class="side">
+    <h4>Recent</h4>
+    <div id="recentList"></div>
+  </div>
+
+</div>
+
+<div class="toggle" onclick="toggleMode()">Light/Dark</div>
+
+<footer></footer>
+
+<script>
+const editor = document.getElementById("editor");
+const recentList = document.getElementById("recentList");
+
+/* NEW */
+function newFile(){
+  if(confirm("Clear current note?")){
+    editor.value = "";
+  }
+}
+
+/* OPEN */
+function openFile(){
+  const input = document.createElement("input");
+  input.type = "file";
+  input.accept = ".txt,.aedtpworld,.md,.json,.html,.css,.js,.xml,.csv,.log,.ini,.yml,.py,.java,.c,.cpp,.php,.sql";
+
+  input.onchange = e => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      editor.value = reader.result;
+      saveRecent(file.name, reader.result);
+    };
+    reader.readAsText(file);
+  };
+
+  input.click();
+}
+
+/* SAVE */
+function saveFile(){
+  const text = editor.value;
+  const blob = new Blob([text], {type: "text/plain"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "note.txt";
+  a.click();
+}
+
+
+
+
+// Copy all code
+function copyAll(){
+  navigator.clipboard.writeText(editor.value).then(() => {
+    status.textContent = "Copied all code to clipboard";
+  }).catch(() => {
+    status.textContent = "Clipboard copy failed";
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RECENT STORAGE */
+function saveRecent(name, content){
+  let recent = JSON.parse(localStorage.getItem("recentFiles") || "[]");
+
+  recent.unshift({name, content});
+  recent = recent.slice(0, 5);
+
+  localStorage.setItem("recentFiles", JSON.stringify(recent));
+  loadRecent();
+}
+
+function loadRecent(){
+  let recent = JSON.parse(localStorage.getItem("recentFiles") || "[]");
+  recentList.innerHTML = "";
+
+  recent.forEach(file=>{
+    const div = document.createElement("div");
+    div.className = "recent-item";
+    div.textContent = file.name;
+
+    div.onclick = () => {
+      editor.value = file.content;
+    };
+
+    recentList.appendChild(div);
+  });
+}
+
+loadRecent();
+
+/* NAVIGATION */
+function goHome(){
+  window.location.href = "index.html";
+}
+
+/* THEME */
+function toggleMode(){
+  document.body.classList.toggle("dark");
+}
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+

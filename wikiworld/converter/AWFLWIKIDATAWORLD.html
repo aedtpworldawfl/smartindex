@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWFLWIKIDATAWORLD — AWFLWIKIWORLD</title>
+<meta name="description" content="AWFLWIKIDATAWORLD AWFLWIKIDATAWORLD is the full documentation of AWFLWIKIWORLD WIKIDATA v25.4, a free, open, flat-file &quot;wikidata&quot; (structured knowledge base) pu...">
+<meta name="author" content="AEDTP WORLD">
+<meta name="license" content="AEDTP WORLD FREE LICENSE (AWFL)">
+<link rel="canonical" href="https://aedtpworld.com/wikiworld/AWFLWIKIDATAWORLD">
+<meta property="og:title" content="AWFLWIKIDATAWORLD">
+<meta property="og:description" content="AWFLWIKIDATAWORLD AWFLWIKIDATAWORLD is the full documentation of AWFLWIKIWORLD WIKIDATA v25.4, a free, open, flat-file &quot;wikidata&quot; (structured knowledge base) pu...">
+<meta property="og:url" content="https://aedtpworld.com/wikiworld/AWFLWIKIDATAWORLD">
+<meta property="og:image" content="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<link rel="icon" href="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<link rel="stylesheet" href="https://aedtpworld.com/wikiworld/assets/site.css">
+<link rel="stylesheet" href="https://aedtpworld.com/wikiworld/skins/vector2022.css">
+<style>.awfl-converted{max-width:1100px;margin:0 auto;padding:16px}.awfl-converted .awfl-article:after{content:"";display:block;clear:both}.awfl-converted img{max-width:100%}.awfl-categories{margin-top:24px;padding-top:10px;border-top:1px solid #a2a9b1;font-size:.9em}</style>
+</head>
+<body>
+<div class="awfl-wrapper">
+<main class="awfl-main awfl-converted">
+<p><a href="https://aedtpworld.com/wikiworld/"><img src="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg" alt="" style="height:28px;width:auto;vertical-align:middle"> AWFLWIKIWORLD</a></p>
+<div class="awfl-page-titlebar"><h1>AWFLWIKIDATAWORLD</h1></div>
+<article class="awfl-article"><!--AWFL-ARTICLE-START--><table class="infobox"><tr><th class="infobox-title" colspan="2">AWFLWIKIDATAWORLD</th></tr><tr><th>Product</th><td>AWFLWIKIWORLD WIKIDATA</td></tr><tr><th>Version</th><td>25.4 (asset cache-buster v=2541)</td></tr><tr><th>Publisher</th><td>AEDTP WORLD (https://aedtpworld.com)</td></tr><tr><th>License</th><td>AEDTP WORLD FREE LICENSE (AWFL)</td></tr><tr><th>Runtime</th><td>PHP 7.2 or newer, plain JavaScript and CSS</td></tr><tr><th>Database</th><td>None, flat JSON and TXT files in wiki/</td></tr><tr><th>Web server</th><td>Apache with mod_rewrite</td></tr><tr><th>Default URL</th><td>https://aedtpworld.com/wikidata</td></tr><tr><th>Package</th><td>44 files, about 260 KB unpacked</td></tr></table>
+<h1>AWFLWIKIDATAWORLD</h1>
+<p><strong>AWFLWIKIDATAWORLD</strong> is the full documentation of <strong>AWFLWIKIWORLD WIKIDATA v25.4</strong>, a free, open, flat-file &quot;wikidata&quot; (structured knowledge base) published by <strong>AEDTP WORLD</strong> under the <strong>AEDTP WORLD FREE LICENSE (AWFL)</strong>. Tagline: <em>Discover And Connect.</em></p>
+<p>This page is written in AWFLWIKITEXT, the markup language of AWFLWIKIWORLD. See also <a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD">AWFLWIKIWORLD</a>, the sister wiki engine, and <a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD/AWFLWIKITEXT">AWFLWIKIWORLD/AWFLWIKITEXT</a>.</p>
+<h2>1. Overview</h2>
+The software lets anyone create and edit <strong>items</strong> (identified as <code>Q1</code>, <code>Q2</code>, <code>Q3</code> and so on), in the style of Wikidata. Each item has:
+<ul>
+<li>a <strong>name</strong> (label) and a short <strong>description</strong></li>
+<li><strong>aliases</strong> (alternative names)</li>
+<li><strong>images</strong> (uploaded files or external URLs)</li>
+<li><strong>statements</strong> (property and value pairs, for example <code>country</code> = <code>Q5</code>)</li>
+<li><strong>identifiers</strong> (links to external databases such as IMDb, Spotify, GitHub)</li>
+</ul>
+<p>Besides items there is one special page, the <strong>Main_Page</strong>, which is free-form HTML editable only by the admin.</p>
+<h3>1.1 Key characteristics</h3>
+<ul>
+<li><strong>No database.</strong> Everything is stored as human-readable JSON and TXT, written atomically and guarded by a file lock.</li>
+<li><strong>Controlled vocabulary.</strong> Users may only choose properties from <code>label.txt</code> and identifiers from <code>id.txt</code>; the admin curates both lists.</li>
+<li><strong>Public editing with safeguards.</strong> Anyone can create or edit items, protected by CSRF tokens, a question-and-answer captcha, upload validation and per-IP rate limiting. The admin can protect items from public edits.</li>
+<li><strong>Public recent-changes log</strong> with character-count differences.</li>
+<li><strong>SEO-ready.</strong> Canonical URLs, Open Graph and Twitter meta tags, JSON-LD (schema.org), and automatic multi-file sitemaps.</li>
+<li><strong>Six export formats</strong> per item: HTML, TXT, Markdown, JSON, AEDTPWORLD, PDF.</li>
+<li><strong>Admin backup history</strong> with one snapshot per Q and one-click restore.</li>
+<li><strong>Responsive UI</strong> with a card layout for tables on phones and a print stylesheet.</li>
+</ul>
+<h2>2. Requirements and installation</h2>
+<h3>2.1 Requirements</h3>
+<ul>
+<li>Apache (or compatible) with <code>mod_rewrite</code> and <code>AllowOverride All</code>.</li>
+<li>PHP 7.2 or newer (<code>mb_chr</code> is required) with the extensions mbstring, iconv, fileinfo (for <code>mime_content_type</code>), exif, image support for <code>getimagesize</code>, and session.</li>
+<li>A directory writable by the PHP user. The app creates <code>wiki/</code>, <code>includes/</code> and <code>wiki/uploads/</code> if missing (mode 0755).</li>
+</ul>
+<h3>2.2 Steps</h3>
+<ol>
+<li>Upload the <code>wikidata</code> folder to your web root, for example https://yourdomain.com/wikidata</li>
+<li>Edit <code>config.php</code>: set <code>$Server</code> to your public URL (no trailing slash), <code>$Logo</code> to your logo URL, and <code>$Sitename</code>, <code>$MetaTitle</code>, <code>$MetaDescription</code> as you like.</li>
+<li>Change <code>$Username</code> and <code>$Password</code>. The shipped defaults are <code>admin</code> and <code>adminpassword</code>, marked &quot;CHANGE THIS&quot; in the file.</li>
+<li>Make sure the folder is writable by PHP.</li>
+<li>Open <code>/dashboard.php</code>, log in, and click <strong>Rebuild sitemap</strong>.</li>
+<li>Visit the site root. The first request auto-creates any missing default files (see section 10).</li>
+</ol>
+<blockquote>
+Security warning: the admin credentials are stored in plain text in <code>config.php</code>. Change them before going live and keep the file out of version control.
+</blockquote>
+<h2>3. Package layout</h2>
+<pre><code>wikidata/
+  .htaccess            URL rewrite rules (sitemaps, /Q42 routing)
+  config.php           Master config + all shared functions
+  index.php            Router, Main_Page and item pages, exports, live search
+  create.php           Create a new item
+  edit.php             Edit an existing item
+  search.php           Full search page + live-search endpoint
+  recent.php           Public recent-changes list (latest 100)
+  dashboard.php        Admin login and control panel
+  history.php          Admin backup history and restore
+  upload.php           Image upload (form and AJAX endpoint)
+  sitemap.php          Dynamic sitemap index / chunks
+  includes/
+    .htaccess          Denies direct access to *.php
+    header.php         HTML head, SEO meta, JSON-LD, navigation
+    footer.php         Footer and site.js loader
+    form.php           Item form: validation (parse_post) and rendering
+    export.php         HTML/TXT/MD/JSON/AEDTPWORLD/PDF exporters
+    pdf.php            Minimal built-in PDF writer
+    site.css           Stylesheet (96 lines)
+    site.js            Live search + dynamic form widgets
+    index.html         Empty (blocks directory listing)
+  wiki/                DATA DIRECTORY (flat files)
+    .htaccess          Denies web access to txt, json, lock, log, tmp
+    q.txt              List of existing Q ids
+    name.txt           Q -&gt; name
+    description.txt    Q -&gt; description
+    value.txt          Q -&gt; list of statements
+    aliases.json       Q -&gt; list of aliases
+    images.json        Q -&gt; list of images
+    identifiers.json   Q -&gt; {identifier name: full URL}
+    label.txt          Allowed property names (26 defaults)
+    id.txt             Allowed identifier names + link prefixes (23 defaults)
+    icon.txt           Keyword -&gt; emoji (463 entries)
+    country_flag.json  Country name -&gt; ISO code (455 entries)
+    colors.json        Theme colors
+    settings.json      Runtime settings (upload_enabled)
+    security.txt       Captcha questions &quot;question|answer&quot;
+    protected.json     Protected Q list
+    recent.json        Public change log (max 1000 rows)
+    history.json       Admin backups (one per Q)
+    views.json         View counters
+    lastmod.json       Last-modified timestamps
+    Main_Page.txt      Main page HTML
+    index.html         Empty
+    uploads/           Uploaded images (+ .htaccess, index.html)</code></pre>
+<h2>4. Configuration (config.php)</h2>
+<code>config.php</code> is the master file: every page requires it. It holds settings, default-file generation, storage helpers and almost all business logic.
+<h3>4.1 Settings variables</h3>
+<ul>
+<li><code>$Sitename</code>: name shown in the header and footer. Default &quot;AWFLWIKIWORLD WIKIDATA&quot;.</li>
+<li><code>$MetaTitle</code>: suffix used in page titles. Default &quot;AWFLWIKIWORLD WIKIDATA&quot;.</li>
+<li><code>$MetaDescription</code>: default meta description. Default &quot;A free, open wikidata by AEDTP WORLD. Discover And Connect.&quot;</li>
+<li><code>$Server</code>: public base URL without a trailing slash. Default https://aedtpworld.com/wikidata</li>
+<li><code>$Logo</code>: logo, favicon and default Open Graph image. Default <img src="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg" style="width:250px !important;height:auto;" alt=""></li>
+<li><code>$Username</code>: admin username. Default <code>admin</code>.</li>
+<li><code>$Password</code>: admin password. Default <code>adminpassword</code>. Change it.</li>
+<li><code>$route</code>: URL style. &quot;0&quot; gives <code>index.php?title=Q1</code>; &quot;1&quot; (default) gives <code>/Q1</code> and also <code>/wiki/Q1</code>.</li>
+<li><code>$upload_enabled</code>: default for public upload (false). The live value is read from <code>wiki/settings.json</code>, controlled by the dashboard toggle.</li>
+</ul>
+<p>The timezone is fixed to UTC. Derived paths are <code>$base</code>, <code>$wikiDir</code>, <code>$incDir</code> and <code>$upDir</code>.</p>
+<h3>4.2 Bootstrapping</h3>
+On every request <code>config.php</code>:
+<ol>
+<li>creates missing directories;</li>
+<li>writes any <strong>missing</strong> default file (existing files are never overwritten);</li>
+<li>starts a session with cookie flags HttpOnly, SameSite=Lax, and Secure when on HTTPS;</li>
+<li>loads <code>settings.json</code> to override <code>$upload_enabled</code>.</li>
+</ol>
+<h3>4.3 Function reference</h3>
+<h4>Storage and locking</h4>
+<ul>
+<li><code>h($s)</code>: HTML-escape (UTF-8, quotes).</li>
+<li><code>jread($file,$default)</code>: read and decode a JSON file from <code>wiki/</code>, cached per request.</li>
+<li><code>atomic_write($path,$data)</code>: write to a temp file, then <code>rename()</code>; falls back to a locked direct write.</li>
+<li><code>jwrite($file,$data)</code>: pretty-printed, unescaped-Unicode JSON atomic write; updates the cache.</li>
+<li><code>with_lock($fn)</code>: clears caches, takes an exclusive <code>flock</code> on <code>wiki/.lock</code>, runs the callback, releases. All writes go through it.</li>
+<li><code>client_ip()</code> and <code>mask_ip($ip)</code>: visitor IP, and its masked public form (a.b.c.x, or a:b:c::x for IPv6).</li>
+<li><code>now_str()</code>: UTC timestamp, format Y-m-d H:i.</li>
+</ul>
+<h4>Icons and flags</h4>
+<ul>
+<li><code>flag_from_code($code)</code>: converts a 2-letter ISO code to a flag emoji.</li>
+<li><code>get_icon($val)</code>: returns an emoji plus a space. Order: exact match in <code>icon.txt</code>; exact match in <code>country_flag.json</code>; for strings up to 80 characters, a whole-word search for any country name (longest names first). Otherwise an empty string.</li>
+</ul>
+<h4>IDs and URLs</h4>
+<ul>
+<li><code>valid_q($q)</code>: matches Q followed by digits.</li>
+<li><code>norm_title($t)</code>: normalises input to <code>Main_Page</code> (accepts &quot;main page&quot; and &quot;main_page&quot;), an upper-case Q id, or null.</li>
+<li><code>build_item_url($id)</code>: canonical URL (depends on <code>$route</code>); used in sitemaps, canonical tags and exports.</li>
+<li><code>q_url($id)</code>: internal link, always <code>index.php?title=Qn</code>.</li>
+<li><code>upload_url($name)</code>: full URL for an uploaded file; passes full http(s) URLs through unchanged.</li>
+</ul>
+<h4>Item list</h4>
+<ul>
+<li><code>q_list()</code>, <code>q_save($list)</code>, <code>q_next()</code> (highest number plus one), <code>item_exists($q)</code>.</li>
+</ul>
+<h4>Properties and identifiers</h4>
+<ul>
+<li><code>label_names()</code>, <code>canonical_label($p)</code> (case-insensitive match returning the canonical spelling), <code>label_for($p)</code>.</li>
+<li><code>id_map()</code>, <code>canonical_id_name($n)</code>.</li>
+</ul>
+<h4>Items</h4>
+<ul>
+<li><code>item_get($q)</code>: assembles an item with q, name, desc, aliases, images, claims, ids, protected.</li>
+<li><code>item_text_size($it)</code>: character count of all text; used for the change difference.</li>
+<li><code>map_set($file,$q,$val)</code>: sets or removes (when empty) one Q&#039;s entry in a map file.</li>
+<li><code>item_write($q,$it)</code>: raw write to all data files, adds the Q to <code>q.txt</code>, updates <code>lastmod.json</code>. The caller holds the lock.</li>
+<li><code>empty_item($q)</code>: blank item structure.</li>
+<li><code>item_commit($q,$new,$comment,$isNew)</code>: locked write, logs the recent change, snapshots history if admin, may rebuild the sitemap.</li>
+<li><code>item_delete($q)</code>: removes the Q from every file, logs &quot;deleted&quot;, rebuilds the sitemap.</li>
+</ul>
+<h4>Main page, logging, history, views</h4>
+<ul>
+<li><code>main_get()</code> and <code>main_save($text,$comment)</code>.</li>
+<li><code>recent_log($id,$diff,$comment)</code>: prepends a row to <code>recent.json</code> (kept to 1000). Admin edits show &quot;admin&quot;; others show the masked IP, and the full IP is stored for the admin only.</li>
+<li><code>history_snapshot($id)</code>, <code>history_restore($id)</code>, <code>history_stats()</code>: see section 7.</li>
+<li><code>views_get($id)</code> and <code>views_hit($id)</code>: count <strong>one view per IP per page per hour</strong> (hashed key in <code>views_ip.json</code>); HEAD requests are not counted.</li>
+</ul>
+<h4>Search and rendering</h4>
+<ul>
+<li><code>search_items($term,$limit)</code>: ranking is described in section 6.5.</li>
+<li><code>render_results($ids)</code>, <code>render_value($v,$prop)</code>, <code>render_gallery($images,$alt)</code>, <code>id_display($name,$url)</code>, <code>ext_icon()</code>.</li>
+</ul>
+<h4>Auth, CSRF, captcha, sitemap</h4>
+<ul>
+<li><code>is_admin()</code>, <code>csrf_token()</code>, <code>csrf_field()</code>, <code>csrf_ok()</code>.</li>
+<li><code>captcha_lines()</code>, <code>captcha_question()</code>, <code>captcha_ok()</code>: see section 8.3.</li>
+<li><code>sitemap_entries()</code>, <code>sitemap_chunks()</code>, <code>sitemap_build()</code>, <code>sitemap_maybe()</code>: see section 9.2.</li>
+</ul>
+<h2>5. Data model and file formats</h2>
+All files live in <code>wiki/</code>. JSON is written pretty-printed with unescaped Unicode and slashes.
+<ul>
+<li><code>q.txt</code>: one Q id per line. Example: Q1</li>
+<li><code>name.txt</code>: JSON object, Q to name. Example: <code>{&quot;Q1&quot;:&quot;Universe&quot;}</code></li>
+<li><code>description.txt</code>: JSON object, Q to description. Example: <code>{&quot;Q1&quot;:&quot;totality of space and time&quot;}</code></li>
+<li><code>value.txt</code>: JSON object, Q to a list of objects with keys p (property) and v (value). Example: <code>{&quot;Q1&quot;:[{&quot;p&quot;:&quot;instance of&quot;,&quot;v&quot;:&quot;concept&quot;}]}</code></li>
+<li><code>aliases.json</code>: Q to a list of strings. Example: <code>{&quot;Q1&quot;:[&quot;cosmos&quot;,&quot;the universe&quot;]}</code></li>
+<li><code>images.json</code>: Q to a list of file names or URLs.</li>
+<li><code>identifiers.json</code>: Q to an object of identifier name and full URL.</li>
+<li><code>label.txt</code>: object of property name and display label (26 defaults).</li>
+<li><code>id.txt</code>: object of identifier name and link prefix (23 defaults).</li>
+<li><code>icon.txt</code>: object of lower-case keyword and emoji (463 entries).</li>
+<li><code>country_flag.json</code>: object of lower-case country name and ISO 3166 code (455 entries, including official long names).</li>
+<li><code>colors.json</code>: six hex colors: header, headerText, button, buttonText, wikiText, links.</li>
+<li><code>settings.json</code>: runtime settings. Example: <code>{&quot;upload_enabled&quot;:false}</code></li>
+<li><code>security.txt</code>: one question and answer per line, separated by a vertical bar.</li>
+<li><code>protected.json</code>: list of protected Qs.</li>
+<li><code>recent.json</code>: list, newest first, max 1000 rows, with keys Q, time, ts, by, ip, diff, comment.</li>
+<li><code>history.json</code>: Q to an object with statements, identifiers, time, by (admin backups).</li>
+<li><code>views.json</code>: Q to view count.</li>
+<li><code>lastmod.json</code>: Q or Main_Page to a Unix timestamp.</li>
+<li><code>Main_Page.txt</code>: raw HTML of the main page.</li>
+<li>Created at runtime: <code>views_ip.json</code> (hashed IP and page keys, pruned after one hour), <code>upload_rate.json</code> (per-IP upload timestamps), <code>.lock</code> (lock file for <code>flock</code>).</li>
+</ul>
+<h3>5.1 Item field limits (includes/form.php)</h3>
+<ul>
+<li>Name: 200 characters (<code>LIM_NAME</code>)</li>
+<li>Description: 100 characters (<code>LIM_DESC</code>)</li>
+<li>Each alias: 60 characters (<code>LIM_ALIAS</code>)</li>
+<li>Aliases per item: 30 (<code>LIM_ALIASES</code>)</li>
+<li>Images per item: 20 (<code>LIM_IMAGES</code>)</li>
+<li>Statements per item: 100 (<code>LIM_CLAIMS</code>)</li>
+<li>Identifiers per item: 100 (<code>LIM_IDS</code>)</li>
+<li>Statement value: 1000 characters (<code>LIM_VALUE</code>)</li>
+<li>URL or identifier: 500 characters (<code>LIM_URL</code>)</li>
+<li>Edit summary: 200 characters</li>
+</ul>
+<h3>5.2 Statement values</h3>
+A statement value can be:
+<ul>
+<li><strong>Plain text</strong>, for example <code>concept</code>.</li>
+<li><strong>A Q-id</strong>, typed as <code>q5</code> or <code>Q5</code> and normalised to upper case. It is shown as a clickable pill with the target item&#039;s name, for example &quot;Human (Q5)&quot;. If the target does not exist, the pill is red (&quot;missing&quot;).</li>
+<li><strong>A URL</strong> starting with http:// or https://, shown as an external link with rel=&quot;noopener noreferrer nofollow ugc&quot;.</li>
+</ul>
+<p>Duplicate property and value pairs are removed (case-insensitive). Values matching an icon or a country name get an emoji prefix.</p>
+<h3>5.3 Identifiers</h3>
+Users enter only the <strong>username or ID</strong>, never the link. The app builds the URL as the prefix plus the URL-encoded value (slashes kept). Rules:
+<ul>
+<li>The identifier name must exist in <code>id.txt</code> and have a valid http(s) prefix.</li>
+<li>The value may not contain whitespace or look like a link (http:, www., or a slash-colon-slash pattern).</li>
+<li>For prefixes ending in <code>@</code> (for example the YouTube prefix), a leading <code>@</code> typed by the user is stripped.</li>
+<li>At most 150 characters for the ID and 500 for the final URL, which must pass <code>FILTER_VALIDATE_URL</code>.</li>
+</ul>
+<h3>5.4 Images</h3>
+An image entry must be either a full http(s) URL (3 to 500 characters, no spaces and none of the characters <code>&lt; &gt; &quot; &#039;</code>) or the name of a file that already exists in <code>wiki/uploads/</code> and matches <code>^[a-f0-9]{6}_[a-z0-9_-]{0,40}\.(jpg|png|webp)$</code>.
+<h3>5.5 Example records</h3>
+<pre><code>// recent.json (one row)
+{&quot;Q&quot;:&quot;Q7&quot;,&quot;time&quot;:&quot;2026-10-03 04:34&quot;,&quot;ts&quot;:1790000040,&quot;by&quot;:&quot;203.0.113.x&quot;,&quot;ip&quot;:&quot;203.0.113.9&quot;,&quot;diff&quot;:57,&quot;comment&quot;:&quot;created&quot;}
+
+// history.json (one entry)
+&quot;Q7&quot;: {
+  &quot;statements&quot;: {&quot;name&quot;:&quot;Ghana&quot;,&quot;description&quot;:&quot;country in West Africa&quot;,&quot;aliases&quot;:[&quot;GH&quot;],&quot;image&quot;:[],&quot;claims&quot;:[{&quot;p&quot;:&quot;capital&quot;,&quot;v&quot;:&quot;Accra&quot;}]},
+  &quot;identifiers&quot;: {&quot;Wikipedia&quot;:&quot;https://en.wikipedia.org/wiki/Ghana&quot;},
+  &quot;time&quot;: &quot;2026-10-03 04:40&quot;,
+  &quot;by&quot;: &quot;admin&quot;
+}</code></pre>
+<h2>6. Pages and features</h2>
+<h3>6.1 Routing (.htaccess and index.php)</h3>
+Rewrite rules apply only when the request is not an existing file or directory:
+<ul>
+<li><code>/sitemap.xml</code> goes to <code>sitemap.php</code>.</li>
+<li><code>/sitemap-N.xml</code> goes to <code>sitemap.php?n=N</code>.</li>
+<li><code>/Q123</code>, <code>/wiki/Q123</code> and <code>/Main_Page</code> (optional trailing slash) go to <code>index.php?title=...</code>.</li>
+</ul>
+<p><code>index.php</code> resolves the id from <code>?title=</code> or from the request path; with no title it shows the Main Page. Unknown or deleted items return <strong>HTTP 404</strong> with noindex, follow, and links to create the item.</p>
+<h3>6.2 Main Page</h3>
+<ul>
+<li>Shows the admin-edited HTML (<code>Main_Page.txt</code>), the export bar, the 20 newest items with the total count, and buttons for Create Item and Recent changes.</li>
+<li>The admin can open <code>?title=Main_Page&amp;action=edit</code> to edit the HTML (any HTML allowed, admin only) with an edit summary. Saving is a CSRF-protected POST; non-admins are redirected silently.</li>
+</ul>
+<h3>6.3 Item page</h3>
+Shows the name with emoji and Q id, a &quot;protected&quot; tag if applicable, the view count, description, aliases (&quot;Also known as&quot;), an image gallery (3 columns on wide screens), the export bar, an Edit button (hidden for protected items unless admin), the <strong>Statements</strong> table and the <strong>Identifiers</strong> table (links open in a new tab with an external-link icon).
+<p>Each page sets the title, description, canonical link, Open Graph and Twitter tags, a page-level JSON-LD Thing (name, description, alternateName, image, and sameAs from identifiers) and a Last-Modified header (not sent to admins).</p>
+<h3>6.4 Create and edit (create.php, edit.php, includes/form.php)</h3>
+<ul>
+<li><code>create.php</code> assigns the next free Q number inside a lock, writes the item, logs &quot;created&quot; (or your summary), snapshots to history if the editor is admin, rebuilds the sitemap if stale, then redirects to the new item.</li>
+<li><code>edit.php?title=Qn</code> returns to the home page if the item does not exist. For <strong>protected</strong> items it shows a 403 page to non-admins.</li>
+<li>The form has: Name (required), Description, dynamic rows for Aliases, Images (live thumbnail and optional Upload button), Statements (property combo box and value), Identifiers (identifier combo box and username/ID), an Edit summary, and the captcha question for non-admins.</li>
+<li>On a validation error the form is shown again with all messages and the input preserved.</li>
+<li><strong>Combo boxes</strong> (site.js) show 7 matches, filter as you type, expand with &quot;More (N more)...&quot;, and support arrow keys, Enter and Escape. A value not in the list turns the field red and blocks submit.</li>
+</ul>
+<h3>6.5 Search</h3>
+<ul>
+<li><strong>Live search</strong> in the header: after 200 ms of typing it calls <code>index.php?live=1&amp;q=...</code> and shows up to 8 results under the header.</li>
+<li><strong>Search page</strong> <code>/search.php?q=...</code> shows up to 100 results (noindex, follow).</li>
+<li>Ranking, lower is better, with newest items winning ties: 0 exact Q id or exact name; 1 name starts with the term; 2 name contains the term; 3 an alias contains the term; 4 the description contains the term; 5 the Q id contains the term.</li>
+<li>Results show a thumbnail (first image) or a letter avatar, the name with icon, the Q id and the description.</li>
+</ul>
+<h3>6.6 Recent changes (recent.php)</h3>
+A public table of the latest 100 edits: item, change (green +N or red -N characters), time (UTC), editor and summary. Editors appear as masked IPs; logged-in admins see full IPs, and admin edits show &quot;admin&quot;. The log keeps 1000 rows. The page is noindex, follow.
+<h3>6.7 Upload (upload.php)</h3>
+Accepts JPEG, PNG and WebP up to <strong>2 MB</strong>. Public upload must be switched ON in the dashboard (the admin can always upload). The same endpoint serves the standalone form and the AJAX upload button in the editor, returning JSON with ok, name and url, or ok false with an error. Validation is described in section 8.4. On success the stored file name (for example <code><img src="https://aedtpworld.com/wikiworld/images/a1b2c3_photo.jpg" style="width:250px !important;height:auto;" alt=""></code>) goes into the Images field.
+<h3>6.8 Exports</h3>
+Every item and the Main Page can be exported from the buttons on the page or directly with <code>?title=Q1&amp;export=FORMAT</code>. Responses are downloads with <code>X-Robots-Tag: noindex</code>.
+<ul>
+<li><strong>HTML</strong> (<code>html</code>, text/html): standalone styled page with canonical link, statement and identifier tables, image grid.</li>
+<li><strong>TXT</strong> (<code>txt</code>, text/plain): title, description, aliases, URL, statements, identifiers, images, source line.</li>
+<li><strong>Markdown</strong> (<code>md</code>, text/markdown): headings, statements table (pipes escaped), links for Q-values and identifiers, images.</li>
+<li><strong>JSON</strong> (<code>json</code>, application/json): the export model below.</li>
+<li><strong>AEDTPWORLD</strong> (<code>aedtpworld</code>, application/json): the JSON wrapped with format &quot;aedtpworld&quot;, version &quot;1.0&quot;, generator, export time, license and the item.</li>
+<li><strong>PDF</strong> (<code>pdf</code>, application/pdf): built-in text-only A4 PDF writer, multi-page, Helvetica (Windows-1252 text).</li>
+</ul>
+<p>A &quot;Print as PDF&quot; button also opens the browser print dialog; the print stylesheet hides the header, footer and controls.</p>
+<p>Export model (JSON):<br />
+<pre><code>{
+  &quot;id&quot;: &quot;Q7&quot;,
+  &quot;name&quot;: &quot;Ghana&quot;,
+  &quot;description&quot;: &quot;country in West Africa&quot;,
+  &quot;aliases&quot;: [&quot;GH&quot;],
+  &quot;images&quot;: [&quot;https://.../wiki/uploads/a1b2c3_flag.png&quot;],
+  &quot;statements&quot;: [
+    {&quot;property&quot;:&quot;instance of&quot;,&quot;value&quot;:&quot;Q5&quot;,&quot;item&quot;:&quot;Q5&quot;,&quot;label&quot;:&quot;Country&quot;,&quot;url&quot;:&quot;https://.../Q5&quot;},
+    {&quot;property&quot;:&quot;capital&quot;,&quot;value&quot;:&quot;Accra&quot;}
+  ],
+  &quot;identifiers&quot;: {&quot;Wikipedia&quot;:&quot;https://en.wikipedia.org/wiki/Ghana&quot;},
+  &quot;url&quot;: &quot;https://.../Q7&quot;
+}</code></pre></p>
+<p>For Main_Page the model holds <code>content</code> (the HTML) instead of statements; the TXT, MD and PDF exports convert it to plain text. An unknown format returns HTTP 400.</p>
+<h3>6.9 Views</h3>
+Each item and the Main Page shows a view counter. A view is counted once per IP per page per hour; the counter is written under lock and old hash keys are pruned.
+<h2>7. Admin dashboard and history</h2>
+<h3>7.1 Login</h3>
+<code>/dashboard.php</code> shows a login form when logged out. Credentials are compared with <code>hash_equals</code> against <code>$Username</code> and <code>$Password</code>. Success regenerates the session id and sets the admin flag. All dashboard actions are CSRF-protected POST requests.
+<h3>7.2 Dashboard sections</h3>
+<ul>
+<li><strong>History backup card</strong>: number of backed-up Qs and file size in KB (red above 500 KB), with a link to the history page.</li>
+<li><strong>Enable Public Upload</strong>: ON/OFF switch stored in <code>settings.json</code>.</li>
+<li><strong>Sitemap</strong>: file count and item count, link to <code>sitemap.xml</code>, rebuild button.</li>
+<li><strong>Most viewed (top 10)</strong>.</li>
+<li><strong>Properties (label.txt)</strong>: add several properties (one per line, max 100 characters, duplicates ignored case-insensitively) or remove any. Removing a property does not alter existing statements, which keep their text.</li>
+<li><strong>Identifiers (id.txt)</strong>: add with <code>Name | https://prefix/</code> per line. A valid http(s) prefix is required; lines without one are skipped and reported. Saving an existing name updates its link. Any identifier can be removed.</li>
+<li><strong>Colors</strong>: six color pickers (header, headerText, button, buttonText, wikiText, links), applied as CSS variables on every page.</li>
+<li><strong>Items</strong> (50 per page): filter by Q or name; Edit, Protect or Unprotect, and Delete per item.</li>
+<li><strong>Top buttons</strong>: Logout, Edit Main Page, History backup, Recent changes.</li>
+</ul>
+<h3>7.3 Protect and delete</h3>
+<ul>
+<li><strong>Protect</strong>: the item gets a &quot;protected&quot; tag; public edit attempts return a 403 page; only the admin can edit it.</li>
+<li><strong>Delete</strong>: removes the item from every file, removes protection, logs &quot;deleted&quot; in recent changes (negative size difference), and rebuilds the sitemap. A history backup, if any, is kept so the item can be restored.</li>
+</ul>
+<h3>7.4 History backup (history.php)</h3>
+<ul>
+<li>A snapshot of an item (or the Main Page) is stored <strong>only when the admin saves</strong> it, and only <strong>one snapshot per Q</strong> (the newest overwrites).</li>
+<li>The list is sorted by time and shows the Q, name, size summary (&quot;N statements, N identifiers, N images&quot;), time, and a &quot;deleted/missing live&quot; tag when the live item no longer exists.</li>
+<li><strong>Restore</strong> overwrites the live item with the snapshot (name, description, aliases, images, statements, identifiers; protection state is kept) and logs &quot;restored from backup&quot;. Restoring a deleted Q recreates it.</li>
+<li><strong>Delete</strong> removes one snapshot and <strong>Delete all backups</strong> clears the file. All actions ask for confirmation.</li>
+<li>A capacity warning appears above 500 KB.</li>
+</ul>
+<h2>8. Security model</h2>
+<h3>8.1 Authentication and sessions</h3>
+A single admin account. The session cookie is HttpOnly and SameSite=Lax, plus Secure over HTTPS. The session id is regenerated on login.
+<h3>8.2 CSRF</h3>
+Every POST form includes a per-session random token (16 random bytes in hex), verified with <code>hash_equals</code>. A missing or wrong token gives &quot;Invalid session. Reload and try again.&quot;
+<h3>8.3 Captcha</h3>
+Non-admin create and edit require answering a random question from <code>security.txt</code> (one <code>question|answer</code> per line, compared case-insensitively and trimmed). The question stays in the session until answered, then is discarded. If <code>security.txt</code> is empty the captcha is disabled. Defaults: &quot;What is 2+2?&quot; (4), &quot;What color is sky?&quot; (blue), &quot;Capital of Ghana?&quot; (accra). Add your own lines to make automation harder.
+<h3>8.4 Upload hardening</h3>
+<ol>
+<li>Public uploads must be enabled (the admin is always allowed) and CSRF is required.</li>
+<li><strong>Rate limit</strong> for non-admins: 20 uploads per IP per hour (HTTP 429 after that).</li>
+<li>Size 1 byte to 2 MB, plus an <code>is_uploaded_file</code> check.</li>
+<li>NUL bytes and <strong>double extensions</strong> containing a dangerous segment (for example <code><img src="https://aedtpworld.com/wikiworld/images/shell.php.jpg" style="width:250px !important;height:auto;" alt=""></code>) are rejected: php, phtml, phar, pl, py, cgi, asp, jsp, sh, exe, htaccess, html, htm, js, svg.</li>
+<li>The extension must be jpg, jpeg, png or webp.</li>
+<li>Content must match: <code>mime_content_type</code>, <code>exif_imagetype</code> and the extension must all agree, and <code>getimagesize</code> dimensions must be between 1 and 10000 px.</li>
+<li>Safe name: 6 random hex characters, an underscore, the sanitised base name (max 40 characters of a-z, 0-9, underscore, dash), and the extension from the verified MIME type. File mode 0644.</li>
+<li><code>wiki/uploads/.htaccess</code> disables PHP engines and denies php, phtml, phar, pl, py, cgi, sh, txt, json, lock, log and tmp files.</li>
+</ol>
+<h3>8.5 Data protection</h3>
+<ul>
+<li><code>wiki/.htaccess</code> denies web access to txt, json, lock, log and tmp files, so raw data (including <code>history.json</code>, <code>security.txt</code> and full IPs in <code>recent.json</code>) is not downloadable. <strong>On a server that ignores .htaccess (nginx, for example) you must add equivalent deny rules</strong> or move <code>wiki/</code> outside the web root.</li>
+<li><code>includes/.htaccess</code> denies direct requests to php files; <code>site.css</code> and <code>site.js</code> stay public. Empty <code>index.html</code> files prevent directory listing.</li>
+<li>All output is escaped with <code>h()</code>. JSON embedded in script tags uses the JSON_HEX flags for tags, ampersands and quotes. User-supplied links get rel nofollow.</li>
+<li>Writes are atomic and locked, so concurrent edits do not corrupt files.</li>
+</ul>
+<h3>8.6 Privacy</h3>
+Public pages show only masked IPs. Full IPs are stored in <code>recent.json</code> for admin review, and hashed keys are used for the view counter. Operators should mention this in their privacy policy where required.
+<h3>8.7 Known caveats</h3>
+<ul>
+<li>Admin credentials are plain text in <code>config.php</code>; use a strong password and restrict file permissions.</li>
+<li>Main Page HTML is not sanitised by design (admin only); never give admin access to untrusted people.</li>
+<li>The captcha is a static question list, not a bot-proof system; combine it with server-level rate limiting if abused.</li>
+<li>Flat-file storage suits small to medium datasets; each request reads the JSON maps it needs, so very large item counts will slow down.</li>
+<li>The history file has no automatic size limit, only a warning above 500 KB.</li>
+<li><code>$route</code> set to &quot;1&quot; needs working rewrite rules.</li>
+</ul>
+<h2>9. SEO and sitemaps</h2>
+<h3>9.1 Meta data (includes/header.php)</h3>
+Every page sends: title, description, author, copyright, keywords, license (AEDTP WORLD FREE LICENSE (AWFL)), robots, application-name, canonical link, sitemap link, Open Graph (title, description, type, url, image, site_name), Twitter card (summary_large_image), icon and apple-touch-icon (the logo), an <strong>Organization JSON-LD</strong> block with sameAs links to AEDTP WORLD profiles, and on item pages a <strong>Thing JSON-LD</strong> block.
+<p>Default robots: index, follow, max-image-preview:large, max-snippet:-1. Marked noindex: create, edit, search, recent, dashboard, history, upload, 404 pages, exports, and the Main Page editor.</p>
+<h3>9.2 Sitemaps</h3>
+<ul>
+<li><code>sitemap.xml</code> is a <strong>sitemap index</strong> pointing to <code>sitemap-1.xml</code>, <code>sitemap-2.xml</code> and so on. Each chunk is at most <strong>900 KB</strong> (921,600 bytes) or 50,000 URLs.</li>
+<li>Entries: the home page, <code>recent.php</code>, and every Q (using <code>lastmod.json</code>, with the file time of <code>q.txt</code> as a fallback).</li>
+<li><code>sitemap_maybe()</code> rebuilds automatically (when the file is missing or older than 10 minutes) after edits and Main Page visits by non-admins.</li>
+<li>The dashboard button &quot;Rebuild sitemap&quot; forces a rebuild and deletes obsolete chunk files.</li>
+<li>If the folder is not writable, the index points to the dynamic URLs <code>sitemap.php?n=N</code> instead.</li>
+<li><code>sitemap.php</code> without parameters serves a cached index (under 60 seconds old) or rebuilds it.</li>
+</ul>
+<h2>10. Default files</h2>
+When missing, <code>config.php</code> creates these. Existing files are never overwritten.
+<ul>
+<li><code>q.txt</code>: Q1</li>
+<li><code>name.txt</code> and <code>description.txt</code>: Q1 &quot;Universe&quot; and &quot;totality of space and time&quot;</li>
+<li><code>value.txt</code>: Q1, instance of = concept</li>
+<li><code>aliases.json</code>: Q1, cosmos and the universe</li>
+<li><code>label.txt</code>: 26 properties: instance of, country, capital, occupation, date of birth, place of birth, official website, language, genre, part of, located in, population, founded by, inception, author, creator, member of, spouse, child, parent, educated at, award received, record label, website, title, nickname</li>
+<li><code>id.txt</code>: 23 identifiers (section 10.1)</li>
+<li><code>security.txt</code>: 3 captcha questions</li>
+<li><code>colors.json</code>: header #ffffff, headerText #202122, button #0645ad, buttonText #ffffff, wikiText #202122, links #0645ad</li>
+<li><code>settings.json</code>: upload_enabled false</li>
+<li><code>Main_Page.txt</code>: welcome heading, tagline, links to Q1, recent changes and create item</li>
+<li><code>icon.txt</code> and <code>country_flag.json</code>: small starter sets (the shipped package holds the full 463 and 455 entry versions)</li>
+<li>Empty JSON: <code>images.json</code>, <code>identifiers.json</code>, <code>history.json</code>, <code>views.json</code>, <code>lastmod.json</code> as an empty object; <code>recent.json</code> and <code>protected.json</code> as an empty list</li>
+<li>The <code>.htaccess</code> files and <code>index.html</code> placeholders: root rewrite rules and deny rules for <code>wiki/</code>, <code>includes/</code> and <code>uploads/</code></li>
+</ul>
+<h3>10.1 Default identifiers</h3>
+<ul>
+<li>Genius: https://genius.com/artists/</li>
+<li>Google Knowledge Graph: https://g.co/kg/</li>
+<li>IMDb: https://www.imdb.com/name/</li>
+<li>Spotify: https://open.spotify.com/artist/</li>
+<li>YouTube: https://youtube.com/@</li>
+<li>Wikidata: https://www.wikidata.org/wiki/</li>
+<li>Wikipedia: https://en.wikipedia.org/wiki/</li>
+<li>MusicBrainz: https://musicbrainz.org/artist/</li>
+<li>Discogs: https://www.discogs.com/artist/</li>
+<li>Apple Music: https://music.apple.com/artist/</li>
+<li>Deezer: https://www.deezer.com/artist/</li>
+<li>SoundCloud: https://soundcloud.com/</li>
+<li>Last.fm: https://www.last.fm/music/</li>
+<li>Instagram: https://instagram.com/</li>
+<li>X (Twitter): https://x.com/</li>
+<li>Facebook: https://facebook.com/</li>
+<li>TikTok: https://www.tiktok.com/@</li>
+<li>LinkedIn: https://www.linkedin.com/in/</li>
+<li>GitHub: https://github.com/</li>
+<li>Crunchbase: https://www.crunchbase.com/organization/</li>
+<li>Goodreads: https://www.goodreads.com/author/show/</li>
+<li>VIAF: https://viaf.org/viaf/</li>
+<li>Library of Congress: https://id.loc.gov/authorities/names/</li>
+</ul>
+<h2>11. Front-end</h2>
+<h3>11.1 Stylesheet (includes/site.css)</h3>
+<ul>
+<li>Mobile-first, using CSS variables for header, headerText, button, buttonText, wikiText and links, injected from <code>colors.json</code>.</li>
+<li>Components: header, brand and navigation, search results dropdown, item gallery (1 column, 3 from 768 px), tables, &quot;pill&quot; links (blue for an existing Q, pink for a missing one), buttons (default, grey, danger, small), forms, combo dropdowns, notices (error, ok, warning), cards, tags, and change colors (green up, red down).</li>
+<li>Under 640 px, tables of class <code>rt</code> become stacked cards using <code>data-label</code> attributes.</li>
+<li>Print mode hides the header, footer, export bar and search.</li>
+</ul>
+<h3>11.2 Script (includes/site.js)</h3>
+One self-executing script with no dependencies:
+<ul>
+<li><strong>Live search</strong> with a 200 ms debounce.</li>
+<li><strong>Combo box</strong> widget (filtering, 7-item limit with &quot;More&quot;, keyboard control, strict validation against the list).</li>
+<li><strong>Dynamic rows</strong> for aliases, images, statements and identifiers, each with a remove button.</li>
+<li><strong>Image rows</strong> with a live thumbnail and, when uploads are available, an Upload button that posts to <code>upload.php</code> with <code>fetch</code> and fills in the returned file name.</li>
+<li>Blocks form submission if any property or identifier is not in the allowed list.</li>
+</ul>
+<p>The page passes data to the script through the globals <code>WD_SERVER</code>, <code>WD_LABELS</code>, <code>WD_IDS</code>, <code>WD_INIT</code>, <code>WD_UPLOAD</code>, <code>WD_CSRF</code>, <code>WD_UPLOAD_URL</code> and <code>WD_UPDIR</code>.</p>
+<h2>12. Page and URL reference</h2>
+<ul>
+<li><code>/</code> and <code>/Main_Page</code> (index.php, public): main page.</li>
+<li><code>/Q42</code>, <code>/wiki/Q42</code> and <code>index.php?title=Q42</code> (index.php, public): item page.</li>
+<li><code>?title=Q42&amp;export=html</code>, <code>txt</code>, <code>md</code>, <code>json</code>, <code>aedtpworld</code> or <code>pdf</code> (index.php and export.php, public): download an export.</li>
+<li><code>index.php?live=1&amp;q=term</code> (index.php, public): live-search HTML fragment.</li>
+<li><code>/create.php</code> (public, captcha): new item.</li>
+<li><code>/edit.php?title=Q42</code> (public with captcha; admin only if protected): edit item.</li>
+<li><code>/search.php?q=term</code> (public): search results.</li>
+<li><code>/recent.php</code> (public): recent changes.</li>
+<li><code>/upload.php</code> (admin, or public when enabled): image upload.</li>
+<li><code>/dashboard.php</code> (admin): control panel.</li>
+<li><code>/history.php</code> (admin): backups and restore.</li>
+<li><code>/sitemap.xml</code> and <code>/sitemap-N.xml</code> (sitemap.php, public): sitemaps.</li>
+</ul>
+<h2>13. Typical workflows</h2>
+<h3>13.1 Add an item</h3>
+<ol>
+<li>Click <strong>Create Item</strong>.</li>
+<li>Enter the name and description; add aliases and images (URL or upload).</li>
+<li>Add statements: pick a property, then type a value (text, <code>Q5</code>, or a link).</li>
+<li>Add identifiers: pick one (for example GitHub) and type only the username.</li>
+<li>Optionally write an edit summary, answer the security question, and press <strong>Save</strong>.</li>
+</ol>
+<h3>13.2 Add a new property or identifier type (admin)</h3>
+<ol>
+<li>Log in at <code>/dashboard.php</code>.</li>
+<li>Under <strong>Properties</strong> add lines such as <code>date of death</code>; under <strong>Identifiers</strong> add <code>Bandcamp | https://bandcamp.com/</code>.</li>
+<li>They appear in the form drop-downs immediately.</li>
+</ol>
+<h3>13.3 Allow public image uploads</h3>
+Dashboard, <strong>Enable Public Upload</strong>, then <strong>Turn ON</strong>. Turn it OFF again to restrict uploads to the admin.
+<h3>13.4 Recover from vandalism</h3>
+<ol>
+<li>Open <code>/recent.php</code> (the admin sees full IPs) to find the bad edit.</li>
+<li>If you saved the item as admin earlier, open <code>/history.php</code> and click <strong>Restore</strong>.</li>
+<li>Optionally <strong>Protect</strong> the item from the dashboard.</li>
+</ol>
+<h3>13.5 Move to another domain</h3>
+Change <code>$Server</code> and <code>$Logo</code> in <code>config.php</code>, move the folder, then rebuild the sitemap. Stored image names are relative, so uploads keep working; identifiers stored as full URLs are unaffected.
+<h3>13.6 Backup</h3>
+Copy the whole <code>wiki/</code> folder, including <code>uploads/</code>. That is the entire database.
+<h2>14. Troubleshooting</h2>
+<ul>
+<li><strong>/Q1 gives a server 404:</strong> <code>mod_rewrite</code> or <code>AllowOverride</code> is off. Enable it, or set <code>$route</code> to &quot;0&quot;.</li>
+<li><strong>Cannot save (&quot;Invalid session&quot;):</strong> session cookies are blocked or the page was open too long. Reload and retry.</li>
+<li><strong>Dropdown says &quot;No match. Ask the admin to add it.&quot;:</strong> the property or identifier is not in <code>label.txt</code> or <code>id.txt</code>. Add it in the dashboard.</li>
+<li><strong>Identifier rejected, &quot;enter only the username/ID&quot;:</strong> remove the link and paste only the ID.</li>
+<li><strong>Identifier unusable:</strong> it has no link prefix. Save it again as <code>Name | https://...</code>.</li>
+<li><strong>Upload fails:</strong> uploads are OFF, the file is over 2 MB, it is not a real JPG, PNG or WebP, the rate limit was reached, or PHP <code>upload_max_filesize</code> or <code>post_max_size</code> is below 2 MB.</li>
+<li><strong>Sitemap shows dynamic URLs:</strong> the folder is not writable. Fix permissions, then rebuild.</li>
+<li><strong>Data files downloadable in a browser:</strong> the server ignores <code>.htaccess</code>. Add deny rules for <code>wiki/</code> in the server configuration.</li>
+<li><strong>History shows a red size warning:</strong> it is over 500 KB. Delete old backups.</li>
+</ul>
+<h2>15. Glossary</h2>
+<ul>
+<li><strong>Q or Q-id:</strong> unique item identifier such as <code>Q42</code>.</li>
+<li><strong>Item:</strong> a record with name, description, aliases, images, statements and identifiers.</li>
+<li><strong>Statement or claim:</strong> a property and value pair on an item.</li>
+<li><strong>Property or label:</strong> a name allowed in statements, listed in <code>label.txt</code>.</li>
+<li><strong>Identifier:</strong> a link to an external database, built from a prefix in <code>id.txt</code> and a username or ID.</li>
+<li><strong>Main_Page:</strong> the special admin-edited HTML home page.</li>
+<li><strong>Protected:</strong> an item only the admin may edit.</li>
+<li><strong>AWFL:</strong> AEDTP WORLD FREE LICENSE.</li>
+<li><strong>AEDTPWORLD export:</strong> the JSON export format with a metadata wrapper.</li>
+<li><strong>AWFLWIKITEXT:</strong> the lightweight markup language of AWFLWIKIWORLD, used to write this page.</li>
+</ul>
+<h2>16. Credits and license</h2>
+AWFLWIKIWORLD WIKIDATA is created by <strong>AEDTP WORLD</strong> and distributed under the <strong>AEDTP WORLD FREE LICENSE (AWFL)</strong>. Every exported file carries the line &quot;Source: AWFLWIKIWORLD WIKIDATA - AEDTP WORLD FREE LICENSE (AWFL)&quot;.
+<p>The license text is not included in the package. According to a published summary of the AWFL (https://bebee.com/gb/blog/aedtpworld/aedtp-world-free-license-awfl-VR4qrN9Ihumv):</p>
+<ul>
+<li>Files may be downloaded for personal use and used in AEDTP WORLD-approved projects.</li>
+<li>Modifications, forks, re-uploads and commercial use require written approval from AEDTP WORLD (Emmanuel Deliver Amable).</li>
+<li>Public use must credit the source as &quot;Content provided by AEDTP WORLD (AWFL)&quot;.</li>
+<li>The software is provided as is, without warranty.</li>
+<li>Questions and permission requests go to aedtpworld@gmail.com.</li>
+</ul>
+<p>Check https://aedtpworld.com for the current official terms.</p>
+<h2>17. See also</h2>
+<ul>
+<li><a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD">AWFLWIKIWORLD</a></li>
+<li><a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD/AWFLWIKITEXT">AWFLWIKIWORLD/AWFLWIKITEXT</a></li>
+<li><a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/Main_Page">Main Page</a></li>
+<li><a href="https://github.com/aedtpworldawfl/awflwikiworld" target="_blank" rel="noopener noreferrer">AWFLWIKIWORLD on GitHub</a></li>
+</ul><!--AWFL-ARTICLE-END--></article>
+
+<p class="awfl-footer-copy" style="margin-top:24px;font-size:.85em">© 2026 AEDTP WORLD — content available under the AEDTP WORLD FREE LICENSE (AWFL). <a href="https://aedtpworld.com/wikiworld/AWFLWIKIDATAWORLD">View live page</a></p>
+</main>
+</div>
+</body>
+</html>

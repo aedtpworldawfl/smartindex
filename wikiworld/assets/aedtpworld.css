@@ -1,0 +1,238 @@
+/* AWFLWIKIWORLD — assets/site.css */
+
+:root {
+    --awfl-header-bg: #202122;
+    --awfl-header-text: #ffffff;
+    --awfl-button-bg: #36c;
+    --awfl-button-text: #ffffff;
+    --awfl-page-text: #202122;
+    --awfl-link: #0645ad;
+    --awfl-link-visited: #0b0080;
+    --awfl-border: #a2a9b1;
+    --awfl-bg: #ffffff;
+    --awfl-content-bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: var(--awfl-page-text); background: var(--awfl-bg); line-height: 1.6; }
+a { color: var(--awfl-link); text-decoration: none; }
+a:visited { color: var(--awfl-link-visited); }
+a:hover { text-decoration: underline; }
+.awfl-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+
+.awfl-header { background: var(--awfl-header-bg); color: var(--awfl-header-text); }
+.awfl-header-inner { max-width: 1200px; margin: 0 auto; padding: 8px 16px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.awfl-logo-link { display: flex; align-items: center; gap: 8px; color: var(--awfl-header-text); }
+.awfl-logo { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-sitename { font-weight: 700; font-size: 1.15rem; color: var(--awfl-header-text); }
+.awfl-searchform { flex: 1; display: flex; min-width: 180px; max-width: 420px; }
+.awfl-searchform input { flex: 1; padding: 6px 10px; border: 1px solid var(--awfl-border); border-radius: 2px 0 0 2px; }
+.awfl-searchform button { padding: 6px 12px; border: none; border-radius: 0 2px 2px 0; background: var(--awfl-button-bg); color: var(--awfl-button-text); cursor: pointer; }
+.awfl-usernav { display: flex; gap: 12px; align-items: center; font-size: 0.9rem; flex-wrap: wrap; }
+.awfl-usernav a { color: var(--awfl-header-text); opacity: 0.9; }
+.awfl-usernav a:hover { opacity: 1; }
+.awfl-username { color: var(--awfl-header-text); font-weight: 600; }
+
+.awfl-body { flex: 1; max-width: 1200px; margin: 0 auto; width: 100%; padding: 24px 16px; }
+.awfl-main { background: var(--awfl-content-bg); }
+.awfl-narrow { max-width: 480px; margin: 0 auto; }
+
+.awfl-page-titlebar { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; border-bottom: 1px solid var(--awfl-border); padding-bottom: 8px; margin-bottom: 16px; gap: 8px; }
+.awfl-page-titlebar h1 { margin: 0; }
+.awfl-space-tag { font-size: 0.55em; vertical-align: middle; margin-left: 8px; padding: 2px 8px; background: #eaecf0; border-radius: 10px; color: #54595d; font-weight: normal; }
+.awfl-protected-tag { background: #fef1d7; color: #8a6100; }
+.awfl-page-actions { display: flex; gap: 14px; font-size: 0.9rem; flex-wrap: wrap; align-items: center; }
+.awfl-danger-link { color: #d33; }
+
+.awfl-article a.wiki-link, .awfl-visual-preview a.wiki-link { color: var(--awfl-link); }
+.awfl-article a.wiki-link:visited, .awfl-visual-preview a.wiki-link:visited { color: var(--awfl-link-visited); }
+.awfl-article a.wiki-link.new, .awfl-visual-preview a.wiki-link.new, .awfl-article a.wiki-link.new:visited, .awfl-visual-preview a.wiki-link.new:visited { color: #ba0000; }
+
+.awfl-download-menu { position: relative; display: inline-block; }
+.awfl-download-toggle { cursor: pointer; }
+.awfl-download-list { display: none; position: absolute; top: 100%; left: 0; z-index: 20; margin-top: 4px; background: var(--awfl-content-bg, #fff); border: 1px solid var(--awfl-border, #a2a9b1); border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); min-width: 100px; padding: 4px 0; }
+.awfl-download-menu.open .awfl-download-list { display: block; }
+.awfl-download-list a { display: block; padding: 6px 14px; white-space: nowrap; text-decoration: none; }
+.awfl-download-list a:hover { background: #eaecf0; }
+
+.awfl-article { font-size: 1rem; }
+.awfl-article h1, .awfl-article h2 { border-bottom: 1px solid var(--awfl-border); padding-bottom: 4px; }
+.awfl-article ul, .awfl-article ol { padding-left: 1.6em; }
+.awfl-article code, .awfl-visual-preview code { background: #f3f3f3; border: 1px solid var(--awfl-border); border-radius: 3px; padding: 0 4px; font-family: monospace; font-size: 0.9em; }
+.awfl-article pre, .awfl-visual-preview pre { background: #f3f3f3; border: 1px solid var(--awfl-border); border-radius: 4px; padding: 10px 12px; overflow-x: auto; }
+.awfl-article pre code, .awfl-visual-preview pre code { background: none; border: none; padding: 0; }
+.awfl-article blockquote, .awfl-visual-preview blockquote { margin: 1em 0; padding: 4px 14px; border-left: 4px solid var(--awfl-border); color: #54595d; font-style: italic; }
+.awfl-article mark, .awfl-visual-preview mark { background: #fff2a8; padding: 0 2px; }
+.awfl-article hr, .awfl-visual-preview hr { border: none; border-top: 1px solid var(--awfl-border); margin: 1.5em 0; }
+.awfl-article del, .awfl-article s, .awfl-visual-preview del, .awfl-visual-preview s { opacity: 0.75; }
+.awfl-article .awfl-nowiki, .awfl-visual-preview .awfl-nowiki { background: #f3f3f3; border: 1px solid var(--awfl-border); border-radius: 3px; padding: 0 4px; font-family: monospace; font-size: 0.9em; white-space: pre-wrap; }
+.awfl-missing { font-style: italic; color: #54595d; }
+
+.infobox { float: right; margin: 0 0 1em 1em; width: 280px; border: 1px solid var(--awfl-border); border-collapse: collapse; background: #f8f9fa; font-size: 0.875rem; }
+.infobox th, .infobox td { border: 1px solid var(--awfl-border); padding: 6px 8px; text-align: left; vertical-align: top; }
+.infobox th { font-weight: bold; background: #eaecf0; width: 38%; }
+.infobox-title { background: #ccdcf0 !important; text-align: center !important; font-size: 1.1em; }
+.infobox td.infobox-image { text-align: center; }
+.infobox-image img { width: 250px !important; height: auto; display: inline-block; }
+.infobox-caption { font-size: 0.85em; color: #54595d; margin-top: 4px; text-align: center; }
+
+.awfl-form { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.awfl-form label { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; }
+.awfl-form input, .awfl-form select, .awfl-form textarea { padding: 8px; border: 1px solid var(--awfl-border); border-radius: 3px; font: inherit; }
+.awfl-form button, button, .awfl-editor-actions button, .awfl-danger { background: var(--awfl-button-bg); color: var(--awfl-button-text); border: none; padding: 8px 16px; border-radius: 3px; cursor: pointer; font: inherit; }
+.awfl-danger { background: #d33; }
+.awfl-error { color: #d33; }
+.awfl-success { color: #14866d; }
+
+.awfl-editing-label { font-size: 0.5em; color: #54595d; margin-left: 10px; }
+.awfl-editor-toolbar { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.awfl-editor-toolbar button { background: #f8f9fa; color: #202122; border: 1px solid var(--awfl-border); padding: 6px 10px; border-radius: 3px; cursor: pointer; }
+.awfl-editor-toolbar .awfl-tab.active { background: var(--awfl-button-bg); color: #fff; }
+.awfl-toolbar-sep { width: 1px; height: 20px; background: var(--awfl-border); margin: 0 6px; }
+#awfl-wikitext { width: 100%; font-family: monospace; font-size: 0.95rem; padding: 10px; border: 1px solid var(--awfl-border); border-radius: 3px; }
+.awfl-visual-preview { border: 1px solid var(--awfl-border); border-radius: 3px; padding: 14px; min-height: 300px; background: #fff; cursor: text; }
+.awfl-visual-preview:focus { outline: 2px solid var(--awfl-button-bg); outline-offset: -1px; }
+.awfl-visual-preview img { max-width: 100%; }
+.awfl-editor-actions { margin-top: 10px; display: flex; gap: 10px; }
+
+.awfl-pagelist { columns: 3; column-gap: 24px; }
+table.awfl-datatable { border-collapse: collapse; width: 100%; margin: 12px 0; }
+table.awfl-datatable th, table.awfl-datatable td { border: 1px solid var(--awfl-border); padding: 8px; text-align: left; }
+table.awfl-datatable th { background: #eaecf0; }
+
+.awfl-image-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
+.awfl-image-cell { border: 1px solid var(--awfl-border); border-radius: 4px; padding: 6px; display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff; }
+.awfl-image-cell img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+.awfl-image-name { font-size: 0.75rem; margin: 6px 0 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
+.awfl-image-cell-actions { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.awfl-image-cell-actions button { font-size: 0.7rem; padding: 4px 6px; }
+
+.awfl-footer { border-top: 1px solid var(--awfl-border); background: #f8f9fa; margin-top: 24px; }
+.awfl-footer-inner { max-width: 1200px; margin: 0 auto; padding: 16px; font-size: 0.85rem; color: #54595d; }
+.awfl-powered { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; color: #54595d; }
+.awfl-powered img { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-footer-links { margin-bottom: 6px; }
+
+.awfl-color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.awfl-color-row label { min-width: 160px; }
+.awfl-color-row input[type=text] { width: 100px; font-family: monospace; }
+
+@media (max-width: 1000px) { .awfl-image-grid { grid-template-columns: repeat(4, 1fr) !important; } }
+@media (max-width: 600px) { .awfl-image-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+
+@media (max-width: 720px) {
+    .awfl-pagelist { columns: 1 !important; }
+    .infobox { float: none !important; width: 100% !important; margin: 1em 0 !important; }
+    .awfl-header-inner { flex-direction: column !important; align-items: stretch !important; }
+    .awfl-searchform { max-width: none !important; width: 100% !important; }
+}
+
+/* ---- MOBILE LAYOUT IMPORTANT ONLY — COLORS LEFT FREE FOR SKINS ---- */
+@media (max-width: 768px) {
+    html, body { overflow-x: hidden !important; max-width: 100vw !important; }
+    .awfl-wrapper { width: 100% !important; max-width: 100% !important; }
+    .awfl-body { max-width: 100% !important; width: 100% !important; margin: 0 !important; padding: 12px 12px !important; }
+    .awfl-main { width: 100% !important; max-width: 100% !important; }
+
+    .awfl-page-titlebar {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+    }
+
+    .awfl-page-titlebar h1 {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 1.45rem !important;
+        line-height: 1.3 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    /* layout important, colors NOT important */
+    .awfl-space-tag {
+        display: inline-flex !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        margin: 0 !important;
+        float: none !important;
+        clear: none !important;
+    }
+
+    .awfl-protected-tag {
+        display: inline-flex !important;
+        width: fit-content !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        flex-basis: 100% !important;
+        margin: 6px 0 0 0 !important;
+        float: none !important;
+        clear: both !important;
+    }
+
+    .awfl-page-actions {
+        width: 100% !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    /* Fix the purple arrow gap + infobox cut */
+    .infobox {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 12px 0 !important;
+        display: table !important;
+    }
+
+    .awfl-article table:not(.infobox),
+    table.awfl-datatable {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .awfl-article table:not(.infobox) tbody,
+    table.awfl-datatable tbody { display: block !important; width: 100% !important; }
+    .awfl-article table:not(.infobox) tr,
+    table.awfl-datatable tr {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    .awfl-article table:not(.infobox) td,
+    .awfl-article table:not(.infobox) th,
+    table.awfl-datatable td,
+    table.awfl-datatable th {
+        display: block !important;
+        width: 100% !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+
+    img, pre, code, video, iframe { max-width: 100% !important; }
+    pre, code, .awfl-nowiki { white-space: pre-wrap !important; word-break: break-all !important; }
+}
+
+@media print {
+    .awfl-header, .awfl-footer, .awfl-page-actions, .awfl-usernav { display: none !important; }
+    .infobox { float: none !important; width: 100% !important; }
+}
+
+
+
+
+
+
+
+
+
+/* Q links [[Q:123]] — always green for identification */
+a.wiki-q, a.wiki-q:visited, a.wiki-q:hover, .awfl-article a.wiki-q, .awfl-visual-preview a.wiki-q, span.wiki-q { color: #0a8a2a !important; }

@@ -1,0 +1,85 @@
+/* ===================================================================
+   AWFLWIKIWORLD — Skin/AEDTPWORLDMono.css v3.0 FINAL
+   Black / White / Yellow - Typewriter Font - No Red
+   =================================================================== */
+:root {
+    --awfl-header-bg: #000000!important;      /* 1 black header */
+    --awfl-header-text: #FFFFFF!important;    /* 2 white */
+    --awfl-button-bg: #7D4013!important;      /* 3 */
+    --awfl-button-text: #FFEB3B!important;    /* 4 YELLOW button text */
+    --awfl-page-text: #000000!important;      /* 5 black ink */
+    --awfl-link: #C9661E!important;           /* 6 YELLOW */
+    --awfl-link-visited: #D4B800!important;   /* 7 dark yellow */
+    --awfl-border: #000000!important;         /* 8 */
+    --awfl-bg: #FFFFFF!important;             /* 9 white paper */
+    --awfl-content-bg: #FFFFFF!important;     /* 10 */
+}
+
+html, body {
+    background: #FFFFFF!important;
+    color: #000000!important;
+    font-family: "Courier New", Courier, monospace!important; /* correction pen typewriter */
+    font-size: 14.4px!important;
+    line-height: 1.7!important;
+}
+
+.awfl-body { background: #FFFFFF!important; }
+.awfl-header { background: #000000!important; border-bottom: 3px solid #000000!important; }
+.awfl-header-inner { background: #000000!important; }
+
+/* HEADER LINKS - YELLOW ON BLACK - HIGH VISIBILITY */
+html body .awfl-header a,
+.awfl-header a,
+.awfl-header nav a,
+.awfl-user-menu a {
+    color: #FFEB3B!important;
+    -webkit-text-fill-color: #FFEB3B!important;
+    font-weight: bold!important;
+}
+
+.awfl-header .awfl-logo-text { color: #FFFFFF!important; }
+
+/* BODY ACTION LINKS - YOUR GREEN CIRCLE - BLACK ON YELLOW BOX */
+.awfl-main {
+    background: #FFFFFF!important;
+    border: 2px solid #000000!important;
+}
+
+.awfl-main a {
+    color: #000000!important;
+    -webkit-text-fill-color: #000000!important;
+    background: #FFEB3B!important;
+    border: 1px solid #000000!important;
+    padding: 2px 6px!important;
+    text-decoration: none!important;
+    font-weight: bold!important;
+}
+
+/* Regular text links in content */
+.awfl-content p a {
+    background: transparent!important;
+    border: none!important;
+    padding: 0!important;
+    text-decoration: underline!important;
+    text-decoration-color: #FFEB3B!important;
+    text-decoration-thickness: 3px!important;
+}
+
+.awfl-footer { background: #000000!important; border-top: 3px solid #000000!important; }
+.awfl-footer-inner { color: #FFFFFF!important; }
+.awfl-footer a { color: #FFEB3B!important; -webkit-text-fill-color: #FFEB3B!important; }
+
+.infobox { background: #FFFFFF!important; border: 2px solid #000000!important; }
+.infobox th { background: #000000!important; color: #FFEB3B!important; } /* 11 */
+.infobox-title { background: #111111!important; color: #FFEB3B!important; } /* 12 */
+table.awfl-datatable th { background: #000000!important; color: #FFEB3B!important; } /* 13 */
+.awfl-toc { background: #F5F5F5!important; border: 2px dashed #000000!important; } /* 14 */
+::selection { background: #FFEB3B!important; color: #000000!important; } /* 15 */
+
+
+
+
+
+
+
+

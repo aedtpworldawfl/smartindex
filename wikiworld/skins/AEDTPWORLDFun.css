@@ -1,0 +1,51 @@
+/* ===================================================================
+   AWFLWIKIWORLD — Skin/AEDTPWORLDFun.css
+   Developer: AEDTP WORLD
+   Skin Name: AEDTPWORLD Fun (Yellow / Blue / Eye-Safe)
+   License: AWFL
+   Version: 2.0 - Double-Locked
+   Palette: 10+5 - Fun Yellow
+   Primary: Yellow #FFC107, Blue #1565C0, White #FFFFFF, Black #212121
+   =================================================================== */
+:root {
+    --awfl-header-bg: #212121!important;       /* 1 BLACK fun header */
+    --awfl-header-text: #FFECB3!important;    /* 2 light yellow text */
+    --awfl-button-bg: #FFC107!important;      /* 3 YELLOW primary button */
+    --awfl-button-text: #212121!important;    /* 4 black on yellow */
+    --awfl-page-text: #212121!important;      /* 5 black ink - best for eyes */
+    --awfl-link: #1565C0!important;           /* 6 BLUE - high contrast, safe */
+    --awfl-link-visited: #5E35B1!important;   /* 7 purple */
+    --awfl-border: #FFE082!important;         /* 8 soft yellow border */
+    --awfl-bg: #FFFBEB!important;             /* 9 warm cream - not harsh yellow */
+    --awfl-content-bg: #FFFFFF!important;     /* 10 white paper */
+}
+
+html, body { background: var(--awfl-bg)!important; color: var(--awfl-page-text)!important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif!important; line-height: 1.75!important; font-size: 14.6px!important; }
+.awfl-body { background: var(--awfl-bg)!important; }
+
+.awfl-header { background: var(--awfl-header-bg)!important; border-bottom: 4px solid #FFC107!important; } /* 11 yellow pop on black */
+.awfl-header-inner { background: var(--awfl-header-bg)!important; }
+html body .awfl-header a { color: #FFD54F!important; -webkit-text-fill-color: #FFD54F!important; font-weight: 600!important; } /* 12 yellow visible on black */
+
+.awfl-main { background: var(--awfl-content-bg)!important; border: 1px solid var(--awfl-border)!important; border-top: 3px solid #FFC107!important; box-shadow: 0 4px 18px rgba(255,193,7,0.12)!important; }
+.awfl-footer { background: #212121!important; border-top: 4px solid #1565C0!important; }
+.awfl-footer-inner { color: #FFECB3!important; } /* 13 light yellow */
+.awfl-footer a { color: #FFD54F!important; } /* 14 */
+
+.infobox { background: #FFFBEB!important; border: 1px solid #FFE082!important; border-left: 4px solid #FFC107!important; } /* fun */
+.infobox th { background: #212121!important; color: #FFC107!important; }
+.infobox-title { background: #FFC107!important; color: #212121!important; } /* 15 yellow title black text */
+table.awfl-datatable th { background: #1565C0!important; color: #FFFFFF!important; }
+
+a { color: var(--awfl-link)!important; }
+a:visited { color: var(--awfl-link-visited)!important; }
+
+::selection { background: #FFECB3!important; color: #212121!important; }
+
+
+
+
+
+
+
+

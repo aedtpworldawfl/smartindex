@@ -1,0 +1,349 @@
+/* AWFLWIKIWORLD — AEDTP WORLD Wiki engine:Skin/AEDTPWORLDSky.css
+   Developer: AEDTP WORLD
+   License: AEDTP WORLD FREE LICENSE (AWFL)
+   Install More: "https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/Skins"
+   
+
+ */
+
+:root {
+    --awfl-header-bg: #61A1F5!important;
+    --awfl-header-text: #CBDCE8!important;
+    --awfl-button-bg: #4E2096!important;
+    --awfl-button-text: #d1dbe6!important;
+    --awfl-page-text: #EEF0F2!important;
+    --awfl-link: #5A80C2!important;
+    --awfl-link-visited: #B83436!important;
+    --awfl-border: #060812!important;
+    --awfl-bg: #C2BE9A!important;
+    --awfl-content-bg: #C2BE9A!important;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--awfl-page-text);
+    background: var(--awfl-bg);
+    line-height: 1.6;
+}
+
+a { color: var(--awfl-link); text-decoration: none; }
+a:visited { color: var(--awfl-link-visited); }
+a:hover { text-decoration: underline; }
+
+.awfl-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ---- Header ---- */
+.awfl-header {
+    background: var(--awfl-header-bg);
+    color: var(--awfl-header-text);
+}
+.awfl-header-inner {
+    max-width: 1200px; margin: 0 auto; padding: 8px 16px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.awfl-logo-link { display: flex; align-items: center; gap: 8px; color: var(--awfl-header-text); }
+.awfl-logo { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-sitename { font-weight: 700; font-size: 1.15rem; color: var(--awfl-header-text); }
+.awfl-searchform { flex: 1; display: flex; min-width: 180px; max-width: 420px; }
+.awfl-searchform input { flex: 1; padding: 6px 10px; border: 1px solid var(--awfl-border); border-radius: 2px 0 0 2px; }
+.awfl-searchform button {
+    padding: 6px 12px; border: none; border-radius: 0 2px 2px 0;
+    background: var(--awfl-button-bg); color: var(--awfl-button-text); cursor: pointer;
+}
+.awfl-usernav { display: flex; gap: 12px; align-items: center; font-size: 0.9rem; flex-wrap: wrap; }
+.awfl-usernav a { color: var(--awfl-header-text); opacity: 0.9; }
+.awfl-usernav a:hover { opacity: 1; }
+.awfl-username { color: var(--awfl-header-text); font-weight: 600; }
+
+/* ---- Body / main content ---- */
+.awfl-body { flex: 1; max-width: 1200px; margin: 0 auto; width: 100%; padding: 24px 16px; }
+.awfl-main { background: var(--awfl-content-bg); }
+.awfl-narrow { max-width: 480px; margin: 0 auto; }
+
+.awfl-page-titlebar {
+    display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
+    border-bottom: 1px solid var(--awfl-border); padding-bottom: 8px; margin-bottom: 16px; gap: 8px;
+}
+.awfl-page-titlebar h1 { margin: 0; }
+.awfl-space-tag {
+    font-size: 0.55em; vertical-align: middle; margin-left: 8px; padding: 2px 8px;
+    background: #eaecf0; border-radius: 10px; color: #54595d; font-weight: normal;
+}
+.awfl-protected-tag { background: #fef1d7; color: #8a6100; }
+.awfl-page-actions { display: flex; gap: 14px; font-size: 0.9rem; flex-wrap: wrap; }
+.awfl-danger-link { color: #d33; }
+
+.awfl-article { font-size: 1rem; }
+.awfl-article h1, .awfl-article h2 { border-bottom: 1px solid var(--awfl-border); padding-bottom: 4px; }
+.awfl-article ul, .awfl-article ol { padding-left: 1.6em; }
+.awfl-missing { font-style: italic; color: #54595d; }
+
+/* ---- Infobox ---- */
+.infobox {
+    float: right; margin: 0 0 1em 1em; width: 280px; border: 1px solid var(--awfl-border);
+    border-collapse: collapse; background: #3E97D9; font-size: 0.875rem;
+}
+.infobox th, .infobox td { border: 1px solid var(--awfl-border); padding: 6px 8px; text-align: left; vertical-align: top; }
+.infobox th { font-weight: bold; background: #eaecf0; width: 38%; }
+.infobox-title { background: #ccdcf0 !important; text-align: center !important; font-size: 1.1em; }
+.infobox-image { text-align: center; }
+.infobox-image img { width: 250px !important; height: auto; }
+.infobox-caption { font-size: 0.85em; color: #54595d; margin-top: 4px; }
+
+/* ---- Forms ---- */
+.awfl-form { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.awfl-form label { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; }
+.awfl-form input, .awfl-form select, .awfl-form textarea {
+    padding: 8px; border: 1px solid var(--awfl-border); border-radius: 3px; font: inherit;
+}
+.awfl-form button, button, .awfl-editor-actions button, .awfl-danger {
+    background: var(--awfl-button-bg); color: var(--awfl-button-text);
+    border: none; padding: 8px 16px; border-radius: 3px; cursor: pointer; font: inherit;
+}
+.awfl-danger { background: #d33; }
+.awfl-error { color: #d33; }
+.awfl-success { color: #14866d; }
+
+/* ---- Editor ---- */
+.awfl-editing-label { font-size: 0.5em; color: #54595d; margin-left: 10px; }
+.awfl-editor-toolbar { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.awfl-editor-toolbar button {
+    background: #f8f9fa; color: #202122; border: 1px solid var(--awfl-border);
+    padding: 6px 10px; border-radius: 3px; cursor: pointer;
+}
+.awfl-editor-toolbar .awfl-tab.active { background: var(--awfl-button-bg); color: #fff; }
+.awfl-toolbar-sep { width: 1px; height: 20px; background: var(--awfl-border); margin: 0 6px; }
+#awfl-wikitext { width: 100%; font-family: monospace; font-size: 0.95rem; padding: 10px; border: 1px solid var(--awfl-border); border-radius: 3px; }
+.awfl-visual-preview { border: 1px solid var(--awfl-border); border-radius: 3px; padding: 14px; min-height: 300px; }
+.awfl-editor-actions { margin-top: 10px; display: flex; gap: 10px; }
+
+/* ---- Lists / tables ---- */
+.awfl-pagelist { columns: 3; column-gap: 24px; }
+table.awfl-datatable { border-collapse: collapse; width: 100%; margin: 12px 0; }
+table.awfl-datatable th, table.awfl-datatable td { border: 1px solid var(--awfl-border); padding: 8px; text-align: left; }
+table.awfl-datatable th { background: #eaecf0; }
+table.awfl-datatable th a { color: inherit; }
+
+/* ---- Image gallery (allimages) ---- */
+.awfl-image-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+.awfl-image-cell {
+    border: 1px solid var(--awfl-border); border-radius: 4px; padding: 6px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    background: #fff;
+}
+.awfl-image-cell img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+.awfl-image-name { font-size: 0.75rem; margin: 6px 0 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
+.awfl-image-cell-actions { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.awfl-image-cell-actions button { font-size: 0.7rem; padding: 4px 6px; }
+@media (max-width: 1000px) { .awfl-image-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px) { .awfl-image-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---- Footer ---- */
+.awfl-footer { border-top: 1px solid var(--awfl-border); background: #f8f9fa; margin-top: 24px; }
+.awfl-footer-inner { max-width: 1200px; margin: 0 auto; padding: 16px; font-size: 0.85rem; color: #54595d; }
+.awfl-powered { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; color: #54595d; }
+.awfl-powered img { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-footer-links { margin-bottom: 6px; }
+
+/* ---- Dashboard color rows ---- */
+.awfl-color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.awfl-color-row label { min-width: 160px; }
+.awfl-color-row input[type=text] { width: 100px; font-family: monospace; }
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+    .awfl-pagelist { columns: 1; }
+    .infobox { float: none; width: 100%; margin: 1em 0; }
+    .awfl-header-inner { flex-direction: column; align-items: stretch; }
+    .awfl-searchform { max-width: none; }
+}
+
+@media print {
+    .awfl-header, .awfl-footer, .awfl-page-actions, .awfl-usernav { display: none !important; }
+    .infobox { float: none; width: 100%; }
+}
+
+/* AWFLWIKIWORLD — assets/site.css
+   Default base layout. Skins (skins/*.css) load AFTER this file and may
+   override any of these rules; if no skin is active, these rules stand alone. */
+
+:root {
+    --awfl-header-bg: #06294b;
+    --awfl-header-text: #d5ddd9;
+    --awfl-button-bg: #133686;
+    --awfl-button-text: #d1dbe6;
+    --awfl-page-text: #185067;
+    --awfl-link: #0f72a3;
+    --awfl-link-visited: #0b0080;
+    --awfl-border: #a2a9b1;
+    --awfl-bg: #ffffff;
+    --awfl-content-bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--awfl-page-text);
+    background: var(--awfl-bg);
+    line-height: 1.6;
+}
+
+a { color: var(--awfl-link); text-decoration: none; }
+a:visited { color: var(--awfl-link-visited); }
+a:hover { text-decoration: underline; }
+
+.awfl-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ---- Header ---- */
+.awfl-header {
+    background: var(--awfl-header-bg);
+    color: var(--awfl-header-text);
+}
+.awfl-header-inner {
+    max-width: 1200px; margin: 0 auto; padding: 8px 16px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.awfl-logo-link { display: flex; align-items: center; gap: 8px; color: var(--awfl-header-text); }
+.awfl-logo { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-sitename { font-weight: 700; font-size: 1.15rem; color: var(--awfl-header-text); }
+.awfl-searchform { flex: 1; display: flex; min-width: 180px; max-width: 420px; }
+.awfl-searchform input { flex: 1; padding: 6px 10px; border: 1px solid var(--awfl-border); border-radius: 2px 0 0 2px; }
+.awfl-searchform button {
+    padding: 6px 12px; border: none; border-radius: 0 2px 2px 0;
+    background: var(--awfl-button-bg); color: var(--awfl-button-text); cursor: pointer;
+}
+.awfl-usernav { display: flex; gap: 12px; align-items: center; font-size: 0.9rem; flex-wrap: wrap; }
+.awfl-usernav a { color: var(--awfl-header-text); opacity: 0.9; }
+.awfl-usernav a:hover { opacity: 1; }
+.awfl-username { color: var(--awfl-header-text); font-weight: 600; }
+
+/* ---- Body / main content ---- */
+.awfl-body { flex: 1; max-width: 1200px; margin: 0 auto; width: 100%; padding: 24px 16px; }
+.awfl-main { background: var(--awfl-content-bg); }
+.awfl-narrow { max-width: 480px; margin: 0 auto; }
+
+.awfl-page-titlebar {
+    display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
+    border-bottom: 1px solid var(--awfl-border); padding-bottom: 8px; margin-bottom: 16px; gap: 8px;
+}
+.awfl-page-titlebar h1 { margin: 0; }
+.awfl-space-tag {
+    font-size: 0.55em; vertical-align: middle; margin-left: 8px; padding: 2px 8px;
+    background: #eaecf0; border-radius: 10px; color: #54595d; font-weight: normal;
+}
+.awfl-protected-tag { background: #fef1d7; color: #8a6100; }
+.awfl-page-actions { display: flex; gap: 14px; font-size: 0.9rem; flex-wrap: wrap; }
+.awfl-danger-link { color: #d33; }
+
+.awfl-article { font-size: 1rem; }
+.awfl-article h1, .awfl-article h2 { border-bottom: 1px solid var(--awfl-border); padding-bottom: 4px; }
+.awfl-article ul, .awfl-article ol { padding-left: 1.6em; }
+.awfl-missing { font-style: italic; color: #54595d; }
+
+/* ---- Infobox ---- */
+.infobox {
+    float: right; margin: 0 0 1em 1em; width: 280px; border: 1px solid var(--awfl-border);
+    border-collapse: collapse; background: #419EE3!important; font-size: 0.875rem;
+}
+.infobox th, .infobox td { border: 1px solid var(--awfl-border); padding: 6px 8px; text-align: left; vertical-align: top; }
+.infobox th { font-weight: bold; background: #419EE3!important; width: 38%; }
+.infobox-title { background: #AEBBCF !important; text-align: center !important; font-size: 1.1em; }
+.infobox-image { text-align: center; }
+.infobox-image img { width: 250px !important; height: auto; }
+.infobox-caption { font-size: 0.85em; color: #54595d; margin-top: 4px; }
+
+/* ---- Forms ---- */
+.awfl-form { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.awfl-form label { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; }
+.awfl-form input, .awfl-form select, .awfl-form textarea {
+    padding: 8px; border: 1px solid var(--awfl-border); border-radius: 3px; font: inherit;
+}
+.awfl-form button, button, .awfl-editor-actions button, .awfl-danger {
+    background: var(--awfl-button-bg); color: var(--awfl-button-text);
+    border: none; padding: 8px 16px; border-radius: 3px; cursor: pointer; font: inherit;
+}
+.awfl-danger { background: #d33; }
+.awfl-error { color: #d33; }
+.awfl-success { color: #14866d; }
+
+/* ---- Editor ---- */
+.awfl-editing-label { font-size: 0.5em; color: #54595d; margin-left: 10px; }
+.awfl-editor-toolbar { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.awfl-editor-toolbar button {
+    background: #f8f9fa; color: #202122; border: 1px solid var(--awfl-border);
+    padding: 6px 10px; border-radius: 3px; cursor: pointer;
+}
+.awfl-editor-toolbar .awfl-tab.active { background: var(--awfl-button-bg); color: #fff; }
+.awfl-toolbar-sep { width: 1px; height: 20px; background: var(--awfl-border); margin: 0 6px; }
+#awfl-wikitext { width: 100%; font-family: monospace; font-size: 0.95rem; padding: 10px; border: 1px solid var(--awfl-border); border-radius: 3px; }
+.awfl-visual-preview { border: 1px solid var(--awfl-border); border-radius: 3px; padding: 14px; min-height: 300px; }
+.awfl-editor-actions { margin-top: 10px; display: flex; gap: 10px; }
+
+/* ---- Lists / tables ---- */
+.awfl-pagelist { columns: 3; column-gap: 24px; }
+table.awfl-datatable { border-collapse: collapse; width: 100%; margin: 12px 0; }
+table.awfl-datatable th, table.awfl-datatable td { border: 1px solid var(--awfl-border); padding: 8px; text-align: left; }
+table.awfl-datatable th { background: #05355C!important; }
+table.awfl-datatable th a { color: inherit; }
+
+/* ---- Image gallery (allimages) ---- */
+.awfl-image-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+.awfl-image-cell {
+    border: 1px solid var(--awfl-border); border-radius: 4px; padding: 6px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    background: #fff;
+}
+.awfl-image-cell img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+.awfl-image-name { font-size: 0.75rem; margin: 6px 0 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
+.awfl-image-cell-actions { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.awfl-image-cell-actions button { font-size: 0.7rem; padding: 4px 6px; }
+@media (max-width: 1000px) { .awfl-image-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px) { .awfl-image-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---- Footer ---- */
+.awfl-footer { border-top: 1px solid var(--awfl-border); background: #123363!important; margin-top: 24px; }
+.awfl-footer-inner { max-width: 1200px; margin: 0 auto; padding: 16px; font-size: 0.85rem; color: #B4BEC7!important; }
+.awfl-powered { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; color: #B4BEC7!important; }
+.awfl-powered img { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-footer-links { margin-bottom: 6px; }
+
+/* ---- Dashboard color rows ---- */
+.awfl-color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.awfl-color-row label { min-width: 160px; }
+.awfl-color-row input[type=text] { width: 100px; font-family: monospace; }
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+    .awfl-pagelist { columns: 1; }
+    .infobox { float: none; width: 100%; margin: 1em 0; }
+    .awfl-header-inner { flex-direction: column; align-items: stretch; }
+    .awfl-searchform { max-width: none; }
+}
+
+@media print {
+    .awfl-header, .awfl-footer, .awfl-page-actions, .awfl-usernav { display: none !important; }
+    .infobox { float: none; width: 100%; }
+}
+
+
+
+
+
+
+
+
+
+

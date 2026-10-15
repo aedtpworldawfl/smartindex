@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blue Melody (BM) — Music Player AEDTP WORLD</title>
+    <meta name="description" content="Blue Melody (BM) is a music player app that uses the device’s internal storage system to play locally
+stored audio files.
+- It automatically opens the phone’s storage and lists all available audio files.
+- Users can browse, select, and play songs directly inside BM.
+- No internet required — works completely offline (though external links like updates/news open online
+if available)
+Blue Melody – free global music discovery, streaming & distribution. Join the #1 music player for independent artists. BLUEMELODYBMAWFL BMAWFL | AEDTP WORLD"/>
+
+    <link rel="canonical" href="https://aedtpworld.com/tools/bluemelody/">
+
+    <meta name="keywords" content="Blue Melody, Music player for everyone, Global Music Discovery, BMAWFL BLUEMELODYBMAWFL, APPLE MUSIC, AUDIOMACK, SPOTIFY, YOUTUBE, GOOGLE, WIKIPEDIA, Distribution, Sharing And Streaming, AEDTP WORLD FREE LICENSE (AWFL) WIKI META, #1MusicPlatzform, AWFLMETA, AEDTP WORLD Music, AEDTP WORLD, Blue Melody, Music Player, Global Music Discovery, Music Streaming, Music Distribution, BMAWFL, AEDTP WORLD, Free Music, Music Sharing, Streaming Platform, Discover Music, Independent Artists, AWFL META, #1 Music Platform, Music App, Free Streaming, Music Library, New Music, Music Community, Music Player for Everyone, BLUEMELODYBMAWFL">
+    <meta name="application-name" content="Blue Melody" />
+    <meta name="version" content="1.0.0.0" />
+    <meta name="theme-color" content="#1d4ed8" />
+    <meta name="author" content="AEDTP WORLD, Emmanuel Deliver Amable" />
+    <meta name="copyright" content="© AEDTP WORLD" />
+    <meta name="publisher" content="AEDTP WORLD" />
+    <meta name="creator" content="@aedtpworld" />
+    <meta name="alias" content="bluemelody" />
+    <meta name="app-id" content="com.aedtpworld.bluemelody" />
+    <meta name="type" content="Web, Music, Application, Music Discovery, Distribution, Sharing And Streaming" />
+    <meta name="robots" content="index, follow" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta property="og:title" content="Blue Melody (Music) BMAWFL BLUEMELODYBMAWFL | AEDTP WORLD" />
+    <meta property="og:description" content="Blue Melody - Music player for everyone. Global Music Discovery, Distribution, Sharing And Streaming.. BMAWFL BLUEMELODYBMAWFL"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://aedtpworld.com/icons/bluemelody.png" />
+    <link rel="icon" href="https://aedtpworld.com/icons/bluemelody.png" type="image/png" />
+<link rel="icon" href="https://aedtpworld.com/icons/bluemelody.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/bluemelody.png">
+
+  <meta name="theme-color" content="#ffffff" />
+  <style>
+    /* ===== Blue Melody — Base Styles ===== */
+    :root {
+      --bg: #ffffff;
+      --fg: #111111; /* default text is black */
+      --muted: #666666;
+      --accent: #1e90ff;
+      --card: #f7f7f7;
+      --border: #e6e6e6;
+      --radius: 16px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+      --text-size: 16px; /* user adjustable */
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font);
+      font-size: var(--text-size);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .app {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100dvh;
+    }
+
+    header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 5;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+/* Footer */
+.lw-footer { border-top: 1px solid var(--lw-border); margin-top: 40px; }
+.lw-footer-inner { display: flex; justify-content: space-between; align-items: center; padding: 20px; font-size: 13px; color: var(--lw-text-dim); flex-wrap: wrap; gap: 10px; }
+.lw-footer-links a { margin-left: 14px; }
+
+    .brand .logo {
+      width: 36px; height: 36px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3aa0ff, #0047ff);
+      color: white;
+      box-shadow: 0 6px 16px rgba(30,144,255,0.35);
+      font-size: 18px;
+      user-select: none;
+    }
+
+    .header-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    button, .btn {
+      appearance: none; border: none; cursor: pointer;
+      background: var(--card); color: var(--fg);
+      border: 1px solid var(--border);
+      padding: 8px 12px; border-radius: calc(var(--radius) * 0.9);
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: transform .05s ease, box-shadow .15s ease, background .2s ease;
+    }
+    button:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    button:active { transform: translateY(1px); }
+
+    .btn-accent { background: var(--accent); color: #fff; border-color: transparent; }
+
+    .main {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 16px; padding: 16px; align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .main { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: clip; /* clip rounded corners */
+    }
+
+    .card h3 { margin: 0; padding: 12px 14px; border-bottom: 1px solid var(--border); }
+
+    .playlist {
+      max-height: 60dvh; overflow: auto;
+    }
+
+a { color: inherit; text-decoration: none; }
+
+    .track { display:flex; align-items:center; gap:10px; padding: 10px 14px; border-bottom: 1px dashed var(--border); }
+    .track:last-child { border-bottom: none; }
+    .track .index { width: 28px; text-align: right; color: var(--muted); }
+    .track .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .track .duration { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .track.active { background: rgba(30,144,255,0.08); }
+
+    .controls {
+      display: grid; gap: 10px; padding: 14px; align-items: center;
+    }
+
+    .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+    .primary-controls { justify-content: center; }
+    .primary-controls button { padding: 10px 12px; border-radius: 999px; }
+
+    .title { font-weight: 700; }
+    .muted { color: var(--muted); }
+
+    .progress {
+      display: grid; gap: 8px; padding: 0 14px 12px 14px;
+    }
+
+    input[type="range"] { width: 100%; }
+
+    .settings {
+      display: grid; gap: 12px; padding: 12px 14px;
+    }
+
+    .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 520px){ .grid-2 { grid-template-columns: 1fr; } }
+
+    .pill { font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); }
+
+    footer { padding: 10px 14px; border-top: 1px solid var(--border); color: var(--muted); text-align: center; }
+
+    .hidden { display:none !important; }
+  </style>
+</head>
+<body>
+  <div class="app" role="application" aria-label="Blue Melody music player">
+    <header>
+      <div class="brand" title="Blue Melody (BM)">
+       <img src="https://aedtpworld.com/icons/bluemelody.png" alt="Blue Melody Logo" class="logo" />
+
+        <div>
+          <div>Blue Melody</div>
+          <div class="muted" style="font-size:12px">Music player for everyone</div>
+        </div>
+      </div>
+
+ <div class="topbar">
+      <nav>
+
+       
+<button class="navbtn" onclick="openLink('https://aedtpworld.com/apps/bluemelody/')">Update</button>
+<button class="navbtn" onclick="openLink('https://aedtpworld.com/music/upload.php')">Upload</button>
+<button class="navbtn" onclick="openLink('https://aedtpworld.com/music/about/')">About</button>
+
+ <button class="tab-btn" onclick="window.open('https://www.jotform.com/app/251699103578568','_blank')"></i>Cayla AI</button>
+ <button class="tab-btn" onclick="window.open('https://www.jotform.com/app/251579248003558','_blank')"></i>AEDTP WORLD AI</button>
+
+<script>
+  function openLink(url) {
+    window.open(url, "_blank"); // change "_blank" to "_self" if you want it in same tab
+  }
+</script>
+     
+      </nav>
+    </div> 
+
+
+      <div class="header-actions">
+        <button id="pickFilesBtn" class="btn" title="Choose audio files">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Add Music
+        </button>
+        <button id="pickDirBtn" class="btn" title="Choose a music folder (Android/Chrome)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M3 7h6l2 2h10v10H3V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          Add Folder
+        </button>
+        <input id="fileInput" type="file" accept="audio/*" multiple class="hidden" />
+      </div>
+    </header>
+
+    <div class="main">
+      <!-- Left: Playlist -->
+      <section class="card" aria-label="Playlist">
+        <h3>Playlist <span id="trackCount" class="pill">0</span></h3>
+        <div id="playlist" class="playlist" role="list"></div>
+      </section>
+
+      <!-- Right: Player + Settings -->
+      <section class="card" aria-label="Player">
+        <h3 id="nowTitle">Not Playing</h3>
+
+        <div class="controls">
+          <div class="row" style="justify-content:space-between">
+            <div>
+              <span id="nowArtist" class="muted"></span>
+            </div>
+            <div>
+              <span class="muted" id="repeatModeLabel">Repeat: Off</span>
+              <span class="pill" id="shuffleLabel">Shuffle: Off</span>
+            </div>
+          </div>
+
+          <!-- Primary transport controls -->
+          <div class="row primary-controls" aria-label="Transport controls">
+            <button id="prevBtn" title="Previous">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M6 5v14M18 6l-10 6 10 6V6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+
+            <button id="playPauseBtn" class="btn-accent" title="Play/Pause">
+              <svg id="playIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg>
+              <svg id="pauseIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" class="hidden" aria-hidden><path d="M8 5h4v14H8zM14 5h4v14h-4z" fill="currentColor"/></svg>
+            </button>
+
+            <button id="nextBtn" title="Next">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M18 5v14M6 6l10 6L6 18V6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+
+            <button id="skipBtn" title="Skip (Stop)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M6 6h12v12H6z" stroke="currentColor" stroke-width="2"/></svg>
+            </button>
+          </div>
+
+          <!-- Secondary controls -->
+          <div class="row" style="justify-content:center">
+            <button id="repeatOneBtn" title="Replay/Repeat current track">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M4 12a8 8 0 0 1 13.657-5.657L20 8M20 12a8 8 0 0 1-13.657 5.657L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="11" y="16" font-size="10" text-anchor="middle" fill="currentColor">1</text></svg>
+            </button>
+            <button id="repeatAllBtn" title="Loop / Repeat All">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M17 1l4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4m14-2v2a4 4 0 0 1-4 4H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button id="shuffleBtn" title="Shuffle">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M16 3h5v5M3 8h6l6 8h6M21 16v5h-5M3 16h6l1.5-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <label class="row" title="Volume" style="gap:6px">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M4 9h4l5-4v14l-5-4H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              <input id="volume" type="range" min="0" max="1" step="0.01" value="1" />
+            </label>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress">
+          <div class="row" style="justify-content:space-between">
+            <span id="currentTime">00:00</span>
+            <span id="totalTime">00:00</span>
+          </div>
+          <input id="seek" type="range" min="0" max="1000" value="0" />
+        </div>
+
+        <!-- Settings / Personalization -->
+        <div class="settings">
+          <h4 style="margin:0">Appearance & Text</h4>
+          <div class="grid-2">
+            <label>Background
+              <input id="bgPicker" type="color" value="#ffffff" style="width:100%" />
+            </label>
+            <label>Text Color
+              <input id="fgPicker" type="color" value="#111111" style="width:100%" />
+            </label>
+          </div>
+          <div class="grid-2">
+            <label>Accent Color
+              <input id="accentPicker" type="color" value="#1e90ff" style="width:100%" />
+            </label>
+            <label>Font Size
+              <input id="fontSize" type="range" min="12" max="22" value="16" />
+            </label>
+          </div>
+          <label>Font Family
+            <select id="fontFamily" style="width:100%">
+              <option value="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, 'Apple Color Emoji', 'Segoe UI Emoji'">System Default</option>
+              <option value="Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial">Inter (if installed)</option>
+              <option value="Georgia, 'Times New Roman', serif">Serif</option>
+              <option value="'Courier New', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace">Monospace</option>
+            </select>
+          </label>
+          <div class="row" style="justify-content:flex-end">
+            <button id="resetTheme">Reset</button>
+            <button id="saveTheme" class="btn-accent">Save Theme</button>
+          </div>
+        </div>
+
+ <footer class="lw-footer">
+  <div class="lw-container lw-footer-inner">
+    <p> <div>BM — Blue Melody • &copy; <?= date('Y') ?> AEDTP WORLD</div> All rights reserved.</p>
+    <div class="lw-footer-links">
+      <a href="/lyrics/">LyricsWorld</a>
+      <a href="/spotifyworld/">SpotifyWorld</a>
+      <a href="mailto:aedtpworld@aedtpworld.com">Contact</a>
+
+    </div>
+  </div>
+</footer>
+      </section>
+    </div>
+  </div>
+
+
+  <!-- Hidden audio element -->
+  <audio id="audio" preload="metadata" crossorigin="anonymous"></audio>
+
+  <script>
+    /* =====================================================
+     * Blue Melody (BM) — Pure HTML/CSS/JS single-file app
+     * Works offline. Designed for Android Chrome & WebView.
+     * ===================================================== */
+
+    const fileInput = document.getElementById('fileInput');
+    const pickFilesBtn = document.getElementById('pickFilesBtn');
+    const pickDirBtn = document.getElementById('pickDirBtn');
+
+    const playlistEl = document.getElementById('playlist');
+    const trackCountEl = document.getElementById('trackCount');
+
+    const audio = document.getElementById('audio');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const skipBtn = document.getElementById('skipBtn');
+
+    const repeatOneBtn = document.getElementById('repeatOneBtn');
+    const repeatAllBtn = document.getElementById('repeatAllBtn');
+    const shuffleBtn = document.getElementById('shuffleBtn');
+
+    const repeatModeLabel = document.getElementById('repeatModeLabel');
+    const shuffleLabel = document.getElementById('shuffleLabel');
+
+    const seek = document.getElementById('seek');
+    const volume = document.getElementById('volume');
+    const currentTimeEl = document.getElementById('currentTime');
+    const totalTimeEl = document.getElementById('totalTime');
+
+    const nowTitle = document.getElementById('nowTitle');
+
+    // Theme controls
+    const bgPicker = document.getElementById('bgPicker');
+    const fgPicker = document.getElementById('fgPicker');
+    const accentPicker = document.getElementById('accentPicker');
+    const fontSize = document.getElementById('fontSize');
+    const fontFamily = document.getElementById('fontFamily');
+    const saveTheme = document.getElementById('saveTheme');
+    const resetTheme = document.getElementById('resetTheme');
+
+    // State
+    const state = {
+      playlist: /** @type {{name:string, url:string, file?:File}[]} */([]),
+      index: -1,
+      wasPlaying: false,
+      shuffle: false,
+      repeatOne: false,
+      repeatAll: false,
+    };
+
+    // ===== Utilities =====
+    const fmtTime = (sec) => {
+      if (!isFinite(sec)) return '00:00';
+      const s = Math.floor(sec % 60).toString().padStart(2,'0');
+      const m = Math.floor(sec / 60).toString().padStart(2,'0');
+      return `${m}:${s}`;
+    };
+
+    const persist = {
+      saveTheme(){
+        const theme = {
+          bg: bgPicker.value,
+          fg: fgPicker.value,
+          accent: accentPicker.value,
+          size: fontSize.value,
+          family: fontFamily.value,
+        };
+        localStorage.setItem('bm.theme', JSON.stringify(theme));
+        alert('Theme saved!');
+      },
+      loadTheme(){
+        try {
+          const t = JSON.parse(localStorage.getItem('bm.theme')||'null');
+          if (!t) return;
+          bgPicker.value = t.bg; fgPicker.value = t.fg; accentPicker.value = t.accent;
+          fontSize.value = t.size; fontFamily.value = t.family;
+          applyTheme();
+        } catch {}
+      },
+      savePlaylist(){
+        // Persist only names (for UI) — file access cannot be persisted for security.
+        const names = state.playlist.map(t=>t.name);
+        localStorage.setItem('bm.playlist.names', JSON.stringify(names));
+      }
+    };
+
+    function applyTheme(){
+      document.documentElement.style.setProperty('--bg', bgPicker.value);
+      document.documentElement.style.setProperty('--fg', fgPicker.value);
+      document.documentElement.style.setProperty('--accent', accentPicker.value);
+      document.documentElement.style.setProperty('--text-size', fontSize.value + 'px');
+      document.documentElement.style.setProperty('--font', fontFamily.value);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', bgPicker.value);
+    }
+
+    bgPicker.addEventListener('input', applyTheme);
+    fgPicker.addEventListener('input', applyTheme);
+    accentPicker.addEventListener('input', applyTheme);
+    fontSize.addEventListener('input', applyTheme);
+    fontFamily.addEventListener('change', applyTheme);
+    saveTheme.addEventListener('click', persist.saveTheme);
+    resetTheme.addEventListener('click', ()=>{ localStorage.removeItem('bm.theme'); location.reload(); });
+
+    // ===== File / Folder selection =====
+    pickFilesBtn.addEventListener('click', ()=> fileInput.click());
+    fileInput.addEventListener('change', async (e)=>{
+      const files = Array.from(fileInput.files||[]);
+      await addFiles(files);
+      fileInput.value = '';
+    });
+
+    pickDirBtn.addEventListener('click', async ()=>{
+      if (!('showDirectoryPicker' in window)) {
+        alert('Folder access needs a modern browser (Chrome 86+). Use "Add Music" instead.');
+        return;
+      }
+      try {
+        const handle = await window.showDirectoryPicker({ mode: 'read' });
+        const files = [];
+        for await (const entry of handle.values()){
+          if (entry.kind === 'file'){
+            const file = await entry.getFile();
+            if (file.type.startsWith('audio/')) files.push(file);
+          }
+        }
+        await addFiles(files);
+      } catch (err) {
+        if (err && err.name !== 'AbortError') console.warn(err);
+      }
+    });
+
+    async function addFiles(files){
+      for (const file of files){
+        if (!file.type.startsWith('audio/')) continue;
+        const url = URL.createObjectURL(file);
+        state.playlist.push({ name: file.name.replace(/\.[^/.]+$/, ''), url, file });
+      }
+      if (state.index === -1 && state.playlist.length > 0) state.index = 0;
+      renderPlaylist();
+      updateTrackCount();
+      persist.savePlaylist();
+      if (state.wasPlaying || audio.paused === false) playCurrent();
+    }
+
+    function updateTrackCount(){
+      trackCountEl.textContent = state.playlist.length.toString();
+    }
+
+    function renderPlaylist(){
+      playlistEl.innerHTML = '';
+      state.playlist.forEach((t, i)=>{
+        const row = document.createElement('div');
+        row.className = 'track' + (i === state.index ? ' active' : '');
+        row.role = 'listitem';
+        row.tabIndex = 0;
+        row.innerHTML = `
+          <div class="index">${i+1}</div>
+          <div class="name" title="${t.name}">${t.name}</div>
+          <div class="duration" id="dur-${i}">--:--</div>
+        `;
+        row.addEventListener('click', ()=>{
+          const wasPlaying = !audio.paused;
+          state.index = i; loadCurrent(); if (wasPlaying) playCurrent();
+        });
+        playlistEl.appendChild(row);
+      });
+      loadCurrentMetaDurations();
+      refreshNowPlayingHeader();
+    }
+
+    function refreshNowPlayingHeader(){
+      nowTitle.textContent = state.index >=0 ? state.playlist[state.index]?.name || 'Not Playing' : 'Not Playing';
+    }
+
+    function loadCurrent(){
+      const track = state.playlist[state.index];
+      if (!track) return;
+      audio.src = track.url;
+      refreshNowPlayingHeader();
+      highlightActive();
+    }
+
+    function playCurrent(){
+      const track = state.playlist[state.index];
+      if (!track) return;
+      audio.play().catch(err=>console.warn('Autoplay blocked:', err));
+      setPlayUi(true);
+    }
+
+    function setPlayUi(isPlaying){
+      playIcon.classList.toggle('hidden', isPlaying);
+      pauseIcon.classList.toggle('hidden', !isPlaying);
+    }
+
+    function highlightActive(){
+      [...playlistEl.children].forEach((el, idx)=>{
+        el.classList.toggle('active', idx === state.index);
+      });
+    }
+
+    // ===== Controls =====
+    playPauseBtn.addEventListener('click', ()=>{
+      if (audio.src === '' && state.playlist.length){ loadCurrent(); }
+      if (audio.paused) { audio.play(); setPlayUi(true); }
+      else { audio.pause(); setPlayUi(false); }
+    });
+
+    prevBtn.addEventListener('click', ()=>{
+      const was = !audio.paused;
+      if (state.playlist.length === 0) return;
+      state.index = (state.index - 1 + state.playlist.length) % state.playlist.length;
+      loadCurrent();
+      if (was) playCurrent(); else setPlayUi(false);
+    });
+
+    nextBtn.addEventListener('click', ()=>{
+      const was = !audio.paused;
+      goNext();
+      if (was) playCurrent(); else setPlayUi(false);
+    });
+
+    function goNext(){
+      if (state.shuffle && state.playlist.length > 1){
+        let n;
+        do { n = Math.floor(Math.random()*state.playlist.length); } while (n === state.index);
+        state.index = n;
+      } else {
+        state.index = (state.index + 1) % state.playlist.length;
+      }
+      loadCurrent();
+    }
+
+    skipBtn.addEventListener('click', ()=>{
+      // Stops all music from playing
+      audio.pause(); audio.currentTime = 0; setPlayUi(false);
+    });
+
+    repeatOneBtn.addEventListener('click', ()=>{
+      state.repeatOne = !state.repeatOne;
+      if (state.repeatOne) state.repeatAll = false; // mutually exclusive
+      updateRepeatShuffleLabels();
+    });
+
+    repeatAllBtn.addEventListener('click', ()=>{
+      state.repeatAll = !state.repeatAll;
+      if (state.repeatAll) state.repeatOne = false;
+      updateRepeatShuffleLabels();
+    });
+
+    shuffleBtn.addEventListener('click', ()=>{
+      state.shuffle = !state.shuffle;
+      updateRepeatShuffleLabels();
+    });
+
+    function updateRepeatShuffleLabels(){
+      let rep = 'Off';
+      if (state.repeatOne) rep = 'One';
+      else if (state.repeatAll) rep = 'All';
+      repeatModeLabel.textContent = `Repeat: ${rep}`;
+      shuffleLabel.textContent = `Shuffle: ${state.shuffle ? 'On' : 'Off'}`;
+    }
+
+    // ===== Progress / Seek / Volume =====
+    audio.addEventListener('timeupdate', ()=>{
+      const p = (audio.currentTime / (audio.duration||1));
+      seek.value = String(Math.floor(p * 1000));
+      currentTimeEl.textContent = fmtTime(audio.currentTime);
+      totalTimeEl.textContent = fmtTime(audio.duration);
+    });
+
+    seek.addEventListener('input', ()=>{
+      const p = Number(seek.value)/1000;
+      audio.currentTime = p * (audio.duration||0);
+    });
+
+    volume.addEventListener('input', ()=>{ audio.volume = Number(volume.value); });
+
+    audio.addEventListener('play', ()=> setPlayUi(true));
+    audio.addEventListener('pause', ()=> setPlayUi(false));
+
+    audio.addEventListener('ended', ()=>{
+      if (state.repeatOne) { audio.currentTime = 0; audio.play(); return; }
+      const atEnd = state.index === state.playlist.length - 1;
+      if (state.shuffle) {
+        goNext(); audio.play(); return;
+      }
+      if (atEnd && !state.repeatAll){ setPlayUi(false); return; }
+      goNext(); audio.play();
+    });
+
+    // Preload and show durations in list
+    function loadCurrentMetaDurations(){
+      state.playlist.forEach((t, i)=>{
+        const a = new Audio();
+        a.src = t.url; a.preload = 'metadata';
+        a.addEventListener('loadedmetadata', ()=>{
+          const d = document.getElementById('dur-' + i);
+          if (d) d.textContent = fmtTime(a.duration);
+        }, { once:true });
+      });
+    }
+
+    // Keyboard shortcuts
+    window.addEventListener('keydown', (e)=>{
+      if (e.target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
+      if (e.code === 'Space'){ e.preventDefault(); playPauseBtn.click(); }
+      if (e.code === 'ArrowRight'){ nextBtn.click(); }
+      if (e.code === 'ArrowLeft'){ prevBtn.click(); }
+      if (e.key.toLowerCase() === 's'){ shuffleBtn.click(); }
+      if (e.key.toLowerCase() === 'r'){ repeatOneBtn.click(); }
+    });
+
+    // Initialize
+    applyTheme();
+    persist.loadTheme();
+    updateRepeatShuffleLabels();
+
+    // Optional: Register a tiny service worker (in-memory) for PWA install
+    if ('serviceWorker' in navigator) {
+      const swCode = `self.addEventListener('install', e=>{self.skipWaiting();}); self.addEventListener('activate', e=>{clients.claim();});`;
+      const blob = new Blob([swCode], { type: 'text/javascript' });
+      const url = URL.createObjectURL(blob);
+      navigator.serviceWorker.register(url).catch(()=>{});
+    }
+  </script>
+</body>
+</html>

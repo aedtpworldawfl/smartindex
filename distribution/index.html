@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GLOBAL MUSIC DISTRIBUTION | AEDTP WORLD</title>
+    <meta name="description" content="Distribute Your Songs, Albums, Eps, Music Worldwide to 150+ Countries, Free (No Cost) on AEDTP WORLD" />
+    <link rel="canonical" href="https://aedtpworld.com/distribution/index.html" />
+    <meta name="keywords" content="Blue Melody, GLOBAL MUSIC DISTRIBUTION, Free (No Cost), Distribute Your Songs, Music player for everyone, Global Music Discovery, BMAWFL BLUEMELODYBMAWFL, APPLE MUSIC, AUDIOMACK, SPOTIFY, YOUTUBE, GOOGLE, WIKIPEDIA, Distribution, Sharing And Streaming, AEDTP WORLD FREE LICENSE (AWFL) WIKI META, #1MusicPlatzform, AWFLMETA, AEDTP WORLD Music, AEDTP WORLD, Blue Melody, Music Player, Global Music Discovery, Music Streaming, Music Distribution, BMAWFL, AEDTP WORLD, Free Music, Music Sharing, Streaming Platform, Discover Music, Independent Artists, AWFL META, #1 Music Platform, Music App, Free Streaming, Music Library, New Music, Music Community, Music Player for Everyone, BLUEMELODYBMAWFL" />
+    <meta name="application-name" content="AEDTP WORLD" />
+    <meta name="version" content="1.0.0.0" />
+    <meta name="theme-color" content="#1d4ed8" />
+    <meta name="author" content="AEDTP WORLD, Emmanuel Deliver Amable" />
+    <meta name="copyright" content="© AEDTP WORLD" />
+    <meta name="publisher" content="AEDTP WORLD" />
+    <meta name="creator" content="@aedtpworld" />
+    <meta name="alias" content="awfl" />
+    <meta name="app-id" content="com.aedtpworld.awfl" />
+    <meta name="type" content="Web, Music, Application, Music Distribution, Distribution, Sharing And Streaming" />
+    <meta name="robots" content="index, follow" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta property="og:title" content="GLOBAL MUSIC DISTRIBUTION | AEDTP WORLD" />
+    <meta property="og:sitename" content="GLOBAL MUSIC DISTRIBUTION" />
+    <meta property="og:description" content="Distribute Your Songs, Albums, Eps, Music Worldwide to 150+ Countries, Free (No Cost) on AEDTP WORLD" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://aedtpworld.com/icons/aedtpworld.png" />
+    <!-- Icons -->
+    <link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png" />
+
+    <style>
+        * { box-sizing: border-box; margin:0; padding:0; }
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: black;
+            transition: background 0.3s, color 0.3s;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            position: sticky;
+            top:0;
+            z-index: 1000;
+        }
+        header h1 { margin:0; font-size:1.5em; }
+        nav a, nav button {
+            margin-left: 15px;
+            text-decoration: none;
+            color: white;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        #dateTime { font-weight: bold; }
+
+        #searchBar {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            margin-top: 10px;
+            border:1px solid #ccc;
+        }
+
+        #resultsContainer {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 15px;
+            margin-top:10px;
+            background:#fafafa;
+            border-radius:8px;
+            box-shadow:0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .submitBtn {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            background: #007BFF;
+            border:none;
+            border-radius:8px;
+            color:white;
+            cursor:pointer;
+            transition:0.3s;
+        }
+        .submitBtn:hover { background:#0056b3; }
+
+        footer {
+            margin-top:40px;
+            padding:20px;
+            text-align:center;
+            background:#0b1120;
+            color:white;
+            font-size:0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>AEDTP WORLD</h1>
+    <nav>
+        <a href="https://aedtpworld.com/" target="_blank">AEDTP WORLD</a>
+        <a href="https://aedtpworld.com/distribution/" target="_blank">Distribute</a>
+        <a href="https://aedtpworld.com/spotifyworld/" target="_blank">Artists</a>
+        <a href="https://aedtpworld.com/music/" target="_blank">Music</a>
+        <a href="https://aedtpworld.com/searchengine/" target="_blank">Search</a>
+        <a href="https://aedtpworld.com/apps/" target="_blank">Apps</a>
+        <button id="themeToggle">Theme: White</button>
+    </nav>
+</header>
+
+<div style="padding:10px 20px;">Date &amp; Time: <span id="dateTime"></span></div>
+
+<div style="padding:10px 20px;">
+    <input id="searchBar" type="text" placeholder="Search... (Text Search)" />
+</div>
+
+<div class="main-container">
+
+    <!-- THREE MAIN BUTTONS -->
+    <button class="submitBtn" onclick="window.open('https://aedtpworld.com/lyrics/', '_blank')">
+        Publish Lyrics Free
+    </button>
+
+    <button class="submitBtn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSepR5UGyHNaWpaqcHfSRZXK9J_qTYHVmma-laPpaRlFlTs8pQ/viewform?usp=header', '_blank')">
+        Submit Single Songs
+    </button>
+
+    <button class="submitBtn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSd8QzQc3ObsLoobwYai_KAFLy9vEgerBmrtyZvU60R0OXj39A/viewform?usp=header', '_blank')">
+        Submit Album
+    </button>
+
+    <!-- FULL DISTRIBUTION SECTION -->
+    <div id="bioText" style="white-space:pre-wrap; padding:20px; background:#f7f7f7; border-radius:10px;">
+
+<b>AEDTP WORLD</b> is a professional digital platform dedicated to documenting, archiving, and sharing authentic stories of individuals, innovators, creators, and leaders across the globe. It serves as an interactive and expanding and exploration system built to preserve knowledge, inspire creativity, and showcase global achievements...
+
+    </div>
+
+    <div id="resultsContainer"></div>
+
+</div>
+
+<footer>© AEDTP WORLD | Powered by AEDTP WORLD</footer>
+
+<script>
+/* THEME SWITCH */
+const themeToggle = document.getElementById("themeToggle");
+const themes = [
+  { name: "White", bg: "white", color: "black" },
+  { name: "Black", bg: "black", color: "#38bdf8" },
+  { name: "Light Blue", bg: "lightblue", color: "#3F48CC" }
+];
+let themeIndex = 0;
+function applyTheme(index){
+    document.body.style.background=themes[index].bg;
+    document.body.style.color=themes[index].color;
+    themeToggle.textContent=`Theme: ${themes[index].name}`;
+    localStorage.setItem("themeIndex",index);
+}
+themeToggle.addEventListener("click",()=>{
+    themeIndex=(themeIndex+1)%themes.length;
+    applyTheme(themeIndex);
+});
+const savedTheme = localStorage.getItem("themeIndex");
+if(savedTheme){themeIndex=parseInt(savedTheme); applyTheme(themeIndex);} else applyTheme(0);
+
+/* DATE/TIME */
+function updateDateTime(){document.getElementById("dateTime").textContent=new Date().toLocaleString();}
+setInterval(updateDateTime,1000); updateDateTime();
+
+/* SEARCH — works inside biography text */
+const searchBar=document.getElementById("searchBar");
+const resultsContainer=document.getElementById("resultsContainer");
+const bioText=document.getElementById("bioText").innerText;
+
+searchBar.addEventListener("input",()=>{
+    const q=searchBar.value.trim().toLowerCase();
+    resultsContainer.innerHTML="";
+    if(q==="") return;
+
+    const lines=bioText.split("\n");
+    let found=0;
+
+    lines.forEach(line=>{
+        if(line.toLowerCase().includes(q)){
+            found++;
+            const div=document.createElement("div");
+            div.style.padding="8px";
+            div.style.marginBottom="6px";
+            div.style.background="#e8e8e8";
+            div.style.borderRadius="5px";
+            div.textContent=line.trim();
+            resultsContainer.appendChild(div);
+        }
+    });
+
+    if(found===0){
+        resultsContainer.innerHTML="No results found.";
+    }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

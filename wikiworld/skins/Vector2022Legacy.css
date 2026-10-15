@@ -1,0 +1,51 @@
+/* ===================================================================
+   AWFLWIKIWORLD — Skin/Vector2022Legacy.css
+   Developer: AEDTP WORLD
+   Skin Name: Vector 2010 Legacy (Classic Wiki)
+   License: AWFL
+   Version: 2.0 - Double-Locked
+   Palette: 10+5 - Classic Legacy
+   =================================================================== */
+:root {
+    --awfl-header-bg: #F6F6F6!important;       /* 1 legacy grey */
+    --awfl-header-text: #000000!important;    /* 2 black */
+    --awfl-button-bg: #E9E9E9!important;      /* 3 */
+    --awfl-button-text: #000000!important;    /* 4 */
+    --awfl-page-text: #252525!important;      /* 5 classic wiki black */
+    --awfl-link: #0645AD!important;           /* 6 classic wiki blue */
+    --awfl-link-visited: #0B0080!important;   /* 7 classic visited */
+    --awfl-border: #A7D7F9!important;         /* 8 classic light blue border */
+    --awfl-bg: #F6F6F6!important;             /* 9 */
+    --awfl-content-bg: #FFFFFF!important;     /* 10 */
+}
+
+html, body { background: var(--awfl-bg)!important; color: var(--awfl-page-text)!important; font-family: sans-serif!important; line-height: 1.6!important; font-size: 14px!important; }
+.awfl-body { background: var(--awfl-bg)!important; }
+
+.awfl-header { background: var(--awfl-header-bg)!important; border-bottom: 1px solid #A7D7F9!important; }
+.awfl-header-inner { background: var(--awfl-header-bg)!important; }
+html body .awfl-header a { color: #0645AD!important; -webkit-text-fill-color: #0645AD!important; }
+
+.awfl-main { background: var(--awfl-content-bg)!important; border: 1px solid #A7D7F9!important; border-right: none!important; }
+
+.awfl-footer { background: #F6F6F6!important; border-top: 1px solid #A7D7F9!important; } /* 11 */
+.awfl-footer-inner { color: #54595D!important; } /* 12 */
+.awfl-footer a { color: #0645AD!important; }
+
+.infobox { background: #F8F9FA!important; border: 1px solid #A2A9B1!important; } /* 13 */
+.infobox th { background: #EAECF0!important; color: #000000!important; } /* 14 */
+.infobox-title { background: #B0C4DE!important; color: #000000!important; }
+table.awfl-datatable th { background: #EAECF0!important; color: #000000!important; }
+
+a { color: var(--awfl-link)!important; }
+a:visited { color: var(--awfl-link-visited)!important; }
+
+::selection { background: #A7D7F9!important; color: #000000!important; } /* 15 */
+
+
+
+
+
+
+
+

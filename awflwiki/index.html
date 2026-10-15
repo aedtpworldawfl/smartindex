@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AEDTP WORLD FREE LICENSE (AWFL) WIKI</title>
+    <meta name="description" content="AEDTP WORLD FREE LICENSE (AWFL) WIKI — a free, open encyclopedia for articles across animals, artists, books, business, technology and more | AEDTP WORLD FREE LICENSE (AWFL) WIKI"/>
+    <meta name="keywords" content="AWFL WIKI, encyclopedia, AEDTP WORLD, com.aedtpworld.awfl, AEDTP WORLD FREE LICENSE (AWFL) WIKI"/>
+
+<meta property="og:site_name" content="AWFLWIKI">
+
+    <meta name="application-name" content="AWFLWIKI" />
+    <meta name="version" content="1.0.0.0" />
+    <meta name="theme-color" content="#0E293D" />
+    <meta name="author" content="AEDTP WORLD, Emmanuel Deliver Amable" />
+    <meta name="copyright" content="© AEDTP WORLD" />
+    <meta name="publisher" content="AEDTP WORLD" />
+    <meta name="creator" content="@aedtpworld" />
+    <meta name="alias" content="awflwiki" />
+    <link rel="canonical" href="https://aedtpworld.com/awflwiki/index.html">
+    <meta name="app-id" content="com.aedtpworld.awfl" />
+    <meta name="type" content="Web, Wiki System, Advanced WIKI Media Networking, AEDTP WORLD FREE LICENSE (AWFL) WIKI, content discovery, Application" />
+    <meta name="robots" content="index, follow" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta property="og:title" content="AEDTP WORLD FREE LICENSE (AWFL) WIKI" />
+    <meta property="og:description" content="A free, open encyclopedia across animals, artists, books, business, technology and more | AEDTP WORLD FREE LICENSE (AWFL) WIKI"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://aedtpworld.com/icons/aedtpworld.png" />
+    <link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png" type="image/png" />
+<link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+    <link rel="stylesheet" href="/awflwiki/assets/style.css" />
+</head>
+<body>
+<header class="site-header">
+    <a href="/awflwiki/index.html" class="logo">AEDTP WORLD FREE LICENSE (AWFL) WIKI</a>
+    <nav>
+        <a href="/awflwiki/publish.php">Write &amp; Publish</a>
+        <a href="/awflwiki/wikidata.php">All Wikis</a>
+        <a href="/awflwiki/trends/index.html">Trends</a>
+        <a href="/awflwiki/claim/index.php">Claim Account</a>
+        <a href="/awflwiki/about/index.html">About</a>
+        <a href="/awflwiki/help/index.html">Help</a>
+        <a href="/awflwiki/profile/index.php" id="navProfile">Sign in</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>AEDTP WORLD FREE LICENSE (AWFL) WIKI</h1>
+        <p>A free and open encyclopedia built by the AEDTP WORLD community. Discover, write, and share articles across
+        animals, artists, books, business, technology, and more — anyone can contribute, everyone can read.</p>
+        <div class="actions">
+            <button class="btn" onclick="location.href='/awflwiki/publish.php'">Write &amp; Publish</button>
+            <button class="btn secondary" onclick="location.href='/awflwiki/help/index.html'">Learn how it works</button>
+        </div>
+    </section>
+
+    <h2>Browse categories</h2>
+    <div class="category-grid">
+        <a class="category-card" href="/awflwiki/animals/index.html"><h3>Animals</h3><p>Wildlife, pets and species of the world.</p></a>
+        <a class="category-card" href="/awflwiki/artists/index.html"><h3>Artists</h3><p>Musicians, painters, performers and creators.</p></a>
+        <a class="category-card" href="/awflwiki/books/index.html"><h3>Books</h3><p>Literature, authors and published works.</p></a>
+        <a class="category-card" href="/awflwiki/business/index.html"><h3>Business</h3><p>Companies, brands and entrepreneurship.</p></a>
+        <a class="category-card" href="/awflwiki/country/index.html"><h3>Country</h3><p>Nations, geography and cultures.</p></a>
+        <a class="category-card" href="/awflwiki/creative/index.html"><h3>Creative</h3><p>Design, film, media and creative works.</p></a>
+        <a class="category-card" href="/awflwiki/dictionary/index.html"><h3>Dictionary</h3><p>Word meanings, terms and definitions.</p></a>
+        <a class="category-card" href="/awflwiki/education/index.html"><h3>Education</h3><p>Learning, courses and academic topics.</p></a>
+        <a class="category-card" href="/awflwiki/nature/index.html"><h3>Nature</h3><p>Ecosystems, plants and the natural world.</p></a>
+        <a class="category-card" href="/awflwiki/people/index.html"><h3>People</h3><p>Notable and everyday individuals.</p></a>
+        <a class="category-card" href="/awflwiki/schools/index.html"><h3>Schools</h3><p>Institutions and educational bodies.</p></a>
+        <a class="category-card" href="/awflwiki/software/index.html"><h3>Software</h3><p>Apps, platforms and programs.</p></a>
+        <a class="category-card" href="/awflwiki/technology/index.html"><h3>Technology</h3><p>Devices, innovation and technical topics.</p></a>
+        <a class="category-card" href="/awflwiki/help/index.html"><h3>Help</h3><p>Guides on using AWFL WIKI.</p></a>
+    </div>
+</main>
+
+<footer><p>&copy; AEDTP WORLD</p></footer>
+
+<script src="/awflwiki/assets/main.js"></script>
+<script>
+(async () => {
+    const s = await awflSession();
+    const nav = document.getElementById('navProfile');
+    if (s.username) {
+        nav.textContent = s.username;
+        nav.href = '/awflwiki/users/' + s.username + '/index.html';
+    }
+})();
+</script>
+</body>
+</html>

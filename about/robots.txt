@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /about/
+Disallow: /about/api/
+Disallow: /about/admin/
+
+Sitemap: https://aedtpworld.com/about/sitemap.php

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWFLMETA · AEDTP WORLD Wiki Viewer — AWFLWIKIWORLD</title>
+<meta name="description" content="AWFLMETA Viewer AWFLMETA · AEDTP WORLD Wiki Viewer Is a WIKI system of AEDTP WORLD FREE LICENSE WIKI, a Free Open Encyclopedia, Built And Powered by Forever Con...">
+<meta name="author" content="AEDTP WORLD">
+<meta name="license" content="AEDTP WORLD FREE LICENSE (AWFL)">
+<link rel="canonical" href="https://aedtpworld.com/wikiworld/AWFLMETA">
+<meta property="og:title" content="AWFLMETA · AEDTP WORLD Wiki Viewer">
+<meta property="og:description" content="AWFLMETA Viewer AWFLMETA · AEDTP WORLD Wiki Viewer Is a WIKI system of AEDTP WORLD FREE LICENSE WIKI, a Free Open Encyclopedia, Built And Powered by Forever Con...">
+<meta property="og:url" content="https://aedtpworld.com/wikiworld/AWFLMETA">
+<meta property="og:image" content="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<link rel="icon" href="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<link rel="stylesheet" href="https://aedtpworld.com/wikiworld/assets/site.css">
+<link rel="stylesheet" href="https://aedtpworld.com/wikiworld/skins/vector2022.css">
+<style>.awfl-converted{max-width:1100px;margin:0 auto;padding:16px}.awfl-converted .awfl-article:after{content:"";display:block;clear:both}.awfl-converted img{max-width:100%}.awfl-categories{margin-top:24px;padding-top:10px;border-top:1px solid #a2a9b1;font-size:.9em}</style>
+</head>
+<body>
+<div class="awfl-wrapper">
+<main class="awfl-main awfl-converted">
+<p><a href="https://aedtpworld.com/wikiworld/"><img src="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg" alt="" style="height:28px;width:auto;vertical-align:middle"> AWFLWIKIWORLD</a></p>
+<div class="awfl-page-titlebar"><h1>AWFLMETA · AEDTP WORLD Wiki Viewer</h1></div>
+<article class="awfl-article"><!--AWFL-ARTICLE-START--><table class="infobox"><tr><th class="infobox-title" colspan="2">AWFLMETA · AEDTP WORLD Wiki Viewer</th></tr><tr><td colspan="2" class="infobox-image"><img src="https://aedtpworld.com/icons/awflmetaawfl.jpg" alt="WIKI system of AEDTP WORLD FREE LICENSE (AWFL) WIKI, Free Open Encyclopedia, Built And Powered by Forever Contribution" style="width:250px !important;height:auto;"><div class="infobox-caption">WIKI system of AEDTP WORLD FREE LICENSE (AWFL) WIKI, Free Open Encyclopedia, Built And Powered by Forever Contribution</div></td></tr><tr><th>Type</th><td>Viewer, Wiki, AWFLMETA, Application</td></tr><tr><th>Developer</th><td>AEDTP WORLD</td></tr><tr><th>Base URL</th><td>https://aedtpworld.com/awflmeta/</td></tr><tr><th>Canonical</th><td>https://aedtpworld.com/awflmeta/</td></tr><tr><th>License</th><td>AEDTP WORLD FREE LICENSE (AWFL)</td></tr></table>
+<h2>AWFLMETA Viewer</h2>
+<p><strong>AWFLMETA · AEDTP WORLD Wiki Viewer</strong> Is a WIKI system of AEDTP WORLD FREE LICENSE WIKI, a Free Open Encyclopedia, Built And Powered by Forever Contribution, To Discover And Connect, Knowledge Is Unlimited.</p>
+<h2>Purpose</h2>
+<p>Viewer that fetches <code>https://aedtpworld.com/wiki/awflmeta.json</code> index, then loads each <code>https://aedtpworld.com/wiki/{file}</code> HTML, parses body and injects as cards min-height 100vh per fetch, with divider between.</p>
+<h2>Layout</h2>
+<ul>
+<li><strong>Fixed Header</strong> — 68px, rgba(11,13,16,0.88) blur 14px saturate 1.3, shadow 0 4px 30px, brand gradient #f0b45a to #f7d78c, brand-link #a8b3c9 left border</li>
+<li><strong>Nav</strong> — Home Update News Create Upload Refresh, active bg rgba(240,180,90,0.18)</li>
+<li><strong>Spacer</strong> — 68px to prevent overlap</li>
+<li><strong>Container</strong> — max-width 1200px padding 1.8rem 2rem 4rem</li>
+<li><strong>Status</strong> — loader-dots 8px #f0b45a pulse-dot 1.2s</li>
+<li><strong>Card</strong> — awflmeta-card bg rgba(22,26,34,0.75) radius 20px border rgba(255,255,255,0.04) shadow 0 12px 40px, padding 2rem 2.2rem margin-bottom 3rem, hover border rgba(240,180,90,0.12)</li>
+<li><strong>Card Header</strong> — h2 gradient #e8edf2 to #bcc7dc, tag 0.68rem uppercase #f0b45a bg rgba(240,180,90,0.12) radius 40px</li>
+<li><strong>Content</strong> — 0.98rem line-height 1.7 #d0d8e6, a #f0b45a, img radius 12px, blockquote left border 3px rgba(240,180,90,0.3), pre/code bg rgba(0,0,0,0.35) JetBrains Mono</li>
+<li><strong>Divider</strong> — hr gradient transparent to rgba(240,180,90,0.2), icon 🌐</li>
+<li><strong>Scrollbar</strong> — 6px thumb rgba(240,180,90,0.3)</li>
+<li><strong>Responsive</strong> — 820px header 62px, 520px header 56px card 14px</li>
+</ul>
+<h2>Data Flow</h2>
+<ul>
+<li>Fetch awflmeta.json -&gt; array of {name, file}</li>
+<li>For each: fetch /wiki/{file}, DOMParser parse, doc.body.innerHTML inject</li>
+<li>Error card with ERROR tag if fetch fails</li>
+<li>EscapeHtml to prevent XSS</li>
+</ul>
+<h2>Navigation</h2>
+<ul>
+<li><a href="https://aedtpworld.com/awflmeta/" target="_blank" rel="noopener noreferrer">Home</a></li>
+<li><a href="https://aedtpworld.com/wiki/awflmeta.php" target="_blank" rel="noopener noreferrer">Update News</a></li>
+<li><a href="https://aedtpworld.com/wiki/" target="_blank" rel="noopener noreferrer">Create</a></li>
+<li><a href="https://aedtpworld.com/awfl/index.php" target="_blank" rel="noopener noreferrer">Upload</a></li>
+<li><a href="https://aedtpworld.com/wiki/awflmeta.php" target="_blank" rel="noopener noreferrer">Refresh</a></li>
+<li><a href="https://aedtpworld.com/" target="_blank" rel="noopener noreferrer">AEDTP WORLD</a></li>
+</ul><!--AWFL-ARTICLE-END--></article>
+<div class="awfl-categories"><strong>Categories:</strong> AEDTP WORLD, WIKI</div>
+<p class="awfl-footer-copy" style="margin-top:24px;font-size:.85em">© 2026 AEDTP WORLD — content available under the AEDTP WORLD FREE LICENSE (AWFL). <a href="https://aedtpworld.com/wikiworld/AWFLMETA">View live page</a></p>
+</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,293 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AEDTP WORLD HOME Video Player App</title>
+
+<meta name="description" content="AEDTP WORLD HOME Video Player App: Play And Watch Videos, Films, Movies Free. A Multihomed Full Of Apps, Productivity, Business, Educational by AEDTP WORLD">
+
+<!-- Icons -->
+<link rel="icon" type="image/png" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+
+<style>
+/* AEDTP WORLD + BASE */
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #fdf6ee;
+  color: #000;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark {
+  background: #121212;
+  color: #fff;
+}
+
+/* HEADER */
+header {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: bold;
+}
+
+.home-btn {
+  position: absolute;
+  left: 15px;
+  cursor: pointer;
+}
+
+/* MAIN GRID */
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media(min-width:768px){
+  main { grid-template-columns: repeat(3,1fr); }
+}
+@media(max-width:767px){
+  main { grid-template-columns: repeat(2,1fr); }
+}
+
+/* PANELS */
+.panel {
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* VIDEO */
+.viewer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+
+video {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+button {
+  flex: 1;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* LIST */
+.list {
+  height: 75%;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
+.list div {
+  padding: 6px;
+  cursor: pointer;
+}
+
+.list div:hover {
+  background: #ddd;
+}
+
+.dark .list div:hover {
+  background: #333;
+}
+
+/* FOOTER */
+footer {
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* TOGGLE */
+.toggle {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  padding: 8px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="home-btn" onclick="goHome()"></div>
+  VIDEO PLAYER
+</header>
+
+<main>
+
+<!-- PANEL 1: SELECT -->
+<div class="panel">
+  <h3>Select Videos</h3>
+  <input type="file" id="files" multiple accept="video/*">
+  <input type="file" id="folder" webkitdirectory multiple accept="video/*">
+  <p>Total Videos: <span id="count">0</span></p>
+</div>
+
+<!-- PANEL 2: PLAYER -->
+<div class="panel">
+
+  <div class="viewer">
+    <video id="video" controls></video>
+  </div>
+
+  <div class="controls">
+    <button onclick="prev()">⏮</button>
+    <button onclick="play()">▶</button>
+    <button onclick="pause()">⏸</button>
+    <button onclick="next()">⏭</button>
+  </div>
+
+  <div class="controls">
+    <button onclick="toggleLoop()">Loop</button>
+    <button onclick="shuffle()">Shuffle</button>
+    <button onclick="fullscreen()">Fullscreen</button>
+  </div>
+
+</div>
+
+<!-- PANEL 3: LIST -->
+<div class="panel">
+  <h3>Playlist</h3>
+  <div class="list" id="list"></div>
+</div>
+
+</main>
+
+<div class="toggle" onclick="toggleMode()">Light/Dark</div>
+
+<footer></footer>
+
+<script>
+let videos = [];
+let index = 0;
+let loop = false;
+
+const video = document.getElementById("video");
+const list = document.getElementById("list");
+const count = document.getElementById("count");
+
+/* LOAD FILES */
+function loadFiles(files){
+  videos = [...videos, ...files];
+  render();
+}
+
+document.getElementById("files").onchange = e => loadFiles(e.target.files);
+document.getElementById("folder").onchange = e => loadFiles(e.target.files);
+
+/* RENDER */
+function render(){
+  list.innerHTML = "";
+  videos.forEach((file, i)=>{
+    const div = document.createElement("div");
+    div.textContent = file.name;
+    div.onclick = ()=>{
+      index = i;
+      play();
+    };
+    list.appendChild(div);
+  });
+  count.textContent = videos.length;
+}
+
+/* PLAYER */
+function play(){
+  if(videos.length === 0) return;
+  video.src = URL.createObjectURL(videos[index]);
+  video.play();
+}
+
+function pause(){
+  video.pause();
+}
+
+function next(){
+  index = (index + 1) % videos.length;
+  play();
+}
+
+function prev(){
+  index = (index - 1 + videos.length) % videos.length;
+  play();
+}
+
+function toggleLoop(){
+  loop = !loop;
+}
+
+/* AUTO NEXT */
+video.onended = ()=>{
+  if(loop){
+    play();
+  } else {
+    next();
+  }
+};
+
+/* SHUFFLE */
+function shuffle(){
+  videos.sort(()=>Math.random()-0.5);
+  render();
+}
+
+/* FULLSCREEN */
+function fullscreen(){
+  if(video.requestFullscreen){
+    video.requestFullscreen();
+  }
+}
+
+/* NAVIGATION */
+function goHome(){
+  window.location.href = "index.html";
+}
+
+/* THEME */
+function toggleMode(){
+  document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

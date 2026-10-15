@@ -1,0 +1,52 @@
+/* ===================================================================
+   AWFLWIKIWORLD — Skin/AEDTPWORLDLegacy.css
+   Developer: AEDTP WORLD
+   Skin Name: AEDTPWORLD Legacy (Official Logo Blue)
+   License: AWFL
+   Version: 2.0 - Double-Locked
+   Palette: 10+5 - Official Blue Legacy
+   Primary: Logo Blue #244BD8 -> #3B82FF, Black #111827, White #FFFFFF
+   =================================================================== */
+:root {
+    --awfl-header-bg: #1E3CBE!important;       /* 1 logo deep blue */
+    --awfl-header-text: #FFFFFF!important;    /* 2 white on blue */
+    --awfl-button-bg: #244BD8!important;      /* 3 official blue button */
+    --awfl-button-text: #FFFFFF!important;    /* 4 */
+    --awfl-page-text: #111827!important;      /* 5 BLACK ink - best for eyes */
+    --awfl-link: #1D4ED8!important;           /* 6 logo blue link - high contrast */
+    --awfl-link-visited: #4C1D95!important;   /* 7 deep purple */
+    --awfl-border: #BFDBFE!important;         /* 8 soft blue border */
+    --awfl-bg: #EFF6FF!important;             /* 9 light blue wash - eye soft */
+    --awfl-content-bg: #FFFFFF!important;     /* 10 white paper */
+}
+
+html, body { background: var(--awfl-bg)!important; color: var(--awfl-page-text)!important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif!important; line-height: 1.75!important; font-size: 14.7px!important; }
+.awfl-body { background: var(--awfl-bg)!important; }
+
+/* HEADER - exact logo gradient from your image */
+.awfl-header { background: linear-gradient(90deg, #1E3CBE 0%, #244BD8 50%, #3B82FF 100%)!important; border-bottom: 2px solid #1E3A8A!important; } /* 11 */
+.awfl-header-inner { background: transparent!important; }
+html body .awfl-header a { color: #FFFFFF!important; -webkit-text-fill-color: #FFFFFF!important; font-weight: 600!important; } /* 12 white on blue gradient */
+
+.awfl-main { background: var(--awfl-content-bg)!important; border: 1px solid var(--awfl-border)!important; border-top: 3px solid #244BD8!important; box-shadow: 0 4px 20px rgba(36,75,216,0.1)!important; }
+.awfl-footer { background: #111827!important; border-top: 4px solid #244BD8!important; } /* black + blue accent */
+.awfl-footer-inner { color: #BFDBFE!important; } /* 13 light blue on black */
+.awfl-footer a { color: #60A5FA!important; } /* 14 logo light blue visible on black */
+
+.infobox { background: #EFF6FF!important; border: 1px solid #BFDBFE!important; border-left: 4px solid #244BD8!important; }
+.infobox th { background: #1E3CBE!important; color: #FFFFFF!important; }
+.infobox-title { background: linear-gradient(90deg, #1E3CBE, #3B82FF)!important; color: #FFFFFF!important; } /* 15 logo gradient title */
+table.awfl-datatable th { background: #244BD8!important; color: #FFFFFF!important; }
+
+a { color: var(--awfl-link)!important; }
+a:visited { color: var(--awfl-link-visited)!important; }
+
+::selection { background: #BFDBFE!important; color: #1E3A8A!important; }
+
+
+
+
+
+
+
+

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWFL WIKI Creator — Create WIKI Page With MetaData</title>
+<meta name="tagline" content="Discover And Connect">
+<meta name="description" content="AWFL WIKI Creator — Create WIKI Page With MetaData, Then ⬇ Save & Download And Upload To AEDTP WORLD, Choose the category path. This Is the only platform you must (only allowed to be) uploaded to AEDTP WORLD. How To Proceed: Go Home (AEDTP WORLD Main Page), click on "📤
+UPLOAD WIKI", Then Upload The WIKI Page you downloaded here only, choose category path, then upload.">
+<meta name="author" content="AEDTP WORLD">
+<meta name="copyright" content="© AEDTP WORLD">
+<meta name="keywords" content="AEDTP WORLD FREE LICENSE (AWFL) WIKI META, AWFLMETA, AEDTP WORLD, AI, APPS, BIBLE, BUSINESS, DEVELOPER, DICTIONARY, MUSIC, SOCIAL NETWORK, STORY, WIKI, AEDTP WORLD FREE LICENSE (AWFL), AEDTP WORLD, ARTISTS, BIOGRAPHY, BUSINESS, MUSIC, NEWS, HELP.. AEDTP WORLD FREE LICENSE (AWFL) WIKI Is a Free Open Encyclopedia, Built And Powered by Forever Contribution, To Discover And Connect, Knowledge Is Unlimited. AWFL WIKI Creator — Create WIKI Page With MetaData, Then ⬇ Save & Download And Upload To AEDTP WORLD, Choose the category path. This Is the only platform you must (only allowed to be) uploaded to AEDTP WORLD. How To Proceed: Go Home (AEDTP WORLD Main Page), click on "📤
+UPLOAD WIKI", Then Upload The WIKI Page you downloaded here only, choose category path, then upload.">
+<meta name="license" content="AEDTP WORLD FREE LICENSE (AWFL)">
+<meta name="robots" content="index, follow">
+<meta name="application-name" content="AEDTP WORLD">
+<meta property="og:title" content="AWFL WIKI Creator — Create WIKI Page With MetaData">
+<meta property="og:description" content="AWFL WIKI Creator — Create WIKI Page With MetaData, Then ⬇ Save & Download And Upload To AEDTP WORLD, Choose the category path. This Is the only platform you must (only allowed to be) uploaded to AEDTP WORLD. How To Proceed: Go Home (AEDTP WORLD Main Page), click on "📤
+UPLOAD WIKI", Then Upload The WIKI Page you downloaded here only, choose category path, then upload.">
+<meta property="og:type" content="website">
+
+    <link rel="canonical" href="https://aedtpworld.com/create/">
+<link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+<meta property="og:image" content="https://aedtpworld.com/icons/awflmetaawfl.jpg">
+<link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.jpg"  type="image/jpeg">
+<link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png"  type="image/png">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,serif;background:#fff;color:#202122;line-height:1.6}
+
+/* HEADER */
+.header{background:#fff;border-bottom:2px solid #a2a9b1;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.header-logo{font-size:13px;font-weight:bold;color:#202122;letter-spacing:.5px}
+.header-logo span{color:#3366cc}
+.beta-badge{background:#ff7043;color:#fff;font-size:10px;font-family:Arial,sans-serif;font-weight:bold;padding:2px 6px;border-radius:3px;letter-spacing:.5px;vertical-align:middle}
+
+/* LAYOUT */
+.builder{display:flex;height:calc(100vh - 52px)}
+
+/* LEFT PANEL */
+.panel{width:420px;min-width:320px;overflow-y:auto;border-right:1px solid #a2a9b1;background:#f8f9fa;padding:0}
+.panel-section{border-bottom:1px solid #ddd;padding:14px 16px}
+.panel-section h3{font-size:13px;font-family:Arial,sans-serif;font-weight:bold;color:#54595d;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+
+label{display:block;font-size:13px;font-family:Arial,sans-serif;color:#202122;margin-bottom:3px;margin-top:10px}
+label:first-of-type{margin-top:0}
+input[type=text],input[type=url],input[type=date],textarea,select{
+  width:100%;padding:6px 8px;border:1px solid #a2a9b1;background:#fff;
+  font-family:Arial,sans-serif;font-size:13px;color:#202122;border-radius:2px;
+}
+textarea{resize:vertical;min-height:70px}
+input:focus,textarea:focus,select:focus{outline:1px solid #3366cc;border-color:#3366cc}
+
+.section-row{display:flex;gap:8px;align-items:flex-end}
+.section-row input{flex:1}
+.btn-add{padding:6px 12px;background:#3366cc;color:#fff;border:none;font-size:12px;font-family:Arial,sans-serif;border-radius:2px;cursor:pointer;white-space:nowrap}
+.btn-add:hover{background:#2a55aa}
+.btn-remove{padding:4px 8px;background:#d33;color:#fff;border:none;font-size:11px;font-family:Arial,sans-serif;border-radius:2px;cursor:pointer}
+.btn-remove:hover{background:#b22}
+
+.section-item{background:#fff;border:1px solid #ddd;border-radius:2px;padding:8px 10px;margin-top:8px}
+.section-item label{margin-top:6px}
+.section-item-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.section-item-header strong{font-size:13px;font-family:Arial,sans-serif}
+
+/* ACTIONS */
+.actions{padding:14px 16px;display:flex;gap:8px;flex-wrap:wrap}
+.btn-preview{padding:8px 16px;background:#fff;color:#3366cc;border:1px solid #3366cc;font-size:13px;font-family:Arial,sans-serif;border-radius:2px;cursor:pointer}
+.btn-preview:hover{background:#eaf0fb}
+.btn-download{padding:8px 18px;background:#3366cc;color:#fff;border:none;font-size:13px;font-family:Arial,sans-serif;border-radius:2px;cursor:pointer;font-weight:bold}
+.btn-download:hover{background:#2a55aa}
+
+/* RIGHT PANEL — PREVIEW */
+.preview-wrap{flex:1;overflow-y:auto;background:#fff}
+.preview-wrap iframe{width:100%;height:100%;border:none}
+
+/* TABS */
+.tabs{display:flex;border-bottom:1px solid #a2a9b1;background:#f8f9fa}
+.tab{padding:8px 16px;font-size:13px;font-family:Arial,sans-serif;cursor:pointer;border-bottom:2px solid transparent;color:#54595d}
+.tab.active{border-bottom-color:#3366cc;color:#3366cc;font-weight:bold}
+
+/* INLINE HELP */
+.hint{font-size:11px;color:#72777d;font-family:Arial,sans-serif;margin-top:2px}
+
+/* GENRE/LIST INPUT */
+.tags-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.tag{background:#eaf0fb;color:#3366cc;font-size:12px;font-family:Arial,sans-serif;padding:2px 8px;border-radius:10px;display:flex;align-items:center;gap:4px}
+.tag button{background:none;border:none;color:#3366cc;cursor:pointer;font-size:12px;line-height:1;padding:0}
+
+@media(max-width:800px){
+  .builder{flex-direction:column;height:auto}
+  .panel{width:100%;border-right:none;border-bottom:1px solid #a2a9b1}
+  .preview-wrap{min-height:500px}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-logo">⚡ AWFL <span>WIKI</span> Creator </div>
+</div>
+
+<div class="builder">
+
+  <!-- LEFT: FORM -->
+  <div class="panel" id="panel">
+
+    <!-- BASIC INFO -->
+    <div class="panel-section">
+      <h3>Basic Information</h3>
+
+      <label>Wiki Title (= filename)</label>
+      <input type="text" id="f-title" placeholder="e.g. Buddy DML" oninput="liveUpdate()">
+      <div class="hint">The title becomes the downloaded filename: Title.html</div>
+
+      <label>Full / Birth Name</label>
+      <input type="text" id="f-fullname" placeholder="e.g. Emmanuel Deliver Amable" oninput="liveUpdate()">
+
+      <label>Also Known As</label>
+      <input type="text" id="f-aka" placeholder="e.g. The Trenchkid TM" oninput="liveUpdate()">
+
+      <label>Short Description / Intro Paragraph</label>
+      <textarea id="f-intro" placeholder="One-line intro: who they are and what they do." oninput="liveUpdate()"></textarea>
+    </div>
+
+    <!-- INFOBOX -->
+    <div class="panel-section">
+      <h3>Infobox Details</h3>
+
+      <label>Image URL</label>
+      <input type="url" id="f-image" placeholder="https://..." oninput="liveUpdate()">
+
+      <label>Date of Birth</label>
+      <input type="text" id="f-born" placeholder="e.g. 14 April 2008" oninput="liveUpdate()">
+
+      <label>Birth Place</label>
+      <input type="text" id="f-birthplace" placeholder="e.g. Anloga, Volta Region, Ghana" oninput="liveUpdate()">
+
+      <label>Origin / Country</label>
+      <input type="text" id="f-origin" placeholder="e.g. Ghana" oninput="liveUpdate()">
+
+      <label>Nationality</label>
+      <input type="text" id="f-nationality" placeholder="e.g. Ghanaian" oninput="liveUpdate()">
+
+      <label>Occupation(s)</label>
+      <input type="text" id="f-occupation" placeholder="e.g. Musician, Producer, Songwriter" oninput="liveUpdate()">
+
+      <label>Genres</label>
+      <div class="section-row">
+        <input type="text" id="f-genre-input" placeholder="e.g. Hip Hop">
+        <button class="btn-add" onclick="addTag('genre')">Add</button>
+      </div>
+      <div class="tags-row" id="genre-tags"></div>
+
+      <label>Years Active</label>
+      <input type="text" id="f-years" placeholder="e.g. 2021–present" oninput="liveUpdate()">
+
+      <label>Label / Organization</label>
+      <input type="text" id="f-label" placeholder="e.g. AEDTP WORLD" oninput="liveUpdate()">
+
+      <label>Website URL</label>
+      <input type="url" id="f-website" placeholder="https://..." oninput="liveUpdate()">
+
+      <label>Website Display Text</label>
+      <input type="text" id="f-website-text" placeholder="e.g. Official Profile" oninput="liveUpdate()">
+    </div>
+
+    <!-- EXTRA INFOBOX ROWS -->
+    <div class="panel-section">
+      <h3>Extra Infobox Rows</h3>
+      <div class="hint" style="margin-bottom:8px">Add any custom field (e.g. Awards, Spouse, Net Worth)</div>
+      <div id="extra-rows"></div>
+      <button class="btn-add" style="margin-top:8px" onclick="addExtraRow()">+ Add Row</button>
+    </div>
+
+    <!-- WIKI SECTIONS -->
+    <div class="panel-section">
+      <h3>Wiki Sections</h3>
+      <div class="hint" style="margin-bottom:8px">Add headings and body text (supports basic bullet lists — one item per line starting with -)</div>
+      <div id="sections-list"></div>
+      <div class="section-row" style="margin-top:10px">
+        <input type="text" id="new-section-title" placeholder="Section heading e.g. Early life">
+        <button class="btn-add" onclick="addSection()">+ Add</button>
+      </div>
+    </div>
+
+    <!-- DISCOGRAPHY -->
+    <div class="panel-section">
+      <h3>Discography</h3>
+      <div id="disco-list"></div>
+      <div class="section-row" style="margin-top:8px">
+        <input type="text" id="new-disco" placeholder="e.g. Yansh Na Yansh (2024)">
+        <button class="btn-add" onclick="addDisco()">+ Add</button>
+      </div>
+    </div>
+
+    <!-- OTHER NAMES -->
+    <div class="panel-section">
+      <h3>Other Names / Aliases</h3>
+      <div id="aliases-list"></div>
+      <div class="section-row" style="margin-top:8px">
+        <input type="text" id="new-alias" placeholder="e.g. Young Buddy">
+        <button class="btn-add" onclick="addAlias()">+ Add</button>
+      </div>
+    </div>
+
+    <!-- ASSOCIATED ACTS -->
+    <div class="panel-section">
+      <h3>Associated Acts</h3>
+      <div id="acts-list"></div>
+      <div class="section-row" style="margin-top:8px">
+        <input type="text" id="new-act" placeholder="e.g. AEDTP WORLD production team">
+        <button class="btn-add" onclick="addAct()">+ Add</button>
+      </div>
+    </div>
+
+    <!-- REFERENCES -->
+    <div class="panel-section">
+      <h3>References / External Links</h3>
+      <div id="refs-list"></div>
+      <div class="section-item" style="margin-top:8px">
+        <label>Link Text</label>
+        <input type="text" id="new-ref-text" placeholder="e.g. Bandcamp Profile">
+        <label>URL</label>
+        <input type="url" id="new-ref-url" placeholder="https://...">
+        <button class="btn-add" style="margin-top:8px" onclick="addRef()">+ Add Link</button>
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="panel-section">
+      <h3>Categories</h3>
+      <div class="section-row">
+        <input type="text" id="f-cat-input" placeholder="e.g. Ghanaian musicians">
+        <button class="btn-add" onclick="addTag('cat')">Add</button>
+      </div>
+      <div class="tags-row" id="cat-tags"></div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <button class="btn-preview" onclick="liveUpdate()">↺ Refresh Preview</button>
+      <button class="btn-download" onclick="downloadWiki()">⬇ Save & Download</button>
+
+<div class="hint"> Create WIKI Page With MetaData, Then ⬇ Save & Download And Upload To AEDTP WORLD, Choose the category path. This Is the only platform you must (only allowed to be) uploaded to AEDTP WORLD </div>
+<hr>
+<div class="hint"> How To Proceed: Go Home (AEDTP WORLD Main Page), click on "📤
+UPLOAD WIKI", Then Upload The WIKI Page you downloaded here only, choose category path, then upload. </div> 
+    </div>
+
+  </div><!-- /panel -->
+
+  <!-- RIGHT: PREVIEW -->
+  <div class="preview-wrap">
+    <iframe id="preview-frame" title="Wiki Preview"></iframe>
+  </div>
+
+</div><!-- /builder -->
+
+<script>
+var genres = [];
+var cats = [];
+var sections = [];
+var discos = [];
+var aliases = [];
+var acts = [];
+var refs = [];
+var extraRows = [];
+
+function v(id){return(document.getElementById(id)||{}).value||'';}
+
+function addTag(type){
+  var inp = document.getElementById('f-'+type+'-input');
+  var val = inp.value.trim();
+  if(!val) return;
+  if(type==='genre') genres.push(val);
+  else cats.push(val);
+  inp.value='';
+  renderTags(type);
+  liveUpdate();
+}
+function removeTag(type,i){
+  if(type==='genre') genres.splice(i,1);
+  else cats.splice(i,1);
+  renderTags(type);
+  liveUpdate();
+}
+function renderTags(type){
+  var arr = type==='genre'?genres:cats;
+  var el = document.getElementById(type+'-tags');
+  el.innerHTML = arr.map(function(t,i){
+    return '<span class="tag">'+esc(t)+'<button onclick="removeTag(\''+type+'\','+i+')" aria-label="remove">×</button></span>';
+  }).join('');
+}
+
+function addSection(){
+  var t = document.getElementById('new-section-title').value.trim();
+  if(!t) return;
+  sections.push({title:t, body:''});
+  document.getElementById('new-section-title').value='';
+  renderSections();
+}
+function removeSection(i){sections.splice(i,1);renderSections();liveUpdate();}
+function renderSections(){
+  var el = document.getElementById('sections-list');
+  el.innerHTML = sections.map(function(s,i){
+    return '<div class="section-item"><div class="section-item-header"><strong>'+esc(s.title)+'</strong><button class="btn-remove" onclick="removeSection('+i+')">Remove</button></div>'
+      +'<textarea rows="4" oninput="sections['+i+'].body=this.value;liveUpdate()" placeholder="Section content. Start lines with - for bullet points.">'+esc(s.body)+'</textarea></div>';
+  }).join('');
+}
+
+function addDisco(){
+  var t = document.getElementById('new-disco').value.trim();
+  if(!t) return;
+  discos.push(t);
+  document.getElementById('new-disco').value='';
+  renderList('disco-list', discos, 'discos');
+  liveUpdate();
+}
+function addAlias(){
+  var t = document.getElementById('new-alias').value.trim();
+  if(!t) return;
+  aliases.push(t);
+  document.getElementById('new-alias').value='';
+  renderList('aliases-list', aliases, 'aliases');
+  liveUpdate();
+}
+function addAct(){
+  var t = document.getElementById('new-act').value.trim();
+  if(!t) return;
+  acts.push(t);
+  document.getElementById('new-act').value='';
+  renderList('acts-list', acts, 'acts');
+  liveUpdate();
+}
+function renderList(elId, arr, arrName){
+  var el = document.getElementById(elId);
+  el.innerHTML = arr.map(function(item,i){
+    return '<div style="display:flex;align-items:center;gap:6px;margin-top:4px;font-size:13px;font-family:Arial,sans-serif">'
+      +'<span style="flex:1;background:#fff;border:1px solid #ddd;padding:4px 8px;border-radius:2px">'+esc(item)+'</span>'
+      +'<button class="btn-remove" onclick="'+arrName+'.splice('+i+',1);renderList(\''+elId+'\','+arrName+',\''+arrName+'\');liveUpdate()">×</button></div>';
+  }).join('');
+}
+
+function addRef(){
+  var t = document.getElementById('new-ref-text').value.trim();
+  var u = document.getElementById('new-ref-url').value.trim();
+  if(!t||!u) return;
+  refs.push({text:t,url:u});
+  document.getElementById('new-ref-text').value='';
+  document.getElementById('new-ref-url').value='';
+  renderRefs();
+  liveUpdate();
+}
+function removeRef(i){refs.splice(i,1);renderRefs();liveUpdate();}
+function renderRefs(){
+  var el = document.getElementById('refs-list');
+  el.innerHTML = refs.map(function(r,i){
+    return '<div style="display:flex;align-items:center;gap:6px;margin-top:4px;font-size:13px;font-family:Arial,sans-serif">'
+      +'<span style="flex:1;background:#fff;border:1px solid #ddd;padding:4px 8px;border-radius:2px">'+esc(r.text)+' — <em style="color:#3366cc">'+esc(r.url)+'</em></span>'
+      +'<button class="btn-remove" onclick="removeRef('+i+')">×</button></div>';
+  }).join('');
+}
+
+function addExtraRow(){
+  extraRows.push({key:'',val:''});
+  renderExtraRows();
+}
+function removeExtraRow(i){extraRows.splice(i,1);renderExtraRows();liveUpdate();}
+function renderExtraRows(){
+  var el = document.getElementById('extra-rows');
+  el.innerHTML = extraRows.map(function(r,i){
+    return '<div class="section-item" style="margin-top:6px"><div class="section-item-header"><strong>Row '+(i+1)+'</strong><button class="btn-remove" onclick="removeExtraRow('+i+')">Remove</button></div>'
+      +'<label>Field Name</label><input type="text" value="'+esc(r.key)+'" oninput="extraRows['+i+'].key=this.value;liveUpdate()" placeholder="e.g. Awards">'
+      +'<label>Value</label><input type="text" value="'+esc(r.val)+'" oninput="extraRows['+i+'].val=this.value;liveUpdate()" placeholder="e.g. Ghana Music Awards 2025"></div>';
+  }).join('');
+}
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function bodyToHtml(body){
+  var lines = body.split('\n');
+  var out = '';
+  var inList = false;
+  lines.forEach(function(line){
+    line = line.trim();
+    if(!line){if(inList){out+='</ul>';inList=false;}return;}
+    if(line.startsWith('-')){
+      if(!inList){out+='<ul>';inList=true;}
+      out+='<li>'+esc(line.slice(1).trim())+'</li>';
+    } else {
+      if(inList){out+='</ul>';inList=false;}
+      out+='<p>'+esc(line)+'</p>';
+    }
+  });
+  if(inList) out+='</ul>';
+  return out;
+}
+
+function buildHTML(){
+  var title = v('f-title')||'Untitled';
+  var fullname = v('f-fullname');
+  var aka = v('f-aka');
+  var intro = v('f-intro');
+  var image = v('f-image');
+  var born = v('f-born');
+  var birthplace = v('f-birthplace');
+  var origin = v('f-origin');
+  var nationality = v('f-nationality');
+  var occupation = v('f-occupation');
+  var years = v('f-years');
+  var label = v('f-label');
+  var website = v('f-website');
+  var websiteText = v('f-website-text')||'Official Website';
+
+  // Intro paragraph
+  var introHtml = '';
+  if(fullname && aka && intro){
+    introHtml = '<p><b>'+esc(fullname)+'</b>, known professionally as <b>'+esc(title)+'</b>'
+      +(aka?', also known as <b>'+esc(aka)+'</b>':'')
+      +', '+esc(intro)+'</p>';
+  } else if(intro){
+    introHtml = '<p>'+esc(intro)+'</p>';
+  }
+
+  // Sections HTML
+  var sectionsHtml = sections.map(function(s){
+    return '<h2>'+esc(s.title)+'</h2>'+bodyToHtml(s.body);
+  }).join('\n');
+
+  // Discography
+  var discoHtml = discos.length
+    ? '<h2>Discography</h2><ul>'+discos.map(function(d){return '<li>'+esc(d)+'</li>';}).join('')+'</ul>'
+    : '';
+
+  // Other names
+  var aliasHtml = aliases.length
+    ? '<h2>Other names</h2><ul>'+aliases.map(function(a){return '<li>'+esc(a)+'</li>';}).join('')+'</ul>'
+    : '';
+
+  // Acts
+  var actsHtml = acts.length
+    ? '<h2>Associated acts</h2><ul>'+acts.map(function(a){return '<li>'+esc(a)+'</li>';}).join('')+'</ul>'
+    : '';
+
+  // Refs
+  var refsHtml = refs.length
+    ? '<h2>References &amp; External Links</h2><ul>'+refs.map(function(r){
+        return '<li><a href="'+esc(r.url)+'" target="_blank">'+esc(r.text)+'</a></li>';
+      }).join('')+'</ul>'
+    : '';
+
+  // Categories
+  var catHtml = cats.length
+    ? '<div style="margin-top:30px;padding-top:10px;border-top:1px solid #ddd;font-size:13px;color:#54595d;font-family:Arial,sans-serif">'
+      +'<strong>Categories:</strong> '+cats.map(function(c){return '<span style="margin-right:10px">'+esc(c)+'</span>';}).join('')+'</div>'
+    : '';
+
+  // Infobox rows
+  var infoRows = '';
+  if(fullname) infoRows += '<tr><th>Name</th><td>'+esc(title)+'</td></tr>';
+  if(fullname) infoRows += '<tr><th>Birth name</th><td>'+esc(fullname)+'</td></tr>';
+  if(born) infoRows += '<tr><th>Born</th><td>'+esc(born)+'</td></tr>';
+  if(birthplace) infoRows += '<tr><th>Birth place</th><td>'+esc(birthplace)+'</td></tr>';
+  if(origin) infoRows += '<tr><th>Origin</th><td>'+esc(origin)+'</td></tr>';
+  if(nationality) infoRows += '<tr><th>Nationality</th><td>'+esc(nationality)+'</td></tr>';
+  if(genres.length) infoRows += '<tr><th>Genres</th><td>'+genres.map(esc).join(', ')+'</td></tr>';
+  if(occupation) infoRows += '<tr><th>Occupation</th><td>'+esc(occupation)+'</td></tr>';
+  if(years) infoRows += '<tr><th>Years active</th><td>'+esc(years)+'</td></tr>';
+  if(label) infoRows += '<tr><th>Label</th><td>'+esc(label)+'</td></tr>';
+  if(website) infoRows += '<tr><th>Website</th><td><a href="'+esc(website)+'" target="_blank">'+esc(websiteText)+'</a></td></tr>';
+  extraRows.forEach(function(r){
+    if(r.key && r.val) infoRows += '<tr><th>'+esc(r.key)+'</th><td>'+esc(r.val)+'</td></tr>';
+  });
+
+  var infoboxHtml = '<div class="infobox">'
+    +(image?'<img src="'+esc(image)+'" alt="'+esc(title)+'" width="280">':'')
+    +'<table>'+infoRows+'</table></div>';
+
+  return '<!DOCTYPE html>\n<html lang="en">\n<head>\n'
+    +'<meta charset="UTF-8">\n'
+    +'<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
+    +'<title>'+esc(title)+' | AEDTP WORLD FREE LICENSE (AWFL) WIKI METADATA | AEDTP WORLD FREE LICENSE (AWFL) | Music Meta Data | Biography | Artists | Discography | Business | Events | Wiki | News | pages |Help | About | Submit | Education | Instrumentals | Submission | Uploads | Cayla AI | AEDTP World | Apps | AWFL WIKI | Developers | Install | Publish | Distribution | Submit Apps | Contact | aedtpworld@gmail.com | Emmanuel Deliver Amable | AEDTP WORLD</title>\n'
+    +'<style>\n'
+    +'body{margin:0;font-family:Georgia,serif;background:#fff;color:#202122;line-height:1.6}\n'
+    +'.container{max-width:1100px;margin:auto;padding:20px;display:flex;gap:20px}\n'
+    +'.article{flex:1;background:#fff;padding:20px;border:1px solid #ddd}\n'
+    +'h1{font-size:32px;margin-top:0}\n'
+    +'h2{border-bottom:1px solid #ddd;padding-bottom:5px;margin-top:25px}\n'
+    +'ul{padding-left:20px}\n'
+    +'a{color:#3366cc}\n'
+    +'.infobox{width:280px;background:#f9f9f9;border:1px solid #aaa;font-size:14px;align-self:flex-start}\n'
+    +'.infobox img{width:100%;height:auto;display:block}\n'
+    +'.infobox table{width:100%;border-collapse:collapse}\n'
+    +'.infobox th{text-align:left;background:#eee;padding:6px;width:40%;font-family:Arial,sans-serif;font-size:13px;border-top:1px solid #ddd}\n'
+    +'.infobox td{padding:6px;font-family:Arial,sans-serif;font-size:13px;border-top:1px solid #ddd}\n'
+    +'@media(max-width:900px){.container{flex-direction:column}.infobox{width:100%}}\n'
+    +'</style>\n</head>\n<body>\n'
+    +'<div class="container">\n'
+    +'<div class="article">\n'
+    +'<h1>'+esc(title)+'</h1>\n'
+    +introHtml+'\n'
+    +sectionsHtml+'\n'
+    +discoHtml+'\n'
+    +aliasHtml+'\n'
+    +actsHtml+'\n'
+    +refsHtml+'\n'
+    +catHtml+'\n'
+    +'</div>\n'
+    +infoboxHtml+'\n'
+    +'</div>\n'
+    +'</body>\n</html>';
+}
+
+function liveUpdate(){
+  var html = buildHTML();
+  var iframe = document.getElementById('preview-frame');
+  var doc = iframe.contentDocument || iframe.contentWindow.document;
+  doc.open();
+  doc.write(html);
+  doc.close();
+}
+
+function downloadWiki(){
+  var title = (v('f-title')||'wiki').replace(/[^a-zA-Z0-9_\- ]/g,'').replace(/ /g,'_');
+  var html = buildHTML();
+  var blob = new Blob([html],{type:'text/html;charset=utf-8'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = title+'.html';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Init preview
+liveUpdate();
+</script>
+</body>
+</html>

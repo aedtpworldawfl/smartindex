@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIZIMI (Advanced Social Media Networking)</title>
+    <meta name="description" content="BIZIMI (Official Business) | BIZIMI is an advanced social media platform under AEDTP WORLD, built for sharing videos and images, discovering creators, and growing a following. AI tools, business growth, and learning in one peaceful zone"/>
+    <meta name="keywords" content="BIZIMI, BIZIMI Business for everyone, advanced social media platform, AI tools, business growth, and learning in one peaceful zone, Global Business Discovery, APPLE MUSIC, AUDIOMACK, SPOTIFY, YOUTUBE, GOOGLE, WIKIPEDIA, Distribution, Sharing And Streaming, AEDTP WORLD FREE LICENSE (AWFL) WIKI META, #1MusicPlatzform, AWFLMETA, AEDTP WORLD SOCIAL, AEDTP WORLD, BIZIMI Streaming, Music Distribution, BMAWFL, AEDTP WORLD, Free Business, Business Sharing, Streaming Platform, Discover BIZIMI Business, Independent Artists, AWFL META, #1 BIZIMI Platform, BIZIMI App, Free BIZIMI Streaming, BIZIMI Library, New BIZIMI, BIZIMI Community, aedtpworld.bizimi, BIZIMI for Everyone, BIZIMIAWFL"/>
+    <meta name="application-name" content="BIZIMI" />
+    <meta name="version" content="1.0.0.0" />
+    <meta name="theme-color" content="#D10303" />
+    <meta name="author" content="AEDTP WORLD, Emmanuel Deliver Amable" />
+    <meta name="copyright" content="© AEDTP WORLD" />
+    <meta name="publisher" content="AEDTP WORLD" />
+    <meta name="creator" content="@aedtpworld" />
+    <meta name="alias" content="bizimi" />
+    <link rel="canonical" href="https://aedtpworld.com/social/">
+    <meta name="app-id" content="com.aedtpworld.bizimi" />
+    <meta name="type" content="Web, Business, Advanced Social Media Networking, Social networking, video and image sharing, content discovery, Application" />
+    <meta name="robots" content="index, follow" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta property="og:title" content="BIZIMI (Business Intelligence Zone Innovation Media Integration) Advanced Social Media Networking" />
+    <meta property="og:site_name" content="BIZIMI" />
+    <meta property="og:description" content="BIZIMI (Official Business) | BIZIMI is an advanced social media platform under AEDTP WORLD, built for sharing videos and images, discovering creators, and growing a following — all wrapped in one peaceful, focused space. BIZIMI is where Busy Me gets smarter. AI tools, business growth, and learning in one peaceful zone, An Advanced Social Media. AEDTP WORLD"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://aedtpworld.com/icons/bizimi.png" />
+    <link rel="icon" href="https://aedtpworld.com/icons/bizimi.png" type="image/png" />
+
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/bizimi.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --red:#D10303;
+            --yellow:#FFDE2C;
+            --ink:#181818;
+            --bg:#faf9f6;
+            --card:#ffffff;
+            --muted:#6b6b6b;
+        }
+        *{box-sizing:border-box;}
+        body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);}
+        a{color:inherit;}
+
+        header{
+            position:sticky;top:0;z-index:50;
+            background:var(--red);color:#fff;
+            display:flex;align-items:center;justify-content:space-between;
+            padding:12px 20px;box-shadow:0 2px 10px rgba(0,0,0,.12);
+        }
+        header .brand{font-weight:800;font-size:1.3rem;letter-spacing:.5px;text-decoration:none;color:#fff;}
+        header .brand span{color:var(--yellow);}
+        nav{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+        nav a, nav button{
+            color:#fff;text-decoration:none;font-weight:600;font-size:.92rem;
+            background:transparent;border:1px solid rgba(255,255,255,.5);
+            padding:8px 14px;border-radius:20px;cursor:pointer;
+        }
+        nav a.solid, nav button.solid{background:var(--yellow);color:var(--red);border-color:var(--yellow);}
+
+        .hero{
+            background:linear-gradient(135deg,var(--red),#8f0202);
+            color:#fff;padding:40px 20px 32px;text-align:center;
+        }
+        .hero h1{margin:0 0 8px;font-size:2rem;font-weight:800;}
+        .hero h1 span{color:var(--yellow);}
+        .hero p{margin:0;opacity:.92;max-width:520px;margin:0 auto;}
+
+        .tabs{
+            display:flex;gap:8px;justify-content:center;padding:16px;flex-wrap:wrap;
+        }
+        .tabs button{
+            padding:8px 18px;border-radius:20px;border:2px solid var(--red);
+            background:#fff;color:var(--red);font-weight:700;cursor:pointer;
+        }
+        .tabs button.active{background:var(--red);color:#fff;}
+        .tabs a.ai-link{
+            padding:8px 18px;border-radius:20px;border:2px solid var(--yellow);
+            background:var(--yellow);color:var(--red);font-weight:700;cursor:pointer;text-decoration:none;
+        }
+        .trend-links{display:flex;gap:10px;justify-content:center;padding:0 16px 8px;flex-wrap:wrap;}
+        .trend-links a{font-size:.85rem;font-weight:700;color:var(--red);text-decoration:none;border-bottom:2px solid var(--yellow);}
+
+        main{max-width:1000px;margin:0 auto;padding:0 16px 60px;}
+        .feed-grid{
+            display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;
+        }
+        .card{
+            background:var(--card);border-radius:14px;overflow:hidden;
+            box-shadow:0 3px 14px rgba(0,0,0,.08);text-decoration:none;color:var(--ink);
+            display:flex;flex-direction:column;transition:transform .15s ease;
+        }
+        .card:hover{transform:translateY(-3px);}
+        .card .frame{width:100%;aspect-ratio:16/9;background:#000;overflow:hidden;}
+        .card .frame img, .card .frame video{width:100%;height:100%;object-fit:cover;display:block;}
+        .card .body{padding:12px 14px;}
+        .card .title{font-weight:700;font-size:.98rem;margin:0 0 6px;}
+        .card .by{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted);}
+        .card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:8px;}
+        .badge-icon{display:inline-block;vertical-align:middle;object-fit:contain;}
+        .rank-extra{font-size:.68rem;font-weight:800;color:var(--red);}
+        .kind-tag{
+            position:absolute;margin:8px;background:var(--yellow);color:var(--red);
+            font-size:.7rem;font-weight:800;padding:3px 8px;border-radius:10px;
+        }
+        .frame-wrap{position:relative;}
+        .like-btn{background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center;gap:4px;font-size:.82rem;color:var(--muted);}
+        .like-btn svg{width:18px;height:18px;}
+
+        .empty{text-align:center;padding:60px 20px;color:var(--muted);}
+        footer{text-align:center;padding:30px;color:var(--muted);font-size:.85rem;}
+
+        /* auth modal */
+        .modal-overlay{
+            position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;
+            align-items:center;justify-content:center;z-index:100;padding:16px;
+        }
+        .modal-overlay.open{display:flex;}
+        .modal{
+            background:#fff;border-radius:16px;max-width:420px;width:100%;
+            padding:24px;max-height:90vh;overflow-y:auto;position:relative;
+        }
+        .modal h2{margin-top:0;color:var(--red);}
+        .modal label{display:block;font-size:.85rem;font-weight:600;margin:12px 0 4px;}
+        .modal input, .modal select, .modal textarea{
+            width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-family:inherit;font-size:.95rem;
+        }
+        .modal button.primary{
+            width:100%;margin-top:18px;padding:11px;background:var(--red);color:#fff;
+            border:0;border-radius:8px;font-weight:700;cursor:pointer;font-size:1rem;
+        }
+        .modal .switch{margin-top:14px;text-align:center;font-size:.88rem;}
+        .modal .switch a{color:var(--red);font-weight:700;cursor:pointer;}
+        .modal .close{position:absolute;top:14px;right:18px;background:none;border:0;font-size:1.3rem;cursor:pointer;color:#999;}
+        .msg{font-size:.85rem;margin-top:10px;padding:8px 10px;border-radius:6px;display:none;}
+        .msg.error{background:#ffe4e4;color:#a10000;display:block;}
+        .msg.success{background:#e4ffe9;color:#036b1e;display:block;}
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="/social/index.html" class="brand">BIZI<span>MI</span></a>
+    <nav id="navArea">
+        <a href="/social/claim/index.php">Claim</a>
+        <a href="/social/help/index.html">Help</a>
+        <a href="/social/about/index.html">About</a>
+        <a href="/social/upload.php">Upload</a>
+        <button class="solid" id="authBtn" onclick="openLogin()">Log in</button>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Welcome to BIZI<span>MI</span></h1>
+    <p>Business Intelligence Zone Innovation Media Integration — AKA <strong>Busy Me</strong>. For the builders, the learners, the socials, and everyone becoming more.</p>
+</div>
+
+<div class="tabs">
+    <a class="ai-link" href="https://www.jotform.com/app/251699103578568" target="_blank" rel="noopener">Cayla AI</a>
+    <button class="active" data-type="all" onclick="loadFeed('all', this)">All</button>
+    <button data-type="video" onclick="loadFeed('video', this)">Videos</button>
+    <button data-type="image" onclick="loadFeed('image', this)">Images</button>
+    <a class="ai-link" href="https://www.jotform.com/app/251579248003558" target="_blank" rel="noopener">AEDTP WORLD AI</a>
+</div>
+
+<div class="trend-links">
+    <a href="/social/trending/index.html">🔥 Trending</a>
+    <a href="/social/trends/index.html">🏆 Top Creators</a>
+</div>
+
+<main>
+    <div class="feed-grid" id="feedGrid"></div>
+    <div class="empty" id="emptyState" style="display:none;">No content yet. Be the first to <a href="/social/upload.php" style="color:var(--red);font-weight:700;">upload</a>.</div>
+</main>
+
+<footer>© AEDTP WORLD · BIZIMI</footer>
+
+<!-- Auth Modal -->
+<div class="modal-overlay" id="authOverlay">
+    <div class="modal">
+        <button class="close" onclick="closeAuth()">&times;</button>
+
+        <div id="loginPane">
+            <h2>Log in</h2>
+            <label>Username</label>
+            <input type="text" id="loginUsername" autocomplete="username" />
+            <label>Password</label>
+            <input type="password" id="loginPassword" autocomplete="current-password" />
+            <button class="primary" onclick="doLogin()">Log in</button>
+            <div class="msg" id="loginMsg"></div>
+            <div class="switch">No account? <a onclick="showSignup()">Sign up</a> · <a href="/social/accounts/recover.php">Forgot password?</a></div>
+        </div>
+
+        <div id="signupPane" style="display:none;">
+            <h2>Create account</h2>
+            <label>Name</label>
+            <input type="text" id="suName" />
+            <label>Username</label>
+            <input type="text" id="suUsername" placeholder="lowercase, no spaces" />
+            <label>Profile image (https:// link)</label>
+            <input type="text" id="suImage" placeholder="https://..." />
+            <label>Gender</label>
+            <select id="suGender"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select>
+            <label>Country</label>
+            <input type="text" id="suCountry" />
+            <label>Email</label>
+            <input type="email" id="suEmail" />
+            <label>Security question</label>
+            <select id="suQuestion">
+                <option value="">Select</option>
+                <option>What is your pet's name?</option>
+                <option>What city were you born in?</option>
+                <option>What is your favorite color?</option>
+                <option>What was your first school?</option>
+            </select>
+            <label>Security answer</label>
+            <input type="text" id="suAnswer" />
+            <label>Password</label>
+            <input type="password" id="suPassword" />
+            <button class="primary" onclick="doSignup()">Create account</button>
+            <div class="msg" id="signupMsg"></div>
+            <div class="switch">Already have an account? <a onclick="showLogin()">Log in</a></div>
+        </div>
+    </div>
+</div>
+
+<script>
+const API = '/social/api.php';
+const BADGE_IMG = '/social/verifiedbadges/blue.png';
+let session = null;
+
+function badgeHtml(rank) {
+    if (rank < 1) return '';
+    const extra = rank - 1;
+    let out = `<img class="badge-icon" src="${BADGE_IMG}" width="14" height="14" alt="Verified" title="Verified"/>`;
+    if (extra > 0) out += `<span class="rank-extra">+${extra}</span>`;
+    return out;
+}
+
+function escH(s){
+    return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function ytEmbed(url) {
+    const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]+)/);
+    return m ? m[1] : null;
+}
+
+function likeIconSvg(filled){
+    return `<svg viewBox="0 0 24 24" fill="${filled ? '#D10303' : 'none'}" stroke="black" stroke-width="1.6"><path d="M12 21s-7.5-4.9-10-9.3C.4 8.2 2 4.5 5.6 4.5c2 0 3.5 1.1 4.4 2.6.9-1.5 2.4-2.6 4.4-2.6 3.6 0 5.2 3.7 3.6 7.2C19.5 16.1 12 21 12 21z"/></svg>`;
+}
+
+async function loadFeed(type, btn) {
+    document.querySelectorAll('.tabs button[data-type]').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    const res = await fetch(`${API}?action=get_feed&type=${type}`);
+    const json = await res.json();
+    const grid = document.getElementById('feedGrid');
+    const empty = document.getElementById('emptyState');
+    grid.innerHTML = '';
+    if (!json.ok || json.data.feed.length === 0) {
+        empty.style.display = 'block';
+        return;
+    }
+    empty.style.display = 'none';
+    json.data.feed.forEach(item => {
+        const isVideo = item.contentType === 'video';
+        const href = `/social/${item.username}/${isVideo ? 'videos' : 'images'}/${item.slug}.html`;
+        let media;
+        if (isVideo) {
+            const ytId = ytEmbed(item.videoUrl);
+            media = ytId ? `<img src="https://img.youtube.com/vi/${ytId}/hqdefault.jpg" loading="lazy"/>` : `<video src="${escH(item.videoUrl)}" muted preload="metadata"></video>`;
+        } else {
+            media = `<img src="${escH(item.imageUrl)}" loading="lazy"/>`;
+        }
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <a href="${href}" style="text-decoration:none;color:inherit;">
+                <div class="frame-wrap">
+                    <span class="kind-tag">${isVideo ? 'VIDEO' : 'IMAGE'}</span>
+                    <div class="frame">${media}</div>
+                </div>
+            </a>
+            <div class="body">
+                <a href="${href}" style="text-decoration:none;color:inherit;"><p class="title">${escH(item.title)}</p></a>
+                <a href="/social/${escH(item.username)}/index.html" class="by">@${escH(item.username)} ${badgeHtml(item.rank)}</a>
+                <div class="foot">
+                    <button class="like-btn" onclick="feedLike(event, '${escH(item.username)}', '${escH(item.slug)}', '${isVideo ? 'video' : 'image'}', this)">
+                        ${likeIconSvg(false)} <span class="lc">${item.likes || 0}</span>
+                    </button>
+                </div>
+            </div>`;
+        grid.appendChild(card);
+    });
+}
+
+async function feedLike(e, username, slug, kind, btn){
+    e.preventDefault();
+    e.stopPropagation();
+    const action = kind === 'video' ? 'like_video' : 'like_image';
+    const res = await fetch(API, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({action, username, slug})});
+    const json = await res.json();
+    if(!json.ok){ openLogin(); return; }
+    btn.querySelector('.lc').textContent = json.data.likes;
+    btn.innerHTML = `${likeIconSvg(json.data.liked)} <span class="lc">${json.data.likes}</span>`;
+}
+
+/* ---------------- Auth ---------------- */
+function openLogin(){ document.getElementById('authOverlay').classList.add('open'); showLogin(); }
+function closeAuth(){ document.getElementById('authOverlay').classList.remove('open'); }
+function showLogin(){ document.getElementById('loginPane').style.display='block'; document.getElementById('signupPane').style.display='none'; }
+function showSignup(){ document.getElementById('loginPane').style.display='none'; document.getElementById('signupPane').style.display='block'; }
+
+function showMsg(id, text, ok){
+    const el = document.getElementById(id);
+    el.textContent = text;
+    el.className = 'msg ' + (ok ? 'success' : 'error');
+}
+
+async function doLogin(){
+    const username = document.getElementById('loginUsername').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    const res = await fetch(API, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({action:'login', username, password})});
+    const json = await res.json();
+    if (!json.ok) return showMsg('loginMsg', json.message, false);
+    showMsg('loginMsg', 'Welcome back!', true);
+    setTimeout(() => location.reload(), 500);
+}
+
+async function doSignup(){
+    const payload = {
+        action: 'signup',
+        name: document.getElementById('suName').value.trim(),
+        username: document.getElementById('suUsername').value.trim(),
+        profileImage: document.getElementById('suImage').value.trim(),
+        gender: document.getElementById('suGender').value,
+        country: document.getElementById('suCountry').value.trim(),
+        email: document.getElementById('suEmail').value.trim(),
+        securityQuestion: document.getElementById('suQuestion').value,
+        securityAnswer: document.getElementById('suAnswer').value.trim(),
+        password: document.getElementById('suPassword').value,
+    };
+    const res = await fetch(API, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
+    const json = await res.json();
+    if (!json.ok) return showMsg('signupMsg', json.message, false);
+    showMsg('signupMsg', 'Account created!', true);
+    setTimeout(() => location.reload(), 500);
+}
+
+async function checkSession(){
+    const res = await fetch(`${API}?action=session`);
+    const json = await res.json();
+    session = json.data.username;
+    const nav = document.getElementById('navArea');
+    if (session) {
+        nav.innerHTML = `
+            <a href="/social/help/index.html">Help</a>
+            <a href="/social/upload.php">Upload</a>
+            <a href="/social/${session}/index.html">@${escH(session)}</a>
+            <a href="/social/profile/index.php">Profile</a>`;
+    }
+}
+
+checkSession();
+loadFeed('all');
+</script>
+</body>
+</html>

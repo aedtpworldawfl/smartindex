@@ -1,0 +1,326 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AEDTP WORLD HOME App | AEDTP WORLD FREE LICENSE (AWFL) | AEDTP WORLD</title>
+
+<meta name="description" content="AEDTP WORLD HOME App: A Multihomed Full Of Apps, Productivity, Business, Educational AEDTP WORLD FREE LICENSE (AWFL) by AEDTP WORLD">
+
+<!-- Icons -->
+<link rel="icon" type="image/png" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+
+<!-- AEDTP WORLD + CSS -->
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fdf6ee; /* Creamy White */
+  color: #000;
+  overflow: hidden;
+}
+
+.dark-mode {
+  background: #121212;
+  color: #fff;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 1000;
+  color: #00608A;
+  font-family: Showcard Gothic;
+}
+
+.home-btn {
+  position: absolute;
+  left: 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* HAMBURGER */
+.hamburger {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  left: -260px;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  background: #111;
+  color: #fff;
+  padding-top: 60px;
+  transition: 0.3s;
+  z-index: 1050;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sidebar a:hover {
+  background: #333;
+}
+
+/* ICON TOP CENTER */
+.center-icon {
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  text-align: center;
+}
+
+.center-icon img {
+  width: 90px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {box-shadow: 0 0 0 0 rgba(0,0,0,0.3);}
+  70% {box-shadow: 0 0 0 20px rgba(0,0,0,0);}
+  100% {box-shadow: 0 0 0 0 rgba(0,0,0,0);}
+}
+
+/* MAIN GRID */
+main {
+  position: fixed;
+  top: 300px;
+  bottom: 40px;
+  width: 100%;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.page-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.dark-mode .page-section {
+  background: #1e1e1e;
+}
+
+.page-section:hover {
+  transform: scale(1.05);
+}
+
+.page-section img {
+  width: 50px;
+}
+
+/* IFRAME VIEW */
+iframe {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 100px);
+  border: none;
+  display: none;
+  z-index: 900;
+}
+
+/* FOOTER */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  background: inherit;
+  color: #00608A;
+  font-family: Showcard Gothic;
+}
+
+
+/* TOGGLE BUTTON */
+.toggle {
+  position: fixed;
+  bottom: 50px;
+  right: 15px;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="home-btn" onclick="goHome()">HOME</div>
+  AEDTP WORLD HOME
+</header>
+
+<!-- HAMBURGER -->
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+<a onclick="openInternal('https://aedtpworld.com/ai/caylaai/')">Cayla</a>
+<a onclick="openInternal('https://aedtpworld.com/awflwiki/')">AWFL</a>
+<a onclick="openInternal('https://aedtpworld.com/wiki/')">WIKI</a>
+<a onclick="openInternal('https://aedtpworld.com/apps/')">Apps</a>
+<a onclick="openInternal('https://aedtpworld.com/')">News</a>
+<a onclick="openInternal('https://aedtpworld.com/developers/')">Developers</a>
+<a onclick="openInternal('https://aedtpworld.com/apps/')">Install</a>
+<a onclick="openInternal('https://aedtpworld.com/apps/')">Submit Your App</a>
+<a onclick="openInternal('https://www.bing.com/search?q=AEDTP+WORLD+full+business+and+apps+softwares')">Search Online</a>
+<a href="mailto:aedtpworld@gmail.com?subject=AEDTP WORLD HOME Help Request">Help</a>
+<a onclick="openInternal('mailto:aedtpworld@gmail.com')">Contact</a>
+</div>
+
+<!-- CENTER ICON -->
+<div class="center-icon">
+  <img src="https://aedtpworld.com/icons/aedtpworld.png">
+  <h3>AEDTP WORLD</h3>
+  <p>Discover And Connect</p>
+</div>
+
+<!-- MAIN -->
+<main id="mainContent">
+<div class="grid">
+
+<div class="page-section" onclick="openInternal('caylaai.html')">
+  <img src="https://aedtpworld.com/icons/caylaai.png">
+  <p><b>Cayla AI</b></p>
+</div>
+
+<div class="page-section" onclick="openInternal('awflwiki.html')">
+  <img src="https://aedtpworld.com/icons/aedtpworld.png">
+  <p><b>AWFL WIKI</b></p>
+</div>
+
+<div class="page-section" onclick="openInternal('search.html')">
+  <img src="https://aedtpworld.com/icons/aedtpworld.png">
+  <p><b>SEARCH</b></p>
+</div>
+
+<div class="page-section" onclick="openInternal('recorder.html')">
+  <img src="https://aedtpworld.com/icons/aedtpworld.png">
+  <p><b>Sound Recorder</b></p>
+</div>
+
+<div class="page-section" onclick="openInternal('work.html')">
+  <img src="https://aedtpworld.com/icons/aedtpworld.png">
+  <p><b>WORK</b></p>
+</div>
+
+<div class="page-section" onclick="openInternal('videoplayer.html')">
+  <img src="https://aedtpworld.com/icons/aedtpworld.png">
+  <p><b>Video Player</b></p>
+</div>
+
+<div class="page-section" onclick="openInternal('imageviewer.html')">
+  <img src="https://aedtpworld.com/icons/aedtpworld.png">
+  <p><b>Image Viewer</b></p>
+</div>
+
+<div class="page-section" onclick="openInternal('notepad.html')">
+  <img src="https://aedtpworld.com/icons/aedtpworld.png">
+  <p><b>Notepad</b></p>
+</div>
+
+<div class="page-section" onclick="openInternal('musicplayer.html')">
+  <img src="https://aedtpworld.com/icons/aedtpworld.png">
+  <p><b>Music Player</b></p>
+</div>
+
+
+<div class="page-section" onclick="openInternal('credits.html')">
+  <img src="https://aedtpworld.com/icons/aedtpworldawfl.png">
+  <p><b>CREDITS</b></p>
+</div>
+
+
+</div>
+</main>
+
+<!-- IFRAME -->
+<iframe id="viewer"></iframe>
+
+<!-- TOGGLE -->
+<div class="toggle" onclick="toggleMode()">Light/Dark</div>
+
+<!-- FOOTER -->
+<footer>© AEDTP WORLD</footer>
+
+<!-- AEDTP WORLD + JS -->
+<script>
+function toggleMenu() {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.style.left = (sidebar.style.left === "0px") ? "-260px" : "0px";
+}
+
+function openInternal(link) {
+  const iframe = document.getElementById("viewer");
+  iframe.src = link;
+  iframe.style.display = "block";
+  document.getElementById("mainContent").style.display = "none";
+}
+
+function goHome() {
+  document.getElementById("viewer").style.display = "none";
+  document.getElementById("mainContent").style.display = "block";
+}
+
+function toggleMode() {
+  document.body.classList.toggle("dark-mode");
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

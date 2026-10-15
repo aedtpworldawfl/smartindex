@@ -1,0 +1,127 @@
+/* ===================================================================
+   AWFLWIKIWORLD — AEDTP WORLD Wiki engine:Skin/AEDTPWORLDNightEase.css
+   Developer: AEDTP WORLD
+   Skin Name: AEDTPWORLD NightEase (Dark Eye-Ease Reading)
+   License: AEDTP WORLD FREE LICENSE (AWFL)
+   Version: 2.0 - Double-Locked Template
+   Palette: 10+5 colors - Warm Low-Blue-Light - Best for Eyes at Night
+
+   ⚠️  DO NOT DELETE THIS FILE:
+
+   1. Part of AWFLWIKIWORLD engine skin pack.
+   2. If deleted, engine falls back to assets/site.css (no crash).
+   3. Keep it - users need night readable option besides Vector2022 light
+      and AEDTPWORLD purple.
+   4. This skin is EYE-CARE optimized - warm off-white on desaturated
+      dark, not pure black - reduces eye strain for long reading.
+   5. Double-locked with !important on :root + properties to WIN over
+      site.css, same template as Vector2022 and AEDTPWORLD.
+
+   Best for: Night reading, long articles, low light, eye strain sensitive
+   Install More: https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/Skins
+   © 2026 AEDTP WORLD - All Rights Reserved
+   =================================================================== */
+
+/* ---- 10 Root Colors - Same Count as AEDTPWORLD ---- */
+:root {
+    --awfl-header-bg: #1E252F!important;      /* dark desaturated - not harsh */
+    --awfl-header-text: #E6E2D6!important;    /* warm off-white - low blue */
+    --awfl-button-bg: #2F445F!important;      /* muted blue-gray */
+    --awfl-button-text: #E6E2D6!important;
+    --awfl-page-text: #E6E2D6!important;       /* warm paper */
+    --awfl-link: #7AA5D6!important;           /* soft blue - not screaming */
+    --awfl-link-visited: #C07A7B!important;   /* dusty rose - soft */
+    --awfl-border: #2A3545!important;         /* soft border */
+    --awfl-bg: #1E252F!important;             /* main bg - eye-ease */
+    --awfl-content-bg: #232E3E!important;     /* content slightly lighter */
+}
+
+/* ---- Double-Lock Override - Wins over site.css ---- */
+html, body {
+    background: var(--awfl-bg)!important;
+    color: var(--awfl-page-text)!important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif!important;
+    line-height: 1.85!important;
+    font-size: 16.6px!important;
+    -webkit-font-smoothing: antialiased!important;
+}
+
+.awfl-body {
+    background: var(--awfl-bg)!important;
+}
+
+.awfl-header {
+    background: var(--awfl-header-bg)!important;
+    color: var(--awfl-header-text)!important;
+    border-bottom: 1px solid var(--awfl-border)!important;
+}
+
+.awfl-header-inner {
+    background: var(--awfl-header-bg)!important;
+}
+
+.awfl-header a {
+    color: var(--awfl-header-text)!important;
+}
+
+.awfl-main {
+    background: var(--awfl-content-bg)!important;
+    border: 1px solid var(--awfl-border)!important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25)!important;
+}
+
+.awfl-footer {
+    background: #1A212C!important; /* 11th color - footer deep */
+    border-top: 1px solid var(--awfl-border)!important;
+}
+
+.awfl-footer-inner {
+    color: #9AA8B8!important; /* 12th color - muted footer text */
+}
+
+.awfl-footer a {
+    color: #7AA5D6!important;
+}
+
+/* ---- Infobox - Same Count (3 colors) ---- */
+.infobox {
+    background: #263445!important; /* 13th - card bg */
+    border: 1px solid var(--awfl-border)!important;
+    color: var(--awfl-page-text)!important;
+}
+
+.infobox th {
+    background: #2E4058!important; /* 14th */
+}
+
+.infobox-title {
+    background: #31465E!important; /* 15th */
+    color: #E6E2D6!important;
+}
+
+table.awfl-datatable th {
+    background: #2F445F!important;
+    color: #E6E2D6!important;
+}
+
+table.awfl-datatable td {
+    background: var(--awfl-content-bg)!important;
+    border-color: var(--awfl-border)!important;
+}
+
+a { color: var(--awfl-link)!important; }
+a:visited { color: var(--awfl-link-visited)!important; }
+
+/* Selection - warm eye ease */
+::selection {
+    background: #3A4F6A!important;
+    color: #E6E2D6!important;
+}
+
+
+
+
+
+
+
+

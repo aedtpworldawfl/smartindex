@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cayla IQ • AEDTP WORLD • Scientific Calculator</title>
+  <meta name="description" content="Cayla IQ — a professional, offline-first scientific calculator by AEDTP WORLD. Supports variables, constants, functions, degrees/radians, history, theming, and more." />
+  <style>
+    :root {
+      --bg: #0f1223;
+      --bg-soft: #151936;
+      --panel: #1b2147;
+      --text: #e9edff;
+      --muted: #b2b9dd;
+      --brand: #7c5cff; /* AEDTP WORLD signature */
+      --accent: #00d4ff;
+      --success: #00d18f;
+      --warning: #ffc857;
+      --danger: #ff5c7a;
+      --btn: #222a58;
+      --btn-shadow: rgba(0,0,0,.25);
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --radius: 16px;
+    }
+
+    /* Light theme variables (toggleable) */
+    .light {
+      --bg: #f7f8ff;
+      --bg-soft: #eef0fe;
+      --panel: #ffffff;
+      --text: #0e102a;
+      --muted: #4a4f6e;
+      --brand: #5b35ff;
+      --accent: #006bff;
+      --success: #067c57;
+      --warning: #b06b00;
+      --danger: #c22744;
+      --btn: #eef0fe;
+      --btn-shadow: rgba(0,0,0,.08);
+    }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(124,92,255,.24), transparent 60%),
+                  radial-gradient(900px 500px at -10% 110%, rgba(0,212,255,.18), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      font: 16px/1.4 var(--font);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .app {
+      width: min(1100px, 96vw);
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1.1fr .9fr;
+    }
+
+    @media (max-width: 980px) {
+      .app { grid-template-columns: 1fr; }
+    }
+
+    .masthead {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px; background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px var(--btn-shadow);
+    }
+
+           .brand {
+      display: flex; align-items: center; gap: 12px;
+      letter-spacing: .4px;
+    }
+    .brand-mark {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      box-shadow: 0 6px 14px rgba(124,92,255,.35);
+      display: grid; place-items: center;
+      font-weight: 800; color: white;
+      font-size: 18px;
+    }
+    .brand h1 { margin: 0; font-size: 22px; }
+    .brand small { display:block; color: var(--muted); font-size: 12px; margin-top: -2px; }
+
+    .actions { display:flex; gap: 8px; flex-wrap: wrap; }
+    .btn, button {
+      appearance: none; border: 1px solid transparent; cursor: pointer;
+      background: var(--btn); color: var(--text);
+      padding: 10px 14px; border-radius: 12px; font-weight: 600;
+      box-shadow: 0 6px 16px var(--btn-shadow);
+      transition: transform .06s ease, filter .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+    .btn:active { transform: translateY(0); }
+
+    .btn.brand { background: linear-gradient(135deg, var(--brand), var(--accent)); border: none; color: #fff; }
+    .btn.success { background: linear-gradient(135deg, #00bf85, var(--success)); color: #fff; }
+    .btn.warning { background: linear-gradient(135deg, #ffb545, var(--warning)); color: #111; }
+    .btn.danger { background: linear-gradient(135deg, #ff6b8a, var(--danger)); color: #fff; }
+
+    .panel { background: var(--panel); border-radius: var(--radius); box-shadow: 0 10px 30px var(--btn-shadow); }
+
+    .display {
+      display: grid; gap: 10px; padding: 16px; grid-template-columns: 1fr;
+    }
+    .expression { font-size: 18px; color: var(--muted); min-height: 22px; word-wrap: break-word; }
+    .result { font-size: clamp(22px, 4vw, 36px); font-weight: 800; letter-spacing: .2px; }
+
+    .calc {
+      display: grid; grid-template-columns: 1.25fr .75fr; gap: 16px;
+    }
+    @media (max-width: 980px) { .calc { grid-template-columns: 1fr; } }
+
+    .keys {
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; padding: 12px;
+    }
+
+    .key {
+      padding: 13px 8px; border-radius: 12px; background: var(--btn); color: var(--text);
+      text-align: center; font-weight: 700; user-select: none;
+      box-shadow: 0 6px 12px var(--btn-shadow);
+      border: 1px solid rgba(255,255,255,.04);
+    }
+    .key:active { transform: translateY(1px); }
+
+    .key.op { background: linear-gradient(180deg, #27306b, #1f2655); }
+    .key.fn { background: linear-gradient(180deg, #223055, #1b2744); }
+    .key.eq { background: linear-gradient(135deg, var(--brand), var(--accent)); color: #fff; }
+    .key.util { background: linear-gradient(180deg, #273d3a, #1c302d); }
+
+    .side {
+      display: grid; gap: 12px; padding: 12px;
+    }
+
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    label { color: var(--muted); font-size: 13px; }
+    input[type="text"], select { background: var(--bg-soft); color: var(--text); border: 1px solid transparent; border-radius: 10px; padding: 8px 10px; }
+    input[type="color"] { width: 38px; height: 32px; border: none; background: transparent; }
+
+    .history { max-height: 320px; overflow: auto; padding: 10px; border-top: 1px dashed rgba(255,255,255,.08); }
+    .history-entry { padding: 8px 0; border-bottom: 1px dashed rgba(255,255,255,.08); }
+    .history-entry .exp { color: var(--muted); font-size: 13px; }
+    .history-entry .val { font-weight: 700; }
+
+    footer {
+      margin-top: 8px; color: var(--muted); font-size: 12px; text-align: center;
+    }
+    footer a { color: var(--accent); text-decoration: none; font-weight: 700; }
+    <link rel="icon" href="https://aedtpworld.com/icons/CaylaIQ.jpg" type="image/png">
+    <link rel="apple-touch-icon" href="https://aedtpworld.com/icons/CaylaIQ.jpg">
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="masthead panel">
+
+
+<div class="brand" title="Cayla IQ">
+       <img src="https://aedtpworld.comhttps://aedtpworld.com/icons/CaylaIQ.jpg" alt="Cayla IQ Logo" class="logo" />
+
+        <div>
+
+          <h1>Cayla IQ</h1>
+          <small>Professional Scientific Calculator • by AEDTP WORLD</small>
+        </div>
+     
+      
+    </div>
+
+
+      <div class="actions">
+        <button class="btn brand" onclick="openLink('https://aedtpworld.com/apps/caylaiq/')">Update</button>
+        <button class="btn" onclick="openLink('https://aedtpworld.com/awflwiki/')">WIKI</button>
+              <button class="btn" onclick="openLink('About Cayla IQ.html')">About</button>
+        <button id="themeToggle" class="btn">Toggle Theme</button>
+	<a class="btn"
+    href="index.html">Switch Back To Cayla AI</a>
+      </div>
+
+
+ 		</div>
+
+
+    <section class="panel display">
+      <div class="expression" id="expression">Ready.</div>
+      <div class="result" id="result">0</div>
+      <div class="row">
+        <label>Angle mode:</label>
+        <select id="angleMode">
+          <option value="DEG">Degrees</option>
+          <option value="RAD">Radians</option>
+          <option value="GRAD">Grads</option>
+        </select>
+        <label>Precision (digits):</label>
+        <select id="precision">
+          <option>12</option>
+          <option selected>15</option>
+          <option>20</option>
+          <option>24</option>
+        </select>
+        <label>Brand Accent:</label>
+        <input id="accentPicker" type="color" value="#7c5cff" />
+        <label>BG Accent:</label>
+        <input id="bgPicker" type="color" value="#00d4ff" />
+        <span id="clock" style="margin-left:auto; font-variant-numeric: tabular-nums;"></span>
+      </div>
+    </section>
+
+    <section class="panel calc">
+      <div class="keys" id="keys">
+        <!-- Row 1: controls -->
+        <div class="key util" data-key="AC">AC</div>
+        <div class="key util" data-key="C">C</div>
+        <div class="key util" data-key="DEL">DEL</div>
+        <div class="key fn" data-key="ANS">Ans</div>
+        <div class="key fn" data-key="STO">STO</div>
+        <div class="key fn" data-key="RCL">RCL</div>
+
+        <!-- Row 2: functions -->
+        <div class="key fn" data-key="sin">sin</div>
+        <div class="key fn" data-key="cos">cos</div>
+        <div class="key fn" data-key="tan">tan</div>
+        <div class="key fn" data-key="ln">ln</div>
+        <div class="key fn" data-key="log">log</div>
+        <div class="key fn" data-key="exp">exp</div>
+
+        <!-- Row 3: hyperbolic / roots -->
+        <div class="key fn" data-key="sinh">sinh</div>
+        <div class="key fn" data-key="cosh">cosh</div>
+        <div class="key fn" data-key="tanh">tanh</div>
+        <div class="key fn" data-key="sqrt">√</div>
+        <div class="key fn" data-key="cbrt">∛</div>
+        <div class="key fn" data-key="abs">abs</div>
+
+        <!-- Row 4: constants / parentheses -->
+        <div class="key fn" data-key="pi">π</div>
+        <div class="key fn" data-key="e">e</div>
+        <div class="key fn" data-key="phi">φ</div>
+        <div class="key fn" data-key="("'>(</div>
+        <div class="key fn" data-key=")" >)</div>
+        <div class="key fn" data-key="," >,</div>
+
+        <!-- Row 5: powers / factorial / nCr / nPr -->
+        <div class="key op" data-key="x^2">x²</div>
+        <div class="key op" data-key="x^y">x^y</div>
+        <div class="key op" data-key="^">^</div>
+        <div class="key op" data-key="!">n!</div>
+        <div class="key op" data-key="nCr">nCr</div>
+        <div class="key op" data-key="nPr">nPr</div>
+
+        <!-- Row 6: numbers -->
+        <div class="key" data-key="7">7</div>
+        <div class="key" data-key="8">8</div>
+        <div class="key" data-key="9">9</div>
+        <div class="key op" data-key="/">/</div>
+        <div class="key op" data-key="%">%</div>
+        <div class="key op" data-key=">>">></div>
+
+        <div class="key" data-key="4">4</div>
+        <div class="key" data-key="5">5</div>
+        <div class="key" data-key="6">6</div>
+        <div class="key op" data-key="*">×</div>
+        <div class="key op" data-key="<"><</div>
+        <div class="key op" data-key=">=">≥</div>
+
+        <div class="key" data-key="1">1</div>
+        <div class="key" data-key="2">2</div>
+        <div class="key" data-key="3">3</div>
+        <div class="key op" data-key="-">−</div>
+        <div class="key op" data-key="<=">≤</div>
+        <div class="key fn" data-key="ansVar">Ans→x</div>
+
+        <div class="key" data-key="0">0</div>
+        <div class="key" data-key=".">.</div>
+        <div class="key op" data-key="±">±</div>
+        <div class="key op eq" data-key="=">=</div>
+        <div class="key op" data-key="+">+</div>
+        <div class="key op" data-key=="==">= =</div>
+      </div>
+
+      <div class="side">
+        <div class="row">
+          <label>Variables:</label>
+          <input id="varName" type="text" placeholder="name (e.g., x)" style="width:120px;">
+          <input id="varValue" type="text" placeholder="value or expression" style="flex:1;">
+          <button class="btn success" id="setVar">Set</button>
+        </div>
+        <div class="row">
+          <label>Theme Preset:</label>
+          <select id="themePreset">
+            <option value="default">AEDTP WORLD (Default)</option>
+            <option value="ocean">Oceanic</option>
+            <option value="sunset">Sunset</option>
+            <option value="mono">Mono Dark</option>
+            <option value="light">Light</option>
+          </select>
+        </div>
+        <div class="row">
+          <label>Font Size:</label>
+          <select id="fontSize">
+            <option value="14">14</option>
+            <option value="16" selected>16</option>
+            <option value="18">18</option>
+            <option value="20">20</option>
+            <option value="22">22</option>
+          </select>
+          <button class="btn" id="clearHistory">Clear History</button>
+        </div>
+        <div class="history" id="history"></div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> AEDTP WORLD • Cayla IQ. Educational interface, offline-ready. <a href="#" onclick="exportSession()">Export Session</a>
+    </footer>
+  </div>
+
+  <script>
+    /*******************
+     * Utility & UI
+     *******************/
+    const exprEl = document.getElementById('expression');
+    const resEl = document.getElementById('result');
+    const keysEl = document.getElementById('keys');
+    const historyEl = document.getElementById('history');
+    const angleModeEl = document.getElementById('angleMode');
+    const precisionEl = document.getElementById('precision');
+    const accentPicker = document.getElementById('accentPicker');
+    const bgPicker = document.getElementById('bgPicker');
+    const themeToggle = document.getElementById('themeToggle');
+    const themePreset = document.getElementById('themePreset');
+    const fontSizeSel = document.getElementById('fontSize');
+    const clockEl = document.getElementById('clock');
+
+    const state = {
+      expr: '',
+      ans: 0,
+      vars: new Map(),
+      memory: 0,
+      history: []
+    };
+
+    function openLink(url){
+      window.open(url, '_blank', 'noopener');
+    }
+
+    function setExpression(s){ state.expr = s; exprEl.textContent = s || 'Ready.'; }
+    function appendExpression(s){ setExpression(state.expr + s); }
+    function setResult(v){ resEl.textContent = v; }
+
+    function addHistory(exp, val){
+      state.history.unshift({exp, val, t: new Date().toISOString()});
+      renderHistory();
+    }
+
+    function renderHistory(){
+      historyEl.innerHTML = state.history.map(h => `
+        <div class="history-entry">
+          <div class="exp">${escapeHtml(h.exp)}</div>
+          <div class="val">= ${escapeHtml(h.val)}</div>
+        </div>
+      `).join('');
+    }
+
+    function escapeHtml(s){ return (s+'').replace(/[&<>"]/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[m])); }
+
+    // Clock (device time)
+    function updateClock(){
+      const d = new Date();
+      const pad = n => String(n).padStart(2,'0');
+      clockEl.textContent = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+    }
+    setInterval(updateClock, 1000); updateClock();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme handling
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      savePrefs();
+    });
+
+    accentPicker.addEventListener('input', e => {
+      document.documentElement.style.setProperty('--brand', e.target.value);
+      savePrefs();
+    });
+    bgPicker.addEventListener('input', e => {
+      document.documentElement.style.setProperty('--accent', e.target.value);
+      savePrefs();
+    });
+
+    themePreset.addEventListener('change', e => {
+      const v = e.target.value;
+      const root = document.documentElement.style;
+      document.body.classList.remove('light');
+      if (v === 'default') {
+        root.setProperty('--brand', '#7c5cff');
+        root.setProperty('--accent', '#00d4ff');
+      } else if (v === 'ocean') {
+        root.setProperty('--brand', '#008cff');
+        root.setProperty('--accent', '#00e0c6');
+      } else if (v === 'sunset') {
+        root.setProperty('--brand', '#ff6b6b');
+        root.setProperty('--accent', '#ffb86b');
+      } else if (v === 'mono') {
+        root.setProperty('--brand', '#8b8b8b');
+        root.setProperty('--accent', '#c9c9c9');
+      } else if (v === 'light') {
+        document.body.classList.add('light');
+      }
+      savePrefs();
+    });
+
+    fontSizeSel.addEventListener('change', e => {
+      document.body.style.fontSize = e.target.value+'px';
+      savePrefs();
+    });
+
+    function savePrefs(){
+      localStorage.setItem('caylaIQ:prefs', JSON.stringify({
+        light: document.body.classList.contains('light'),
+        brand: getComputedStyle(document.documentElement).getPropertyValue('--brand').trim(),
+        accent: getComputedStyle(document.documentElement).getPropertyValue('--accent').trim(),
+        font: document.body.style.fontSize || '16px'
+      }));
+    }
+    (function loadPrefs(){
+      try {
+        const p = JSON.parse(localStorage.getItem('caylaIQ:prefs')||'{}');
+        if (p.light) document.body.classList.add('light');
+        if (p.brand) document.documentElement.style.setProperty('--brand', p.brand);
+        if (p.accent) document.documentElement.style.setProperty('--accent', p.accent);
+        if (p.font) document.body.style.fontSize = p.font;
+      } catch {}
+    })();
+
+    /*******************
+     * Parser & Math Core
+     * - Shunting-yard algorithm for expressions
+     * - Supports variables, constants, functions, unary -, factorial, nCr/nPr
+     * - Angle modes: DEG/RAD/GRAD
+     *******************/
+
+    const CONSTS = {
+      pi: Math.PI,
+      e: Math.E,
+      phi: (1 + Math.sqrt(5)) / 2,
+      // Physical constants (approximate SI)
+      c: 299792458, // speed of light (m/s)
+      G: 6.67430e-11, // gravitational constant (m^3 kg^-1 s^-2)
+      h: 6.62607015e-34, // Planck constant (J·s)
+      k: 1.380649e-23, // Boltzmann (J/K)
+      R: 8.314462618, // Gas constant (J/(mol·K))
+      g0: 9.80665 // standard gravity (m/s^2)
+    };
+
+    const FUNCTIONS = {
+      sin: a => Math.sin(toRad(a)),
+      cos: a => Math.cos(toRad(a)),
+      tan: a => Math.tan(toRad(a)),
+      asin: a => fromRad(Math.asin(a)),
+      acos: a => fromRad(Math.acos(a)),
+      atan: a => fromRad(Math.atan(a)),
+      sinh: a => Math.sinh(a),
+      cosh: a => Math.cosh(a),
+      tanh: a => Math.tanh(a),
+      ln: a => Math.log(a),
+      log: a => Math.log10 ? Math.log10(a) : Math.log(a)/Math.LN10,
+      exp: a => Math.exp(a),
+      sqrt: a => Math.sqrt(a),
+      cbrt: a => Math.cbrt ? Math.cbrt(a) : Math.pow(a, 1/3),
+      abs: a => Math.abs(a),
+      min: (a,b) => Math.min(a,b),
+      max: (a,b) => Math.max(a,b),
+      pow: (a,b) => Math.pow(a,b),
+      mod: (a,b) => a % b,
+      nCr: (n,r) => combinations(n,r),
+      nPr: (n,r) => permutations(n,r)
+    };
+
+    function toRad(x){
+      const mode = angleModeEl.value;
+      if (mode === 'DEG') return x * Math.PI/180;
+      if (mode === 'GRAD') return x * Math.PI/200;
+      return x; // RAD
+    }
+    function fromRad(x){
+      const mode = angleModeEl.value;
+      if (mode === 'DEG') return x * 180/Math.PI;
+      if (mode === 'GRAD') return x * 200/Math.PI;
+      return x; // RAD
+    }
+
+    function factorial(x){
+      if (Number.isInteger(x)){
+        if (x < 0) return NaN;
+        let r = 1; for (let i=2; i<=x; i++) r *= i; return r;
+      }
+      // Gamma for real x: Γ(x+1)
+      return gamma(x+1);
+    }
+    // Lanczos approximation of Gamma
+    function gamma(z){
+      const p = [
+        676.5203681218851,
+        -1259.1392167224028,
+        771.32342877765313,
+        -176.61502916214059,
+        12.507343278686905,
+        -0.13857109526572012,
+        9.9843695780195716e-6,
+        1.5056327351493116e-7
+      ];
+      if(z < 0.5) return Math.PI / (Math.sin(Math.PI*z) * gamma(1 - z));
+      z -= 1;
+      let x = 0.99999999999980993;
+      for (let i=0; i<p.length; i++) x += p[i] / (z + i + 1);
+      const t = z + p.length - 0.5;
+      return Math.sqrt(2*Math.PI) * Math.pow(t, z+0.5) * Math.exp(-t) * x;
+    }
+
+    function permutations(n, r){
+      if (!Number.isInteger(n) || !Number.isInteger(r) || n<0 || r<0 || r>n) return NaN;
+      let res = 1; for (let i=n-r+1;i<=n;i++) res *= i; return res;
+    }
+    function combinations(n, r){
+      if (!Number.isInteger(n) || !Number.isInteger(r) || n<0 || r<0 || r>n) return NaN;
+      r = Math.min(r, n-r); // symmetry
+      let num = 1, den = 1; for (let i=1;i<=r;i++){ num *= (n - r + i); den *= i; }
+      return num/den;
+    }
+
+    const OPS = {
+      '+': {p: 2, a: 'L', f:(a,b)=>a+b},
+      '-': {p: 2, a: 'L', f:(a,b)=>a-b},
+      '*': {p: 3, a: 'L', f:(a,b)=>a*b},
+      '/': {p: 3, a: 'L', f:(a,b)=>a/b},
+      '%': {p: 3, a: 'L', f:(a,b)=>a%b},
+      '^': {p: 4, a: 'R', f:(a,b)=>Math.pow(a,b)},
+      '==': {p: 1, a: 'L', f:(a,b)=> (a===b) ? 1 : 0},
+      '>': {p: 1, a: 'L', f:(a,b)=> (a>b) ? 1 : 0},
+      '<': {p: 1, a: 'L', f:(a,b)=> (a<b) ? 1 : 0},
+      '>=': {p: 1, a: 'L', f:(a,b)=> (a>=b) ? 1 : 0},
+      '<=': {p: 1, a: 'L', f:(a,b)=> (a<=b) ? 1 : 0}
+    };
+
+    function tokenize(s){
+      const tokens=[]; let i=0; const isLetter=c=>/[A-Za-z_]/.test(c); const isDigit=c=>/[0-9]/.test(c);
+      while(i<s.length){
+        const c=s[i];
+        if (c===' '){ i++; continue; }
+        if (c===','||c==='('||c===')'||c==='!'||c==='^'){ tokens.push(c); i++; continue; }
+        if (c==='>'||c==='<'){
+          if (s.slice(i,i+2)==='>=' || s.slice(i,i+2)==='<=' ){ tokens.push(s.slice(i,i+2)); i+=2; }
+          else { tokens.push(c); i++; }
+          continue;
+        }
+        if (c==='='){
+          if (s.slice(i,i+2)==='=='){ tokens.push('=='); i+=2; }
+          else { tokens.push('='); i++; }
+          continue;
+        }
+        if ('+-*/%'.includes(c)) { tokens.push(c); i++; continue; }
+        if (isDigit(c) || (c==='.' && isDigit(s[i+1]))){
+          let j=i+1; while(j<s.length && /[0-9_.eE]/.test(s[j])) j++;
+          tokens.push(parseFloat(s.slice(i,j)));
+          i=j; continue;
+        }
+        if (isLetter(c)){
+          let j=i+1; while(j<s.length && /[A-Za-z0-9_]/.test(s[j])) j++;
+          tokens.push(s.slice(i,j)); i=j; continue;
+        }
+        throw new Error('Unexpected character: '+c);
+      }
+      return tokens;
+    }
+
+    function toRPN(tokens){
+      const out=[], stack=[];
+      let prev=null;
+      for (let t of tokens){
+        if (typeof t === 'number'){ out.push(t); }
+        else if (t === ',') { while (stack.length && stack[stack.length-1] !== '(') out.push(stack.pop()); }
+        else if (t === '(') { stack.push(t); }
+        else if (t === ')') { while (stack.length && stack[stack.length-1] !== '(') out.push(stack.pop()); stack.pop(); if (stack.length && typeof stack[stack.length-1] === 'string' && stack[stack.length-1].startsWith('fn:')) out.push(stack.pop()); }
+        else if (t === '!') { out.push('op:!'); }
+        else if (t in OPS){
+          // unary minus handling
+          if (t==='-' && (prev===null || (typeof prev!=='number' && prev!==')' && prev!=='ans' && !/^[A-Za-z_]/.test(prev)))){
+            // represent unary minus as 0-x
+            out.push(0);
+          }
+          const o1=OPS[t];
+          while (stack.length){
+            const top=stack[stack.length-1];
+            if (!(top in OPS)) break;
+            const o2=OPS[top];
+            if ((o1.a==='L' && o1.p<=o2.p) || (o1.a==='R' && o1.p<o2.p)) out.push(stack.pop()); else break;
+          }
+          stack.push(t);
+        } else if (t === '=') {
+          // assignment operator: keep as token
+          stack.push(t);
+        } else if (typeof t === 'string'){
+          // Could be function or variable/constant
+          if (FUNCTIONS[t]) stack.push('fn:'+t);
+          else out.push('var:'+t);
+        }
+        prev = t;
+      }
+      while (stack.length){
+        const s=stack.pop(); if (s==='(') throw new Error('Mismatched ('); out.push(s.startsWith('fn:')?s:s);
+      }
+      return out;
+    }
+
+    function evalRPN(rpn){
+      const st=[]; let assignTarget=null;
+      for (let t of rpn){
+        if (typeof t==='number') st.push(t);
+        else if (typeof t==='string' && t.startsWith('var:')){
+          const name=t.slice(4);
+          if (assignTarget===null && st.length && st[st.length-1]==='ASSIGN_TARGET_MARK'){ assignTarget=name; st.pop(); }
+          else st.push(valueOf(name));
+        } else if (t==='='){
+          // mark assignment target (next var encountered will be name)
+          st.push('ASSIGN_TARGET_MARK');
+        } else if (t==='op:!'){
+          const a = st.pop(); st.push(factorial(a));
+        } else if (t in OPS){
+          const b = st.pop(), a = st.pop(); st.push(OPS[t].f(a,b));
+        } else if (t.startsWith('fn:')){
+          const name=t.slice(3);
+          const arity = FUNCTIONS[name].length; // number of declared params
+          const args = []; for (let i=0;i<arity;i++) args.unshift(st.pop());
+          st.push(FUNCTIONS[name](...args));
+        }
+      }
+      const v = st.pop();
+      if (st.length) throw new Error('Malformed expression');
+      if (assignTarget!==null){
+        state.vars.set(assignTarget, v);
+        return v;
+      }
+      return v;
+    }
+
+    function valueOf(name){
+      if (state.vars.has(name)) return state.vars.get(name);
+      if (name in CONSTS) return CONSTS[name];
+      if (name === 'Ans' || name === 'ans') return state.ans;
+      throw new Error('Unknown symbol: '+name);
+    }
+
+    function formatNumber(x){
+      const prec = parseInt(precisionEl.value,10);
+      if (!isFinite(x)) return String(x);
+      // Use toPrecision but strip trailing zeros
+      let s = Number(x).toPrecision(prec);
+      if (s.includes('e') || s.includes('E')) return s;
+      if (s.includes('.')) s = s.replace(/\.0+$/,'').replace(/(\.[0-9]*?)0+$/,'$1');
+      return s;
+    }
+
+    function evaluate(expr){
+      try {
+        const tokens = tokenize(expr);
+        const rpn = toRPN(tokens);
+        const v = evalRPN(rpn);
+        state.ans = v;
+        setResult(formatNumber(v));
+        addHistory(expr, formatNumber(v));
+      } catch (e){
+        setResult('Error: '+e.message);
+      }
+    }
+
+    /*******************
+     * Keyboard & Buttons
+     *******************/
+    keysEl.addEventListener('click', e => {
+      const k = e.target.closest('.key'); if (!k) return;
+      handleKey(k.getAttribute('data-key'));
+    });
+
+    document.addEventListener('keydown', e => {
+      // Basic keyboard input
+      const map = {
+        'Enter': '=', 'Backspace': 'DEL', 'Delete': 'C',
+        '*': '*', '/': '/', '+': '+', '-': '-', '%': '%', '^': '^', '.': '.',
+        '(': '(', ')': ')'
+      };
+      if (e.key in map) { e.preventDefault(); handleKey(map[e.key]); }
+      else if (/^[0-9]$/.test(e.key)) { handleKey(e.key); }
+    });
+
+    function handleKey(key){
+      if (key === 'AC'){ setExpression(''); setResult(0); return; }
+      if (key === 'C'){ setExpression(''); return; }
+      if (key === 'DEL'){ setExpression(state.expr.slice(0,-1)); return; }
+      if (key === 'ANS'){ appendExpression(' Ans '); return; }
+      if (key === 'STO'){ state.memory = state.ans; setResult('Stored'); return; }
+      if (key === 'RCL'){ appendExpression(' '+formatNumber(state.memory)+' '); return; }
+      if (key === 'x^2'){ appendExpression(' ^ 2'); return; }
+      if (key === 'x^y'){ appendExpression(' ^ '); return; }
+      if (key === '±'){
+        // wrap current token with (-1)*( ... )
+        if (!state.expr) { appendExpression('-'); return; }
+        appendExpression(' * (-1) '); return;
+      }
+      if (key === 'nCr'){ appendExpression(' nCr '); return; }
+      if (key === 'nPr'){ appendExpression(' nPr '); return; }
+      if (key === 'ansVar'){ state.vars.set('x', state.ans); setResult('Ans → x'); return; }
+      if (key === '='){ evaluate(state.expr); return; }
+
+      // functions/constants and symbols
+      const direct = ['+', '-', '*', '/', '%', '^', '(', ')', ',', '!', '>', '<', '>=', '<=', '=='];
+      if (direct.includes(key)){ appendExpression(' '+key+' '); return; }
+      if (key === 'pi' || key === 'e' || key === 'phi'){ appendExpression(' '+key+' '); return; }
+      if (FUNCTIONS[key]){ appendExpression(' '+key+'('); return; }
+      if (/^[0-9]$/.test(key) || key==='.') { appendExpression(key); return; }
+
+      // Fallback
+      appendExpression(key);
+    }
+
+    // Variable setter panel
+    document.getElementById('setVar').addEventListener('click', () => {
+      const name = document.getElementById('varName').value.trim();
+      const expr = document.getElementById('varValue').value.trim();
+      if (!/^[_A-Za-z][_A-Za-z0-9]*$/.test(name)) { setResult('Error: invalid name'); return; }
+      if (!expr) { setResult('Error: empty value'); return; }
+      try {
+        const tokens = tokenize(expr);
+        const rpn = toRPN(tokens);
+        const v = evalRPN(rpn);
+        state.vars.set(name, v);
+        setResult(`${name} = ${formatNumber(v)}`);
+      } catch(e){ setResult('Error: '+e.message); }
+    });
+
+    // Clear history
+    document.getElementById('clearHistory').addEventListener('click', ()=>{ state.history = []; renderHistory(); });
+
+    // Intro
+    setExpression(''); setResult('0');
+
+    /*******************
+     * Session export (for education/reporting)
+     *******************/
+    function exportSession(){
+      const data = {
+        when: new Date().toISOString(),
+        vars: Object.fromEntries(state.vars.entries()),
+        history: state.history
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'CaylaIQ-session.json'; a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
+
+

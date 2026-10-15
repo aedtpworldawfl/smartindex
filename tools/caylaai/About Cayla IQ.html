@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Cayla IQ • AEDTP WORLD • Scientific Calculator</title>
+  <meta name="description" content="Cayla IQ — a professional, offline-first scientific calculator by AEDTP WORLD. Supports variables, constants, functions, degrees/radians, history, theming, and more." />
+
+
+  <style>
+    :root {
+      --bg: #0f1223;
+      --bg-soft: #151936;
+      --panel: #1b2147;
+      --text: #e9edff;
+      --muted: #b2b9dd;
+      --brand: #7c5cff; /* AEDTP WORLD signature */
+      --accent: #00d4ff;
+      --success: #00d18f;
+      --warning: #ffc857;
+      --danger: #ff5c7a;
+      --btn: #222a58;
+      --btn-shadow: rgba(0,0,0,.25);
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --radius: 16px;
+    }
+
+    /* Light theme variables (toggleable) */
+    .light {
+      --bg: #f7f8ff;
+      --bg-soft: #eef0fe;
+      --panel: #ffffff;
+      --text: #0e102a;
+      --muted: #4a4f6e;
+      --brand: #5b35ff;
+      --accent: #006bff;
+      --success: #067c57;
+      --warning: #b06b00;
+      --danger: #c22744;
+      --btn: #eef0fe;
+      --btn-shadow: rgba(0,0,0,.08);
+    }
+    /* ===== Blue Melody — Base Styles ===== */
+ 
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .brand .logo {
+      width: 36px; height: 36px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3aa0ff, #0047ff);
+      color: white;
+      box-shadow: 0 6px 16px rgba(30,144,255,0.35);
+      font-size: 18px;
+      user-select: none;
+    }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(124,92,255,.24), transparent 60%),
+                  radial-gradient(900px 500px at -10% 110%, rgba(0,212,255,.18), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      font: 16px/1.4 var(--font);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .app {
+      width: min(1200px, 96vw);
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1.1fr .9fr;
+    }
+
+    @media (max-width: 980px) {
+      .app { grid-template-columns: 1fr; }
+    }
+
+    .masthead {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px; background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px var(--btn-shadow);
+    }
+
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      letter-spacing: .4px;
+    }
+    .brand-mark {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      box-shadow: 0 6px 14px rgba(124,92,255,.35);
+      display: grid; place-items: center;
+      font-weight: 800; color: white;
+      font-size: 18px;
+    }
+    .brand h1 { margin: 0; font-size: 22px; }
+    .brand small { display:block; color: var(--muted); font-size: 12px; margin-top: -2px; }
+
+    .actions { display:flex; gap: 8px; flex-wrap: wrap; }
+    .btn, button {
+      appearance: none; border: 1px solid transparent; cursor: pointer;
+      background: var(--btn); color: var(--text);
+      padding: 10px 14px; border-radius: 12px; font-weight: 600;
+      box-shadow: 0 6px 16px var(--btn-shadow);
+      transition: transform .06s ease, filter .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+    .btn:active { transform: translateY(0); }
+
+    .btn.brand { background: linear-gradient(135deg, var(--brand), var(--accent)); border: none; color: #fff; }
+    .btn.success { background: linear-gradient(135deg, #00bf85, var(--success)); color: #fff; }
+    .btn.warning { background: linear-gradient(135deg, #ffb545, var(--warning)); color: #111; }
+    .btn.danger { background: linear-gradient(135deg, #ff6b8a, var(--danger)); color: #fff; }
+
+    .panel { background: var(--panel); border-radius: var(--radius); box-shadow: 0 10px 30px var(--btn-shadow); }
+
+    .display {
+      display: grid; gap: 10px; padding: 16px; grid-template-columns: 1fr;
+    }
+    .expression { font-size: 18px; color: var(--muted); min-height: 22px; word-wrap: break-word; }
+    .result { font-size: clamp(22px, 4vw, 36px); font-weight: 800; letter-spacing: .2px; }
+
+    .calc {
+      display: grid; grid-template-columns: 1.25fr .9fr; gap: 16px;
+    }
+    @media (max-width: 980px) { .calc { grid-template-columns: 1fr; } }
+
+    .keys {
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; padding: 12px;
+    }
+
+    .key {
+      padding: 13px 8px; border-radius: 12px; background: var(--btn); color: var(--text);
+      text-align: center; font-weight: 700; user-select: none;
+      box-shadow: 0 6px 12px var(--btn-shadow);
+      border: 1px solid rgba(255,255,255,.04);
+    }
+    .key:active { transform: translateY(1px); }
+
+    .key.op { background: linear-gradient(180deg, #27306b, #1f2655); }
+    .key.fn { background: linear-gradient(180deg, #223055, #1b2744); }
+    .key.eq { background: linear-gradient(135deg, var(--brand), var(--accent)); color: #fff; }
+    .key.util { background: linear-gradient(180deg, #273d3a, #1c302d); }
+
+    .side {
+      display: grid; gap: 12px; padding: 12px;
+    }
+
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    label { color: var(--muted); font-size: 13px; }
+    input[type="text"], select { background: var(--bg-soft); color: var(--text); border: 1px solid transparent; border-radius: 10px; padding: 8px 10px; }
+    input[type="color"] { width: 38px; height: 32px; border: none; background: transparent; }
+
+    .history { max-height: 320px; overflow: auto; padding: 10px; border-top: 1px dashed rgba(255,255,255,.08); }
+    .history-entry { padding: 8px 0; border-bottom: 1px dashed rgba(255,255,255,.08); }
+    .history-entry .exp { color: var(--muted); font-size: 13px; }
+    .history-entry .val { font-weight: 700; }
+
+    /* Info / About section */
+    .info {
+      padding: 16px; display: grid; gap: 12px; grid-column: 1 / -1;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius: 12px;
+    }
+    .info h2 { margin: 0; font-size: 18px; }
+    .socials { display:flex; gap:8px; flex-wrap:wrap; }
+    .socials a { text-decoration:none; padding:8px 12px; border-radius:10px; font-weight:700; background:var(--btn); color:var(--text); box-shadow:0 6px 12px var(--btn-shadow); }
+
+    footer {
+      margin-top: 8px; color: var(--muted); font-size: 13px; text-align: center;
+      grid-column: 1 / -1;
+    }
+    footer .copyright { font-weight: 800; color: var(--text); font-size: 14px; }
+    footer a { color: var(--accent); text-decoration: none; font-weight: 700; }
+    <link rel="icon" href="https://aedtpworld.com/icons/CaylaIQ.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="https://aedtpworld.com/icons/CaylaIQ.jpg">
+  </style>
+</head>
+<body>
+
+<H1>About Cayla IQ</H1>
+  <div class="socials">
+        <a href="Cayla IQ.html" onclick="openLink('Cayla IQ.html')">Home</a>
+             </div>
+	<a class="btn"
+    href="Cayla IQ.html">Go Back To <b>Cayla IQ</b></a>
+      </div>
+
+  <div class="brand" title="Cayla IQ">
+       <img src="CaylaIQ.png" alt="Cayla IQ Logo" class="logo" />
+
+        <div>
+
+          <h1>Cayla IQ</h1>
+          <small>Professional Scientific Calculator • by AEDTP WORLD</small>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <!-- Informational section: how to use, company details, socials -->
+    <section class="info panel">
+      <h2>About Cayla IQ</h2>
+      <p><strong>Cayla IQ</strong> (developed 15 August 2025 by AEDTP WORLD) fuses Cayla AI with intelligence (IQ) to deliver a powerful scientific calculator. It supports scientific data types, constants, variables, advanced functions, angle modes, factorials, combinations/permutations, and more. Cayla IQ is designed as an educational tool and practical utility to improve understanding and productivity in everyday scientific and mathematical tasks.</p>
+
+      <h2>How to use & When to use it</h2>
+      <p>Type expressions directly using the buttons or your keyboard. Use functions like <code>sin(), cos(), ln()</code>, constants like <code>pi</code> or <code>e</code>, and set variables from the side panel. Use Cayla IQ whenever you need reliable scientific calculations — for school, university, engineering, data analysis, or quick reference.</p>
+
+      <h2>Benefits</h2>
+      <ul>
+        <li>Offline-first: works without internet when embedded into an app or run locally.</li>
+        <li>Educational: history, variable storage, session export for learning and reporting.</li>
+        <li>Advanced math support: gamma function, factorial for non-integers, combinations, permutations.</li>
+        <li>Customisable: themes, brand accents, precision, and font size.</li>
+        <li>Free and open for everyone — created to improve accessibility to scientific tools.</li>
+      </ul>
+
+      <h2>Company details (AEDTP WORLD)</h2>
+      <p>AEDTP WORLD is a Ghana-based creative & tech collective founded by Emmanuel Deliver Amable. AEDTP WORLD builds music distribution tools, AI features, and educational apps. This Cayla IQ calculator is developed and maintained by AEDTP WORLD as an educational product.</p>
+      <p><strong>Official website:</strong> <a href="https://aedtpworld.com/" onclick="openLink('https://aedtpworld.com/')">aedtpworld.com</a> &nbsp; • &nbsp; <strong>Email:</strong> <a href="mailto:aedtpworld@gmail.com">aedtpworld@aedtpworld.com</a></p>
+
+      <h2>Why keep Cayla IQ updated?</h2>
+      <p>Updates ensure the calculator stays compatible with new devices, contains the latest constants and algorithms, fixes bugs, and may add features like complex numbers, matrix operations, or performance improvements. Use the <strong>Update</strong> button to check the AEDTP WORLD files page for new releases and installers.</p>
+
+      <h2>Connect with AEDTP WORLD</h2>
+      <div class="socials">
+        <a href="https://www.facebook.com/aedtpworld" onclick="openLink('https://www.facebook.com/aedtpworld/')">Facebook</a>
+        <a href="https://www.instagram.com/aedtpworld" onclick="openLink('https://www.instagram.com/aedtpworld/')">Instagram</a>
+        <a href="https://www.youtube.com/channel/UC6OLig7iKshlhCB1uIIvDvw" onclick="openLink('https://www.youtube.com/channel/UC6OLig7iKshlhCB1uIIvDvw')">YouTube</a>
+        <a href="https://aedtpworld.com/" onclick="openLink('https://aedtpworld.com/')">Official Site</a>
+        <a href="mailto:aedtpworld@aedtpworld.com">Email</a>
+      </div>
+
+      <p><em>Sources for official AEDTP WORLD accounts (found online): Facebook, Instagram, YouTube, and official site pages. Links in this section open in a new tab.</em></p>
+    </section>
+
+    <footer>
+      <div class="copyright">©️AEDTP WORLD</div>
+      <div style="margin-top:8px; color:var(--muted);">Cayla IQ — Scientific Calculator • Developed 15 August 2025 • Free educational tool</div>
+      <div style="margin-top:6px;"><a href="#" onclick="exportSession()">Go Back To Top</a> • <a href="https://aedtpworld.com/apps/caylaiq/" onclick="openLink('https://aedtpworld.com/apps/caylaiq/')">Update</a> • <a href="https://aedtpworld.com/" onclick="openLink('https://aedtpworld.com/')">News</a></div>
+    </footer>
+  </div>
+
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEDTP WORLD HOME Cayla AI App</title>
+<meta name="description" content="Cayla AI: Artificial Intelligence by AEDTP WORLD. A Multihomed Full Of Apps, Productivity, Business, Educational by AEDTP WORLD">
+
+
+
+<link rel="icon" type="image/png" href="https://aedtpworld.com/icons/caylaai.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/caylaai.png">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #020617;
+}
+
+header .title {
+    font-weight: bold;
+}
+
+.controls button {
+    margin-left: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+.controls button:hover {
+    opacity: 0.85;
+}
+
+.container {
+    width: 100%;
+    height: calc(100vh - 50px);
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #fff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="title">Cayla AI App</div>
+    <div class="controls">
+        <button onclick="reloadApp()">Reload</button>
+        <button onclick="toggleFullscreen()">Fullscreen</button>
+    </div>
+</header>
+
+<div class="container">
+    <iframe 
+        id="appFrame"
+        src="https://www.jotform.com/agent/01978af624f87b129a54b49bd821f0e7acb1"
+        allow="clipboard-read; clipboard-write; microphone; camera">
+    </iframe>
+</div>
+
+<script>
+function reloadApp() {
+    document.getElementById("appFrame").src =
+        "https://www.jotform.com/agent/01978af624f87b129a54b49bd821f0e7acb1";
+}
+
+function toggleFullscreen() {
+    const iframe = document.getElementById("appFrame");
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+/* ============================================================
+   APPTUFLY — Shared Stylesheet
+   RULE: every declaration carries !important (per spec).
+   ============================================================ */
+
+:root{
+  --bg:#050a14 !important;
+  --surface:#0d1b2a !important;
+  --card:#0f2035 !important;
+  --card2:#0a1928 !important;
+  --accent:#00d4ff !important;
+  --accent2:#ff6b00 !important;
+  --text:#e0f0ff !important;
+  --muted:#6a8caa !important;
+  --border:#1a3550 !important;
+  --green:#00ff88 !important;
+  --red:#ff4455 !important;
+  --radius:14px !important;
+}
+
+*{box-sizing:border-box !important;margin:0 !important;padding:0 !important;}
+html{scroll-behavior:smooth !important;}
+body.aw-body{background:#050a14 !important;color:#e0f0ff !important;font-family:'Exo 2',sans-serif !important;min-height:100vh !important;}
+
+a{color:#00d4ff !important;text-decoration:none !important;}
+
+/* ── Navbar ── */
+.aw-nav{position:sticky !important;top:0 !important;z-index:200 !important;background:rgba(5,10,20,.94) !important;backdrop-filter:blur(20px) !important;border-bottom:1px solid #1a3550 !important;}
+.aw-nav-inner{max-width:1400px !important;margin:0 auto !important;display:flex !important;align-items:center !important;gap:16px !important;height:64px !important;padding:0 22px !important;}
+.aw-logo{font-family:'Orbitron',monospace !important;font-weight:900 !important;color:#00d4ff !important;letter-spacing:2px !important;font-size:1rem !important;}
+.aw-logo span{color:#ff6b00 !important;}
+.aw-nav-links{display:flex !important;gap:18px !important;align-items:center !important;}
+.aw-nav-links a{color:#9fc3de !important;font-size:.82rem !important;letter-spacing:.5px !important;}
+.aw-nav-links a:hover{color:#00d4ff !important;}
+.aw-spacer{flex:1 !important;}
+.aw-switch-btn{background:#0d1b2a !important;border:1px solid #1a3550 !important;color:#e0f0ff !important;font-size:.75rem !important;padding:8px 14px !important;border-radius:8px !important;cursor:pointer !important;}
+.aw-switch-btn:hover{border-color:#00d4ff !important;}
+.aw-switch-menu{position:absolute !important;right:22px !important;top:60px !important;background:#0d1b2a !important;border:1px solid #1a3550 !important;border-radius:10px !important;min-width:200px !important;box-shadow:0 8px 40px #00000080 !important;overflow:hidden !important;}
+.aw-switch-menu a{display:block !important;padding:10px 16px !important;font-size:.8rem !important;color:#e0f0ff !important;border-bottom:1px solid #1a3550 !important;}
+.aw-switch-menu a:last-child{border-bottom:none !important;}
+.aw-switch-menu a:hover{background:#0f2035 !important;}
+.aw-publish-btn{background:linear-gradient(135deg,#00d4ff,#0090cc) !important;color:#000 !important;font-family:'Orbitron',monospace !important;font-weight:700 !important;font-size:.75rem !important;padding:9px 18px !important;border:none !important;border-radius:8px !important;cursor:pointer !important;}
+
+/* ── Badges ── */
+.aw-badge{display:inline-block !important;font-size:.58rem !important;font-weight:800 !important;letter-spacing:.5px !important;padding:2px 8px !important;border-radius:20px !important;text-transform:uppercase !important;vertical-align:middle !important;}
+.aw-badge-verified{background:#00aeff !important;color:#000 !important;}
+.aw-badge-uploader{background:#00e0e0 !important;color:#000 !important;}
+.aw-badge-developer{background:#22c55e !important;color:#000 !important;}
+.aw-badge-company{background:#eab308 !important;color:#000 !important;}
+.aw-badge-admin{background:#111111 !important;color:#fff !important;}
+.aw-badge-editor{background:#ef4444 !important;color:#fff !important;}
+
+/* ── Controls / search ── */
+.aw-controls{max-width:1400px !important;margin:22px auto 0 !important;padding:0 22px !important;display:flex !important;gap:10px !important;flex-wrap:wrap !important;}
+.aw-controls input, .aw-controls select{background:#0d1b2a !important;border:1px solid #1a3550 !important;color:#e0f0ff !important;font-family:'Exo 2',sans-serif !important;font-size:.85rem !important;padding:10px 14px !important;border-radius:8px !important;outline:none !important;}
+.aw-controls input{flex:1 !important;min-width:200px !important;}
+
+/* ── Tabs (world) ── */
+.aw-tabs{max-width:1400px !important;margin:20px auto 0 !important;padding:0 22px !important;display:flex !important;gap:8px !important;border-bottom:1px solid #1a3550 !important;}
+.aw-tab{background:none !important;border:none !important;color:#6a8caa !important;font-family:'Orbitron',monospace !important;font-size:.75rem !important;letter-spacing:1px !important;padding:12px 18px !important;cursor:pointer !important;border-bottom:2px solid transparent !important;}
+.aw-tab.active{color:#00d4ff !important;border-bottom-color:#00d4ff !important;}
+
+/* ── Grids ── */
+.aw-grid{max-width:1400px !important;margin:22px auto 60px !important;padding:0 22px !important;display:grid !important;grid-template-columns:repeat(auto-fill,minmax(180px,1fr)) !important;gap:16px !important;}
+.aw-grid-5{grid-template-columns:repeat(5,1fr) !important;}
+.aw-grid-3{grid-template-columns:repeat(3,1fr) !important;}
+@media(max-width:900px){.aw-grid-5{grid-template-columns:repeat(2,1fr) !important;}.aw-grid-3{grid-template-columns:repeat(1,1fr) !important;}}
+
+/* ── App / entity card ── */
+.aw-card{background:#0f2035 !important;border:1px solid #1a3550 !important;border-radius:14px !important;overflow:hidden !important;padding:16px !important;text-align:center !important;transition:border-color .2s,transform .2s !important;}
+.aw-card:hover{border-color:#00d4ff !important;transform:translateY(-3px) !important;}
+.aw-card img{width:72px !important;height:72px !important;border-radius:16px !important;object-fit:cover !important;background:#0d1b2a !important;border:1px solid #1a3550 !important;margin:0 auto 10px !important;display:block !important;}
+.aw-card-title{font-family:'Orbitron',monospace !important;font-size:.72rem !important;font-weight:700 !important;color:#e0f0ff !important;margin-bottom:6px !important;word-break:break-word !important;}
+.aw-card-owner{font-size:.7rem !important;color:#6a8caa !important;margin-bottom:8px !important;}
+.aw-card-downloads{font-size:.65rem !important;color:#3a5a7a !important;margin-bottom:10px !important;}
+.aw-install-btn{display:inline-block !important;background:linear-gradient(135deg,#00d4ff,#0090cc) !important;color:#000 !important;font-family:'Orbitron',monospace !important;font-weight:700 !important;font-size:.7rem !important;padding:9px 18px !important;border:none !important;border-radius:8px !important;cursor:pointer !important;text-decoration:none !important;}
+
+/* ── Account profile page ── */
+.aw-profile-header{max-width:1400px !important;margin:26px auto 10px !important;padding:0 22px !important;text-align:center !important;}
+.aw-profile-header img{width:88px !important;height:88px !important;border-radius:20px !important;object-fit:cover !important;border:2px solid #00d4ff !important;margin-bottom:12px !important;}
+.aw-profile-header h1{font-family:'Orbitron',monospace !important;font-size:1.2rem !important;color:#00d4ff !important;margin-bottom:6px !important;}
+.aw-profile-downloads{font-size:.8rem !important;color:#6a8caa !important;margin-top:6px !important;}
+.aw-section-title{max-width:1400px !important;margin:26px auto 4px !important;padding:0 22px !important;font-family:'Orbitron',monospace !important;font-size:.75rem !important;letter-spacing:1.5px !important;color:#6a8caa !important;text-transform:uppercase !important;}
+
+/* ── App detail (static) page ── */
+.aw-app-page{max-width:640px !important;margin:60px auto !important;background:#0f2035 !important;border:1px solid #1a3550 !important;border-radius:18px !important;padding:40px !important;text-align:center !important;}
+.aw-app-page-icon{width:96px !important;height:96px !important;border-radius:22px !important;object-fit:cover !important;border:2px solid #00d4ff !important;margin-bottom:18px !important;}
+.aw-app-page-title{font-family:'Orbitron',monospace !important;font-size:1.3rem !important;color:#00d4ff !important;margin-bottom:8px !important;}
+.aw-app-page-owner{font-size:.82rem !important;color:#6a8caa !important;margin-bottom:20px !important;}
+.aw-app-page-cover-wrap{width:100% !important;aspect-ratio:16/9 !important;background:#0a1928 !important;border-radius:12px !important;overflow:hidden !important;margin-bottom:18px !important;}
+.aw-app-page-cover{width:100% !important;height:100% !important;object-fit:cover !important;display:block !important;}
+.aw-app-page-desc{color:#e0f0ff !important;line-height:1.8 !important;font-size:.92rem !important;margin-bottom:22px !important;}
+.aw-download-count{margin-top:14px !important;font-size:.75rem !important;color:#6a8caa !important;}
+.aw-back-link{display:block !important;margin-top:24px !important;color:#6a8caa !important;font-size:.75rem !important;}
+
+/* ── YouTube grid ── */
+.aw-yt-grid{max-width:1400px !important;margin:14px auto 60px !important;padding:0 22px !important;display:grid !important;grid-template-columns:repeat(5,1fr) !important;gap:12px !important;}
+@media(max-width:900px){.aw-yt-grid{grid-template-columns:repeat(2,1fr) !important;}}
+.aw-yt-card{display:block !important;aspect-ratio:16/9 !important;background:#0d1b2a !important;border:1px solid #1a3550 !important;border-radius:10px !important;display:flex !important;align-items:center !important;justify-content:center !important;font-size:1.6rem !important;color:#00d4ff !important;}
+
+/* ── Forms (publish / edit / login) ── */
+.aw-form-wrap{max-width:640px !important;margin:40px auto !important;background:#0f2035 !important;border:1px solid #1a3550 !important;border-radius:16px !important;padding:28px !important;}
+.aw-form-wrap h1{font-family:'Orbitron',monospace !important;font-size:1rem !important;color:#00d4ff !important;margin-bottom:20px !important;}
+.aw-form-row{margin-bottom:14px !important;}
+.aw-form-row label{display:block !important;font-size:.72rem !important;color:#6a8caa !important;margin-bottom:5px !important;text-transform:uppercase !important;letter-spacing:.5px !important;}
+.aw-form-row input, .aw-form-row select, .aw-form-row textarea{width:100% !important;background:#050a14 !important;border:1px solid #1a3550 !important;color:#e0f0ff !important;font-family:'Exo 2',sans-serif !important;font-size:.85rem !important;padding:10px 14px !important;border-radius:8px !important;outline:none !important;}
+.aw-form-row textarea{min-height:90px !important;resize:vertical !important;}
+.aw-preview{width:60px !important;height:60px !important;border-radius:12px !important;object-fit:cover !important;margin-top:8px !important;border:1px solid #1a3550 !important;}
+.aw-submit-btn{width:100% !important;background:linear-gradient(135deg,#00d4ff,#0090cc) !important;color:#000 !important;font-family:'Orbitron',monospace !important;font-weight:700 !important;font-size:.85rem !important;padding:13px !important;border:none !important;border-radius:10px !important;cursor:pointer !important;margin-top:8px !important;}
+.aw-error{color:#ff4455 !important;font-size:.78rem !important;margin-bottom:14px !important;}
+.aw-success{color:#00ff88 !important;font-size:.78rem !important;margin-bottom:14px !important;}
+.aw-yt-row{display:flex !important;gap:8px !important;margin-bottom:8px !important;}
+.aw-yt-remove{background:#1a3550 !important;color:#ff4455 !important;border:none !important;border-radius:6px !important;padding:0 12px !important;cursor:pointer !important;}
+.aw-add-link{background:none !important;border:1px dashed #1a3550 !important;color:#6a8caa !important;padding:8px 14px !important;border-radius:8px !important;cursor:pointer !important;font-size:.78rem !important;}
+
+/* ── Admin table ── */
+.aw-admin-table{max-width:1400px !important;margin:20px auto !important;padding:0 22px !important;width:100% !important;border-collapse:collapse !important;}
+.aw-admin-table table{width:100% !important;border-collapse:collapse !important;background:#0f2035 !important;border:1px solid #1a3550 !important;border-radius:12px !important;overflow:hidden !important;}
+.aw-admin-table th, .aw-admin-table td{padding:10px 12px !important;text-align:left !important;font-size:.78rem !important;border-bottom:1px solid #1a3550 !important;color:#e0f0ff !important;}
+.aw-admin-table th{color:#6a8caa !important;font-family:'Orbitron',monospace !important;font-size:.65rem !important;letter-spacing:1px !important;text-transform:uppercase !important;}
+.aw-admin-table .aw-mini-btn{background:#1a3550 !important;color:#e0f0ff !important;border:none !important;padding:5px 10px !important;border-radius:6px !important;font-size:.68rem !important;cursor:pointer !important;}
+
+.aw-empty{grid-column:1/-1 !important;text-align:center !important;padding:60px 20px !important;color:#6a8caa !important;}
+
+/* ============================================================
+   V1.0 FULL STORE UPDATE — additions (every rule !important)
+   ============================================================ */
+
+/* ── App page: meta pills, actions, QR, screenshots ── */
+.aw-app-page-meta{display:flex !important;gap:8px !important;justify-content:center !important;flex-wrap:wrap !important;margin-bottom:16px !important;}
+.aw-category-pill{background:#0a1928 !important;border:1px solid #1a3550 !important;color:#9fc3de !important;font-size:.68rem !important;padding:4px 12px !important;border-radius:20px !important;text-transform:uppercase !important;letter-spacing:.5px !important;}
+.aw-rating-pill{background:#0a1928 !important;border:1px solid #1a3550 !important;color:#eab308 !important;font-size:.7rem !important;padding:4px 12px !important;border-radius:20px !important;font-weight:700 !important;}
+
+.aw-action-row{display:flex !important;gap:10px !important;flex-wrap:wrap !important;justify-content:center !important;align-items:center !important;margin-top:6px !important;}
+.aw-icon-btn{background:#0d1b2a !important;border:1px solid #1a3550 !important;color:#e0f0ff !important;font-family:'Exo 2',sans-serif !important;font-size:.78rem !important;font-weight:600 !important;padding:9px 16px !important;border-radius:8px !important;cursor:pointer !important;}
+.aw-icon-btn:hover{border-color:#00d4ff !important;}
+.aw-icon-btn.active{border-color:#ff6b00 !important;color:#ff6b00 !important;}
+
+.aw-qr-box{width:max-content !important;max-width:100% !important;margin:26px auto 0 !important;text-align:center !important;background:#0a1928 !important;border:1px solid #1a3550 !important;border-radius:12px !important;padding:14px !important;}
+.aw-qr{width:200px !important;height:200px !important;margin:0 auto !important;background:#fff !important;border-radius:4px !important;overflow:hidden !important;line-height:0 !important;}
+.aw-qr svg{display:block !important;width:200px !important;height:200px !important;background:#fff !important;}
+.aw-qr-label{font-size:.65rem !important;color:#6a8caa !important;margin-top:8px !important;}
+
+.aw-shots-grid{max-width:1400px !important;margin:14px auto 40px !important;padding:0 22px !important;display:grid !important;grid-template-columns:repeat(4,1fr) !important;gap:12px !important;}
+@media(max-width:900px){.aw-shots-grid{grid-template-columns:repeat(2,1fr) !important;}}
+.aw-shot{width:100% !important;aspect-ratio:9/16 !important;object-fit:cover !important;border-radius:10px !important;border:1px solid #1a3550 !important;background:#0d1b2a !important;}
+
+/* ── Reviews / comments ── */
+.aw-comment-form{max-width:640px !important;margin:14px auto !important;padding:0 22px !important;text-align:left !important;}
+.aw-stars{font-size:1.6rem !important;letter-spacing:4px !important;color:#1a3550 !important;cursor:pointer !important;margin-bottom:10px !important;}
+.aw-stars span{cursor:pointer !important;transition:color .1s !important;}
+.aw-stars span.active{color:#eab308 !important;}
+.aw-comment-form textarea{width:100% !important;background:#050a14 !important;border:1px solid #1a3550 !important;color:#e0f0ff !important;font-family:'Exo 2',sans-serif !important;font-size:.85rem !important;padding:10px 14px !important;border-radius:8px !important;outline:none !important;min-height:70px !important;resize:vertical !important;margin-bottom:10px !important;display:block !important;}
+.aw-comments-list{max-width:640px !important;margin:10px auto 50px !important;padding:0 22px !important;text-align:left !important;}
+.aw-comment{background:#0f2035 !important;border:1px solid #1a3550 !important;border-radius:10px !important;padding:12px 14px !important;margin-bottom:10px !important;}
+.aw-comment-head{display:flex !important;justify-content:space-between !important;align-items:center !important;margin-bottom:6px !important;}
+.aw-comment-user{font-size:.78rem !important;font-weight:700 !important;color:#e0f0ff !important;}
+.aw-comment-stars{color:#eab308 !important;font-size:.85rem !important;}
+.aw-comment-text{font-size:.82rem !important;color:#9fc3de !important;line-height:1.6 !important;}
+
+/* ── Dashboard stat cards ── */
+.aw-dash-stats{max-width:1400px !important;margin:20px auto !important;padding:0 22px !important;display:grid !important;grid-template-columns:repeat(4,1fr) !important;gap:14px !important;}
+@media(max-width:900px){.aw-dash-stats{grid-template-columns:repeat(2,1fr) !important;}}
+.aw-dash-stat{background:#0f2035 !important;border:1px solid #1a3550 !important;border-radius:14px !important;padding:20px !important;text-align:center !important;}
+.aw-dash-num{font-family:'Orbitron',monospace !important;font-size:1.6rem !important;font-weight:900 !important;color:#00d4ff !important;}
+.aw-dash-label{font-size:.68rem !important;color:#6a8caa !important;text-transform:uppercase !important;letter-spacing:1px !important;margin-top:4px !important;}
+
+/* ── Admin tabs + status pills + featured/ban buttons ── */
+.aw-status-pill{display:inline-block !important;font-size:.65rem !important;font-weight:700 !important;padding:3px 9px !important;border-radius:20px !important;}
+.aw-status-published{background:#00ff8830 !important;color:#00ff88 !important;}
+.aw-status-unpublished{background:#ff445530 !important;color:#ff4455 !important;}
+.aw-status-banned{background:#ff445530 !important;color:#ff4455 !important;}
+.aw-mini-btn.aw-danger{background:#ff445530 !important;color:#ff4455 !important;}
+.aw-mini-btn.aw-good{background:#00ff8830 !important;color:#00ff88 !important;}
+
+/* ── Homepage sections ── */
+.aw-home-section-nav{max-width:1400px !important;margin:16px auto 0 !important;padding:0 22px !important;display:flex !important;gap:10px !important;flex-wrap:wrap !important;}
+.aw-home-section-nav a{background:#0d1b2a !important;border:1px solid #1a3550 !important;color:#9fc3de !important;font-size:.72rem !important;padding:7px 14px !important;border-radius:20px !important;text-decoration:none !important;}
+.aw-home-section-nav a:hover{border-color:#00d4ff !important;color:#00d4ff !important;}

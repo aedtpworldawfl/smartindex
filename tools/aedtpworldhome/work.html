@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="AEDTP WORLD HOME Productivity Dashboard: A multifunctional app for notes, file preview, and utilities.">
+
+<title>AEDTP WORLD HOME Dashboard</title>
+
+<link rel="icon" type="image/png" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+
+<style>
+/* ===== AEDTP WORLD CORE STYLES ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    transition: 0.3s;
+}
+
+body.light {
+    background: #f4f4f4;
+    color: #111;
+}
+
+header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+}
+
+body.light header {
+    background: rgba(255,255,255,0.8);
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #222;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+body.light .sidebar {
+    background: #ddd;
+}
+
+/* Main content */
+.main {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Sections */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Buttons */
+button {
+    padding: 8px;
+    margin: 4px 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Notes */
+textarea {
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+}
+
+/* File preview */
+iframe, video {
+    width: 100%;
+    height: 400px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div>AEDTP WORLD Dashboard</div>
+    <div>
+        <button onclick="toggleMode()">Toggle Mode</button>
+
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <button onclick="showSection('notes')">Notes</button>
+        <button onclick="showSection('files')">File Viewer</button>
+        <button onclick="showSection('tools')">Tools</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <!-- Notes -->
+        <div id="notes" class="section active">
+            <h2>Notes</h2>
+            <textarea id="noteArea" placeholder="Write your notes here..."></textarea>
+            <button onclick="saveNotes()">Save Notes</button>
+            <button onclick="loadNotes()">Load Notes</button>
+        </div>
+
+        <!-- File Viewer -->
+        <div id="files" class="section">
+            <h2>File Viewer</h2>
+            <input type="file" id="fileInput" multiple>
+            <div id="filePreview"></div>
+        </div>
+
+        <!-- Tools -->
+        <div id="tools" class="section">
+            <h2>Simple Tools</h2>
+            <button onclick="calculateTime()">Show Current Time</button>
+            <p id="timeDisplay"></p>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+</footer>
+
+<script>
+/* ===== AEDTP WORLD JS ===== */
+
+function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+/* Theme toggle */
+function toggleMode() {
+    document.body.classList.toggle("light");
+}
+
+/* Notes storage */
+function saveNotes() {
+    const text = document.getElementById("noteArea").value;
+    localStorage.setItem("aedtpworld_notes", text);
+    alert("Notes saved");
+}
+
+function loadNotes() {
+    const text = localStorage.getItem("aedtp_notes");
+    document.getElementById("noteArea").value = text || "";
+}
+
+/* File viewer */
+document.getElementById("fileInput").addEventListener("change", function(e) {
+    const preview = document.getElementById("filePreview");
+    preview.innerHTML = "";
+
+    Array.from(e.target.files).forEach(file => {
+        const url = URL.createObjectURL(file);
+
+        if (file.type.startsWith("video")) {
+            const vid = document.createElement("video");
+            vid.src = url;
+            vid.controls = true;
+            preview.appendChild(vid);
+        } else if (file.type.startsWith("image")) {
+            const img = document.createElement("img");
+            img.src = url;
+            img.style.maxWidth = "100%";
+            preview.appendChild(img);
+        } else {
+            const iframe = document.createElement("iframe");
+            iframe.src = url;
+            preview.appendChild(iframe);
+        }
+    });
+});
+
+/* Tools */
+function calculateTime() {
+    const now = new Date();
+    document.getElementById("timeDisplay").innerText = now.toString();
+}
+
+
+</script>
+
+</body>
+</html>

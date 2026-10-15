@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AEDTP WORLD AWFL BUSINESS CARD VERIFICATION — Create Your Free Business Card</title>
+
+    <link rel="canonical" href="https://aedtpworld.com/verify/">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=IBM+Plex+Sans:wght@300;400;600;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════════
+   ALPHA-GENZ BACKGROUND & ROOT VARIABLES
+═══════════════════════════════════════════════ */
+:root {
+  --bg-1: #0a0015;
+  --bg-2: #00051a;
+  --accent-a: #b300ff;
+  --accent-b: #00f0ff;
+  --accent-c: #ff006e;
+  --accent-d: #39ff14;
+  --accent-e: #ff9900;
+  --surface: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.1);
+  --text: #f0f0ff;
+  --muted: #8899bb;
+  --radius: 14px;
+  --card-w: 800px;
+  --card-h: 450px;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  background: var(--bg-1);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Alpha-GenZ animated background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 20%, rgba(179,0,255,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 90% 80%, rgba(0,240,255,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255,0,110,0.08) 0%, transparent 70%),
+    linear-gradient(135deg, #0a0015 0%, #000d1f 50%, #050020 100%);
+  z-index: 0;
+  pointer-events: none;
+  animation: bgShift 12s ease-in-out infinite alternate;
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(0,240,255,0.04) 60px),
+    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(179,0,255,0.04) 60px);
+  z-index: 0;
+  pointer-events: none;
+}
+@keyframes bgShift {
+  0%   { opacity: 1; filter: hue-rotate(0deg); }
+  100% { opacity: 1; filter: hue-rotate(30deg); }
+}
+
+/* ═══════════════════════════════════════════════
+   NAV / HAMBURGER
+═══════════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(10,0,21,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  height: 62px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 16px;
+}
+.nav-logo {
+  font-family: 'Orbitron', monospace;
+  font-size: .9rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--accent-b), var(--accent-a));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+.nav-spacer { flex: 1; }
+.ham-btn {
+  width: 40px; height: 40px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px;
+  transition: border-color .2s;
+}
+.ham-btn:hover { border-color: var(--accent-b); }
+.ham-btn span {
+  display: block;
+  width: 18px; height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all .3s;
+}
+.ham-btn.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.ham-btn.open span:nth-child(2) { opacity: 0; }
+.ham-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* Drawer */
+.drawer {
+  position: fixed;
+  top: 62px; right: -320px;
+  width: 300px;
+  height: calc(100vh - 62px);
+  background: rgba(10,0,25,0.97);
+  backdrop-filter: blur(24px);
+  border-left: 1px solid var(--border);
+  z-index: 999;
+  transition: right .35s cubic-bezier(.4,0,.2,1);
+  padding: 32px 24px;
+  overflow-y: auto;
+}
+.drawer.open { right: 0; }
+.drawer-section { margin-bottom: 28px; }
+.drawer-label {
+  font-size: .65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-b);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.drawer a {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  font-size: .9rem;
+  padding: 9px 12px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  transition: background .2s, color .2s;
+  border: 1px solid transparent;
+}
+.drawer a:hover {
+  background: rgba(0,240,255,0.08);
+  border-color: var(--border);
+  color: var(--accent-b);
+}
+.drawer a .tag {
+  font-size: .65rem;
+  color: var(--muted);
+  margin-left: 6px;
+}
+.drawer-contact {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-top: 8px;
+  word-break: break-all;
+}
+.drawer-contact a { color: var(--accent-b); font-size: .8rem; padding: 0; border: none; display: inline; }
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 998;
+  display: none;
+}
+.overlay.show { display: block; }
+
+/* ═══════════════════════════════════════════════
+   PAGE LAYOUT
+═══════════════════════════════════════════════ */
+.page {
+  position: relative;
+  z-index: 1;
+  padding-top: 62px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 80px;
+}
+
+/* Title block */
+.hero {
+  text-align: center;
+  padding: 52px 20px 40px;
+}
+.hero-sub {
+  font-size: .7rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent-b);
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(1.1rem, 3.5vw, 1.8rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent-b) 0%, var(--accent-a) 50%, var(--accent-c) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+/* Section header */
+.section-head {
+  font-family: 'Orbitron', monospace;
+  font-size: .8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-b);
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Form card */
+.form-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 28px;
+  backdrop-filter: blur(8px);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media(max-width:600px) { .form-grid { grid-template-columns: 1fr; } }
+.form-full { grid-column: 1/-1; }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label {
+  font-size: .72rem;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.field label .req { color: var(--accent-c); margin-left: 2px; }
+.field label .opt { color: #445; font-size: .65rem; }
+.field input, .field textarea {
+  background: rgba(0,0,0,.35);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: 'Exo 2', sans-serif;
+  font-size: .88rem;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.field input:focus, .field textarea:focus {
+  border-color: var(--accent-b);
+  box-shadow: 0 0 0 3px rgba(0,240,255,.08);
+}
+.field .char-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: .65rem;
+  color: #445;
+}
+.field .char-count { color: var(--muted); }
+.field .url-prefix {
+  font-size: .7rem;
+  color: var(--accent-a);
+  margin-top: 4px;
+  word-break: break-all;
+}
+
+/* Upload zone */
+.upload-zone {
+  border: 2px dashed var(--border);
+  border-radius: 16px;
+  padding: 36px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .25s;
+  position: relative;
+  overflow: hidden;
+  background: rgba(0,0,0,.2);
+}
+.upload-zone:hover, .upload-zone.drag { border-color: var(--accent-b); background: rgba(0,240,255,.04); }
+.upload-zone.has-img { border-style: solid; border-color: var(--accent-a); }
+.upload-zone input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.upload-icon { font-size: 2.5rem; margin-bottom: 10px; }
+.upload-zone p { color: var(--muted); font-size: .85rem; }
+.upload-zone strong { color: var(--text); }
+.upload-preview {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-a);
+  margin: 0 auto 12px;
+  display: none;
+}
+.upload-preview.show { display: block; }
+.upload-err { color: var(--accent-c); font-size: .78rem; margin-top: 8px; display: none; }
+
+/* Cropper modal */
+.crop-modal {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.92);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+.crop-modal.show { display: flex; }
+.crop-title { font-family: 'Orbitron', monospace; color: var(--accent-b); font-size: .9rem; margin-bottom: 4px; }
+#cropCanvas { border-radius: 12px; border: 2px solid var(--accent-b); cursor: crosshair; max-width: 100%; }
+.crop-hint { color: var(--muted); font-size: .78rem; text-align: center; }
+.crop-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+/* Buttons */
+.btn {
+  font-family: 'Orbitron', monospace;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .2s;
+  text-transform: uppercase;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-b), var(--accent-a));
+  color: #000;
+  box-shadow: 0 0 20px rgba(0,240,255,.3);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 32px rgba(0,240,255,.5); }
+.btn-primary:disabled { opacity: .4; cursor: not-allowed; transform: none; }
+.btn-ghost {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.btn-ghost:hover { border-color: var(--accent-b); color: var(--accent-b); }
+.btn-sm { padding: 8px 16px; font-size: .68rem; }
+
+/* ═══════════════════════════════════════════════
+   CARD PREVIEW & DOWNLOAD SECTION
+═══════════════════════════════════════════════ */
+#cardSection { display: none; }
+#cardSection.show { display: block; }
+
+.card-preview-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+#cardCanvas {
+  border-radius: 20px;
+  box-shadow: 0 0 60px rgba(0,240,255,.2), 0 0 120px rgba(179,0,255,.1);
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.download-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media(max-width:600px) { .download-section { grid-template-columns: 1fr; } }
+
+.dl-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+.dl-box-head {
+  font-family: 'Orbitron', monospace;
+  font-size: .8rem;
+  color: var(--accent-b);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dl-box-head .fmt { color: var(--accent-a); }
+.dl-sizes { display: flex; flex-direction: column; gap: 8px; }
+.dl-size-btn {
+  background: rgba(0,0,0,.4);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'Exo 2', sans-serif;
+  font-size: .82rem;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: all .2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.dl-size-btn:hover { border-color: var(--accent-b); color: var(--accent-b); background: rgba(0,240,255,.06); }
+.dl-size-btn .dl-arrow { font-size: .9rem; }
+.dl-size-btn .dl-res { font-size: .68rem; color: var(--muted); }
+
+/* Verify btn row */
+.verify-row { text-align: center; margin: 8px 0 24px; }
+
+/* ═══════════════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════════════ */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">AEDTP WORLD</div>
+  <div class="nav-spacer"></div>
+  <button class="ham-btn" id="hamBtn" onclick="toggleDrawer()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- DRAWER -->
+<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-section">
+    <div class="drawer-label">Navigation</div>
+    <a href="https://aedtpworld.com/">🏠 Home</a>
+    <a href="https://aedtpworld.com/awfl/">📖 AWFL WIKI</a>
+  </div>
+  <div class="drawer-section">
+    <div class="drawer-label">Sections</div>
+    <a href="https://aedtpworld.com/apps/">📱 <span class="tag">==Apps==</span></a>
+    <a href="https://aedtpworld.com/business/">💼 <span class="tag">==Business==</span></a>
+    <a href="https://aedtpworld.com/music/">🎵 <span class="tag">==Music==</span></a>
+  </div>
+  <div class="drawer-section">
+    <div class="drawer-label">Contact</div>
+    <div class="drawer-contact">📧 <a href="mailto:aedtpworld@gmail.com">aedtpworld@gmail.com</a></div>
+  </div>
+</div>
+
+<!-- PAGE -->
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-sub">✦ Free · Instant · No Account Needed ✦</div>
+    <h1>AEDTP WORLD AWFL<br>BUSINESS CARD VERIFICATION</h1>
+    <p>CREATE YOUR AEDTP WORLD AWFL BUSINESS CARD FREE</p>
+  </div>
+
+  <!-- HEADER BAR -->
+  <div style="text-align:center;margin-bottom:36px;">
+    <div style="display:inline-block;background:linear-gradient(135deg,rgba(0,240,255,.12),rgba(179,0,255,.12));border:1px solid var(--border);border-radius:50px;padding:10px 28px;">
+      <span style="font-family:'Orbitron',monospace;font-size:.85rem;letter-spacing:3px;background:linear-gradient(90deg,var(--accent-b),var(--accent-a));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+        AEDTP WORLD AWFL BUSINESS CARD
+      </span>
+    </div>
+  </div>
+
+  <!-- FORM CARD -->
+  <div class="form-card" id="formCard">
+    <div class="section-head">📋 Business Details</div>
+    <div class="form-grid">
+
+      <div class="field">
+        <label>Business Name <span class="req">*</span></label>
+        <input type="text" id="f_bname" maxlength="100" placeholder="e.g. AEDTP WORLD" oninput="cc(this,'c_bname')"/>
+        <div class="char-row"><span></span><span class="char-count" id="c_bname">0/100</span></div>
+      </div>
+
+      <div class="field">
+        <label>Company Name <span class="opt">(optional)</span></label>
+        <input type="text" id="f_cname" maxlength="100" placeholder="e.g. AEDTP World Ltd." oninput="cc(this,'c_cname')"/>
+        <div class="char-row"><span></span><span class="char-count" id="c_cname">0/100</span></div>
+      </div>
+
+      <div class="field form-full">
+        <label>Tagline <span class="opt">(optional)</span></label>
+        <input type="text" id="f_tagline" maxlength="100" placeholder="e.g. Connecting Africa to the World" oninput="cc(this,'c_tag')"/>
+        <div class="char-row"><span></span><span class="char-count" id="c_tag">0/100</span></div>
+      </div>
+
+      <div class="field form-full">
+        <label>Description <span class="req">*</span></label>
+        <input type="text" id="f_desc" maxlength="100" placeholder="What your business is about" oninput="cc(this,'c_desc')"/>
+        <div class="char-row"><span></span><span class="char-count" id="c_desc">0/100</span></div>
+      </div>
+
+      <div class="field form-full">
+        <label>Services <span class="req">*</span></label>
+        <input type="text" id="f_services" maxlength="100" placeholder="e.g. Design, Development, Consulting" oninput="cc(this,'c_svc')"/>
+        <div class="char-row"><span></span><span class="char-count" id="c_svc">0/100</span></div>
+      </div>
+
+      <div class="field form-full">
+        <label>Business Username / Short Name <span class="req">*</span></label>
+        <input type="text" id="f_slug" maxlength="100" placeholder="e.g. AEDTP WORLD or MyBusiness" oninput="cc(this,'c_slug');updateSlugPreview()"/>
+        <div class="char-row">
+          <span class="url-prefix" id="slugPreview">https://aedtpworld.com/business/—/</span>
+          <span class="char-count" id="c_slug">0/100</span>
+        </div>
+      </div>
+
+      <div class="field form-full">
+        <label>Email <span class="req">*</span></label>
+        <input type="email" id="f_email" maxlength="100" placeholder="contact@mybusiness.com" oninput="cc(this,'c_email')"/>
+        <div class="char-row"><span></span><span class="char-count" id="c_email">0/100</span></div>
+      </div>
+
+    </div>
+
+    <!-- UPLOAD SECTION -->
+    <div style="margin-top:28px;">
+      <div class="section-head">🖼 Business Picture / Icon</div>
+      <p style="font-size:.8rem;color:var(--muted);margin-bottom:16px;">Required · Square image (720×720px minimum) · Any image format<br>If not square, you will be asked to crop it.</p>
+
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="imgInput" accept="image/*" onchange="handleImageUpload(event)"/>
+        <img id="uploadPreview" class="upload-preview" alt="Preview"/>
+        <div id="uploadPrompt">
+          <div class="upload-icon">📷</div>
+          <p><strong>Click or drag & drop</strong> your business image here</p>
+          <p style="font-size:.72rem;margin-top:6px;">Min 720×720px · Square preferred · Auto-crop available</p>
+        </div>
+        <div class="upload-err" id="uploadErr"></div>
+      </div>
+    </div>
+
+    <!-- VERIFY BUTTON -->
+    <div class="verify-row" style="margin-top:24px;">
+      <button class="btn btn-primary" id="verifyBtn" disabled onclick="generateCard()">
+        ✦ VERIFY &amp; GENERATE CARD
+      </button>
+    </div>
+  </div>
+
+  <!-- CARD PREVIEW + DOWNLOAD -->
+  <div id="cardSection">
+    <div class="section-head">🪪 Your AEDTP WORLD AWFL Business Card</div>
+    <div class="card-preview-wrap">
+      <canvas id="cardCanvas"></canvas>
+    </div>
+
+    <div class="verify-row">
+      <button class="btn btn-ghost btn-sm" onclick="regenerateColors()">🎲 Randomize Colors</button>
+    </div>
+
+    <div style="margin-top:12px;">
+      <div class="section-head">⬇ Download Business Card</div>
+      <div class="download-section">
+        <!-- PNG -->
+        <div class="dl-box">
+          <div class="dl-box-head"><span class="fmt">PNG</span> Format — Lossless</div>
+          <div class="dl-sizes">
+            <button class="dl-size-btn" onclick="downloadCard('png',1280,720)">
+              <span>1280 × 720 <span class="dl-res">HD</span></span><span class="dl-arrow">⬇</span>
+            </button>
+            <button class="dl-size-btn" onclick="downloadCard('png',1920,1080)">
+              <span>1920 × 1080 <span class="dl-res">Full HD</span></span><span class="dl-arrow">⬇</span>
+            </button>
+            <button class="dl-size-btn" onclick="downloadCard('png',2560,1440)">
+              <span>2560 × 1440 <span class="dl-res">QHD</span></span><span class="dl-arrow">⬇</span>
+            </button>
+            <button class="dl-size-btn" onclick="downloadCard('png',3840,2160)">
+              <span>3840 × 2160 <span class="dl-res">4K UHD</span></span><span class="dl-arrow">⬇</span>
+            </button>
+          </div>
+        </div>
+        <!-- JPG -->
+        <div class="dl-box">
+          <div class="dl-box-head"><span class="fmt">JPG</span> Format — Compressed</div>
+          <div class="dl-sizes">
+            <button class="dl-size-btn" onclick="downloadCard('jpg',1280,720)">
+              <span>1280 × 720 <span class="dl-res">HD</span></span><span class="dl-arrow">⬇</span>
+            </button>
+            <button class="dl-size-btn" onclick="downloadCard('jpg',1920,1080)">
+              <span>1920 × 1080 <span class="dl-res">Full HD</span></span><span class="dl-arrow">⬇</span>
+            </button>
+            <button class="dl-size-btn" onclick="downloadCard('jpg',2560,1440)">
+              <span>2560 × 1440 <span class="dl-res">QHD</span></span><span class="dl-arrow">⬇</span>
+            </button>
+            <button class="dl-size-btn" onclick="downloadCard('jpg',3840,2160)">
+              <span>3840 × 2160 <span class="dl-res">4K UHD</span></span><span class="dl-arrow">⬇</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<!-- CROPPER MODAL -->
+<div class="crop-modal" id="cropModal">
+  <div class="crop-title">✂ Crop Your Image to Square</div>
+  <p class="crop-hint">Click and drag to select a square area, then click Crop.</p>
+  <canvas id="cropCanvas"></canvas>
+  <div class="crop-actions">
+    <button class="btn btn-primary btn-sm" onclick="applyCrop()">✔ Crop & Use</button>
+    <button class="btn btn-ghost btn-sm" onclick="cancelCrop()">✕ Cancel</button>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════
+   NAV / DRAWER
+══════════════════════════════════════════════════════ */
+function toggleDrawer(){
+  document.getElementById('drawer').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('show');
+  document.getElementById('hamBtn').classList.toggle('open');
+}
+function closeDrawer(){
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+  document.getElementById('hamBtn').classList.remove('open');
+}
+
+/* ══════════════════════════════════════════════════════
+   FORM HELPERS
+══════════════════════════════════════════════════════ */
+function cc(el, countId){
+  document.getElementById(countId).textContent = el.value.length + '/' + el.maxLength;
+  checkEnableVerify();
+}
+
+function updateSlugPreview(){
+  const slug = document.getElementById('f_slug').value.replace(/\s+/g,'_');
+  const preview = slug ? `https://aedtpworld.com/business/${slug}/` : 'https://aedtpworld.com/business/—/';
+  document.getElementById('slugPreview').textContent = preview;
+}
+
+function getLink(){
+  const slug = document.getElementById('f_slug').value.trim().replace(/\s+/g,'_');
+  return slug ? `https://aedtpworld.com/business/${slug}/` : '';
+}
+
+const REQUIRED = ['f_bname','f_desc','f_services','f_slug','f_email'];
+let croppedImageDataURL = null;
+
+function checkEnableVerify(){
+  const allFilled = REQUIRED.every(id => document.getElementById(id).value.trim());
+  const hasImage = !!croppedImageDataURL;
+  document.getElementById('verifyBtn').disabled = !(allFilled && hasImage);
+}
+
+/* ══════════════════════════════════════════════════════
+   IMAGE UPLOAD & CROPPER
+══════════════════════════════════════════════════════ */
+let rawImage = null;
+let cropStart = null, cropRect = null, isDragging = false;
+
+function handleImageUpload(e){
+  const file = e.target.files[0];
+  if(!file){ return; }
+  const err = document.getElementById('uploadErr');
+  err.style.display = 'none';
+
+  const reader = new FileReader();
+  reader.onload = function(ev){
+    const img = new Image();
+    img.onload = function(){
+      rawImage = img;
+      const isSquare = img.width === img.height;
+      const bigEnough = img.width >= 720 && img.height >= 720;
+
+      if(isSquare && bigEnough){
+        // Perfect — use directly
+        const c = document.createElement('canvas');
+        c.width = 720; c.height = 720;
+        c.getContext('2d').drawImage(img,0,0,720,720);
+        croppedImageDataURL = c.toDataURL('image/png');
+        showPreview(croppedImageDataURL);
+      } else if(!isSquare){
+        // Need crop
+        openCropper(img);
+      } else {
+        // Square but too small — still allow with warning
+        const c = document.createElement('canvas');
+        c.width = img.width; c.height = img.height;
+        c.getContext('2d').drawImage(img,0,0);
+        croppedImageDataURL = c.toDataURL('image/png');
+        showPreview(croppedImageDataURL);
+        err.textContent = '⚠ Image is smaller than 720×720. Quality may be reduced.';
+        err.style.display = 'block';
+      }
+      checkEnableVerify();
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function showPreview(dataURL){
+  const prev = document.getElementById('uploadPreview');
+  prev.src = dataURL;
+  prev.classList.add('show');
+  document.getElementById('uploadPrompt').style.opacity = '.4';
+  document.getElementById('uploadZone').classList.add('has-img');
+}
+
+/* CROPPER */
+let cropCanvas, cropCtx, cropImg, cropScale;
+let cropX=0, cropY=0, cropSize=200;
+let mouseDown=false, startMX=0, startMY=0;
+
+function openCropper(img){
+  cropImg = img;
+  const modal = document.getElementById('cropModal');
+  cropCanvas = document.getElementById('cropCanvas');
+  cropCtx = cropCanvas.getContext('2d');
+
+  const maxW = Math.min(img.width, window.innerWidth - 40, 700);
+  cropScale = maxW / img.width;
+  cropCanvas.width = Math.round(img.width * cropScale);
+  cropCanvas.height = Math.round(img.height * cropScale);
+
+  const side = Math.min(cropCanvas.width, cropCanvas.height) * 0.6;
+  cropX = (cropCanvas.width - side) / 2;
+  cropY = (cropCanvas.height - side) / 2;
+  cropSize = side;
+
+  drawCropper();
+  modal.classList.add('show');
+
+  cropCanvas.onmousedown = (e)=>{ mouseDown=true; startMX=e.offsetX; startMY=e.offsetY; };
+  cropCanvas.onmousemove = (e)=>{
+    if(!mouseDown) return;
+    cropX += e.offsetX - startMX;
+    cropY += e.offsetY - startMY;
+    startMX = e.offsetX; startMY = e.offsetY;
+    clampCrop();
+    drawCropper();
+  };
+  cropCanvas.onmouseup = ()=>{ mouseDown=false; };
+  cropCanvas.ontouchstart = (e)=>{
+    const t=e.touches[0];
+    mouseDown=true; startMX=t.clientX; startMY=t.clientY;
+    e.preventDefault();
+  };
+  cropCanvas.ontouchmove = (e)=>{
+    if(!mouseDown) return;
+    const t=e.touches[0];
+    cropX += t.clientX-startMX; cropY += t.clientY-startMY;
+    startMX=t.clientX; startMY=t.clientY;
+    clampCrop(); drawCropper(); e.preventDefault();
+  };
+  cropCanvas.ontouchend = ()=>{ mouseDown=false; };
+}
+
+function clampCrop(){
+  cropX = Math.max(0, Math.min(cropCanvas.width - cropSize, cropX));
+  cropY = Math.max(0, Math.min(cropCanvas.height - cropSize, cropY));
+}
+
+function drawCropper(){
+  cropCtx.clearRect(0,0,cropCanvas.width,cropCanvas.height);
+  cropCtx.drawImage(cropImg,0,0,cropCanvas.width,cropCanvas.height);
+  cropCtx.fillStyle='rgba(0,0,0,0.55)';
+  cropCtx.fillRect(0,0,cropCanvas.width,cropCanvas.height);
+  cropCtx.drawImage(cropImg,
+    cropX/cropScale, cropY/cropScale, cropSize/cropScale, cropSize/cropScale,
+    cropX, cropY, cropSize, cropSize);
+  cropCtx.strokeStyle='#00f0ff';
+  cropCtx.lineWidth=2;
+  cropCtx.strokeRect(cropX,cropY,cropSize,cropSize);
+  // corner handles
+  const h=12;
+  [[cropX,cropY],[cropX+cropSize-h,cropY],[cropX,cropY+cropSize-h],[cropX+cropSize-h,cropY+cropSize-h]].forEach(([x,y])=>{
+    cropCtx.fillStyle='#00f0ff';
+    cropCtx.fillRect(x,y,h,h);
+  });
+}
+
+function applyCrop(){
+  const out = document.createElement('canvas');
+  out.width = 720; out.height = 720;
+  out.getContext('2d').drawImage(cropImg,
+    cropX/cropScale, cropY/cropScale, cropSize/cropScale, cropSize/cropScale,
+    0,0,720,720);
+  croppedImageDataURL = out.toDataURL('image/png');
+  showPreview(croppedImageDataURL);
+  document.getElementById('cropModal').classList.remove('show');
+  checkEnableVerify();
+}
+
+function cancelCrop(){
+  document.getElementById('cropModal').classList.remove('show');
+  document.getElementById('imgInput').value='';
+}
+
+/* ══════════════════════════════════════════════════════
+   COLOR PALETTE GENERATOR
+══════════════════════════════════════════════════════ */
+const PALETTES = [
+  // [bg1, bg2, accent1, accent2, accent3]
+  ['#1a0033','#00001a','#b300ff','#00f0ff','#ff006e'],
+  ['#001a00','#001510','#39ff14','#00f0ff','#ffff00'],
+  ['#1a0000','#0d0000','#ff2200','#ff9900','#ffcc00'],
+  ['#001a1a','#000d1a','#00f5d4','#845ec2','#ff6f91'],
+  ['#0d1b2a','#050a14','#00d4ff','#ff6b00','#a8ff78'],
+  ['#1a001a','#0d0014','#ff00cc','#00ccff','#ccff00'],
+  ['#001430','#000820','#4fc3f7','#f06292','#aed581'],
+  ['#1a1000','#0d0800','#ffb300','#ff5722','#e040fb'],
+  ['#00101a','#000814','#00e5ff','#76ff03','#ff1744'],
+  ['#100014','#08000d','#7c4dff','#00e5ff','#ff6d00'],
+];
+
+let currentPalette = null;
+let currentCardData = null;
+
+function randomPalette(){
+  return PALETTES[Math.floor(Math.random()*PALETTES.length)];
+}
+
+/* ══════════════════════════════════════════════════════
+   CARD GENERATOR (Canvas)
+══════════════════════════════════════════════════════ */
+const BASE_W = 1280, BASE_H = 720;
+
+function generateCard(){
+  currentPalette = randomPalette();
+  currentCardData = collectData();
+  renderCard(document.getElementById('cardCanvas'), BASE_W, BASE_H, currentPalette, currentCardData);
+  document.getElementById('cardSection').classList.add('show');
+  document.getElementById('cardSection').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function regenerateColors(){
+  currentPalette = randomPalette();
+  renderCard(document.getElementById('cardCanvas'), BASE_W, BASE_H, currentPalette, currentCardData);
+}
+
+function collectData(){
+  return {
+    bname:    document.getElementById('f_bname').value.trim(),
+    cname:    document.getElementById('f_cname').value.trim(),
+    tagline:  document.getElementById('f_tagline').value.trim(),
+    desc:     document.getElementById('f_desc').value.trim(),
+    services: document.getElementById('f_services').value.trim(),
+    link:     getLink(),
+    email:    document.getElementById('f_email').value.trim(),
+    img:      croppedImageDataURL,
+  };
+}
+
+function renderCard(canvas, W, H, palette, data){
+  canvas.width = W;
+  canvas.height = H;
+  const ctx = canvas.getContext('2d');
+  const [bg1,bg2,ac1,ac2,ac3] = palette;
+  const S = W/BASE_W; // scale factor
+
+  /* ── Background gradient ── */
+  const bgGrad = ctx.createLinearGradient(0,0,W,H);
+  bgGrad.addColorStop(0, bg1);
+  bgGrad.addColorStop(1, bg2);
+  ctx.fillStyle = bgGrad;
+  roundRect(ctx,0,0,W,H,28*S);
+  ctx.fill();
+
+  /* ── Watermark 3D shapes (background layer) ── */
+  drawWatermarks(ctx, W, H, S, ac1, ac2, ac3);
+
+  /* ── Multi-accent outline border ── */
+  const bw = 5*S;
+  const grad = ctx.createLinearGradient(0,0,W,H);
+  grad.addColorStop(0,    ac1);
+  grad.addColorStop(0.33, ac2);
+  grad.addColorStop(0.66, ac3);
+  grad.addColorStop(1,    ac1);
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = bw;
+  roundRect(ctx, bw/2, bw/2, W-bw, H-bw, 26*S);
+  ctx.stroke();
+
+  /* ── "Discover And Connect" top right ── */
+  ctx.save();
+  ctx.font = `${11*S}px 'Exo 2', sans-serif`;
+  ctx.fillStyle = ac2;
+  ctx.globalAlpha = 0.85;
+  ctx.textAlign = 'right';
+  ctx.fillText('Discover And Connect', W - 32*S, 36*S);
+  ctx.restore();
+
+  /* ── Left column: Logo circle ── */
+  const logoX = 80*S, logoY = H/2, logoR = 100*S;
+  // Glow ring
+  ctx.save();
+  ctx.shadowColor = ac1;
+  ctx.shadowBlur = 30*S;
+  const ringGrad = ctx.createLinearGradient(logoX-logoR,logoY-logoR,logoX+logoR,logoY+logoR);
+  ringGrad.addColorStop(0,ac1); ringGrad.addColorStop(0.5,ac2); ringGrad.addColorStop(1,ac3);
+  ctx.strokeStyle = ringGrad;
+  ctx.lineWidth = 5*S;
+  ctx.beginPath(); ctx.arc(logoX,logoY,logoR+4*S,0,Math.PI*2); ctx.stroke();
+  ctx.restore();
+
+  // Clip circle and draw image
+  ctx.save();
+  ctx.beginPath(); ctx.arc(logoX,logoY,logoR,0,Math.PI*2); ctx.clip();
+  if(data.img){
+    const img = new Image();
+    img.src = data.img;
+    // Draw synchronously since image is already loaded (data URL)
+    ctx.drawImage(img, logoX-logoR, logoY-logoR, logoR*2, logoR*2);
+  } else {
+    ctx.fillStyle='rgba(255,255,255,0.08)';
+    ctx.fillRect(logoX-logoR,logoY-logoR,logoR*2,logoR*2);
+    ctx.font=`${60*S}px serif`;
+    ctx.fillStyle='#fff';
+    ctx.textAlign='center';
+    ctx.textBaseline='middle';
+    ctx.fillText('?', logoX, logoY);
+  }
+  ctx.restore();
+
+  /* ── Right text column ── */
+  const tx = 220*S;
+  const maxW_text = W - tx - 40*S;
+  let ty = 80*S;
+  const lineH = 1.35;
+
+  // Business Name
+  ctx.save();
+  ctx.font = `bold ${clampFont(data.bname,34,S,maxW_text,ctx,'IBM Plex Sans')}px 'IBM Plex Sans', sans-serif`;
+  ctx.fillStyle = '#ffffff';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'top';
+  ctx.shadowColor = ac1; ctx.shadowBlur = 12*S;
+  ctx.fillText(data.bname, tx, ty);
+  ctx.restore();
+  ty += (36*S)*lineH;
+
+  if(data.cname){
+    ctx.save();
+    ctx.font = `${clampFont(data.cname,18,S,maxW_text,ctx,'Arial')}px Arial, sans-serif`;
+    ctx.fillStyle = ac2;
+    ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText(data.cname, tx, ty);
+    ctx.restore();
+    ty += (20*S)*lineH;
+  }
+
+  if(data.tagline){
+    ctx.save();
+    ctx.font = `italic ${clampFont(data.tagline,15,S,maxW_text,ctx,'sans-serif')}px sans-serif`;
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText(data.tagline, tx, ty);
+    ctx.restore();
+    ty += (17*S)*lineH;
+  }
+
+  // Divider
+  ty += 6*S;
+  ctx.save();
+  const divG = ctx.createLinearGradient(tx, ty, tx+maxW_text*0.7, ty);
+  divG.addColorStop(0,ac1); divG.addColorStop(0.5,ac2); divG.addColorStop(1,'transparent');
+  ctx.fillStyle = divG; ctx.fillRect(tx, ty, maxW_text*0.7, 2*S);
+  ctx.restore();
+  ty += 14*S;
+
+  // Description
+  if(data.desc){
+    ctx.save();
+    ctx.font = `${clampFont(data.desc,14,S,maxW_text,ctx,'MV Boli')}px 'MV Boli', 'Segoe UI', cursive`;
+    ctx.fillStyle = 'rgba(255,255,255,0.75)';
+    ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText(data.desc, tx, ty);
+    ctx.restore();
+    ty += (16*S)*lineH;
+  }
+
+  // Services
+  if(data.services){
+    ctx.save();
+    ctx.font = `${clampFont(data.services,13,S,maxW_text,ctx,'monospace')}px monospace`;
+    ctx.fillStyle = ac3;
+    ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText('⚙ '+data.services, tx, ty);
+    ctx.restore();
+    ty += (15*S)*lineH;
+  }
+
+  // Link
+  if(data.link){
+    ctx.save();
+    ctx.font = `${clampFont(data.link,12,S,maxW_text,ctx,'Calibri')}px Calibri, sans-serif`;
+    ctx.fillStyle = ac2;
+    ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText('🔗 '+data.link, tx, ty);
+    ctx.restore();
+    ty += (14*S)*lineH;
+  }
+
+  // Email
+  if(data.email){
+    ctx.save();
+    ctx.font = `${clampFont(data.email,12,S,maxW_text,ctx,'Calibri')}px Calibri, sans-serif`;
+    ctx.fillStyle = 'rgba(255,255,255,0.65)';
+    ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText('✉ '+data.email, tx, ty);
+    ctx.restore();
+  }
+
+  /* ── "AEDTP WORLD" bottom right (locked) ── */
+  ctx.save();
+  ctx.font = `bold ${14*S}px 'Orbitron', monospace`;
+  const awGrad = ctx.createLinearGradient(W-220*S, H-40*S, W-30*S, H-20*S);
+  awGrad.addColorStop(0,ac1); awGrad.addColorStop(1,ac2);
+  ctx.fillStyle = awGrad;
+  ctx.textAlign = 'right';
+  ctx.textBaseline = 'bottom';
+  ctx.globalAlpha = 0.9;
+  ctx.fillText('AEDTP WORLD', W-28*S, H-22*S);
+  ctx.restore();
+}
+
+/* Helper: measure and clamp font size so text fits within maxWidth */
+function clampFont(text, basePx, S, maxW, ctx, font){
+  let size = basePx*S;
+  ctx.font = `${size}px '${font}', sans-serif`;
+  while(ctx.measureText(text).width > maxW && size > 8){
+    size--;
+    ctx.font = `${size}px '${font}', sans-serif`;
+  }
+  return size;
+}
+
+/* Round rectangle path */
+function roundRect(ctx,x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y);
+  ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r);
+  ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h);
+  ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r);
+  ctx.quadraticCurveTo(x,y,x+r,y);
+  ctx.closePath();
+}
+
+/* Watermark shapes — 2D/3D geometric patterns */
+function drawWatermarks(ctx, W, H, S, ac1, ac2, ac3){
+  ctx.save();
+  ctx.globalAlpha = 0.07;
+
+  // Large circles
+  [[W*0.85,H*0.15,180*S],[W*0.1,H*0.85,140*S],[W*0.5,H*0.5,220*S]].forEach(([x,y,r],i)=>{
+    ctx.strokeStyle=[ac1,ac2,ac3][i];
+    ctx.lineWidth=3*S;
+    ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.stroke();
+    ctx.beginPath(); ctx.arc(x,y,r*0.65,0,Math.PI*2); ctx.stroke();
+    ctx.beginPath(); ctx.arc(x,y,r*0.35,0,Math.PI*2); ctx.stroke();
+  });
+
+  // Hexagons
+  drawHex(ctx, W*0.75, H*0.8, 80*S, ac2, 2*S);
+  drawHex(ctx, W*0.2, H*0.2, 60*S, ac3, 2*S);
+  drawHex(ctx, W*0.9, H*0.5, 50*S, ac1, 1.5*S);
+
+  // Diagonal lines
+  ctx.strokeStyle = ac1; ctx.lineWidth = 1*S;
+  for(let i=0;i<6;i++){
+    ctx.beginPath();
+    ctx.moveTo(W*0.6+i*40*S, 0);
+    ctx.lineTo(W, H*0.4+i*40*S);
+    ctx.stroke();
+  }
+
+  // Triangles
+  drawTri(ctx, W*0.05, H*0.55, 70*S, ac3, 1.5*S);
+  drawTri(ctx, W*0.88, H*0.88, 55*S, ac1, 1.5*S);
+
+  ctx.restore();
+}
+
+function drawHex(ctx,cx,cy,r,color,lw){
+  ctx.strokeStyle=color; ctx.lineWidth=lw;
+  ctx.beginPath();
+  for(let i=0;i<6;i++){
+    const a=Math.PI/3*i-Math.PI/6;
+    i===0?ctx.moveTo(cx+r*Math.cos(a),cy+r*Math.sin(a)):ctx.lineTo(cx+r*Math.cos(a),cy+r*Math.sin(a));
+  }
+  ctx.closePath(); ctx.stroke();
+}
+
+function drawTri(ctx,cx,cy,r,color,lw){
+  ctx.strokeStyle=color; ctx.lineWidth=lw;
+  ctx.beginPath();
+  for(let i=0;i<3;i++){
+    const a=Math.PI*2/3*i-Math.PI/2;
+    i===0?ctx.moveTo(cx+r*Math.cos(a),cy+r*Math.sin(a)):ctx.lineTo(cx+r*Math.cos(a),cy+r*Math.sin(a));
+  }
+  ctx.closePath(); ctx.stroke();
+}
+
+/* ══════════════════════════════════════════════════════
+   DOWNLOAD
+══════════════════════════════════════════════════════ */
+function downloadCard(format, W, H){
+  const offscreen = document.createElement('canvas');
+  renderCard(offscreen, W, H, currentPalette, currentCardData);
+
+  // If image is involved, we need it loaded. Use timeout to allow drawImage
+  setTimeout(()=>{
+    const mimeType = format==='jpg' ? 'image/jpeg' : 'image/png';
+    const quality  = format==='jpg' ? 0.95 : undefined;
+    const dataURL  = quality!==undefined ? offscreen.toDataURL(mimeType,quality) : offscreen.toDataURL(mimeType);
+    const a = document.createElement('a');
+    const slug = currentCardData.bname.replace(/\s+/g,'_').replace(/[^a-zA-Z0-9_]/g,'') || 'AEDTP_Card';
+    a.download = `AEDTP_WORLD_AWFL_Card_${slug}_${W}x${H}.${format}`;
+    a.href = dataURL;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  },80);
+}
+
+/* If image is a data URL it's sync — but renderCard might not have the image
+   drawn yet in the offscreen canvas for download. Re-draw with explicit load: */
+const _origRenderCard = renderCard;
+function downloadCard(format, W, H){
+  const data = currentCardData;
+  const palette = currentPalette;
+
+  if(data.img){
+    const img = new Image();
+    img.onload = function(){
+      const offscreen = document.createElement('canvas');
+      offscreen.width=W; offscreen.height=H;
+      // Temporarily patch renderCard's image draw to use this loaded img
+      renderCardWithImg(offscreen, W, H, palette, data, img);
+      doDownload(offscreen, format, W, H, data.bname);
+    };
+    img.src = data.img;
+  } else {
+    const offscreen = document.createElement('canvas');
+    renderCard(offscreen, W, H, palette, data);
+    doDownload(offscreen, format, W, H, data.bname);
+  }
+}
+
+function renderCardWithImg(canvas, W, H, palette, data, imgEl){
+  canvas.width=W; canvas.height=H;
+  const ctx=canvas.getContext('2d');
+  const [bg1,bg2,ac1,ac2,ac3]=palette;
+  const S=W/BASE_W;
+
+  const bgGrad=ctx.createLinearGradient(0,0,W,H);
+  bgGrad.addColorStop(0,bg1); bgGrad.addColorStop(1,bg2);
+  ctx.fillStyle=bgGrad; roundRect(ctx,0,0,W,H,28*S); ctx.fill();
+  drawWatermarks(ctx,W,H,S,ac1,ac2,ac3);
+
+  const bw=5*S;
+  const grad=ctx.createLinearGradient(0,0,W,H);
+  grad.addColorStop(0,ac1); grad.addColorStop(0.33,ac2); grad.addColorStop(0.66,ac3); grad.addColorStop(1,ac1);
+  ctx.strokeStyle=grad; ctx.lineWidth=bw;
+  roundRect(ctx,bw/2,bw/2,W-bw,H-bw,26*S); ctx.stroke();
+
+  ctx.save(); ctx.font=`${11*S}px 'Exo 2',sans-serif`; ctx.fillStyle=ac2;
+  ctx.globalAlpha=0.85; ctx.textAlign='right';
+  ctx.fillText('Discover And Connect',W-32*S,36*S); ctx.restore();
+
+  const logoX=80*S,logoY=H/2,logoR=100*S;
+  ctx.save(); ctx.shadowColor=ac1; ctx.shadowBlur=30*S;
+  const rg=ctx.createLinearGradient(logoX-logoR,logoY-logoR,logoX+logoR,logoY+logoR);
+  rg.addColorStop(0,ac1); rg.addColorStop(0.5,ac2); rg.addColorStop(1,ac3);
+  ctx.strokeStyle=rg; ctx.lineWidth=5*S;
+  ctx.beginPath(); ctx.arc(logoX,logoY,logoR+4*S,0,Math.PI*2); ctx.stroke(); ctx.restore();
+
+  ctx.save(); ctx.beginPath(); ctx.arc(logoX,logoY,logoR,0,Math.PI*2); ctx.clip();
+  ctx.drawImage(imgEl,logoX-logoR,logoY-logoR,logoR*2,logoR*2); ctx.restore();
+
+  const tx=220*S, maxW_text=W-tx-40*S;
+  let ty=80*S; const lh=1.35;
+
+  ctx.save();
+  ctx.font=`bold ${clampFont(data.bname,34,S,maxW_text,ctx,'IBM Plex Sans')}px 'IBM Plex Sans',sans-serif`;
+  ctx.fillStyle='#ffffff'; ctx.textAlign='left'; ctx.textBaseline='top';
+  ctx.shadowColor=ac1; ctx.shadowBlur=12*S;
+  ctx.fillText(data.bname,tx,ty); ctx.restore(); ty+=(36*S)*lh;
+
+  if(data.cname){
+    ctx.save(); ctx.font=`${clampFont(data.cname,18,S,maxW_text,ctx,'Arial')}px Arial,sans-serif`;
+    ctx.fillStyle=ac2; ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText(data.cname,tx,ty); ctx.restore(); ty+=(20*S)*lh;
+  }
+  if(data.tagline){
+    ctx.save(); ctx.font=`italic ${clampFont(data.tagline,15,S,maxW_text,ctx,'sans-serif')}px sans-serif`;
+    ctx.fillStyle='rgba(255,255,255,0.6)'; ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText(data.tagline,tx,ty); ctx.restore(); ty+=(17*S)*lh;
+  }
+  ty+=6*S;
+  ctx.save();
+  const dg=ctx.createLinearGradient(tx,ty,tx+maxW_text*0.7,ty);
+  dg.addColorStop(0,ac1); dg.addColorStop(0.5,ac2); dg.addColorStop(1,'transparent');
+  ctx.fillStyle=dg; ctx.fillRect(tx,ty,maxW_text*0.7,2*S); ctx.restore(); ty+=14*S;
+
+  if(data.desc){
+    ctx.save(); ctx.font=`${clampFont(data.desc,14,S,maxW_text,ctx,'MV Boli')}px 'MV Boli','Segoe UI',cursive`;
+    ctx.fillStyle='rgba(255,255,255,0.75)'; ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText(data.desc,tx,ty); ctx.restore(); ty+=(16*S)*lh;
+  }
+  if(data.services){
+    ctx.save(); ctx.font=`${clampFont(data.services,13,S,maxW_text,ctx,'monospace')}px monospace`;
+    ctx.fillStyle=ac3; ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText('⚙ '+data.services,tx,ty); ctx.restore(); ty+=(15*S)*lh;
+  }
+  if(data.link){
+    ctx.save(); ctx.font=`${clampFont(data.link,12,S,maxW_text,ctx,'Calibri')}px Calibri,sans-serif`;
+    ctx.fillStyle=ac2; ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText('🔗 '+data.link,tx,ty); ctx.restore(); ty+=(14*S)*lh;
+  }
+  if(data.email){
+    ctx.save(); ctx.font=`${clampFont(data.email,12,S,maxW_text,ctx,'Calibri')}px Calibri,sans-serif`;
+    ctx.fillStyle='rgba(255,255,255,0.65)'; ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText('✉ '+data.email,tx,ty); ctx.restore();
+  }
+
+  ctx.save();
+  ctx.font=`bold ${14*S}px 'Orbitron',monospace`;
+  const awG=ctx.createLinearGradient(W-220*S,H-40*S,W-30*S,H-20*S);
+  awG.addColorStop(0,ac1); awG.addColorStop(1,ac2);
+  ctx.fillStyle=awG; ctx.textAlign='right'; ctx.textBaseline='bottom'; ctx.globalAlpha=0.9;
+  ctx.fillText('AEDTP WORLD',W-28*S,H-22*S); ctx.restore();
+}
+
+function doDownload(canvas, format, W, H, bname){
+  const mimeType = format==='jpg'?'image/jpeg':'image/png';
+  const quality  = format==='jpg'?0.95:undefined;
+  const dataURL  = quality!==undefined ? canvas.toDataURL(mimeType,quality) : canvas.toDataURL(mimeType);
+  const a = document.createElement('a');
+  const slug = (bname||'Card').replace(/\s+/g,'_').replace(/[^a-zA-Z0-9_]/g,'');
+  a.download = `AEDTP_WORLD_AWFL_Card_${slug}_${W}x${H}.${format}`;
+  a.href = dataURL;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+
+/* Also fix the preview renderCard to work with async images */
+const origGenerate = generateCard;
+function generateCard(){
+  currentPalette = randomPalette();
+  currentCardData = collectData();
+  if(currentCardData.img){
+    const img = new Image();
+    img.onload = function(){
+      renderCardWithImg(document.getElementById('cardCanvas'), BASE_W, BASE_H, currentPalette, currentCardData, img);
+    };
+    img.src = currentCardData.img;
+  } else {
+    renderCard(document.getElementById('cardCanvas'), BASE_W, BASE_H, currentPalette, currentCardData);
+  }
+  document.getElementById('cardSection').classList.add('show');
+  setTimeout(()=>document.getElementById('cardSection').scrollIntoView({behavior:'smooth',block:'start'}),100);
+}
+
+function regenerateColors(){
+  currentPalette = randomPalette();
+  if(currentCardData && currentCardData.img){
+    const img=new Image();
+    img.onload=function(){ renderCardWithImg(document.getElementById('cardCanvas'),BASE_W,BASE_H,currentPalette,currentCardData,img); };
+    img.src=currentCardData.img;
+  } else if(currentCardData) {
+    renderCard(document.getElementById('cardCanvas'),BASE_W,BASE_H,currentPalette,currentCardData);
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   DRAG & DROP
+══════════════════════════════════════════════════════ */
+const zone=document.getElementById('uploadZone');
+zone.addEventListener('dragover',e=>{e.preventDefault();zone.classList.add('drag');});
+zone.addEventListener('dragleave',()=>zone.classList.remove('drag'));
+zone.addEventListener('drop',e=>{
+  e.preventDefault(); zone.classList.remove('drag');
+  const file=e.dataTransfer.files[0];
+  if(file && file.type.startsWith('image/')){
+    document.getElementById('imgInput').files = e.dataTransfer.files;
+    handleImageUpload({target:{files:[file]}});
+  }
+});
+</script>
+</body>
+</html>

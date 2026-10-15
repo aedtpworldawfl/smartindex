@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trends | AEDTP WORLD FREE LICENSE (AWFL) WIKI</title>
+    <meta name="description" content="Trending contributors on AEDTP WORLD FREE LICENSE (AWFL) WIKI | AEDTP WORLD FREE LICENSE (AWFL) WIKI"/>
+    <meta name="keywords" content="Trends, top contributors, AEDTP WORLD, com.aedtpworld.awfl, AEDTP WORLD FREE LICENSE (AWFL) WIKI"/>
+    <meta name="theme-color" content="#0E293D" />
+    <link rel="canonical" href="https://aedtpworld.com/awflwiki/trends/index.html">
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Trends | AEDTP WORLD FREE LICENSE (AWFL) WIKI" />
+    <meta property="og:image" content="https://aedtpworld.com/icons/aedtpworld.png" />
+    <link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png" type="image/png" />
+    <link rel="stylesheet" href="/awflwiki/assets/style.css" />
+</head>
+<body>
+<header class="site-header">
+    <a href="/awflwiki/index.html" class="logo">AEDTP WORLD FREE LICENSE (AWFL) WIKI</a>
+    <nav><a href="/awflwiki/publish.php">Write &amp; Publish</a> <a href="/awflwiki/wikidata.php">All Wikis</a> <a href="/awflwiki/index.html">Home</a></nav>
+</header>
+<main>
+    <h1>Trending contributors</h1>
+    <p>Ranked by badge rank — top creators surface first.</p>
+    <table class="trends-table">
+        <thead>
+            <tr><th>Users</th><th>Usernames</th><th>Badges</th><th>Ranks</th></tr>
+        </thead>
+        <tbody id="trendsBody"></tbody>
+    </table>
+</main>
+<script src="/awflwiki/assets/main.js"></script>
+<script>
+(async () => {
+    const result = await awflGet('trends');
+    const body = document.getElementById('trendsBody');
+    if (!result.ok || !result.trends.length) {
+        body.innerHTML = '<tr><td colspan="4">No contributors yet.</td></tr>';
+        return;
+    }
+    body.innerHTML = result.trends.map(t => `
+        <tr>
+            <td><img src="${t.image || '/awflwiki/assets/default-avatar.png'}" alt=""></td>
+            <td><a href="/awflwiki/users/${t.username}/index.html">${t.username}</a></td>
+            <td>${t.badge || '—'}</td>
+            <td>${t.rank}</td>
+        </tr>
+    `).join('');
+})();
+</script>
+</body>
+</html>

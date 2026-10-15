@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWFLMETA – Verification Generator</title>
+<meta name="robots" content="noindex, nofollow" />
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #141820;
+    --surface2: #1a2030;
+    --surface3: #252d40;
+    --border: #2a3450;
+    --border2: #3a4870;
+    --text: #e8edf5;
+    --muted: #6b7a95;
+    --accent: #4a9eff;
+    --accent2: #2563eb;
+    --verified: #22c55e;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    min-height: 100vh;
+    padding: 0 0 60px;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border2);
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .logo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--accent);
+    letter-spacing: .04em;
+  }
+  .logo span { color: var(--muted); font-weight: 400; }
+  .tagline { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* LAYOUT */
+  .main {
+    max-width: 1100px;
+    margin: 36px auto 0;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 28px;
+    align-items: start;
+  }
+  @media(max-width: 820px) {
+    .main { grid-template-columns: 1fr; }
+  }
+
+  /* CARD */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card-head {
+    background: var(--surface3);
+    padding: 11px 16px;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--text);
+    border-bottom: 1px solid var(--border2);
+    letter-spacing: .03em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-body { padding: 18px; }
+
+  /* IMAGE SECTION */
+  .img-section { margin-bottom: 20px; }
+  label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 5px;
+  }
+  input[type=text], input[type=url] {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 11px;
+    font-size: 12px;
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    outline: none;
+    transition: border-color .2s;
+  }
+  input[type=text]:focus, input[type=url]:focus {
+    border-color: var(--accent);
+  }
+  .field { margin-bottom: 12px; }
+
+  /* TABLE ROWS */
+  .rows-section { margin-top: 4px; }
+  .row-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+  .row-head {
+    background: var(--surface3);
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: .07em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .row-head .is-default { color: #3a4870; font-size: 10px; font-weight: 400; }
+  .row-head .del-btn {
+    background: none;
+    border: none;
+    color: #e55;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0 2px;
+    line-height: 1;
+  }
+  .row-fields {
+    padding: 10px 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  /* VERIFIED ROW (locked) */
+  .row-verified .row-head { color: var(--verified); border-left: 2px solid var(--verified); }
+  .row-verified input { opacity: .55; pointer-events: none; }
+
+  /* ADD ROW */
+  .add-row-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px dashed var(--border2);
+    border-radius: 7px;
+    color: var(--accent);
+    font-size: 12px;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    padding: 9px;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background .2s;
+  }
+  .add-row-btn:hover { background: var(--surface2); }
+
+  /* ACTION BTNS */
+  .actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+  .btn {
+    padding: 9px 18px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    cursor: pointer;
+    border: none;
+    transition: opacity .2s, transform .1s;
+    letter-spacing: .02em;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--border2);
+    color: var(--text);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-green { background: var(--verified); color: #fff; }
+
+  /* PREVIEW PANEL */
+  .preview-panel { position: sticky; top: 20px; }
+  .preview-widget {
+    float: right;
+    clear: right;
+    margin: 0 0 20px 28px;
+    background: #141820;
+    border: 1px solid #3a4870;
+    border-radius: 8px;
+    width: 268px;
+    font-size: 13px;
+    overflow: hidden;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    line-height: 1.5;
+    box-shadow: 0 4px 18px rgba(0,0,0,.45);
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+  .preview-widget .pw-head {
+    background: #252d40;
+    padding: 9px 13px;
+    font-weight: 700;
+    font-size: 14px;
+    border-bottom: 1px solid #3a4870;
+    text-align: center;
+    color: #e8edf5;
+    letter-spacing: .02em;
+  }
+  .preview-widget .pw-img-wrap {
+    border-bottom: 1px solid #2a3450;
+    text-align: center;
+    overflow: hidden;
+    background: #1a2030;
+  }
+  .preview-widget .pw-img-wrap img {
+    width: 100%;
+    height: auto;
+    max-height: 210px;
+    object-fit: cover;
+    display: block;
+  }
+  .preview-widget .pw-img-wrap .pw-no-img {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3a4870;
+    font-size: 11px;
+  }
+  .preview-widget .pw-caption {
+    font-size: 11px;
+    color: #6b7a95;
+    padding: 5px 10px;
+    text-align: center;
+    background: #1a2030;
+    border-bottom: 1px solid #2a3450;
+  }
+  .preview-widget table { width: 100%; border-collapse: collapse; }
+  .preview-widget tr { border-bottom: 1px solid rgba(42,52,80,.5); background: #141820; }
+  .preview-widget th {
+    background: #1a2030;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7a95;
+    text-align: left;
+    width: 42%;
+    vertical-align: top;
+    border-right: 1px solid #2a3450;
+  }
+  .preview-widget td {
+    padding: 6px 10px;
+    font-size: 12px;
+    color: #e8edf5;
+    vertical-align: top;
+  }
+  .preview-widget td a {
+    color: #4a9eff;
+    text-decoration: none;
+    font-size: 12px;
+    word-break: break-all;
+  }
+
+  /* CODE OUTPUT */
+  .code-section { margin-top: 22px; }
+  .code-box {
+    background: #0a0e17;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .code-box-head {
+    background: var(--surface3);
+    padding: 7px 14px;
+    font-size: 11px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .code-box pre {
+    padding: 14px;
+    font-size: 11px;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #a8c8ff;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-height: 320px;
+    overflow-y: auto;
+    line-height: 1.6;
+  }
+  .copy-inline {
+    background: none;
+    border: 1px solid var(--border2);
+    color: var(--accent);
+    border-radius: 5px;
+    padding: 3px 10px;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+  }
+  .copy-inline:hover { background: var(--surface2); }
+
+  /* TOAST */
+  #toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--verified);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .3s, transform .3s;
+    pointer-events: none;
+    z-index: 999;
+  }
+  #toast.show { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo">AWFLMETA <span>/ Verification Generator</span></div>
+    <div class="tagline">AEDTP WORLD · Verified Wiki Metadata Builder</div>
+  </div>
+  <div style="font-size:11px;color:var(--muted);">aedtpworld.com/aedtpworld/verification/</div>
+</header>
+
+<div class="main">
+
+  <!-- LEFT: EDITOR -->
+  <div>
+    <div class="card">
+      <div class="card-head">⚙ METADATA EDITOR</div>
+      <div class="card-body">
+
+        <!-- IMAGE -->
+        <div class="img-section">
+          <div class="field">
+            <label>Image URL</label>
+            <input type="url" id="imgUrl" placeholder="https://…/image.jpg" oninput="updatePreview()">
+          </div>
+          <div class="field">
+            <label>Alt / Subject Name <span style="color:#3a4870;font-weight:400;font-size:10px;">(auto-generates caption)</span></label>
+            <input type="text" id="imgAlt" placeholder="e.g. Buddy DML (The Trenchkid TM)" oninput="updatePreview()">
+          </div>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin-bottom:18px;">
+
+        <!-- TABLE ROWS -->
+        <div class="rows-section" id="rowsContainer"></div>
+
+        <button class="add-row-btn" onclick="addCustomRow()">+ Add Custom Row</button>
+
+        <div class="actions">
+          <button class="btn btn-primary" onclick="saveAndPreview()">💾 Save & Preview</button>
+          <button class="btn btn-green" onclick="exportMeta()">⬇ Export METADATA</button>
+          <button class="btn btn-outline" onclick="showCode()">{ } Show Code</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CODE OUTPUT -->
+    <div class="code-section" id="codeSection" style="display:none;">
+      <div class="code-box">
+        <div class="code-box-head">
+          <span>Generated Code — paste into your wiki HTML</span>
+          <button class="copy-inline" onclick="copyCode()">Copy Code</button>
+        </div>
+        <pre id="codeOutput"></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: PREVIEW -->
+  <div class="preview-panel">
+    <div class="card">
+      <div class="card-head">👁 LIVE PREVIEW</div>
+      <div class="card-body" style="padding:12px;">
+        <div class="preview-widget" id="previewWidget">
+          <div class="pw-head">METADATA</div>
+          <div class="pw-img-wrap" id="pwImgWrap">
+            <div class="pw-no-img">No image yet</div>
+          </div>
+          <div class="pw-caption" id="pwCaption">— On AWFLMETA</div>
+          <table id="pwTable"></table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="toast">✓ Copied!</div>
+
+<script>
+// Default rows (cannot be deleted or renamed)
+const DEFAULT_ROWS = [
+  { key: 'AWFL',       label: 'AWFL',       isDefault: true },
+  { key: 'ARTISTS',    label: 'ARTISTS',    isDefault: true },
+  { key: 'BIOGRAPHY',  label: 'BIOGRAPHY',  isDefault: true },
+  { key: 'BUSINESS',   label: 'BUSINESS',   isDefault: true },
+  { key: 'DICTIONARY', label: 'DICTIONARY', isDefault: true },
+  { key: 'EDUCATION',  label: 'EDUCATION',  isDefault: true },
+  { key: 'MUSIC',      label: 'MUSIC',      isDefault: true },
+  { key: 'NEWS',       label: 'NEWS',       isDefault: true },
+];
+
+// State
+let rows = DEFAULT_ROWS.map(r => ({ ...r, text: '', link: '' }));
+
+// Init
+function init() {
+  renderRows();
+  updatePreview();
+}
+
+function renderRows() {
+  const container = document.getElementById('rowsContainer');
+  container.innerHTML = '';
+
+  // Default rows
+  rows.filter(r => r.isDefault).forEach(row => {
+    container.appendChild(makeRowEl(row));
+  });
+
+  // Custom rows
+  rows.filter(r => !r.isDefault).forEach(row => {
+    container.appendChild(makeRowEl(row));
+  });
+
+  // Verified (always last, locked)
+  const verifiedEl = document.createElement('div');
+  verifiedEl.className = 'row-item row-verified';
+  verifiedEl.innerHTML = `
+    <div class="row-head">
+      <span><i><b>Verified</b></i></span>
+      <span class="is-default">LOCKED — AEDTP WORLD</span>
+    </div>
+    <div class="row-fields">
+      <div>
+        <label>Text</label>
+        <input type="text" value="AEDTP WORLD" disabled>
+      </div>
+      <div>
+        <label>Link</label>
+        <input type="url" value="/aedtpworld/" disabled>
+      </div>
+    </div>
+  `;
+  container.appendChild(verifiedEl);
+}
+
+function makeRowEl(row) {
+  const el = document.createElement('div');
+  el.className = 'row-item';
+  el.dataset.key = row.key;
+  el.innerHTML = `
+    <div class="row-head">
+      <span>${row.isDefault ? row.label : `<input type="text" class="custom-label" value="${escapeAttr(row.label)}" placeholder="Row label" style="background:transparent;border:none;color:var(--muted);font-size:11px;font-weight:700;font-family:inherit;letter-spacing:.07em;outline:none;width:140px;" oninput="updateCustomLabel(this,'${row.key}')">`}</span>
+      <span>
+        ${row.isDefault ? `<span class="is-default">DEFAULT</span>` : `<button class="del-btn" onclick="deleteRow('${row.key}')" title="Remove row">✕</button>`}
+      </span>
+    </div>
+    <div class="row-fields">
+      <div>
+        <label>Text (display)</label>
+        <input type="text" value="${escapeAttr(row.text)}" placeholder="e.g. Buddy DML"
+          oninput="updateRowField('${row.key}','text',this.value)">
+      </div>
+      <div>
+        <label>Link (URL)</label>
+        <input type="url" value="${escapeAttr(row.link)}" placeholder="https://…"
+          oninput="updateRowField('${row.key}','link',this.value)">
+      </div>
+    </div>
+  `;
+  return el;
+}
+
+function updateRowField(key, field, value) {
+  const row = rows.find(r => r.key === key);
+  if (row) row[field] = value;
+  updatePreview();
+}
+
+function updateCustomLabel(input, key) {
+  const row = rows.find(r => r.key === key);
+  if (row) row.label = input.value;
+  updatePreview();
+}
+
+function deleteRow(key) {
+  rows = rows.filter(r => r.key !== key);
+  renderRows();
+  updatePreview();
+}
+
+function addCustomRow() {
+  const key = 'custom_' + Date.now();
+  rows.push({ key, label: 'CUSTOM', isDefault: false, text: '', link: '' });
+  renderRows();
+  updatePreview();
+}
+
+// Preview
+function updatePreview() {
+  const imgUrl = document.getElementById('imgUrl').value.trim();
+  const imgAlt = document.getElementById('imgAlt').value.trim();
+
+  // Image
+  const wrap = document.getElementById('pwImgWrap');
+  if (imgUrl) {
+    wrap.innerHTML = `<img src="${escapeAttr(imgUrl)}" alt="${escapeAttr(imgAlt)}" loading="lazy">`;
+  } else {
+    wrap.innerHTML = `<div class="pw-no-img">No image yet</div>`;
+  }
+
+  // Caption
+  const caption = document.getElementById('pwCaption');
+  caption.textContent = imgAlt ? `${imgAlt} On AWFLMETA` : '— On AWFLMETA';
+
+  // Table
+  const table = document.getElementById('pwTable');
+  table.innerHTML = '';
+
+  rows.forEach(row => {
+    const tr = document.createElement('tr');
+    const th = document.createElement('th');
+    th.innerHTML = row.label;
+    const td = document.createElement('td');
+    if (row.text && row.link) {
+      td.innerHTML = `<a href="${escapeAttr(row.link)}" target="_blank" rel="noopener" style="color:#4a9eff;text-decoration:none;font-size:12px;word-break:break-all">${escapeHTML(row.text)} ↗</a>`;
+    } else if (row.text) {
+      td.textContent = row.text;
+    } else {
+      td.innerHTML = `<span style="color:#3a4870;font-size:11px;">—</span>`;
+    }
+    tr.appendChild(th);
+    tr.appendChild(td);
+    table.appendChild(tr);
+  });
+
+  // Verified row
+  const trV = document.createElement('tr');
+  const thV = document.createElement('th');
+  thV.innerHTML = '<i><b>Verified</b></i>';
+  const tdV = document.createElement('td');
+  tdV.innerHTML = `<a href="/aedtpworld/" target="_blank" rel="noopener" style="color:#4a9eff;text-decoration:none;font-size:12px;word-break:break-all"><i><b>AEDTP WORLD</b></i> 💙↗</a>`;
+  trV.appendChild(thV);
+  trV.appendChild(tdV);
+  table.appendChild(trV);
+}
+
+function saveAndPreview() {
+  updatePreview();
+  showCode();
+  toast('Saved & Preview updated!');
+}
+
+// Generate code
+function generateCode() {
+  const imgUrl = document.getElementById('imgUrl').value.trim();
+  const imgAlt = document.getElementById('imgAlt').value.trim();
+  const caption = imgAlt ? `${imgAlt} On AWFLMETA` : 'On AWFLMETA';
+
+  let rowsHtml = '';
+  rows.forEach(row => {
+    const thLabel = row.label;
+    const linkHtml = (row.text && row.link)
+      ? `<a href="${row.link}" target="_blank" rel="noopener" style="color:#4a9eff;text-decoration:none;font-size:12px;word-break:break-all">${row.text} ↗</a>`
+      : (row.text || '');
+    rowsHtml += `   <th style="background:#1a2030;padding:6px 10px;font-size:12px;font-weight:600;color:#6b7a95;text-align:left;width:42%;vertical-align:top;border-right:1px solid #2a3450">${thLabel}</th>\n        <td style="padding:6px 10px;font-size:12px;color:#e8edf5;vertical-align:top">${linkHtml}</td>\n      </tr>\n`;
+  });
+
+  const imgTag = imgUrl
+    ? `<img src="${imgUrl}" alt="${imgAlt}" loading="lazy" style="width:100%;height:auto;max-height:210px;object-fit:cover;display:block">`
+    : `<img src="" alt="${imgAlt}" loading="lazy" style="width:100%;height:auto;max-height:210px;object-fit:cover;display:block">`;
+
+  return `<div class="wiki-body">
+    <div style="float:right;clear:right;margin:0 0 20px 28px;background:#141820;border:1px solid #3a4870;border-radius:8px;width:268px;font-size:13px;overflow:hidden;font-family:&quot;IBM Plex Sans&quot;,Arial,sans-serif;line-height:1.5;box-shadow:0 4px 18px rgba(0,0,0,.45)"><div style="background:#252d40;padding:9px 13px;font-weight:700;font-size:14px;border-bottom:1px solid #3a4870;text-align:center;color:#e8edf5;letter-spacing:.02em">METADATA</div><div style="border-bottom:1px solid #2a3450;text-align:center;overflow:hidden;background:#1a2030">${imgTag}</div><div style="font-size:11px;color:#6b7a95;padding:5px 10px;text-align:center;background:#1a2030;border-bottom:1px solid #2a3450">${caption}</div><table style="width:100%;border-collapse:collapse">
+      <tr style="border-bottom:1px solid rgba(42,52,80,.5);background:#141820">
+        ${rowsHtml}
+<!-- AEDTP WORLD VERIFICATION © AEDTP WORLD ↓ -->
+
+   <th style="background:#1a2030;padding:6px 10px;font-size:12px;font-weight:600;color:#6b7a95;text-align:left;width:42%;vertical-align:top;border-right:1px solid #2a3450"><i><b>Verified</b></i></th>
+        <td style="padding:6px 10px;font-size:12px;color:#e8edf5;vertical-align:top"><a href="/aedtpworld/" target="_blank" rel="noopener" style="color:#4a9eff;text-decoration:none;font-size:12px;word-break:break-all"><i><b>AEDTP WORLD</b></i> 💙↗</a></td>
+      </tr>
+
+
+<!-- ↗ AEDTP WORLD VERIFICATION © AEDTP WORLD -->
+
+
+</table> </div>
+</div>`;
+}
+
+function showCode() {
+  const code = generateCode();
+  document.getElementById('codeOutput').textContent = code;
+  const sec = document.getElementById('codeSection');
+  sec.style.display = 'block';
+  sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function copyCode() {
+  const code = generateCode();
+  navigator.clipboard.writeText(code).then(() => toast('Code copied!')).catch(() => {
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = code;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    toast('Code copied!');
+  });
+}
+
+function exportMeta() {
+  const code = generateCode();
+  const blob = new Blob([code], { type: 'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'awflmeta.txt';
+  a.click();
+  toast('Exported!');
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = '✓ ' + msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function escapeHTML(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function escapeAttr(str) {
+  return String(str).replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+init();
+</script>
+</body>
+</html>

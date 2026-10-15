@@ -1,0 +1,17 @@
+/* AEDTP WORLD - COMPANY WIKI - BLUE / CREAM / BLACK - 3026 3D ROUNDED */
+:root{--blue:#0047FF;--cream:#FFF8E7;--black:#000}
+body{background:var(--cream)!important;color:var(--black)!important}
+#header{background:linear-gradient(145deg,#000,#111)!important;border-bottom:4px solid var(--blue)!important;border-radius:0 0 28px 28px!important;box-shadow:0 12px 0 var(--black),0 20px 40px rgba(0,71,255,.3)!important}
+#header *{color:var(--cream)!important;text-shadow:2px 2px 0 var(--blue)!important}
+#sidebar,#side-bar{background:var(--black)!important;border:3px solid var(--blue)!important;border-radius:24px!important;box-shadow:8px 8px 0 var(--black)!important;padding:14px!important}
+#sidebar *{color:var(--cream)!important}
+#sidebar a:hover{color:var(--blue)!important}
+.wiki-content h1,.wiki-content h2,#page-title{background:linear-gradient(90deg,#002aff,#0047FF)!important;color:var(--cream)!important;padding:18px 22px!important;border-radius:16px!important;border:3px solid var(--black)!important;box-shadow:6px 6px 0 var(--black)!important;text-shadow:2px 2px 0 var(--black)!important}
+table,.infobox,.panel{background:var(--black)!important;color:var(--cream)!important;border:3px solid var(--blue)!important;border-radius:18px!important;box-shadow:6px 6px 0 var(--black)!important}
+a{color:var(--blue)!important;font-weight:900!important}
+a:hover{text-decoration:underline!important}
+#footer{background:var(--black)!important;color:var(--cream)!important;border-top:4px solid var(--blue)!important;border-radius:24px 24px 0 0!important}
+img{border-radius:18px!important}
+
+
+

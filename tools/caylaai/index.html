@@ -1,0 +1,277 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cayla AI</title>
+<meta name="description" content="Cayla AI - Offline Artificial Intelligence by AEDTP WORLD">
+
+
+
+<!-- App Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="https://aedtpworld.com/icons/caylaai.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/caylaai.png">
+
+<!-- App Icons -->
+<link rel="icon" type="image/x-icon" sizes="32x32" href="https://aedtpworld.com/icons/caylaai.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/caylaai.png">
+
+<style>
+body, html { margin:0; padding:0; height:100%; font-family:"Segoe UI", sans-serif; background:#f5f5f5; }
+header { 
+  position: fixed; top:0; left:0; width:100%; background:#1E87C7; color:white; display:flex; align-items:center; padding:10px 0px; 
+  gap:10px; transition: top 0.3s ease; z-index:999;
+}
+header.hidden { top: -70px; }
+.logo { width:40px; height:40px; border-radius:50%; background:#fff url('https://aedtpworld.com/icons/caylaai.png') center/cover no-repeat; }
+.status {
+  margin-left:auto; font-weight:700; font-size:1rem; padding:4px 8px; border-radius:12px; color:white; background-color:#28a745;
+  display:flex; align-items:center; gap:6px; max-width:180px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  transition: background 0.3s, color 0.3s;
+}
+.status::before {
+  content:""; width:8px; height:8px; border-radius:50%; background-color:#00ff00; display:inline-block; animation:pulse 1.2s infinite;
+}
+.status.offline { background-color:#dc3545; }
+@keyframes pulse { 0%{transform:scale(0.7);opacity:0.7;} 50%{transform:scale(1);opacity:1;} 100%{transform:scale(0.7);opacity:0.7;} }
+
+main { display:flex; height:100%; margin-top:60px; }
+#iframe-container, #online-frame { flex:1; border:none; display:block; }
+#offline-container { display:none; flex-direction:column; height:85%; padding:10px; }
+#messages { flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:10px; }
+.message { max-width:70%; padding:10px; border-radius:10px; word-wrap:break-word; }
+.user { align-self:flex-end; background:#dcf8c6; }
+.ai { align-self:flex-start; background:white; }
+.input-area { display:flex; gap:5px; margin-top:10px; }
+input { flex:1; padding:10px; border-radius:20px; border:1px solid #ccc; }
+button { padding:10px 14px; border-radius:12px; background:#313033; color:white; cursor:pointer; }
+
+
+/* IFRAME VIEWER */
+.viewer{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+display:none;
+z-index:2000;
+}
+
+.viewer iframe{
+width:100%;
+height:100%;
+border:none;
+}
+
+
+/* Smooth performance */
+html{
+scroll-behavior:smooth;
+}
+
+
+/* HAMBURGER */
+.hamburger{
+font-size:26px;
+cursor:pointer;
+color:white;
+}
+
+.sidebar{
+position:fixed;
+left:-260px;
+top:0;
+width:250px;
+height:100%;
+background:blue;
+padding-top:70px;
+transition:0.3s;
+z-index:999;
+}
+
+.sidebar a{
+display:block;
+color:white;
+padding:15px;
+text-decoration:none;
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.sidebar a:hover{
+background:gold;
+color:black;
+}
+
+
+</style>
+</head>
+
+
+
+
+<body>
+
+<header id="header">
+  <div class="logo"></div>
+<div><a onclick="openInternal('Cayla IQ.html')"><TD BORDERCOLOR=#a6a6a6  ALIGN=CENTER><B><FONT style=FONT-SIZE:11pt FACE="Agency FB" COLOR=#000000><i>Switch To</i> <b>Cayla IQ</b> | Scientific Calculator <b>•</b> <b>AEDTP WORLD</b></FONT></B></TD></a></div>
+
+
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<div class="sidebar" id="sidebar">
+<a onclick="openInternal('https://aedtpworld.com/search/')">Search</a>
+<a onclick="openInternal('https://aedtpworld.com/')">WIKI</a>
+<a onclick="openInternal('https://aedtpworld.com/apps/')">Apps</a>
+<a onclick="openInternal('https://aedtpworld.com')">News</a>
+<a onclick="openInternal('https://aedtpworld.com/developers/')">Developers</a>
+<a onclick="openInternal('https://aedtpworld.com/apps/')">Install</a>
+<a onclick="openInternal('https://aedtpworld.com/apps/')">Submit Your App</a>
+<a onclick="openInternal('https://www.bing.com/search?q=AEDTP+WORLD+full+business+and+apps+softwares')">Search Online</a>
+<a onclick="openInternal('https://cayla.neocities.org/')">About</a>
+
+<a class="btn"
+    href="mailto:aedtpworld@aedtpworld.com?subject=Cayla AI Help Request&body=Title:%0A%0AWhat's Your Real Name?:%0A-----------------------%0A%0AWhat The Problem? (What Do You Need Help With)?:%0A-----------------------%0A%0A">Help</a>
+<a onclick="openInternal('mailto:aedtpworld@aedtpworld.com')">Contact</a>
+</div>
+     
+
+
+</div>
+
+<div class="viewer" id="viewer">
+<iframe id="iframeViewer"></iframe>
+</div>
+
+  <div class="status" id="status">Cayla AI Online</div>
+
+
+</header>
+
+
+<main>
+  <!-- Online iframe -->
+  <iframe id="online-frame" src="https://www.jotform.com/agent/01978af624f87b129a54b49bd821f0e7acb1"></iframe>
+
+  <!-- Offline AI -->
+  <div id="offline-container">
+    <div id="messages"></div>
+    <div class="input-area">
+      <input type="text" id="user-input" placeholder="Type your message...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function toggleMenu(){
+let sidebar=document.getElementById("sidebar");
+sidebar.style.left = sidebar.style.left === "0px" ? "-260px" : "0px";
+}
+
+function openInternal(url){
+if(url.match(/\.(zip|exe|apk|rar|pdf|docx|xlsx)$/i)){
+window.open(url);
+return;
+}
+document.getElementById("viewer").style.display="block";
+document.getElementById("iframeViewer").src=url;
+}
+
+
+
+
+
+
+
+
+
+// HEADER HIDE/SHOW
+const header = document.getElementById('header');
+document.body.addEventListener('mousemove', e => {
+  if(e.clientY < 70){ header.classList.remove('hidden'); }
+  else{ header.classList.add('hidden'); }
+});
+
+// ONLINE / OFFLINE CHECK
+const statusEl = document.getElementById('status');
+const onlineFrame = document.getElementById('online-frame');
+const offlineContainer = document.getElementById('offline-container');
+
+function updateStatus(online){
+  if(online){
+    statusEl.textContent = 'Cayla AI Online';
+    statusEl.classList.remove('offline');
+    onlineFrame.style.display='block';
+    offlineContainer.style.display='none';
+  } else {
+    statusEl.textContent = 'Cayla AI Offline';
+    statusEl.classList.add('offline');
+    onlineFrame.style.display='none';
+    offlineContainer.style.display='flex';
+  }
+}
+
+// INITIAL CHECK
+updateStatus(navigator.onLine);
+
+// WATCH ONLINE/OFFLINE
+window.addEventListener('online', () => updateStatus(true));
+window.addEventListener('offline', () => updateStatus(false));
+
+// SIMPLE OFFLINE AI
+const messagesEl = document.getElementById('messages');
+const inputEl = document.getElementById('user-input');
+document.getElementById('send-btn').addEventListener('click', sendMessage);
+inputEl.addEventListener('keypress', e => { if(e.key==='Enter') sendMessage(); });
+
+function sendMessage(){
+  const text = inputEl.value.trim();
+  if(!text) return;
+  addMessage(text,'user'); inputEl.value='';
+  setTimeout(()=> addMessage(generateReply(text),'ai'), 600);
+}
+
+function addMessage(text, type){
+  const div = document.createElement('div');
+  div.className = `message ${type}`;
+  div.textContent = text;
+  messagesEl.appendChild(div);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+function generateReply(text){
+  // Simple offline AI reply
+  const replies = [
+    "I see!🙄🙄🙄👀", "Interesting...😐", "Can you tell me more? 🤔", "Hmm...", "Let's think about it together.👩‍💻", "Connect Me To The Internet, Then Wait Till I Ask You Something. Okay? 😉🥲🤗", "Do You Wanna Learn or not? Please Turn On Your Internet 🥱🙄😶‍🌫️😶🤨, I Need Internet", "Connect Me To The Internet, Let's Chat, or Maybe Talk..🤷‍♀️?", "I Think You're Offline 😟😒😨😧", "Connect Me To The Internet", "See!! You're Definitely Offline 🤦‍♀️", "Please Connect To The Internet", "Can You Please Wait? Turn On Your Internet 😭😭😭", "Be Connected To The Internet", "Please, Be Internet Connected", "I Can Work When You're Connected To The Internet👩‍⚖️", "You're Offline 😟😔😖", "I Can Work When You're Internet Connected👩‍🔬", "I Need Your Internet Connectivity🤪", "I Need Your Internet Connectivity 😥😥😥 Please", "I Need Internet Connectivity🙍‍♀️"
+  ];
+  return replies[Math.floor(Math.random()*replies.length)];
+}
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+/* ===================================================================
+   AWFLWIKIWORLD — Skin/AEDTPWORLDSunset.css
+   Developer: AEDTP WORLD
+   Skin Name: AEDTPWORLD Sunset (Orange / Purple Dusk)
+   License: AWFL
+   Version: 2.0 - Double-Locked
+   Palette: 10+5 - Sunset Warm
+   =================================================================== */
+:root {
+    --awfl-header-bg: #2D1B36!important;       /* 1 dusk purple */
+    --awfl-header-text: #FFECB3!important;    /* 2 sunset cream */
+    --awfl-button-bg: #FF6F00!important;      /* 3 sunset orange */
+    --awfl-button-text: #FFFFFF!important;    /* 4 */
+    --awfl-page-text: #3E2723!important;      /* 5 */
+    --awfl-link: #BF360C!important;           /* 6 burnt orange link */
+    --awfl-link-visited: #6A1B9A!important;   /* 7 purple dusk */
+    --awfl-border: #FFCC80!important;         /* 8 light orange */
+    --awfl-bg: #FFF3E0!important;             /* 9 light sunset wash */
+    --awfl-content-bg: #FFFFFF!important;     /* 10 */
+}
+
+html, body { background: var(--awfl-bg)!important; color: var(--awfl-page-text)!important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif!important; line-height: 1.7!important; font-size: 14.4px!important; }
+.awfl-body { background: var(--awfl-bg)!important; }
+
+.awfl-header { background: var(--awfl-header-bg)!important; border-bottom: 3px solid #FF6F00!important; } /* 11 */
+.awfl-header-inner { background: var(--awfl-header-bg)!important; }
+html body .awfl-header a { color: #FFB74D!important; -webkit-text-fill-color: #FFB74D!important; } /* 12 orange visible on dusk */
+
+.awfl-main { background: var(--awfl-content-bg)!important; border: 1px solid var(--awfl-border)!important; box-shadow: 0 4px 20px rgba(191,54,12,0.1)!important; }
+.awfl-footer { background: #2D1B36!important; border-top: 3px solid #FF6F00!important; }
+.awfl-footer-inner { color: #FFCC80!important; } /* 13 */
+.awfl-footer a { color: #FFB74D!important; } /* 14 */
+
+.infobox { background: #FFF3E0!important; border: 1px solid #FFCC80!important; }
+.infobox th { background: #2D1B36!important; color: #FFECB3!important; }
+.infobox-title { background: #BF360C!important; color: #FFFFFF!important; }
+table.awfl-datatable th { background: #FF6F00!important; color: #FFFFFF!important; }
+
+a { color: var(--awfl-link)!important; }
+a:visited { color: var(--awfl-link-visited)!important; }
+
+::selection { background: #FFB74D!important; color: #2D1B36!important; } /* 15 */
+
+
+
+
+
+
+
+

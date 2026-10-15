@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Melody (Music) | AEDTP WORLD</title>
+    <meta name="description" content="Blue Melody – free global music discovery, streaming & distribution. Join the #1 music player for independent artists. Discover And Connect — Global Music Discovery, Distribution, Sharing & Streaming AEDTP WORLD"/>
+
+    <link rel="canonical" href="https://aedtpworld.com/music/">
+
+<meta property="og:site_name" content="Blue Melody">
+
+    <meta name="keywords" content="Blue Melody, Music player for everyone, Global Music Discovery, BMAWFL BLUEMELODYBMAWFL, APPLE MUSIC, AUDIOMACK, SPOTIFY, YOUTUBE, GOOGLE, WIKIPEDIA, Distribution, Sharing And Streaming, AEDTP WORLD FREE LICENSE (AWFL) WIKI META, #1MusicPlatzform, AWFLMETA, AEDTP WORLD Music, AEDTP WORLD, Blue Melody, Music Player, Global Music Discovery, Music Streaming, Music Distribution, BMAWFL, AEDTP WORLD, Free Music, Music Sharing, Streaming Platform, Discover Music, Independent Artists, AWFL META, #1 Music Platform, Music App, Free Streaming, Music Library, New Music, Music Community, Music Player for Everyone, BLUEMELODYBMAWFL">
+    <meta name="application-name" content="Blue Melody" />
+    <meta name="version" content="1.0.0.0" />
+    <meta name="theme-color" content="#1d4ed8" />
+    <meta name="author" content="AEDTP WORLD, Emmanuel Deliver Amable" />
+    <meta name="copyright" content="© AEDTP WORLD" />
+    <meta name="publisher" content="AEDTP WORLD" />
+    <meta name="creator" content="@aedtpworld" />
+    <meta name="alias" content="bluemelody" />
+    <meta name="app-id" content="com.aedtpworld.bluemelody" />
+    <meta name="type" content="Web, Music, Application, Music Discovery, Distribution, Sharing And Streaming" />
+    <meta name="robots" content="index, follow" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta property="og:title" content="Blue Melody (Music) | AEDTP WORLD" />
+    <meta property="og:sitename" content="Blue Melody" />
+    <meta property="og:description" content="Blue Melody - Music player for everyone. Global Music Discovery, Distribution, Sharing And Streaming.Discover And Connect — Global Music Discovery, Distribution, Sharing & Streaming"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://aedtpworld.com/icons/bluemelody.png" />
+    <link rel="icon" href="https://aedtpworld.com/icons/bluemelody.png" type="image/png" />
+
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{
+            --blue-900:#0f1f4a;--blue-800:#1a2f6b;--blue-700:#1d4ed8;--blue-600:#2563eb;--blue-500:#3b82f6;
+            --blue-400:#60a5fa;--blue-300:#93c5fd;--blue-200:#bfdbfe;--blue-100:#dbeafe;--blue-50:#eff6ff;
+            --cream:#f8f5f0;--white:#fff;--text-primary:#0f172a;--text-secondary:#475569;--text-muted:#94a3b8;
+            --accent-purple:#7c3aed;--shadow-sm:0 1px 3px rgba(0,0,0,.12);--shadow-md:0 4px 16px rgba(0,0,0,.14);
+            --shadow-lg:0 10px 40px rgba(0,0,0,.2);--radius:14px;--radius-sm:8px;--nav-h:64px;--player-h:80px;
+        }
+        html{scroll-behavior:smooth}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--cream);color:var(--text-primary);min-height:100vh;overflow-x:hidden}
+        a{text-decoration:none;color:inherit}
+        ::-webkit-scrollbar{width:6px;height:6px}
+        ::-webkit-scrollbar-thumb{background:var(--blue-300);border-radius:10px}
+
+        #topnav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(15,31,74,.94);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 20px;z-index:1000;border-bottom:1px solid rgba(255,255,255,.08)}
+        #topnav .logo{display:flex;align-items:center;gap:10px;color:#fff}
+        #topnav .logo img{width:34px;height:34px;border-radius:8px;object-fit:cover}
+        #topnav .logo span{font-size:1.05rem;font-weight:700}
+        #topnav .logo small{font-size:.62rem;color:var(--blue-300);letter-spacing:.5px;text-transform:uppercase;display:block}
+
+        #tabbar{display:flex;align-items:center;gap:4px}
+        .tab-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:6px 12px;border-radius:var(--radius-sm);border:none;background:transparent;color:rgba(255,255,255,.65);cursor:pointer;font-size:.62rem;font-weight:600;letter-spacing:.3px;text-transform:uppercase;transition:.2s;min-width:52px}
+        .tab-btn svg{width:19px;height:19px}
+        .tab-btn:hover{background:rgba(255,255,255,.1);color:#fff}
+        .tab-btn.upload-btn{background:linear-gradient(135deg,var(--blue-600),var(--accent-purple));color:#fff}
+        .tab-btn.upload-btn:hover{transform:scale(1.05)}
+
+        #menu-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:8px;border-radius:8px}
+        #mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(15,31,74,.97);backdrop-filter:blur(20px);padding:12px 16px;z-index:999;flex-direction:column;gap:4px;max-height:calc(100vh - var(--nav-h));overflow-y:auto}
+        #mobile-menu .tab-btn{flex-direction:row;justify-content:flex-start;gap:12px;font-size:.85rem;padding:12px 16px;width:100%}
+        #mobile-menu.open{display:flex}
+
+        #main{margin-top:var(--nav-h);padding-bottom:calc(var(--player-h) + 20px);min-height:calc(100vh - var(--nav-h))}
+        #hero{background:linear-gradient(135deg,var(--blue-900) 0%,var(--blue-800) 45%,var(--accent-purple) 100%);padding:56px 24px 46px;text-align:center;position:relative;overflow:hidden}
+        #hero h1{font-size:clamp(1.7rem,5vw,3rem);font-weight:800;color:#fff}
+        #hero h1 span{color:var(--blue-300)}
+        #hero p{margin-top:8px;font-size:clamp(.85rem,2vw,1.05rem);color:rgba(255,255,255,.7);max-width:520px;margin-inline:auto}
+        .hero-stats{display:flex;justify-content:center;gap:28px;margin-top:22px}
+        .hero-stats .hs-item{text-align:center;color:rgba(255,255,255,.8)}
+        .hs-num{font-size:1.25rem;font-weight:800;color:#fff}
+        .hs-label{font-size:.66rem;text-transform:uppercase;letter-spacing:.4px;opacity:.6}
+
+        #search-wrap{margin-top:26px;position:relative;max-width:500px;margin-inline:auto}
+        #search-input{width:100%;padding:13px 20px 13px 46px;border-radius:50px;border:2px solid rgba(255,255,255,.2);background:rgba(255,255,255,.12);color:#fff;font-size:.92rem;outline:none;backdrop-filter:blur(10px)}
+        #search-input::placeholder{color:rgba(255,255,255,.5)}
+        #search-input:focus{border-color:var(--blue-400);background:rgba(255,255,255,.18)}
+        #search-wrap .s-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.6)}
+        #search-clear{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;display:none;border-radius:50%}
+        #search-clear.show{display:block}
+
+        .section{padding:30px 20px 0}
+        .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+        .section-header h2{font-size:1.15rem;font-weight:700;color:var(--blue-800)}
+
+        .music-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+        .music-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);cursor:pointer;transition:transform .2s,box-shadow .2s}
+        .music-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+        .artwork-wrap{position:relative;aspect-ratio:1/1;background:#e2e8f0;overflow:hidden}
+        .artwork-wrap img,.artwork-wrap svg{width:100%;height:100%;object-fit:cover;display:block}
+        .play-overlay{position:absolute;inset:0;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;opacity:0;transition:.2s}
+        .music-card:hover .play-overlay{opacity:1}
+        .play-icon{width:46px;height:46px;background:var(--blue-600);border-radius:50%;display:flex;align-items:center;justify-content:center}
+        .card-body{padding:10px 12px 12px}
+        .card-title{font-size:.83rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .card-artist{font-size:.74rem;color:var(--text-secondary);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .card-artist a{color:var(--blue-600)}
+        .card-artist a:hover{text-decoration:underline}
+        .card-meta{display:flex;gap:6px;margin-top:6px;align-items:center;flex-wrap:wrap}
+        .badge{font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--blue-100);color:var(--blue-700)}
+        .bm-badge-wrap{display:inline-flex;align-items:center;gap:2px;margin-left:4px;vertical-align:middle}
+        .bm-badge-plus{font-size:.6rem;font-weight:800;color:var(--blue-700);background:var(--blue-100);padding:1px 5px;border-radius:8px}
+        .card-plays{font-size:.64rem;color:var(--text-muted)}
+
+        .empty-state{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text-muted)}
+        .empty-action{margin-top:14px;display:inline-block;padding:10px 24px;border-radius:50px;background:var(--blue-600);color:#fff;font-weight:700;font-size:.85rem;border:none;cursor:pointer}
+
+        #player{position:fixed;bottom:0;left:0;right:0;height:var(--player-h);background:rgba(15,31,74,.97);backdrop-filter:blur(20px);display:flex;align-items:center;padding:0 16px;gap:12px;border-top:1px solid rgba(255,255,255,.1);z-index:900;transform:translateY(100%);transition:transform .3s}
+        #player.visible{transform:translateY(0)}
+        .p-art,.p-art-svg{width:48px;height:48px;border-radius:8px;flex-shrink:0;overflow:hidden}
+        .p-art{object-fit:cover;background:#2d3748}
+        .p-info{flex:1;min-width:0}
+        .p-title{font-size:.83rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .p-artist{font-size:.7rem;color:var(--blue-300);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .p-controls{display:flex;align-items:center;gap:4px}
+        .p-controls button{background:none;border:none;color:rgba(255,255,255,.8);cursor:pointer;padding:6px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+        .p-controls button:hover{background:rgba(255,255,255,.12);color:#fff}
+        .play-pause{width:40px;height:40px;background:var(--blue-600) !important;color:#fff !important;border-radius:50%}
+        .p-progress{position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(255,255,255,.12);cursor:pointer}
+        .p-bar{height:100%;background:var(--blue-500);width:0%}
+        .p-time{font-size:.68rem;color:var(--blue-300);min-width:70px;text-align:center}
+        .p-close{background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;padding:6px;border-radius:50%;font-size:1.05rem}
+        .p-dl-btn{display:flex;align-items:center;padding:6px;color:rgba(255,255,255,.7)}
+
+        .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s}
+        .modal-overlay.open{opacity:1;pointer-events:all}
+        .modal{background:#fff;border-radius:var(--radius);width:100%;max-width:480px;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg);transform:scale(.95) translateY(20px);transition:transform .3s}
+        .modal-overlay.open .modal{transform:scale(1) translateY(0)}
+        .modal-header{padding:20px 20px 0;display:flex;align-items:center;justify-content:space-between}
+        .modal-header h3{font-size:1.1rem;font-weight:800;color:var(--blue-800)}
+        .modal-close{background:none;border:none;cursor:pointer;color:var(--text-muted);padding:4px;border-radius:6px}
+        .modal-close:hover{background:#f1f5f9;color:var(--text-primary)}
+        .modal-body{padding:18px 20px 24px}
+
+        .form-group{margin-bottom:12px}
+        .form-group label{display:block;font-size:.78rem;font-weight:700;color:var(--text-secondary);margin-bottom:5px}
+        .form-group label .req{color:#ef4444;margin-left:2px}
+        .form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 14px;border:2px solid #e2e8f0;border-radius:var(--radius-sm);font-size:.88rem;color:var(--text-primary);background:var(--cream);outline:none;font-family:inherit}
+        .form-group input:focus,.form-group select:focus{border-color:var(--blue-500);background:#fff}
+        .form-group input[readonly]{background:#f1f5f9;cursor:not-allowed}
+        .form-group .hint{font-size:.7rem;color:var(--text-muted);margin-top:4px}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+        #upload-progress-wrap{display:none;margin-top:12px;padding:12px 0 4px}
+        #upload-progress-bar{height:6px;background:#e2e8f0;border-radius:10px;overflow:hidden}
+        #upload-progress-fill{height:100%;background:linear-gradient(90deg,var(--blue-600),var(--accent-purple));width:0%}
+        #upload-progress-pct{font-size:.76rem;font-weight:700;color:var(--blue-700);text-align:right;margin-top:4px}
+
+        .upload-toast{position:fixed;bottom:calc(var(--player-h) + 20px);left:50%;transform:translateX(-50%);padding:12px 28px;border-radius:50px;font-size:.86rem;font-weight:700;box-shadow:var(--shadow-md);z-index:3000;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
+        .upload-toast.success{background:#d1fae5;color:#065f46}
+        .upload-toast.error{background:#fee2e2;color:#991b1b}
+        .upload-toast.up{animation:toastUp .9s forwards}
+        .upload-toast.down{animation:toastDown .9s forwards}
+        @keyframes toastUp{0%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0;transform:translateX(-50%) translateY(-50px)}}
+        @keyframes toastDown{0%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0;transform:translateX(-50%) translateY(50px)}}
+
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 22px;border-radius:50px;border:none;font-size:.86rem;font-weight:700;cursor:pointer;transition:.2s;font-family:inherit}
+        .btn-primary{background:linear-gradient(135deg,var(--blue-600),var(--accent-purple));color:#fff}
+        .btn-primary:hover{transform:translateY(-2px)}
+        .btn-secondary{background:var(--blue-100);color:var(--blue-700)}
+        .btn-secondary:hover{background:var(--blue-200)}
+        .btn-danger{background:#fee2e2;color:#991b1b}
+        .btn-full{width:100%;justify-content:center}
+        .btn-sm{padding:7px 14px;font-size:.78rem}
+
+        .auth-tabs{display:flex;margin-bottom:18px;border-radius:var(--radius-sm);overflow:hidden;border:2px solid var(--blue-100)}
+        .auth-tab{flex:1;padding:10px;text-align:center;font-size:.82rem;font-weight:700;cursor:pointer;background:#fff;color:var(--text-muted);border:none;font-family:inherit}
+        .auth-tab.active{background:var(--blue-700);color:#fff}
+
+        #profile-panel{position:fixed;top:var(--nav-h);right:-380px;width:360px;height:calc(100vh - var(--nav-h));background:#fff;box-shadow:var(--shadow-lg);z-index:800;overflow-y:auto;transition:right .3s;border-left:1px solid #e2e8f0}
+        #profile-panel.open{right:0}
+        .panel-header{padding:20px;background:linear-gradient(135deg,var(--blue-900),var(--blue-800));color:#fff;position:sticky;top:0}
+        .panel-close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer}
+        .panel-body{padding:20px}
+
+        #track-modal .artwork-lg-svg,#track-modal img.artwork-lg{width:300px;height:300px;max-width:100%;border-radius:var(--radius);object-fit:cover;box-shadow:var(--shadow-md);flex-shrink:0;overflow:hidden;display:block;margin:0 auto}
+        #track-modal .tm-info{width:100%;min-width:0;text-align:center}
+        #track-modal .tm-info .track-genres{justify-content:center}
+        .track-title{font-size:1.15rem;font-weight:800;color:var(--blue-900)}
+        .track-artist{font-size:.88rem;color:var(--blue-600);margin-top:4px;font-weight:600}
+        .track-feat{font-size:.78rem;color:var(--text-muted);margin-top:2px}
+        .track-genres{margin-top:8px;display:flex;flex-wrap:wrap;gap:5px}
+        .track-meta{font-size:.76rem;color:var(--text-muted);margin-top:6px}
+
+        #search-results-section{display:none}
+
+        @media (max-width:820px){#profile-panel{width:320px;right:-340px}}
+        @media (max-width:700px){
+            #tabbar{display:none}
+            #menu-toggle{display:flex;align-items:center;justify-content:center}
+            .form-row{grid-template-columns:1fr}
+            .music-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+            #profile-panel{width:100%;right:-100%}
+            .hero-stats{gap:14px;flex-wrap:wrap}
+        }
+        @media (max-width:420px){.music-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+
+        .spinner{width:34px;height:34px;margin:40px auto;border:3px solid var(--blue-100);border-top-color:var(--blue-600);border-radius:50%;animation:spin .7s linear infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+
+        #share-snack{position:fixed;bottom:calc(var(--player-h) + 20px);left:50%;transform:translateX(-50%);background:var(--blue-800);color:#fff;padding:10px 24px;border-radius:50px;font-size:.84rem;font-weight:600;z-index:3000;opacity:0;pointer-events:none;transition:opacity .3s}
+        #share-snack.show{opacity:1}
+    </style>
+<link rel="icon" href="https://aedtpworld.com/icons/bluemelody.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/bluemelody.png">
+
+</head>
+<body>
+
+    <nav id="topnav">
+        <a class="logo" href="https://aedtpworld.com/music/">
+            <img src="https://aedtpworld.com/icons/bluemelody.png" alt="Blue Melody" onerror="this.style.display='none'">
+            <div><span>Blue Melody</span><small>AEDTP WORLD</small></div>
+        </a>
+        <div id="tabbar">
+
+ <button class="tab-btn" onclick="window.open('https://www.jotform.com/app/251699103578568','_blank')"></i>Cayla AI</button>
+ <button class="tab-btn" onclick="window.open('https://www.jotform.com/app/251579248003558','_blank')"></i>AEDTP WORLD AI</button>
+
+            <button class="tab-btn upload-btn" onclick="openUpload()" title="Upload Music">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                Upload
+            </button>
+            <button class="tab-btn" onclick="focusSearch()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</button>
+            <button class="tab-btn" id="tab-profile" onclick="openProfilePanel()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</button>
+            <button class="tab-btn" onclick="window.open('https://aedtpworld.com/music/help/index.html','_blank')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Help</button>
+
+ <button class="tab-btn" onclick="window.open('https://aedtpworld.com/music/about/index.html','_blank')"></i>About</button>
+
+            <button class="tab-btn" onclick="sharePage()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button>
+        </div>
+        <button id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+    </nav>
+
+    <div id="mobile-menu">
+         <button class="tab-btn" onclick="window.open('https://www.jotform.com/app/251699103578568','_blank');toggleMobileMenu()">Cayla AI</button>
+         <button class="tab-btn" onclick="window.open('https://www.jotform.com/app/251579248003558','_blank');toggleMobileMenu()">AEDTP WORLD AI</button>
+
+        <button class="tab-btn upload-btn" onclick="openUpload();toggleMobileMenu()">Upload</button>
+        <button class="tab-btn" onclick="focusSearch();toggleMobileMenu()">Search</button>
+        <button class="tab-btn" onclick="openProfilePanel();toggleMobileMenu()">Profile</button>
+        <button class="tab-btn" onclick="window.open('https://aedtpworld.com/tools/bluemelody/','_blank');toggleMobileMenu()">Play Offline</button>
+        <button class="tab-btn" onclick="window.open('https://aedtpworld.com/lyrics/','_blank');toggleMobileMenu()">LyricsWorld</button>
+        <button class="tab-btn" onclick="window.open('https://aedtpworld.com/music/help/index.html','_blank');toggleMobileMenu()">Help</button>
+        <button class="tab-btn" onclick="window.open('https://aedtpworld.com/music/about/index.html','_blank');toggleMobileMenu()">About</button>
+        <button class="tab-btn" onclick="sharePage();toggleMobileMenu()">Share</button>
+    </div>
+
+    <main id="main">
+        <section id="hero">
+            <h1>Blue Melody <span>Music</span></h1>
+            <p>Discover And Connect — Global Music Discovery, Distribution, Sharing &amp; Streaming</p>
+            <div id="search-wrap">
+                <svg class="s-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input id="search-input" type="search" placeholder="Search artists, songs, genres…" oninput="searchMusic(this.value)" autocomplete="off">
+                <button id="search-clear" onclick="clearSearch()" aria-label="Clear search">✕</button>
+            </div>
+            <div class="hero-stats">
+                <div class="hs-item"><div class="hs-num" id="stat-tracks">0</div><div class="hs-label">Tracks</div></div>
+                <div class="hs-item"><div class="hs-num" id="stat-artists">0</div><div class="hs-label">Artists</div></div>
+                <div class="hs-item"><div class="hs-num" id="stat-plays">0</div><div class="hs-label">Total Plays</div></div>
+            </div>
+        </section>
+
+        <section id="search-results-section" class="section">
+            <div class="section-header"><h2>🔍 Search Results</h2><a href="#" onclick="clearSearch();return false">Clear</a></div>
+            <div id="search-results-grid" class="music-grid"></div>
+        </section>
+
+        <section id="home-section" class="section">
+            <div class="section-header"><h2>🎵 Latest Releases</h2><span style="font-size:.74rem;color:var(--text-muted)" id="track-count-label"></span></div>
+            <div id="music-grid" class="music-grid"><div class="spinner"></div></div>
+        </section>
+    </main>
+
+    <div id="player">
+        <div class="p-progress" id="progress-bar" onclick="seekAudio(event)"><div class="p-bar" id="progress-fill"></div></div>
+        <div class="p-art-svg" id="p-art-wrap"></div>
+        <div class="p-info"><div class="p-title" id="p-title">Nothing Playing</div><div class="p-artist" id="p-artist">—</div></div>
+        <div class="p-controls">
+            <button title="Rewind 10s" onclick="audioSeekRel(-10)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></button>
+            <button class="play-pause" id="play-pause-btn" onclick="togglePlay()"><svg id="play-icon" width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+            <button title="Forward 10s" onclick="audioSeekRel(10)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg></button>
+            <a class="p-dl-btn" id="dl-btn" href="#" target="_blank" title="Download" onclick="trackDownload()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+        </div>
+        <div class="p-time" id="p-time">0:00 / 0:00</div>
+        <button class="p-close" onclick="closePlayer()" title="Close">✕</button>
+    </div>
+
+    <div class="modal-overlay" id="track-modal-overlay" onclick="closeTrackModal(event)">
+        <div class="modal" style="max-width:400px" onclick="event.stopPropagation()">
+            <div class="modal-header"><h3 id="tm-title">Track</h3><button class="modal-close" onclick="closeTrackModal()">✕</button></div>
+            <div class="modal-body">
+                <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:18px">
+                    <div id="tm-art"></div>
+                    <div class="tm-info">
+                        <div id="tm-title2" class="track-title"></div>
+                        <div id="tm-artist" class="track-artist"></div>
+                        <div id="tm-feat" class="track-feat"></div>
+                        <div id="tm-genres" class="track-genres"></div>
+                        <div id="tm-meta" class="track-meta"></div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap">
+                    <button class="btn btn-primary" onclick="playCurrentTrack()"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>Play</button>
+                    <a id="tm-download" href="#" target="_blank" class="btn btn-secondary" onclick="trackDownload()">Download</a>
+                    <button class="btn btn-secondary" onclick="shareTrack()">Share</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="auth-modal" onclick="closeAuthModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header"><h3 id="auth-heading">Account</h3><button class="modal-close" onclick="document.getElementById('auth-modal').classList.remove('open')">✕</button></div>
+            <div class="modal-body">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="tab-login" onclick="switchAuth('login')">Log In</button>
+                    <button class="auth-tab" id="tab-signup" onclick="switchAuth('signup')">Create Account</button>
+                </div>
+                <div id="auth-login">
+                    <div class="form-group"><label>Username<span class="req">*</span></label><input id="login-user" type="text" autocomplete="username"></div>
+                    <div class="form-group"><label>Password<span class="req">*</span></label><input id="login-pass" type="password" autocomplete="current-password"></div>
+                    <div id="login-err" style="color:#ef4444;font-size:.8rem;margin-bottom:10px;display:none"></div>
+                    <button class="btn btn-primary btn-full" onclick="doLogin()">Log In</button>
+                    <p style="text-align:center;margin-top:12px;font-size:.78rem;color:var(--text-muted)">
+                        <a href="https://aedtpworld.com/music/accounts/recover.php" style="color:var(--blue-600);font-weight:600">Forgot password?</a>
+                    </p>
+                </div>
+                <div id="auth-signup" style="display:none">
+                    <div class="form-group"><label>Artist Name<span class="req">*</span></label><input id="su-artist" type="text" oninput="autoUsername()"></div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Username<span class="req">*</span></label><input id="su-user" type="text"><div class="hint">- _ only, no spaces</div></div>
+                        <div class="form-group"><label>Full Name<span class="req">*</span></label><input id="su-fullname" type="text"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Gender<span class="req">*</span></label>
+                            <select id="su-gender"><option value="">— Select —</option><option>Male</option><option>Female</option><option>Multi</option></select>
+                        </div>
+                        <div class="form-group"><label>Date Of Birth<span class="req">*</span></label><input id="su-dob" type="date"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Genre<span class="req">*</span></label><input id="su-genre" type="text" placeholder="HipHop"></div>
+                        <div class="form-group"><label>Label</label><input id="su-label" type="text"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Country<span class="req">*</span></label><input id="su-country" type="text"></div>
+                        <div class="form-group"><label>Email<span class="req">*</span></label><input id="su-email" type="email"></div>
+                    </div>
+                    <div class="form-group"><label>Profile Image URL</label><input id="su-profileimg" type="url" placeholder="https://…"></div>
+                    <div class="form-group"><label>Password<span class="req">*</span></label><input id="su-pass" type="password" autocomplete="new-password"></div>
+                    <div class="form-group"><label>Security Question<span class="req">*</span></label>
+                        <select id="su-sq">
+                            <option value="">— Select —</option>
+                            <option>What is your mother's maiden name?</option>
+                            <option>What was the name of your first pet?</option>
+                            <option>What city were you born in?</option>
+                            <option>What was your childhood nickname?</option>
+                            <option>What is the name of your favorite teacher?</option>
+                            <option>What is your favorite book?</option>
+                            <option>What is the name of your first school?</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>Security Answer<span class="req">*</span></label><input id="su-sa" type="text" autocomplete="off"></div>
+                    <div id="su-err" style="color:#ef4444;font-size:.8rem;margin-bottom:10px;display:none"></div>
+                    <button class="btn btn-primary btn-full" onclick="doSignup()">Create Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="upload-modal" onclick="closeUploadModal(event)">
+        <div class="modal" style="max-width:520px" onclick="event.stopPropagation()">
+            <div class="modal-header"><h3>📤 Upload Music</h3><button class="modal-close" onclick="document.getElementById('upload-modal').classList.remove('open')">✕</button></div>
+            <div class="modal-body">
+                <div class="form-group"><label>Title<span class="req">*</span></label><input id="up-title" type="text" placeholder="Song title"></div>
+                <div class="form-group"><label>Artist <span style="font-weight:400;color:var(--text-muted)">(auto-filled from profile)</span></label><input id="up-artist" type="text" readonly></div>
+                <div class="form-group"><label>Featuring Artists</label><input id="up-feat" type="text" placeholder="e.g. Artist2, Artist3"></div>
+                <div class="form-group"><label>Genre(s)<span class="req">*</span></label><input id="up-genres" type="text" placeholder="e.g. HipHop, R&amp;B"><div class="hint">Separate multiple genres with commas</div></div>
+                <div class="form-row">
+                    <div class="form-group"><label>Album</label><input id="up-album" type="text"></div>
+                    <div class="form-group"><label>Label</label><input id="up-label" type="text"></div>
+                </div>
+                <div class="form-group"><label>Cover Art (.jpg) <span style="font-weight:400;color:var(--text-muted)">(optional, max 2MB)</span></label><input id="up-art" type="file" accept=".jpg,.jpeg,image/jpeg"><div class="hint">Leave blank to auto-generate artwork</div></div>
+                <div class="form-group"><label>Music File (.mp3)<span class="req">*</span></label><input id="up-link" type="file" accept=".mp3,audio/mpeg"><div class="hint">MP3 only, max 10MB</div></div>
+                <div id="upload-progress-wrap"><div id="upload-progress-bar"><div id="upload-progress-fill"></div></div><div id="upload-progress-pct">0%</div></div>
+                <div id="up-err" style="color:#ef4444;font-size:.8rem;margin:8px 0;display:none"></div>
+                <div id="up-help-link" style="display:none;margin-top:6px"><a href="https://aedtpworld.com/music/help/index.html" class="btn btn-sm btn-danger">Get Help</a></div>
+                <button class="btn btn-primary btn-full" style="margin-top:8px" onclick="doUpload()">Upload Track</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="profile-panel">
+        <div class="panel-header"><h3>👤 Profile</h3><button class="panel-close" onclick="closeProfilePanel()">✕</button></div>
+        <div class="panel-body" id="panel-body"></div>
+    </div>
+
+    <div id="share-snack">🔗 Link copied!</div>
+
+    <script>
+        let allTracks = [];
+        let currentUser = null;
+        let currentTrack = null;
+        let audio = new Audio();
+
+        (async function init() {
+            loadSession();
+            await loadTracks();
+            renderGrid(allTracks, 'music-grid');
+            updateStats();
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('auth') === 'login') openAuth('login');
+            if (params.get('auth') === 'signup') openAuth('signup');
+        })();
+
+        function loadSession() {
+            const raw = localStorage.getItem('bm_session');
+            if (!raw) return;
+            try { currentUser = JSON.parse(raw); updateNavUser(); } catch (e) { localStorage.removeItem('bm_session'); }
+        }
+        function saveSession(user) { currentUser = user; localStorage.setItem('bm_session', JSON.stringify(user)); updateNavUser(); }
+        function logout() { currentUser = null; localStorage.removeItem('bm_session'); updateNavUser(); closeProfilePanel(); showSnack('Logged out'); }
+
+        function updateNavUser() {
+            const btn = document.getElementById('tab-profile');
+            const name = currentUser ? (currentUser.artistname || currentUser.username) : 'Profile';
+            btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>${escH(name)}`;
+        }
+
+        async function loadTracks() {
+            try {
+                const res = await fetch('api.php?action=tracks&t=' + Date.now());
+                if (!res.ok) throw new Error('bad status ' + res.status);
+                const data = await res.json();
+                allTracks = Array.isArray(data.tracks) ? data.tracks : [];
+            } catch (e) { allTracks = []; console.warn('Failed to load tracks', e); }
+        }
+
+        function renderGrid(tracks, containerId) {
+            const grid = document.getElementById(containerId);
+            if (!grid) return;
+            grid.innerHTML = '';
+            if (!tracks || !tracks.length) {
+                grid.innerHTML = `<div class="empty-state">
+                  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                  <p>No music uploaded yet.<br>Be the first to upload!</p>
+                  ${currentUser ? '<button type="button" class="empty-action" onclick="openUpload()">🎵 Upload Now</button>' : '<button type="button" class="empty-action" onclick="openAuth(\'signup\')">Create Account &amp; Upload</button>'}
+                </div>`;
+                return;
+            }
+            tracks.forEach(t => grid.appendChild(buildCard(t)));
+        }
+
+        function buildCard(t) {
+            const card = document.createElement('div');
+            card.className = 'music-card';
+            card.onclick = () => openTrackModal(t);
+            const svgFallback = buildArtworkSVG(t.artistname || t.username, t.title, t.featuring || '');
+            const artHtml = t.artwork
+                ? `<img src="${escH(t.artwork)}" alt="${escH(t.title)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                   <div style="display:none">${svgFallback}</div>`
+                : svgFallback;
+            const genreBadges = (t.genres || []).slice(0, 2).map(g => `<span class="badge">${escH(g)}</span>`).join('');
+            card.innerHTML = `
+              <div class="artwork-wrap">${artHtml}<div class="play-overlay"><div class="play-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
+              <div class="card-body">
+                <div class="card-title">${escH(t.title)}</div>
+                <div class="card-artist"><a href="${escH(t.username)}/" onclick="event.stopPropagation()">${escH(t.artistname||t.username)}</a>${bmBadgeHtml(bmTrackCountFor(t.username), '12px')}</div>
+                <div class="card-meta">${genreBadges}<span class="card-plays">▶ ${t.plays||0}</span></div>
+              </div>`;
+            return card;
+        }
+
+        function buildArtworkSVG(artist, title, feat) {
+            const colors = [['#1a3a6b','#2563eb'],['#0e4d3a','#10b981'],['#4a1a6b','#8b5cf6'],['#6b1a2a','#ef4444'],['#1a4a6b','#06b6d4'],['#3a2a0e','#f59e0b'],['#4a1a3a','#ec4899'],['#1a2a4a','#3b82f6']];
+            const idx = Math.abs(hashCode(title || '')) % colors.length;
+            const [bg1, bg2] = colors[idx];
+            const a = escH((artist||'').substring(0,20)), tl = escH((title||'').substring(0,30)), ft = feat ? escH('ft. '+(feat||'').substring(0,20)) : '';
+            return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" style="width:100%;height:100%;display:block">
+              <defs><linearGradient id="g${idx}" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:${bg1}"/><stop offset="100%" style="stop-color:${bg2}"/></linearGradient>
+              <pattern id="p${idx}" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="rgba(255,255,255,.08)"/></pattern></defs>
+              <rect width="200" height="200" fill="url(#g${idx})"/><rect width="200" height="200" fill="url(#p${idx})"/>
+              <text x="8" y="22" font-family="Arial" font-size="11" font-weight="bold" fill="white" stroke="black" stroke-width="2" paint-order="stroke">${a}</text>
+              <text x="100" y="108" font-family="Arial" font-size="14" font-weight="bold" fill="white" stroke="black" stroke-width="3" paint-order="stroke" text-anchor="middle">${tl}</text>
+              <text x="192" y="190" font-family="Arial" font-size="9" fill="white" stroke="black" stroke-width="2" paint-order="stroke" text-anchor="end">${ft}</text>
+            </svg>`;
+        }
+
+        function updateStats() {
+            document.getElementById('stat-tracks').textContent = allTracks.length;
+            document.getElementById('stat-artists').textContent = new Set(allTracks.map(t => t.username).filter(Boolean)).size;
+            document.getElementById('stat-plays').textContent = allTracks.reduce((s,t) => s + (t.plays||0), 0).toLocaleString();
+            document.getElementById('track-count-label').textContent = allTracks.length + ' tracks';
+        }
+
+        function searchMusic(q) {
+            q = q.trim().toLowerCase();
+            const sec = document.getElementById('search-results-section'), home = document.getElementById('home-section'), clearBtn = document.getElementById('search-clear');
+            if (!q) { sec.style.display = 'none'; home.style.display = ''; clearBtn.classList.remove('show'); return; }
+            clearBtn.classList.add('show'); sec.style.display = ''; home.style.display = 'none';
+            const filtered = allTracks.filter(t => [(t.title||''),(t.artistname||''),(t.username||''),(t.album||''),(t.featuring||''),...(t.genres||[])].join(' ').toLowerCase().includes(q));
+            renderGrid(filtered, 'search-results-grid');
+            document.querySelector('#search-results-section .section-header h2').textContent = `🔍 Search Results (${filtered.length})`;
+        }
+        function clearSearch() { document.getElementById('search-input').value=''; document.getElementById('search-clear').classList.remove('show'); searchMusic(''); }
+        function focusSearch() { document.getElementById('search-input').focus(); document.getElementById('search-input').scrollIntoView({behavior:'smooth'}); }
+
+        function openTrackModal(t) {
+            currentTrack = t;
+            document.getElementById('tm-title').textContent = t.title;
+            document.getElementById('tm-title2').textContent = t.title;
+            document.getElementById('tm-artist').innerHTML = `<a href="${escH(t.username)}/" style="color:var(--blue-600);font-weight:600">${escH(t.artistname||t.username)}</a>${bmBadgeHtml(bmTrackCountFor(t.username), '14px')}`;
+            document.getElementById('tm-feat').textContent = t.featuring ? 'ft. ' + t.featuring : '';
+            document.getElementById('tm-genres').innerHTML = (t.genres||[]).map(g => `<span class="badge">${escH(g)}</span>`).join('');
+            document.getElementById('tm-meta').textContent = [t.album?'💿 '+t.album:'', t.label?'🏷 '+t.label:'', t.uploadedAt?'📅 '+new Date(t.uploadedAt).toLocaleDateString():''].filter(Boolean).join(' · ');
+            document.getElementById('tm-download').href = t.link;
+            const artWrap = document.getElementById('tm-art');
+            const svgFallback = buildArtworkSVG(t.artistname||t.username, t.title, t.featuring||'');
+            artWrap.innerHTML = t.artwork
+                ? `<img class="artwork-lg" src="${escH(t.artwork)}" style="display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="artwork-lg-svg" style="display:none">${svgFallback}</div>`
+                : `<div class="artwork-lg-svg">${svgFallback}</div>`;
+            document.getElementById('track-modal-overlay').classList.add('open');
+        }
+        function closeTrackModal(e) { if (e && e.target.id !== 'track-modal-overlay') return; document.getElementById('track-modal-overlay').classList.remove('open'); }
+        function playCurrentTrack() { if (!currentTrack) return; document.getElementById('track-modal-overlay').classList.remove('open'); playTrack(currentTrack); }
+        function shareTrack() { if (!currentTrack) return; copyToClipboard(`https://aedtpworld.com/music/${currentTrack.username}/music/${currentTrack.slug}`); }
+        function trackDownload() { if (currentTrack) fetch('api.php?action=download&id=' + encodeURIComponent(currentTrack.id), {method:'POST'}).catch(()=>{}); }
+
+        function playTrack(t) {
+            document.getElementById('progress-fill').style.width = '0%';
+            document.getElementById('p-time').textContent = '0:00 / 0:00';
+            audio.src = t.link; audio.play().catch(()=>{});
+            document.getElementById('p-title').textContent = t.title;
+            document.getElementById('p-artist').textContent = t.artistname || t.username;
+            const artWrap = document.getElementById('p-art-wrap');
+            const svgFallback = buildArtworkSVG(t.artistname||t.username, t.title, '');
+            artWrap.innerHTML = t.artwork
+                ? `<img class="p-art" src="${escH(t.artwork)}" style="display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="p-art-svg" style="display:none">${svgFallback}</div>`
+                : `<div class="p-art-svg">${svgFallback}</div>`;
+            updatePlayIcon();
+            document.getElementById('player').classList.add('visible');
+            document.getElementById('dl-btn').href = t.link;
+            currentTrack = t;
+            fetch('api.php?action=play&id=' + encodeURIComponent(t.id), {method:'POST'}).catch(()=>{});
+        }
+        function togglePlay() {
+            if (!audio.src) { if (currentTrack) playTrack(currentTrack); return; }
+            if (audio.paused) audio.play(); else audio.pause();
+            updatePlayIcon();
+        }
+        function updatePlayIcon() {
+            const icon = document.getElementById('play-icon');
+            icon.innerHTML = audio.paused ? '<polygon points="5 3 19 12 5 21 5 3"/>' : '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+        }
+        function closePlayer() { audio.pause(); audio.src=''; document.getElementById('player').classList.remove('visible'); updatePlayIcon(); }
+        function audioSeekRel(sec) { if (!audio.duration) return; audio.currentTime = Math.max(0, Math.min(audio.duration, audio.currentTime + sec)); }
+        function seekAudio(e) { if (!audio.duration) return; const r = e.currentTarget.getBoundingClientRect(); audio.currentTime = Math.max(0, Math.min(1, (e.clientX-r.left)/r.width)) * audio.duration; }
+        audio.addEventListener('timeupdate', () => { if (!audio.duration) return; document.getElementById('progress-fill').style.width = (audio.currentTime/audio.duration*100)+'%'; document.getElementById('p-time').textContent = fmt(audio.currentTime)+' / '+fmt(audio.duration); });
+        audio.addEventListener('ended', updatePlayIcon);
+        function fmt(s){ if (isNaN(s)||!isFinite(s)) return '0:00'; const m=Math.floor(s/60), sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
+
+        function openAuth(mode='login'){ switchAuth(mode); document.getElementById('auth-modal').classList.add('open'); }
+        function closeAuthModal(e){ if (e && e.target !== document.getElementById('auth-modal')) return; document.getElementById('auth-modal').classList.remove('open'); }
+        function switchAuth(mode){
+            document.getElementById('auth-login').style.display = mode==='login'?'':'none';
+            document.getElementById('auth-signup').style.display = mode==='signup'?'':'none';
+            document.getElementById('tab-login').classList.toggle('active', mode==='login');
+            document.getElementById('tab-signup').classList.toggle('active', mode==='signup');
+            document.getElementById('auth-heading').textContent = mode==='login'?'Log In':'Create Account';
+            document.getElementById('login-err').style.display='none';
+            document.getElementById('su-err').style.display='none';
+        }
+        function autoUsername(){ document.getElementById('su-user').value = document.getElementById('su-artist').value.toLowerCase().replace(/[^a-z0-9_\-]/g,''); }
+
+        async function doLogin() {
+            const username = document.getElementById('login-user').value.trim();
+            const password = document.getElementById('login-pass').value;
+            const errEl = document.getElementById('login-err'); errEl.style.display='none';
+            if (!username || !password) return showErr(errEl, 'Enter username and password');
+            try {
+                const res = await fetch('api.php?action=login', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({username,password})});
+                const data = await res.json();
+                if (data.success) {
+                    saveSession(data.user);
+                    document.getElementById('auth-modal').classList.remove('open');
+                    showSnack('Logged in as ' + (data.user.artistname || data.user.username));
+                } else showErr(errEl, data.error || 'Invalid credentials');
+            } catch (e) { showErr(errEl, 'Network error. Try again.'); }
+        }
+
+        async function doSignup() {
+            const payload = {
+                artist: document.getElementById('su-artist').value.trim(),
+                username: document.getElementById('su-user').value.trim(),
+                fullname: document.getElementById('su-fullname').value.trim(),
+                gender: document.getElementById('su-gender').value,
+                dob: document.getElementById('su-dob').value,
+                genre: document.getElementById('su-genre').value.trim(),
+                label: document.getElementById('su-label').value.trim(),
+                country: document.getElementById('su-country').value.trim(),
+                email: document.getElementById('su-email').value.trim(),
+                profileImage: document.getElementById('su-profileimg').value.trim(),
+                password: document.getElementById('su-pass').value,
+                securityQuestion: document.getElementById('su-sq').value,
+                securityAnswer: document.getElementById('su-sa').value.trim(),
+            };
+            const errEl = document.getElementById('su-err'); errEl.style.display='none';
+            if (Object.entries(payload).some(([k,v]) => k!=='label' && v === '')) return showErr(errEl, 'Fill in all required fields');
+            if (payload.password.length < 6) return showErr(errEl, 'Password must be at least 6 characters');
+            if (!/^[a-zA-Z0-9_\-]+$/.test(payload.username)) return showErr(errEl, 'Username: letters, numbers, - _ only');
+            try {
+                const res = await fetch('api.php?action=signup', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
+                const data = await res.json();
+                if (data.success) {
+                    saveSession(data.user);
+                    document.getElementById('auth-modal').classList.remove('open');
+                    showSnack('Welcome, ' + (data.user.artistname || data.user.username) + '!');
+                } else showErr(errEl, data.error || 'Signup failed');
+            } catch (e) { showErr(errEl, 'Network error. Try again.'); }
+        }
+
+        function openUpload() {
+            if (!currentUser) { openAuth('login'); return; }
+            document.getElementById('up-artist').value = currentUser.artistname || currentUser.username;
+            document.getElementById('up-err').style.display='none';
+            document.getElementById('up-help-link').style.display='none';
+            document.getElementById('upload-progress-wrap').style.display='none';
+            ['up-title','up-feat','up-genres','up-album','up-label','up-art','up-link'].forEach(id => document.getElementById(id).value='');
+            document.getElementById('upload-modal').classList.add('open');
+        }
+        function closeUploadModal(e){ if (e && e.target !== document.getElementById('upload-modal')) return; document.getElementById('upload-modal').classList.remove('open'); }
+
+        async function doUpload() {
+            const title = document.getElementById('up-title').value.trim();
+            const genres = document.getElementById('up-genres').value.trim();
+            const musicFile = document.getElementById('up-link').files[0];
+            const artFile = document.getElementById('up-art').files[0];
+            const errEl = document.getElementById('up-err'); errEl.style.display='none';
+            document.getElementById('up-help-link').style.display='none';
+            if (!title) return showErr(errEl, 'Title is required');
+            if (!genres) return showErr(errEl, 'Genre is required');
+            if (!musicFile) return showErr(errEl, 'A music (.mp3) file is required');
+            if (!/\.mp3$/i.test(musicFile.name)) return showErr(errEl, 'Music file must be an .mp3');
+            if (musicFile.size > 10 * 1024 * 1024) return showErr(errEl, 'Music file must be 10MB or smaller');
+            if (artFile) {
+                if (!/\.jpe?g$/i.test(artFile.name)) return showErr(errEl, 'Cover art must be a .jpg');
+                if (artFile.size > 2 * 1024 * 1024) return showErr(errEl, 'Cover art must be 2MB or smaller');
+            }
+
+            const pw = document.getElementById('upload-progress-wrap'), pf = document.getElementById('upload-progress-fill'), pp = document.getElementById('upload-progress-pct');
+            pw.style.display=''; pf.style.width = '0%'; pp.textContent = '0%';
+
+            const fd = new FormData();
+            fd.append('title', title);
+            fd.append('featuring', document.getElementById('up-feat').value.trim());
+            fd.append('genres', genres);
+            fd.append('album', document.getElementById('up-album').value.trim());
+            fd.append('label', document.getElementById('up-label').value.trim());
+            fd.append('username', currentUser.username);
+            fd.append('music', musicFile);
+            if (artFile) fd.append('artwork', artFile);
+
+            try {
+                const data = await uploadWithProgress(fd, pf, pp);
+                pw.style.display='none'; pf.style.width='0';
+                if (data.success) {
+                    document.getElementById('upload-modal').classList.remove('open');
+                    showUploadToast('✅ Music Uploaded Successfully!', 'success', 'up');
+                    await loadTracks(); renderGrid(allTracks, 'music-grid'); updateStats();
+                } else {
+                    showErr(errEl, data.error || 'Upload failed');
+                    showUploadToast('❌ Music Upload Failed, You May have Low Internet Connection', 'error', 'down');
+                    document.getElementById('up-help-link').style.display='';
+                }
+            } catch (e) {
+                pw.style.display='none';
+                showErr(errEl, 'Music Upload was Unsuccessful, Maybe Because Of Your Network Speed Level');
+                showUploadToast('❌ Music Upload Failed, You May have Low Internet Connection', 'error', 'down');
+                document.getElementById('up-help-link').style.display='';
+            }
+        }
+
+        // Real upload progress (via XHR, since fetch() can't report upload progress).
+        function uploadWithProgress(formData, fillEl, pctEl) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'api.php?action=upload');
+                xhr.upload.onprogress = (e) => {
+                    if (!e.lengthComputable) return;
+                    const pct = Math.round((e.loaded / e.total) * 100);
+                    fillEl.style.width = pct + '%'; pctEl.textContent = pct + '%';
+                };
+                xhr.onload = () => {
+                    try { resolve(JSON.parse(xhr.responseText)); }
+                    catch (err) { reject(err); }
+                };
+                xhr.onerror = () => reject(new Error('Network error'));
+                xhr.send(formData);
+            });
+        }
+
+        function openProfilePanel() {
+            const panel = document.getElementById('profile-panel'), body = document.getElementById('panel-body');
+            panel.classList.add('open');
+            if (currentUser) renderProfileView(body);
+            else body.innerHTML = `<p style="color:var(--text-secondary);margin-bottom:16px;font-size:.88rem">Log in or create an account to access your profile, upload music, and more.</p>
+              <button class="btn btn-primary btn-full" style="margin-bottom:10px" onclick="closeProfilePanel();openAuth('login')">Log In</button>
+              <button class="btn btn-secondary btn-full" onclick="closeProfilePanel();openAuth('signup')">Create Account</button>`;
+        }
+        function closeProfilePanel(){ document.getElementById('profile-panel').classList.remove('open'); }
+
+        function renderProfileView(container) {
+            const u = currentUser;
+            const initial = (u.artistname || u.username || '?')[0].toUpperCase();
+            const profileImg = u.profileImage ? `<img src="${escH(u.profileImage)}" style="width:100%;height:100%;object-fit:cover">` : initial;
+            const trackCount = allTracks.filter(t => t.username === u.username).length;
+            container.innerHTML = `
+              <div style="text-align:center;padding-bottom:16px;border-bottom:1px solid #e2e8f0;margin-bottom:16px">
+                <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--blue-700),var(--accent-purple));display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:2rem;color:white;overflow:hidden">${profileImg}</div>
+                <div style="font-weight:800;font-size:1.05rem;color:var(--blue-900)">${escH(u.artistname||u.username)}${bmBadgeHtml(trackCount, '14px')}</div>
+                <div style="font-size:.8rem;color:var(--text-muted)">@${escH(u.username)}</div>
+                <div style="font-size:.72rem;color:var(--text-muted);margin-top:4px">${trackCount} track${trackCount!==1?'s':''} uploaded</div>
+              </div>
+              <a href="${escH(u.username)}/" class="btn btn-secondary btn-full" style="margin-bottom:8px">My Profile</a>
+              <a href="${escH(u.username)}/music/" class="btn btn-secondary btn-full" style="margin-bottom:8px">Music Library</a>
+              <a href="profile/" class="btn btn-secondary btn-full" style="margin-bottom:8px">Edit Profile</a>
+              <button class="btn btn-danger btn-full" style="margin-top:8px" onclick="logout()">Log Out</button>`;
+        }
+
+        function sharePage(){ copyToClipboard(window.location.href); }
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(()=>showSnack('🔗 Link copied!')).catch(()=>fallbackCopy(text));
+            else fallbackCopy(text);
+        }
+        function fallbackCopy(text) {
+            const ta = document.createElement('textarea'); ta.value = text; ta.style.position='fixed'; ta.style.left='-9999px';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); showSnack('🔗 Link copied!'); } catch(e){}
+            document.body.removeChild(ta);
+        }
+        function showSnack(msg) {
+            const el = document.getElementById('share-snack'); el.textContent = msg; el.classList.add('show');
+            clearTimeout(el._timer); el._timer = setTimeout(()=>{el.classList.remove('show'); el.textContent='🔗 Link copied!';}, 2400);
+        }
+        function toggleMobileMenu(){ document.getElementById('mobile-menu').classList.toggle('open'); }
+        function showUploadToast(msg, type, dir) {
+            const el = document.createElement('div'); el.className = `upload-toast ${type} ${dir}`; el.textContent = msg;
+            document.body.appendChild(el); setTimeout(()=>el.remove(), 2000);
+        }
+        function showErr(el, msg){ el.textContent = msg; el.style.display=''; }
+        function escH(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+        // Verified badge / rank: rank = floor(releaseCount/10). Rank 0 = no
+        // badge. Rank >= 1 shows the verified badge; rank-1 shown as "+N"
+        // once rank >= 2 (10 uploads -> badge, 20 -> badge +1, 30 -> badge +2...).
+        function bmRank(releaseCount){ return Math.floor(Math.max(0, releaseCount) / 10); }
+        function bmBadgeHtml(releaseCount, size){
+            size = size || '14px';
+            const rank = bmRank(releaseCount);
+            if (rank < 1) return '';
+            const plus = rank >= 2 ? `<span class="bm-badge-plus">+${rank-1}</span>` : '';
+            return `<span class="bm-badge-wrap" title="Verified · Rank ${rank}"><img src="https://aedtpworld.com/verifiedbadges/blue.png" alt="Verified" style="width:${size};height:${size};object-fit:contain;vertical-align:middle" loading="lazy">${plus}</span>`;
+        }
+        function bmTrackCountFor(username){ return allTracks.filter(t => t.username === username).length; }
+        function hashCode(s){ let h=0; for (let i=0;i<s.length;i++){ h = Math.imul(31,h) + s.charCodeAt(i) | 0; } return h; }
+
+        document.addEventListener('keydown', (e) => {
+            if (['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) return;
+            if (e.key === ' ') { e.preventDefault(); togglePlay(); }
+            if (e.key === 'Escape') {
+                document.getElementById('track-modal-overlay').classList.remove('open');
+                document.getElementById('upload-modal').classList.remove('open');
+                document.getElementById('auth-modal').classList.remove('open');
+                closeProfilePanel();
+            }
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); focusSearch(); }
+        });
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('mobile-menu'), toggle = document.getElementById('menu-toggle');
+            if (menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) menu.classList.remove('open');
+        });
+
+        setInterval(async () => {
+            try {
+                const res = await fetch('api.php?action=tracks&t=' + Date.now());
+                const data = await res.json();
+                const newTracks = Array.isArray(data.tracks) ? data.tracks : [];
+                if (allTracks.map(t=>t.id).join(',') !== newTracks.map(t=>t.id).join(',')) {
+                    allTracks = newTracks;
+                    if (document.getElementById('search-results-section').style.display === 'none') renderGrid(allTracks, 'music-grid');
+                    updateStats();
+                }
+            } catch(e){}
+        }, 30000);
+    </script>
+</body>
+</html>

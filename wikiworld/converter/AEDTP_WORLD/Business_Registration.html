@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEDTP WORLD — Register Your Work — AEDTP WORLD — AWFLWIKIWORLD</title>
+<meta name="description" content="Register Your Work Register Your Work — Submit your profile as a Developer, Business, Artist, or any legal profession. Your work will be reviewed by AEDTP WORLD...">
+<meta name="author" content="AEDTP WORLD">
+<meta name="license" content="AEDTP WORLD FREE LICENSE (AWFL)">
+<link rel="canonical" href="https://aedtpworld.com/wikiworld/AEDTP_WORLD/Business_Registration">
+<meta property="og:title" content="AEDTP WORLD — Register Your Work">
+<meta property="og:description" content="Register Your Work Register Your Work — Submit your profile as a Developer, Business, Artist, or any legal profession. Your work will be reviewed by AEDTP WORLD...">
+<meta property="og:url" content="https://aedtpworld.com/wikiworld/AEDTP_WORLD/Business_Registration">
+<meta property="og:image" content="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<link rel="icon" href="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<link rel="stylesheet" href="https://aedtpworld.com/wikiworld/assets/site.css">
+<link rel="stylesheet" href="https://aedtpworld.com/wikiworld/skins/vector2022.css">
+<style>.awfl-converted{max-width:1100px;margin:0 auto;padding:16px}.awfl-converted .awfl-article:after{content:"";display:block;clear:both}.awfl-converted img{max-width:100%}.awfl-categories{margin-top:24px;padding-top:10px;border-top:1px solid #a2a9b1;font-size:.9em}</style>
+</head>
+<body>
+<div class="awfl-wrapper">
+<main class="awfl-main awfl-converted">
+<p><a href="https://aedtpworld.com/wikiworld/"><img src="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg" alt="" style="height:28px;width:auto;vertical-align:middle"> AWFLWIKIWORLD</a></p>
+<div class="awfl-page-titlebar"><h1>AEDTP WORLD — Register Your Work<span class="awfl-space-tag">AEDTP WORLD</span></h1></div>
+<article class="awfl-article"><!--AWFL-ARTICLE-START--><table class="infobox"><tr><th class="infobox-title" colspan="2">AEDTP WORLD — Register Your Work</th></tr><tr><td colspan="2" class="infobox-image"><img src="https://aedtpworld.com/icons/aedtpworld.png" alt="Submit your profile as Developer, Business, Artist, or any legal profession. Reviewed by AEDTP WORLD" style="width:250px !important;height:auto;"><div class="infobox-caption">Submit your profile as Developer, Business, Artist, or any legal profession. Reviewed by AEDTP WORLD</div></td></tr><tr><th>Type</th><td>Registration, Portal, Application</td></tr><tr><th>Developer</th><td>AEDTP WORLD</td></tr><tr><th>Base URL</th><td>https://aedtpworld.com/register/</td></tr><tr><th>Canonical</th><td>https://aedtpworld.com/register/</td></tr><tr><th>License</th><td>AEDTP WORLD FREE LICENSE (AWFL)</td></tr></table>
+<h2>Register Your Work</h2>
+<p><strong>Register Your Work</strong> — Submit your profile as a Developer, Business, Artist, or any legal profession. Your work will be reviewed by AEDTP WORLD.</p>
+<h2>Purpose</h2>
+<p>Registration portal — collects identity + work category + details + business build request RTE, outputs <code>Title@WorkName.html</code> in <code>/register/</code>, generates review URL.</p>
+<h2>Layout</h2>
+<ul>
+<li><strong>Header</strong> — fixed 58px rgba(10,10,12,0.92) blur 12px, logo Playfair Display 17px gold #c9a84c, pill 11px mono Work Registration Portal</li>
+<li><strong>Hero</strong> — badge Open Registrations pulse dot, h1 Playfair 52px Register Your Work em gold, p muted #7a7888</li>
+<li><strong>Step Bar</strong> — 1 Identity 2 Work Details 3 Submit, active gold, done success #5dd98c</li>
+<li><strong>Card</strong> — bg #111116 border #2a2a35 radius 16px, sections padding 32px 36px border-bottom</li>
+<li><strong>Theme</strong> — bg #0a0a0c surface2 #18181f gold #c9a84c gold2 #e8c87a goldglow rgba(201,168,76,0.15), error #ff6b6b, radius 10px</li>
+</ul>
+<h2>Form Sections</h2>
+<ul>
+<li><strong>01 Identity</strong> — Full Name *, Email *, Country * select Nigeria Ghana Kenya South Africa US UK Canada Germany France Australia India Brazil Japan China Other</li>
+<li><strong>02 Work Category</strong> — hidden input category, grid minmax 130px cat-btn with icon, options Developer Business Artist Musician Designer Writer Freelancer Other. Business shows business-section visible, Other shows customCatWrap. Error handling php-error class</li>
+<li><strong>03 Work Details</strong> — Work/Brand Name * becomes URL part, Registration Title * spaces to _, Brief Description * 500 chars counter near 470 over, Website URL validation, Social Handle</li>
+<li><strong>04 Business Details</strong> — visible only for Business: Reg Number, Business Type * Sole Proprietorship Partnership LLC Corporation Non-Profit Cooperative Other, Industry/Sector *, Year Established, Business Address, RTE Business Build Request *</li>
+</ul>
+<h2>RTE</h2>
+<ul>
+<li>wrapper border, toolbar B I U H2 H3 P • List 1. List Left Ctr Right ---, area contenteditable min-height 160px max 340px placeholder</li>
+<li>Save Current Block -&gt; locked div saved-block gold left border, cannot delete via Backspace/Delete blocked, dragstart blocked, toast Locked</li>
+<li>Important info-box: saved blocks cannot be deleted, included in registration file</li>
+</ul>
+<h2>URL Preview</h2>
+<ul>
+<li>box mono 11.5px, base https://aedtpworld.com/register/ muted, slug gold = slugify Title@WorkName.html, replace spaces/%20 to _, strip [^\w\-@\.]</li>
+</ul>
+<h2>Submit</h2>
+<ul>
+<li>submit-section bg #111116, strong Ready to register, small Reviewed by AEDTP WORLD mono</li>
+<li>submit-btn gradient gold to gold2, 13px 32px radius 10px hover lift shadow rgba(201,168,76,0.25), loader 16px spinner</li>
+</ul>
+<h2>Validation</h2>
+<ul>
+<li>Client: fullName &gt;=2, email regex, country required, workName regTitle required, description &gt;=10, website URL() if present, category required, customCat &gt;=2 if Other, bizType industry &gt;=2 if Business, RTE textContent &gt;=10</li>
+<li>Server errors banner rgba(255,107,107,0.08) border, field-error php-error display block</li>
+<li>Toast bottom-right 28px, 360px max, success/error/info icons ✓ ✕ i, auto hide 4.5s</li>
+</ul>
+<h2>Success Overlay</h2>
+<ul>
+<li>fixed inset rgba(10,10,12,0.96) z 8000, orb 80px radial success pulse, h2 Playfair 28px, p muted, success-url mono 11px gold bg goldglow border, buttons btn-outline border #3a3a48 hover gold, btn-solid gradient gold</li>
+</ul>
+<h2>Navigation</h2>
+<ul>
+<li><a href="https://aedtpworld.com/register/" target="_blank" rel="noopener noreferrer">Register Portal</a></li>
+<li><a href="https://<img src="https://aedtpworld.com/wikiworld/images/aedtpworld.com/icons/aedtpworld.png" style="width:250px !important;height:auto;" alt="">" target="_blank" rel="noopener noreferrer">Icon</a></li>
+</ul><!--AWFL-ARTICLE-END--></article>
+<div class="awfl-categories"><strong>Categories:</strong> AEDTP WORLD, Tool, Business</div>
+<p class="awfl-footer-copy" style="margin-top:24px;font-size:.85em">© 2026 AEDTP WORLD — content available under the AEDTP WORLD FREE LICENSE (AWFL). <a href="https://aedtpworld.com/wikiworld/AEDTP_WORLD/Business_Registration">View live page</a></p>
+</main>
+</div>
+</body>
+</html>

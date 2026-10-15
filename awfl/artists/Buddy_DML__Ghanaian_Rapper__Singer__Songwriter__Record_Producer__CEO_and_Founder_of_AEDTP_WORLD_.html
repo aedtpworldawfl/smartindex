@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buddy DML (Ghanaian Rapper, Singer, Songwriter, Record Producer, CEO and Founder of AEDTP WORLD) — AWFLWIKIWORLD</title>
+<style>
+/* AWFLWIKIWORLD — assets/site.css
+   Default base layout. Skins (skins/*.css) load AFTER this file and may
+   override any of these rules; if no skin is active, these rules stand alone. */
+
+:root {
+    --awfl-header-bg: #202122;
+    --awfl-header-text: #ffffff;
+    --awfl-button-bg: #36c;
+    --awfl-button-text: #ffffff;
+    --awfl-page-text: #202122;
+    --awfl-link: #0645ad;
+    --awfl-link-visited: #0b0080;
+    --awfl-border: #a2a9b1;
+    --awfl-bg: #ffffff;
+    --awfl-content-bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--awfl-page-text);
+    background: var(--awfl-bg);
+    line-height: 1.6;
+}
+
+a { color: var(--awfl-link); text-decoration: none; }
+a:visited { color: var(--awfl-link-visited); }
+a:hover { text-decoration: underline; }
+
+.awfl-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ---- Header ---- */
+.awfl-header {
+    background: var(--awfl-header-bg);
+    color: var(--awfl-header-text);
+}
+.awfl-header-inner {
+    max-width: 1200px; margin: 0 auto; padding: 8px 16px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.awfl-logo-link { display: flex; align-items: center; gap: 8px; color: var(--awfl-header-text); }
+.awfl-logo { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-sitename { font-weight: 700; font-size: 1.15rem; color: var(--awfl-header-text); }
+.awfl-searchform { flex: 1; display: flex; min-width: 180px; max-width: 420px; }
+.awfl-searchform input { flex: 1; padding: 6px 10px; border: 1px solid var(--awfl-border); border-radius: 2px 0 0 2px; }
+.awfl-searchform button {
+    padding: 6px 12px; border: none; border-radius: 0 2px 2px 0;
+    background: var(--awfl-button-bg); color: var(--awfl-button-text); cursor: pointer;
+}
+.awfl-usernav { display: flex; gap: 12px; align-items: center; font-size: 0.9rem; flex-wrap: wrap; }
+.awfl-usernav a { color: var(--awfl-header-text); opacity: 0.9; }
+.awfl-usernav a:hover { opacity: 1; }
+.awfl-username { color: var(--awfl-header-text); font-weight: 600; }
+
+/* ---- Body / main content ---- */
+.awfl-body { flex: 1; max-width: 1200px; margin: 0 auto; width: 100%; padding: 24px 16px; }
+.awfl-main { background: var(--awfl-content-bg); }
+.awfl-narrow { max-width: 480px; margin: 0 auto; }
+
+.awfl-page-titlebar {
+    display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
+    border-bottom: 1px solid var(--awfl-border); padding-bottom: 8px; margin-bottom: 16px; gap: 8px;
+}
+.awfl-page-titlebar h1 { margin: 0; }
+.awfl-space-tag {
+    font-size: 0.55em; vertical-align: middle; margin-left: 8px; padding: 2px 8px;
+    background: #eaecf0; border-radius: 10px; color: #54595d; font-weight: normal;
+}
+.awfl-protected-tag { background: #fef1d7; color: #8a6100; }
+.awfl-page-actions { display: flex; gap: 14px; font-size: 0.9rem; flex-wrap: wrap; align-items: center; }
+.awfl-danger-link { color: #d33; }
+
+.awfl-download-menu { position: relative; display: inline-block; }
+.awfl-download-toggle { cursor: pointer; }
+.awfl-download-list {
+    display: none; position: absolute; top: 100%; left: 0; z-index: 20; margin-top: 4px;
+    background: var(--awfl-content-bg, #fff); border: 1px solid var(--awfl-border, #a2a9b1);
+    border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); min-width: 100px; padding: 4px 0;
+}
+.awfl-download-menu.open .awfl-download-list { display: block; }
+.awfl-download-list a { display: block; padding: 6px 14px; white-space: nowrap; text-decoration: none; }
+.awfl-download-list a:hover { background: #eaecf0; }
+
+.awfl-article { font-size: 1rem; }
+.awfl-article h1, .awfl-article h2 { border-bottom: 1px solid var(--awfl-border); padding-bottom: 4px; }
+.awfl-article ul, .awfl-article ol { padding-left: 1.6em; }
+.awfl-article code, .awfl-visual-preview code {
+    background: #f3f3f3; border: 1px solid var(--awfl-border); border-radius: 3px;
+    padding: 0 4px; font-family: monospace; font-size: 0.9em;
+}
+.awfl-article pre, .awfl-visual-preview pre {
+    background: #f3f3f3; border: 1px solid var(--awfl-border); border-radius: 4px;
+    padding: 10px 12px; overflow-x: auto;
+}
+.awfl-article pre code, .awfl-visual-preview pre code { background: none; border: none; padding: 0; }
+.awfl-article blockquote, .awfl-visual-preview blockquote {
+    margin: 1em 0; padding: 4px 14px; border-left: 4px solid var(--awfl-border);
+    color: #54595d; font-style: italic;
+}
+.awfl-article mark, .awfl-visual-preview mark { background: #fff2a8; padding: 0 2px; }
+.awfl-article hr, .awfl-visual-preview hr { border: none; border-top: 1px solid var(--awfl-border); margin: 1.5em 0; }
+.awfl-article del, .awfl-article s, .awfl-visual-preview del, .awfl-visual-preview s { opacity: 0.75; }
+.awfl-article .awfl-nowiki, .awfl-visual-preview .awfl-nowiki {
+    background: #f3f3f3; border: 1px solid var(--awfl-border); border-radius: 3px;
+    padding: 0 4px; font-family: monospace; font-size: 0.9em; white-space: pre-wrap;
+}
+.awfl-missing { font-style: italic; color: #54595d; }
+
+/* ---- Infobox ---- */
+.infobox {
+    float: right; margin: 0 0 1em 1em; width: 280px; border: 1px solid var(--awfl-border);
+    border-collapse: collapse; background: #f8f9fa; font-size: 0.875rem;
+}
+.infobox th, .infobox td { border: 1px solid var(--awfl-border); padding: 6px 8px; text-align: left; vertical-align: top; }
+.infobox th { font-weight: bold; background: #eaecf0; width: 38%; }
+.infobox-title { background: #ccdcf0 !important; text-align: center !important; font-size: 1.1em; }
+.infobox-image { text-align: center; }
+.infobox-image img { width: 250px !important; height: auto; }
+.infobox-caption { font-size: 0.85em; color: #54595d; margin-top: 4px; }
+
+/* ---- Forms ---- */
+.awfl-form { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.awfl-form label { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; }
+.awfl-form input, .awfl-form select, .awfl-form textarea {
+    padding: 8px; border: 1px solid var(--awfl-border); border-radius: 3px; font: inherit;
+}
+.awfl-form button, button, .awfl-editor-actions button, .awfl-danger {
+    background: var(--awfl-button-bg); color: var(--awfl-button-text);
+    border: none; padding: 8px 16px; border-radius: 3px; cursor: pointer; font: inherit;
+}
+.awfl-danger { background: #d33; }
+.awfl-error { color: #d33; }
+.awfl-success { color: #14866d; }
+
+/* ---- Editor ---- */
+.awfl-editing-label { font-size: 0.5em; color: #54595d; margin-left: 10px; }
+.awfl-editor-toolbar { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.awfl-editor-toolbar button {
+    background: #f8f9fa; color: #202122; border: 1px solid var(--awfl-border);
+    padding: 6px 10px; border-radius: 3px; cursor: pointer;
+}
+.awfl-editor-toolbar .awfl-tab.active { background: var(--awfl-button-bg); color: #fff; }
+.awfl-toolbar-sep { width: 1px; height: 20px; background: var(--awfl-border); margin: 0 6px; }
+#awfl-wikitext { width: 100%; font-family: monospace; font-size: 0.95rem; padding: 10px; border: 1px solid var(--awfl-border); border-radius: 3px; }
+.awfl-visual-preview {
+    border: 1px solid var(--awfl-border); border-radius: 3px; padding: 14px; min-height: 300px;
+    background: #fff; cursor: text;
+}
+.awfl-visual-preview:focus { outline: 2px solid var(--awfl-button-bg); outline-offset: -1px; }
+.awfl-visual-preview img { max-width: 100%; }
+.awfl-editor-actions { margin-top: 10px; display: flex; gap: 10px; }
+
+/* ---- Lists / tables ---- */
+.awfl-pagelist { columns: 3; column-gap: 24px; }
+table.awfl-datatable { border-collapse: collapse; width: 100%; margin: 12px 0; }
+table.awfl-datatable th, table.awfl-datatable td { border: 1px solid var(--awfl-border); padding: 8px; text-align: left; }
+table.awfl-datatable th { background: #eaecf0; }
+table.awfl-datatable th a { color: inherit; }
+
+/* ---- Image gallery (allimages) ---- */
+.awfl-image-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+.awfl-image-cell {
+    border: 1px solid var(--awfl-border); border-radius: 4px; padding: 6px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    background: #fff;
+}
+.awfl-image-cell img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+.awfl-image-name { font-size: 0.75rem; margin: 6px 0 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
+.awfl-image-cell-actions { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.awfl-image-cell-actions button { font-size: 0.7rem; padding: 4px 6px; }
+@media (max-width: 1000px) { .awfl-image-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px) { .awfl-image-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---- Footer ---- */
+.awfl-footer { border-top: 1px solid var(--awfl-border); background: #f8f9fa; margin-top: 24px; }
+.awfl-footer-inner { max-width: 1200px; margin: 0 auto; padding: 16px; font-size: 0.85rem; color: #54595d; }
+.awfl-powered { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; color: #54595d; }
+.awfl-powered img { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-footer-links { margin-bottom: 6px; }
+
+/* ---- Dashboard color rows ---- */
+.awfl-color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.awfl-color-row label { min-width: 160px; }
+.awfl-color-row input[type=text] { width: 100px; font-family: monospace; }
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+    .awfl-pagelist { columns: 1; }
+    .infobox { float: none; width: 100%; margin: 1em 0; }
+    .awfl-header-inner { flex-direction: column; align-items: stretch; }
+    .awfl-searchform { max-width: none; }
+}
+
+@media print {
+    .awfl-header, .awfl-footer, .awfl-page-actions, .awfl-usernav { display: none !important; }
+    .infobox { float: none; width: 100%; }
+}
+
+/* AWFLWIKIWORLD — AEDTP WORLD Wiki engine:Skin/AEDTPWORLD.css
+   Developer: AEDTP WORLD
+   License: AEDTP WORLD FREE LICENSE (AWFL)
+   Install More: "https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/Skins"
+   
+
+ */
+
+:root {
+    --awfl-header-bg: #862696!important;
+    --awfl-header-text: #D9C039!important;
+    --awfl-button-bg: #4E2096!important;
+    --awfl-button-text: #d1dbe6!important;
+    --awfl-page-text: #EEF0F2!important;
+    --awfl-link: #5A80C2!important;
+    --awfl-link-visited: #B83436!important;
+    --awfl-border: #1a224a!important;
+    --awfl-bg: #1a224a!important;
+    --awfl-content-bg: #1a224a!important;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--awfl-page-text);
+    background: var(--awfl-bg);
+    line-height: 1.6;
+}
+
+a { color: var(--awfl-link); text-decoration: none; }
+a:visited { color: var(--awfl-link-visited); }
+a:hover { text-decoration: underline; }
+
+.awfl-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ---- Header ---- */
+.awfl-header {
+    background: var(--awfl-header-bg);
+    color: var(--awfl-header-text);
+}
+.awfl-header-inner {
+    max-width: 1200px; margin: 0 auto; padding: 8px 16px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.awfl-logo-link { display: flex; align-items: center; gap: 8px; color: var(--awfl-header-text); }
+.awfl-logo { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-sitename { font-weight: 700; font-size: 1.15rem; color: var(--awfl-header-text); }
+.awfl-searchform { flex: 1; display: flex; min-width: 180px; max-width: 420px; }
+.awfl-searchform input { flex: 1; padding: 6px 10px; border: 1px solid var(--awfl-border); border-radius: 2px 0 0 2px; }
+.awfl-searchform button {
+    padding: 6px 12px; border: none; border-radius: 0 2px 2px 0;
+    background: var(--awfl-button-bg); color: var(--awfl-button-text); cursor: pointer;
+}
+.awfl-usernav { display: flex; gap: 12px; align-items: center; font-size: 0.9rem; flex-wrap: wrap; }
+.awfl-usernav a { color: var(--awfl-header-text); opacity: 0.9; }
+.awfl-usernav a:hover { opacity: 1; }
+.awfl-username { color: var(--awfl-header-text); font-weight: 600; }
+
+/* ---- Body / main content ---- */
+.awfl-body { flex: 1; max-width: 1200px; margin: 0 auto; width: 100%; padding: 24px 16px; }
+.awfl-main { background: var(--awfl-content-bg); }
+.awfl-narrow { max-width: 480px; margin: 0 auto; }
+
+.awfl-page-titlebar {
+    display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
+    border-bottom: 1px solid var(--awfl-border); padding-bottom: 8px; margin-bottom: 16px; gap: 8px;
+}
+.awfl-page-titlebar h1 { margin: 0; }
+.awfl-space-tag {
+    font-size: 0.55em; vertical-align: middle; margin-left: 8px; padding: 2px 8px;
+    background: #eaecf0; border-radius: 10px; color: #54595d; font-weight: normal;
+}
+.awfl-protected-tag { background: #fef1d7; color: #8a6100; }
+.awfl-page-actions { display: flex; gap: 14px; font-size: 0.9rem; flex-wrap: wrap; }
+.awfl-danger-link { color: #d33; }
+
+.awfl-article { font-size: 1rem; }
+.awfl-article h1, .awfl-article h2 { border-bottom: 1px solid var(--awfl-border); padding-bottom: 4px; }
+.awfl-article ul, .awfl-article ol { padding-left: 1.6em; }
+.awfl-missing { font-style: italic; color: #54595d; }
+
+/* ---- Infobox ---- */
+.infobox {
+    float: right; margin: 0 0 1em 1em; width: 280px; border: 1px solid var(--awfl-border);
+    border-collapse: collapse; background: #3E97D9; font-size: 0.875rem;
+}
+.infobox th, .infobox td { border: 1px solid var(--awfl-border); padding: 6px 8px; text-align: left; vertical-align: top; }
+.infobox th { font-weight: bold; background: #eaecf0; width: 38%; }
+.infobox-title { background: #ccdcf0 !important; text-align: center !important; font-size: 1.1em; }
+.infobox-image { text-align: center; }
+.infobox-image img { width: 250px !important; height: auto; }
+.infobox-caption { font-size: 0.85em; color: #54595d; margin-top: 4px; }
+
+/* ---- Forms ---- */
+.awfl-form { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.awfl-form label { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; }
+.awfl-form input, .awfl-form select, .awfl-form textarea {
+    padding: 8px; border: 1px solid var(--awfl-border); border-radius: 3px; font: inherit;
+}
+.awfl-form button, button, .awfl-editor-actions button, .awfl-danger {
+    background: var(--awfl-button-bg); color: var(--awfl-button-text);
+    border: none; padding: 8px 16px; border-radius: 3px; cursor: pointer; font: inherit;
+}
+.awfl-danger { background: #d33; }
+.awfl-error { color: #d33; }
+.awfl-success { color: #14866d; }
+
+/* ---- Editor ---- */
+.awfl-editing-label { font-size: 0.5em; color: #54595d; margin-left: 10px; }
+.awfl-editor-toolbar { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.awfl-editor-toolbar button {
+    background: #f8f9fa; color: #202122; border: 1px solid var(--awfl-border);
+    padding: 6px 10px; border-radius: 3px; cursor: pointer;
+}
+.awfl-editor-toolbar .awfl-tab.active { background: var(--awfl-button-bg); color: #fff; }
+.awfl-toolbar-sep { width: 1px; height: 20px; background: var(--awfl-border); margin: 0 6px; }
+#awfl-wikitext { width: 100%; font-family: monospace; font-size: 0.95rem; padding: 10px; border: 1px solid var(--awfl-border); border-radius: 3px; }
+.awfl-visual-preview { border: 1px solid var(--awfl-border); border-radius: 3px; padding: 14px; min-height: 300px; }
+.awfl-editor-actions { margin-top: 10px; display: flex; gap: 10px; }
+
+/* ---- Lists / tables ---- */
+.awfl-pagelist { columns: 3; column-gap: 24px; }
+table.awfl-datatable { border-collapse: collapse; width: 100%; margin: 12px 0; }
+table.awfl-datatable th, table.awfl-datatable td { border: 1px solid var(--awfl-border); padding: 8px; text-align: left; }
+table.awfl-datatable th { background: #eaecf0; }
+table.awfl-datatable th a { color: inherit; }
+
+/* ---- Image gallery (allimages) ---- */
+.awfl-image-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+.awfl-image-cell {
+    border: 1px solid var(--awfl-border); border-radius: 4px; padding: 6px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    background: #fff;
+}
+.awfl-image-cell img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+.awfl-image-name { font-size: 0.75rem; margin: 6px 0 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
+.awfl-image-cell-actions { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.awfl-image-cell-actions button { font-size: 0.7rem; padding: 4px 6px; }
+@media (max-width: 1000px) { .awfl-image-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px) { .awfl-image-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---- Footer ---- */
+.awfl-footer { border-top: 1px solid var(--awfl-border); background: #f8f9fa; margin-top: 24px; }
+.awfl-footer-inner { max-width: 1200px; margin: 0 auto; padding: 16px; font-size: 0.85rem; color: #54595d; }
+.awfl-powered { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; color: #54595d; }
+.awfl-powered img { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-footer-links { margin-bottom: 6px; }
+
+/* ---- Dashboard color rows ---- */
+.awfl-color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.awfl-color-row label { min-width: 160px; }
+.awfl-color-row input[type=text] { width: 100px; font-family: monospace; }
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+    .awfl-pagelist { columns: 1; }
+    .infobox { float: none; width: 100%; margin: 1em 0; }
+    .awfl-header-inner { flex-direction: column; align-items: stretch; }
+    .awfl-searchform { max-width: none; }
+}
+
+@media print {
+    .awfl-header, .awfl-footer, .awfl-page-actions, .awfl-usernav { display: none !important; }
+    .infobox { float: none; width: 100%; }
+}
+
+/* AWFLWIKIWORLD — assets/site.css
+   Default base layout. Skins (skins/*.css) load AFTER this file and may
+   override any of these rules; if no skin is active, these rules stand alone. */
+
+:root {
+    --awfl-header-bg: #06294b;
+    --awfl-header-text: #d5ddd9;
+    --awfl-button-bg: #133686;
+    --awfl-button-text: #d1dbe6;
+    --awfl-page-text: #185067;
+    --awfl-link: #0f72a3;
+    --awfl-link-visited: #0b0080;
+    --awfl-border: #a2a9b1;
+    --awfl-bg: #ffffff;
+    --awfl-content-bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--awfl-page-text);
+    background: var(--awfl-bg);
+    line-height: 1.6;
+}
+
+a { color: var(--awfl-link); text-decoration: none; }
+a:visited { color: var(--awfl-link-visited); }
+a:hover { text-decoration: underline; }
+
+.awfl-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ---- Header ---- */
+.awfl-header {
+    background: var(--awfl-header-bg);
+    color: var(--awfl-header-text);
+}
+.awfl-header-inner {
+    max-width: 1200px; margin: 0 auto; padding: 8px 16px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.awfl-logo-link { display: flex; align-items: center; gap: 8px; color: var(--awfl-header-text); }
+.awfl-logo { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-sitename { font-weight: 700; font-size: 1.15rem; color: var(--awfl-header-text); }
+.awfl-searchform { flex: 1; display: flex; min-width: 180px; max-width: 420px; }
+.awfl-searchform input { flex: 1; padding: 6px 10px; border: 1px solid var(--awfl-border); border-radius: 2px 0 0 2px; }
+.awfl-searchform button {
+    padding: 6px 12px; border: none; border-radius: 0 2px 2px 0;
+    background: var(--awfl-button-bg); color: var(--awfl-button-text); cursor: pointer;
+}
+.awfl-usernav { display: flex; gap: 12px; align-items: center; font-size: 0.9rem; flex-wrap: wrap; }
+.awfl-usernav a { color: var(--awfl-header-text); opacity: 0.9; }
+.awfl-usernav a:hover { opacity: 1; }
+.awfl-username { color: var(--awfl-header-text); font-weight: 600; }
+
+/* ---- Body / main content ---- */
+.awfl-body { flex: 1; max-width: 1200px; margin: 0 auto; width: 100%; padding: 24px 16px; }
+.awfl-main { background: var(--awfl-content-bg); }
+.awfl-narrow { max-width: 480px; margin: 0 auto; }
+
+.awfl-page-titlebar {
+    display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
+    border-bottom: 1px solid var(--awfl-border); padding-bottom: 8px; margin-bottom: 16px; gap: 8px;
+}
+.awfl-page-titlebar h1 { margin: 0; }
+.awfl-space-tag {
+    font-size: 0.55em; vertical-align: middle; margin-left: 8px; padding: 2px 8px;
+    background: #eaecf0; border-radius: 10px; color: #54595d; font-weight: normal;
+}
+.awfl-protected-tag { background: #fef1d7; color: #8a6100; }
+.awfl-page-actions { display: flex; gap: 14px; font-size: 0.9rem; flex-wrap: wrap; }
+.awfl-danger-link { color: #d33; }
+
+.awfl-article { font-size: 1rem; }
+.awfl-article h1, .awfl-article h2 { border-bottom: 1px solid var(--awfl-border); padding-bottom: 4px; }
+.awfl-article ul, .awfl-article ol { padding-left: 1.6em; }
+.awfl-missing { font-style: italic; color: #54595d; }
+
+/* ---- Infobox ---- */
+.infobox {
+    float: right; margin: 0 0 1em 1em; width: 280px; border: 1px solid var(--awfl-border);
+    border-collapse: collapse; background: #419EE3!important; font-size: 0.875rem;
+}
+.infobox th, .infobox td { border: 1px solid var(--awfl-border); padding: 6px 8px; text-align: left; vertical-align: top; }
+.infobox th { font-weight: bold; background: #419EE3!important; width: 38%; }
+.infobox-title { background: #AEBBCF !important; text-align: center !important; font-size: 1.1em; }
+.infobox-image { text-align: center; }
+.infobox-image img { width: 250px !important; height: auto; }
+.infobox-caption { font-size: 0.85em; color: #54595d; margin-top: 4px; }
+
+/* ---- Forms ---- */
+.awfl-form { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.awfl-form label { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; }
+.awfl-form input, .awfl-form select, .awfl-form textarea {
+    padding: 8px; border: 1px solid var(--awfl-border); border-radius: 3px; font: inherit;
+}
+.awfl-form button, button, .awfl-editor-actions button, .awfl-danger {
+    background: var(--awfl-button-bg); color: var(--awfl-button-text);
+    border: none; padding: 8px 16px; border-radius: 3px; cursor: pointer; font: inherit;
+}
+.awfl-danger { background: #d33; }
+.awfl-error { color: #d33; }
+.awfl-success { color: #14866d; }
+
+/* ---- Editor ---- */
+.awfl-editing-label { font-size: 0.5em; color: #54595d; margin-left: 10px; }
+.awfl-editor-toolbar { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.awfl-editor-toolbar button {
+    background: #f8f9fa; color: #202122; border: 1px solid var(--awfl-border);
+    padding: 6px 10px; border-radius: 3px; cursor: pointer;
+}
+.awfl-editor-toolbar .awfl-tab.active { background: var(--awfl-button-bg); color: #fff; }
+.awfl-toolbar-sep { width: 1px; height: 20px; background: var(--awfl-border); margin: 0 6px; }
+#awfl-wikitext { width: 100%; font-family: monospace; font-size: 0.95rem; padding: 10px; border: 1px solid var(--awfl-border); border-radius: 3px; }
+.awfl-visual-preview { border: 1px solid var(--awfl-border); border-radius: 3px; padding: 14px; min-height: 300px; }
+.awfl-editor-actions { margin-top: 10px; display: flex; gap: 10px; }
+
+/* ---- Lists / tables ---- */
+.awfl-pagelist { columns: 3; column-gap: 24px; }
+table.awfl-datatable { border-collapse: collapse; width: 100%; margin: 12px 0; }
+table.awfl-datatable th, table.awfl-datatable td { border: 1px solid var(--awfl-border); padding: 8px; text-align: left; }
+table.awfl-datatable th { background: #05355C!important; }
+table.awfl-datatable th a { color: inherit; }
+
+/* ---- Image gallery (allimages) ---- */
+.awfl-image-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+.awfl-image-cell {
+    border: 1px solid var(--awfl-border); border-radius: 4px; padding: 6px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    background: #fff;
+}
+.awfl-image-cell img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+.awfl-image-name { font-size: 0.75rem; margin: 6px 0 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
+.awfl-image-cell-actions { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.awfl-image-cell-actions button { font-size: 0.7rem; padding: 4px 6px; }
+@media (max-width: 1000px) { .awfl-image-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px) { .awfl-image-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---- Footer ---- */
+.awfl-footer { border-top: 1px solid var(--awfl-border); background: #123363!important; margin-top: 24px; }
+.awfl-footer-inner { max-width: 1200px; margin: 0 auto; padding: 16px; font-size: 0.85rem; color: #B4BEC7!important; }
+.awfl-powered { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; color: #B4BEC7!important; }
+.awfl-powered img { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-footer-links { margin-bottom: 6px; }
+
+/* ---- Dashboard color rows ---- */
+.awfl-color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.awfl-color-row label { min-width: 160px; }
+.awfl-color-row input[type=text] { width: 100px; font-family: monospace; }
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+    .awfl-pagelist { columns: 1; }
+    .infobox { float: none; width: 100%; margin: 1em 0; }
+    .awfl-header-inner { flex-direction: column; align-items: stretch; }
+    .awfl-searchform { max-width: none; }
+}
+
+@media print {
+    .awfl-header, .awfl-footer, .awfl-page-actions, .awfl-usernav { display: none !important; }
+    .infobox { float: none; width: 100%; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+<div class="awfl-wrapper"><div class="awfl-body"><main class="awfl-main">
+<h1>Buddy DML (Ghanaian Rapper, Singer, Songwriter, Record Producer, CEO and Founder of AEDTP WORLD)</h1>
+<article class="awfl-article"><table class="infobox"><tr><th class="infobox-title" colspan="2">Buddy DML</th></tr><tr><td colspan="2" class="infobox-image"><img src="https://aedtpworld.com/icons/buddydml2.jpg" alt="Official Image Of Buddy DML, Ghanaian Musician (from 2024-04-14 to present)" style="width:250px !important;height:auto;"><div class="infobox-caption">Official Image Of Buddy DML, Ghanaian Musician (from 2024-04-14 to present)</div></td></tr><tr><th>Full Name</th><td>Emmanuel Deliver Amable</td></tr><tr><th>Also Known As</th><td>The Trenchkid TM, The Trenchkid, Young Buddy, Trenchkid Buddy DML, It&#039;s Trenchkid Buddy DML</td></tr><tr><th>Born</th><td>April 14, 2008 - Anloga, Volta Region, Ghana</td></tr><tr><th>Gender</th><td>Male</td></tr><tr><th>Relationship</th><td>Single</td></tr><tr><th>Height</th><td>161cm (5&#039;2)</td></tr><tr><th>Nationality</th><td>Ghanaian</td></tr><tr><th>Country</th><td>Ghana</td></tr><tr><th>Origin</th><td>Ghana</td></tr><tr><th>Genres</th><td>Hip-Hop, Fein Drill, R&amp;B, Bass, Guitar, Melodic Trap, Afrobeat, Amapiano, Gospel, EDM, World (UK Type Sound)</td></tr><tr><th>Occupation</th><td>Singer, rapper, songwriter, record producer, Technology Wizard, Software Developer, Web Developer</td></tr><tr><th>Years Active</th><td>2021–present</td></tr><tr><th>Beginning Career Age</th><td>13</td></tr><tr><th>Label</th><td>AEDTP WORLD</td></tr><tr><th>Website</th><td>aedtpworld.com</td></tr></table>
+<p><strong>Emmanuel Deliver Amable</strong>, professionally known as <strong>Buddy DML</strong>, is a Ghanaian musical artist, songwriter, singer, rapper, and record producer. He is also known by the stage alias <strong>The Trenchkid TM</strong>.</p>
+<h2>Purchase Music For Download</h2>
+<ul>
+<li><a href="https://music.apple.com/us/artist/1752334154" target="_blank" rel="noopener noreferrer">Apple Music</a> [info]</li>
+<li><a href="https://www.traxsource.com/artist/852683" target="_blank" rel="noopener noreferrer">Traxsource</a> [info]</li>
+</ul>
+<h2>Download Music For Free</h2>
+<ul>
+<li><a href="https://mdundo.com/a/366287" target="_blank" rel="noopener noreferrer">Mdundo</a> [info]</li>
+</ul>
+<h2>Biographies</h2>
+<ul>
+<li><a href="https://aedtpworld.com/" target="_blank" rel="noopener noreferrer">AEDTP WORLD</a> [info]</li>
+<li><a href="https://aedtpworld.com/aedtpworldwiki/artists/Buddy_DML" target="_blank" rel="noopener noreferrer">AEDTPWORLDWIKI</a> [info]</li>
+<li><a href="https://aedtpworld.com/awfl/artists/Buddy_DML" target="_blank" rel="noopener noreferrer">AWFL</a> [info]</li>
+<li><a href="https://aedtpworld.com/awflwiki/artists/Buddy_DML" target="_blank" rel="noopener noreferrer">AWFLWIKI</a> [info]</li>
+<li><a href="https://aedtpworld.com/wiki/Buddy_DML" target="_blank" rel="noopener noreferrer">AEDTP Wiki</a> [info]</li>
+<li><a href="https://en.everybodywiki.com/Buddy_DML" target="_blank" rel="noopener noreferrer">EverybodyWiki</a> [info]</li>
+<li><a href="https://wikiworld.aedtpworld.com/Buddy_DML" target="_blank" rel="noopener noreferrer">WikiWorld</a> [info]</li>
+</ul>
+<h2>Official Homepages</h2>
+<ul>
+<li><a href="https://aedtpworld.com/" target="_blank" rel="noopener noreferrer">AEDTP WORLD</a> [info]</li>
+</ul>
+<h2>Discography Pages</h2>
+<ul>
+<li><a href="https://app.chartmetric.com/fr/artist/12975681" target="_blank" rel="noopener noreferrer">Chartmetric</a> [info]</li>
+<li><a href="https://audio.com/buddydml/audio/yansh-na-yansh" target="_blank" rel="noopener noreferrer">Audio.com</a> [info]</li>
+<li><a href="https://hearthis.at/buddydml/" target="_blank" rel="noopener noreferrer">HearThis</a> [info]</li>
+<li><a href="https://lyricsondemand.com/buddy_dml" target="_blank" rel="noopener noreferrer">LyricsOnDemand</a> [info]</li>
+<li><a href="https://music-social.com/artists/67553ded-a6c1-45e6-89f9-b439612c9f75/buddy-dml" target="_blank" rel="noopener noreferrer">Music-Social</a> [info]</li>
+<li><a href="https://musicboard.app/artist/buddy-dml/" target="_blank" rel="noopener noreferrer">MusicBoard</a> [info]</li>
+<li><a href="https://www.afrocharts.com/artist?id=ae02f9142f9142f" target="_blank" rel="noopener noreferrer">AfroCharts</a> [info]</li>
+<li><a href="https://www.shazam.com/artist/buddy-dml/1752334154" target="_blank" rel="noopener noreferrer">Shazam</a> [info]</li>
+<li><a href="https://www.soundclick.com/BuddyDML" target="_blank" rel="noopener noreferrer">SoundClick</a> [info]</li>
+<li><a href="https://www.viberate.com/artist/buddy-dml/" target="_blank" rel="noopener noreferrer">Viberate</a> [info]</li>
+<li><a href="https://www.last.fm/music/Buddy+DML" target="_blank" rel="noopener noreferrer">Last.fm</a> [info]</li>
+<li><a href="https://buddydml.bandcamp.com/" target="_blank" rel="noopener noreferrer">Bandcamp</a> [info]</li>
+<li><a href="https://genius.com/artists/Buddy-dml" target="_blank" rel="noopener noreferrer">Genius Lyrics</a> [info]</li>
+</ul>
+<h2>Discography Pages (as LyricsWorld)</h2>
+<ul>
+<li><a href="https://aedtpworld.com/lyrics/buddydml/" target="_blank" rel="noopener noreferrer">LyricsWorld</a> [info]</li>
+</ul>
+<h2>Social Networking</h2>
+<ul>
+<li><a href="https://twitter.com/buddydml" target="_blank" rel="noopener noreferrer">Twitter / X</a> [info]</li>
+<li><a href="https://www.facebook.com/buddydmlofficial" target="_blank" rel="noopener noreferrer">Facebook</a> [info]</li>
+<li><a href="https://www.instagram.com/buddydml/" target="_blank" rel="noopener noreferrer">Instagram</a> [info]</li>
+<li><a href="https://www.reverbnation.com/buddydml" target="_blank" rel="noopener noreferrer">ReverbNation</a> [info]</li>
+<li><a href="https://www.tiktok.com/@buddydml" target="_blank" rel="noopener noreferrer">TikTok</a> [info]</li>
+</ul>
+<h2>Social Networking (as BIZIMI)</h2>
+<ul>
+<li><a href="https://aedtpworld.com/social/buddydml/" target="_blank" rel="noopener noreferrer">BIZIMI</a> [info]</li>
+</ul>
+<h2>Stream For Free</h2>
+<ul>
+<li><a href="https://open.spotify.com/artist/3IRB62mlDvIq9lh11hcY0E" target="_blank" rel="noopener noreferrer">Spotify</a> [info]</li>
+<li><a href="https://www.boomplay.com/artists/92404325" target="_blank" rel="noopener noreferrer">Boomplay</a> [info]</li>
+<li><a href="https://www.deezer.com/artist/269911502" target="_blank" rel="noopener noreferrer">Deezer</a> [info]</li>
+</ul>
+<h2>Streaming Page (as Blue Melody)</h2>
+<ul>
+<li><a href="https://aedtpworld.com/music/buddydml/" target="_blank" rel="noopener noreferrer">Blue Melody</a> [info]</li>
+</ul>
+<h2>Wikidata</h2>
+<ul>
+<li><a href="https://www.wikidata.org/wiki/Q141223876" target="_blank" rel="noopener noreferrer">Q141223876</a> [info]</li>
+</ul>
+<h2>New Songs In 2026</h2>
+<h3>2026 SONGS by Buddy DML (The Trenchkid TM)</h3>
+<ul>
+<li>Different</li>
+<li>Mood Swings</li>
+<li>All Day</li>
+<li>Buga</li>
+<li>Busy Me</li>
+<li>Dela</li>
+<li>Way Up</li>
+<li>We Go</li>
+<li>When</li>
+<li>Familiar</li>
+<li>Midnight Dream</li>
+<li>Misunderstood</li>
+<li>Spin</li>
+<li>Then</li>
+<li>Way In</li>
+<li>Great Life</li>
+<li>Little Princess</li>
+<li>Jackie Chan</li>
+<li>Jackie Chan (Amapiano)</li>
+<li>Guitar</li>
+<li>Can I Get A Kiss</li>
+<li>Cayla Tumse Pyaar</li>
+<li>Childhood</li>
+<li>Deep In Thought</li>
+<li>Do You Love Me</li>
+<li>Everyday</li>
+<li>Foreign Who</li>
+<li>I Love It</li>
+<li>Like She Never Left</li>
+<li>Melody In My Head</li>
+<li>Moving On</li>
+<li>Never Say Never</li>
+<li>Rise Of The World</li>
+<li>Romance</li>
+<li>Silly Jokes</li>
+<li>THERAPY SESSION</li>
+<li>THERAPY</li>
+<li>Trenchkid</li>
+<li>Turn It Up</li>
+<li>Wavy Aura</li>
+<li>YDC</li>
+</ul>
+<h2>New Albums, EP And Songs In 2026</h2>
+<h3>The Trenchkid TM</h3>
+<ul>
+<li>God Grace</li>
+<li>Love You More</li>
+<li>Night Drive</li>
+<li>Sweet Mama</li>
+<li>The Trenchkid TM</li>
+<li>Trench Grace</li>
+</ul>
+<h3>Blue Heart</h3>
+<ul>
+<li>Blue Heart</li>
+<li>Hustle Anthem</li>
+<li>I Am So Different</li>
+<li>Just My Rap</li>
+<li>Mum And Dad</li>
+<li>Music Is My Life</li>
+</ul>
+<h3>Running</h3>
+<ul>
+<li>New Pieces</li>
+<li>Really Me</li>
+<li>Running</li>
+<li>Vroom</li>
+</ul>
+<h3>Once In The Blue</h3>
+<ul>
+<li>La La La La</li>
+<li>No Autotune</li>
+<li>Once In The Blue</li>
+</ul>
+<h3>Promises</h3>
+<ul>
+<li>All Alone</li>
+<li>Breakup</li>
+<li>Farewell</li>
+<li>Flashback</li>
+<li>Heartbreak</li>
+<li>Love Hurts</li>
+<li>Melody In My Head</li>
+<li>Move On</li>
+<li>Promises</li>
+<li>Still Love You</li>
+<li>Why Me</li>
+</ul>
+<h3>Just In</h3>
+<ul>
+<li>Adapt</li>
+<li>Dogs</li>
+<li>Just In</li>
+<li>Must Adapt</li>
+</ul>
+<h3>New Year</h3>
+<ul>
+<li>Dejavu</li>
+<li>Do You Know Me</li>
+<li>I Got Jesus</li>
+<li>I See You</li>
+<li>Love You A Lot</li>
+<li>Stand By Me</li>
+<li>Trenches</li>
+<li>Trenchkid Buddy DML</li>
+</ul>
+<h2>Early Life And Background</h2>
+Buddy DML was born on Monday, 14 April 2008, in Anloga, Volta Region, Ghana. He developed an interest in music at an early age, listening to songs between the ages of four and six. He began singing at the age of thirteen.
+<h2>Career</h2>
+In 2021, Buddy DML began uploading recorded music under the name Emmanuel Deliver DML. After approximately one and a half years, he adopted the name Emmanuel Deliver DML (Buddy DML), which was later professionally shortened to Buddy DML.
+<p>He officially went professional between 2023 and 2024, establishing himself as an emerging artist within the Ghanaian Afrobeat and alternative hip-hop scene.</p>
+<p>Buddy DML&#039;s music often reflects themes of struggle, faith, perseverance, and personal growth, with lyrical content focused on prayer, resilience, and trust in God.</p>
+<h2>Musical Style</h2>
+Buddy DML is recognized for melodic flows and introspective lyricism. His natural vocal key tone notations were recorded and measured through VirtualDJ Automix Productions.
+<p>Genre: Hip-Hop, Fein Drill, R&amp;B, Bass, Guitar, Melodic Trap, AEDTP WORLD, World (UK Type Sound)</p>
+<h2>Breakthrough Single</h2>
+Buddy DML&#039;s first widely recognized song is &quot;Yansh Na Yansh&quot;, an Afrobeat track. The song originated from a short-edited sample discovered on TikTok, which he later remade into a full track.
+<p>The song went viral between 2024 and 2025, becoming his most streamed release.</p>
+<ul>
+<li>First released: 18 May 2024</li>
+<li>Re-released: 1 August 2025</li>
+<li>Produced by: AEDTP WORLD</li>
+<li>Licensed and mastered by: Buddy DML</li>
+</ul>
+<p>A similar song to Yansh Na Yansh is &quot;Nyansh Na Nyansh&quot; by Chella.</p>
+<h2>Song Metadata Details - Different</h2>
+<ul>
+<li>Title: Different</li>
+<li>Artist: Buddy DML (The Trenchkid)</li>
+<li>Length: 2:43</li>
+<li>Composer &amp; Lyricist: Emmanuel Deliver Amable</li>
+<li>Producer: AEDTP WORLD</li>
+<li>Mixing &amp; Mastering: AEDTP WORLD</li>
+<li>Recording Engineer: AEDTP WORLD</li>
+<li>Publisher: AEDTP WORLD</li>
+<li>Label: AEDTP WORLD</li>
+<li>Executive Production: AEDTP WORLD</li>
+<li>Artwork Design: AEDTP WORLD</li>
+<li>Recording Location: Ghana — Africa&#039;s most peaceful country</li>
+<li>Recording Studio: AEDTP WORLD</li>
+<li>Recording Date: 8th - 9th APRIL, 2026 (Wednesday - Thursday)</li>
+<li>Genre: Hip-Hop / Trap / R&amp;B Fusion</li>
+<li>Sub-Genre: Melodic Drill / Afro-Trap / AEDTP WORLD / Pop</li>
+<li>Language: English</li>
+<li>Release Year: 2026</li>
+<li>Copyright: AEDTP WORLD</li>
+</ul>
+<h2>Song Summary</h2>
+&quot;Different&quot; by Buddy DML (The Trenchkid) is a melodic drill-infused hip-hop track that blends emotional resilience with good heart loving-influenced lyricism. The song expresses Emotional Feeling, Motivational and Global Emotional Kind Of Life, capturing the essence of a young artist navigating struggles with confidence and purpose.
+<p>&quot;Different&quot; and &quot;I Told You I Am Different, I Am So Different..&quot; Repetition of; &quot;Different&quot;</p>
+<p>God Bless Us All, God With Us..</p>
+<h2>Life Quote By Emmanuel Deliver Amable</h2>
+<blockquote>
+THEY DON&#039;T KNOW — LIFE QUOTE BY EMMANUEL DELIVER AMABLE
+<p>The problem is they don&#039;t understand anything of my sort. What I think is stupid is I do or know more of what they see as someone older than me or smaller than me doing and they come and say &quot;hey, i have seen a small boy typing, you can also type and stop being lazy&quot;</p>
+<p>Well, they don&#039;t know i own aedtpworld.com, they don&#039;t know i created 5+ different wiki system, they don&#039;t know i created combined Music platforms as one, they don&#039;t know i created an advanced social media which doesn&#039;t have ads and it show YouTube videos, they don&#039;t know i created lyrics platform which promotes artist and lyrics, they don&#039;t know i created spotifyworld which artists worldwide is searched.. they don&#039;t know, they don&#039;t know..</p>
+<p>They don&#039;t know i can distribute music anytime i want..<br />
+They don&#039;t know I dedicated a platform to host businesses..<br />
+They don&#039;t know God is blessing and always by me..<br />
+They do not understand me even when they think they do..<br />
+I am not proud even if it seems i am, i am just grateful to God..<br />
+I can die anytime, I know.. I won&#039;t follow others.. i am on my own..<br />
+God is with me<br />
+They don&#039;t know i am doing this for orphans, they don&#039;t know we&#039;re going to rebuild peace in the world through God..<br />
+I am me, I am Emmanuel Deliver Amable, I am that Trenchkid, I am Buddy DML, I am God With Me<br />
+</blockquote></p>
+<h2>Real Full Name</h2>
+Real Full Name: Emmanuel Deliver Amable
+Date Of Birth: April 14TH, 2008
+Gender: Male
+Relationship: Single
+Label: AEDTP WORLD
+Beginning Career Age: 13 (Thirteen)
+Country: Ghana
+Nationality: Ghanaian
+Emotion: Mood Swings
+Height: 161cm (5&#039;2) Feet
+Skin Color: Ghana-Black-African
+Hair Color: Black
+Work Position: Chief Executive Officer (CEO), Founder, Creator, Owner
+<p>Buddy DML (Emmanuel Deliver Amable) Started Business Professionally At 13 years old in 2021.</p>
+<h2>Copyright</h2>
+Copyright | AEDTP WORLD
+Artist: Buddy DML (The Trenchkid)
+Composer: Emmanuel Deliver Amable
+Produced by: AEDTP WORLD
+Mixed &amp; Mastered by: AEDTP WORLD
+Artwork by: AEDTP WORLD
+Recorded by: AEDTP WORLD
+Publisher: AEDTP WORLD
+Metadata by: AEDTP WORLD
+Recording Location: Ghana — Africa&#039;s most peaceful country
+<h2>Other Names</h2>
+<ul>
+<li>The Trenchkid TM</li>
+<li>The Trenchkid</li>
+<li>Young Buddy</li>
+<li>Emmanuel Deliver Amable</li>
+<li>Trenchkid Buddy DML</li>
+<li>It&#039;s Trenchkid Buddy DML</li>
+</ul>
+<h2>See Also</h2>
+<ul>
+<li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/List_of_hip-hop_musicians">List of hip-hop musicians</a></li>
+<li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/List_of_alternative_hip-hop_artists">List of alternative hip-hop artists</a></li>
+<li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/List_of_2026_songs_and_albums">List of 2026 songs and albums</a></li>
+</ul>
+<h2>Streaming Performance</h2>
+<h3>Most Streamed Songs</h3>
+<h4>Yansh Na Yansh</h4>
+<ul>
+<li>Audiomack: 111,000+ streams</li>
+<li>Spotify: 25,000+ streams</li>
+<li>Apple Music: 500+ plays</li>
+<li>Boomplay: 4,000+ plays</li>
+<li>YouTube Music: 1,000+ plays</li>
+<li>YouTube: 10,000+ views</li>
+<li>YouTube (secondary upload): 8,000+ views</li>
+</ul>
+<h4>Unlock Me</h4>
+<ul>
+<li>Spotify: 8,000+ streams</li>
+</ul>
+<h3>Monthly Listeners</h3>
+<ul>
+<li>Spotify: 1,675+ monthly listeners</li>
+<li>Chartmetric: 961+ monthly listeners / 9+ playlist count / 50.3K+ playlist reach</li>
+<li>Viberate: 585+ monthly listeners / 69+ followers / 463+ subscribers</li>
+</ul>
+<h2>Voice Story</h2>
+Buddy DML woke up one day after having a dream, He noticed a strange change in his musical voice, his voices have become much more deeper. Whenever He tried to sing high notes, his voice then breaks. But He didn&#039;t give up, He continued playing emotional songs and singing on it, making new melodies on same rhythm.
+<p>He was on his way to the nature at night to shout and sing, since no one is there. He saw his grandma, he helped her. She told him to go home. But Buddy DML didn&#039;t stop, he kept on his journey because he felt no one understands him except GOD. He sang in high pitches and notes, it worked making his voice quality to improve.</p>
+<p>Later his father came and laughing at him. That laugh made Buddy DML stare at his father with silence for about 10 seconds, then the father left.</p>
+<p>Buddy DML never gives up. Music has always been Buddy DML, God has always been Buddy DML&#039;s #1</p>
+<h2>Categories</h2>
+<ul>
+<li>Category:Ghanaian rappers</li>
+<li>Category:Ghanaian musicians</li>
+<li>Category:Music Legends</li>
+<li>Category:Global Images</li>
+<li>Category:Emmanuel Deliver Amable</li>
+<li>Category:Global</li>
+<li>Category:Legends</li>
+<li>Category:buddydml</li>
+<li>Category:Alternative hip-hop musicians</li>
+<li>Category:WIKIPEDIA Notable Creations</li>
+<li>Category:TrenchKid Buddy DML</li>
+<li>Category:APRIL 14TH 2008 Borns</li>
+<li>Category:World Legends</li>
+<li>Category:Living people</li>
+<li>Category:2008 births</li>
+<li>Category:Ghanaian Writers</li>
+<li>Category:Buddy DML</li>
+<li>Category:People from Volta Region</li>
+<li>Category:Ghanaian Artists</li>
+<li>Category:APRIL Borns</li>
+<li>Category:AWFL</li>
+<li>Category:Ghanaian</li>
+<li>Category:Ghanaian Singers</li>
+</ul></article>
+</main></div></div>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"ae3cfccc05264d0e9a8dddee323ac184","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

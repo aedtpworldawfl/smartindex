@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /login.php
+Disallow: /allfiles.php
+Disallow: /edit.php
+Disallow: /write.php
+Disallow: /save.php
+Disallow: /delete.php
+Disallow: /includes/
+Disallow: /helpfiles.json
+
+Sitemap: https://aedtpworld.com/help/sitemap.php

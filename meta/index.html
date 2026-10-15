@@ -1,0 +1,1330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Wiki — AEDTP WORLD FREE LICENSE (AWFL) AWFLMETA</title>
+<meta name="description" content="Create and manage AWFLMETA wiki pages Offline Free in your browser. Export and Upload Your WIKI anywhere. You Can Upload It To AEDTP WORLD">
+<meta name="author" content="AEDTP WORLD">
+
+    <link rel="canonical" href="https://aedtpworld.com/meta/">
+
+<meta name="robots" content="index, follow">
+<link rel="icon" href="https://aedtpworld.com/icons/awflmeta.jpg" type="image/jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0c10;--bg2:#0f1218;--bg3:#141820;--bg4:#1a2030;
+  --surface:#1e2535;--surface2:#252d40;
+  --border:#2a3450;--border2:#3a4870;
+  --accent:#4a9eff;--accent2:#2d7dd2;--accent3:#1a5fa0;
+  --gold:#d4a843;--gold2:#b8891c;
+  --text:#e8edf5;--text2:#a0aec0;--text3:#6b7a95;
+  --green:#3ecf8e;--red:#f87171;--purple:#a78bfa;--teal:#2dd4bf;
+  --header-h:60px;
+  --tools-w:272px;
+  --sidebar-w:230px;
+  --font-sans:'IBM Plex Sans',sans-serif;
+  --font-serif:'Crimson Pro',Georgia,serif;
+  --font-mono:'IBM Plex Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:15px;line-height:1.6;min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+
+/* HEADER */
+#header{position:fixed;top:0;left:0;right:0;height:var(--header-h);background:rgba(10,12,16,.97);border-bottom:1px solid var(--border);display:flex;align-items:center;z-index:1000;backdrop-filter:blur(14px);gap:0}
+#logo-area{display:flex;align-items:center;gap:10px;padding:0 18px;flex-shrink:0;text-decoration:none;border-right:1px solid var(--border)}
+#logo-area img{width:32px;height:32px;border-radius:5px;object-fit:cover;border:1px solid var(--border2)}
+#logo-text .lt1{font-family:var(--font-mono);font-size:10px;color:var(--gold);font-weight:500;letter-spacing:.08em;display:block}
+#logo-text .lt2{font-family:var(--font-sans);font-size:12px;color:var(--text);font-weight:600;display:block}
+#header-center{flex:1;display:flex;align-items:center;gap:10px;padding:0 18px}
+#page-title-input{flex:1;background:transparent;border:none;border-bottom:1px solid var(--border);color:var(--text);font-family:var(--font-serif);font-size:20px;font-weight:300;padding:4px 0;outline:none;transition:border-color .2s}
+#page-title-input:focus{border-bottom-color:var(--accent)}
+#page-title-input::placeholder{color:var(--text3)}
+#slug-display{font-family:var(--font-mono);font-size:10px;color:var(--text3);white-space:nowrap;padding:3px 8px;background:var(--bg3);border:1px solid var(--border);border-radius:4px;min-width:120px}
+#header-actions{display:flex;align-items:center;gap:6px;padding:0 14px;flex-shrink:0;border-left:1px solid var(--border)}
+.h-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:5px 12px;border-radius:5px;font-size:12px;cursor:pointer;font-family:var(--font-sans);font-weight:500;transition:all .15s;white-space:nowrap}
+.h-btn:hover{background:var(--surface);color:var(--text);border-color:var(--accent2)}
+.h-btn.primary{background:var(--accent2);color:#fff;border-color:var(--accent)}
+.h-btn.primary:hover{background:var(--accent)}
+.h-btn.success{background:rgba(62,207,142,.12);color:var(--green);border-color:rgba(62,207,142,.3)}
+.h-btn.success:hover{background:rgba(62,207,142,.2)}
+.h-btn.danger{background:rgba(248,113,113,.1);color:var(--red);border-color:rgba(248,113,113,.3)}
+.h-btn.danger:hover{background:rgba(248,113,113,.2)}
+
+/* LAYOUT */
+#app{margin-top:var(--header-h);display:flex;height:calc(100vh - var(--header-h))}
+
+/* SIDEBAR */
+#sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+#sidebar-top{padding:10px 12px;border-bottom:1px solid var(--border);flex-shrink:0}
+#sidebar-top .s-label{font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--text3);text-transform:uppercase;font-family:var(--font-mono);margin-bottom:7px;display:block}
+#page-filter{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:4px;font-size:12px;outline:none;font-family:var(--font-sans)}
+#page-filter:focus{border-color:var(--accent2)}
+#page-filter::placeholder{color:var(--text3)}
+#page-list{flex:1;overflow-y:auto}
+.page-entry{padding:9px 12px;border-bottom:1px solid rgba(42,52,80,.4);cursor:pointer;transition:all .12s;border-left:3px solid transparent}
+.page-entry:hover{background:var(--bg3);border-left-color:var(--accent2)}
+.page-entry.active{background:rgba(74,158,255,.07);border-left-color:var(--accent)}
+.page-entry-title{font-size:13px;font-weight:500;color:var(--text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.page-entry.active .page-entry-title{color:var(--accent)}
+.page-entry-meta{font-size:10px;color:var(--text3);margin-top:3px;font-family:var(--font-mono);display:flex;gap:6px;align-items:center}
+.cat-pill{background:var(--bg4);border:1px solid var(--border);padding:1px 5px;border-radius:3px;font-size:9px;color:var(--gold);text-transform:uppercase}
+#sidebar-new{padding:10px 12px;border-top:1px solid var(--border);flex-shrink:0}
+#btn-new-page{width:100%;background:var(--accent2);color:#fff;border:none;padding:8px;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font-sans);letter-spacing:.03em;transition:background .15s}
+#btn-new-page:hover{background:var(--accent)}
+#empty-sidebar{padding:24px 12px;text-align:center;color:var(--text3);font-size:13px}
+
+/* EDITOR */
+#editor-wrap{flex:1;display:flex;min-width:0;overflow:hidden}
+#editor-main{flex:1;display:flex;flex-direction:column;min-width:0;overflow:hidden}
+
+/* TOOLBAR */
+#toolbar{background:var(--bg3);border-bottom:1px solid var(--border);padding:5px 10px;display:flex;flex-wrap:wrap;gap:3px;align-items:center;flex-shrink:0}
+.tb-group{display:flex;gap:2px;align-items:center}
+.tb-sep{width:1px;height:20px;background:var(--border);margin:0 4px;flex-shrink:0}
+.tb-btn{background:none;border:1px solid transparent;color:var(--text3);padding:4px 7px;border-radius:4px;font-size:12px;font-weight:600;cursor:pointer;transition:all .12s;font-family:var(--font-sans);line-height:1;white-space:nowrap}
+.tb-btn:hover{background:var(--surface);color:var(--text);border-color:var(--border)}
+.tb-btn:active{transform:scale(.9)}
+.tb-btn.active{background:rgba(74,158,255,.12);color:var(--accent);border-color:var(--accent3)}
+.tb-select{background:var(--bg4);border:1px solid var(--border);color:var(--text2);padding:3px 6px;border-radius:4px;font-size:11px;outline:none;font-family:var(--font-sans);cursor:pointer}
+.tb-select:focus{border-color:var(--accent2)}
+.tb-color{width:24px;height:24px;border:1px solid var(--border);border-radius:4px;cursor:pointer;padding:2px;background:none}
+
+/* EDITOR AREA */
+#editor-area-wrap{flex:1;overflow-y:auto;padding:28px 36px;position:relative}
+#editor-area{outline:none;min-height:400px;font-family:var(--font-serif);font-size:17px;line-height:1.8;color:var(--text)}
+#editor-area:empty::before{content:attr(data-placeholder);color:var(--text3);font-style:italic;pointer-events:none}
+#editor-area h1{font-size:28px;font-weight:400;color:var(--text);margin:28px 0 12px;border-bottom:1px solid var(--border);padding-bottom:6px}
+#editor-area h2{font-size:23px;font-weight:400;color:var(--text);margin:24px 0 10px;border-bottom:1px solid var(--border);padding-bottom:5px}
+#editor-area h3{font-size:19px;font-weight:600;color:var(--text);margin:20px 0 8px}
+#editor-area h4{font-size:16px;font-weight:600;color:var(--text2);margin:16px 0 6px}
+#editor-area h5{font-size:14px;font-weight:600;color:var(--text2);margin:14px 0 5px}
+#editor-area h6{font-size:13px;font-weight:600;color:var(--text3);margin:12px 0 4px;text-transform:uppercase;letter-spacing:.06em}
+#editor-area p{margin:0 0 14px}
+#editor-area b,#editor-area strong{font-weight:700;color:var(--text)}
+#editor-area u{text-decoration:underline;text-decoration-color:var(--gold)}
+#editor-area s,#editor-area strike{text-decoration:line-through;opacity:.7}
+#editor-area em,#editor-area i{font-style:italic}
+#editor-area mark{background:rgba(212,168,67,.25);color:var(--gold);padding:0 2px;border-radius:2px}
+#editor-area sub{font-size:.75em;vertical-align:sub}
+#editor-area sup{font-size:.75em;vertical-align:super}
+#editor-area code{font-family:var(--font-mono);font-size:13px;background:var(--bg4);border:1px solid var(--border);padding:1px 5px;border-radius:3px;color:var(--teal)}
+#editor-area pre{background:var(--bg4);border:1px solid var(--border);border-radius:6px;padding:14px;overflow-x:auto;margin:12px 0;font-family:var(--font-mono);font-size:13px}
+#editor-area blockquote{border-left:3px solid var(--accent2);margin:16px 0;padding:10px 18px;background:rgba(74,158,255,.05);color:var(--text2);font-style:italic;border-radius:0 5px 5px 0}
+#editor-area ul,#editor-area ol{margin:10px 0 14px 28px}
+#editor-area li{margin-bottom:5px}
+#editor-area a{color:var(--accent)}
+#editor-area table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;font-family:var(--font-sans)}
+#editor-area table th{background:var(--surface);padding:8px 12px;text-align:left;font-weight:600;border:1px solid var(--border2);font-size:13px;color:var(--text)}
+#editor-area table td{padding:7px 12px;border:1px solid var(--border);vertical-align:top}
+#editor-area table tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+#editor-area hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+#editor-area img{max-width:100%;border-radius:6px;margin:10px 0;display:block}
+#editor-area video,#editor-area audio{max-width:100%;border-radius:6px;margin:10px 0}
+#editor-area .wiki-note{background:rgba(74,158,255,.07);border:1px solid var(--accent3);border-radius:5px;padding:10px 14px;margin:12px 0;font-size:14px;font-family:var(--font-sans)}
+#editor-area .wiki-warning{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.3);border-radius:5px;padding:10px 14px;margin:12px 0;font-size:14px;font-family:var(--font-sans);color:var(--red)}
+#editor-area .wiki-tip{background:rgba(62,207,142,.07);border:1px solid rgba(62,207,142,.3);border-radius:5px;padding:10px 14px;margin:12px 0;font-size:14px;font-family:var(--font-sans);color:var(--green)}
+.wiki-img-left{float:left;margin:0 16px 10px 0;max-width:260px;border-radius:6px}
+.wiki-img-right{float:right;margin:0 0 10px 16px;max-width:260px;border-radius:6px}
+.wiki-caption{font-size:12px;color:var(--text3);text-align:center;font-style:italic;margin-top:-6px;margin-bottom:14px}
+#toc,.toc{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:12px 16px;margin-bottom:20px;display:inline-block;min-width:200px;max-width:300px}
+#toc .toc-title,.toc .toc-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px}
+#toc a,.toc a{display:block;font-size:13px;color:var(--accent);margin:3px 0;text-decoration:none}
+.toc-sub{padding-left:14px;font-size:12px}
+.toc-sub2{padding-left:26px;font-size:11px}
+
+/* STATUS BAR */
+#statusbar{background:var(--bg2);border-top:1px solid var(--border);padding:4px 12px;display:flex;align-items:center;gap:16px;font-size:11px;color:var(--text3);font-family:var(--font-mono);flex-shrink:0}
+#statusbar .sb-item{display:flex;align-items:center;gap:4px}
+#status-saved{color:var(--green)}
+#status-unsaved{color:var(--gold)}
+
+/* TOOLS PANEL */
+#tools-panel{width:var(--tools-w);flex-shrink:0;background:var(--bg2);border-left:1px solid var(--border);overflow-y:auto;display:flex;flex-direction:column}
+#tools-header{padding:10px 12px;background:var(--surface);border-bottom:1px solid var(--border2);font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--gold);font-family:var(--font-mono);display:flex;align-items:center;gap:6px;flex-shrink:0}
+#tools-header::before{content:"◈";font-size:13px}
+.ts{padding:10px 12px;border-bottom:1px solid var(--border)}
+.ts-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;font-family:var(--font-mono)}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+.tgrid.c2{grid-template-columns:repeat(2,1fr)}
+.tgrid.c3{grid-template-columns:repeat(3,1fr)}
+.fg{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:5px 3px;border-radius:4px;font-size:11px;font-weight:600;cursor:pointer;text-align:center;font-family:var(--font-sans);line-height:1.2;transition:all .12s}
+.fg:hover{background:var(--surface);color:var(--text);border-color:var(--accent2)}
+.fg:active{transform:scale(.92)}
+.fg.s2{grid-column:span 2}
+.fg.s3{grid-column:span 3}
+.fg.s4{grid-column:span 4}
+.ta{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:5px;font-size:12px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:7px;margin-bottom:3px;transition:all .12s;font-family:var(--font-sans)}
+.ta:hover{background:var(--surface);color:var(--text);border-color:var(--border2)}
+.ta .ti{font-size:13px;flex-shrink:0}
+.ta.ok{color:var(--green)}.ta.ok:hover{background:rgba(62,207,142,.08);border-color:var(--green)}
+.ta.inf{color:var(--accent)}.ta.inf:hover{background:rgba(74,158,255,.08);border-color:var(--accent)}
+.ta.dn{color:var(--red)}.ta.dn:hover{background:rgba(248,113,113,.08);border-color:var(--red)}
+.crow{display:flex;align-items:center;gap:5px;margin-bottom:5px}
+.crow label{font-size:11px;color:var(--text3);width:68px;flex-shrink:0}
+.crow input[type=color]{width:26px;height:21px;border:1px solid var(--border);border-radius:3px;cursor:pointer;background:none;padding:1px}
+.crow .cab{flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 6px;border-radius:3px;font-size:11px;cursor:pointer;font-family:var(--font-sans)}
+.crow .cab:hover{background:var(--surface);color:var(--text)}
+.frow{display:flex;align-items:center;gap:4px;margin-bottom:5px}
+.frow label{font-size:11px;color:var(--text3);flex-shrink:0;width:58px}
+.frow select{flex:1;background:var(--bg4);border:1px solid var(--border);color:var(--text);padding:3px 5px;border-radius:3px;font-size:11px;outline:none;font-family:var(--font-sans)}
+
+/* CATEGORY */
+.cat-select-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:8px}
+.csb{background:var(--bg4);border:2px solid var(--border);color:var(--text2);padding:10px 6px;border-radius:6px;cursor:pointer;font-size:12px;text-align:center;transition:all .15s;font-family:var(--font-sans)}
+.csb:hover{border-color:var(--border2);color:var(--text);background:var(--surface)}
+.csb.sel{border-color:var(--accent);background:rgba(74,158,255,.1);color:var(--accent)}
+.csb .ci{display:block;font-size:18px;margin-bottom:3px}
+.csb .cl{font-size:9px;font-family:var(--font-mono);color:var(--text3);text-transform:uppercase;margin-top:2px}
+
+/* MODALS */
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:9000;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(5px)}
+.mo.open{display:flex}
+.mb{background:var(--bg3);border:1px solid var(--border2);border-radius:10px;width:100%;max-width:480px;box-shadow:0 24px 70px rgba(0,0,0,.7);max-height:90vh;overflow-y:auto;animation:msl .2s ease}
+@keyframes msl{from{transform:translateY(-14px);opacity:0}to{transform:translateY(0);opacity:1}}
+.mh{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg3);z-index:1}
+.mh h3{font-size:15px;font-weight:600;color:var(--text)}
+.mc{background:none;border:none;color:var(--text3);cursor:pointer;font-size:20px;padding:2px 7px;border-radius:3px}
+.mc:hover{color:var(--text);background:var(--surface)}
+.mby{padding:18px}
+.mf{padding:12px 18px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:var(--bg3)}
+.fg-group{margin-bottom:14px}
+.fg-group label{display:block;font-size:12px;font-weight:500;color:var(--text2);margin-bottom:5px}
+.fi{width:100%;background:var(--bg4);border:1px solid var(--border);color:var(--text);padding:7px 11px;border-radius:5px;font-size:13px;outline:none;font-family:var(--font-sans);transition:border-color .15s}
+.fi:focus{border-color:var(--accent2)}
+.fi::placeholder{color:var(--text3)}
+.fi.mono{font-family:var(--font-mono);font-size:12px}
+textarea.fi{resize:vertical;min-height:60px}
+.fh{font-size:11px;color:var(--text3);margin-top:3px}
+.fe{font-size:12px;color:var(--red);margin-top:5px;display:none}
+.fe.show{display:block}
+.bp{background:var(--accent2);color:#fff;border:1px solid var(--accent);padding:7px 18px;border-radius:5px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font-sans);transition:background .15s}
+.bp:hover{background:var(--accent)}
+.bs{background:var(--bg3);color:var(--text2);border:1px solid var(--border);padding:7px 18px;border-radius:5px;font-size:13px;cursor:pointer;font-family:var(--font-sans)}
+.bs:hover{background:var(--surface);color:var(--text)}
+.bd{background:rgba(248,113,113,.1);color:var(--red);border:1px solid rgba(248,113,113,.3);padding:7px 18px;border-radius:5px;font-size:13px;cursor:pointer;font-family:var(--font-sans)}
+.bd:hover{background:rgba(248,113,113,.2)}
+
+/* NO PAGE STATE */
+#no-page{display:flex;align-items:center;justify-content:center;flex:1;flex-direction:column;gap:16px;color:var(--text3);text-align:center;padding:40px}
+#no-page .npi{font-size:56px;opacity:.25}
+#no-page h2{font-family:var(--font-serif);font-size:26px;font-weight:300;color:var(--text2)}
+#no-page p{font-size:14px;max-width:340px}
+#no-page .np-btn{background:var(--accent2);color:#fff;border:none;padding:10px 22px;border-radius:6px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font-sans)}
+#no-page .np-btn:hover{background:var(--accent)}
+
+/* TOAST */
+#toast-wrap{position:fixed;bottom:18px;right:18px;z-index:9999;display:flex;flex-direction:column;gap:7px;pointer-events:none}
+.toast{background:var(--surface2);border:1px solid var(--border2);color:var(--text);padding:9px 14px;border-radius:6px;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,.4);animation:tsl .3s ease,tfd .3s 2.7s ease forwards;max-width:300px}
+.toast.ok{border-left:3px solid var(--green)}
+.toast.err{border-left:3px solid var(--red)}
+.toast.inf{border-left:3px solid var(--accent)}
+@keyframes tsl{from{transform:translateX(36px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes tfd{to{opacity:0;transform:translateX(6px)}}
+
+/* INFOBOX FIELDS */
+.ibr{display:flex;align-items:center;gap:5px;margin-bottom:5px}
+.ibk{flex:0 0 100px;background:var(--bg4);border:1px solid var(--border);color:var(--text);padding:4px 7px;border-radius:4px;font-size:12px;outline:none;font-family:var(--font-sans)}
+.ibv{flex:1;background:var(--bg4);border:1px solid var(--border);color:var(--text);padding:4px 7px;border-radius:4px;font-size:12px;outline:none;font-family:var(--font-sans)}
+.ibd{background:none;border:none;color:var(--text3);cursor:pointer;font-size:15px;padding:2px 5px;border-radius:3px}
+.ibd:hover{color:var(--red)}
+
+@media(max-width:1100px){#tools-panel{width:230px}}
+@media(max-width:900px){#sidebar{display:none}}
+@media(max-width:700px){#tools-panel{display:none}#editor-area-wrap{padding:16px 14px}}
+<link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+
+</style>
+</head>
+<body>
+
+<header id="header">
+  <a id="logo-area" href="https://aedtpworld.com/create/" title="Back to AWFLMETA">
+    <img src="https://aedtpworld.com/icons/awflmeta.jpg" alt="AWFLMETA" onerror="this.style.display='none'">
+    <div id="logo-text">
+      <span class="lt1">AWFLMETA</span>
+      <span class="lt2">CREATE WIKI</span>
+    </div>
+  </a>
+  <div id="header-center">
+    <input id="page-title-input" type="text" placeholder="Wiki Page Title…" oninput="onTitleInput()" autocomplete="off">
+    <div id="slug-display">—</div>
+  </div>
+  <div id="header-actions">
+    <button class="h-btn" onclick="openModal('modal-new')" title="New page (Ctrl+N)">+ New</button>
+    <button class="h-btn success" onclick="saveCurrent()" id="btn-save" title="Save (Ctrl+S)">💾 Save</button>
+    <button class="h-btn primary" onclick="exportPage()" id="btn-export" title="Export as HTML">↓ Export</button>
+    <button class="h-btn danger" onclick="deleteCurrent()" id="btn-delete" title="Delete page">🗑</button>
+  </div>
+</header>
+
+<div id="app">
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div id="sidebar-top">
+      <span class="s-label">Saved Pages</span>
+      <input id="page-filter" type="search" placeholder="Filter pages…" oninput="filterPages(this.value)">
+    </div>
+    <div id="page-list"></div>
+    <div id="sidebar-new">
+      <button id="btn-new-page" onclick="openModal('modal-new')">+ New Wiki Page</button>
+    </div>
+  </aside>
+
+  <!-- EDITOR -->
+  <div id="editor-wrap">
+    <div id="editor-main">
+
+      <!-- TOOLBAR -->
+      <div id="toolbar">
+        <!-- Block formats -->
+        <div class="tb-group">
+          <select class="tb-select" onchange="applyBlock(this.value);this.value=''" title="Block format">
+            <option value="">Format…</option>
+            <option value="h1">Heading 1</option>
+            <option value="h2">Heading 2</option>
+            <option value="h3">Heading 3</option>
+            <option value="h4">Heading 4</option>
+            <option value="h5">Heading 5</option>
+            <option value="h6">Heading 6</option>
+            <option value="p">Paragraph</option>
+            <option value="pre">Preformatted</option>
+            <option value="blockquote">Blockquote</option>
+          </select>
+        </div>
+        <div class="tb-sep"></div>
+        <!-- Inline -->
+        <div class="tb-group">
+          <button class="tb-btn" onclick="ex('bold')" title="Bold (Ctrl+B)"><b>B</b></button>
+          <button class="tb-btn" onclick="ex('italic')" title="Italic (Ctrl+I)"><i>I</i></button>
+          <button class="tb-btn" onclick="ex('underline')" title="Underline (Ctrl+U)"><u>U</u></button>
+          <button class="tb-btn" onclick="ex('strikeThrough')" title="Strikethrough"><s>S</s></button>
+          <button class="tb-btn" onclick="ws('mark')" title="Highlight">🖊</button>
+          <button class="tb-btn" onclick="ws('code')" title="Inline code">&lt;/&gt;</button>
+          <button class="tb-btn" onclick="ws('sup')" title="Superscript">x²</button>
+          <button class="tb-btn" onclick="ws('sub')" title="Subscript">x₂</button>
+        </div>
+        <div class="tb-sep"></div>
+        <!-- Lists & align -->
+        <div class="tb-group">
+          <button class="tb-btn" onclick="ex('insertUnorderedList')" title="Bullet list">• List</button>
+          <button class="tb-btn" onclick="ex('insertOrderedList')" title="Numbered list">1. List</button>
+          <button class="tb-btn" onclick="ex('justifyLeft')" title="Align left">⬅</button>
+          <button class="tb-btn" onclick="ex('justifyCenter')" title="Center">⬌</button>
+          <button class="tb-btn" onclick="ex('justifyRight')" title="Align right">➡</button>
+          <button class="tb-btn" onclick="ex('justifyFull')" title="Justify">☰</button>
+          <button class="tb-btn" onclick="ex('indent')" title="Indent">→</button>
+          <button class="tb-btn" onclick="ex('outdent')" title="Outdent">←</button>
+        </div>
+        <div class="tb-sep"></div>
+        <!-- Font -->
+        <div class="tb-group">
+          <select class="tb-select" onchange="ex('fontSize',this.value);this.value=''" title="Font size">
+            <option value="">Size…</option>
+            <option value="1">8px</option>
+            <option value="2">10px</option>
+            <option value="3">12px</option>
+            <option value="4">14px</option>
+            <option value="5">18px</option>
+            <option value="6">24px</option>
+            <option value="7">36px</option>
+          </select>
+          <select class="tb-select" onchange="ex('fontName',this.value);this.value=''" title="Font family">
+            <option value="">Font…</option>
+            <option value="'IBM Plex Sans',sans-serif">IBM Plex Sans</option>
+            <option value="'Crimson Pro',Georgia,serif">Crimson Pro</option>
+            <option value="'IBM Plex Mono',monospace">IBM Plex Mono</option>
+            <option value="Georgia,serif">Georgia</option>
+            <option value="Arial,sans-serif">Arial</option>
+            <option value="'Times New Roman',serif">Times New Roman</option>
+          </select>
+        </div>
+        <div class="tb-sep"></div>
+        <!-- Colors -->
+        <div class="tb-group">
+          <input type="color" class="tb-color" id="tb-fg" value="#e8edf5" title="Text color" onchange="ex('foreColor',this.value)">
+          <input type="color" class="tb-color" id="tb-hl" value="#d4a843" title="Highlight color" onchange="ex('hiliteColor',this.value)">
+          <button class="tb-btn" onclick="ex('removeFormat')" title="Clear formatting">✕ Clear</button>
+        </div>
+        <div class="tb-sep"></div>
+        <!-- Insert -->
+        <div class="tb-group">
+          <button class="tb-btn" onclick="promptIns('link')" title="Insert link">🔗</button>
+          <button class="tb-btn" onclick="promptIns('image')" title="Insert image">🖼</button>
+          <button class="tb-btn" onclick="promptIns('video')" title="Insert video">▶</button>
+          <button class="tb-btn" onclick="promptIns('audio')" title="Insert audio">♪</button>
+          <button class="tb-btn" onclick="insTable()" title="Insert table">⊞ Table</button>
+          <button class="tb-btn" onclick="insHR()" title="Horizontal rule">— HR</button>
+        </div>
+        <div class="tb-sep"></div>
+        <!-- Boxes -->
+        <div class="tb-group">
+          <button class="tb-btn" onclick="insBox('wiki-note','ℹ Note text')">ℹ Note</button>
+          <button class="tb-btn" onclick="insBox('wiki-warning','⚠ Warning text')">⚠ Warn</button>
+          <button class="tb-btn" onclick="insBox('wiki-tip','✓ Tip text')">✓ Tip</button>
+        </div>
+        <div class="tb-sep"></div>
+        <!-- History -->
+        <div class="tb-group">
+          <button class="tb-btn" onclick="ex('undo')" title="Undo (Ctrl+Z)">↩ Undo</button>
+          <button class="tb-btn" onclick="ex('redo')" title="Redo (Ctrl+Y)">↪ Redo</button>
+        </div>
+        <div class="tb-sep"></div>
+        <div class="tb-group">
+          <button class="tb-btn" onclick="buildTOC()" title="Auto-generate Table of Contents">≡ TOC</button>
+        </div>
+      </div>
+
+      <!-- EDITOR AREA -->
+      <div id="editor-area-wrap">
+        <div id="no-page">
+          <div class="npi">◈</div>
+          <h2>No Page Open</h2>
+          <p>Create a new wiki page to start writing. Pages are saved in your browser.</p>
+          <button class="np-btn" onclick="openModal('modal-new')">+ New Wiki Page</button>
+        </div>
+        <div id="editor-area" contenteditable="false"
+          data-placeholder="Start writing your wiki page here…"
+          oninput="onEditorInput()"
+          onkeydown="onEditorKeydown(event)"></div>
+      </div>
+
+      <!-- STATUS BAR -->
+      <div id="statusbar">
+        <span class="sb-item" id="sb-words">Words: 0</span>
+        <span class="sb-item" id="sb-chars">Chars: 0</span>
+        <span class="sb-item" id="sb-status"><span id="status-saved" style="display:none">● Saved</span><span id="status-unsaved" style="display:none">● Unsaved</span></span>
+        <span class="sb-item" id="sb-pages">Pages: 0</span>
+        <span class="sb-item" id="sb-size">Storage: 0 KB</span>
+      </div>
+    </div>
+
+    <!-- TOOLS PANEL -->
+    <aside id="tools-panel">
+      <div id="tools-header">AWFLMETA TOOLS</div>
+
+      <div class="ts">
+        <div class="ts-label">Page Actions</div>
+        <button class="ta ok" onclick="saveCurrent()"><span class="ti">💾</span> Save Page</button>
+        <button class="ta inf" onclick="exportPage()"><span class="ti">↓</span> Export HTML</button>
+        <button class="ta inf" onclick="exportAll()"><span class="ti">⬇</span> Export All Pages</button>
+        <button class="ta" onclick="copyAll()"><span class="ti">📋</span> Copy All Content</button>
+        <button class="ta dn" onclick="deleteCurrent()"><span class="ti">🗑</span> Delete Page</button>
+      </div>
+
+      <div class="ts">
+        <div class="ts-label">Heading Blocks</div>
+        <div class="tgrid">
+          <button class="fg" onclick="applyBlock('h1')">H1</button>
+          <button class="fg" onclick="applyBlock('h2')">H2</button>
+          <button class="fg" onclick="applyBlock('h3')">H3</button>
+          <button class="fg" onclick="applyBlock('h4')">H4</button>
+          <button class="fg" onclick="applyBlock('h5')">H5</button>
+          <button class="fg" onclick="applyBlock('h6')">H6</button>
+          <button class="fg" onclick="applyBlock('p')">¶ P</button>
+          <button class="fg" onclick="applyBlock('pre')">⌨ Pre</button>
+        </div>
+      </div>
+
+      <div class="ts">
+        <div class="ts-label">Inline Format</div>
+        <div class="tgrid">
+          <button class="fg" onclick="ex('bold')"><b>B</b></button>
+          <button class="fg" onclick="ex('italic')"><i>I</i></button>
+          <button class="fg" onclick="ex('underline')"><u>U</u></button>
+          <button class="fg" onclick="ex('strikeThrough')"><s>S</s></button>
+          <button class="fg" onclick="ws('sup')">x²</button>
+          <button class="fg" onclick="ws('sub')">x₂</button>
+          <button class="fg" onclick="ws('mark')">🖊</button>
+          <button class="fg" onclick="ws('code')">&lt;/&gt;</button>
+        </div>
+        <div class="frow" style="margin-top:7px">
+          <label>Font Size</label>
+          <select onchange="ex('fontSize',this.value);this.value=''">
+            <option value="">—</option>
+            <option value="1">8px</option>
+            <option value="2">10px</option>
+            <option value="3">12px</option>
+            <option value="4">14px</option>
+            <option value="5">18px</option>
+            <option value="6">24px</option>
+            <option value="7">36px</option>
+          </select>
+        </div>
+        <div class="frow">
+          <label>Font</label>
+          <select onchange="ex('fontName',this.value);this.value=''">
+            <option value="">—</option>
+            <option value="'IBM Plex Sans',sans-serif">IBM Plex Sans</option>
+            <option value="'Crimson Pro',Georgia,serif">Crimson Pro</option>
+            <option value="'IBM Plex Mono',monospace">IBM Plex Mono</option>
+            <option value="Georgia,serif">Georgia</option>
+            <option value="Arial,sans-serif">Arial</option>
+            <option value="'Times New Roman',serif">Times New Roman</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="ts">
+        <div class="ts-label">Blocks &amp; Lists</div>
+        <div class="tgrid c2">
+          <button class="fg" onclick="ex('insertUnorderedList')">• List</button>
+          <button class="fg" onclick="ex('insertOrderedList')">1. List</button>
+          <button class="fg" onclick="applyBlock('blockquote')">❝ Quote</button>
+          <button class="fg" onclick="insHR()">— HR</button>
+          <button class="fg s2" onclick="insTable()">⊞ Table</button>
+          <button class="fg s2" onclick="insBox('wiki-note','ℹ Note text')">ℹ Note Box</button>
+          <button class="fg s2" onclick="insBox('wiki-warning','⚠ Warning text')">⚠ Warning Box</button>
+          <button class="fg s2" onclick="insBox('wiki-tip','✓ Tip text')">✓ Tip Box</button>
+        </div>
+      </div>
+
+      <div class="ts">
+        <div class="ts-label">Alignment</div>
+        <div class="tgrid c2">
+          <button class="fg" onclick="ex('justifyLeft')">⬅ Left</button>
+          <button class="fg" onclick="ex('justifyCenter')">⬌ Center</button>
+          <button class="fg" onclick="ex('justifyRight')">➡ Right</button>
+          <button class="fg" onclick="ex('justifyFull')">☰ Justify</button>
+          <button class="fg" onclick="ex('indent')">→ Indent</button>
+          <button class="fg" onclick="ex('outdent')">← Outdent</button>
+        </div>
+      </div>
+
+      <div class="ts">
+        <div class="ts-label">Insert Media</div>
+        <div class="tgrid c2">
+          <button class="fg" onclick="promptIns('link')">🔗 Link</button>
+          <button class="fg" onclick="promptIns('image')">🖼 Image</button>
+          <button class="fg" onclick="promptIns('video')">▶ Video</button>
+          <button class="fg" onclick="promptIns('audio')">♪ Audio</button>
+          <button class="fg s2" onclick="openInfoboxModal()">☰ Infobox</button>
+          <button class="fg s2" onclick="buildTOC()">≡ Generate TOC</button>
+        </div>
+      </div>
+
+      <div class="ts">
+        <div class="ts-label">Color</div>
+        <div class="crow">
+          <label>Text Color</label>
+          <input type="color" id="tc-color" value="#4a9eff">
+          <button class="cab" onclick="ex('foreColor',document.getElementById('tc-color').value)">Apply</button>
+        </div>
+        <div class="crow">
+          <label>Highlight</label>
+          <input type="color" id="hl-color" value="#d4a843">
+          <button class="cab" onclick="ex('hiliteColor',document.getElementById('hl-color').value)">Apply</button>
+        </div>
+        <div class="crow">
+          <label>Background</label>
+          <input type="color" id="bg-color" value="#1a2030">
+          <button class="cab" onclick="ex('hiliteColor',document.getElementById('bg-color').value)">Apply</button>
+        </div>
+        <button class="fg s4" style="width:100%;margin-top:4px" onclick="ex('removeFormat')">✕ Clear All Format</button>
+      </div>
+
+      <div class="ts">
+        <div class="ts-label">Clipboard &amp; History</div>
+        <button class="ta" onclick="copyAll()"><span class="ti">📋</span> Copy All</button>
+        <button class="ta" onclick="pasteText()"><span class="ti">📄</span> Paste Plain</button>
+        <button class="ta" onclick="ex('undo')"><span class="ti">↩</span> Undo</button>
+        <button class="ta" onclick="ex('redo')"><span class="ti">↪</span> Redo</button>
+      </div>
+
+      <div class="ts">
+        <div class="ts-label">Page Settings</div>
+        <button class="ta" onclick="openRenameModal()"><span class="ti">✎</span> Rename Page</button>
+        <button class="ta" onclick="openCatModal()"><span class="ti">📁</span> Change Category</button>
+        <button class="ta" onclick="wordCount()"><span class="ti">#</span> Word Count</button>
+        <button class="ta" onclick="printPage()"><span class="ti">🖨</span> Print Page</button>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div id="toast-wrap"></div>
+
+<!-- ─── MODALS ─── -->
+
+<!-- NEW PAGE -->
+<div class="mo" id="modal-new">
+  <div class="mb">
+    <div class="mh"><h3>📄 New Wiki Page</h3><button class="mc" onclick="closeModal('modal-new')">×</button></div>
+    <div class="mby">
+      <div class="fg-group">
+        <label>Page Title <span style="color:var(--red)">*</span></label>
+        <input class="fi" id="np-title" placeholder="e.g. Buddy DML" oninput="updateNewSlug()" autocomplete="off">
+        <div class="fh">Spaces become underscores in the filename.</div>
+      </div>
+      <div class="fg-group">
+        <label>Category</label>
+        <div class="cat-select-grid" id="new-cat-grid">
+          <button class="csb" data-cat="apps"       onclick="selCat('apps',this)"><span class="ci">📱</span>Apps<span class="cl">apps/</span></button>
+          <button class="csb" data-cat="artists"    onclick="selCat('artists',this)"><span class="ci">🎨</span>Artists<span class="cl">artists/</span></button>
+          <button class="csb" data-cat="biography"  onclick="selCat('biography',this)"><span class="ci">📖</span>Biography<span class="cl">biography/</span></button>
+          <button class="csb" data-cat="business"   onclick="selCat('business',this)"><span class="ci">💼</span>Business<span class="cl">business/</span></button>
+          <button class="csb" data-cat="dictionary" onclick="selCat('dictionary',this)"><span class="ci">📚</span>Dictionary<span class="cl">dictionary/</span></button>
+          <button class="csb" data-cat="education"  onclick="selCat('education',this)"><span class="ci">🎓</span>Education<span class="cl">education/</span></button>
+          <button class="csb" data-cat="music"      onclick="selCat('music',this)"><span class="ci">🎵</span>Music<span class="cl">music/</span></button>
+          <button class="csb" data-cat="news"       onclick="selCat('news',this)"><span class="ci">📰</span>News<span class="cl">news/</span></button>
+        </div>
+      </div>
+      <div class="fg-group">
+        <label>Slug Preview</label>
+        <div id="np-slug-preview" style="font-size:11px;color:var(--accent);font-family:var(--font-mono);padding:6px 10px;background:var(--bg4);border:1px solid var(--border);border-radius:4px;min-height:18px">—</div>
+      </div>
+      <div class="fe" id="np-err"></div>
+    </div>
+    <div class="mf">
+      <button class="bs" onclick="closeModal('modal-new')">Cancel</button>
+      <button class="bp" onclick="createNewPage()">Create &amp; Edit</button>
+    </div>
+  </div>
+</div>
+
+<!-- INSERT MEDIA -->
+<div class="mo" id="modal-insert">
+  <div class="mb">
+    <div class="mh"><h3 id="ins-modal-title">Insert</h3><button class="mc" onclick="closeModal('modal-insert')">×</button></div>
+    <div class="mby">
+      <div class="fg-group"><label>URL <span style="color:var(--red)">*</span></label><input class="fi" id="ins-url" placeholder="https://…"></div>
+      <div class="fg-group" id="ins-text-grp" style="display:none"><label>Display Text</label><input class="fi" id="ins-text" placeholder="Link text"></div>
+      <div class="fg-group" id="ins-alt-grp" style="display:none"><label>Alt / Caption</label><input class="fi" id="ins-alt" placeholder="Image description"></div>
+      <div class="fg-group" id="ins-align-grp" style="display:none">
+        <label>Alignment</label>
+        <select class="fi" id="ins-align">
+          <option value="block">Full width</option>
+          <option value="left">Float left</option>
+          <option value="right">Float right</option>
+        </select>
+      </div>
+    </div>
+    <div class="mf"><button class="bs" onclick="closeModal('modal-insert')">Cancel</button><button class="bp" onclick="doInsert()">Insert</button></div>
+  </div>
+</div>
+
+<!-- RENAME -->
+<div class="mo" id="modal-rename">
+  <div class="mb">
+    <div class="mh"><h3>✎ Rename Page</h3><button class="mc" onclick="closeModal('modal-rename')">×</button></div>
+    <div class="mby">
+      <div class="fg-group"><label>New Title</label><input class="fi" id="ren-title" placeholder="New page title" oninput="updateRenSlug()"></div>
+      <div id="ren-slug" style="font-size:11px;color:var(--accent);font-family:var(--font-mono);padding:5px 8px;background:var(--bg4);border:1px solid var(--border);border-radius:4px;margin-top:4px">—</div>
+    </div>
+    <div class="mf"><button class="bs" onclick="closeModal('modal-rename')">Cancel</button><button class="bp" onclick="doRename()">Rename</button></div>
+  </div>
+</div>
+
+<!-- CHANGE CATEGORY -->
+<div class="mo" id="modal-cat">
+  <div class="mb">
+    <div class="mh"><h3>📁 Change Category</h3><button class="mc" onclick="closeModal('modal-cat')">×</button></div>
+    <div class="mby">
+      <div class="cat-select-grid" id="cat-change-grid">
+        <button class="csb" data-cat="apps"       onclick="selChangeCat('apps',this)"><span class="ci">📱</span>Apps</button>
+        <button class="csb" data-cat="artists"    onclick="selChangeCat('artists',this)"><span class="ci">🎨</span>Artists</button>
+        <button class="csb" data-cat="biography"  onclick="selChangeCat('biography',this)"><span class="ci">📖</span>Biography</button>
+        <button class="csb" data-cat="business"   onclick="selChangeCat('business',this)"><span class="ci">💼</span>Business</button>
+        <button class="csb" data-cat="dictionary" onclick="selChangeCat('dictionary',this)"><span class="ci">📚</span>Dictionary</button>
+        <button class="csb" data-cat="education"  onclick="selChangeCat('education',this)"><span class="ci">🎓</span>Education</button>
+        <button class="csb" data-cat="music"      onclick="selChangeCat('music',this)"><span class="ci">🎵</span>Music</button>
+        <button class="csb" data-cat="news"       onclick="selChangeCat('news',this)"><span class="ci">📰</span>News</button>
+      </div>
+    </div>
+    <div class="mf"><button class="bs" onclick="closeModal('modal-cat')">Cancel</button></div>
+  </div>
+</div>
+
+<!-- INFOBOX -->
+<div class="mo" id="modal-infobox">
+  <div class="mb" style="max-width:580px">
+    <div class="mh"><h3>☰ Infobox</h3><button class="mc" onclick="closeModal('modal-infobox')">×</button></div>
+    <div class="mby">
+      <div id="ib-step1">
+        <div class="fg-group"><label>Choose Template</label>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px" id="ib-tpl-grid"></div>
+        </div>
+      </div>
+      <div id="ib-step2" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <span style="font-size:13px;color:var(--gold);font-weight:600" id="ib-tpl-name"></span>
+          <button class="bs" style="padding:4px 10px;font-size:12px" onclick="ibBack()">← Change</button>
+        </div>
+        <div id="ib-fields-list"></div>
+        <button class="ta" style="margin-top:8px" onclick="ibAddField()"><span class="ti">+</span> Add Field</button>
+      </div>
+    </div>
+    <div class="mf" id="ib-footer" style="display:none">
+      <button class="bs" onclick="closeModal('modal-infobox')">Cancel</button>
+      <button class="bp" onclick="saveInfobox()">Insert Infobox</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════
+   AWFLMETA CREATE — Full JS
+═══════════════════════════════ */
+
+const STORE_KEY = 'awflmeta_create_pages';
+const IB_KEY    = 'awflmeta_create_infoboxes';
+const GH_WIKI   = 'https://aedtpworld.com/create/';
+
+/* ─── STATE ─── */
+let pages     = {};   // id -> {id,title,slug,category,content,created,updated}
+let infoboxes = {};   // id -> {template,fields}
+let currentId = null;
+let insType   = null;
+let savedSel  = null;
+let ibTpl     = null;
+let newCat    = null;
+let changeCat = null;
+let dirty     = false;
+let saveTimer = null;
+
+const IB_TEMPLATES = {
+  Artist:   ['Image','Name','Description','Date of Birth','Origin','Genre','Official Website','Nationality','Occupation','Years Active','Labels'],
+  Business: ['Image','Name','Description','Founded','Founders','Headquarters','Industry','Products','Revenue','Website','CEO'],
+  Software: ['Image','Name','Description','Developer','Initial Release','Latest Release','Platform','License','Website','Written In'],
+  Person:   ['Image','Name','Description','Date of Birth','Nationality','Occupation','Known For','Website'],
+  Company:  ['Image','Name','Description','Type','Founded','Headquarters','CEO','Employees','Revenue','Website'],
+  Group:    ['Image','Name','Description','Formed','Origin','Members','Genre','Website'],
+  Music:    ['Image','Title','Description','Artist','Album','Released','Genre','Label','Length'],
+  Film:     ['Image','Title','Description','Director','Producer','Released','Genre','Starring','Language'],
+  Place:    ['Image','Name','Description','Country','Region','Population','Area','Website'],
+  Custom:   [],
+};
+
+/* ─── STORAGE ─── */
+function loadData(){
+  try{ pages=JSON.parse(localStorage.getItem(STORE_KEY)||'{}'); }catch{ pages={}; }
+  try{ infoboxes=JSON.parse(localStorage.getItem(IB_KEY)||'{}'); }catch{ infoboxes={}; }
+}
+function saveData(){
+  try{ localStorage.setItem(STORE_KEY,JSON.stringify(pages)); }catch{ toast('Browser storage full!','err'); }
+  try{ localStorage.setItem(IB_KEY,JSON.stringify(infoboxes)); }catch{}
+  updateStatusBar();
+}
+
+/* ─── SLUG ─── */
+function toSlug(t){ return t.trim().replace(/\s+/g,'_').replace(/[^\w\-\.]/g,''); }
+
+/* ─── PAGE LIST ─── */
+function renderPageList(filter=''){
+  const list=document.getElementById('page-list');
+  const items=Object.values(pages)
+    .filter(p=>!filter||p.title.toLowerCase().includes(filter.toLowerCase()))
+    .sort((a,b)=>b.updated-a.updated);
+
+  document.getElementById('sb-pages').textContent='Pages: '+Object.keys(pages).length;
+
+  if(!items.length){
+    list.innerHTML='<div id="empty-sidebar">No pages yet.</div>'; return;
+  }
+  list.innerHTML=items.map(p=>`
+    <div class="page-entry${p.id===currentId?' active':''}" onclick="openPage('${p.id}')">
+      <div class="page-entry-title">${esc(p.title)}</div>
+      <div class="page-entry-meta">
+        <span class="cat-pill">${esc(p.category||'awfl')}</span>
+        <span>${new Date(p.updated).toLocaleDateString()}</span>
+      </div>
+    </div>`).join('');
+}
+function filterPages(v){ renderPageList(v); }
+
+/* ─── NEW PAGE ─── */
+function selCat(cat,btn){
+  newCat=cat;
+  document.querySelectorAll('#new-cat-grid .csb').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+}
+function updateNewSlug(){
+  const t=document.getElementById('np-title').value;
+  const slug=toSlug(t);
+  document.getElementById('np-slug-preview').textContent=slug?slug+'.html':'—';
+}
+function createNewPage(){
+  const title=document.getElementById('np-title').value.trim();
+  const errEl=document.getElementById('np-err');
+  errEl.classList.remove('show');
+  if(!title){ showErr(errEl,'Title is required.'); return; }
+  const slug=toSlug(title);
+  if(Object.values(pages).find(p=>p.slug===slug)){ showErr(errEl,'A page with this title already exists.'); return; }
+  const id='pg_'+Date.now();
+  pages[id]={id,title,slug,category:newCat||'awfl',content:'',created:Date.now(),updated:Date.now()};
+  saveData();
+  closeModal('modal-new');
+  document.getElementById('np-title').value='';
+  document.getElementById('np-slug-preview').textContent='—';
+  newCat=null;
+  document.querySelectorAll('#new-cat-grid .csb').forEach(b=>b.classList.remove('sel'));
+  openPage(id);
+  toast('Page "'+title+'" created. Start writing!','ok');
+}
+
+/* ─── OPEN PAGE ─── */
+function openPage(id){
+  if(dirty && currentId) autosave();
+  currentId=id;
+  const p=pages[id]; if(!p) return;
+  const ea=document.getElementById('editor-area');
+  document.getElementById('no-page').style.display='none';
+  ea.style.display='block';
+  ea.contentEditable='true';
+  ea.innerHTML=p.content||'';
+  document.getElementById('page-title-input').value=p.title;
+  document.getElementById('slug-display').textContent=p.slug+'.html';
+  renderPageList(document.getElementById('page-filter').value);
+  renderInfoboxPreview(id);
+  updateStatusBar();
+  setDirty(false);
+  ea.focus();
+}
+function renderInfoboxPreview(id){
+  /* Infobox is embedded at export time; no separate preview needed in editor */
+}
+
+/* ─── SAVE ─── */
+function onTitleInput(){
+  if(!currentId) return;
+  const t=document.getElementById('page-title-input').value.trim();
+  if(!t) return;
+  const slug=toSlug(t);
+  pages[currentId].title=t;
+  pages[currentId].slug=slug;
+  document.getElementById('slug-display').textContent=slug+'.html';
+  setDirty(true);
+}
+function onEditorInput(){
+  setDirty(true);
+  updateWordCount();
+  scheduleSave();
+}
+function setDirty(v){
+  dirty=v;
+  document.getElementById('status-saved').style.display=v?'none':'inline';
+  document.getElementById('status-unsaved').style.display=v?'inline':'none';
+}
+function scheduleSave(){
+  clearTimeout(saveTimer);
+  saveTimer=setTimeout(autosave, 3000);
+}
+function autosave(){
+  if(!currentId||!dirty) return;
+  saveCurrent();
+}
+function saveCurrent(){
+  if(!currentId){ toast('No page open','inf'); return; }
+  const ea=document.getElementById('editor-area');
+  pages[currentId].content=ea.innerHTML;
+  pages[currentId].updated=Date.now();
+  saveData();
+  renderPageList(document.getElementById('page-filter').value);
+  setDirty(false);
+  toast('Saved','ok');
+}
+
+/* ─── DELETE ─── */
+function deleteCurrent(){
+  if(!currentId){ toast('No page open','inf'); return; }
+  const p=pages[currentId];
+  if(!confirm('Delete "'+p.title+'"? This cannot be undone.')) return;
+  delete pages[currentId];
+  if(infoboxes[currentId]) delete infoboxes[currentId];
+  saveData();
+  currentId=null;
+  document.getElementById('editor-area').innerHTML='';
+  document.getElementById('editor-area').contentEditable='false';
+  document.getElementById('no-page').style.display='flex';
+  document.getElementById('editor-area').style.display='none';
+  document.getElementById('page-title-input').value='';
+  document.getElementById('slug-display').textContent='—';
+  renderPageList();
+  setDirty(false);
+  toast('Page deleted','inf');
+}
+
+/* ─── RENAME ─── */
+function openRenameModal(){
+  if(!currentId){ toast('No page open','inf'); return; }
+  document.getElementById('ren-title').value=pages[currentId].title;
+  updateRenSlug();
+  openModal('modal-rename');
+  setTimeout(()=>document.getElementById('ren-title').focus(),80);
+}
+function updateRenSlug(){
+  const t=document.getElementById('ren-title').value;
+  document.getElementById('ren-slug').textContent=toSlug(t)+'.html';
+}
+function doRename(){
+  const t=document.getElementById('ren-title').value.trim();
+  if(!t){ toast('Enter a title','err'); return; }
+  pages[currentId].title=t;
+  pages[currentId].slug=toSlug(t);
+  pages[currentId].updated=Date.now();
+  saveData();
+  document.getElementById('page-title-input').value=t;
+  document.getElementById('slug-display').textContent=pages[currentId].slug+'.html';
+  renderPageList();
+  closeModal('modal-rename');
+  toast('Renamed','ok');
+}
+
+/* ─── CATEGORY CHANGE ─── */
+function openCatModal(){
+  if(!currentId){ toast('No page open','inf'); return; }
+  changeCat=pages[currentId].category||'awfl';
+  document.querySelectorAll('#cat-change-grid .csb').forEach(b=>{
+    b.classList.toggle('sel',b.dataset.cat===changeCat);
+  });
+  openModal('modal-cat');
+}
+function selChangeCat(cat,btn){
+  changeCat=cat;
+  document.querySelectorAll('#cat-change-grid .csb').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+  pages[currentId].category=cat;
+  pages[currentId].updated=Date.now();
+  saveData();
+  renderPageList();
+  closeModal('modal-cat');
+  toast('Category → '+cat,'ok');
+}
+
+/* ─── EXPORT SINGLE PAGE ─── */
+function exportPage(){
+  if(!currentId){ toast('No page open','inf'); return; }
+  saveCurrent();
+  const p=pages[currentId];
+  const ib=infoboxes[currentId]||null;
+  const html=buildExportHTML(p,ib);
+  download(p.slug+'.html', html);
+  toast('Exported '+p.slug+'.html','ok');
+}
+
+/* ─── EXPORT ALL PAGES ─── */
+function exportAll(){
+  const ids=Object.keys(pages);
+  if(!ids.length){ toast('No pages to export','inf'); return; }
+  ids.forEach(id=>{
+    const p=pages[id];
+    const ib=infoboxes[id]||null;
+    download(p.slug+'.html', buildExportHTML(p,ib));
+  });
+  toast('Exported '+ids.length+' pages','ok');
+}
+
+/* ─── BUILD STANDALONE READ-ONLY EXPORT HTML ─── */
+function buildExportHTML(p, ibData){
+  const ibHTML = ibData ? buildInfoboxHTML(ibData) : '';
+  const slug   = p.slug || toSlug(p.title);
+  const cat    = p.category || 'awfl';
+  const date   = new Date(p.updated).toLocaleString();
+
+  /* Inline all fonts as @import so the file is fully self-contained */
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${esc(p.title)} — AWFLMETA AEDTP WORLD FREE LICENSE (AWFL) WIKI META</title>
+<meta name="description" content="${esc(p.title)} Official WIKI | AEDTP WORLD FREE LICENSE (AWFL) WIKI META">
+<meta name="author" content="AEDTP WORLD">
+<meta name="copyright" content="© AEDTP WORLD">
+<meta name="license" content="AEDTP WORLD FREE LICENSE (AWFL)">
+<meta name="keywords" content="${esc(p.title)}, AWFLMETA, AEDTP WORLD">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="${esc(p.title)} — AWFLMETA">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://aedtpworld.com/icons/awflmetaawfl.jpg">
+<link rel="canonical" href="https://aedtpworld.com/awfl/${esc(cat)}/${esc(slug)}.html">
+<link rel="icon" href="https://aedtpworld.com/icons/awflmeta.jpg" type="image/jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0a0c10;color:#e8edf5;font-family:'IBM Plex Sans',Arial,sans-serif;font-size:15px;line-height:1.65;min-height:100vh}
+/* Top bar */
+.page-topbar{background:rgba(10,12,16,.97);border-bottom:1px solid #2a3450;padding:10px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+.ptb-brand{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#d4a843;font-weight:600;letter-spacing:.08em;text-decoration:none}
+.ptb-brand:hover{color:#f0c060}
+.ptb-back{font-size:12px;color:#4a9eff;text-decoration:none}
+.ptb-back:hover{text-decoration:underline}
+.ptb-meta{font-size:11px;color:#6b7a95;font-family:'IBM Plex Mono',monospace}
+/* Wrap */
+.page-wrap{max-width:980px;margin:0 auto;padding:34px 30px 70px}
+/* Title */
+.page-title{font-family:'Crimson Pro',Georgia,serif;font-size:38px;font-weight:300;color:#e8edf5;border-bottom:2px solid #2a3450;padding-bottom:14px;margin-bottom:8px;line-height:1.15}
+.page-title-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:24px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#6b7a95}
+.ptm-tag{background:#1a2030;border:1px solid #2a3450;padding:2px 8px;border-radius:3px}
+.ptm-cat{background:rgba(212,168,67,.08);border-color:rgba(212,168,67,.3);color:#d4a843}
+/* Wiki body */
+.wiki-body::after{content:'';display:table;clear:both}
+.wiki-body h1{font-family:'Crimson Pro',serif;font-size:30px;font-weight:400;color:#e8edf5;margin:28px 0 12px;border-bottom:1px solid #2a3450;padding-bottom:7px}
+.wiki-body h2{font-family:'Crimson Pro',serif;font-size:24px;font-weight:400;color:#e8edf5;margin:24px 0 10px;border-bottom:1px solid #2a3450;padding-bottom:5px}
+.wiki-body h3{font-family:'Crimson Pro',serif;font-size:20px;font-weight:600;color:#e8edf5;margin:20px 0 8px}
+.wiki-body h4{font-size:16px;font-weight:600;color:#a0aec0;margin:16px 0 6px}
+.wiki-body h5{font-size:14px;font-weight:600;color:#a0aec0;margin:14px 0 5px}
+.wiki-body h6{font-size:13px;font-weight:600;color:#6b7a95;margin:12px 0 4px;text-transform:uppercase;letter-spacing:.06em}
+.wiki-body p{font-family:'Crimson Pro',Georgia,serif;font-size:17px;line-height:1.8;margin:0 0 14px;color:#e8edf5}
+.wiki-body b,.wiki-body strong{font-weight:700;color:#fff}
+.wiki-body u{text-decoration:underline;text-decoration-color:#d4a843}
+.wiki-body s,.wiki-body strike{text-decoration:line-through;opacity:.7}
+.wiki-body em,.wiki-body i{font-style:italic}
+.wiki-body mark{background:rgba(212,168,67,.25);color:#d4a843;padding:0 2px;border-radius:2px}
+.wiki-body sub{font-size:.75em;vertical-align:sub}
+.wiki-body sup{font-size:.75em;vertical-align:super}
+.wiki-body code{font-family:'IBM Plex Mono',monospace;font-size:13px;background:#1a2030;border:1px solid #2a3450;padding:1px 5px;border-radius:3px;color:#2dd4bf}
+.wiki-body pre{background:#1a2030;border:1px solid #2a3450;border-radius:6px;padding:14px;overflow-x:auto;margin:12px 0;font-family:'IBM Plex Mono',monospace;font-size:13px}
+.wiki-body pre code{background:none;border:none;padding:0}
+.wiki-body blockquote{border-left:3px solid #2d7dd2;margin:16px 0;padding:10px 18px;background:rgba(74,158,255,.05);color:#a0aec0;font-style:italic;border-radius:0 5px 5px 0}
+.wiki-body ul,.wiki-body ol{margin:10px 0 14px 28px}
+.wiki-body li{margin-bottom:5px;font-family:'Crimson Pro',serif;font-size:16px}
+.wiki-body a{color:#4a9eff;text-decoration:none}
+.wiki-body a:hover{text-decoration:underline}
+.wiki-body img{max-width:100%;border-radius:6px;margin:10px 0;height:auto}
+.wiki-body video{max-width:100%;border-radius:6px;margin:10px 0}
+.wiki-body audio{width:100%;margin:10px 0}
+.wiki-body table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;font-family:'IBM Plex Sans',Arial,sans-serif}
+.wiki-body table th{background:#1e2535;padding:8px 12px;text-align:left;font-weight:600;border:1px solid #3a4870;font-size:13px;color:#e8edf5}
+.wiki-body table td{padding:7px 12px;border:1px solid #2a3450;vertical-align:top;color:#e8edf5}
+.wiki-body table tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.wiki-body table caption{caption-side:bottom;font-size:12px;color:#6b7a95;padding:5px;font-style:italic}
+.wiki-body hr{border:none;border-top:1px solid #2a3450;margin:24px 0}
+.wiki-note{background:rgba(74,158,255,.07);border:1px solid #1a5fa0;border-radius:5px;padding:10px 14px;margin:12px 0;font-size:14px;font-family:'IBM Plex Sans',Arial,sans-serif}
+.wiki-warning{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.3);border-radius:5px;padding:10px 14px;margin:12px 0;font-size:14px;color:#f87171;font-family:'IBM Plex Sans',Arial,sans-serif}
+.wiki-tip{background:rgba(62,207,142,.07);border:1px solid rgba(62,207,142,.3);border-radius:5px;padding:10px 14px;margin:12px 0;font-size:14px;color:#3ecf8e;font-family:'IBM Plex Sans',Arial,sans-serif}
+.wiki-img{max-width:100%;border-radius:6px;margin:10px 0;display:block}
+.wiki-img-left{float:left;margin:0 18px 10px 0;max-width:270px;border-radius:6px}
+.wiki-img-right{float:right;margin:0 0 10px 18px;max-width:270px;border-radius:6px}
+.wiki-caption{font-size:12px;color:#6b7a95;text-align:center;font-style:italic;margin-top:-6px;margin-bottom:14px}
+#toc,.toc{background:#141820;border:1px solid #2a3450;border-radius:6px;padding:12px 16px;margin-bottom:22px;display:inline-block;min-width:200px;max-width:300px}
+#toc .toc-title,.toc .toc-title{font-size:13px;font-weight:600;color:#e8edf5;margin-bottom:8px;display:block}
+#toc a,.toc a{display:block;font-size:13px;color:#4a9eff;margin:3px 0;text-decoration:none}
+#toc a:hover,.toc a:hover{text-decoration:underline}
+.toc-sub{padding-left:14px;font-size:12px}
+.toc-sub2{padding-left:26px;font-size:11px}
+/* Footer */
+.page-footer{margin-top:56px;padding-top:18px;border-top:1px solid #2a3450;font-size:12px;color:#6b7a95;font-family:'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.page-footer a{color:#4a9eff;text-decoration:none}
+@media(max-width:680px){
+  .page-wrap{padding:20px 14px 40px}
+  .page-title{font-size:26px}
+  div[style*="float:right"],div[style*="float: right"]{float:none!important;width:100%!important;margin:0 0 16px 0!important}
+  .wiki-img-left,.wiki-img-right{float:none;max-width:100%;margin:10px 0}
+}
+</style>
+</head>
+<body>
+<div class="page-topbar">
+  <a class="ptb-brand" href="https://aedtpworld.com/create/">AWFLMETA</a>
+  <span class="ptb-meta">${esc(cat.toUpperCase())} · ${esc(slug)}.html</span>
+  <a class="ptb-back" href="https://aedtpworld.com/create/">← Back to Wiki</a>
+</div>
+<div class="page-wrap">
+  <h1 class="page-title">${esc(p.title)}</h1>
+  <div class="page-title-meta">
+    <span class="ptm-tag ptm-cat">📁 ${esc(cat)}</span>
+    <span class="ptm-tag">Updated: ${esc(date)}</span>
+    <span class="ptm-tag">${esc(slug)}.html</span>
+  </div>
+  <div class="wiki-body">
+    ${ibHTML}
+    ${p.content||'<p style="color:#6b7a95;font-style:italic">This page is empty.</p>'}
+  </div>
+  <div class="page-footer">
+    <span>Published on <a href="https://aedtpworld.com/awfl/">AWFLMETA</a> · AEDTP WORLD FREE LICENSE (AWFL)</span>
+    <span>© AEDTP WORLD · <a href="mailto:aedtpworld@gmail.com">aedtpworld@gmail.com</a></span>
+  </div>
+</div>
+</body>
+</html>`;
+}
+
+/* ─── INFOBOX HTML (for export) ─── */
+function buildInfoboxHTML(ib){
+  if(!ib||!ib.fields?.length) return '';
+  const {template,fields}=ib;
+  const imgF=fields.find(f=>f.key?.toLowerCase()==='image');
+  const nameF=fields.find(f=>f.key?.toLowerCase()==='name');
+  const rows=fields.filter(f=>f.key?.toLowerCase()!=='image'&&f.key&&f.value);
+  const S={
+    wrap   :'float:right;clear:right;margin:0 0 22px 28px;background:#141820;border:1px solid #3a4870;border-radius:8px;width:280px;font-size:13px;overflow:hidden;font-family:"IBM Plex Sans",Arial,sans-serif;line-height:1.5;box-shadow:0 4px 18px rgba(0,0,0,.45)',
+    title  :'background:#252d40;padding:9px 13px;font-weight:700;font-size:14px;border-bottom:1px solid #3a4870;text-align:center;color:#e8edf5',
+    imgWrap:'border-bottom:1px solid #2a3450;text-align:center;background:#1a2030;overflow:hidden',
+    imgTag :'width:100%;height:auto;max-height:220px;object-fit:cover;display:block',
+    caption:'font-size:11px;color:#6b7a95;padding:5px 10px;text-align:center;background:#1a2030;border-bottom:1px solid #2a3450',
+    table  :'width:100%;border-collapse:collapse',
+    th     :'background:#1a2030;padding:6px 10px;font-size:12px;font-weight:600;color:#6b7a95;text-align:left;width:42%;vertical-align:top;border-right:1px solid #2a3450',
+    td     :'padding:6px 10px;font-size:12px;color:#e8edf5;vertical-align:top',
+    link   :'color:#4a9eff;text-decoration:none;font-size:12px;word-break:break-all',
+    thumb  :'max-width:100%;max-height:80px;border-radius:4px;display:block',
+  };
+  function cell(f){
+    const kl=f.key.toLowerCase(),v=f.value;
+    if(kl.includes('video')||/\.(mp4|webm|ogg|mov)(\?|$)/i.test(v))
+      return `<video src="${esc(v)}" controls style="width:100%;max-height:120px;border-radius:4px;display:block"></video>`;
+    if(kl.includes('audio')||/\.(mp3|wav|ogg|flac|aac|m4a)(\?|$)/i.test(v))
+      return `<audio src="${esc(v)}" controls style="width:100%;display:block"></audio>`;
+    if(/\.(jpg|jpeg|png|gif|webp|svg)(\?|$)/i.test(v))
+      return `<img src="${esc(v)}" alt="${esc(f.key)}" loading="lazy" style="${S.thumb}">`;
+    if(/^https?:\/\//.test(v)){
+      const label=v.replace(/^https?:\/\//,'').replace(/\/$/,'').substring(0,34);
+      return `<a href="${esc(v)}" target="_blank" rel="noopener" style="${S.link}">${esc(label)} ↗</a>`;
+    }
+    return esc(v).replace(/\n/g,'<br>');
+  }
+  let h=`<div style="${S.wrap}"><div style="${S.title}">${esc(template)}</div>`;
+  if(imgF?.value){
+    h+=`<div style="${S.imgWrap}"><img src="${esc(imgF.value)}" alt="${esc(nameF?.value||template)}" loading="lazy" style="${S.imgTag}"></div>`;
+    if(nameF?.value) h+=`<div style="${S.caption}">${esc(nameF.value)}</div>`;
+  }
+  if(rows.length){
+    h+=`<table style="${S.table}">`;
+    rows.forEach((f,i)=>{
+      const bg=i%2===0?'background:#141820':'background:#101318';
+      h+=`<tr style="${bg};border-bottom:1px solid rgba(42,52,80,.5)"><th style="${S.th}">${esc(f.key)}</th><td style="${S.td}">${cell(f)}</td></tr>`;
+    });
+    h+=`</table>`;
+  }
+  h+=`</div>`;
+  return h;
+}
+
+/* ─── DOWNLOAD ─── */
+function download(name, content){
+  const blob=new Blob([content],{type:'text/html;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download=name; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+}
+
+/* ─── EDITOR COMMANDS ─── */
+function ex(cmd,val=null){
+  const ea=document.getElementById('editor-area'); ea.focus();
+  document.execCommand(cmd,false,val);
+}
+function applyBlock(tag){
+  const ea=document.getElementById('editor-area'); ea.focus();
+  document.execCommand('formatBlock',false,'<'+tag+'>');
+}
+function ws(tag){
+  const sel=window.getSelection(); if(!sel.rangeCount) return;
+  const range=sel.getRangeAt(0);
+  if(range.collapsed){ toast('Select text first','inf'); return; }
+  const el=document.createElement(tag);
+  try{ range.surroundContents(el); }
+  catch{ document.execCommand('insertHTML',false,'<'+tag+'>'+range.toString()+'</'+tag+'>'); }
+  setDirty(true);
+}
+function insTable(){
+  const ea=document.getElementById('editor-area'); ea.focus();
+  ex('insertHTML','<br><table><thead><tr><th>Column 1</th><th>Column 2</th><th>Column 3</th></tr></thead><tbody><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table><br>');
+}
+function insHR(){
+  const ea=document.getElementById('editor-area'); ea.focus();
+  ex('insertHTML','<hr>');
+}
+function insBox(cls,placeholder){
+  const ea=document.getElementById('editor-area'); ea.focus();
+  ex('insertHTML','<div class="'+cls+'">'+placeholder+'</div><p></p>');
+}
+function buildTOC(){
+  const ea=document.getElementById('editor-area');
+  const headings=[...ea.querySelectorAll('h1,h2,h3,h4,h5,h6')];
+  if(!headings.length){ toast('No headings found','inf'); return; }
+  let toc='<div class="toc"><span class="toc-title">📋 Contents</span>';
+  headings.forEach((h,i)=>{
+    h.id='toc_'+i;
+    const level=parseInt(h.tagName[1]);
+    const cls=level===1?'':level===2?'toc-sub':'toc-sub2';
+    toc+=`<a href="#toc_${i}" class="${cls}">${h.textContent}</a>`;
+  });
+  toc+='</div>';
+  ea.focus(); ex('insertHTML',toc);
+}
+function onEditorKeydown(e){
+  if((e.ctrlKey||e.metaKey)&&e.key==='s'){ e.preventDefault(); saveCurrent(); }
+}
+
+/* ─── INSERT MEDIA ─── */
+function promptIns(type){
+  insType=type;
+  const titles={link:'🔗 Insert Link',image:'🖼 Insert Image',video:'▶ Insert Video',audio:'♪ Insert Audio'};
+  document.getElementById('ins-modal-title').textContent=titles[type];
+  document.getElementById('ins-url').value='';
+  document.getElementById('ins-text').value='';
+  document.getElementById('ins-alt').value='';
+  document.getElementById('ins-text-grp').style.display=type==='link'?'block':'none';
+  document.getElementById('ins-alt-grp').style.display=type==='image'?'block':'none';
+  document.getElementById('ins-align-grp').style.display=type==='image'?'block':'none';
+  savedSel=saveSel();
+  openModal('modal-insert');
+  setTimeout(()=>document.getElementById('ins-url').focus(),80);
+}
+function doInsert(){
+  const url=document.getElementById('ins-url').value.trim();
+  if(!url){ toast('Enter a URL','err'); return; }
+  restoreSel(savedSel);
+  const ea=document.getElementById('editor-area'); ea.focus();
+  let html='';
+  if(insType==='link'){
+    const txt=document.getElementById('ins-text').value.trim()||url;
+    html=`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(txt)}</a>`;
+  } else if(insType==='image'){
+    const alt=document.getElementById('ins-alt').value.trim();
+    const align=document.getElementById('ins-align').value;
+    const cls=align==='left'?'wiki-img-left':align==='right'?'wiki-img-right':'wiki-img';
+    html=`<img src="${esc(url)}" class="${cls}" alt="${esc(alt)}" loading="lazy">`;
+    if(alt) html+=`<div class="wiki-caption">${esc(alt)}</div>`;
+  } else if(insType==='video'){
+    html=`<video src="${esc(url)}" controls style="max-width:100%;border-radius:6px;margin:8px 0"></video>`;
+  } else if(insType==='audio'){
+    html=`<audio src="${esc(url)}" controls style="width:100%;margin:8px 0"></audio>`;
+  }
+  ex('insertHTML',html);
+  closeModal('modal-insert');
+  setDirty(true);
+}
+
+/* ─── INFOBOX ─── */
+function openInfoboxModal(){
+  if(!currentId){ toast('Open a page first','inf'); return; }
+  ibTpl=null; savedSel=saveSel();
+  const grid=document.getElementById('ib-tpl-grid');
+  const icons={Artist:'🎤',Business:'💼',Software:'💻',Person:'👤',Company:'🏢',Group:'👥',Music:'🎵',Film:'🎬',Place:'📍',Custom:'✏️'};
+  grid.innerHTML=Object.keys(IB_TEMPLATES).map(t=>`
+    <button style="background:var(--bg4);border:1px solid var(--border);color:var(--text2);padding:10px 6px;border-radius:5px;cursor:pointer;font-size:12px;font-weight:500;font-family:var(--font-sans);transition:all .15s;text-align:center"
+      onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--text)'"
+      onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text2)'"
+      onclick="ibSelTpl('${t}')">
+      ${icons[t]||'📄'}<br>${t}
+    </button>`).join('');
+  document.getElementById('ib-step1').style.display='block';
+  document.getElementById('ib-step2').style.display='none';
+  document.getElementById('ib-footer').style.display='none';
+  openModal('modal-infobox');
+}
+function ibSelTpl(tpl){
+  ibTpl=tpl;
+  document.getElementById('ib-tpl-name').textContent=tpl;
+  document.getElementById('ib-step1').style.display='none';
+  document.getElementById('ib-step2').style.display='block';
+  document.getElementById('ib-footer').style.display='flex';
+  const existing=infoboxes[currentId];
+  const fields=(existing&&existing.template===tpl)?existing.fields:IB_TEMPLATES[tpl].map(k=>({key:k,value:''}));
+  renderIbFields(fields);
+}
+function ibBack(){ document.getElementById('ib-step1').style.display='block'; document.getElementById('ib-step2').style.display='none'; document.getElementById('ib-footer').style.display='none'; }
+function renderIbFields(fields){
+  document.getElementById('ib-fields-list').innerHTML=fields.map((f,i)=>`
+    <div class="ibr" id="ibr_${i}">
+      <input class="ibk" id="ibk_${i}" value="${esc(f.key)}" placeholder="Field name">
+      <input class="ibv" id="ibv_${i}" value="${esc(f.value)}" placeholder="Value / URL">
+      <button class="ibd" onclick="ibDelRow(${i})" title="Remove">×</button>
+    </div>`).join('');
+}
+function ibAddField(){
+  const n=document.querySelectorAll('.ibr').length;
+  const div=document.createElement('div'); div.className='ibr'; div.id='ibr_'+n;
+  div.innerHTML=`<input class="ibk" id="ibk_${n}" placeholder="Field name"><input class="ibv" id="ibv_${n}" placeholder="Value / URL"><button class="ibd" onclick="ibDelRow(${n})" title="Remove">×</button>`;
+  document.getElementById('ib-fields-list').appendChild(div);
+}
+function ibDelRow(i){ const r=document.getElementById('ibr_'+i); if(r) r.remove(); }
+function collectIbFields(){
+  const keys=[...document.querySelectorAll('.ibk')].map(e=>e.value.trim());
+  const vals=[...document.querySelectorAll('.ibv')].map(e=>e.value.trim());
+  return keys.map((k,i)=>({key:k,value:vals[i]}));
+}
+function saveInfobox(){
+  if(!ibTpl) return;
+  infoboxes[currentId]={template:ibTpl,fields:collectIbFields()};
+  saveData();
+  closeModal('modal-infobox');
+  toast('Infobox saved — it will appear in the exported HTML','ok');
+}
+
+/* ─── UTILITIES ─── */
+function copyAll(){
+  const ea=document.getElementById('editor-area');
+  const r=document.createRange(); r.selectNodeContents(ea);
+  const s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  document.execCommand('copy'); s.removeAllRanges();
+  toast('Copied to clipboard','ok');
+}
+async function pasteText(){
+  document.getElementById('editor-area').focus();
+  try{ const t=await navigator.clipboard.readText(); ex('insertText',t); toast('Pasted','ok'); }
+  catch{ toast('Use Ctrl+V to paste','inf'); }
+}
+function wordCount(){
+  const txt=document.getElementById('editor-area').innerText||'';
+  const w=txt.trim().split(/\s+/).filter(Boolean).length;
+  const c=txt.replace(/\s/g,'').length;
+  toast('Words: '+w+' | Characters: '+c,'inf');
+}
+function printPage(){ window.print(); }
+function updateWordCount(){
+  const txt=document.getElementById('editor-area').innerText||'';
+  const w=txt.trim().split(/\s+/).filter(Boolean).length;
+  const c=txt.replace(/\s/g,'').length;
+  document.getElementById('sb-words').textContent='Words: '+w;
+  document.getElementById('sb-chars').textContent='Chars: '+c;
+}
+function updateStatusBar(){
+  document.getElementById('sb-pages').textContent='Pages: '+Object.keys(pages).length;
+  try{
+    const kb=Math.round((localStorage.getItem(STORE_KEY)||'').length/1024);
+    document.getElementById('sb-size').textContent='Storage: '+kb+' KB';
+  }catch{}
+}
+
+/* ─── MODALS ─── */
+function openModal(id){ document.getElementById(id).classList.add('open'); }
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+document.querySelectorAll('.mo').forEach(m=>{
+  m.addEventListener('click',e=>{ if(e.target===m) m.classList.remove('open'); });
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') document.querySelectorAll('.mo.open').forEach(m=>m.classList.remove('open'));
+  if((e.ctrlKey||e.metaKey)&&e.key==='n'&&!e.shiftKey){ e.preventDefault(); openModal('modal-new'); setTimeout(()=>document.getElementById('np-title').focus(),80); }
+  if((e.ctrlKey||e.metaKey)&&e.key==='s'){ e.preventDefault(); saveCurrent(); }
+});
+
+/* ─── SELECTION HELPERS ─── */
+function saveSel(){ const s=window.getSelection(); return s.rangeCount?s.getRangeAt(0).cloneRange():null; }
+function restoreSel(r){ if(!r) return; const s=window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+
+/* ─── HELPERS ─── */
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function showErr(el,msg){ el.textContent=msg; el.classList.add('show'); }
+function toast(msg,type='inf'){
+  const el=document.createElement('div'); el.className='toast '+type; el.textContent=msg;
+  document.getElementById('toast-wrap').appendChild(el);
+  setTimeout(()=>el.remove(),3200);
+}
+
+/* ─── INIT ─── */
+function init(){
+  loadData();
+  renderPageList();
+  updateStatusBar();
+  /* Open last page if any */
+  const ids=Object.keys(pages).sort((a,b)=>pages[b].updated-pages[a].updated);
+  if(ids.length) openPage(ids[0]);
+}
+window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('beforeunload', e=>{
+  if(dirty){ autosave(); }
+});
+</script>
+</body>
+</html>
+

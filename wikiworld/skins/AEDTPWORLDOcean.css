@@ -1,0 +1,50 @@
+/* ===================================================================
+   AWFLWIKIWORLD — Skin/AEDTPWORLDOcean.css
+   Developer: AEDTP WORLD
+   Skin Name: AEDTPWORLD Ocean (Deep Blue / Cyan)
+   License: AWFL
+   Version: 2.0 - Double-Locked
+   Palette: 10+5 - Ocean Deep Blue
+   =================================================================== */
+:root {
+    --awfl-header-bg: #0A1931!important;       /* 1 deep ocean navy */
+    --awfl-header-text: #E3F2FD!important;    /* 2 ice blue white */
+    --awfl-button-bg: #185ADB!important;      /* 3 ocean blue button */
+    --awfl-button-text: #FFFFFF!important;    /* 4 */
+    --awfl-page-text: #102542!important;      /* 5 dark ink blue */
+    --awfl-link: #0A58CA!important;           /* 6 ocean link */
+    --awfl-link-visited: #6A1B9A!important;   /* 7 deep purple */
+    --awfl-border: #B0BEC5!important;         /* 8 sea mist */
+    --awfl-bg: #EAF6FF!important;             /* 9 light ocean wash */
+    --awfl-content-bg: #FFFFFF!important;     /* 10 */
+}
+
+html, body { background: var(--awfl-bg)!important; color: var(--awfl-page-text)!important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif!important; line-height: 1.7!important; font-size: 14.4px!important; }
+.awfl-body { background: var(--awfl-bg)!important; }
+
+.awfl-header { background: var(--awfl-header-bg)!important; border-bottom: 3px solid #122C5A!important; } /* 11 */
+.awfl-header-inner { background: var(--awfl-header-bg)!important; }
+html body .awfl-header a { color: #4FB3FF!important; -webkit-text-fill-color: #4FB3FF!important; } /* 12 cyan visible on navy */
+
+.awfl-main { background: var(--awfl-content-bg)!important; border: 1px solid var(--awfl-border)!important; box-shadow: 0 4px 20px rgba(10,25,49,0.08)!important; }
+.awfl-footer { background: #0A1931!important; border-top: 3px solid #185ADB!important; }
+.awfl-footer-inner { color: #90CAF9!important; } /* 13 */
+.awfl-footer a { color: #4FB3FF!important; }
+
+.infobox { background: #F5FBFF!important; border: 1px solid #90CAF9!important; } /* 14 */
+.infobox th { background: #0A1931!important; color: #FFFFFF!important; }
+.infobox-title { background: #122C5A!important; color: #E3F2FD!important; }
+table.awfl-datatable th { background: #185ADB!important; color: #FFFFFF!important; }
+
+a { color: var(--awfl-link)!important; }
+a:visited { color: var(--awfl-link-visited)!important; }
+
+::selection { background: #4FB3FF!important; color: #0A1931!important; } /* 15 */
+
+
+
+
+
+
+
+

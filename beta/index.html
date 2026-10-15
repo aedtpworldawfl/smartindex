@@ -1,0 +1,976 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AWFL WIKI META Creator — AEDTP WORLD</title>
+<meta name="description" content="AEDTP WORLD FREE LICENSE (AWFL) WIKI META Is a WIKI system developed under the AEDTP WORLD FREE LICENSE (AWFL) by the AEDTP WORLD.">
+<meta name="author" content="AEDTP WORLD">
+<meta name="copyright" content="© AEDTP WORLD">
+<meta name="keywords" content="AEDTP WORLD FREE LICENSE (AWFL) WIKI META, AWFLMETA, AEDTP WORLD, WIKI, DEVELOPER, MUSIC, ARTISTS, BIOGRAPHY">
+<meta name="license" content="AEDTP WORLD FREE LICENSE (AWFL)">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="AWFL WIKI Creator — AEDTP WORLD">
+<meta property="og:description" content="AEDTP WORLD FREE LICENSE (AWFL) WIKI Creator — Build, preview and download wiki pages instantly.">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+    <link rel="canonical" href="https://aedtpworld.com/beta/">
+
+<meta property="og:image" content="https://aedtpworld.com/icons/awflmetaawfl.jpg">
+<link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.jpg" type="image/jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #030b14;
+  --surface: #081828;
+  --card: #0c2035;
+  --border: #0ec0ce33;
+  --border-solid: #0ec0ce66;
+  --accent: #0ec0ce;
+  --accent2: #00ffcc;
+  --accent3: #ff6b35;
+  --text: #e8f4f8;
+  --muted: #7ab8cc;
+  --heading: #ffffff;
+  --glow: 0 0 24px #0ec0ce55;
+  --glow-sm: 0 0 12px #0ec0ce33;
+  --danger: #d33;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Space Mono', monospace;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grid overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(14,192,206,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,192,206,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glow orb */
+body::after {
+  content: '';
+  position: fixed;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(14,192,206,0.10) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: relative;
+  z-index: 10;
+  background: rgba(3,11,20,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.header-logo-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 0 12px rgba(14,192,206,0.3);
+}
+.header-logo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.header-brand {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--heading);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.header-brand span { color: var(--accent); }
+
+.header-sub {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
+.beta-badge {
+  background: var(--accent3);
+  color: #fff;
+  font-size: 9px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.header-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ===== BUILDER LAYOUT ===== */
+.builder {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ===== LEFT PANEL ===== */
+.panel {
+  width: 400px;
+  min-width: 300px;
+  overflow-y: auto;
+  border-right: 1px solid var(--border);
+  background: rgba(8,24,40,0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-solid) transparent;
+}
+
+.panel::-webkit-scrollbar { width: 4px; }
+.panel::-webkit-scrollbar-thumb { background: var(--border-solid); border-radius: 2px; }
+
+.panel-section {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 18px;
+}
+
+.panel-section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.section-label-tag {
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.panel-section-header h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--heading);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  flex: 1;
+}
+
+.section-chevron {
+  font-size: 10px;
+  color: var(--muted);
+  transition: transform 0.2s;
+}
+.section-chevron.open { transform: rotate(90deg); }
+
+.section-body { display: block; }
+.section-body.collapsed { display: none; }
+
+/* ===== INPUTS ===== */
+label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+  margin-top: 12px;
+  font-family: 'Syne', sans-serif;
+}
+label:first-of-type { margin-top: 0; }
+
+input[type=text],
+input[type=url],
+textarea,
+select {
+  width: 100%;
+  padding: 8px 10px;
+  background: rgba(3,11,20,0.8);
+  border: 1px solid var(--border-solid);
+  color: var(--text);
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  border-radius: 3px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: var(--glow-sm);
+}
+input::placeholder, textarea::placeholder { color: #3a6070; }
+textarea { resize: vertical; min-height: 70px; }
+
+.hint {
+  font-size: 10px;
+  color: #3a6070;
+  font-family: 'Space Mono', monospace;
+  margin-top: 3px;
+  line-height: 1.5;
+}
+
+/* ===== SECTION ROW (input + button) ===== */
+.section-row {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+.section-row input { flex: 1; }
+
+/* ===== BUTTONS ===== */
+.btn-add {
+  padding: 8px 12px;
+  background: linear-gradient(135deg, var(--accent), #0a8a94);
+  color: var(--bg);
+  border: none;
+  font-size: 10px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn-add:hover { opacity: 0.85; transform: translateY(-1px); }
+
+.btn-remove {
+  padding: 4px 8px;
+  background: rgba(211,51,51,0.15);
+  color: #ff6b6b;
+  border: 1px solid rgba(211,51,51,0.3);
+  font-size: 11px;
+  font-family: 'Space Mono', monospace;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.btn-remove:hover { background: rgba(211,51,51,0.3); }
+
+.btn-primary {
+  padding: 9px 20px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: var(--bg);
+  border: none;
+  font-size: 11px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(14,192,206,0.25);
+  transition: all 0.2s;
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 0 30px rgba(14,192,206,0.4); }
+
+.btn-ghost {
+  padding: 9px 16px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border-solid);
+  font-size: 11px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ===== LIST ITEMS ===== */
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+.list-item-text {
+  flex: 1;
+  background: rgba(3,11,20,0.6);
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  color: var(--text);
+  font-family: 'Space Mono', monospace;
+  word-break: break-word;
+}
+
+/* ===== SECTION ITEM (wiki section) ===== */
+.section-item {
+  background: rgba(3,11,20,0.5);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 10px 12px;
+  margin-top: 8px;
+}
+.section-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.section-item-header strong {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.section-item label { margin-top: 0; }
+
+/* ===== TAG CHIPS ===== */
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+.tag {
+  background: rgba(14,192,206,0.1);
+  border: 1px solid var(--border-solid);
+  color: var(--accent);
+  font-size: 11px;
+  font-family: 'Space Mono', monospace;
+  padding: 3px 10px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tag button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  padding: 0;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+.tag button:hover { opacity: 1; }
+
+/* ===== ACTIONS BAR ===== */
+.actions {
+  padding: 16px 18px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: rgba(12,32,53,0.6);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* ===== RIGHT PANEL (Preview) ===== */
+.preview-wrap {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  min-width: 0;
+}
+
+.preview-header {
+  background: rgba(3,11,20,0.97);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.preview-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.preview-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent2);
+  box-shadow: 0 0 8px var(--accent2);
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.preview-wrap iframe {
+  width: 100%;
+  flex: 1;
+  border: none;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-thumb { background: var(--border-solid); border-radius: 2px; }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 860px) {
+  .builder { flex-direction: column; height: auto; overflow: visible; }
+  .panel { width: 100%; min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
+  .preview-wrap { min-height: 480px; }
+  body { height: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-logo-img">
+    <img src="/icons/aedtpworld.jpg" alt="AEDTP World">
+  </div>
+  <div>
+    <div class="header-brand"><span>AWFL</span> WIKI Creator</div>
+    <div class="header-sub">AEDTP WORLD FREE LICENSE</div>
+  </div>
+  <span class="beta-badge">BETA</span>
+  <div class="header-actions">
+    <button class="btn-ghost" onclick="liveUpdate()">↺ Refresh</button>
+    <button class="btn-primary" onclick="downloadWiki()">⬇ Download</button>
+  </div>
+</div>
+
+<!-- BUILDER -->
+<div class="builder">
+
+  <!-- LEFT PANEL -->
+  <div class="panel" id="panel">
+
+    <!-- BASIC INFO -->
+    <div class="panel-section">
+      <div class="panel-section-header" onclick="toggleSection(this)">
+        <div class="section-label-tag">01</div>
+        <h3>Basic Information</h3>
+        <span class="section-chevron open">▶</span>
+      </div>
+      <div class="section-body">
+        <label>Wiki Title (= filename)</label>
+        <input type="text" id="f-title" placeholder="e.g. Buddy DML" oninput="liveUpdate()">
+        <div class="hint">Title becomes filename: Title.html</div>
+
+        <label>Full / Birth Name</label>
+        <input type="text" id="f-fullname" placeholder="e.g. Emmanuel Deliver Amable" oninput="liveUpdate()">
+
+        <label>Also Known As</label>
+        <input type="text" id="f-aka" placeholder="e.g. The Trenchkid TM" oninput="liveUpdate()">
+
+        <label>Short Description / Intro</label>
+        <textarea id="f-intro" placeholder="One-line intro: who they are and what they do." oninput="liveUpdate()"></textarea>
+      </div>
+    </div>
+
+    <!-- INFOBOX -->
+    <div class="panel-section">
+      <div class="panel-section-header" onclick="toggleSection(this)">
+        <div class="section-label-tag">02</div>
+        <h3>Infobox Details</h3>
+        <span class="section-chevron open">▶</span>
+      </div>
+      <div class="section-body">
+        <label>Image URL</label>
+        <input type="url" id="f-image" placeholder="https://..." oninput="liveUpdate()">
+
+        <label>Date of Birth</label>
+        <input type="text" id="f-born" placeholder="e.g. 14 April 2008" oninput="liveUpdate()">
+
+        <label>Birth Place</label>
+        <input type="text" id="f-birthplace" placeholder="e.g. Anloga, Volta Region, Ghana" oninput="liveUpdate()">
+
+        <label>Origin / Country</label>
+        <input type="text" id="f-origin" placeholder="e.g. Ghana" oninput="liveUpdate()">
+
+        <label>Nationality</label>
+        <input type="text" id="f-nationality" placeholder="e.g. Ghanaian" oninput="liveUpdate()">
+
+        <label>Occupation(s)</label>
+        <input type="text" id="f-occupation" placeholder="e.g. Musician, Producer, Songwriter" oninput="liveUpdate()">
+
+        <label>Genres</label>
+        <div class="section-row">
+          <input type="text" id="f-genre-input" placeholder="e.g. Hip Hop">
+          <button class="btn-add" onclick="addTag('genre')">+ Add</button>
+        </div>
+        <div class="tags-row" id="genre-tags"></div>
+
+        <label>Years Active</label>
+        <input type="text" id="f-years" placeholder="e.g. 2021–present" oninput="liveUpdate()">
+
+        <label>Label / Organization</label>
+        <input type="text" id="f-label" placeholder="e.g. AEDTP WORLD" oninput="liveUpdate()">
+
+        <label>Website URL</label>
+        <input type="url" id="f-website" placeholder="https://..." oninput="liveUpdate()">
+
+        <label>Website Display Text</label>
+        <input type="text" id="f-website-text" placeholder="e.g. Official Profile" oninput="liveUpdate()">
+      </div>
+    </div>
+
+    <!-- EXTRA ROWS -->
+    <div class="panel-section">
+      <div class="panel-section-header" onclick="toggleSection(this)">
+        <div class="section-label-tag">03</div>
+        <h3>Extra Infobox Rows</h3>
+        <span class="section-chevron open">▶</span>
+      </div>
+      <div class="section-body">
+        <div class="hint" style="margin-bottom:10px">Custom fields — Awards, Spouse, Net Worth, etc.</div>
+        <div id="extra-rows"></div>
+        <button class="btn-add" style="margin-top:10px;width:100%" onclick="addExtraRow()">+ Add Custom Row</button>
+      </div>
+    </div>
+
+    <!-- WIKI SECTIONS -->
+    <div class="panel-section">
+      <div class="panel-section-header" onclick="toggleSection(this)">
+        <div class="section-label-tag">04</div>
+        <h3>Wiki Sections</h3>
+        <span class="section-chevron open">▶</span>
+      </div>
+      <div class="section-body">
+        <div class="hint" style="margin-bottom:10px">Lines starting with <code style="color:var(--accent2)">-</code> become bullet points.</div>
+        <div id="sections-list"></div>
+        <div class="section-row" style="margin-top:10px">
+          <input type="text" id="new-section-title" placeholder="Section heading e.g. Early life">
+          <button class="btn-add" onclick="addSection()">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DISCOGRAPHY -->
+    <div class="panel-section">
+      <div class="panel-section-header" onclick="toggleSection(this)">
+        <div class="section-label-tag">05</div>
+        <h3>Discography</h3>
+        <span class="section-chevron open">▶</span>
+      </div>
+      <div class="section-body">
+        <div id="disco-list"></div>
+        <div class="section-row" style="margin-top:8px">
+          <input type="text" id="new-disco" placeholder="e.g. Yansh Na Yansh (2024)">
+          <button class="btn-add" onclick="addDisco()">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALIASES -->
+    <div class="panel-section">
+      <div class="panel-section-header" onclick="toggleSection(this)">
+        <div class="section-label-tag">06</div>
+        <h3>Other Names / Aliases</h3>
+        <span class="section-chevron open">▶</span>
+      </div>
+      <div class="section-body">
+        <div id="aliases-list"></div>
+        <div class="section-row" style="margin-top:8px">
+          <input type="text" id="new-alias" placeholder="e.g. Young Buddy">
+          <button class="btn-add" onclick="addAlias()">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASSOCIATED ACTS -->
+    <div class="panel-section">
+      <div class="panel-section-header" onclick="toggleSection(this)">
+        <div class="section-label-tag">07</div>
+        <h3>Associated Acts</h3>
+        <span class="section-chevron open">▶</span>
+      </div>
+      <div class="section-body">
+        <div id="acts-list"></div>
+        <div class="section-row" style="margin-top:8px">
+          <input type="text" id="new-act" placeholder="e.g. AEDTP WORLD production team">
+          <button class="btn-add" onclick="addAct()">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- REFERENCES -->
+    <div class="panel-section">
+      <div class="panel-section-header" onclick="toggleSection(this)">
+        <div class="section-label-tag">08</div>
+        <h3>References / Links</h3>
+        <span class="section-chevron open">▶</span>
+      </div>
+      <div class="section-body">
+        <div id="refs-list"></div>
+        <div class="section-item" style="margin-top:8px">
+          <label>Link Text</label>
+          <input type="text" id="new-ref-text" placeholder="e.g. Bandcamp Profile">
+          <label>URL</label>
+          <input type="url" id="new-ref-url" placeholder="https://...">
+          <button class="btn-add" style="margin-top:8px;width:100%" onclick="addRef()">+ Add Link</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="panel-section">
+      <div class="panel-section-header" onclick="toggleSection(this)">
+        <div class="section-label-tag">09</div>
+        <h3>Categories</h3>
+        <span class="section-chevron open">▶</span>
+      </div>
+      <div class="section-body">
+        <div class="section-row">
+          <input type="text" id="f-cat-input" placeholder="e.g. Ghanaian musicians">
+          <button class="btn-add" onclick="addTag('cat')">+ Add</button>
+        </div>
+        <div class="tags-row" id="cat-tags"></div>
+      </div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <button class="btn-ghost" onclick="liveUpdate()" style="flex:1">↺ Refresh Preview</button>
+      <button class="btn-primary" onclick="downloadWiki()" style="flex:2">⬇ Save & Download</button>
+    </div>
+
+  </div><!-- /panel -->
+
+  <!-- RIGHT PANEL -->
+  <div class="preview-wrap">
+    <div class="preview-header">
+      <div class="preview-dot"></div>
+      <span class="preview-label">Live Preview</span>
+      <span style="margin-left:auto;font-size:9px;color:#3a6070;font-family:'Space Mono',monospace">OUTPUT — AWFL WIKI FORMAT</span>
+    </div>
+    <iframe id="preview-frame" title="Wiki Preview"></iframe>
+  </div>
+
+</div><!-- /builder -->
+
+<script>
+var genres = [], cats = [], sections = [], discos = [], aliases = [], acts = [], refs = [], extraRows = [];
+
+function v(id){ return (document.getElementById(id)||{}).value||''; }
+
+// ── Collapsible sections ──────────────────────────────────────
+function toggleSection(header) {
+  var body = header.nextElementSibling;
+  var chevron = header.querySelector('.section-chevron');
+  var collapsed = body.classList.toggle('collapsed');
+  chevron.classList.toggle('open', !collapsed);
+}
+
+// ── Tags ──────────────────────────────────────────────────────
+function addTag(type) {
+  var inp = document.getElementById('f-'+type+'-input');
+  var val = inp.value.trim();
+  if (!val) return;
+  (type==='genre' ? genres : cats).push(val);
+  inp.value = '';
+  renderTags(type);
+  liveUpdate();
+}
+function removeTag(type, i) {
+  (type==='genre' ? genres : cats).splice(i, 1);
+  renderTags(type);
+  liveUpdate();
+}
+function renderTags(type) {
+  var arr = type==='genre' ? genres : cats;
+  document.getElementById(type+'-tags').innerHTML = arr.map(function(t,i){
+    return '<span class="tag">'+esc(t)+'<button onclick="removeTag(\''+type+'\','+i+')" aria-label="remove">×</button></span>';
+  }).join('');
+}
+
+// ── Wiki sections ─────────────────────────────────────────────
+function addSection() {
+  var t = document.getElementById('new-section-title').value.trim();
+  if (!t) return;
+  sections.push({title:t, body:''});
+  document.getElementById('new-section-title').value = '';
+  renderSections();
+}
+function removeSection(i) { sections.splice(i,1); renderSections(); liveUpdate(); }
+function renderSections() {
+  document.getElementById('sections-list').innerHTML = sections.map(function(s,i){
+    return '<div class="section-item">'
+      +'<div class="section-item-header"><strong>'+esc(s.title)+'</strong>'
+      +'<button class="btn-remove" onclick="removeSection('+i+')">Remove</button></div>'
+      +'<textarea rows="4" oninput="sections['+i+'].body=this.value;liveUpdate()" '
+      +'placeholder="Section content. Start lines with - for bullets.">'+esc(s.body)+'</textarea></div>';
+  }).join('');
+}
+
+// ── Simple lists ──────────────────────────────────────────────
+function addDisco() { addToList('disco','new-disco',discos,'disco-list'); }
+function addAlias() { addToList('alias','new-alias',aliases,'aliases-list'); }
+function addAct()   { addToList('act','new-act',acts,'acts-list'); }
+
+function addToList(name, inputId, arr, listId) {
+  var t = document.getElementById(inputId).value.trim();
+  if (!t) return;
+  arr.push(t);
+  document.getElementById(inputId).value = '';
+  renderList(listId, arr, name+'s');
+  liveUpdate();
+}
+function renderList(elId, arr, arrName) {
+  document.getElementById(elId).innerHTML = arr.map(function(item,i){
+    return '<div class="list-item">'
+      +'<div class="list-item-text">'+esc(item)+'</div>'
+      +'<button class="btn-remove" onclick="'+arrName+'.splice('+i+',1);renderList(\''+elId+'\','+arrName+',\''+arrName+'\');liveUpdate()">×</button></div>';
+  }).join('');
+}
+// wire up name fix
+var discos_=discos, aliases_=aliases, acts_=acts;
+
+// ── Refs ──────────────────────────────────────────────────────
+function addRef() {
+  var t = document.getElementById('new-ref-text').value.trim();
+  var u = document.getElementById('new-ref-url').value.trim();
+  if (!t||!u) return;
+  refs.push({text:t, url:u});
+  document.getElementById('new-ref-text').value = '';
+  document.getElementById('new-ref-url').value = '';
+  renderRefs(); liveUpdate();
+}
+function removeRef(i) { refs.splice(i,1); renderRefs(); liveUpdate(); }
+function renderRefs() {
+  document.getElementById('refs-list').innerHTML = refs.map(function(r,i){
+    return '<div class="list-item">'
+      +'<div class="list-item-text">'+esc(r.text)+' — <em style="color:#3366cc">'+esc(r.url)+'</em></div>'
+      +'<button class="btn-remove" onclick="removeRef('+i+')">×</button></div>';
+  }).join('');
+}
+
+// ── Extra rows ────────────────────────────────────────────────
+function addExtraRow() { extraRows.push({key:'',val:''}); renderExtraRows(); }
+function removeExtraRow(i) { extraRows.splice(i,1); renderExtraRows(); liveUpdate(); }
+function renderExtraRows() {
+  document.getElementById('extra-rows').innerHTML = extraRows.map(function(r,i){
+    return '<div class="section-item" style="margin-top:6px">'
+      +'<div class="section-item-header"><strong style="color:var(--accent)">Row '+(i+1)+'</strong>'
+      +'<button class="btn-remove" onclick="removeExtraRow('+i+')">Remove</button></div>'
+      +'<label>Field Name</label><input type="text" value="'+esc(r.key)+'" oninput="extraRows['+i+'].key=this.value;liveUpdate()" placeholder="e.g. Awards">'
+      +'<label>Value</label><input type="text" value="'+esc(r.val)+'" oninput="extraRows['+i+'].val=this.value;liveUpdate()" placeholder="e.g. Ghana Music Awards 2025"></div>';
+  }).join('');
+}
+
+// ── Escape ────────────────────────────────────────────────────
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// ── Body → HTML ───────────────────────────────────────────────
+function bodyToHtml(body) {
+  var lines = body.split('\n'), out = '', inList = false;
+  lines.forEach(function(line){
+    line = line.trim();
+    if (!line) { if (inList){out+='</ul>';inList=false;} return; }
+    if (line.startsWith('-')) {
+      if (!inList){out+='<ul>';inList=true;}
+      out += '<li>'+esc(line.slice(1).trim())+'</li>';
+    } else {
+      if (inList){out+='</ul>';inList=false;}
+      out += '<p>'+esc(line)+'</p>';
+    }
+  });
+  if (inList) out += '</ul>';
+  return out;
+}
+
+// ── Build output HTML ─────────────────────────────────────────
+function buildHTML() {
+  var title      = v('f-title')||'Untitled';
+  var fullname   = v('f-fullname');
+  var aka        = v('f-aka');
+  var intro      = v('f-intro');
+  var image      = v('f-image');
+  var born       = v('f-born');
+  var birthplace = v('f-birthplace');
+  var origin     = v('f-origin');
+  var nationality= v('f-nationality');
+  var occupation = v('f-occupation');
+  var years      = v('f-years');
+  var label      = v('f-label');
+  var website    = v('f-website');
+  var websiteText= v('f-website-text')||'Official Website';
+
+  var introHtml = '';
+  if (fullname && intro) {
+    introHtml = '<p><b>'+esc(fullname)+'</b>, known professionally as <b>'+esc(title)+'</b>'
+      +(aka?', also known as <b>'+esc(aka)+'</b>':'')+', '+esc(intro)+'</p>';
+  } else if (intro) {
+    introHtml = '<p>'+esc(intro)+'</p>';
+  }
+
+  var sectionsHtml = sections.map(function(s){
+    return '<h2>'+esc(s.title)+'</h2>'+bodyToHtml(s.body);
+  }).join('\n');
+
+  var discoHtml  = discos.length ? '<h2>Discography</h2><ul>'+discos.map(function(d){return '<li>'+esc(d)+'</li>';}).join('')+'</ul>' : '';
+  var aliasHtml  = aliases.length? '<h2>Other names</h2><ul>'+aliases.map(function(a){return '<li>'+esc(a)+'</li>';}).join('')+'</ul>' : '';
+  var actsHtml   = acts.length   ? '<h2>Associated acts</h2><ul>'+acts.map(function(a){return '<li>'+esc(a)+'</li>';}).join('')+'</ul>' : '';
+  var refsHtml   = refs.length   ? '<h2>References &amp; External Links</h2><ul>'+refs.map(function(r){return '<li><a href="'+esc(r.url)+'" target="_blank">'+esc(r.text)+'</a></li>';}).join('')+'</ul>' : '';
+  var catHtml    = cats.length   ? '<div style="margin-top:30px;padding-top:10px;border-top:1px solid #ddd;font-size:13px;color:#54595d;font-family:Arial,sans-serif"><strong>Categories:</strong> '+cats.map(function(c){return '<span style="margin-right:10px">'+esc(c)+'</span>';}).join('')+'</div>' : '';
+
+  var infoRows = '';
+  if (title)       infoRows += '<tr><th>Name</th><td>'+esc(title)+'</td></tr>';
+  if (fullname)    infoRows += '<tr><th>Birth name</th><td>'+esc(fullname)+'</td></tr>';
+  if (born)        infoRows += '<tr><th>Born</th><td>'+esc(born)+'</td></tr>';
+  if (birthplace)  infoRows += '<tr><th>Birth place</th><td>'+esc(birthplace)+'</td></tr>';
+  if (origin)      infoRows += '<tr><th>Origin</th><td>'+esc(origin)+'</td></tr>';
+  if (nationality) infoRows += '<tr><th>Nationality</th><td>'+esc(nationality)+'</td></tr>';
+  if (genres.length) infoRows += '<tr><th>Genres</th><td>'+genres.map(esc).join(', ')+'</td></tr>';
+  if (occupation)  infoRows += '<tr><th>Occupation</th><td>'+esc(occupation)+'</td></tr>';
+  if (years)       infoRows += '<tr><th>Years active</th><td>'+esc(years)+'</td></tr>';
+  if (label)       infoRows += '<tr><th>Label</th><td>'+esc(label)+'</td></tr>';
+  if (website)     infoRows += '<tr><th>Website</th><td><a href="'+esc(website)+'" target="_blank">'+esc(websiteText)+'</a></td></tr>';
+  extraRows.forEach(function(r){ if(r.key&&r.val) infoRows += '<tr><th>'+esc(r.key)+'</th><td>'+esc(r.val)+'</td></tr>'; });
+
+  var infoboxHtml = '<div class="infobox">'
+    +(image?'<img src="'+esc(image)+'" alt="'+esc(title)+'" width="280">':'')
+    +'<div class="infobox-title">'+esc(title)+'</div>'
+    +'<table>'+infoRows+'</table></div>';
+
+  return '<!DOCTYPE html>\n<html lang="en">\n<head>\n'
+    +'<meta charset="UTF-8">\n'
+    +'<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
+    +'<title>'+esc(title)+' | AEDTP WORLD FREE LICENSE (AWFL) WIKI METADATA | AEDTP WORLD FREE LICENSE (AWFL) | Music Meta Data | Biography | Artists | Discography | Business | Events | Wiki | News | pages | Help | About | Submit | Education | Instrumentals | Submission | Uploads | Cayla AI | AEDTP World | Apps | AWFL WIKI | Developers | Install | Publish | Distribution | Submit Apps | Contact | aedtpworld@gmail.com | Emmanuel Deliver Amable | AEDTP WORLD</title>\n'
+    +'<link href="https://fonts.googleapis.com/css2?family=Linux+Libertine+Display:wght@400;700&family=Georgia&display=swap" rel="stylesheet">\n'
+    +'<style>\n'
+    +'*{box-sizing:border-box;margin:0;padding:0}\n'
+    +'body{font-family:Georgia,serif;background:#fff;color:#202122;line-height:1.65;font-size:14px}\n'
+    +'.wiki-header{background:#fff;border-bottom:2px solid #a2a9b1;padding:8px 20px;display:flex;align-items:center;gap:10px}\n'
+    +'.wiki-logo{font-size:20px;font-weight:bold;color:#202122;font-family:Georgia,serif}\n'
+    +'.wiki-logo span{color:#3366cc}\n'
+    +'.wiki-logo sub{font-size:11px;color:#72777d;vertical-align:bottom;font-family:Arial,sans-serif}\n'
+    +'.wiki-nav{background:#f6f6f6;border-bottom:1px solid #a2a9b1;padding:0 20px;display:flex;gap:0;overflow-x:auto}\n'
+    +'.wiki-nav a{display:inline-block;padding:8px 14px;font-size:12px;font-family:Arial,sans-serif;color:#3366cc;text-decoration:none;border-bottom:3px solid transparent}\n'
+    +'.wiki-nav a:first-child{border-bottom-color:#3366cc;color:#202122;font-weight:bold}\n'
+    +'.container{max-width:1100px;margin:auto;padding:20px;display:flex;gap:24px;align-items:flex-start}\n'
+    +'.article{flex:1;background:#fff;padding:0 0 20px}\n'
+    +'h1{font-size:28px;margin:0 0 4px;font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}\n'
+    +'.article-tagline{font-size:11px;color:#54595d;font-family:Arial,sans-serif;margin-bottom:16px}\n'
+    +'h2{font-size:18px;font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #ddd;padding-bottom:4px;margin:24px 0 10px}\n'
+    +'p{margin-bottom:12px}\n'
+    +'ul{padding-left:22px;margin-bottom:12px}\n'
+    +'li{margin-bottom:4px}\n'
+    +'a{color:#3366cc}\n'
+    +'.infobox{width:280px;background:#f9f9f9;border:1px solid #aaa;font-size:13px;flex-shrink:0;align-self:flex-start}\n'
+    +'.infobox img{width:100%;height:auto;display:block}\n'
+    +'.infobox-title{background:#cee0f2;font-family:Arial,sans-serif;font-weight:bold;font-size:13px;text-align:center;padding:8px;border-bottom:1px solid #aaa}\n'
+    +'.infobox table{width:100%;border-collapse:collapse}\n'
+    +'.infobox th{text-align:left;background:#f0f0f0;padding:5px 7px;width:42%;font-family:Arial,sans-serif;font-size:12px;border-top:1px solid #ddd;vertical-align:top}\n'
+    +'.infobox td{padding:5px 7px;font-family:Arial,sans-serif;font-size:12px;border-top:1px solid #ddd;vertical-align:top}\n'
+    +'.wiki-footer{background:#f6f6f6;border-top:1px solid #a2a9b1;padding:14px 20px;text-align:center;font-size:11px;font-family:Arial,sans-serif;color:#54595d;margin-top:40px}\n'
+    +'.wiki-footer a{color:#3366cc;text-decoration:none}\n'
+    +'@media(max-width:900px){.container{flex-direction:column}.infobox{width:100%}}\n'
+    +'</style>\n</head>\n<body>\n'
+    +'<div class="wiki-header"><div class="wiki-logo">AWFL <span>WIKI</span> <sub>META</sub></div></div>\n'
+    +'<div class="wiki-nav"><a href="#">Article</a><a href="#">Talk</a><a href="#">Read</a><a href="#">Edit</a><a href="#">History</a></div>\n'
+    +'<div class="container">\n'
+    +'<div class="article">\n'
+    +'<h1>'+esc(title)+'</h1>\n'
+    +'<div class="article-tagline">From AWFL WIKI, the free encyclopedia under AEDTP WORLD FREE LICENSE (AWFL)</div>\n'
+    +introHtml+'\n'
+    +sectionsHtml+'\n'
+    +discoHtml+'\n'
+    +aliasHtml+'\n'
+    +actsHtml+'\n'
+    +refsHtml+'\n'
+    +catHtml+'\n'
+    +'</div>\n'
+    +infoboxHtml+'\n'
+    +'</div>\n'
+    +'<div class="wiki-footer">'
+    +'POWERED BY <strong>AEDTP WORLD</strong> &nbsp;·&nbsp; '
+    +'AEDTP WORLD FREE LICENSE (AWFL) &nbsp;·&nbsp; '
+    +'<a href="mailto:aedtpworld@gmail.com">aedtpworld@gmail.com</a> &nbsp;·&nbsp; '
+    +'Anloga, Ghana &nbsp;·&nbsp; 2024–2026'
+    +'</div>\n'
+    +'</body>\n</html>';
+}
+
+// ── Live update ───────────────────────────────────────────────
+function liveUpdate() {
+  var html = buildHTML();
+  var iframe = document.getElementById('preview-frame');
+  var doc = iframe.contentDocument || iframe.contentWindow.document;
+  doc.open(); doc.write(html); doc.close();
+}
+
+// ── Download ──────────────────────────────────────────────────
+function downloadWiki() {
+  var title = (v('f-title')||'wiki').replace(/[^a-zA-Z0-9_\- ]/g,'').replace(/ /g,'_');
+  var html = buildHTML();
+  var blob = new Blob([html], {type:'text/html;charset=utf-8'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = title+'.html'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Init
+liveUpdate();
+</script>
+</body>
+</html>
+
+
+
+

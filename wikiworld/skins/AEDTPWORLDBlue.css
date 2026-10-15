@@ -1,0 +1,270 @@
+/* AWFLWIKIWORLD — skins/AEDTPWORLDBlue.css
+ */
+
+:root {
+    --awfl-header-bg: #0E306C!important;
+    --awfl-header-text: #ffffff!important;
+    --awfl-button-bg: #DBBB0B!important;
+    --awfl-button-text: #202122!important;
+    --awfl-page-text: #ffffff!important;
+    --awfl-link: #D49E0E!important;
+    --awfl-link-visited: #118AD4!important;
+    --awfl-border: #DADAE0!important;
+    --awfl-bg: #0E306C!important;
+    --awfl-content-bg: #0E306C!important;
+}
+
+
+.awfl-header {
+    background: var(--awfl-header-bg);
+    color: var(--awfl-header-text);
+    border-bottom: 1px solid var(--awfl-border);
+}
+.awfl-logo-link, .awfl-sitename { color: var(--awfl-header-text); }
+.awfl-usernav a { color: var(--awfl-link); opacity: 1; }
+
+.awfl-body {
+    background: var(--awfl-content-bg);
+    border: 1px solid var(--awfl-border);
+    border-top: none;
+    padding: 24px;
+}
+
+.awfl-main h1 {
+    font-family: Georgia, 'Linux Libertine', 'Times New Roman', serif;
+    font-weight: normal;
+    border-bottom: 1px solid var(--awfl-border);
+    padding-bottom: 6px;
+}
+
+.awfl-article { font-family: sans-serif; }
+
+/* AWFLWIKIWORLD — assets/site.css
+   Default base layout. Skins (skins/*.css) load AFTER this file and may
+   override any of these rules; if no skin is active, these rules stand alone. */
+
+:root {
+    --awfl-header-bg: #0E306C!important;
+    --awfl-header-text: #ffffff!important;
+    --awfl-button-bg: #DBBB0B!important;
+    --awfl-button-text: #202122!important;
+    --awfl-page-text: #ffffff!important;
+    --awfl-link: #D49E0E!important;
+    --awfl-link-visited: #118AD4!important;
+    --awfl-border: #DADAE0!important;
+    --awfl-bg: #0E306C!important;
+    --awfl-content-bg: #0E306C!important;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--awfl-page-text);
+    background: var(--awfl-bg);
+    line-height: 1.6;
+}
+
+a { color: var(--awfl-link); text-decoration: none; }
+a:visited { color: var(--awfl-link-visited); }
+a:hover { text-decoration: underline; }
+
+.awfl-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ---- Header ---- */
+.awfl-header {
+    background: var(--awfl-header-bg);
+    color: var(--awfl-header-text);
+}
+.awfl-header-inner {
+    max-width: 1200px; margin: 0 auto; padding: 8px 16px;
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.awfl-logo-link { display: flex; align-items: center; gap: 8px; color: var(--awfl-header-text); }
+.awfl-logo { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-sitename { font-weight: 700; font-size: 1.15rem; color: var(--awfl-header-text); }
+.awfl-searchform { flex: 1; display: flex; min-width: 180px; max-width: 420px; }
+.awfl-searchform input { flex: 1; padding: 6px 10px; border: 1px solid var(--awfl-border); border-radius: 2px 0 0 2px; }
+.awfl-searchform button {
+    padding: 6px 12px; border: none; border-radius: 0 2px 2px 0;
+    background: var(--awfl-button-bg); color: var(--awfl-button-text); cursor: pointer;
+}
+.awfl-usernav { display: flex; gap: 12px; align-items: center; font-size: 0.9rem; flex-wrap: wrap; }
+.awfl-usernav a { color: var(--awfl-header-text); opacity: 0.9; }
+.awfl-usernav a:hover { opacity: 1; }
+.awfl-username { color: var(--awfl-header-text); font-weight: 600; }
+
+/* ---- Body / main content ---- */
+.awfl-body { flex: 1; max-width: 1200px; margin: 0 auto; width: 100%; padding: 24px 16px; }
+.awfl-main { background: var(--awfl-content-bg); }
+.awfl-narrow { max-width: 480px; margin: 0 auto; }
+
+.awfl-page-titlebar {
+    display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
+    border-bottom: 1px solid var(--awfl-border); padding-bottom: 8px; margin-bottom: 16px; gap: 8px;
+}
+.awfl-page-titlebar h1 { margin: 0; }
+.awfl-space-tag {
+    font-size: 0.55em; vertical-align: middle; margin-left: 8px; padding: 2px 8px;
+    background: #eaecf0; border-radius: 10px; color: #232526; font-weight: normal;
+}
+.awfl-protected-tag { background: #fef1d7; color: #54595D; }
+.awfl-page-actions { display: flex; gap: 14px; font-size: 0.9rem; flex-wrap: wrap; align-items: center; }
+.awfl-danger-link { color: #DB5A5A!important; }
+
+/* [[Page Name]] links: blue when the target page exists, red when it
+   doesn't — a red link is still fully clickable and takes you straight to
+   the "create this page" flow for that title. */
+.awfl-article a.wiki-link,
+.awfl-visual-preview a.wiki-link { color: var(--awfl-link); }
+.awfl-article a.wiki-link:visited,
+.awfl-visual-preview a.wiki-link:visited { color: var(--awfl-link-visited); }
+.awfl-article a.wiki-link.new,
+.awfl-visual-preview a.wiki-link.new,
+.awfl-article a.wiki-link.new:visited,
+.awfl-visual-preview a.wiki-link.new:visited { color: #ba0000; }
+
+.awfl-download-menu { position: relative; display: inline-block; }
+.awfl-download-toggle { cursor: pointer; }
+.awfl-download-list {
+    display: none; position: absolute; top: 100%; left: 0; z-index: 20; margin-top: 4px;
+    background: var(--awfl-content-bg, #fff); border: 1px solid var(--awfl-border, #a2a9b1);
+    border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); min-width: 100px; padding: 4px 0;
+}
+.awfl-download-menu.open .awfl-download-list { display: block; }
+.awfl-download-list a { display: block; padding: 6px 14px; white-space: nowrap; text-decoration: none; }
+.awfl-download-list a:hover { background: #eaecf0; }
+
+.awfl-article { font-size: 1rem; }
+.awfl-article h1, .awfl-article h2 { border-bottom: 1px solid var(--awfl-border); padding-bottom: 4px; }
+.awfl-article ul, .awfl-article ol { padding-left: 1.6em; }
+.awfl-article code, .awfl-visual-preview code {
+    background: #54595D!important; border: 1px solid var(--awfl-border); border-radius: 3px;
+    padding: 0 4px; font-family: monospace; font-size: 0.9em;
+}
+.awfl-article pre, .awfl-visual-preview pre {
+    background: #54595D!important; border: 1px solid var(--awfl-border); border-radius: 4px;
+    padding: 10px 12px; overflow-x: auto;
+}
+.awfl-article pre code, .awfl-visual-preview pre code { background: none; border: none; padding: 0; }
+.awfl-article blockquote, .awfl-visual-preview blockquote {
+    margin: 1em 0; padding: 4px 14px; border-left: 4px solid var(--awfl-border);
+    color: #54595d; font-style: italic;
+}
+.awfl-article mark, .awfl-visual-preview mark { background: #fff2a8; padding: 0 2px; }
+.awfl-article hr, .awfl-visual-preview hr { border: none; border-top: 1px solid var(--awfl-border); margin: 1.5em 0; }
+.awfl-article del, .awfl-article s, .awfl-visual-preview del, .awfl-visual-preview s { opacity: 0.75; }
+.awfl-article .awfl-nowiki, .awfl-visual-preview .awfl-nowiki {
+    background: #4D4D4D!important; border: 1px solid var(--awfl-border); border-radius: 3px;
+    padding: 0 4px; font-family: monospace; font-size: 0.9em; white-space: pre-wrap;
+}
+.awfl-missing { font-style: italic; color: #821010!important; }
+
+/* ---- Infobox ---- */
+.infobox {
+    float: right; margin: 0 0 1em 1em; width: 280px; border: 1px solid var(--awfl-border);
+    border-collapse: collapse; background: #AE96E0!important; font-size: 0.875rem;
+}
+.infobox th, .infobox td { border: 1px solid var(--awfl-border); padding: 6px 8px; text-align: left; vertical-align: top; }
+.infobox th { font-weight: bold; background: #6A9BE0!important; width: 38%; }
+.infobox-title { background: #5DA4F0 !important; text-align: center !important; font-size: 1.1em; }
+/* NOTE: ".infobox td" above has higher CSS specificity (class+tag) than a
+   plain ".infobox-image" class selector, so it was silently winning and
+   left the image/caption left-aligned. Qualify with the tag name so this
+   rule wins instead. */
+.infobox td.infobox-image { text-align: center; }
+.infobox-image img { width: 250px !important; height: auto; display: inline-block; }
+.infobox-caption { font-size: 0.85em; color: #54595d!important; margin-top: 4px; text-align: center; }
+
+/* ---- Forms ---- */
+.awfl-form { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.awfl-form label { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; }
+.awfl-form input, .awfl-form select, .awfl-form textarea {
+    padding: 8px; border: 1px solid var(--awfl-border); border-radius: 3px; font: inherit;
+}
+.awfl-form button, button, .awfl-editor-actions button, .awfl-danger {
+    background: var(--awfl-button-bg); color: var(--awfl-button-text);
+    border: none; padding: 8px 16px; border-radius: 3px; cursor: pointer; font: inherit;
+}
+.awfl-danger { background: #DB5A5A!important; }
+.awfl-error { color: #DB5A5A!important; }
+.awfl-success { color: #14866d!important; }
+
+/* ---- Editor ---- */
+.awfl-editing-label { font-size: 0.5em; color: #ABB7D4; margin-left: 10px; }
+.awfl-editor-toolbar { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+.awfl-editor-toolbar button {
+    background: #f8f9fa!important; color: #202122!important; border: 1px solid var(--awfl-border);
+    padding: 6px 10px; border-radius: 3px; cursor: pointer;
+}
+.awfl-editor-toolbar .awfl-tab.active { background: var(--awfl-button-bg); color: #fff; }
+.awfl-toolbar-sep { width: 1px; height: 20px; background: var(--awfl-border); margin: 0 6px; }
+#awfl-wikitext { width: 100%; font-family: monospace; font-size: 0.95rem; padding: 10px; border: 1px solid var(--awfl-border); border-radius: 3px; }
+.awfl-visual-preview {
+    border: 1px solid var(--awfl-border); border-radius: 3px; padding: 14px; min-height: 300px;
+    background: #fff; cursor: text;
+}
+.awfl-visual-preview:focus { outline: 2px solid var(--awfl-button-bg); outline-offset: -1px; }
+.awfl-visual-preview img { max-width: 100%; }
+.awfl-editor-actions { margin-top: 10px; display: flex; gap: 10px; }
+
+/* ---- Lists / tables ---- */
+.awfl-pagelist { columns: 3; column-gap: 24px; }
+table.awfl-datatable { border-collapse: collapse; width: 100%; margin: 12px 0; }
+table.awfl-datatable th, table.awfl-datatable td { border: 1px solid var(--awfl-border); padding: 8px; text-align: left; }
+table.awfl-datatable th { background: #4F83BF!important; }
+table.awfl-datatable th a { color: inherit; }
+
+/* ---- Image gallery (allimages) ---- */
+.awfl-image-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+.awfl-image-cell {
+    border: 1px solid var(--awfl-border); border-radius: 4px; padding: 6px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    background: #4F83BF!important;
+}
+.awfl-image-cell img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+.awfl-image-name { font-size: 0.75rem; margin: 6px 0 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; }
+.awfl-image-cell-actions { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.awfl-image-cell-actions button { font-size: 0.7rem; padding: 4px 6px; }
+@media (max-width: 1000px) { .awfl-image-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 600px) { .awfl-image-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---- Footer ---- */
+.awfl-footer { border-top: 1px solid var(--awfl-border); background: #0E306C!important; margin-top: 24px; }
+.awfl-footer-inner { max-width: 1200px; margin: 0 auto; padding: 16px; font-size: 0.85rem; color: #ffffff!important; }
+.awfl-powered { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; color: #ffffff!important; }
+.awfl-powered img { width: 40px !important; height: 40px !important; object-fit: contain; }
+.awfl-footer-links { margin-bottom: 6px; }
+
+/* ---- Dashboard color rows ---- */
+.awfl-color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.awfl-color-row label { min-width: 160px; }
+.awfl-color-row input[type=text] { width: 100px; font-family: monospace; }
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+    .awfl-pagelist { columns: 1; }
+    .infobox { float: none; width: 100%; margin: 1em 0; }
+    .awfl-header-inner { flex-direction: column; align-items: stretch; }
+    .awfl-searchform { max-width: none; }
+}
+
+@media print {
+    .awfl-header, .awfl-footer, .awfl-page-actions, .awfl-usernav { display: none !important; }
+    .infobox { float: none; width: 100%; }
+}
+
+
+
+
+
+
+
+
+
+

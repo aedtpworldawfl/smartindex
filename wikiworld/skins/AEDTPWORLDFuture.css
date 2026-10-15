@@ -1,0 +1,65 @@
+/* ===================================================================
+   AWFLWIKIWORLD — Skin/AEDTPWORLDFuture.css
+   Developer: AEDTP WORLD
+   Skin Name: AEDTPWORLD Future 2030 (Neo Holographic)
+   License: AWFL
+   Version: 3.0 - Future Locked
+   Concept: What Google/Meta/Wiki will copy in 5 years
+   =================================================================== */
+:root {
+    --awfl-header-bg: rgba(10, 15, 35, 0.85)!important; /* 1 glass dark */
+    --awfl-header-text: #E0E7FF!important;
+    --awfl-button-bg: linear-gradient(135deg, #00D1FF, #7A5CFA)!important; /* 2 holographic cyan->purple */
+    --awfl-button-text: #FFFFFF!important;
+    --awfl-page-text: #0F172A!important;
+    --awfl-link: #4F46E5!important; /* 3 indigo link */
+    --awfl-link-visited: #7C3AED!important;
+    --awfl-border: rgba(122, 92, 250, 0.2)!important;
+    --awfl-bg: #F8FAFF!important; /* 4 soft future wash */
+    --awfl-content-bg: rgba(255,255,255,0.9)!important; /* 5 glass white */
+}
+
+html, body { background: radial-gradient(120% 120% at 0% 0%, #E0F2FF 0%, #F8FAFF 50%, #EFF6FF 100%)!important; color: var(--awfl-page-text)!important; font-family: 'Inter', -apple-system, sans-serif!important; line-height: 1.8!important; font-size: 15px!important; -webkit-font-smoothing: antialiased!important; }
+.awfl-body { background: transparent!important; }
+
+/* FUTURISTIC HEADER - glass + blur + glow */
+.awfl-header { background: rgba(10, 15, 35, 0.85)!important; backdrop-filter: blur(24px) saturate(180%)!important; -webkit-backdrop-filter: blur(24px) saturate(180%)!important; border-bottom: 1px solid rgba(0,209,255,0.2)!important; box-shadow: 0 8px 32px rgba(31,38,135,0.15), inset 0 1px 0 rgba(255,255,255,0.1)!important; position: sticky!important; top: 0!important; z-index: 100!important; }
+.awfl-header-inner { background: transparent!important; }
+html body .awfl-header a { color: #A5B4FC!important; -webkit-text-fill-color: #A5B4FC!important; transition: all 0.3s ease!important; }
+html body .awfl-header a:hover { color: #00D1FF!important; -webkit-text-fill-color: #00D1FF!important; text-shadow: 0 0 12px rgba(0,209,255,0.6)!important; }
+
+/* MAIN - floating glass card */
+.awfl-main { background: var(--awfl-content-bg)!important; backdrop-filter: blur(20px)!important; border: 1px solid rgba(255,255,255,0.6)!important; border-radius: 16px!important; box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 0 0 1px rgba(122,92,250,0.05)!important; margin-top: 24px!important; }
+
+/* SEARCH - future pill */
+input[type="search"], input[type="text"] { background: rgba(255,255,255,0.9)!important; border: 1px solid rgba(122,92,250,0.15)!important; border-radius: 9999px!important; backdrop-filter: blur(10px)!important; transition: all 0.3s!important; }
+input[type="search"]:focus { border-color: #00D1FF!important; box-shadow: 0 0 0 4px rgba(0,209,255,0.15), 0 4px 20px rgba(122,92,250,0.1)!important; }
+
+/* BUTTONS - holographic */
+button, .awfl-button { background: var(--awfl-button-bg)!important; border: none!important; border-radius: 9999px!important; color: #FFFFFF!important; font-weight: 600!important; letter-spacing: 0.3px!important; box-shadow: 0 4px 15px rgba(122,92,250,0.3)!important; transition: transform 0.2s, box-shadow 0.2s!important; }
+button:hover { transform: translateY(-1px)!important; box-shadow: 0 8px 25px rgba(0,209,255,0.4)!important; }
+
+/* FOOTER - dark matter */
+.awfl-footer { background: #0A0F23!important; border-top: 1px solid rgba(0,209,255,0.15)!important; position: relative!important; overflow: hidden!important; }
+.awfl-footer::before { content: ''!important; position: absolute!important; top: 0!important; left: 0!important; right: 0!important; height: 1px!important; background: linear-gradient(90deg, transparent, #00D1FF, #7A5CFA, transparent)!important; }
+.awfl-footer-inner { color: #94A3B8!important; }
+.awfl-footer a { color: #00D1FF!important; }
+
+/* INFOBOX - neo */
+.infobox { background: rgba(255,255,255,0.8)!important; border: 1px solid rgba(122,92,250,0.1)!important; border-radius: 12px!important; backdrop-filter: blur(16px)!important; box-shadow: 0 8px 32px rgba(0,0,0,0.06)!important; overflow: hidden!important; }
+.infobox th { background: linear-gradient(135deg, #0A0F23, #1E293B)!important; color: #E0E7FF!important; }
+.infobox-title { background: linear-gradient(135deg, #00D1FF, #7A5CFA)!important; color: #FFFFFF!important; }
+
+::selection { background: #00D1FF!important; color: #0A0F23!important; }
+
+/* SCROLLBAR - future */
+::-webkit-scrollbar { width: 8px!important; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#00D1FF, #7A5CFA)!important; border-radius: 9999px!important; }
+
+
+
+
+
+
+
+

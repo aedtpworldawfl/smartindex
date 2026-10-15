@@ -1,0 +1,41 @@
+/* AWFLWIKIWORLD — skins/vector2022.css
+   Default skin, modeled after Wikipedia's Vector 2022. This is the
+   system default and cannot be deleted — only a custom copy may be
+   created and edited from the admin dashboard. */
+
+:root {
+    --awfl-header-bg: #ffffff;
+    --awfl-header-text: #202122;
+    --awfl-button-bg: #36c;
+    --awfl-button-text: #ffffff;
+    --awfl-page-text: #202122;
+    --awfl-link: #0645ad;
+    --awfl-link-visited: #0b0080;
+    --awfl-border: #a2a9b1;
+    --awfl-bg: #f8f9fa;
+    --awfl-content-bg: #ffffff;
+}
+
+.awfl-header {
+    background: var(--awfl-header-bg);
+    color: var(--awfl-header-text);
+    border-bottom: 1px solid var(--awfl-border);
+}
+.awfl-logo-link, .awfl-sitename { color: var(--awfl-header-text); }
+.awfl-usernav a { color: var(--awfl-link); opacity: 1; }
+
+.awfl-body {
+    background: var(--awfl-content-bg);
+    border: 1px solid var(--awfl-border);
+    border-top: none;
+    padding: 24px;
+}
+
+.awfl-main h1 {
+    font-family: Georgia, 'Linux Libertine', 'Times New Roman', serif;
+    font-weight: normal;
+    border-bottom: 1px solid var(--awfl-border);
+    padding-bottom: 6px;
+}
+
+.awfl-article { font-family: sans-serif; }

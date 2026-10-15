@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /advertise/
+Allow: /advertise/ads/
+Disallow: /advertise/tmp/
+Disallow: /advertise/includes/
+Disallow: /advertise/config.php
+Disallow: /advertise/check_trial.php
+
+Sitemap: https://aedtpworld.com/advertise/sitemap.php
+Sitemap: https://aedtpworld.com/advertise/sitemap.xml
+
