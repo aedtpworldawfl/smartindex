@@ -1,0 +1,17 @@
+{
+    "generated": "2026-10-18T01:11:45+00:00",
+    "items": [
+        {
+            "name": "wiki",
+            "href": "wiki/",
+            "type": "folder",
+            "files": 139
+        },
+        {
+            "name": "wikidata",
+            "href": "wikidata/",
+            "type": "folder",
+            "files": 17
+        }
+    ]
+}

@@ -1,1448 +1,187 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWFLMETAWIKI</title>
-    <meta name="description" content="AWFLMETAWIKI - Free Open Encyclopedia, Built And Powered by Forever Contribution, To Discover And Connect, Knowledge Is Unlimited.">
-    <meta name="author" content="AEDTP WORLD">
-    <meta name="license" content="AEDTP WORLD FREE LICENSE (AWFL)">
-    <link rel="canonical" href="https://aedtpworld.com/wiki/">
-    <meta name="copyright" content="© AEDTP WORLD">
-    <meta name="keywords" content="AEDTP WORLD, AEDTP WORLD FREE LICENSE, AWFL, AWFLMETA, AI, APPS, BIBLE, BUSINESS, DEVELOPER, DICTIONARY, MUSIC, AEDTP WORLD FREE LICENSE (AWFL) WIKI, Free Open Encyclopedia, Built And Powered by Forever Contribution, To Discover And Connect, Knowledge Is Unlimited, SOCIAL NETWORK, STORY, WIKI, ARTISTS, BIOGRAPHY, NEWS, HELP, discover and connect">
-    <meta name="robots" content="index, follow">
-    <meta name="application-name" content="AWFLMETAWIKI">
-    
-    <meta property="og:title" content="AWFLMETAWIKI — Discover And Connect">
-    <meta property="og:description" content="AWFLMETAWIKI - Free Open Encyclopedia, Built And Powered by Forever Contribution, To Discover And Connect, Knowledge Is Unlimited.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aedtpworld.com/wiki/">
-    <meta property="og:image" content="https://aedtpworld.com/icons/awflmeta.jpg">
-    <meta property="og:site_name" content="AWFLMETAWIKI">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AWFLMETAWIKI — Discover And Connect">
-    <meta name="twitter:description" content="AWFLMETAWIKI - Free Open Encyclopedia, Built And Powered by Forever Contribution, To Discover And Connect, Knowledge Is Unlimited.">
-    <meta name="twitter:image" content="https://aedtpworld.com/icons/awflmeta.jpg">
-    <link rel="apple-touch-icon" href="https://aedtpworld.com/icons/awflmeta.jpg">
-    <link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png" type="image/png">
-<link rel="icon" href="https://aedtpworld.com/icons/awflmeta.jpg" type="image/jpeg">
-<link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png" type="image/x-icon">
-<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
-
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-    
-  
-    <style>
-:root{
-  --bg:#0a0c10;--bg2:#0f1218;--bg3:#141820;--bg4:#1a2030;
-  --surface:#1e2535;--surface2:#252d40;
-  --border:#2a3450;--border2:#3a4870;
-  --accent:#4a9eff;--accent2:#2d7dd2;--accent3:#1a5fa0;
-  --gold:#d4a843;--gold2:#b8891c;
-  --text:#e8edf5;--text2:#a0aec0;--text3:#6b7a95;
-  --green:#3ecf8e;--red:#f87171;--purple:#a78bfa;--teal:#2dd4bf;
-  --header-h:64px;--subnav-h:38px;--tools-w:290px;
-  --font-sans:'IBM Plex Sans',sans-serif;
-  --font-serif:'Crimson Pro',Georgia,serif;
-  --font-mono:'IBM Plex Mono',monospace;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:15px;line-height:1.6;min-height:100vh;overflow-x:hidden}
-::-webkit-scrollbar{width:6px;height:6px}
-::-webkit-scrollbar-track{background:var(--bg2)}
-::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
-::-webkit-scrollbar-thumb:hover{background:var(--accent3)}
-
-/* HEADER */
-#header{position:fixed;top:0;left:0;right:0;height:var(--header-h);background:rgba(10,12,16,0.96);border-bottom:1px solid var(--border);display:flex;align-items:center;z-index:1000;backdrop-filter:blur(12px)}
-#logo-area{display:flex;align-items:center;gap:10px;padding:0 16px;flex-shrink:0;text-decoration:none}
-#logo-area img{width:36px;height:36px;border-radius:6px;object-fit:cover;border:1px solid var(--border2)}
-#logo-text{display:flex;flex-direction:column;line-height:1.1}
-#logo-text .lt1{font-family:var(--font-mono);font-size:11px;color:var(--gold);font-weight:500;letter-spacing:0.08em}
-#logo-text .lt2{font-family:var(--font-sans);font-size:13px;color:var(--text);font-weight:600;letter-spacing:0.02em}
-#search-wrap{flex:1;display:flex;justify-content:center;padding:0 12px}
-#search-form{display:flex;align-items:center;background:var(--bg3);border:1px solid var(--border);border-radius:22px;width:min(480px,100%);padding:4px 8px 4px 14px;transition:border-color .2s,box-shadow .2s}
-#search-form:focus-within{border-color:var(--accent2);box-shadow:0 0 0 2px rgba(74,158,255,.12)}
-#search-input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:var(--font-sans);font-size:14px;padding:4px 0}
-#search-input::placeholder{color:var(--text3)}
-#search-btn{background:var(--accent2);border:none;cursor:pointer;color:#fff;padding:5px 14px;border-radius:18px;font-size:13px;font-weight:500;transition:background .15s}
-#search-btn:hover{background:var(--accent)}
-#header-actions{display:flex;align-items:center;gap:6px;padding:0 14px;flex-shrink:0}
-.h-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:5px 12px;border-radius:6px;font-size:12px;cursor:pointer;transition:all .15s;white-space:nowrap;font-family:var(--font-sans)}
-.h-btn:hover{background:var(--surface);color:var(--text);border-color:var(--accent2)}
-.h-btn.primary{background:var(--accent2);color:#fff;border-color:var(--accent)}
-.h-btn.primary:hover{background:var(--accent)}
-
-/* SUBNAV */
-#subnav{position:fixed;top:var(--header-h);left:0;right:0;height:var(--subnav-h);background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:2px;padding:0 16px;z-index:999;overflow-x:auto}
-#subnav::-webkit-scrollbar{height:2px}
-.snav-btn{display:flex;align-items:center;gap:4px;background:none;border:none;color:var(--text3);padding:4px 10px;border-radius:4px;font-size:12px;cursor:pointer;white-space:nowrap;font-family:var(--font-sans);font-weight:500;letter-spacing:.03em;transition:all .15s;text-decoration:none}
-.snav-btn:hover{color:var(--text);background:var(--bg3)}
-.snav-btn.active{color:var(--accent);background:rgba(74,158,255,.08)}
-
-/* LAYOUT */
-#app{margin-top:calc(var(--header-h) + var(--subnav-h));display:flex;min-height:calc(100vh - var(--header-h) - var(--subnav-h))}
-
-/* SIDEBAR */
-#sidebar{width:220px;flex-shrink:0;border-right:1px solid var(--border);background:var(--bg2);overflow-y:auto;position:sticky;top:calc(var(--header-h) + var(--subnav-h));height:calc(100vh - var(--header-h) - var(--subnav-h))}
-#sidebar-header{padding:12px 14px 8px;font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--text3);text-transform:uppercase;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.page-item{display:block;padding:8px 14px;font-size:13px;color:var(--text2);cursor:pointer;border-bottom:1px solid rgba(42,52,80,.4);text-decoration:none;transition:all .12s;border-left:3px solid transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.page-item:hover{color:var(--text);background:var(--bg3);border-left-color:var(--accent2)}
-.page-item.active{color:var(--accent);background:rgba(74,158,255,.07);border-left-color:var(--accent)}
-.page-item .page-item-title{font-weight:500}
-.page-item .page-item-date{font-size:11px;color:var(--text3);margin-top:1px}
-#sidebar-actions{padding:10px 12px;border-bottom:1px solid var(--border)}
-#page-search{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:4px;font-size:12px;outline:none;font-family:var(--font-sans)}
-#page-search:focus{border-color:var(--accent2)}
-#page-search::placeholder{color:var(--text3)}
-
-/* MAIN */
-#main{flex:1;min-width:0;display:flex}
-#info-section{flex:1;min-width:0;overflow-y:auto;padding:28px 32px;position:relative}
-#wiki-title-bar{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;border-bottom:2px solid var(--border);padding-bottom:14px}
-#wiki-title-display{font-family:var(--font-serif);font-size:32px;font-weight:300;color:var(--text);line-height:1.2;flex:1;outline:none;word-break:break-word;overflow-wrap:anywhere}
-#wiki-meta-bar{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--text3);margin-top:6px;font-family:var(--font-mono);flex-wrap:wrap}
-.wiki-meta-tag{background:var(--bg3);border:1px solid var(--border);padding:2px 8px;border-radius:3px;font-size:11px;word-break:break-all}
-
-/* WIKI CONTENT */
-#wiki-content{font-family:var(--font-serif);font-size:17px;line-height:1.75;color:var(--text);min-width:0;overflow-wrap:anywhere;word-break:break-word}
-#wiki-content h1{font-size:28px;font-weight:400;color:var(--text);margin:28px 0 12px;border-bottom:1px solid var(--border);padding-bottom:6px}
-#wiki-content h2{font-size:23px;font-weight:400;color:var(--text);margin:24px 0 10px;border-bottom:1px solid var(--border);padding-bottom:5px}
-#wiki-content h3{font-size:19px;font-weight:600;color:var(--text);margin:20px 0 8px}
-#wiki-content h4{font-size:17px;font-weight:600;color:var(--text);margin:18px 0 7px}
-#wiki-content h5{font-size:15px;font-weight:600;color:var(--text2);margin:16px 0 6px}
-#wiki-content h6{font-size:13px;font-weight:600;color:var(--text2);margin:14px 0 6px;text-transform:uppercase;letter-spacing:.05em}
-#wiki-content p{margin:0 0 14px;overflow-wrap:anywhere}
-#wiki-content b,#wiki-content strong{font-weight:600;color:var(--text)}
-#wiki-content u{text-decoration:underline;text-decoration-color:var(--gold)}
-#wiki-content em,#wiki-content i{font-style:italic}
-#wiki-content mark{background:var(--gold);color:#0a0c10;padding:0 2px;border-radius:2px}
-#wiki-content code{background:var(--bg4);border:1px solid var(--border);color:var(--teal);font-family:var(--font-mono);font-size:13px;padding:1px 5px;border-radius:3px;word-break:break-all;white-space:pre-wrap}
-#wiki-content sup,#wiki-content sub{font-size:11px}
-#wiki-content pre{background:var(--bg4);border:1px solid var(--border);border-radius:6px;padding:12px 14px;font-family:var(--font-mono);font-size:13px;overflow-x:auto;margin:0 0 14px;white-space:pre-wrap;word-break:break-all;max-width:100%}
-#wiki-content blockquote{border-left:3px solid var(--gold);padding:6px 0 6px 16px;color:var(--text2);font-style:italic;margin:0 0 14px}
-#wiki-content hr{border:none;border-top:1px solid var(--border);margin:20px 0}
-#wiki-content ul,#wiki-content ol{margin:10px 0 14px 28px}
-#wiki-content li{margin-bottom:5px;overflow-wrap:anywhere}
-#wiki-content a{color:var(--accent);text-decoration:none;word-break:break-all;overflow-wrap:anywhere}
-#wiki-content a:hover{text-decoration:underline}
-#wiki-content table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;font-family:var(--font-sans);max-width:100%}
-#wiki-content table th{background:var(--surface);padding:8px 12px;text-align:left;font-weight:600;border:1px solid var(--border2);font-size:13px}
-#wiki-content table td{padding:7px 12px;border:1px solid var(--border);vertical-align:top;word-break:break-word;overflow-wrap:anywhere}
-#wiki-content table tr:nth-child(even) td{background:rgba(255,255,255,.02)}
-#wiki-content[contenteditable="true"]{outline:none;border:2px dashed var(--accent3);border-radius:6px;padding:10px;min-height:200px}
-#wiki-content[contenteditable="true"]:empty:before{content:attr(data-placeholder);color:var(--text3);font-style:italic}
-#wiki-content video,#wiki-content audio{max-width:100%;border-radius:6px;margin:10px 0;display:block;width:100%}
-#wiki-content .wiki-img{max-width:100%;border-radius:6px;margin:10px 0;display:block;height:auto}
-
-/* INFO/WARN/TIP BOXES */
-#wiki-content .wiki-note,#wiki-content .wiki-warning,#wiki-content .wiki-tip{border-radius:6px;padding:10px 14px;margin:14px 0;font-size:15px;font-family:var(--font-sans);border-left:4px solid;overflow-wrap:anywhere}
-#wiki-content .wiki-note{background:rgba(74,158,255,.08);border-color:var(--accent)}
-#wiki-content .wiki-warning{background:rgba(248,113,113,.08);border-color:var(--red)}
-#wiki-content .wiki-tip{background:rgba(62,207,142,.08);border-color:var(--green)}
-
-/* INFOBOX */
-#wiki-content .wiki-infobox{float:right;width:260px;margin:0 0 16px 20px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;overflow:hidden;font-family:var(--font-sans);font-size:13px;max-width:100%}
-#wiki-content .wiki-infobox .ib-title{background:var(--surface);color:var(--gold);font-weight:600;text-align:center;padding:8px 10px;font-size:14px;border-bottom:1px solid var(--border2)}
-#wiki-content .wiki-infobox table{margin:0;font-size:12.5px;width:100%;display:table}
-#wiki-content .wiki-infobox td{border:1px solid var(--border);padding:5px 8px;word-break:break-word;overflow-wrap:anywhere}
-#wiki-content .wiki-infobox td.ib-k{color:var(--text3);font-weight:500;width:38%}
-
-/* TOC */
-#wiki-content #toc{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:12px 16px;margin-bottom:20px;display:inline-block;min-width:200px;max-width:100%}
-
-/* EMPTY STATE */
-#empty-state{text-align:center;padding:80px 40px;color:var(--text3)}
-#empty-state .eis{font-size:64px;margin-bottom:20px;opacity:.3}
-#empty-state h2{font-family:var(--font-serif);font-size:28px;font-weight:300;color:var(--text2);margin-bottom:10px}
-#empty-state p{font-size:15px;margin-bottom:24px}
-#empty-state .esc-btn{background:var(--accent2);color:#fff;border:none;padding:10px 24px;border-radius:6px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--font-sans);transition:background .15s}
-#empty-state .esc-btn:hover{background:var(--accent)}
-
-/* LOADING */
-.loading-spinner{text-align:center;padding:60px 40px;color:var(--text3)}
-.loading-spinner .spin{display:inline-block;font-size:32px;animation:spin 1s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-/* EDIT TOOLBAR */
-#toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:6px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:6px 8px;margin-bottom:16px;opacity:.45;transition:opacity .15s;max-width:100%}
-#toolbar.tb-active{opacity:1}
-.tb-group{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
-.tb-sep{width:1px;height:22px;background:var(--border2);margin:0 2px}
-.tb-btn{background:var(--bg4);border:1px solid var(--border);color:var(--text2);min-width:30px;height:28px;padding:0 8px;border-radius:5px;font-size:13px;cursor:pointer;transition:all .12s;font-family:var(--font-sans)}
-.tb-btn:hover{background:var(--surface);color:var(--text);border-color:var(--accent2)}
-.tb-btn:active{transform:scale(.94)}
-.tb-select{background:var(--bg4);border:1px solid var(--border);color:var(--text2);height:28px;padding:0 6px;border-radius:5px;font-size:12px;font-family:var(--font-sans);cursor:pointer;max-width:110px}
-.tb-select:hover{border-color:var(--accent2)}
-.tb-color{width:28px;height:28px;border:1px solid var(--border);border-radius:5px;cursor:pointer;background:none;padding:1px}
-
-/* STATUS BAR */
-#statusbar{display:flex;align-items:center;gap:18px;padding:8px 4px 0;margin-top:10px;border-top:1px solid var(--border);font-size:11.5px;color:var(--text3);font-family:var(--font-mono);flex-wrap:wrap}
-#statusbar .sb-item{display:flex;align-items:center;gap:4px}
-#status-saved{color:var(--green)}
-#status-unsaved{color:var(--gold)}
-
-/* TOOLS PANEL */
-#tools-panel{width:var(--tools-w);flex-shrink:0;background:var(--bg2);border-left:1px solid var(--border);position:sticky;top:calc(var(--header-h) + var(--subnav-h));height:calc(100vh - var(--header-h) - var(--subnav-h));overflow-y:auto;display:flex;flex-direction:column}
-#tools-header{padding:12px 14px;background:var(--surface);border-bottom:1px solid var(--border2);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-family:var(--font-mono);display:flex;align-items:center;gap:8px}
-#tools-header::before{content:"◈";font-size:14px}
-.ts{padding:12px;border-bottom:1px solid var(--border)}
-.ts-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;font-family:var(--font-mono)}
-.ta{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:8px 10px;border-radius:5px;font-size:12px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:8px;margin-bottom:5px;transition:all .12s;font-family:var(--font-sans)}
-.ta:hover{background:var(--surface);color:var(--text);border-color:var(--border2)}
-.ta .ti{font-size:14px;flex-shrink:0}
-.ta.inf{color:var(--accent)}
-.ta.inf:hover{background:rgba(74,158,255,.08);border-color:var(--accent)}
-.ta.ok{color:var(--green)}
-.ta.ok:hover{background:rgba(62,207,142,.08);border-color:var(--green)}
-.ta.dn{color:var(--red)}
-.ta.dn:hover{background:rgba(248,113,113,.08);border-color:var(--red)}
-.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
-.tgrid.c2{grid-template-columns:repeat(2,1fr)}
-.fg{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:6px 4px;border-radius:4px;font-size:12px;font-weight:600;cursor:pointer;transition:all .12s;text-align:center;font-family:var(--font-sans)}
-.fg:hover{background:var(--surface);color:var(--text);border-color:var(--accent2)}
-.fg:active{background:var(--surface2);transform:scale(.95)}
-.fg.s2{grid-column:span 2}
-.fg.s4{grid-column:span 4}
-.frow{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-.frow label{font-size:11px;color:var(--text3);width:42px;flex-shrink:0}
-.frow select{flex:1;background:var(--bg4);border:1px solid var(--border);color:var(--text2);padding:4px 6px;border-radius:4px;font-size:11px;font-family:var(--font-sans)}
-.crow{display:flex;align-items:center;gap:6px;margin-bottom:6px}
-.crow label{font-size:11px;color:var(--text3);width:80px;flex-shrink:0}
-.crow input[type=color]{width:32px;height:24px;border:1px solid var(--border);border-radius:3px;cursor:pointer;background:none;padding:1px}
-.cab{flex:1;background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:3px 6px;border-radius:3px;font-size:11px;cursor:pointer;font-family:var(--font-sans)}
-.cab:hover{background:var(--surface);color:var(--text)}
-
-/* MODALS */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9000;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
-.modal-overlay.open{display:flex}
-.modal-box{background:var(--bg3);border:1px solid var(--border2);border-radius:10px;width:100%;max-width:540px;box-shadow:0 20px 60px rgba(0,0,0,.6);max-height:90vh;overflow-y:auto;animation:mslide .2s ease}
-@keyframes mslide{from{transform:translateY(-16px);opacity:0}to{transform:translateY(0);opacity:1}}
-.modal-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.modal-header h3{font-size:16px;font-weight:600;color:var(--text)}
-.modal-close{background:none;border:none;color:var(--text3);cursor:pointer;font-size:20px;line-height:1;padding:2px 6px;border-radius:3px}
-.modal-close:hover{color:var(--text);background:var(--surface)}
-.modal-body{padding:20px}
-.modal-footer{padding:14px 20px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:8px}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:12px;font-weight:500;color:var(--text2);margin-bottom:5px}
-.form-hint{font-size:11px;color:var(--text3);margin-top:3px}
-.form-input{width:100%;background:var(--bg4);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:5px;font-size:13px;outline:none;font-family:var(--font-sans);transition:border-color .15s}
-.form-input:focus{border-color:var(--accent2)}
-.form-input::placeholder{color:var(--text3)}
-textarea.form-input{resize:vertical;min-height:70px}
-.btn-primary{background:var(--accent2);color:#fff;border:1px solid var(--accent);padding:8px 20px;border-radius:5px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font-sans);transition:background .15s}
-.btn-primary:hover{background:var(--accent)}
-.btn-primary:disabled{opacity:.5;cursor:not-allowed}
-.btn-secondary{background:var(--bg3);color:var(--text2);border:1px solid var(--border);padding:8px 20px;border-radius:5px;font-size:13px;cursor:pointer;font-family:var(--font-sans);transition:all .15s}
-.btn-secondary:hover{background:var(--surface);color:var(--text)}
-.form-error{font-size:12px;color:var(--red);margin-top:6px;display:none}
-.form-error.show{display:block}
-.cat-pill{display:inline-flex;align-items:center;background:var(--bg4);border:1px solid var(--border);color:var(--text2);padding:6px 12px;border-radius:16px;font-size:12px;cursor:pointer;margin:0 6px 6px 0;transition:all .12s}
-.cat-pill:hover{border-color:var(--accent2);color:var(--text)}
-.cat-pill.sel{background:rgba(74,158,255,.12);border-color:var(--accent);color:var(--accent)}
-.ib-row{display:flex;gap:6px;margin-bottom:6px}
-.ib-row input{flex:1}
-.ib-rm{background:var(--bg4);border:1px solid var(--border);color:var(--red);border-radius:4px;width:30px;cursor:pointer;flex-shrink:0}
-
-/* TOAST */
-#toast-wrap{position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
-.toast{background:var(--surface2);border:1px solid var(--border2);color:var(--text);padding:10px 16px;border-radius:6px;font-size:13px;box-shadow:0 4px 16px rgba(0,0,0,.4);animation:tslide .3s ease,tfade .3s 2.7s ease forwards;pointer-events:none;max-width:300px}
-.toast.ok{border-left:3px solid var(--green)}
-.toast.err{border-left:3px solid var(--red)}
-.toast.inf{border-left:3px solid var(--accent)}
-@keyframes tslide{from{transform:translateX(40px);opacity:0}to{transform:translateX(0);opacity:1}}
-@keyframes tfade{to{opacity:0;transform:translateX(8px)}}
-
-/* SEARCH RESULTS */
-#search-results{position:fixed;z-index:1100;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;width:min(480px,90vw);box-shadow:0 8px 32px rgba(0,0,0,.5);max-height:60vh;overflow-y:auto;top:calc(var(--header-h) + 4px);left:50%;transform:translateX(-50%);display:none}
-.sr-item{padding:10px 14px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .1s}
-.sr-item:last-child{border-bottom:none}
-.sr-item:hover{background:var(--surface)}
-.sr-item .sri-title{font-size:14px;font-weight:500;color:var(--text)}
-.sr-item .sri-snippet{font-size:12px;color:var(--text3);margin-top:2px;font-family:var(--font-serif)}
-.sr-empty{padding:20px;text-align:center;color:var(--text3);font-size:14px}
-#edit-indicator{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:rgba(74,158,255,.15);border:1px solid var(--accent2);color:var(--accent);padding:6px 20px;border-radius:20px;font-size:12px;font-family:var(--font-mono);z-index:800;display:none;backdrop-filter:blur(8px)}
-
-@media print{
-  #header,#subnav,#sidebar,#tools-panel,#toolbar,#statusbar,#edit-indicator,#toast-wrap,#search-results,.wiki-meta-tag{display:none!important}
-  #app{margin-top:0}
-  body{background:#fff;color:#000}
-  #wiki-content{color:#000}
-}
-
-/* ===== MOBILE - FIT EVERYTHING ===== */
-@media (max-width: 900px){
-  #sidebar{display:none}
-  #tools-panel{width:240px}
-}
-@media (max-width: 768px){
-  html,body{overflow-x:hidden!important;max-width:100vw!important}
-  #header{height:auto;min-height:var(--header-h);flex-wrap:wrap;padding:8px 0;gap:6px}
-  #logo-area{padding:0 12px}
-  #search-wrap{order:3;width:100%;flex:0 0 100%;padding:6px 12px}
-  #search-form{width:100%;max-width:100%}
-  #header-actions{padding:0 12px;margin-left:auto}
-  #subnav{top:auto;position:sticky;z-index:998;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;padding:0 8px;height:auto;min-height:var(--subnav-h);-webkit-overflow-scrolling:touch}
-  #app{margin-top:0!important;flex-direction:column;width:100%;max-width:100vw;overflow-x:hidden}
-  #main{flex-direction:column;width:100%;max-width:100%;min-width:0}
-  #info-section{padding:14px 12px!important;width:100%!important;max-width:100%!important;min-width:0!important}
-  #wiki-title-bar{flex-direction:column;align-items:flex-start;gap:10px;width:100%;max-width:100%}
-  #wiki-title-display{font-size:24px!important;line-height:1.25;width:100%}
-  #toolbar{display:flex!important;opacity:1!important;overflow-x:auto;flex-wrap:nowrap;gap:6px;padding:8px;width:100%;max-width:100%;-webkit-overflow-scrolling:touch}
-  #toolbar .tb-group{flex-shrink:0}
-  #toolbar .tb-sep{display:none}
-  #wiki-content{font-size:16px!important;line-height:1.65!important;width:100%!important;max-width:100%!important}
-  #wiki-content h1{font-size:22px!important}
-  #wiki-content h2{font-size:19px!important}
-  #wiki-content h3{font-size:17px!important}
-  /* CRITICAL FIXES - no cut, no overflow */
-  #wiki-content .wiki-infobox{float:none!important;width:100%!important;max-width:100%!important;margin:14px 0!important;display:block!important}
-  #wiki-content table{display:block!important;width:100%!important;max-width:100%!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
-  #wiki-content #toc{width:100%!important;max-width:100%!important;display:block!important}
-  #wiki-content pre{white-space:pre-wrap!important;word-break:break-all!important}
-  #wiki-content img,#wiki-content video,#wiki-content audio,#wiki-content .wiki-img{width:100%!important;max-width:100%!important;height:auto!important}
-  #sidebar{display:block!important;width:100%!important;position:static!important;height:auto!important;max-height:50vh;border-right:none;border-bottom:1px solid var(--border)}
-  #tools-panel{display:flex!important;position:static!important;width:100%!important;height:auto!important;max-width:100%!important;border-left:none;border-top:1px solid var(--border);order:3}
-  #statusbar{flex-wrap:wrap;gap:8px 14px;width:100%}
-  #search-results{width:96vw!important;left:2vw!important;transform:none!important}
-  #toast-wrap{left:12px;right:12px;bottom:12px}
-  .toast{max-width:100%}
-  .modal-box{width:96vw;max-width:96vw;margin:0 auto}
-}
-@media (max-width: 480px){
-  #wiki-title-display{font-size:20px!important}
-  #info-section{padding:12px 10px!important}
-  .h-btn{padding:5px 8px;font-size:11px}
-  #logo-text .lt2{font-size:11px}
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All pages — AWFLWIKIWORLD</title>
+<link rel="icon" href="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:#f3f5fa;color:#1d2129;line-height:1.5}
+header{background:linear-gradient(135deg,#1f3b8f,#3366cc);color:#fff;padding:28px 16px 22px;text-align:center}
+header img{height:46px;width:auto;background:#fff;border-radius:10px;padding:4px}header h1{margin:8px 0 2px;font-size:1.7rem}header p{margin:0;opacity:.85;font-size:.95rem}
+#q{display:block;width:100%;max-width:520px;margin:16px auto 0;padding:11px 16px;border:0;border-radius:24px;font-size:16px;outline:none;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+main{max-width:1100px;margin:0 auto;padding:18px 14px 40px}section{margin-bottom:22px}section h2{margin:0 0 10px;font-size:1.05rem;color:#1f3b8f;display:flex;align-items:center;gap:8px}
+section h2 span{font-size:.72rem;background:#dbe5fb;color:#1f3b8f;border-radius:10px;padding:1px 9px;font-weight:600}
+ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+li a{display:block;padding:11px 14px;background:#fff;border:1px solid #d9deea;border-left:4px solid #3366cc;border-radius:8px;color:#1d2129;text-decoration:none;font-weight:500;overflow-wrap:anywhere;transition:transform .12s,box-shadow .12s}
+li a:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(31,59,143,.18);border-left-color:#e08a00}li[hidden],section[hidden]{display:none}
+.none{text-align:center;color:#666;padding:30px}footer{text-align:center;font-size:.8rem;color:#777;padding:0 12px 24px}
+@media(prefers-color-scheme:dark){body{background:#101317;color:#e6e6e6}li a{background:#1a1e24;border-color:#2c323b;color:#e6e6e6}section h2{color:#9db8ff}section h2 span{background:#26324f;color:#9db8ff}}
 </style>
-    
-    
-    
-    
 </head>
 <body>
-
-<header id="header">
-  <a id="logo-area" href="#" onclick="showHome();return false">
-    <img src="https://aedtpworld.com/icons/awflmeta.jpg" alt="AWFLMETA Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 36 36%22%3E%3Crect fill=%22%23d4a843%22 width=%2236%22 height=%2236%22 rx=%226%22/%3E%3Ctext x=%2218%22 y=%2224%22 font-size=%2220%22 font-weight=%22bold%22 fill=%22%230a0c10%22 text-anchor=%22middle%22%3EA%3C/text%3E%3C/svg%3E'">
-    <div id="logo-text">
-      <span class="lt1">AWFLMETAWIKI</span>
-      <span class="lt2">AEDTP WORLD WIKI</span>
-    </div>
-  </a>
-  <div id="search-wrap">
-    <div id="search-form">
-      <input id="search-input" type="search" placeholder="Search wiki…" autocomplete="off" oninput="searchWiki(this.value)" onfocus="searchWiki(this.value)" onblur="setTimeout(closeSearch,200)">
-      <button id="search-btn" onclick="searchWiki(document.getElementById('search-input').value)">Search</button>
-    </div>
-  </div>
-  <div id="header-actions">
-    <button class="h-btn primary" onclick="openCreateModal()">+ New Wiki</button>
-  </div>
-</header>
-
-<div id="search-results"></div>
-
-<nav id="subnav">
-  <a class="snav-btn" href="https://aedtpworld.com/wiki/" target="_blank">HOME</a>
-  <a class="snav-btn" href="https://aedtpworld.com/awflmeta/" target="_blank">AWFLMETA</a>
-  <a class="snav-btn" href="https://aedtpworld.com/ai/" target="_blank">AI</a>
-  <a class="snav-btn" href="https://aedtpworld.com/apps/" target="_blank">APPS</a>
-  <a class="snav-btn" href="https://aedtpworld.com/bible/" target="_blank">BIBLE</a>
-  <a class="snav-btn" href="https://aedtpworld.com/developer/" target="_blank">DEVELOPER</a>
-  <a class="snav-btn" href="https://aedtpworld.com/music/" target="_blank">MUSIC</a>
-  <a class="snav-btn" href="https://aedtpworld.com/searchengine/" target="_blank">SEARCH</a>
-  <a class="snav-btn" href="https://aedtpworld.com/help/" target="_blank">HELP</a>
-  <a class="snav-btn" href="https://aedtpworld.com/dev/build/wiki/index.php" target="_blank"><b>Get Your Wiki System</b></a>
-
-</nav>
-
-<div id="app">
-  <aside id="sidebar">
-    <div id="sidebar-header">
-      <span>Pages</span>
-      <span id="page-count" style="font-size:11px;color:var(--text3)">0</span>
-    </div>
-    <div id="sidebar-actions">
-      <input id="page-search" type="search" placeholder="Filter pages…" oninput="filterPages(this.value)">
-    </div>
-    <div id="page-list"></div>
-  </aside>
-
-  <main id="main">
-    <section id="info-section">
-      <div id="wiki-title-bar">
-        <div style="flex:1">
-          <div id="wiki-title-display">Welcome to AWFLMETAWIKI</div>
-          <div id="wiki-meta-bar">
-            <span class="wiki-meta-tag" id="wiki-date-tag">—</span>
-            <span class="wiki-meta-tag" id="wiki-slug-tag">home</span>
-            <span class="wiki-meta-tag" id="wiki-cat-tag" style="display:none">Uncategorized</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- TOOLBAR (always visible, full strength while editing) -->
-      <div id="toolbar">
-        <div class="tb-group">
-          <select class="tb-select" onchange="applyBlock(this.value);this.value=''" title="Block format">
-            <option value="">Format…</option>
-            <option value="h1">Heading 1</option>
-            <option value="h2">Heading 2</option>
-            <option value="h3">Heading 3</option>
-            <option value="h4">Heading 4</option>
-            <option value="h5">Heading 5</option>
-            <option value="h6">Heading 6</option>
-            <option value="p">Paragraph</option>
-            <option value="pre">Preformatted</option>
-            <option value="blockquote">Blockquote</option>
-          </select>
-        </div>
-        <div class="tb-sep"></div>
-        <div class="tb-group">
-          <button class="tb-btn" onclick="ex('bold')" title="Bold (Ctrl+B)"><b>B</b></button>
-          <button class="tb-btn" onclick="ex('italic')" title="Italic (Ctrl+I)"><i>I</i></button>
-          <button class="tb-btn" onclick="ex('underline')" title="Underline (Ctrl+U)"><u>U</u></button>
-          <button class="tb-btn" onclick="ex('strikeThrough')" title="Strikethrough"><s>S</s></button>
-          <button class="tb-btn" onclick="ws('mark')" title="Highlight">🖊</button>
-          <button class="tb-btn" onclick="ws('code')" title="Inline code">&lt;/&gt;</button>
-          <button class="tb-btn" onclick="ws('sup')" title="Superscript">x²</button>
-          <button class="tb-btn" onclick="ws('sub')" title="Subscript">x₂</button>
-        </div>
-        <div class="tb-sep"></div>
-        <div class="tb-group">
-          <button class="tb-btn" onclick="ex('insertUnorderedList')" title="Bullet list">• List</button>
-          <button class="tb-btn" onclick="ex('insertOrderedList')" title="Numbered list">1. List</button>
-          <button class="tb-btn" onclick="ex('justifyLeft')" title="Align left">⬅</button>
-          <button class="tb-btn" onclick="ex('justifyCenter')" title="Center">⬌</button>
-          <button class="tb-btn" onclick="ex('justifyRight')" title="Align right">➡</button>
-          <button class="tb-btn" onclick="ex('justifyFull')" title="Justify">☰</button>
-          <button class="tb-btn" onclick="ex('indent')" title="Indent">→</button>
-          <button class="tb-btn" onclick="ex('outdent')" title="Outdent">←</button>
-        </div>
-        <div class="tb-sep"></div>
-        <div class="tb-group">
-          <select class="tb-select" onchange="ex('fontSize',this.value);this.value=''" title="Font size">
-            <option value="">Size…</option>
-            <option value="1">8px</option><option value="2">10px</option><option value="3">12px</option>
-            <option value="4">14px</option><option value="5">18px</option><option value="6">24px</option><option value="7">36px</option>
-          </select>
-          <select class="tb-select" onchange="ex('fontName',this.value);this.value=''" title="Font family">
-            <option value="">Font…</option>
-            <option value="'IBM Plex Sans',sans-serif">IBM Plex Sans</option>
-            <option value="'Crimson Pro',Georgia,serif">Crimson Pro</option>
-            <option value="'IBM Plex Mono',monospace">IBM Plex Mono</option>
-            <option value="Georgia,serif">Georgia</option>
-            <option value="Arial,sans-serif">Arial</option>
-            <option value="'Times New Roman',serif">Times New Roman</option>
-          </select>
-        </div>
-        <div class="tb-sep"></div>
-        <div class="tb-group">
-          <input type="color" class="tb-color" id="tb-fg" value="#e8edf5" title="Text color" onchange="ex('foreColor',this.value)">
-          <input type="color" class="tb-color" id="tb-hl" value="#d4a843" title="Highlight color" onchange="ex('hiliteColor',this.value)">
-          <button class="tb-btn" onclick="ex('removeFormat')" title="Clear formatting">✕ Clear</button>
-        </div>
-        <div class="tb-sep"></div>
-        <div class="tb-group">
-          <button class="tb-btn" onclick="promptIns('link')" title="Insert link">🔗</button>
-          <button class="tb-btn" onclick="promptIns('image')" title="Insert image">🖼</button>
-          <button class="tb-btn" onclick="promptIns('video')" title="Insert video">▶</button>
-          <button class="tb-btn" onclick="promptIns('audio')" title="Insert audio">♪</button>
-          <button class="tb-btn" onclick="insTable()" title="Insert table">⊞ Table</button>
-          <button class="tb-btn" onclick="insHR()" title="Horizontal rule">— HR</button>
-        </div>
-        <div class="tb-sep"></div>
-        <div class="tb-group">
-          <button class="tb-btn" onclick="insBox('wiki-note','ℹ Note text')">ℹ Note</button>
-          <button class="tb-btn" onclick="insBox('wiki-warning','⚠ Warning text')">⚠ Warn</button>
-          <button class="tb-btn" onclick="insBox('wiki-tip','✓ Tip text')">✓ Tip</button>
-        </div>
-        <div class="tb-sep"></div>
-        <div class="tb-group">
-          <button class="tb-btn" onclick="ex('undo')" title="Undo (Ctrl+Z)">↩ Undo</button>
-          <button class="tb-btn" onclick="ex('redo')" title="Redo (Ctrl+Y)">↪ Redo</button>
-        </div>
-        <div class="tb-sep"></div>
-        <div class="tb-group">
-          <button class="tb-btn" onclick="buildTOC()" title="Auto-generate Table of Contents">≡ TOC</button>
-        </div>
-      </div>
-
-      <div id="wiki-content" data-placeholder="Start writing your wiki page here…" oninput="onEditorInput()" onkeydown="onEditorKeydown(event)">
-        <div id="empty-state">
-          <div class="eis">◈</div>
-          <h2>AEDTP WORLD WIKI</h2>
-          <p>Browse published wiki pages in the sidebar, or create your own.</p>
-          <button class="esc-btn" onclick="openCreateModal()">+ Create Wiki Page</button>
-        </div>
-      </div>
-
-      <!-- STATUS BAR -->
-      <div id="statusbar">
-        <span class="sb-item" id="sb-words">Words: 0</span>
-        <span class="sb-item" id="sb-chars">Chars: 0</span>
-        <span class="sb-item" id="sb-status"><span id="status-saved" style="display:none">● Saved</span><span id="status-unsaved" style="display:none">● Unsaved</span></span>
-        <span class="sb-item" id="sb-pages">Pages: 0</span>
-        <span class="sb-item" id="sb-size">Storage: 0 KB</span>
-      </div>
-    </section>
-
-    <aside id="tools-panel">
-      <div id="tools-header">AWFLMETA TOOLS</div>
-
-      <div class="ts">
-        <div class="ts-label">Page Actions</div>
-        <button class="ta inf" id="btn-edit" onclick="toggleEdit()" style="display:none"><span class="ti">✎</span> Edit Wiki</button>
-        <button class="ta ok" id="btn-save" onclick="saveCurrent()" style="display:none"><span class="ti">💾</span> Save &amp; Publish</button>
-        <button class="ta inf" id="btn-create" onclick="openCreateModal()"><span class="ti">+</span> Create New Wiki</button>
-        <button class="ta inf" onclick="exportPage()"><span class="ti">↓</span> Export HTML</button>
-        <button class="ta inf" onclick="exportAll()"><span class="ti">⬇</span> Export All Pages</button>
-        <button class="ta" onclick="copyAll()"><span class="ti">📋</span> Copy All Content</button>
-      </div>
-
-      <div class="ts">
-        <div class="ts-label">Heading Blocks</div>
-        <div class="tgrid">
-          <button class="fg" onclick="applyBlock('h1')">H1</button>
-          <button class="fg" onclick="applyBlock('h2')">H2</button>
-          <button class="fg" onclick="applyBlock('h3')">H3</button>
-          <button class="fg" onclick="applyBlock('h4')">H4</button>
-          <button class="fg" onclick="applyBlock('h5')">H5</button>
-          <button class="fg" onclick="applyBlock('h6')">H6</button>
-          <button class="fg" onclick="applyBlock('p')">¶ P</button>
-          <button class="fg" onclick="applyBlock('pre')">⌨ Pre</button>
-        </div>
-      </div>
-
-      <div class="ts">
-        <div class="ts-label">Inline Format</div>
-        <div class="tgrid">
-          <button class="fg" onclick="ex('bold')"><b>B</b></button>
-          <button class="fg" onclick="ex('italic')"><i>I</i></button>
-          <button class="fg" onclick="ex('underline')"><u>U</u></button>
-          <button class="fg" onclick="ex('strikeThrough')"><s>S</s></button>
-          <button class="fg" onclick="ws('sup')">x²</button>
-          <button class="fg" onclick="ws('sub')">x₂</button>
-          <button class="fg" onclick="ws('mark')">🖊</button>
-          <button class="fg" onclick="ws('code')">&lt;/&gt;</button>
-        </div>
-        <div class="frow" style="margin-top:7px">
-          <label>Font Size</label>
-          <select onchange="ex('fontSize',this.value);this.value=''">
-            <option value="">—</option>
-            <option value="1">8px</option><option value="2">10px</option><option value="3">12px</option>
-            <option value="4">14px</option><option value="5">18px</option><option value="6">24px</option><option value="7">36px</option>
-          </select>
-        </div>
-        <div class="frow">
-          <label>Font</label>
-          <select onchange="ex('fontName',this.value);this.value=''">
-            <option value="">—</option>
-            <option value="'IBM Plex Sans',sans-serif">IBM Plex Sans</option>
-            <option value="'Crimson Pro',Georgia,serif">Crimson Pro</option>
-            <option value="'IBM Plex Mono',monospace">IBM Plex Mono</option>
-            <option value="Georgia,serif">Georgia</option>
-            <option value="Arial,sans-serif">Arial</option>
-            <option value="'Times New Roman',serif">Times New Roman</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="ts">
-        <div class="ts-label">Blocks &amp; Lists</div>
-        <div class="tgrid c2">
-          <button class="fg" onclick="ex('insertUnorderedList')">• List</button>
-          <button class="fg" onclick="ex('insertOrderedList')">1. List</button>
-          <button class="fg" onclick="applyBlock('blockquote')">❝ Quote</button>
-          <button class="fg" onclick="insHR()">— HR</button>
-          <button class="fg s2" onclick="insTable()">⊞ Table</button>
-          <button class="fg s2" onclick="insBox('wiki-note','ℹ Note text')">ℹ Note Box</button>
-          <button class="fg s2" onclick="insBox('wiki-warning','⚠ Warning text')">⚠ Warning Box</button>
-          <button class="fg s2" onclick="insBox('wiki-tip','✓ Tip text')">✓ Tip Box</button>
-        </div>
-      </div>
-
-      <div class="ts">
-        <div class="ts-label">Alignment</div>
-        <div class="tgrid c2">
-          <button class="fg" onclick="ex('justifyLeft')">⬅ Left</button>
-          <button class="fg" onclick="ex('justifyCenter')">⬌ Center</button>
-          <button class="fg" onclick="ex('justifyRight')">➡ Right</button>
-          <button class="fg" onclick="ex('justifyFull')">☰ Justify</button>
-          <button class="fg" onclick="ex('indent')">→ Indent</button>
-          <button class="fg" onclick="ex('outdent')">← Outdent</button>
-        </div>
-      </div>
-
-      <div class="ts">
-        <div class="ts-label">Insert Media</div>
-        <div class="tgrid c2">
-          <button class="fg" onclick="promptIns('link')">🔗 Link</button>
-          <button class="fg" onclick="promptIns('image')">🖼 Image</button>
-          <button class="fg" onclick="promptIns('video')">▶ Video</button>
-          <button class="fg" onclick="promptIns('audio')">♪ Audio</button>
-          <button class="fg s2" onclick="openInfoboxModal()">☰ Infobox</button>
-          <button class="fg s2" onclick="buildTOC()">≡ Generate TOC</button>
-        </div>
-      </div>
-
-      <div class="ts">
-        <div class="ts-label">Color</div>
-        <div class="crow">
-          <label>Text Color</label>
-          <input type="color" id="tc-color" value="#4a9eff">
-          <button class="cab" onclick="ex('foreColor',document.getElementById('tc-color').value)">Apply</button>
-        </div>
-        <div class="crow">
-          <label>Highlight</label>
-          <input type="color" id="hl-color" value="#d4a843">
-          <button class="cab" onclick="ex('hiliteColor',document.getElementById('hl-color').value)">Apply</button>
-        </div>
-        <div class="crow">
-          <label>Background</label>
-          <input type="color" id="bg-color" value="#1a2030">
-          <button class="cab" onclick="ex('hiliteColor',document.getElementById('bg-color').value)">Apply</button>
-        </div>
-        <button class="fg s4" style="width:100%;margin-top:4px" onclick="ex('removeFormat')">✕ Clear All Format</button>
-      </div>
-
-      <div class="ts">
-        <div class="ts-label">Clipboard &amp; History</div>
-        <button class="ta" onclick="copyAll()"><span class="ti">📋</span> Copy All</button>
-        <button class="ta" onclick="pasteText()"><span class="ti">📄</span> Paste Plain</button>
-        <button class="ta" onclick="ex('undo')"><span class="ti">↩</span> Undo</button>
-        <button class="ta" onclick="ex('redo')"><span class="ti">↪</span> Redo</button>
-      </div>
-
-      <div class="ts">
-        <div class="ts-label">Page Settings</div>
-        <button class="ta" onclick="openRenameModal()"><span class="ti">✎</span> Rename Page</button>
-        <button class="ta" onclick="openCatModal()"><span class="ti">📁</span> Change Category</button>
-        <button class="ta" onclick="wordCount()"><span class="ti">#</span> Word Count</button>
-        <button class="ta" onclick="printPage()"><span class="ti">🖨</span> Print Page</button>
-      </div>
-    </aside>
-  </main>
-</div>
-
-<div id="edit-indicator">✎ EDIT MODE — Ctrl+S to save</div>
-<div id="toast-wrap"></div>
-
-<!-- MODALS -->
-<div class="modal-overlay" id="modal-create">
-  <div class="modal-box">
-    <div class="modal-header"><h3>📄 Create New Wiki Page</h3><button class="modal-close" onclick="closeModal('modal-create')">×</button></div>
-    <div class="modal-body">
-      <div class="form-group"><label>Page Title <span style="color:var(--red)">*</span></label><input class="form-input" id="new-page-title" placeholder="e.g. Buddy DML" oninput="updateSlugPreview()"></div>
-      <div class="form-group"><label>URL Slug (auto-generated)</label><input class="form-input" id="new-page-slug" placeholder="Buddy_DML" style="font-family:var(--font-mono);font-size:12px;color:var(--text3)" readonly><div class="form-hint" id="slug-preview-url" style="font-size:11px;color:var(--accent);margin-top:4px;font-family:var(--font-mono)"></div></div>
-    </div>
-    <div class="modal-footer"><button class="btn-secondary" onclick="closeModal('modal-create')">Cancel</button><button class="btn-primary" onclick="createPage()">Create &amp; Edit</button></div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-insert">
-  <div class="modal-box">
-    <div class="modal-header"><h3 id="insert-modal-title">Insert</h3><button class="modal-close" onclick="closeModal('modal-insert')">×</button></div>
-    <div class="modal-body">
-      <div class="form-group"><label>URL</label><input class="form-input" id="insert-url" placeholder="https://..."></div>
-      <div class="form-group" id="insert-text-group"><label>Display Text (for links)</label><input class="form-input" id="insert-text" placeholder="Click here"></div>
-    </div>
-    <div class="modal-footer"><button class="btn-secondary" onclick="closeModal('modal-insert')">Cancel</button><button class="btn-primary" onclick="doInsert()">Insert</button></div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-rename">
-  <div class="modal-box">
-    <div class="modal-header"><h3>✎ Rename Page</h3><button class="modal-close" onclick="closeModal('modal-rename')">×</button></div>
-    <div class="modal-body">
-      <div class="form-group"><label>New Title</label><input class="form-input" id="rename-title"></div>
-      <div class="form-hint">Renaming republishes the page under a new slug derived from the new title. The old slug will remain unless deleted.</div>
-    </div>
-    <div class="modal-footer"><button class="btn-secondary" onclick="closeModal('modal-rename')">Cancel</button><button class="btn-primary" onclick="doRename()">Rename &amp; Save</button></div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-cat">
-  <div class="modal-box">
-    <div class="modal-header"><h3>📁 Change Category</h3><button class="modal-close" onclick="closeModal('modal-cat')">×</button></div>
-    <div class="modal-body">
-      <div class="form-group">
-        <label>Choose a category</label>
-        <div id="cat-pills"></div>
-      </div>
-      <div class="form-group"><label>Or custom category</label><input class="form-input" id="cat-custom" placeholder="Custom category name"></div>
-    </div>
-    <div class="modal-footer"><button class="btn-secondary" onclick="closeModal('modal-cat')">Cancel</button><button class="btn-primary" onclick="doSetCategory()">Save Category</button></div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-infobox">
-  <div class="modal-box">
-    <div class="modal-header"><h3>☰ Insert Infobox</h3><button class="modal-close" onclick="closeModal('modal-infobox')">×</button></div>
-    <div class="modal-body">
-      <div class="form-group"><label>Infobox Title</label><input class="form-input" id="ib-title" placeholder="e.g. Quick Facts"></div>
-      <div class="form-group">
-        <label>Fields</label>
-        <div id="ib-rows"></div>
-        <button class="btn-secondary" style="margin-top:4px" onclick="addInfoboxRow()">+ Add Field</button>
-      </div>
-    </div>
-    <div class="modal-footer"><button class="btn-secondary" onclick="closeModal('modal-infobox')">Cancel</button><button class="btn-primary" onclick="doInsertInfobox()">Insert Infobox</button></div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-wordcount">
-  <div class="modal-box" style="max-width:340px">
-    <div class="modal-header"><h3># Word Count</h3><button class="modal-close" onclick="closeModal('modal-wordcount')">×</button></div>
-    <div class="modal-body" id="wc-body" style="font-family:var(--font-mono);font-size:13px;line-height:2"></div>
-    <div class="modal-footer"><button class="btn-secondary" onclick="closeModal('modal-wordcount')">Close</button></div>
-  </div>
-</div>
-
-<script>
-/* STATE */
-let pages = {};
-let currentSlug = null;
-let isEditMode = false;
-let insertType = null;
-let savedSel = null;
-const CATEGORIES = ['Uncategorized','AI','Apps','Artists','Bible','Developer','Education','Music','News','General'];
-
-const API_BASE = '/wiki/api';
-
-/* INIT */
-async function init() {
-  await loadPages();
-  buildCatPills();
-  updateStatusBar();
-}
-
-/* LOAD PAGES FROM INDEX.JSON */
-async function loadPages() {
-  try {
-    const res = await fetch('/wiki/index.json');
-    if (!res.ok) throw new Error('Failed to load index');
-    const data = await res.json();
-    pages = {};
-    (data.pages || []).forEach(p => {
-      pages[p.slug] = p;
-    });
-    renderPageList();
-    routeFromHash();
-  } catch (err) {
-    console.error('Load error:', err);
-    toast('Failed to load pages', 'err');
-  }
-  updateStatusBar();
-}
-
-/* RENDER PAGE LIST */
-function renderPageList(filter = '') {
-  const list = document.getElementById('page-list');
-  let items = Object.values(pages);
-
-  if (filter) {
-    items = items.filter(p => p.title.toLowerCase().includes(filter.toLowerCase()));
-  }
-
-  items.sort((a, b) => (b.updated || 0) - (a.updated || 0));
-  document.getElementById('page-count').textContent = items.length;
-
-  if (!items.length) {
-    list.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text3);font-size:13px">No pages yet. Create one!</div>';
-  } else {
-    list.innerHTML = items.map(p => {
-      const d = new Date((p.updated || 0) * 1000).toLocaleDateString();
-      const active = currentSlug === p.slug ? ' active' : '';
-      return `<div class="page-item${active}" onclick="loadPage('${esc(p.slug)}')">
-        <div class="page-item-title">${esc(p.title)}</div>
-        <div class="page-item-date">${d}</div>
-      </div>`;
-    }).join('');
-  }
-  updateStatusBar();
-}
-
-function filterPages(v) {
-  renderPageList(v);
-}
-
-/* LOAD PAGE */
-async function loadPage(slug) {
-  if (isEditMode && !confirm('Discard changes?')) return;
-  exitEdit();
-
-  currentSlug = slug;
-  renderPageList(document.getElementById('page-search').value);
-
-  const meta = pages[slug];
-  document.getElementById('wiki-title-display').textContent = meta?.title || slug;
-  document.getElementById('wiki-date-tag').textContent = meta?.updated ? new Date((meta.updated) * 1000).toLocaleString() : '—';
-  document.getElementById('wiki-slug-tag').textContent = slug;
-  const catTag = document.getElementById('wiki-cat-tag');
-  if (meta?.category) { catTag.textContent = meta.category; catTag.style.display = 'inline-block'; }
-  else { catTag.style.display = 'none'; }
-
-  document.getElementById('wiki-content').innerHTML = '<div class="loading-spinner"><span class="spin">⟳</span></div>';
-
-  try {
-    const res = await fetch('/wiki/' + slug + '.html');
-    if (!res.ok) throw new Error('not found');
-    let html = await res.text();
-    const match = html.match(/<!-- BEGIN WIKI BODY -->([\s\S]*?)<!-- END WIKI BODY -->/);
-    if (match) html = match[1].trim();
-    document.getElementById('wiki-content').innerHTML = html || '<p style="color:var(--text3);font-style:italic">This page is empty.</p>';
-  } catch (err) {
-    document.getElementById('wiki-content').innerHTML = '<div style="text-align:center;padding:60px 20px;color:var(--text3)"><div style="font-size:36px;margin-bottom:12px">🔍</div><p>Could not load page.</p></div>';
-  }
-
-  document.getElementById('btn-edit').style.display = 'flex';
-  document.getElementById('btn-save').style.display = 'none';
-  window.location.hash = '#' + slug;
-  markSaved();
-  updateStatusBar();
-}
-
-function showHome() {
-  if (isEditMode) exitEdit();
-  currentSlug = null;
-  renderPageList(document.getElementById('page-search').value);
-  document.getElementById('wiki-title-display').textContent = 'Welcome to AWFLMETA';
-  document.getElementById('wiki-date-tag').textContent = '—';
-  document.getElementById('wiki-slug-tag').textContent = 'home';
-  document.getElementById('wiki-cat-tag').style.display = 'none';
-  document.getElementById('wiki-content').innerHTML = '<div id="empty-state"><div class="eis">◈</div><h2>AEDTP WORLD WIKI</h2><p>Browse published wiki pages in the sidebar, or create your own.</p><button class="esc-btn" onclick="openCreateModal()">+ Create Wiki Page</button></div>';
-  document.getElementById('btn-edit').style.display = 'none';
-  document.getElementById('btn-save').style.display = 'none';
-  window.location.hash = '';
-  updateStatusBar();
-}
-
-/* EDIT MODE */
-function toggleEdit() {
-  if (!currentSlug) {
-    toast('Open a page first', 'inf');
-    return;
-  }
-  if (isEditMode) exitEdit();
-  else enterEdit();
-}
-
-function enterEdit() {
-  isEditMode = true;
-  const wc = document.getElementById('wiki-content');
-  wc.contentEditable = 'true';
-  wc.focus();
-  document.getElementById('btn-edit').style.display = 'none';
-  document.getElementById('btn-save').style.display = 'flex';
-  document.getElementById('toolbar').classList.add('tb-active');
-  document.getElementById('edit-indicator').style.display = 'block';
-  markSaved();
-  updateStatusBar();
-}
-
-function exitEdit() {
-  isEditMode = false;
-  document.getElementById('wiki-content').contentEditable = 'false';
-  if (currentSlug) document.getElementById('btn-edit').style.display = 'flex';
-  document.getElementById('btn-save').style.display = 'none';
-  document.getElementById('toolbar').classList.remove('tb-active');
-  document.getElementById('edit-indicator').style.display = 'none';
-}
-
-/* SAVE PAGE */
-async function savePage() {
-  if (!currentSlug) {
-    toast('No page open', 'err');
-    return;
-  }
-
-  const title = document.getElementById('wiki-title-display').textContent;
-  const content = document.getElementById('wiki-content').innerHTML;
-  const category = pages[currentSlug]?.category || '';
-
-  try {
-    const res = await fetch(API_BASE + '/publish.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, content, category })
-    });
-
-    const data = await res.json();
-
-    if (!data.success) {
-      toast('Save failed: ' + (data.error || 'unknown error'), 'err');
-      return;
-    }
-
-    pages[data.data.slug] = {
-      slug: data.data.slug,
-      title: data.data.title,
-      description: '',
-      category: category,
-      updated: data.data.updated
-    };
-
-    exitEdit();
-    renderPageList();
-    markSaved();
-    toast('Published ✓', 'ok');
-  } catch (err) {
-    toast('Error: ' + err.message, 'err');
-  }
-}
-function saveCurrent(){ savePage(); }
-
-/* CREATE PAGE */
-function openCreateModal() {
-  document.getElementById('new-page-title').value = '';
-  document.getElementById('new-page-slug').value = '';
-  document.getElementById('slug-preview-url').textContent = '';
-  openModal('modal-create');
-  setTimeout(() => document.getElementById('new-page-title').focus(), 100);
-}
-
-function updateSlugPreview() {
-  const t = document.getElementById('new-page-title').value;
-  const slug = toSlug(t);
-  document.getElementById('new-page-slug').value = slug;
-  document.getElementById('slug-preview-url').textContent = slug ? '/wiki/' + slug + '.html' : '';
-}
-
-function createPage() {
-  const title = document.getElementById('new-page-title').value.trim();
-  if (!title) {
-    toast('Enter a title', 'err');
-    return;
-  }
-
-  const slug = toSlug(title);
-  if (pages[slug]) {
-    toast('A page with this title already exists', 'err');
-    return;
-  }
-
-  currentSlug = slug;
-  pages[slug] = {
-    slug: slug,
-    title: title,
-    description: '',
-    category: '',
-    updated: Math.floor(Date.now() / 1000)
-  };
-
-  closeModal('modal-create');
-  renderPageList();
-
-  document.getElementById('wiki-title-display').textContent = title;
-  document.getElementById('wiki-slug-tag').textContent = slug;
-  document.getElementById('wiki-cat-tag').style.display = 'none';
-  document.getElementById('wiki-content').innerHTML = '';
-
-  document.getElementById('btn-edit').style.display = 'flex';
-  document.getElementById('btn-save').style.display = 'none';
-
-  setTimeout(enterEdit, 100);
-  toast('Page created — start writing!', 'ok');
-}
-
-/* DELETE PAGE */
-async function deleteCurrent() {
-  if (!currentSlug) { toast('Open a page first', 'inf'); return; }
-  if (!confirm('Delete "' + (pages[currentSlug]?.title || currentSlug) + '"? This cannot be undone.')) return;
-
-  const slug = currentSlug;
-  try {
-    const res = await fetch(API_BASE + '/delete.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ slug })
-    });
-    const data = await res.json().catch(() => ({ success: false }));
-    if (!data.success) throw new Error(data.error || 'backend did not confirm deletion');
-    delete pages[slug];
-    toast('Page deleted', 'ok');
-  } catch (err) {
-    delete pages[slug];
-    toast('Removed locally (delete.php endpoint unavailable: ' + err.message + ')', 'inf');
-  }
-  showHome();
-  renderPageList();
-}
-
-/* RENAME PAGE */
-function openRenameModal() {
-  if (!currentSlug) { toast('Open a page first', 'inf'); return; }
-  document.getElementById('rename-title').value = pages[currentSlug]?.title || document.getElementById('wiki-title-display').textContent;
-  openModal('modal-rename');
-  setTimeout(() => document.getElementById('rename-title').focus(), 100);
-}
-
-async function doRename() {
-  const newTitle = document.getElementById('rename-title').value.trim();
-  if (!newTitle) { toast('Enter a title', 'err'); return; }
-  document.getElementById('wiki-title-display').textContent = newTitle;
-  closeModal('modal-rename');
-  await savePage();
-  toast('Renamed to "' + newTitle + '"', 'ok');
-}
-
-/* CATEGORY */
-function buildCatPills() {
-  const wrap = document.getElementById('cat-pills');
-  wrap.innerHTML = CATEGORIES.map(c => `<span class="cat-pill" data-cat="${esc(c)}" onclick="selectCatPill(this)">${esc(c)}</span>`).join('');
-}
-function selectCatPill(el) {
-  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('sel'));
-  el.classList.add('sel');
-  document.getElementById('cat-custom').value = '';
-}
-function openCatModal() {
-  if (!currentSlug) { toast('Open a page first', 'inf'); return; }
-  document.querySelectorAll('.cat-pill').forEach(p => p.classList.toggle('sel', p.dataset.cat === (pages[currentSlug]?.category || 'Uncategorized')));
-  document.getElementById('cat-custom').value = '';
-  openModal('modal-cat');
-}
-async function doSetCategory() {
-  const custom = document.getElementById('cat-custom').value.trim();
-  const selected = document.querySelector('.cat-pill.sel');
-  const category = custom || (selected ? selected.dataset.cat : 'Uncategorized');
-  pages[currentSlug] = pages[currentSlug] || {};
-  pages[currentSlug].category = category;
-  const tag = document.getElementById('wiki-cat-tag');
-  tag.textContent = category;
-  tag.style.display = 'inline-block';
-  closeModal('modal-cat');
-  toast('Category set to "' + category + '" — Save to publish', 'inf');
-  markUnsaved();
-}
-
-/* FORMAT — TOOLBAR ENGINE */
-function ensureEditing() {
-  if (!isEditMode) {
-    toast('Enter edit mode first', 'inf');
-    return false;
-  }
-  return true;
-}
-
-function ex(cmd, val) {
-  if (!ensureEditing()) return;
-  const wc = document.getElementById('wiki-content');
-  wc.focus();
-  document.execCommand(cmd, false, val || null);
-  onEditorInput();
-}
-
-function ws(tag) {
-  if (!ensureEditing()) return;
-  const wc = document.getElementById('wiki-content');
-  wc.focus();
-  const sel = window.getSelection();
-  const text = sel && sel.rangeCount ? sel.toString() : '';
-  const safe = text ? esc(text) : (tag === 'code' ? 'code' : tag === 'mark' ? 'highlighted text' : tag);
-  document.execCommand('insertHTML', false, '<' + tag + '>' + safe + '</' + tag + '>');
-  onEditorInput();
-}
-
-function applyBlock(tag) {
-  if (!tag) return;
-  if (!ensureEditing()) return;
-  const wc = document.getElementById('wiki-content');
-  wc.focus();
-  document.execCommand('formatBlock', false, '<' + tag + '>');
-  onEditorInput();
-}
-function fmt(cmd) {
-  if (['h1','h2','h3','h4','h5','h6','p','pre','blockquote'].includes(cmd)) { applyBlock(cmd); return; }
-  if (cmd === 'list') { ex('insertUnorderedList'); return; }
-  ex(cmd);
-}
-
-function insHR() {
-  if (!ensureEditing()) return;
-  document.getElementById('wiki-content').focus();
-  document.execCommand('insertHorizontalRule');
-  onEditorInput();
-}
-
-function insBox(cls, placeholder) {
-  if (!ensureEditing()) return;
-  document.getElementById('wiki-content').focus();
-  document.execCommand('insertHTML', false, '<div class="' + cls + '">' + esc(placeholder) + '</div><p><br></p>');
-  onEditorInput();
-}
-
-function insTable() { insertTable(); }
-function insertTable() {
-  if (!ensureEditing()) return;
-  document.getElementById('wiki-content').focus();
-  document.execCommand('insertHTML', false, '<table><tr><th>Heading</th><th>Heading</th></tr><tr><td>Cell</td><td>Cell</td></tr><tr><td>Cell</td><td>Cell</td></tr></table><p><br></p>');
-  onEditorInput();
-}
-
-function applyHighlight() { ex('hiliteColor', document.getElementById('hl-color').value); }
-function applyTextColor() { ex('foreColor', document.getElementById('tc-color').value); }
-
-function copyAll() {
-  const wc = document.getElementById('wiki-content');
-  const r = document.createRange();
-  r.selectNodeContents(wc);
-  const s = window.getSelection();
-  s.removeAllRanges();
-  s.addRange(r);
-  try { document.execCommand('copy'); toast('Copied', 'ok'); }
-  catch { toast('Copy failed — select manually', 'err'); }
-  s.removeAllRanges();
-}
-
-async function pasteContent() { return pasteText(); }
-async function pasteText() {
-  if (!ensureEditing()) return;
-  document.getElementById('wiki-content').focus();
-  try {
-    const t = await navigator.clipboard.readText();
-    document.execCommand('insertText', false, t);
-    onEditorInput();
-    toast('Pasted', 'ok');
-  } catch {
-    toast('Use Ctrl+V to paste', 'inf');
-  }
-}
-
-/* INSERT (link/image/video/audio) */
-function promptIns(type) { return promptInsert(type); }
-function promptInsert(type) {
-  if (!ensureEditing()) return;
-  insertType = type;
-  const titles = { link: '🔗 Insert Link', image: '🖼 Insert Image URL', video: '▶ Insert Video URL', audio: '♪ Insert Audio URL' };
-  document.getElementById('insert-modal-title').textContent = titles[type];
-  document.getElementById('insert-url').value = '';
-  document.getElementById('insert-text').value = '';
-  document.getElementById('insert-text-group').style.display = (type === 'link') ? 'block' : 'none';
-  savedSel = saveSelection();
-  openModal('modal-insert');
-  setTimeout(() => document.getElementById('insert-url').focus(), 100);
-}
-
-function doInsert() {
-  const url = document.getElementById('insert-url').value.trim();
-  if (!url) { toast('Enter a URL', 'err'); return; }
-
-  const wc = document.getElementById('wiki-content');
-  wc.focus();
-  restoreSelection(savedSel);
-
-  let html = '';
-  if (insertType === 'link') {
-    const txt = document.getElementById('insert-text').value.trim() || url;
-    html = '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(txt) + '</a>';
-  } else if (insertType === 'image') {
-    html = '<img src="' + esc(url) + '" class="wiki-img" alt="Image" loading="lazy">';
-  } else if (insertType === 'video') {
-    html = '<video src="' + esc(url) + '" controls style="max-width:100%;border-radius:6px;margin:8px 0"></video>';
-  } else if (insertType === 'audio') {
-    html = '<audio src="' + esc(url) + '" controls style="width:100%;margin:8px 0"></audio>';
-  }
-
-  document.execCommand('insertHTML', false, html);
-  closeModal('modal-insert');
-  onEditorInput();
-}
-
-/* INFOBOX */
-let ibCounter = 0;
-function openInfoboxModal() {
-  if (!ensureEditing()) return;
-  document.getElementById('ib-title').value = '';
-  document.getElementById('ib-rows').innerHTML = '';
-  ibCounter = 0;
-  addInfoboxRow(); addInfoboxRow();
-  openModal('modal-infobox');
-}
-function addInfoboxRow() {
-  ibCounter++;
-  const id = 'ibrow_' + ibCounter;
-  const row = document.createElement('div');
-  row.className = 'ib-row';
-  row.id = id;
-  row.innerHTML = '<input class="form-input ib-k" placeholder="Field"><input class="form-input ib-v" placeholder="Value"><button class="ib-rm" onclick="document.getElementById(\'' + id + '\').remove()">✕</button>';
-  document.getElementById('ib-rows').appendChild(row);
-}
-function doInsertInfobox() {
-  const title = document.getElementById('ib-title').value.trim() || 'Quick Facts';
-  const rows = [...document.querySelectorAll('#ib-rows .ib-row')].map(r => ({
-    k: r.querySelector('.ib-k').value.trim(),
-    v: r.querySelector('.ib-v').value.trim()
-  })).filter(r => r.k || r.v);
-
-  if (!rows.length) { toast('Add at least one field', 'err'); return; }
-
-  let html = '<div class="wiki-infobox"><div class="ib-title">' + esc(title) + '</div><table>';
-  rows.forEach(r => { html += '<tr><td class="ib-k">' + esc(r.k) + '</td><td>' + esc(r.v) + '</td></tr>'; });
-  html += '</table></div>';
-
-  document.getElementById('wiki-content').focus();
-  document.execCommand('insertHTML', false, html);
-  closeModal('modal-infobox');
-  onEditorInput();
-}
-
-/* TOC */
-function buildTOC() {
-  if (!ensureEditing()) return;
-  const wc = document.getElementById('wiki-content');
-  const headings = [...wc.querySelectorAll('h1,h2,h3')];
-  if (!headings.length) {
-    toast('No headings found', 'inf');
-    return;
-  }
-  let toc = '<div id="toc"><div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px">Contents</div>';
-  headings.forEach((h, i) => {
-    h.id = 'toc_' + i;
-    const sub = h.tagName === 'H3' ? ' style="padding-left:14px;font-size:12px"' : '';
-    toc += '<a href="#toc_' + i + '"' + sub + ' style="display:block;font-size:13px;color:var(--accent);margin:3px 0;text-decoration:none">' + esc(h.textContent) + '</a>';
-  });
-  toc += '</div>';
-  document.execCommand('insertHTML', false, toc);
-  onEditorInput();
-}
-
-/* WORD COUNT */
-function getCounts() {
-  const wc = document.getElementById('wiki-content');
-  const text = (wc.innerText || wc.textContent || '').trim();
-  const words = text ? text.split(/\s+/).filter(Boolean).length : 0;
-  const chars = text.length;
-  return { words, chars };
-}
-function wordCount() {
-  const { words, chars } = getCounts();
-  const sentences = (document.getElementById('wiki-content').innerText || '').split(/[.!?]+/).filter(s => s.trim()).length;
-  document.getElementById('wc-body').innerHTML =
-    'Words: <b>' + words + '</b><br>Characters: <b>' + chars + '</b><br>Sentences (approx): <b>' + sentences + '</b><br>Reading time (approx): <b>' + Math.max(1, Math.round(words / 200)) + ' min</b>';
-  openModal('modal-wordcount');
-}
-
-/* STATUS BAR / UNSAVED TRACKING */
-function markSaved() {
-  document.getElementById('status-saved').style.display = 'inline';
-  document.getElementById('status-unsaved').style.display = 'none';
-}
-function markUnsaved() {
-  document.getElementById('status-saved').style.display = 'none';
-  document.getElementById('status-unsaved').style.display = 'inline';
-}
-function updateStatusBar() {
-  const { words, chars } = getCounts();
-  document.getElementById('sb-words').textContent = 'Words: ' + words;
-  document.getElementById('sb-chars').textContent = 'Chars: ' + chars;
-  document.getElementById('sb-pages').textContent = 'Pages: ' + Object.keys(pages).length;
-  const sizeKB = (JSON.stringify(pages).length / 1024).toFixed(1);
-  document.getElementById('sb-size').textContent = 'Storage: ' + sizeKB + ' KB';
-}
-
-/* EDITOR INPUT HOOKS */
-let editTimer = null;
-function onEditorInput() {
-  if (isEditMode) markUnsaved();
-  clearTimeout(editTimer);
-  editTimer = setTimeout(updateStatusBar, 150);
-}
-function onEditorKeydown(e) {
-  if (!isEditMode) return;
-  if (e.key === 'Tab') {
-    e.preventDefault();
-    document.execCommand(e.shiftKey ? 'outdent' : 'indent');
-  }
-  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'b') { e.preventDefault(); ex('bold'); }
-  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'i') { e.preventDefault(); ex('italic'); }
-  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'u') { e.preventDefault(); ex('underline'); }
-}
-
-/* EXPORT */
-function exportPage() { return exportHTML(); }
-function exportHTML() {
-  if (!currentSlug) { toast('Open a page first', 'inf'); return; }
-  const title = document.getElementById('wiki-title-display').textContent;
-  const content = document.getElementById('wiki-content').innerHTML;
-  const blob = new Blob(['<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + esc(title) + '</title></head><body><h1>' + esc(title) + '</h1>' + content + '</body></html>'], { type: 'text/html' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = currentSlug + '.html';
-  a.click();
-  toast('Exported', 'ok');
-}
-
-async function exportAll() {
-  const slugs = Object.keys(pages);
-  if (!slugs.length) { toast('No pages to export', 'inf'); return; }
-  toast('Bundling ' + slugs.length + ' pages…', 'inf');
-
-  let bundle = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>AWFLMETA Wiki Export</title></head><body>';
-  for (const slug of slugs) {
-    let body = '<p style="color:#888"><em>Could not load this page.</em></p>';
-    try {
-      const res = await fetch('/wiki/' + slug + '.html');
-      if (res.ok) {
-        let html = await res.text();
-        const match = html.match(/<!-- BEGIN WIKI BODY -->([\s\S]*?)<!-- END WIKI BODY -->/);
-        body = match ? match[1].trim() : html;
-      }
-    } catch {}
-    bundle += '<section><h1>' + esc(pages[slug].title || slug) + '</h1>' + body + '</section><hr>';
-  }
-  bundle += '</body></html>';
-
-  const blob = new Blob([bundle], { type: 'text/html' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'awflmeta_wiki_export_all.html';
-  a.click();
-  toast('Exported all pages', 'ok');
-}
-
-/* PRINT */
-function printPage() {
-  if (!currentSlug) { toast('Open a page first', 'inf'); return; }
-  window.print();
-}
-
-/* SEARCH */
-function searchWiki(q) {
-  const box = document.getElementById('search-results');
-  if (!q || q.length < 2) {
-    box.style.display = 'none';
-    return;
-  }
-
-  const lq = q.toLowerCase();
-  const res = Object.values(pages).filter(p => p.title.toLowerCase().includes(lq) || (p.description || '').toLowerCase().includes(lq)).slice(0, 8);
-
-  if (!res.length) {
-    box.innerHTML = '<div class="sr-empty">No results for "' + esc(q) + '"</div>';
-    box.style.display = 'block';
-    return;
-  }
-
-  box.innerHTML = res.map(p => `<div class="sr-item" onclick="loadPage('${esc(p.slug)}');closeSearch()">
-    <div class="sri-title">${esc(p.title)}</div>
-    <div class="sri-snippet">${esc((p.description || '').substring(0, 80))}</div>
-  </div>`).join('');
-  box.style.display = 'block';
-}
-
-function closeSearch() {
-  document.getElementById('search-results').style.display = 'none';
-  document.getElementById('search-input').value = '';
-}
-
-/* SELECTION */
-function saveSelection() {
-  const s = window.getSelection();
-  return s.rangeCount ? s.getRangeAt(0).cloneRange() : null;
-}
-function restoreSelection(r) {
-  if (!r) return;
-  const s = window.getSelection();
-  s.removeAllRanges();
-  s.addRange(r);
-}
-
-/* MODALS */
-function openModal(id) { document.getElementById(id).classList.add('open'); }
-function closeModal(id) { document.getElementById(id).classList.remove('open'); }
-
-document.querySelectorAll('.modal-overlay').forEach(m => {
-  m.addEventListener('click', e => {
-    if (e.target === m) m.classList.remove('open');
-  });
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
-  }
-  if ((e.ctrlKey || e.metaKey) && e.key === 's' && isEditMode) {
-    e.preventDefault();
-    savePage();
-  }
-});
-
-/* HELPERS */
-function toast(msg, type = 'inf') {
-  const el = document.createElement('div');
-  el.className = 'toast ' + type;
-  el.textContent = msg;
-  document.getElementById('toast-wrap').appendChild(el);
-  setTimeout(() => el.remove(), 3100);
-}
-
-function esc(s) {
-  return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
-function toSlug(str) {
-  return str.replace(/[^\w\s-]/g, '').replace(/\s+/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '');
-}
-
-/* ROUTING */
-function routeFromHash() {
-  const slug = window.location.hash.replace('#', '');
-  if (!slug) return;
-  if (pages[slug]) loadPage(slug);
-}
-
-window.addEventListener('hashchange', routeFromHash);
-window.addEventListener('DOMContentLoaded', init);
-    </script>
+<header><img src="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg" alt=""><h1>AWFLWIKIWORLD</h1><p>135 pages &middot; <a href="index.json" style="color:#fff">index.json</a> &middot; <a href="sitemap.xml" style="color:#fff">sitemap.xml</a></p>
+<input id="q" type="search" placeholder="Filter pages…" autocomplete="off"></header>
+<main id="m">
+<section><h2>Pages <span>104</span></h2>
+<ul>
+<li><a href="24-Hour_Economy_Policy_Ghana.html">24-Hour Economy Policy Ghana</a></li>
+<li><a href="Abu_Dhabi.html">Abu Dhabi</a></li>
+<li><a href="Abu_Dhabi_Media_Company.html">Abu Dhabi Media Company</a></li>
+<li><a href="AEDTP_WORLD.html">AEDTP WORLD</a></li>
+<li><a href="AEDTP_WORLD_API_And_DEVs.html">AEDTP WORLD API And DEVs</a></li>
+<li><a href="AEDTP_WORLD_FREE_LICENSE_%28AWFL%29.html">AEDTP WORLD FREE LICENSE (AWFL)</a></li>
+<li><a href="AEDTP_WORLD_FREE_LICENSE_%28AWFL%29_AWFLMETA.html">AEDTP WORLD FREE LICENSE (AWFL) AWFLMETA</a></li>
+<li><a href="AEDTP_WORLD_Lite.html">AEDTP WORLD Lite</a></li>
+<li><a href="AEDTP_WORLD_Search_Engine.html">AEDTP WORLD Search Engine</a></li>
+<li><a href="AEDTP_WORLD_Verification.html">AEDTP WORLD Verification</a></li>
+<li><a href="AEDTPWORLDWIKI.html">AEDTPWORLDWIKI</a></li>
+<li><a href="AfCFTA_Digital_Trade_Protocol.html">AfCFTA Digital Trade Protocol</a></li>
+<li><a href="Africa_Carbon_Market_Initiative.html">Africa Carbon Market Initiative</a></li>
+<li><a href="Agenda_111_Hospitals_Ghana.html">Agenda 111 Hospitals Ghana</a></li>
+<li><a href="Alphabet_Inc..html">Alphabet Inc.</a></li>
+<li><a href="Amancio_Ortega.html">Amancio Ortega</a></li>
+<li><a href="Android.html">Android</a></li>
+<li><a href="AWFL.html">AWFL</a></li>
+<li><a href="AWFL_WIKI_Creator.html">AWFL WIKI Creator</a></li>
+<li><a href="AWFL_WIKI_Creator_%28Beta%29.html">AWFL WIKI Creator (Beta)</a></li>
+<li><a href="AWFLMETA.html">AWFLMETA</a></li>
+<li><a href="AWFLMETAWIKI.html">AWFLMETAWIKI</a></li>
+<li><a href="AWFLWIKI.html">AWFLWIKI</a></li>
+<li><a href="AWFLWIKIDATAWORLD.html">AWFLWIKIDATAWORLD</a></li>
+<li><a href="AWFLWIKIWORLD.html">AWFLWIKIWORLD</a></li>
+<li><a href="BBC.html">BBC</a></li>
+<li><a href="Bernard_Arnault.html">Bernard Arnault</a></li>
+<li><a href="Bible_Journey_Pro.html">Bible Journey Pro</a></li>
+<li><a href="Bill_Gates.html">Bill Gates</a></li>
+<li><a href="BIZIMI.html">BIZIMI</a></li>
+<li><a href="Black_Sherif.html">Black Sherif</a></li>
+<li><a href="Blue_Melody.html">Blue Melody</a></li>
+<li><a href="Buddy_DML.html">Buddy DML</a></li>
+<li><a href="Burna_Boy.html">Burna Boy</a></li>
+<li><a href="Charles_Koch.html">Charles Koch</a></li>
+<li><a href="Chataropica.html">Chataropica</a></li>
+<li><a href="Digital_Ghana_and_Smart_Cities_Initiatives.html">Digital Ghana and Smart Cities Initiatives</a></li>
+<li><a href="Drone_Delivery_in_Africa_-_Zipline_Ghana.html">Drone Delivery in Africa - Zipline Ghana</a></li>
+<li><a href="Efya.html">Efya</a></li>
+<li><a href="Electric_Vehicles_%28EV%29_Policy_Ghana.html">Electric Vehicles (EV) Policy Ghana</a></li>
+<li><a href="Elon_Musk.html">Elon Musk</a></li>
+<li><a href="Emmanuel_Deliver_Amable.html">Emmanuel Deliver Amable</a></li>
+<li><a href="Ghana_AI_Policy_2024.html">Ghana AI Policy 2024</a></li>
+<li><a href="Ghana_Artificial_Intelligence_and_Emerging_Technologies.html">Ghana Artificial Intelligence and Emerging Technologies</a></li>
+<li><a href="Ghana_Chip-Embedded_Passport.html">Ghana Chip-Embedded Passport</a></li>
+<li><a href="Ghana_Comedy_and_Content_Creation_Industry.html">Ghana Comedy and Content Creation Industry</a></li>
+<li><a href="Ghana_Cybersecurity_Act_and_Cyber_Security_Authority.html">Ghana Cybersecurity Act and Cyber Security Authority</a></li>
+<li><a href="Ghana_Data_Protection_Act_and_Data_Protection_Commission.html">Ghana Data Protection Act and Data Protection Commission</a></li>
+<li><a href="Ghana_Diaspora_and_Remittances_Impact_on_Economy.html">Ghana Diaspora and Remittances Impact on Economy</a></li>
+<li><a href="Ghana_Digital_Centres_and_Ghana_Innovation_Hub.html">Ghana Digital Centres and Ghana Innovation Hub</a></li>
+<li><a href="Ghana_E-Commerce_and_Online_Marketplaces.html">Ghana E-Commerce and Online Marketplaces</a></li>
+<li><a href="Ghana_Fashion_Industry_Textiles_and_Kente.html">Ghana Fashion Industry Textiles and Kente</a></li>
+<li><a href="Ghana_Film_Industry_Kumawood_and_Ghallywood.html">Ghana Film Industry Kumawood and Ghallywood</a></li>
+<li><a href="Ghana_Internet_Exchange_and_Internet_Service_Providers_in_Ghana.html">Ghana Internet Exchange and Internet Service Providers in Ghana</a></li>
+<li><a href="Ghana_Music_Industry_Highlife_Hiplife_and_Afrobeats.html">Ghana Music Industry Highlife Hiplife and Afrobeats</a></li>
+<li><a href="Ghana_National_Artificial_Intelligence_Strategy.html">Ghana National Artificial Intelligence Strategy</a></li>
+<li><a href="Ghana_National_Digital_Economy_Policy.html">Ghana National Digital Economy Policy</a></li>
+<li><a href="Ghana_Sports_Football_Black_Stars_and_Boxing.html">Ghana Sports Football Black Stars and Boxing</a></li>
+<li><a href="Ghana_Startup_Act.html">Ghana Startup Act</a></li>
+<li><a href="Ghana_Tech_Ecosystem_and_Venture_Capital.html">Ghana Tech Ecosystem and Venture Capital</a></li>
+<li><a href="Ghana_Tech_Hubs_and_Innovation_Labs.html">Ghana Tech Hubs and Innovation Labs</a></li>
+<li><a href="Ghana_Tourism_Industry_Cape_Coast_Elmina_and_Kakum.html">Ghana Tourism Industry Cape Coast Elmina and Kakum</a></li>
+<li><a href="Ghanaian_Inventors_List.html">Ghanaian Inventors List</a></li>
+<li><a href="Gmail.html">Gmail</a></li>
+<li><a href="God_Almighty_Supreme_Being_Creator.html">God Almighty Supreme Being Creator</a></li>
+<li><a href="Google.html">Google</a></li>
+<li><a href="Gyakie.html">Gyakie</a></li>
+<li><a href="Human.html">Human</a></li>
+<li><a href="iOS.html">iOS</a></li>
+<li><a href="IShowSpeed.html">IShowSpeed</a></li>
+<li><a href="Jeff_Bezos.html">Jeff Bezos</a></li>
+<li><a href="Jigyasa_Singh.html">Jigyasa Singh</a></li>
+<li><a href="Kidi.html">Kidi</a></li>
+<li><a href="King_Promise.html">King Promise</a></li>
+<li><a href="Kuami_Eugene.html">Kuami Eugene</a></li>
+<li><a href="Labelcaster.html">Labelcaster</a></li>
+<li><a href="Larry_Ellison.html">Larry Ellison</a></li>
+<li><a href="Larry_Page.html">Larry Page</a></li>
+<li><a href="Last.fm.html">Last.fm</a></li>
+<li><a href="LyricsWorld.html">LyricsWorld</a></li>
+<li><a href="Main_Page.html">Main Page</a></li>
+<li><a href="Mark_Zuckerberg.html">Mark Zuckerberg</a></li>
+<li><a href="Mdundo.html">Mdundo</a></li>
+<li><a href="META_AI.html">META AI</a></li>
+<li><a href="Meta_Platforms.html">Meta Platforms</a></li>
+<li><a href="MetaBrainz_Foundation.html">MetaBrainz Foundation</a></li>
+<li><a href="Michael_Bloomberg.html">Michael Bloomberg</a></li>
+<li><a href="Mobile_Money_and_Financial_Inclusion_in_Ghana.html">Mobile Money and Financial Inclusion in Ghana</a></li>
+<li><a href="MusicBrainz.html">MusicBrainz</a></li>
+<li><a href="PROJECT_BOOT.html">PROJECT BOOT</a></li>
+<li><a href="Sarkodie.html">Sarkodie</a></li>
+<li><a href="Sergey_Brin.html">Sergey Brin</a></li>
+<li><a href="Shatta_Wale.html">Shatta Wale</a></li>
+<li><a href="Spotify.html">Spotify</a></li>
+<li><a href="SpotifyWorld.html">SpotifyWorld</a></li>
+<li><a href="Starlink_in_Africa_rollout.html">Starlink in Africa rollout</a></li>
+<li><a href="Steve_Jobs.html">Steve Jobs</a></li>
+<li><a href="Stonebwoy.html">Stonebwoy</a></li>
+<li><a href="Universal_Music_Group.html">Universal Music Group</a></li>
+<li><a href="Vevo.html">Vevo</a></li>
+<li><a href="Warren_Buffett.html">Warren Buffett</a></li>
+<li><a href="Wikidata.html">Wikidata</a></li>
+<li><a href="Wikipedia.html">Wikipedia</a></li>
+<li><a href="YouTube.html">YouTube</a></li>
+</ul></section>
+<section><h2>AEDTP WORLD <span>11</span></h2>
+<ul>
+<li><a href="AEDTP_WORLD/Advertise.html">Advertise</a></li>
+<li><a href="AEDTP_WORLD/AI.html">AI</a></li>
+<li><a href="AEDTP_WORLD/Apps.html">Apps</a></li>
+<li><a href="AEDTP_WORLD/Business.html">Business</a></li>
+<li><a href="AEDTP_WORLD/Business_Card.html">Business Card</a></li>
+<li><a href="AEDTP_WORLD/Business_Registration.html">Business Registration</a></li>
+<li><a href="AEDTP_WORLD/Fastest_HTML_WIKI_File_Upload.html">Fastest HTML WIKI File Upload</a></li>
+<li><a href="AEDTP_WORLD/Global_Music_Distribution.html">Global Music Distribution</a></li>
+<li><a href="AEDTP_WORLD/License.html">License</a></li>
+<li><a href="AEDTP_WORLD/Privacy_Policy.html">Privacy Policy</a></li>
+<li><a href="AEDTP_WORLD/Tools.html">Tools</a></li>
+</ul></section>
+<section><h2>AWFLWIKIWORLD <span>3</span></h2>
+<ul>
+<li><a href="AWFLWIKIWORLD/AWFLWIKITEXT.html">AWFLWIKITEXT</a></li>
+<li><a href="AWFLWIKIWORLD/AWFLWIKIWORLD.html">AWFLWIKIWORLD</a></li>
+<li><a href="AWFLWIKIWORLD/AWFLWIKIWORLD_Download_And_Installation.html">AWFLWIKIWORLD Download And Installation</a></li>
+</ul></section>
+<section><h2>Books <span>1</span></h2>
+<ul>
+<li><a href="Books/WILL.html">WILL</a></li>
+</ul></section>
+<section><h2>Images <span>1</span></h2>
+<ul>
+<li><a href="Images/image.jpg.html">image.jpg</a></li>
+</ul></section>
+<section><h2>Music <span>13</span></h2>
+<ul>
+<li><a href="Music/Black_Sherif.html">Black Sherif</a></li>
+<li><a href="Music/Buddy_DML.html">Buddy DML</a></li>
+<li><a href="Music/Burna_Boy.html">Burna Boy</a></li>
+<li><a href="Music/Efya.html">Efya</a></li>
+<li><a href="Music/Gyakie.html">Gyakie</a></li>
+<li><a href="Music/IShowSpeed.html">IShowSpeed</a></li>
+<li><a href="Music/Jigyasa_Singh.html">Jigyasa Singh</a></li>
+<li><a href="Music/Kidi.html">Kidi</a></li>
+<li><a href="Music/King_Promise.html">King Promise</a></li>
+<li><a href="Music/Kuami_Eugene.html">Kuami Eugene</a></li>
+<li><a href="Music/Sarkodie.html">Sarkodie</a></li>
+<li><a href="Music/Shatta_Wale.html">Shatta Wale</a></li>
+<li><a href="Music/Stonebwoy.html">Stonebwoy</a></li>
+</ul></section>
+<section><h2>Videos <span>2</span></h2>
+<ul>
+<li><a href="Videos/IShowSpeed.html">IShowSpeed</a></li>
+<li><a href="Videos/Jigyasa_Singh.html">Jigyasa Singh</a></li>
+</ul></section>
+<div class="none" id="none" hidden>No pages match.</div>
+</main>
+<footer>© AEDTP WORLD — AEDTP WORLD FREE LICENSE (AWFL)</footer>
+<script>(function(){var q=document.getElementById('q'),s=[].slice.call(document.querySelectorAll('section')),n=document.getElementById('none');q.addEventListener('input',function(){var v=q.value.trim().toLowerCase(),any=false;s.forEach(function(sec){var c=0;[].forEach.call(sec.querySelectorAll('li'),function(li){var ok=!v||li.textContent.toLowerCase().indexOf(v)>-1||sec.querySelector('h2').textContent.toLowerCase().indexOf(v)>-1;li.hidden=!ok;if(ok)c++;});sec.hidden=!c;if(c)any=true;});n.hidden=any;});})();</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

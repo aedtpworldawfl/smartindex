@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIZIMI (Advanced Social Media Networking) — AWFLWIKIWORLD</title>
+<meta name="description" content="BIZIMI BIZIMI (Official Business) — Advanced social media platform under AEDTP WORLD, built for sharing videos and images, discovering creators, and growing a f...">
+<meta name="author" content="AEDTP WORLD">
+<meta name="license" content="AEDTP WORLD FREE LICENSE (AWFL)">
+<link rel="canonical" href="https://aedtpworld.com/wikiworld/BIZIMI">
+<meta property="og:title" content="BIZIMI (Advanced Social Media Networking)">
+<meta property="og:description" content="BIZIMI BIZIMI (Official Business) — Advanced social media platform under AEDTP WORLD, built for sharing videos and images, discovering creators, and growing a f...">
+<meta property="og:url" content="https://aedtpworld.com/wikiworld/BIZIMI">
+<meta property="og:image" content="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<link rel="icon" href="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<link rel="stylesheet" href="https://aedtpworld.com/wikiworld/assets/site.css">
+<link rel="stylesheet" href="https://aedtpworld.com/wikiworld/skins/vector2022.css">
+<style>.awfl-converted{max-width:1100px;margin:0 auto;padding:16px}.awfl-converted .awfl-article:after{content:"";display:block;clear:both}.awfl-converted img{max-width:100%}.awfl-categories{margin-top:24px;padding-top:10px;border-top:1px solid #a2a9b1;font-size:.9em}</style>
+</head>
+<body>
+<div class="awfl-wrapper">
+<main class="awfl-main awfl-converted">
+<p><a href="https://aedtpworld.com/wikiworld/"><img src="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg" alt="" style="height:28px;width:auto;vertical-align:middle"> AWFLWIKIWORLD</a></p>
+<div class="awfl-page-titlebar"><h1>BIZIMI (Advanced Social Media Networking)</h1></div>
+<article class="awfl-article"><!--AWFL-ARTICLE-START--><table class="infobox"><tr><th class="infobox-title" colspan="2">BIZIMI (Advanced Social Media Networking)</th></tr><tr><td colspan="2" class="infobox-image"><img src="https://aedtpworld.com/icons/bizimi.png" alt="Business Intelligence Zone Innovation Media Integration — AKA Busy Me. For builders, learners, socials" style="width:250px !important;height:auto;"><div class="infobox-caption">Business Intelligence Zone Innovation Media Integration — AKA Busy Me. For builders, learners, socials</div></td></tr><tr><th>Type</th><td>Social Media, Video Image Sharing, Application</td></tr><tr><th>Developer</th><td>AEDTP WORLD, Emmanuel Deliver Amable</td></tr><tr><th>Base URL</th><td>https://aedtpworld.com/social/</td></tr><tr><th>Version</th><td>1.0.0.0</td></tr><tr><th>App ID</th><td>com.aedtpworld.bizimi</td></tr><tr><th>Theme Color</th><td>#D10303</td></tr><tr><th>License</th><td>AEDTP WORLD FREE LICENSE (AWFL)</td></tr></table>
+<h2>BIZIMI</h2>
+<p><strong>BIZIMI (Official Business)</strong> — Advanced social media platform under AEDTP WORLD, built for sharing videos and images, discovering creators, and growing a following — all wrapped in one peaceful, focused space. BIZIMI is where Busy Me gets smarter. AI tools, business growth, and learning in one peaceful zone.</p>
+<h2>Purpose</h2>
+<p>Social networking, video and image sharing, content discovery, creator following, business growth, AI tools, distribution and streaming.</p>
+<h2>Layout</h2>
+<ul>
+<li><strong>Header</strong> — sticky #D10303 brand BIZIMI yellow #FFDE2C, nav Claim Help About Upload Log in solid yellow</li>
+<li><strong>Hero</strong> — gradient #D10303 to #8f0202, h1 Welcome to BIZIMI, p Business Intelligence Zone Innovation Media Integration</li>
+<li><strong>Tabs</strong> — All Videos Images + Cayla AI + AEDTP WORLD AI links yellow, Trending Top Creators red links with yellow underline</li>
+<li><strong>Feed</strong> — grid auto-fill minmax 260px gap 18px, card radius 14px shadow 0 3px 14px, hover translateY -3px, frame 16/9 black, kind-tag VIDEO/IMAGE yellow, title bold, by @username + verified badge <img src="https://aedtpworld.com/wikiworld/images/blue.png" style="width:250px !important;height:auto;" alt=""> 14px + rank-extra +N red, like-btn SVG heart stroke black fill #D10303 when liked</li>
+<li><strong>Empty</strong> — No content yet Be first to upload red bold</li>
+<li><strong>Footer</strong> — © AEDTP WORLD · BIZIMI muted 0.85rem</li>
+<li><strong>Theme</strong> — red #D10303 yellow #FFDE2C ink #181818 bg #faf9f6 card #fff muted #6b6b6b</li>
+</ul>
+<h2>Data Flow</h2>
+<ul>
+<li>API <code>/social/api.php?action=get_feed&amp;type=all|video|image</code></li>
+<li>Feed item: contentType video/image, username slug title likes rank videoUrl imageUrl</li>
+<li>href <code>/social/{username}/{videos|images}/{slug}.html</code></li>
+<li>ytEmbed regex youtube.com/watch?v= or youtu.be/ -&gt; <img src="https://aedtpworld.com/wikiworld/images/hqdefault.jpg" style="width:250px !important;height:auto;" alt=""> else video tag muted preload metadata</li>
+<li>Like: POST action like_video/like_image {username slug}, returns likes liked, requires login else openLogin</li>
+<li>Session: GET action=session -&gt; data.username, nav rewrites to Help Upload @session Profile</li>
+</ul>
+<h2>Auth Modal</h2>
+<ul>
+<li>overlay fixed inset rgba(0,0,0,0.5) z 100, open flex</li>
+<li>modal 420px radius 16px max-height 90vh, close × top 14px right 18px</li>
+<li>Login Pane — Username Password Log in button primary red, switch No account Sign up + Forgot password /social/accounts/recover.php</li>
+<li>Signup Pane — Name Username lowercase no spaces Profile image https link Gender Male/Female/Other Country Email Security question pet/city/color/school Answer Password Create account</li>
+<li>msg error #ffe4e4 #a10000 success #e4ffe9 #036b1e</li>
+</ul>
+<h2>Navigation</h2>
+<ul>
+<li><a href="https://aedtpworld.com/social/" target="_blank" rel="noopener noreferrer">Home</a></li>
+<li><a href="https://aedtpworld.com/social/claim/" target="_blank" rel="noopener noreferrer">Claim</a></li>
+<li><a href="https://aedtpworld.com/social/help/" target="_blank" rel="noopener noreferrer">Help</a></li>
+<li><a href="https://aedtpworld.com/social/about/" target="_blank" rel="noopener noreferrer">About</a></li>
+<li><a href="https://aedtpworld.com/social/upload.php" target="_blank" rel="noopener noreferrer">Upload</a></li>
+<li><a href="https://aedtpworld.com/social/trending/" target="_blank" rel="noopener noreferrer">Trending</a></li>
+<li><a href="https://aedtpworld.com/social/trends/" target="_blank" rel="noopener noreferrer">Top Creators</a></li>
+<li><a href="https://www.jotform.com/app/251699103578568" target="_blank" rel="noopener noreferrer">Cayla AI</a></li>
+<li><a href="https://www.jotform.com/app/251579248003558" target="_blank" rel="noopener noreferrer">AEDTP WORLD AI</a></li>
+</ul><!--AWFL-ARTICLE-END--></article>
+<div class="awfl-categories"><strong>Categories:</strong> AEDTP WORLD, Software</div>
+<p class="awfl-footer-copy" style="margin-top:24px;font-size:.85em">© 2026 AEDTP WORLD — content available under the AEDTP WORLD FREE LICENSE (AWFL). <a href="https://aedtpworld.com/wikiworld/BIZIMI">View live page</a></p>
+</main>
+</div>
+</body>
+</html>

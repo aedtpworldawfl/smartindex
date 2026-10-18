@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWFLWIKITEXT — AWFLWIKIWORLD — AWFLWIKIWORLD</title>
+<meta name="description" content="AWFLWIKITEXT is the markup language every AWFLWIKIWORLD page is written in. This page lists every format the parser understands. Each entry shows the raw syntax...">
+<meta name="author" content="AEDTP WORLD">
+<meta name="license" content="AEDTP WORLD FREE LICENSE (AWFL)">
+<link rel="canonical" href="https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/AWFLWIKITEXT">
+<meta property="og:title" content="AWFLWIKITEXT">
+<meta property="og:description" content="AWFLWIKITEXT is the markup language every AWFLWIKIWORLD page is written in. This page lists every format the parser understands. Each entry shows the raw syntax...">
+<meta property="og:url" content="https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/AWFLWIKITEXT">
+<meta property="og:image" content="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<link rel="icon" href="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<link rel="stylesheet" href="https://aedtpworld.com/wikiworld/assets/site.css">
+<link rel="stylesheet" href="https://aedtpworld.com/wikiworld/skins/vector2022.css">
+<style>.awfl-converted{max-width:1100px;margin:0 auto;padding:16px}.awfl-converted .awfl-article:after{content:"";display:block;clear:both}.awfl-converted img{max-width:100%}.awfl-categories{margin-top:24px;padding-top:10px;border-top:1px solid #a2a9b1;font-size:.9em}</style>
+</head>
+<body>
+<div class="awfl-wrapper">
+<main class="awfl-main awfl-converted">
+<p><a href="https://aedtpworld.com/wikiworld/"><img src="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg" alt="" style="height:28px;width:auto;vertical-align:middle"> AWFLWIKIWORLD</a></p>
+<div class="awfl-page-titlebar"><h1>AWFLWIKITEXT<span class="awfl-space-tag">AWFLWIKIWORLD</span></h1></div>
+<article class="awfl-article"><!--AWFL-ARTICLE-START--><table class="infobox"><tr><th class="infobox-title" colspan="2">AWFLWIKITEXT</th></tr><tr><th>Type</th><td>Lightweight markup language</td></tr><tr><th>Used by</th><td>AWFLWIKIWORLD</td></tr><tr><th>Formats</th><td>19</td></tr><tr><th>Reference article</th><td>AWFLWIKIWORLD</td></tr></table>
+<p><strong>AWFLWIKITEXT</strong> is the markup language every AWFLWIKIWORLD page is written in. This page lists every format the parser understands. Each entry shows the raw syntax first, in a code box, followed by what it looks like once rendered.</p>
+<h2>Text styling</h2>
+<h3>Bold</h3>
+<p>Wrap text in three apostrophes to make it bold.</p>
+<pre><code>&#039;&#039;&#039;bold text&#039;&#039;&#039;</code></pre>
+<p>Rendered: <strong>bold text</strong></p>
+<h3>Italic</h3>
+<p>Wrap text in two apostrophes to make it italic.</p>
+<pre><code>&#039;&#039;italic text&#039;&#039;</code></pre>
+<p>Rendered: <em>italic text</em></p>
+<h3>Underline</h3>
+<p>Wrap text in two underscores to underline it.</p>
+<pre><code>__underlined text__</code></pre>
+<p>Rendered: <u>underlined text</u></p>
+<h3>Strikethrough</h3>
+<p>Wrap text in two tildes to strike it through — useful for showing something retired or replaced.</p>
+<pre><code>~~struck-through text~~</code></pre>
+<p>Rendered: <del>struck-through text</del></p>
+<h3>Inline code</h3>
+<p>Wrap text in backticks to show it as inline code — file names, commands, variable names.</p>
+<pre><code>`inline code`</code></pre>
+<p>Rendered: <code>inline code</code></p>
+<h3>Superscript</h3>
+<p>Wrap text in two carets to raise it, for exponents and ordinals.</p>
+<pre><code>E=mc^^2^^</code></pre>
+<p>Rendered: E=mc<sup>2</sup></p>
+<h3>Subscript</h3>
+<p>Wrap text in two commas to lower it, for chemical formulas and indices.</p>
+<pre><code>H,,2,,O</code></pre>
+<p>Rendered: H<sub>2</sub>O</p>
+<h3>Highlight</h3>
+<p>Wrap text in two percent signs to highlight it, like a marker pen.</p>
+<pre><code>%%highlighted text%%</code></pre>
+<p>Rendered: <mark>highlighted text</mark></p>
+<h2>Structure</h2>
+<h3>Headings</h3>
+<p>Surround a line with one to six equals signs. One equals sign makes the largest heading (level 1); more equals signs make progressively smaller, deeper headings, down to level 6.</p>
+<pre><code>= Level 1 =
+== Level 2 ==
+=== Level 3 ===
+==== Level 4 ====
+===== Level 5 =====
+====== Level 6 ======</code></pre>
+<p>Rendered:</p>
+<h5>Level 5</h5>
+<h6>Level 6</h6>
+<p>(Levels 2, 3 and 4 are already used as real section headings throughout this very page, and level 1 is demonstrated below, so scroll up — or down — to see them in action.)</p>
+<h1>Level 1 example</h1>
+<p>This line above is a real, live level-1 heading, written as <span class="awfl-nowiki">= Level 1 example =</span>.</p>
+<h3>Paragraphs</h3>
+<p>Leave a blank line between blocks of text. Each block becomes its own paragraph automatically — there&#039;s no special paragraph marker to type.</p>
+<h3>Bulleted list</h3>
+<p>Start each line with an asterisk and a space.</p>
+<pre><code>* First item
+* Second item
+* Third item</code></pre>
+<p>Rendered:</p>
+<ul>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ul>
+<h3>Numbered list</h3>
+<p>Start each line with a hash and a space.</p>
+<pre><code># First step
+# Second step
+# Third step</code></pre>
+<p>Rendered:</p>
+<ol>
+<li>First step</li>
+<li>Second step</li>
+<li>Third step</li>
+</ol>
+<h3>Blockquote</h3>
+<p>Start each line of the quote with a &quot;greater than&quot; sign and a space.</p>
+<pre><code>&gt; Everything is a plain text file, waiting to be read.</code></pre>
+<p>Rendered:</p>
+<blockquote>
+Everything is a plain text file, waiting to be read.
+</blockquote>
+<h3>Horizontal rule</h3>
+<p>A line made up of four or more dashes, on its own, draws a divider.</p>
+<pre><code>----</code></pre>
+<p>Rendered:</p>
+<hr>
+<h3>Code block</h3>
+<p>Wrap one or more lines in triple curly braces to show preformatted, monospaced text exactly as typed — line breaks and spacing are preserved, and no other formatting is applied inside it.</p>
+<p><span class="awfl-nowiki">{{{
+function hello() {
+    return &quot;hi&quot;;
+}
+}}}</span></p>
+<p>Rendered:</p>
+<pre><code>function hello() {
+    return &quot;hi&quot;;
+}</code></pre>
+<h2>Links and media</h2>
+<h3>Internal link</h3>
+<p>Link to another page on this wiki with double square brackets. Add a vertical bar and custom text to change the visible label.</p>
+<pre><code>[[Page Name]]
+[[Page Name|words to display instead]]</code></pre>
+<p>Rendered: <a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD/AWFLWIKIWORLD">AWFLWIKIWORLD</a> — and a link to a page that doesn&#039;t exist yet, <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD/Some_New_Page">like this one</a>, is still shown, just styled differently, so clicking it lets you create that page. Every such red link on the wiki is gathered in one place, <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AMissing">Special:Missing</a>.</p>
+<p>To link into a namespace, include it in the title: <span class="awfl-nowiki">[[Namespace/Page Name]]</span>. If the namespace doesn&#039;t already exist, following the link sends you home instead of creating it — only an admin can create a namespace, from the dashboard.</p>
+<h3>External link</h3>
+<p>Single square brackets, a full URL, a space, then the link text.</p>
+<pre><code>[https://example.com link text]</code></pre>
+<p>Rendered: <a href="https://en.wikipedia.org/wiki/Wiki" target="_blank" rel="noopener noreferrer">Wiki, on Wikipedia</a></p>
+<h3>Bare images</h3>
+<p>Any line that is just an image filename or URL ending in <code>.jpg</code>, <code>.jpeg</code>, <code>.png</code>, <code>.gif</code>, <code>.svg</code>, or <code>.webp</code> is automatically turned into a picture, shown at 250 pixels wide.</p>
+<pre><code>https://example.com/picture.jpg</code></pre>
+<p>Rendered:</p>
+<p><img src="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg" style="width:250px !important;height:auto;" alt=""></p>
+<h3>Infobox</h3>
+<p>A small fact-table, usually shown at the top of an article. <code>title</code>, <code>image</code> and <code>caption</code> are each allowed once and always appear in that order; every other <code>key=value</code> line becomes its own row, in the order you wrote it.</p>
+<p><span class="awfl-nowiki">&lt;infobox&gt;
+|title=Subject Name|
+|image=some-picture.jpg|
+|caption=A short caption|
+|Field one=Value one|
+|Field two=Value two|
+&lt;/infobox&gt;</span></p>
+<p>Rendered:</p>
+<table class="infobox"><tr><th class="infobox-title" colspan="2">Example Subject</th></tr><tr><th>Field one</th><td>Value one</td></tr><tr><th>Field two</th><td>Value two</td></tr></table>
+<h2>Escaping raw syntax</h2>
+<p>Sometimes you want to *show* AWFLWIKITEXT syntax as plain text instead of having it rendered — exactly like every syntax box on this page. Wrap the text in a <code>nowiki</code> tag pair (an opening tag, then the text, then a matching closing tag with a forward slash) and everything in between is shown exactly as typed, with no other formatting applied to it. This is precisely how the raw-syntax examples throughout this page avoid turning into real bold text, real headings, real links, and so on.</p>
+<h2>Quick reference</h2>
+<ul>
+<li>Bold: <span class="awfl-nowiki">&#039;&#039;&#039;text&#039;&#039;&#039;</span></li>
+<li>Italic: <span class="awfl-nowiki">&#039;&#039;text&#039;&#039;</span></li>
+<li>Underline: <span class="awfl-nowiki">__text__</span></li>
+<li>Strikethrough: <span class="awfl-nowiki">~~text~~</span></li>
+<li>Inline code: <span class="awfl-nowiki">`text`</span></li>
+<li>Superscript: <span class="awfl-nowiki">^^text^^</span></li>
+<li>Subscript: <span class="awfl-nowiki">,,text,,</span></li>
+<li>Highlight: <span class="awfl-nowiki">%%text%%</span></li>
+<li>Heading: <span class="awfl-nowiki">== text ==</span> (1 to 6 equals signs)</li>
+<li>Bulleted list: <span class="awfl-nowiki">* text</span></li>
+<li>Numbered list: <span class="awfl-nowiki"># text</span></li>
+<li>Blockquote: <span class="awfl-nowiki">&gt; text</span></li>
+<li>Horizontal rule: <span class="awfl-nowiki">----</span></li>
+<li>Code block: <span class="awfl-nowiki">{{{ text }}}</span></li>
+<li>Internal link: <span class="awfl-nowiki">[[Page]]</span> or <span class="awfl-nowiki">[[Page|Label]]</span></li>
+<li>External link: <span class="awfl-nowiki">[https://url Label]</span></li>
+<li>Bare image: a filename or URL ending in an image extension, on its own</li>
+<li>Infobox: <span class="awfl-nowiki">&lt;infobox&gt; ... &lt;/infobox&gt;</span></li>
+<li>Escape/raw text: wrap in a <code>nowiki</code> tag pair</li>
+</ul>
+<p>Every format above is also used live, for real, throughout the <a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD/AWFLWIKIWORLD">AWFLWIKIWORLD</a> article — this page exists to explain each one on its own.</p>
+<h2>See also</h2>
+<ul>
+<li><a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD/AWFLWIKIWORLD">AWFLWIKIWORLD</a></li>
+<li><a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/Main_Page">Main Page</a></li>
+</ul><!--AWFL-ARTICLE-END--></article>
+
+<p class="awfl-footer-copy" style="margin-top:24px;font-size:.85em">© 2026 AEDTP WORLD — content available under the AEDTP WORLD FREE LICENSE (AWFL). <a href="https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/AWFLWIKITEXT">View live page</a></p>
+</main>
+</div>
+</body>
+</html>

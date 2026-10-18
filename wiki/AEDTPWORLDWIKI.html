@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEDTPWORLDWIKI — AWFLWIKIWORLD</title>
+<meta name="description" content="AEDTPWORLDWIKI AEDTPWORLDWIKI is a free, open, community-editable encyclopedia by AEDTP WORLD. Anyone can create and edit a page. Purpose The purpose of AEDTPWO...">
+<meta name="author" content="AEDTP WORLD">
+<meta name="license" content="AEDTP WORLD FREE LICENSE (AWFL)">
+<link rel="canonical" href="https://aedtpworld.com/wikiworld/AEDTPWORLDWIKI">
+<meta property="og:title" content="AEDTPWORLDWIKI">
+<meta property="og:description" content="AEDTPWORLDWIKI AEDTPWORLDWIKI is a free, open, community-editable encyclopedia by AEDTP WORLD. Anyone can create and edit a page. Purpose The purpose of AEDTPWO...">
+<meta property="og:url" content="https://aedtpworld.com/wikiworld/AEDTPWORLDWIKI">
+<meta property="og:image" content="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<link rel="icon" href="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<link rel="stylesheet" href="https://aedtpworld.com/wikiworld/assets/site.css">
+<link rel="stylesheet" href="https://aedtpworld.com/wikiworld/skins/vector2022.css">
+<style>.awfl-converted{max-width:1100px;margin:0 auto;padding:16px}.awfl-converted .awfl-article:after{content:"";display:block;clear:both}.awfl-converted img{max-width:100%}.awfl-categories{margin-top:24px;padding-top:10px;border-top:1px solid #a2a9b1;font-size:.9em}</style>
+</head>
+<body>
+<div class="awfl-wrapper">
+<main class="awfl-main awfl-converted">
+<p><a href="https://aedtpworld.com/wikiworld/"><img src="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg" alt="" style="height:28px;width:auto;vertical-align:middle"> AWFLWIKIWORLD</a></p>
+<div class="awfl-page-titlebar"><h1>AEDTPWORLDWIKI</h1></div>
+<article class="awfl-article"><!--AWFL-ARTICLE-START--><table class="infobox"><tr><th class="infobox-title" colspan="2">AEDTPWORLDWIKI</th></tr><tr><td colspan="2" class="infobox-image"><img src="https://aedtpworld.com/icons/aedtpworld.png" alt="Free Encyclopedia by AEDTP WORLD" style="width:250px !important;height:auto;"><div class="infobox-caption">Free Encyclopedia by AEDTP WORLD</div></td></tr><tr><th>Type</th><td>Free, open, community-editable encyclopedia</td></tr><tr><th>Developer</th><td>AEDTP WORLD</td></tr><tr><th>Founder</th><td>Emmanuel Deliver Amable</td></tr><tr><th>License</th><td>AEDTP WORLD FREE LICENSE (AWFL) WIKI</td></tr><tr><th>Description</th><td>AEDTPWORLDWIKI is a free, open, community-editable encyclopedia by AEDTP WORLD. Browse articles on people, places, technology, and more.</td></tr><tr><th>Keywords</th><td>AEDTPWORLDWIKI, AEDTP WORLD, AWFL WIKI, Free Encyclopedia, Online Encyclopedia, Ghana Wiki</td></tr></table>
+<h2>AEDTPWORLDWIKI</h2>
+<p><strong>AEDTPWORLDWIKI</strong> is a free, open, community-editable encyclopedia by <strong>AEDTP WORLD</strong>. Anyone can create and edit a page.</p>
+<h2>Purpose</h2>
+<p>The purpose of <strong>AEDTPWORLDWIKI</strong> is to provide a free encyclopedia platform where users can browse articles on people, places, technology, and more. It is the homepage that includes search, category browser, recently updated pages, and create button.</p>
+<h2>How It Works</h2>
+<p><strong>AEDTPWORLDWIKI</strong> loads wiki configuration and data, then renders pages with safe HTML escaping.</p>
+<ul>
+<li>Loads configuration (credentials excluded)</li>
+<li>Loads wiki data</li>
+<li>Loads category list</li>
+<li>Generates page links</li>
+<li>Uses HTML escaping for XSS protection</li>
+</ul>
+<h3>Search</h3>
+<ul>
+<li>Gets search query from request</li>
+<li>Converts to lowercase for matching</li>
+<li>Searches in title and tags</li>
+<li>Shows results count and list</li>
+<li>If no results, shows &quot;No pages found&quot; with <a href="https://aedtpworld.com/wiki/create.php" target="_blank" rel="noopener noreferrer">Create Page</a></li>
+</ul>
+<h3>Recent Pages</h3>
+<ul>
+<li>Sorts by last modified descending</li>
+<li>Takes first 8 pages</li>
+<li>Displays as recent cards</li>
+</ul>
+<h3>Category Counts</h3>
+<ul>
+<li>Counts entries per category</li>
+<li>Shows count per category card</li>
+</ul>
+<h2>Page Structure</h2>
+<ul>
+<li><strong>Header</strong> — Gradient background #0f172a to #1e293b, title AEDTPWORLDWIKI, tagline &quot;Free Encyclopedia by AEDTP WORLD — anyone can create and edit a page.&quot;</li>
+<li><strong>Search Box</strong> — Form method get, input name q, placeholder &quot;Search AEDTPWORLDWIKI...&quot;, button Search, max-width 520px</li>
+<li><strong>Create Button</strong> — <a href="https://aedtpworld.com/wiki/create.php" target="_blank" rel="noopener noreferrer">Create a New Page</a> with text &quot;+ Create a New Page&quot;, background #22c55e</li>
+<li><strong>Browse Categories</strong> — Grid of cat-cards with count and folder name</li>
+<li><strong>Recently Updated</strong> — Grid of recent-card with title, folder, last_modified</li>
+<li><strong>Footer</strong> — Copyright AEDTPWORLDWIKI — AEDTP WORLD FREE LICENSE (AWFL) WIKI, links to <a href="https://aedtpworld.com/wiki/recent-changes.html" target="_blank" rel="noopener noreferrer">Recent Changes</a> and <a href="https://aedtpworld.com/wiki/admin/login.php" target="_blank" rel="noopener noreferrer">Admin</a></li>
+</ul>
+<h2>Style</h2>
+<ul>
+<li><strong>--bg</strong> — #f4f6f9</li>
+<li><strong>--card</strong> — #fff</li>
+<li><strong>--text</strong> — #1a1a1a</li>
+<li><strong>--muted</strong> — #6b7280</li>
+<li><strong>--accent</strong> — #2563eb</li>
+<li>Font: system-ui, -apple-system, Segoe UI, Roboto, sans-serif</li>
+<li>Responsive grid auto-fill minmax 150px for categories, 220px for recent</li>
+</ul>
+<h2>SEO and Meta</h2>
+<ul>
+<li><strong>Title</strong> — AEDTPWORLDWIKI - Free Encyclopedia by AEDTP WORLD</li>
+<li><strong>Description</strong> — AEDTPWORLDWIKI is a free, open, community-editable encyclopedia by AEDTP WORLD. Browse articles on people, places, technology, and more.</li>
+<li><strong>Icon</strong> — <img src="https://aedtpworld.com/icons/aedtpworld.png" style="width:250px !important;height:auto;" alt=""></li>
+</ul>
+<h2>Navigation Links</h2>
+<ul>
+<li><a href="https://aedtpworld.com/wiki/index.php" target="_blank" rel="noopener noreferrer">Search</a></li>
+<li><a href="https://aedtpworld.com/wiki/create.php" target="_blank" rel="noopener noreferrer">Create</a></li>
+<li><a href="https://aedtpworld.com/wiki/recent-changes.html" target="_blank" rel="noopener noreferrer">Recent Changes</a></li>
+<li><a href="https://aedtpworld.com/wiki/admin/login.php" target="_blank" rel="noopener noreferrer">Admin</a></li>
+</ul>
+<h2>External Links</h2>
+<ul>
+<li><a href="https://aedtpworld.com/" target="_blank" rel="noopener noreferrer">AEDTP WORLD Official</a></li>
+<li><a href="https://<img src="https://aedtpworld.com/wikiworld/images/aedtpworld.com/icons/aedtpworld.png" style="width:250px !important;height:auto;" alt="">" target="_blank" rel="noopener noreferrer">AEDTPWORLDWIKI Icon</a></li>
+</ul><!--AWFL-ARTICLE-END--></article>
+<div class="awfl-categories"><strong>Categories:</strong> AEDTP WORLD</div>
+<p class="awfl-footer-copy" style="margin-top:24px;font-size:.85em">© 2026 AEDTP WORLD — content available under the AEDTP WORLD FREE LICENSE (AWFL). <a href="https://aedtpworld.com/wikiworld/AEDTPWORLDWIKI">View live page</a></p>
+</main>
+</div>
+</body>
+</html>
