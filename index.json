@@ -1,17 +1,11 @@
 {
-    "generated": "2026-10-22T01:46:22+00:00",
+    "generated": "2026-10-22T10:58:37+00:00",
     "items": [
         {
             "name": "kids",
             "href": "kids/",
             "type": "folder",
             "files": 2
-        },
-        {
-            "name": "sitemap",
-            "href": "sitemap/",
-            "type": "folder",
-            "files": 7
         },
         {
             "name": "wiki",
