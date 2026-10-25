@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>/wikidata/</loc><lastmod>2026-10-18T00:56:45+00:00</lastmod></url>
-<url><loc>/wikidata/recent.php</loc><lastmod>2026-10-16T20:50:00+00:00</lastmod></url>
+<url><loc>/wikidata/</loc><lastmod>2026-10-24T09:24:36+00:00</lastmod></url>
+<url><loc>/wikidata/recent.php</loc><lastmod>2026-10-25T00:45:00+00:00</lastmod></url>
 <url><loc>/wikidata/Q1</loc><lastmod>2026-10-03T19:38:49+00:00</lastmod></url>
 <url><loc>/wikidata/Q2</loc><lastmod>2026-10-05T11:41:46+00:00</lastmod></url>
 <url><loc>/wikidata/Q3</loc><lastmod>2026-10-05T11:42:14+00:00</lastmod></url>
-<url><loc>/wikidata/Q4</loc><lastmod>2026-10-18T00:56:45+00:00</lastmod></url>
+<url><loc>/wikidata/Q4</loc><lastmod>2026-10-24T09:24:36+00:00</lastmod></url>
 <url><loc>/wikidata/Q5</loc><lastmod>2026-10-16T20:50:36+00:00</lastmod></url>
-<url><loc>/wikidata/Q6</loc><lastmod>2026-10-05T11:57:46+00:00</lastmod></url>
+<url><loc>/wikidata/Q6</loc><lastmod>2026-10-22T14:17:01+00:00</lastmod></url>
 <url><loc>/wikidata/Q7</loc><lastmod>2026-10-05T11:49:37+00:00</lastmod></url>
 <url><loc>/wikidata/Q8</loc><lastmod>2026-10-06T14:46:55+00:00</lastmod></url>
 <url><loc>/wikidata/Q9</loc><lastmod>2026-10-06T19:32:55+00:00</lastmod></url>
 <url><loc>/wikidata/Q10</loc><lastmod>2026-10-06T19:38:42+00:00</lastmod></url>
+<url><loc>/wikidata/Q11</loc><lastmod>2026-10-25T00:45:29+00:00</lastmod></url>
 </urlset>
