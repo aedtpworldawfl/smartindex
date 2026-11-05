@@ -8,10 +8,6 @@
         "category": "technology"
     },
     {
-        "wiki": "Chataropica.html",
-        "category": "software"
-    },
-    {
         "wiki": "Audiomack.html",
         "category": "business"
     },
@@ -22,5 +18,9 @@
     {
         "wiki": "AEDTP_WORLD_Discover_And_Connect.html",
         "category": "business"
+    },
+    {
+        "wiki": "Chataropica.html",
+        "category": "software"
     }
 ]
