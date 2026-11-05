@@ -13,6 +13,8 @@
     <meta property="og:image" content="https://aedtpworld.com/icons/aedtpworld.png" />
     <link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png" type="image/png" />
     <link rel="stylesheet" href="/awflwiki/assets/style.css" />
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#056DC2">
 </head>
 <body>
 <header class="site-header">
@@ -48,5 +50,9 @@
     `).join('');
 })();
 </script>
+<script>if("serviceWorker"in navigator){navigator.serviceWorker.register("/sw.js",{scope:"/"});}</script>
+<!-- AEDTP_TRACKER_START -->
+<img src="https://aedtpworld.com/stats/stats.php?track=1&page=awflwiki/trends/index.html" style="display:none" alt="" width="1" height="1">
+<!-- AEDTP_TRACKER_END -->
 </body>
 </html>

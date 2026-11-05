@@ -1,6 +1,67 @@
 User-agent: *
 Allow: /
 
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Block admin / private areas - keep Google out of these
+Disallow: /cdn-cgi/
+Disallow: /stats/stats.php
+Disallow: /search/?q=
+Disallow: /*?track=
+
+# ============ AEDTP WORLD SYSTEM SITEMAPS ============
+# Main Sitemap - if you have one
 Sitemap: https://aedtpworld.com/sitemap.xml
+
+# All Section Sitemaps from your homepage
+Sitemap: https://aedtpworld.com/about/engine/sitemap.php
+Sitemap: https://aedtpworld.com/advertise/sitemap.php
+Sitemap: https://aedtpworld.com/aedtpworldwiki/sitemap.php
+Sitemap: https://aedtpworld.com/apps/sitemap.php
+Sitemap: https://aedtpworld.com/awfl/sitemap.php
+Sitemap: https://aedtpworld.com/awflwiki/sitemap.php
+Sitemap: https://aedtpworld.com/chat/sitemap.php
+Sitemap: https://aedtpworld.com/help/sitemap.php
+Sitemap: https://aedtpworld.com/images/sitemap/sitemap.php
+Sitemap: https://aedtpworld.com/kids/sitemap/sitemap.php
+Sitemap: https://aedtpworld.com/lyrics/sitemap.php
+Sitemap: https://aedtpworld.com/music/sitemap.php
+Sitemap: https://aedtpworld.com/project/sitemap.php
+Sitemap: https://aedtpworld.com/social/sitemap.php
+Sitemap: https://aedtpworld.com/spotifyworld/sitemap.php
+Sitemap: https://aedtpworld.com/wiki/sitemap.php
+Sitemap: https://aedtpworld.com/wikiboss/sitemap.php
+Sitemap: https://aedtpworld.com/wikidata/sitemap.php
+Sitemap: https://aedtpworld.com/wikiworld/sitemap/sitemap.php
+
+
+
+
+
+
+
 
 
