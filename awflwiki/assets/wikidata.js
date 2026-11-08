@@ -26,7 +26,7 @@
         body.innerHTML = filtered.map(w => `
             <tr data-category="${escapeHtml(w.category)}" data-wiki="${escapeHtml(w.wiki)}">
                 ${isAdmin ? `<td><input type="checkbox" class="wd-row-check"></td>` : ''}
-                <td><a href="/awflwiki/${w.category}/${w.wiki}" target="_blank">${escapeHtml(w.title)}</a></td>
+                <td><a href="/awflwiki/${w.category}/${w.wiki.replace(/\.(txt|html)$/, "")}" target="_blank">${escapeHtml(w.title)}</a></td>
                 <td><span class="cat-tag">${escapeHtml(w.category)}</span></td>
                 <td>${escapeHtml(w.author)}</td>
                 <td>${(w.created_at || '').slice(0, 10)}</td>

@@ -5,13 +5,13 @@ async function awflPost(action, data = {}) {
     const body = new FormData();
     body.append('action', action);
     for (const k in data) body.append(k, data[k]);
-    const res = await fetch(AWFL_API, { method: 'POST', body, credentials: 'same-origin' });
+    const res = await fetch(AWFL_API, { method: 'POST', body, credentials: 'same-origin', headers: { 'X-AWFL-Request': '1' } });
     return res.json();
 }
 
 async function awflGet(action, params = {}) {
     const qs = new URLSearchParams({ action, ...params }).toString();
-    const res = await fetch(`${AWFL_API}?${qs}`, { credentials: 'same-origin' });
+    const res = await fetch(`${AWFL_API}?${qs}`, { credentials: 'same-origin', headers: { 'X-AWFL-Request': '1' } });
     return res.json();
 }
 

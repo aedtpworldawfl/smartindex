@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aedtpworld.com/awflwiki/sitemap/sitemap.xml
