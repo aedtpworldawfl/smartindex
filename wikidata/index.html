@@ -132,8 +132,8 @@ footer{text-align:center;padding:20px 16px;color:#666;font-size:14px}
 </style>
 <style>:root{--header:#ffffff;--headerText:#202122;--button:#0645ad;--buttonText:#ffffff;--wikiText:#202122;--links:#0645ad;}</style>
 </head><body>
-<header style="background:var(--header);color:var(--headerText)"><div class="wrap hdr"><a class="brand" href="index.html"><img src="https://aedtpworld.com/icons/aedtpworld.png" height="32" width="32" alt="AWFLWIKIDATAWORLD"><span class="sitename">AWFLWIKIDATAWORLD</span></a><div id="searchForm" role="search"><input id="q" type="search" placeholder="Search Wikidata..." autocomplete="off" aria-label="Search"></div><nav><a href="index.html">Home</a><a href="sitemap.xml">Sitemap</a></nav></div></header>
-<main class="wrap"><h1>Main Page</h1><div class="mainpage" id="mainPage"><h2>Welcome to AWFLWIKIWORLD WIKIDATA</h2><p>A free, open wikidata by AEDTP WORLD. Discover And Connect.</p><p>Browse <a href="https://aedtpworld.com/wikidata/Q1.html">Q1</a>, see recent changes or create an item.</p></div><h2>All items <span class="muted" id="count"></span></h2><div id="list" class="results"></div><p><button type="button" id="more" class="grey small" style="display:none">Load more</button></p><noscript><p>Enable JavaScript to browse the items, or open <a href="sitemap.xml">the sitemap</a>.</p></noscript></main>
+<header style="background:var(--header);color:var(--headerText)"><div class="wrap hdr"><a class="brand" href="./"><img src="https://aedtpworld.com/icons/aedtpworld.png" height="32" width="32" alt="AWFLWIKIDATAWORLD"><span class="sitename">AWFLWIKIDATAWORLD</span></a><div id="searchForm" role="search"><input id="q" type="search" placeholder="Search Wikidata..." autocomplete="off" aria-label="Search"></div><nav><a href="./">Home</a><a href="sitemap.xml">Sitemap</a></nav></div></header>
+<main class="wrap"><h1>Main Page</h1><div class="mainpage" id="mainPage"><h2>Welcome to AWFLWIKIWORLD WIKIDATA</h2><p>A free, open wikidata by AEDTP WORLD. Discover And Connect.</p><p>Browse <a href="https://aedtpworld.com/wikidata/Q1">Q1</a>, see recent changes or create an item.</p></div><h2>All items <span class="muted" id="count"></span></h2><div id="list" class="results"></div><p><button type="button" id="more" class="grey small" style="display:none">Load more</button></p><noscript><p>Enable JavaScript to browse the items, or open <a href="sitemap.xml">the sitemap</a>.</p></noscript></main>
 <footer><a href="sitemap.xml">Sitemap</a> | AWFLWIKIDATAWORLD &copy; 2026 | AEDTP WORLD FREE LICENSE (AWFL)</footer>
 <script>(function(){
 var inp=document.getElementById("q"),list=document.getElementById("list"),cnt=document.getElementById("count"),more=document.getElementById("more"),main=document.getElementById("mainPage"),D=[],view=[],shown=0,PER=50,t;
@@ -142,7 +142,7 @@ function safeUrl(u){return /^https:\/\//i.test(u)?u:"";}
 function row(e){
   var nm=e.n||e.q,im=safeUrl(e.i),av='<div class="letter-avatar">'+esc(nm.charAt(0).toUpperCase())+'</div>';
   var th=im?'<img class="search-thumb" src="'+esc(im)+'" alt="" loading="lazy">':av;
-  return '<a class="result" href="'+e.q+'.html">'+th+'<span><b>'+esc(e.c+nm)+'</b> <small>'+e.q+'</small><br>'+esc(e.d)+'</span></a>';
+  return '<a class="result" href="'+e.q+'">'+th+'<span><b>'+esc(e.c+nm)+'</b> <small>'+e.q+'</small><br>'+esc(e.d)+'</span></a>';
 }
 function score(e,t){
   var n=e.n.toLowerCase(),q=e.q.toLowerCase();

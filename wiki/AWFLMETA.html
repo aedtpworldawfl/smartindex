@@ -20,14 +20,15 @@
 <body>
 <div class="awfl-wrapper">
 <main class="awfl-main awfl-converted">
-<p><a href="https://aedtpworld.com/wikiworld/"><img src="https://aedtpworld.com/icons/aedtpworld.png" alt="" style="height:28px;width:auto;vertical-align:middle"> AWFLWIKIWORLD</a></p>
+<p><a href="https://aedtpworld.com/wikiworld/">AWFLWIKIWORLD</a></p>
 <div class="awfl-page-titlebar"><h1>AWFLMETA · AEDTP WORLD Wiki Viewer</h1></div>
 <article class="awfl-article"><!--AWFL-ARTICLE-START--><table class="infobox"><tr><th class="infobox-title" colspan="2">AWFLMETA · AEDTP WORLD Wiki Viewer</th></tr><tr><td colspan="2" class="infobox-image"><img src="https://aedtpworld.com/icons/awflmetaawfl.jpg" alt="WIKI system of AEDTP WORLD FREE LICENSE (AWFL) WIKI, Free Open Encyclopedia, Built And Powered by Forever Contribution" style="width:250px !important;height:auto;"><div class="infobox-caption">WIKI system of AEDTP WORLD FREE LICENSE (AWFL) WIKI, Free Open Encyclopedia, Built And Powered by Forever Contribution</div></td></tr><tr><th>Type</th><td>Viewer, Wiki, AWFLMETA, Application</td></tr><tr><th>Developer</th><td>AEDTP WORLD</td></tr><tr><th>Base URL</th><td>https://aedtpworld.com/awflmeta/</td></tr><tr><th>Canonical</th><td>https://aedtpworld.com/awflmeta/</td></tr><tr><th>License</th><td>AEDTP WORLD FREE LICENSE (AWFL)</td></tr></table>
-<h2>AWFLMETA Viewer</h2>
+<div class="awfl-toc" id="toc"><details open><summary class="awfl-toc-title">Contents</summary><ul><li><a href="#awflmeta-viewer"><span class="awfl-toc-num">1</span> AWFLMETA Viewer</a></li><li><a href="#purpose"><span class="awfl-toc-num">2</span> Purpose</a></li><li><a href="#layout"><span class="awfl-toc-num">3</span> Layout</a></li><li><a href="#data-flow"><span class="awfl-toc-num">4</span> Data Flow</a></li><li><a href="#navigation"><span class="awfl-toc-num">5</span> Navigation</a></li></ul></details></div>
+<h2 id="awflmeta-viewer">AWFLMETA Viewer</h2>
 <p><strong>AWFLMETA · AEDTP WORLD Wiki Viewer</strong> Is a WIKI system of AEDTP WORLD FREE LICENSE WIKI, a Free Open Encyclopedia, Built And Powered by Forever Contribution, To Discover And Connect, Knowledge Is Unlimited.</p>
-<h2>Purpose</h2>
+<h2 id="purpose">Purpose</h2>
 <p>Viewer that fetches <code>https://aedtpworld.com/wiki/awflmeta.json</code> index, then loads each <code>https://aedtpworld.com/wiki/{file}</code> HTML, parses body and injects as cards min-height 100vh per fetch, with divider between.</p>
-<h2>Layout</h2>
+<h2 id="layout">Layout</h2>
 <ul>
 <li><strong>Fixed Header</strong> — 68px, rgba(11,13,16,0.88) blur 14px saturate 1.3, shadow 0 4px 30px, brand gradient #f0b45a to #f7d78c, brand-link #a8b3c9 left border</li>
 <li><strong>Nav</strong> — Home Update News Create Upload Refresh, active bg rgba(240,180,90,0.18)</li>
@@ -41,14 +42,14 @@
 <li><strong>Scrollbar</strong> — 6px thumb rgba(240,180,90,0.3)</li>
 <li><strong>Responsive</strong> — 820px header 62px, 520px header 56px card 14px</li>
 </ul>
-<h2>Data Flow</h2>
+<h2 id="data-flow">Data Flow</h2>
 <ul>
 <li>Fetch awflmeta.json -&gt; array of {name, file}</li>
 <li>For each: fetch /wiki/{file}, DOMParser parse, doc.body.innerHTML inject</li>
 <li>Error card with ERROR tag if fetch fails</li>
 <li>EscapeHtml to prevent XSS</li>
 </ul>
-<h2>Navigation</h2>
+<h2 id="navigation">Navigation</h2>
 <ul>
 <li><a href="https://aedtpworld.com/awflmeta/" target="_blank" rel="noopener noreferrer">Home</a></li>
 <li><a href="https://aedtpworld.com/wiki/awflmeta.php" target="_blank" rel="noopener noreferrer">Update News</a></li>

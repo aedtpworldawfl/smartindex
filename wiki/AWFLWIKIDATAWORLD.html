@@ -20,13 +20,14 @@
 <body>
 <div class="awfl-wrapper">
 <main class="awfl-main awfl-converted">
-<p><a href="https://aedtpworld.com/wikiworld/"><img src="https://aedtpworld.com/icons/aedtpworld.png" alt="" style="height:28px;width:auto;vertical-align:middle"> AWFLWIKIWORLD</a></p>
+<p><a href="https://aedtpworld.com/wikiworld/">AWFLWIKIWORLD</a></p>
 <div class="awfl-page-titlebar"><h1>AWFLWIKIDATAWORLD</h1></div>
 <article class="awfl-article"><!--AWFL-ARTICLE-START--><table class="infobox"><tr><th class="infobox-title" colspan="2">AWFLWIKIDATAWORLD</th></tr><tr><th>Product</th><td>AWFLWIKIWORLD WIKIDATA</td></tr><tr><th>Version</th><td>25.4 (asset cache-buster v=2541)</td></tr><tr><th>Publisher</th><td>AEDTP WORLD (https://aedtpworld.com)</td></tr><tr><th>License</th><td>AEDTP WORLD FREE LICENSE (AWFL)</td></tr><tr><th>Runtime</th><td>PHP 7.2 or newer, plain JavaScript and CSS</td></tr><tr><th>Database</th><td>None, flat JSON and TXT files in wiki/</td></tr><tr><th>Web server</th><td>Apache with mod_rewrite</td></tr><tr><th>Default URL</th><td>https://aedtpworld.com/wikidata</td></tr><tr><th>Package</th><td>44 files, about 260 KB unpacked</td></tr></table>
-<h1>AWFLWIKIDATAWORLD</h1>
+<div class="awfl-toc" id="toc"><details open><summary class="awfl-toc-title">Contents</summary><ul><li><a href="#awflwikidataworld"><span class="awfl-toc-num">1</span> AWFLWIKIDATAWORLD</a><ul><li><a href="#1-overview"><span class="awfl-toc-num">1.1</span> 1. Overview</a><ul><li><a href="#1-1-key-characteristics"><span class="awfl-toc-num">1.1.1</span> 1.1 Key characteristics</a></li></ul></li><li><a href="#2-requirements-and-installation"><span class="awfl-toc-num">1.2</span> 2. Requirements and installation</a><ul><li><a href="#2-1-requirements"><span class="awfl-toc-num">1.2.1</span> 2.1 Requirements</a></li><li><a href="#2-2-steps"><span class="awfl-toc-num">1.2.2</span> 2.2 Steps</a></li></ul></li><li><a href="#3-package-layout"><span class="awfl-toc-num">1.3</span> 3. Package layout</a></li><li><a href="#4-configuration-config-php"><span class="awfl-toc-num">1.4</span> 4. Configuration (config.php)</a><ul><li><a href="#4-1-settings-variables"><span class="awfl-toc-num">1.4.1</span> 4.1 Settings variables</a></li><li><a href="#4-2-bootstrapping"><span class="awfl-toc-num">1.4.2</span> 4.2 Bootstrapping</a></li><li><a href="#4-3-function-reference"><span class="awfl-toc-num">1.4.3</span> 4.3 Function reference</a><ul><li><a href="#storage-and-locking"><span class="awfl-toc-num">1.4.3.1</span> Storage and locking</a></li><li><a href="#icons-and-flags"><span class="awfl-toc-num">1.4.3.2</span> Icons and flags</a></li><li><a href="#ids-and-urls"><span class="awfl-toc-num">1.4.3.3</span> IDs and URLs</a></li><li><a href="#item-list"><span class="awfl-toc-num">1.4.3.4</span> Item list</a></li><li><a href="#properties-and-identifiers"><span class="awfl-toc-num">1.4.3.5</span> Properties and identifiers</a></li><li><a href="#items"><span class="awfl-toc-num">1.4.3.6</span> Items</a></li><li><a href="#main-page-logging-history-views"><span class="awfl-toc-num">1.4.3.7</span> Main page, logging, history, views</a></li><li><a href="#search-and-rendering"><span class="awfl-toc-num">1.4.3.8</span> Search and rendering</a></li><li><a href="#auth-csrf-captcha-sitemap"><span class="awfl-toc-num">1.4.3.9</span> Auth, CSRF, captcha, sitemap</a></li></ul></li></ul></li><li><a href="#5-data-model-and-file-formats"><span class="awfl-toc-num">1.5</span> 5. Data model and file formats</a><ul><li><a href="#5-1-item-field-limits-includes-form-php"><span class="awfl-toc-num">1.5.1</span> 5.1 Item field limits (includes/form.php)</a></li><li><a href="#5-2-statement-values"><span class="awfl-toc-num">1.5.2</span> 5.2 Statement values</a></li><li><a href="#5-3-identifiers"><span class="awfl-toc-num">1.5.3</span> 5.3 Identifiers</a></li><li><a href="#5-4-images"><span class="awfl-toc-num">1.5.4</span> 5.4 Images</a></li><li><a href="#5-5-example-records"><span class="awfl-toc-num">1.5.5</span> 5.5 Example records</a></li></ul></li><li><a href="#6-pages-and-features"><span class="awfl-toc-num">1.6</span> 6. Pages and features</a><ul><li><a href="#6-1-routing-htaccess-and-index-php"><span class="awfl-toc-num">1.6.1</span> 6.1 Routing (.htaccess and index.php)</a></li><li><a href="#6-2-main-page"><span class="awfl-toc-num">1.6.2</span> 6.2 Main Page</a></li><li><a href="#6-3-item-page"><span class="awfl-toc-num">1.6.3</span> 6.3 Item page</a></li><li><a href="#6-4-create-and-edit-create-php-edit-php-includes-form-php"><span class="awfl-toc-num">1.6.4</span> 6.4 Create and edit (create.php, edit.php, includes/form.php)</a></li><li><a href="#6-5-search"><span class="awfl-toc-num">1.6.5</span> 6.5 Search</a></li><li><a href="#6-6-recent-changes-recent-php"><span class="awfl-toc-num">1.6.6</span> 6.6 Recent changes (recent.php)</a></li><li><a href="#6-7-upload-upload-php"><span class="awfl-toc-num">1.6.7</span> 6.7 Upload (upload.php)</a></li><li><a href="#6-8-exports"><span class="awfl-toc-num">1.6.8</span> 6.8 Exports</a></li><li><a href="#6-9-views"><span class="awfl-toc-num">1.6.9</span> 6.9 Views</a></li></ul></li><li><a href="#7-admin-dashboard-and-history"><span class="awfl-toc-num">1.7</span> 7. Admin dashboard and history</a><ul><li><a href="#7-1-login"><span class="awfl-toc-num">1.7.1</span> 7.1 Login</a></li><li><a href="#7-2-dashboard-sections"><span class="awfl-toc-num">1.7.2</span> 7.2 Dashboard sections</a></li><li><a href="#7-3-protect-and-delete"><span class="awfl-toc-num">1.7.3</span> 7.3 Protect and delete</a></li><li><a href="#7-4-history-backup-history-php"><span class="awfl-toc-num">1.7.4</span> 7.4 History backup (history.php)</a></li></ul></li><li><a href="#8-security-model"><span class="awfl-toc-num">1.8</span> 8. Security model</a><ul><li><a href="#8-1-authentication-and-sessions"><span class="awfl-toc-num">1.8.1</span> 8.1 Authentication and sessions</a></li><li><a href="#8-2-csrf"><span class="awfl-toc-num">1.8.2</span> 8.2 CSRF</a></li><li><a href="#8-3-captcha"><span class="awfl-toc-num">1.8.3</span> 8.3 Captcha</a></li><li><a href="#8-4-upload-hardening"><span class="awfl-toc-num">1.8.4</span> 8.4 Upload hardening</a></li><li><a href="#8-5-data-protection"><span class="awfl-toc-num">1.8.5</span> 8.5 Data protection</a></li><li><a href="#8-6-privacy"><span class="awfl-toc-num">1.8.6</span> 8.6 Privacy</a></li><li><a href="#8-7-known-caveats"><span class="awfl-toc-num">1.8.7</span> 8.7 Known caveats</a></li></ul></li><li><a href="#9-seo-and-sitemaps"><span class="awfl-toc-num">1.9</span> 9. SEO and sitemaps</a><ul><li><a href="#9-1-meta-data-includes-header-php"><span class="awfl-toc-num">1.9.1</span> 9.1 Meta data (includes/header.php)</a></li><li><a href="#9-2-sitemaps"><span class="awfl-toc-num">1.9.2</span> 9.2 Sitemaps</a></li></ul></li><li><a href="#10-default-files"><span class="awfl-toc-num">1.10</span> 10. Default files</a><ul><li><a href="#10-1-default-identifiers"><span class="awfl-toc-num">1.10.1</span> 10.1 Default identifiers</a></li></ul></li><li><a href="#11-front-end"><span class="awfl-toc-num">1.11</span> 11. Front-end</a><ul><li><a href="#11-1-stylesheet-includes-site-css"><span class="awfl-toc-num">1.11.1</span> 11.1 Stylesheet (includes/site.css)</a></li><li><a href="#11-2-script-includes-site-js"><span class="awfl-toc-num">1.11.2</span> 11.2 Script (includes/site.js)</a></li></ul></li><li><a href="#12-page-and-url-reference"><span class="awfl-toc-num">1.12</span> 12. Page and URL reference</a></li><li><a href="#13-typical-workflows"><span class="awfl-toc-num">1.13</span> 13. Typical workflows</a><ul><li><a href="#13-1-add-an-item"><span class="awfl-toc-num">1.13.1</span> 13.1 Add an item</a></li><li><a href="#13-2-add-a-new-property-or-identifier-type-admin"><span class="awfl-toc-num">1.13.2</span> 13.2 Add a new property or identifier type (admin)</a></li><li><a href="#13-3-allow-public-image-uploads"><span class="awfl-toc-num">1.13.3</span> 13.3 Allow public image uploads</a></li><li><a href="#13-4-recover-from-vandalism"><span class="awfl-toc-num">1.13.4</span> 13.4 Recover from vandalism</a></li><li><a href="#13-5-move-to-another-domain"><span class="awfl-toc-num">1.13.5</span> 13.5 Move to another domain</a></li><li><a href="#13-6-backup"><span class="awfl-toc-num">1.13.6</span> 13.6 Backup</a></li></ul></li><li><a href="#14-troubleshooting"><span class="awfl-toc-num">1.14</span> 14. Troubleshooting</a></li><li><a href="#15-glossary"><span class="awfl-toc-num">1.15</span> 15. Glossary</a></li><li><a href="#16-credits-and-license"><span class="awfl-toc-num">1.16</span> 16. Credits and license</a></li><li><a href="#17-see-also"><span class="awfl-toc-num">1.17</span> 17. See also</a></li></ul></li></ul></details></div>
+<h1 id="awflwikidataworld">AWFLWIKIDATAWORLD</h1>
 <p><strong>AWFLWIKIDATAWORLD</strong> is the full documentation of <strong>AWFLWIKIWORLD WIKIDATA v25.4</strong>, a free, open, flat-file &quot;wikidata&quot; (structured knowledge base) published by <strong>AEDTP WORLD</strong> under the <strong>AEDTP WORLD FREE LICENSE (AWFL)</strong>. Tagline: <em>Discover And Connect.</em></p>
 <p>This page is written in AWFLWIKITEXT, the markup language of AWFLWIKIWORLD. See also <a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD">AWFLWIKIWORLD</a>, the sister wiki engine, and <a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD/AWFLWIKITEXT">AWFLWIKIWORLD/AWFLWIKITEXT</a>.</p>
-<h2>1. Overview</h2>
+<h2 id="1-overview">1. Overview</h2>
 The software lets anyone create and edit <strong>items</strong> (identified as <code>Q1</code>, <code>Q2</code>, <code>Q3</code> and so on), in the style of Wikidata. Each item has:
 <ul>
 <li>a <strong>name</strong> (label) and a short <strong>description</strong></li>
@@ -36,7 +37,7 @@ The software lets anyone create and edit <strong>items</strong> (identified as <
 <li><strong>identifiers</strong> (links to external databases such as IMDb, Spotify, GitHub)</li>
 </ul>
 <p>Besides items there is one special page, the <strong>Main_Page</strong>, which is free-form HTML editable only by the admin.</p>
-<h3>1.1 Key characteristics</h3>
+<h3 id="1-1-key-characteristics">1.1 Key characteristics</h3>
 <ul>
 <li><strong>No database.</strong> Everything is stored as human-readable JSON and TXT, written atomically and guarded by a file lock.</li>
 <li><strong>Controlled vocabulary.</strong> Users may only choose properties from <code>label.txt</code> and identifiers from <code>id.txt</code>; the admin curates both lists.</li>
@@ -47,14 +48,14 @@ The software lets anyone create and edit <strong>items</strong> (identified as <
 <li><strong>Admin backup history</strong> with one snapshot per Q and one-click restore.</li>
 <li><strong>Responsive UI</strong> with a card layout for tables on phones and a print stylesheet.</li>
 </ul>
-<h2>2. Requirements and installation</h2>
-<h3>2.1 Requirements</h3>
+<h2 id="2-requirements-and-installation">2. Requirements and installation</h2>
+<h3 id="2-1-requirements">2.1 Requirements</h3>
 <ul>
 <li>Apache (or compatible) with <code>mod_rewrite</code> and <code>AllowOverride All</code>.</li>
 <li>PHP 7.2 or newer (<code>mb_chr</code> is required) with the extensions mbstring, iconv, fileinfo (for <code>mime_content_type</code>), exif, image support for <code>getimagesize</code>, and session.</li>
 <li>A directory writable by the PHP user. The app creates <code>wiki/</code>, <code>includes/</code> and <code>wiki/uploads/</code> if missing (mode 0755).</li>
 </ul>
-<h3>2.2 Steps</h3>
+<h3 id="2-2-steps">2.2 Steps</h3>
 <ol>
 <li>Upload the <code>wikidata</code> folder to your web root, for example https://yourdomain.com/wikidata</li>
 <li>Edit <code>config.php</code>: set <code>$Server</code> to your public URL (no trailing slash), <code>$Logo</code> to your logo URL, and <code>$Sitename</code>, <code>$MetaTitle</code>, <code>$MetaDescription</code> as you like.</li>
@@ -66,7 +67,7 @@ The software lets anyone create and edit <strong>items</strong> (identified as <
 <blockquote>
 Security warning: the admin credentials are stored in plain text in <code>config.php</code>. Change them before going live and keep the file out of version control.
 </blockquote>
-<h2>3. Package layout</h2>
+<h2 id="3-package-layout">3. Package layout</h2>
 <pre><code>wikidata/
   .htaccess            URL rewrite rules (sitemaps, /Q42 routing)
   config.php           Master config + all shared functions
@@ -113,9 +114,9 @@ Security warning: the admin credentials are stored in plain text in <code>config
     Main_Page.txt      Main page HTML
     index.html         Empty
     uploads/           Uploaded images (+ .htaccess, index.html)</code></pre>
-<h2>4. Configuration (config.php)</h2>
+<h2 id="4-configuration-config-php">4. Configuration (config.php)</h2>
 <code>config.php</code> is the master file: every page requires it. It holds settings, default-file generation, storage helpers and almost all business logic.
-<h3>4.1 Settings variables</h3>
+<h3 id="4-1-settings-variables">4.1 Settings variables</h3>
 <ul>
 <li><code>$Sitename</code>: name shown in the header and footer. Default &quot;AWFLWIKIWORLD WIKIDATA&quot;.</li>
 <li><code>$MetaTitle</code>: suffix used in page titles. Default &quot;AWFLWIKIWORLD WIKIDATA&quot;.</li>
@@ -128,7 +129,7 @@ Security warning: the admin credentials are stored in plain text in <code>config
 <li><code>$upload_enabled</code>: default for public upload (false). The live value is read from <code>wiki/settings.json</code>, controlled by the dashboard toggle.</li>
 </ul>
 <p>The timezone is fixed to UTC. Derived paths are <code>$base</code>, <code>$wikiDir</code>, <code>$incDir</code> and <code>$upDir</code>.</p>
-<h3>4.2 Bootstrapping</h3>
+<h3 id="4-2-bootstrapping">4.2 Bootstrapping</h3>
 On every request <code>config.php</code>:
 <ol>
 <li>creates missing directories;</li>
@@ -136,8 +137,8 @@ On every request <code>config.php</code>:
 <li>starts a session with cookie flags HttpOnly, SameSite=Lax, and Secure when on HTTPS;</li>
 <li>loads <code>settings.json</code> to override <code>$upload_enabled</code>.</li>
 </ol>
-<h3>4.3 Function reference</h3>
-<h4>Storage and locking</h4>
+<h3 id="4-3-function-reference">4.3 Function reference</h3>
+<h4 id="storage-and-locking">Storage and locking</h4>
 <ul>
 <li><code>h($s)</code>: HTML-escape (UTF-8, quotes).</li>
 <li><code>jread($file,$default)</code>: read and decode a JSON file from <code>wiki/</code>, cached per request.</li>
@@ -147,12 +148,12 @@ On every request <code>config.php</code>:
 <li><code>client_ip()</code> and <code>mask_ip($ip)</code>: visitor IP, and its masked public form (a.b.c.x, or a:b:c::x for IPv6).</li>
 <li><code>now_str()</code>: UTC timestamp, format Y-m-d H:i.</li>
 </ul>
-<h4>Icons and flags</h4>
+<h4 id="icons-and-flags">Icons and flags</h4>
 <ul>
 <li><code>flag_from_code($code)</code>: converts a 2-letter ISO code to a flag emoji.</li>
 <li><code>get_icon($val)</code>: returns an emoji plus a space. Order: exact match in <code>icon.txt</code>; exact match in <code>country_flag.json</code>; for strings up to 80 characters, a whole-word search for any country name (longest names first). Otherwise an empty string.</li>
 </ul>
-<h4>IDs and URLs</h4>
+<h4 id="ids-and-urls">IDs and URLs</h4>
 <ul>
 <li><code>valid_q($q)</code>: matches Q followed by digits.</li>
 <li><code>norm_title($t)</code>: normalises input to <code>Main_Page</code> (accepts &quot;main page&quot; and &quot;main_page&quot;), an upper-case Q id, or null.</li>
@@ -160,16 +161,16 @@ On every request <code>config.php</code>:
 <li><code>q_url($id)</code>: internal link, always <code>index.php?title=Qn</code>.</li>
 <li><code>upload_url($name)</code>: full URL for an uploaded file; passes full http(s) URLs through unchanged.</li>
 </ul>
-<h4>Item list</h4>
+<h4 id="item-list">Item list</h4>
 <ul>
 <li><code>q_list()</code>, <code>q_save($list)</code>, <code>q_next()</code> (highest number plus one), <code>item_exists($q)</code>.</li>
 </ul>
-<h4>Properties and identifiers</h4>
+<h4 id="properties-and-identifiers">Properties and identifiers</h4>
 <ul>
 <li><code>label_names()</code>, <code>canonical_label($p)</code> (case-insensitive match returning the canonical spelling), <code>label_for($p)</code>.</li>
 <li><code>id_map()</code>, <code>canonical_id_name($n)</code>.</li>
 </ul>
-<h4>Items</h4>
+<h4 id="items">Items</h4>
 <ul>
 <li><code>item_get($q)</code>: assembles an item with q, name, desc, aliases, images, claims, ids, protected.</li>
 <li><code>item_text_size($it)</code>: character count of all text; used for the change difference.</li>
@@ -179,25 +180,25 @@ On every request <code>config.php</code>:
 <li><code>item_commit($q,$new,$comment,$isNew)</code>: locked write, logs the recent change, snapshots history if admin, may rebuild the sitemap.</li>
 <li><code>item_delete($q)</code>: removes the Q from every file, logs &quot;deleted&quot;, rebuilds the sitemap.</li>
 </ul>
-<h4>Main page, logging, history, views</h4>
+<h4 id="main-page-logging-history-views">Main page, logging, history, views</h4>
 <ul>
 <li><code>main_get()</code> and <code>main_save($text,$comment)</code>.</li>
 <li><code>recent_log($id,$diff,$comment)</code>: prepends a row to <code>recent.json</code> (kept to 1000). Admin edits show &quot;admin&quot;; others show the masked IP, and the full IP is stored for the admin only.</li>
 <li><code>history_snapshot($id)</code>, <code>history_restore($id)</code>, <code>history_stats()</code>: see section 7.</li>
 <li><code>views_get($id)</code> and <code>views_hit($id)</code>: count <strong>one view per IP per page per hour</strong> (hashed key in <code>views_ip.json</code>); HEAD requests are not counted.</li>
 </ul>
-<h4>Search and rendering</h4>
+<h4 id="search-and-rendering">Search and rendering</h4>
 <ul>
 <li><code>search_items($term,$limit)</code>: ranking is described in section 6.5.</li>
 <li><code>render_results($ids)</code>, <code>render_value($v,$prop)</code>, <code>render_gallery($images,$alt)</code>, <code>id_display($name,$url)</code>, <code>ext_icon()</code>.</li>
 </ul>
-<h4>Auth, CSRF, captcha, sitemap</h4>
+<h4 id="auth-csrf-captcha-sitemap">Auth, CSRF, captcha, sitemap</h4>
 <ul>
 <li><code>is_admin()</code>, <code>csrf_token()</code>, <code>csrf_field()</code>, <code>csrf_ok()</code>.</li>
 <li><code>captcha_lines()</code>, <code>captcha_question()</code>, <code>captcha_ok()</code>: see section 8.3.</li>
 <li><code>sitemap_entries()</code>, <code>sitemap_chunks()</code>, <code>sitemap_build()</code>, <code>sitemap_maybe()</code>: see section 9.2.</li>
 </ul>
-<h2>5. Data model and file formats</h2>
+<h2 id="5-data-model-and-file-formats">5. Data model and file formats</h2>
 All files live in <code>wiki/</code>. JSON is written pretty-printed with unescaped Unicode and slashes.
 <ul>
 <li><code>q.txt</code>: one Q id per line. Example: Q1</li>
@@ -222,7 +223,7 @@ All files live in <code>wiki/</code>. JSON is written pretty-printed with unesca
 <li><code>Main_Page.txt</code>: raw HTML of the main page.</li>
 <li>Created at runtime: <code>views_ip.json</code> (hashed IP and page keys, pruned after one hour), <code>upload_rate.json</code> (per-IP upload timestamps), <code>.lock</code> (lock file for <code>flock</code>).</li>
 </ul>
-<h3>5.1 Item field limits (includes/form.php)</h3>
+<h3 id="5-1-item-field-limits-includes-form-php">5.1 Item field limits (includes/form.php)</h3>
 <ul>
 <li>Name: 200 characters (<code>LIM_NAME</code>)</li>
 <li>Description: 100 characters (<code>LIM_DESC</code>)</li>
@@ -235,7 +236,7 @@ All files live in <code>wiki/</code>. JSON is written pretty-printed with unesca
 <li>URL or identifier: 500 characters (<code>LIM_URL</code>)</li>
 <li>Edit summary: 200 characters</li>
 </ul>
-<h3>5.2 Statement values</h3>
+<h3 id="5-2-statement-values">5.2 Statement values</h3>
 A statement value can be:
 <ul>
 <li><strong>Plain text</strong>, for example <code>concept</code>.</li>
@@ -243,7 +244,7 @@ A statement value can be:
 <li><strong>A URL</strong> starting with http:// or https://, shown as an external link with rel=&quot;noopener noreferrer nofollow ugc&quot;.</li>
 </ul>
 <p>Duplicate property and value pairs are removed (case-insensitive). Values matching an icon or a country name get an emoji prefix.</p>
-<h3>5.3 Identifiers</h3>
+<h3 id="5-3-identifiers">5.3 Identifiers</h3>
 Users enter only the <strong>username or ID</strong>, never the link. The app builds the URL as the prefix plus the URL-encoded value (slashes kept). Rules:
 <ul>
 <li>The identifier name must exist in <code>id.txt</code> and have a valid http(s) prefix.</li>
@@ -251,9 +252,9 @@ Users enter only the <strong>username or ID</strong>, never the link. The app bu
 <li>For prefixes ending in <code>@</code> (for example the YouTube prefix), a leading <code>@</code> typed by the user is stripped.</li>
 <li>At most 150 characters for the ID and 500 for the final URL, which must pass <code>FILTER_VALIDATE_URL</code>.</li>
 </ul>
-<h3>5.4 Images</h3>
+<h3 id="5-4-images">5.4 Images</h3>
 An image entry must be either a full http(s) URL (3 to 500 characters, no spaces and none of the characters <code>&lt; &gt; &quot; &#039;</code>) or the name of a file that already exists in <code>wiki/uploads/</code> and matches <code>^[a-f0-9]{6}_[a-z0-9_-]{0,40}\.(jpg|png|webp)$</code>.
-<h3>5.5 Example records</h3>
+<h3 id="5-5-example-records">5.5 Example records</h3>
 <pre><code>// recent.json (one row)
 {&quot;Q&quot;:&quot;Q7&quot;,&quot;time&quot;:&quot;2026-10-03 04:34&quot;,&quot;ts&quot;:1790000040,&quot;by&quot;:&quot;203.0.113.x&quot;,&quot;ip&quot;:&quot;203.0.113.9&quot;,&quot;diff&quot;:57,&quot;comment&quot;:&quot;created&quot;}
 
@@ -264,8 +265,8 @@ An image entry must be either a full http(s) URL (3 to 500 characters, no spaces
   &quot;time&quot;: &quot;2026-10-03 04:40&quot;,
   &quot;by&quot;: &quot;admin&quot;
 }</code></pre>
-<h2>6. Pages and features</h2>
-<h3>6.1 Routing (.htaccess and index.php)</h3>
+<h2 id="6-pages-and-features">6. Pages and features</h2>
+<h3 id="6-1-routing-htaccess-and-index-php">6.1 Routing (.htaccess and index.php)</h3>
 Rewrite rules apply only when the request is not an existing file or directory:
 <ul>
 <li><code>/sitemap.xml</code> goes to <code>sitemap.php</code>.</li>
@@ -273,15 +274,15 @@ Rewrite rules apply only when the request is not an existing file or directory:
 <li><code>/Q123</code>, <code>/wiki/Q123</code> and <code>/Main_Page</code> (optional trailing slash) go to <code>index.php?title=...</code>.</li>
 </ul>
 <p><code>index.php</code> resolves the id from <code>?title=</code> or from the request path; with no title it shows the Main Page. Unknown or deleted items return <strong>HTTP 404</strong> with noindex, follow, and links to create the item.</p>
-<h3>6.2 Main Page</h3>
+<h3 id="6-2-main-page">6.2 Main Page</h3>
 <ul>
 <li>Shows the admin-edited HTML (<code>Main_Page.txt</code>), the export bar, the 20 newest items with the total count, and buttons for Create Item and Recent changes.</li>
 <li>The admin can open <code>?title=Main_Page&amp;action=edit</code> to edit the HTML (any HTML allowed, admin only) with an edit summary. Saving is a CSRF-protected POST; non-admins are redirected silently.</li>
 </ul>
-<h3>6.3 Item page</h3>
+<h3 id="6-3-item-page">6.3 Item page</h3>
 Shows the name with emoji and Q id, a &quot;protected&quot; tag if applicable, the view count, description, aliases (&quot;Also known as&quot;), an image gallery (3 columns on wide screens), the export bar, an Edit button (hidden for protected items unless admin), the <strong>Statements</strong> table and the <strong>Identifiers</strong> table (links open in a new tab with an external-link icon).
 <p>Each page sets the title, description, canonical link, Open Graph and Twitter tags, a page-level JSON-LD Thing (name, description, alternateName, image, and sameAs from identifiers) and a Last-Modified header (not sent to admins).</p>
-<h3>6.4 Create and edit (create.php, edit.php, includes/form.php)</h3>
+<h3 id="6-4-create-and-edit-create-php-edit-php-includes-form-php">6.4 Create and edit (create.php, edit.php, includes/form.php)</h3>
 <ul>
 <li><code>create.php</code> assigns the next free Q number inside a lock, writes the item, logs &quot;created&quot; (or your summary), snapshots to history if the editor is admin, rebuilds the sitemap if stale, then redirects to the new item.</li>
 <li><code>edit.php?title=Qn</code> returns to the home page if the item does not exist. For <strong>protected</strong> items it shows a 403 page to non-admins.</li>
@@ -289,18 +290,18 @@ Shows the name with emoji and Q id, a &quot;protected&quot; tag if applicable, t
 <li>On a validation error the form is shown again with all messages and the input preserved.</li>
 <li><strong>Combo boxes</strong> (site.js) show 7 matches, filter as you type, expand with &quot;More (N more)...&quot;, and support arrow keys, Enter and Escape. A value not in the list turns the field red and blocks submit.</li>
 </ul>
-<h3>6.5 Search</h3>
+<h3 id="6-5-search">6.5 Search</h3>
 <ul>
 <li><strong>Live search</strong> in the header: after 200 ms of typing it calls <code>index.php?live=1&amp;q=...</code> and shows up to 8 results under the header.</li>
 <li><strong>Search page</strong> <code>/search.php?q=...</code> shows up to 100 results (noindex, follow).</li>
 <li>Ranking, lower is better, with newest items winning ties: 0 exact Q id or exact name; 1 name starts with the term; 2 name contains the term; 3 an alias contains the term; 4 the description contains the term; 5 the Q id contains the term.</li>
 <li>Results show a thumbnail (first image) or a letter avatar, the name with icon, the Q id and the description.</li>
 </ul>
-<h3>6.6 Recent changes (recent.php)</h3>
+<h3 id="6-6-recent-changes-recent-php">6.6 Recent changes (recent.php)</h3>
 A public table of the latest 100 edits: item, change (green +N or red -N characters), time (UTC), editor and summary. Editors appear as masked IPs; logged-in admins see full IPs, and admin edits show &quot;admin&quot;. The log keeps 1000 rows. The page is noindex, follow.
-<h3>6.7 Upload (upload.php)</h3>
+<h3 id="6-7-upload-upload-php">6.7 Upload (upload.php)</h3>
 Accepts JPEG, PNG and WebP up to <strong>2 MB</strong>. Public upload must be switched ON in the dashboard (the admin can always upload). The same endpoint serves the standalone form and the AJAX upload button in the editor, returning JSON with ok, name and url, or ok false with an error. Validation is described in section 8.4. On success the stored file name (for example <code><img src="https://aedtpworld.com/wikiworld/images/a1b2c3_photo.jpg" style="width:250px !important;height:auto;" alt=""></code>) goes into the Images field.
-<h3>6.8 Exports</h3>
+<h3 id="6-8-exports">6.8 Exports</h3>
 Every item and the Main Page can be exported from the buttons on the page or directly with <code>?title=Q1&amp;export=FORMAT</code>. Responses are downloads with <code>X-Robots-Tag: noindex</code>.
 <ul>
 <li><strong>HTML</strong> (<code>html</code>, text/html): standalone styled page with canonical link, statement and identifier tables, image grid.</li>
@@ -326,12 +327,12 @@ Every item and the Main Page can be exported from the buttons on the page or dir
   &quot;url&quot;: &quot;https://.../Q7&quot;
 }</code></pre></p>
 <p>For Main_Page the model holds <code>content</code> (the HTML) instead of statements; the TXT, MD and PDF exports convert it to plain text. An unknown format returns HTTP 400.</p>
-<h3>6.9 Views</h3>
+<h3 id="6-9-views">6.9 Views</h3>
 Each item and the Main Page shows a view counter. A view is counted once per IP per page per hour; the counter is written under lock and old hash keys are pruned.
-<h2>7. Admin dashboard and history</h2>
-<h3>7.1 Login</h3>
+<h2 id="7-admin-dashboard-and-history">7. Admin dashboard and history</h2>
+<h3 id="7-1-login">7.1 Login</h3>
 <code>/dashboard.php</code> shows a login form when logged out. Credentials are compared with <code>hash_equals</code> against <code>$Username</code> and <code>$Password</code>. Success regenerates the session id and sets the admin flag. All dashboard actions are CSRF-protected POST requests.
-<h3>7.2 Dashboard sections</h3>
+<h3 id="7-2-dashboard-sections">7.2 Dashboard sections</h3>
 <ul>
 <li><strong>History backup card</strong>: number of backed-up Qs and file size in KB (red above 500 KB), with a link to the history page.</li>
 <li><strong>Enable Public Upload</strong>: ON/OFF switch stored in <code>settings.json</code>.</li>
@@ -343,12 +344,12 @@ Each item and the Main Page shows a view counter. A view is counted once per IP 
 <li><strong>Items</strong> (50 per page): filter by Q or name; Edit, Protect or Unprotect, and Delete per item.</li>
 <li><strong>Top buttons</strong>: Logout, Edit Main Page, History backup, Recent changes.</li>
 </ul>
-<h3>7.3 Protect and delete</h3>
+<h3 id="7-3-protect-and-delete">7.3 Protect and delete</h3>
 <ul>
 <li><strong>Protect</strong>: the item gets a &quot;protected&quot; tag; public edit attempts return a 403 page; only the admin can edit it.</li>
 <li><strong>Delete</strong>: removes the item from every file, removes protection, logs &quot;deleted&quot; in recent changes (negative size difference), and rebuilds the sitemap. A history backup, if any, is kept so the item can be restored.</li>
 </ul>
-<h3>7.4 History backup (history.php)</h3>
+<h3 id="7-4-history-backup-history-php">7.4 History backup (history.php)</h3>
 <ul>
 <li>A snapshot of an item (or the Main Page) is stored <strong>only when the admin saves</strong> it, and only <strong>one snapshot per Q</strong> (the newest overwrites).</li>
 <li>The list is sorted by time and shows the Q, name, size summary (&quot;N statements, N identifiers, N images&quot;), time, and a &quot;deleted/missing live&quot; tag when the live item no longer exists.</li>
@@ -356,14 +357,14 @@ Each item and the Main Page shows a view counter. A view is counted once per IP 
 <li><strong>Delete</strong> removes one snapshot and <strong>Delete all backups</strong> clears the file. All actions ask for confirmation.</li>
 <li>A capacity warning appears above 500 KB.</li>
 </ul>
-<h2>8. Security model</h2>
-<h3>8.1 Authentication and sessions</h3>
+<h2 id="8-security-model">8. Security model</h2>
+<h3 id="8-1-authentication-and-sessions">8.1 Authentication and sessions</h3>
 A single admin account. The session cookie is HttpOnly and SameSite=Lax, plus Secure over HTTPS. The session id is regenerated on login.
-<h3>8.2 CSRF</h3>
+<h3 id="8-2-csrf">8.2 CSRF</h3>
 Every POST form includes a per-session random token (16 random bytes in hex), verified with <code>hash_equals</code>. A missing or wrong token gives &quot;Invalid session. Reload and try again.&quot;
-<h3>8.3 Captcha</h3>
+<h3 id="8-3-captcha">8.3 Captcha</h3>
 Non-admin create and edit require answering a random question from <code>security.txt</code> (one <code>question|answer</code> per line, compared case-insensitively and trimmed). The question stays in the session until answered, then is discarded. If <code>security.txt</code> is empty the captcha is disabled. Defaults: &quot;What is 2+2?&quot; (4), &quot;What color is sky?&quot; (blue), &quot;Capital of Ghana?&quot; (accra). Add your own lines to make automation harder.
-<h3>8.4 Upload hardening</h3>
+<h3 id="8-4-upload-hardening">8.4 Upload hardening</h3>
 <ol>
 <li>Public uploads must be enabled (the admin is always allowed) and CSRF is required.</li>
 <li><strong>Rate limit</strong> for non-admins: 20 uploads per IP per hour (HTTP 429 after that).</li>
@@ -374,16 +375,16 @@ Non-admin create and edit require answering a random question from <code>securit
 <li>Safe name: 6 random hex characters, an underscore, the sanitised base name (max 40 characters of a-z, 0-9, underscore, dash), and the extension from the verified MIME type. File mode 0644.</li>
 <li><code>wiki/uploads/.htaccess</code> disables PHP engines and denies php, phtml, phar, pl, py, cgi, sh, txt, json, lock, log and tmp files.</li>
 </ol>
-<h3>8.5 Data protection</h3>
+<h3 id="8-5-data-protection">8.5 Data protection</h3>
 <ul>
 <li><code>wiki/.htaccess</code> denies web access to txt, json, lock, log and tmp files, so raw data (including <code>history.json</code>, <code>security.txt</code> and full IPs in <code>recent.json</code>) is not downloadable. <strong>On a server that ignores .htaccess (nginx, for example) you must add equivalent deny rules</strong> or move <code>wiki/</code> outside the web root.</li>
 <li><code>includes/.htaccess</code> denies direct requests to php files; <code>site.css</code> and <code>site.js</code> stay public. Empty <code>index.html</code> files prevent directory listing.</li>
 <li>All output is escaped with <code>h()</code>. JSON embedded in script tags uses the JSON_HEX flags for tags, ampersands and quotes. User-supplied links get rel nofollow.</li>
 <li>Writes are atomic and locked, so concurrent edits do not corrupt files.</li>
 </ul>
-<h3>8.6 Privacy</h3>
+<h3 id="8-6-privacy">8.6 Privacy</h3>
 Public pages show only masked IPs. Full IPs are stored in <code>recent.json</code> for admin review, and hashed keys are used for the view counter. Operators should mention this in their privacy policy where required.
-<h3>8.7 Known caveats</h3>
+<h3 id="8-7-known-caveats">8.7 Known caveats</h3>
 <ul>
 <li>Admin credentials are plain text in <code>config.php</code>; use a strong password and restrict file permissions.</li>
 <li>Main Page HTML is not sanitised by design (admin only); never give admin access to untrusted people.</li>
@@ -392,11 +393,11 @@ Public pages show only masked IPs. Full IPs are stored in <code>recent.json</cod
 <li>The history file has no automatic size limit, only a warning above 500 KB.</li>
 <li><code>$route</code> set to &quot;1&quot; needs working rewrite rules.</li>
 </ul>
-<h2>9. SEO and sitemaps</h2>
-<h3>9.1 Meta data (includes/header.php)</h3>
+<h2 id="9-seo-and-sitemaps">9. SEO and sitemaps</h2>
+<h3 id="9-1-meta-data-includes-header-php">9.1 Meta data (includes/header.php)</h3>
 Every page sends: title, description, author, copyright, keywords, license (AEDTP WORLD FREE LICENSE (AWFL)), robots, application-name, canonical link, sitemap link, Open Graph (title, description, type, url, image, site_name), Twitter card (summary_large_image), icon and apple-touch-icon (the logo), an <strong>Organization JSON-LD</strong> block with sameAs links to AEDTP WORLD profiles, and on item pages a <strong>Thing JSON-LD</strong> block.
 <p>Default robots: index, follow, max-image-preview:large, max-snippet:-1. Marked noindex: create, edit, search, recent, dashboard, history, upload, 404 pages, exports, and the Main Page editor.</p>
-<h3>9.2 Sitemaps</h3>
+<h3 id="9-2-sitemaps">9.2 Sitemaps</h3>
 <ul>
 <li><code>sitemap.xml</code> is a <strong>sitemap index</strong> pointing to <code>sitemap-1.xml</code>, <code>sitemap-2.xml</code> and so on. Each chunk is at most <strong>900 KB</strong> (921,600 bytes) or 50,000 URLs.</li>
 <li>Entries: the home page, <code>recent.php</code>, and every Q (using <code>lastmod.json</code>, with the file time of <code>q.txt</code> as a fallback).</li>
@@ -405,7 +406,7 @@ Every page sends: title, description, author, copyright, keywords, license (AEDT
 <li>If the folder is not writable, the index points to the dynamic URLs <code>sitemap.php?n=N</code> instead.</li>
 <li><code>sitemap.php</code> without parameters serves a cached index (under 60 seconds old) or rebuilds it.</li>
 </ul>
-<h2>10. Default files</h2>
+<h2 id="10-default-files">10. Default files</h2>
 When missing, <code>config.php</code> creates these. Existing files are never overwritten.
 <ul>
 <li><code>q.txt</code>: Q1</li>
@@ -422,7 +423,7 @@ When missing, <code>config.php</code> creates these. Existing files are never ov
 <li>Empty JSON: <code>images.json</code>, <code>identifiers.json</code>, <code>history.json</code>, <code>views.json</code>, <code>lastmod.json</code> as an empty object; <code>recent.json</code> and <code>protected.json</code> as an empty list</li>
 <li>The <code>.htaccess</code> files and <code>index.html</code> placeholders: root rewrite rules and deny rules for <code>wiki/</code>, <code>includes/</code> and <code>uploads/</code></li>
 </ul>
-<h3>10.1 Default identifiers</h3>
+<h3 id="10-1-default-identifiers">10.1 Default identifiers</h3>
 <ul>
 <li>Genius: https://genius.com/artists/</li>
 <li>Google Knowledge Graph: https://g.co/kg/</li>
@@ -448,15 +449,15 @@ When missing, <code>config.php</code> creates these. Existing files are never ov
 <li>VIAF: https://viaf.org/viaf/</li>
 <li>Library of Congress: https://id.loc.gov/authorities/names/</li>
 </ul>
-<h2>11. Front-end</h2>
-<h3>11.1 Stylesheet (includes/site.css)</h3>
+<h2 id="11-front-end">11. Front-end</h2>
+<h3 id="11-1-stylesheet-includes-site-css">11.1 Stylesheet (includes/site.css)</h3>
 <ul>
 <li>Mobile-first, using CSS variables for header, headerText, button, buttonText, wikiText and links, injected from <code>colors.json</code>.</li>
 <li>Components: header, brand and navigation, search results dropdown, item gallery (1 column, 3 from 768 px), tables, &quot;pill&quot; links (blue for an existing Q, pink for a missing one), buttons (default, grey, danger, small), forms, combo dropdowns, notices (error, ok, warning), cards, tags, and change colors (green up, red down).</li>
 <li>Under 640 px, tables of class <code>rt</code> become stacked cards using <code>data-label</code> attributes.</li>
 <li>Print mode hides the header, footer, export bar and search.</li>
 </ul>
-<h3>11.2 Script (includes/site.js)</h3>
+<h3 id="11-2-script-includes-site-js">11.2 Script (includes/site.js)</h3>
 One self-executing script with no dependencies:
 <ul>
 <li><strong>Live search</strong> with a 200 ms debounce.</li>
@@ -466,7 +467,7 @@ One self-executing script with no dependencies:
 <li>Blocks form submission if any property or identifier is not in the allowed list.</li>
 </ul>
 <p>The page passes data to the script through the globals <code>WD_SERVER</code>, <code>WD_LABELS</code>, <code>WD_IDS</code>, <code>WD_INIT</code>, <code>WD_UPLOAD</code>, <code>WD_CSRF</code>, <code>WD_UPLOAD_URL</code> and <code>WD_UPDIR</code>.</p>
-<h2>12. Page and URL reference</h2>
+<h2 id="12-page-and-url-reference">12. Page and URL reference</h2>
 <ul>
 <li><code>/</code> and <code>/Main_Page</code> (index.php, public): main page.</li>
 <li><code>/Q42</code>, <code>/wiki/Q42</code> and <code>index.php?title=Q42</code> (index.php, public): item page.</li>
@@ -481,8 +482,8 @@ One self-executing script with no dependencies:
 <li><code>/history.php</code> (admin): backups and restore.</li>
 <li><code>/sitemap.xml</code> and <code>/sitemap-N.xml</code> (sitemap.php, public): sitemaps.</li>
 </ul>
-<h2>13. Typical workflows</h2>
-<h3>13.1 Add an item</h3>
+<h2 id="13-typical-workflows">13. Typical workflows</h2>
+<h3 id="13-1-add-an-item">13.1 Add an item</h3>
 <ol>
 <li>Click <strong>Create Item</strong>.</li>
 <li>Enter the name and description; add aliases and images (URL or upload).</li>
@@ -490,25 +491,25 @@ One self-executing script with no dependencies:
 <li>Add identifiers: pick one (for example GitHub) and type only the username.</li>
 <li>Optionally write an edit summary, answer the security question, and press <strong>Save</strong>.</li>
 </ol>
-<h3>13.2 Add a new property or identifier type (admin)</h3>
+<h3 id="13-2-add-a-new-property-or-identifier-type-admin">13.2 Add a new property or identifier type (admin)</h3>
 <ol>
 <li>Log in at <code>/dashboard.php</code>.</li>
 <li>Under <strong>Properties</strong> add lines such as <code>date of death</code>; under <strong>Identifiers</strong> add <code>Bandcamp | https://bandcamp.com/</code>.</li>
 <li>They appear in the form drop-downs immediately.</li>
 </ol>
-<h3>13.3 Allow public image uploads</h3>
+<h3 id="13-3-allow-public-image-uploads">13.3 Allow public image uploads</h3>
 Dashboard, <strong>Enable Public Upload</strong>, then <strong>Turn ON</strong>. Turn it OFF again to restrict uploads to the admin.
-<h3>13.4 Recover from vandalism</h3>
+<h3 id="13-4-recover-from-vandalism">13.4 Recover from vandalism</h3>
 <ol>
 <li>Open <code>/recent.php</code> (the admin sees full IPs) to find the bad edit.</li>
 <li>If you saved the item as admin earlier, open <code>/history.php</code> and click <strong>Restore</strong>.</li>
 <li>Optionally <strong>Protect</strong> the item from the dashboard.</li>
 </ol>
-<h3>13.5 Move to another domain</h3>
+<h3 id="13-5-move-to-another-domain">13.5 Move to another domain</h3>
 Change <code>$Server</code> and <code>$Logo</code> in <code>config.php</code>, move the folder, then rebuild the sitemap. Stored image names are relative, so uploads keep working; identifiers stored as full URLs are unaffected.
-<h3>13.6 Backup</h3>
+<h3 id="13-6-backup">13.6 Backup</h3>
 Copy the whole <code>wiki/</code> folder, including <code>uploads/</code>. That is the entire database.
-<h2>14. Troubleshooting</h2>
+<h2 id="14-troubleshooting">14. Troubleshooting</h2>
 <ul>
 <li><strong>/Q1 gives a server 404:</strong> <code>mod_rewrite</code> or <code>AllowOverride</code> is off. Enable it, or set <code>$route</code> to &quot;0&quot;.</li>
 <li><strong>Cannot save (&quot;Invalid session&quot;):</strong> session cookies are blocked or the page was open too long. Reload and retry.</li>
@@ -520,7 +521,7 @@ Copy the whole <code>wiki/</code> folder, including <code>uploads/</code>. That 
 <li><strong>Data files downloadable in a browser:</strong> the server ignores <code>.htaccess</code>. Add deny rules for <code>wiki/</code> in the server configuration.</li>
 <li><strong>History shows a red size warning:</strong> it is over 500 KB. Delete old backups.</li>
 </ul>
-<h2>15. Glossary</h2>
+<h2 id="15-glossary">15. Glossary</h2>
 <ul>
 <li><strong>Q or Q-id:</strong> unique item identifier such as <code>Q42</code>.</li>
 <li><strong>Item:</strong> a record with name, description, aliases, images, statements and identifiers.</li>
@@ -533,7 +534,7 @@ Copy the whole <code>wiki/</code> folder, including <code>uploads/</code>. That 
 <li><strong>AEDTPWORLD export:</strong> the JSON export format with a metadata wrapper.</li>
 <li><strong>AWFLWIKITEXT:</strong> the lightweight markup language of AWFLWIKIWORLD, used to write this page.</li>
 </ul>
-<h2>16. Credits and license</h2>
+<h2 id="16-credits-and-license">16. Credits and license</h2>
 AWFLWIKIWORLD WIKIDATA is created by <strong>AEDTP WORLD</strong> and distributed under the <strong>AEDTP WORLD FREE LICENSE (AWFL)</strong>. Every exported file carries the line &quot;Source: AWFLWIKIWORLD WIKIDATA - AEDTP WORLD FREE LICENSE (AWFL)&quot;.
 <p>The license text is not included in the package. According to a published summary of the AWFL (https://bebee.com/gb/blog/aedtpworld/aedtp-world-free-license-awfl-VR4qrN9Ihumv):</p>
 <ul>
@@ -544,7 +545,7 @@ AWFLWIKIWORLD WIKIDATA is created by <strong>AEDTP WORLD</strong> and distribute
 <li>Questions and permission requests go to aedtpworld@gmail.com.</li>
 </ul>
 <p>Check https://aedtpworld.com for the current official terms.</p>
-<h2>17. See also</h2>
+<h2 id="17-see-also">17. See also</h2>
 <ul>
 <li><a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD">AWFLWIKIWORLD</a></li>
 <li><a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD/AWFLWIKITEXT">AWFLWIKIWORLD/AWFLWIKITEXT</a></li>
