@@ -1,0 +1,149 @@
+{
+    "tracks": [
+        {
+            "id": "trk_47cc6591f3",
+            "username": "djlexypaul",
+            "artistname": "Dj Lexy paul",
+            "title": "IMOLE",
+            "slug": "imole",
+            "featuring": "",
+            "genres": [
+                "Afrobeat"
+            ],
+            "album": "",
+            "label": "Dj Lexy paul Entertainment",
+            "artwork": "https://raw.githubusercontent.com/aedtpworldawfl/artworks/main/dj-lexy-paul-imole-1787675161-2553b5.jpg",
+            "artworkPath": "dj-lexy-paul-imole-1787675161-2553b5.jpg",
+            "artworkSha": "5315a4de9d5e6bc82ec30fa1fc0be016cc9c968e",
+            "artworkRepo": "artworks",
+            "link": "https://raw.githubusercontent.com/aedtpworldawfl/music/main/dj-lexy-paul-imole-1787675158-14e330.mp3",
+            "linkPath": "dj-lexy-paul-imole-1787675158-14e330.mp3",
+            "linkSha": "317905e7316cf11564701e1e85d215305bf0feb1",
+            "linkRepo": "music",
+            "plays": 2,
+            "downloads": 0,
+            "uploadedAt": "2026-08-25T16:26:03+00:00"
+        },
+        {
+            "id": "trk_d208d1acc4",
+            "username": "djlexypaul",
+            "artistname": "Dj Lexy paul",
+            "title": "Pain",
+            "slug": "pain",
+            "featuring": "",
+            "genres": [
+                "Hip Hop",
+                "Afrobeat"
+            ],
+            "album": "TWIC (Tha Weight I Carried)",
+            "label": "Lexy paul Music Entertainment",
+            "artwork": "https://raw.githubusercontent.com/aedtpworldawfl/artworks/main/dj-lexy-paul-pain-1793809640-66a68e.jpg",
+            "artworkPath": "dj-lexy-paul-pain-1793809640-66a68e.jpg",
+            "artworkSha": "df36a7f6429584bfadfe10e6172dfa8393d91696",
+            "artworkRepo": "artworks",
+            "link": "https://raw.githubusercontent.com/aedtpworldawfl/music/main/dj-lexy-paul-pain-1793809637-274910.mp3",
+            "linkPath": "dj-lexy-paul-pain-1793809637-274910.mp3",
+            "linkSha": "0f34c44bef419aba7c8983c37aca291db80dfbb8",
+            "linkRepo": "music",
+            "plays": 0,
+            "downloads": 0,
+            "uploadedAt": "2026-11-04T16:27:23+00:00"
+        },
+        {
+            "id": "trk_5b9ab17826",
+            "username": "djlexypaul",
+            "artistname": "Dj Lexy paul",
+            "title": "Man Don See",
+            "slug": "man-don-see",
+            "featuring": "",
+            "genres": [
+                "R&B"
+            ],
+            "album": "TWIC (The Weight I Carried)",
+            "label": "Lexy paul Music Entertainment",
+            "artwork": "https://raw.githubusercontent.com/aedtpworldawfl/artworks/main/dj-lexy-paul-man-don-see-1793810131-4abb9c.jpg",
+            "artworkPath": "dj-lexy-paul-man-don-see-1793810131-4abb9c.jpg",
+            "artworkSha": "df36a7f6429584bfadfe10e6172dfa8393d91696",
+            "artworkRepo": "artworks",
+            "link": "https://raw.githubusercontent.com/aedtpworldawfl/music/main/dj-lexy-paul-man-don-see-1793810128-740b71.mp3",
+            "linkPath": "dj-lexy-paul-man-don-see-1793810128-740b71.mp3",
+            "linkSha": "1b8786666245d3344d20aefafbd574108b19d384",
+            "linkRepo": "music",
+            "plays": 0,
+            "downloads": 0,
+            "uploadedAt": "2026-11-04T16:35:33+00:00"
+        },
+        {
+            "id": "trk_44190e75dc",
+            "username": "djlexypaul",
+            "artistname": "Dj Lexy paul",
+            "title": "Grace",
+            "slug": "grace",
+            "featuring": "",
+            "genres": [
+                "Afrobeat"
+            ],
+            "album": "TWIC (The Weight I Carried)",
+            "label": "Lexy paul Music Entertainment",
+            "artwork": "https://raw.githubusercontent.com/aedtpworldawfl/artworks/main/dj-lexy-paul-grace-1793810181-969bfb.jpg",
+            "artworkPath": "dj-lexy-paul-grace-1793810181-969bfb.jpg",
+            "artworkSha": "df36a7f6429584bfadfe10e6172dfa8393d91696",
+            "artworkRepo": "artworks",
+            "link": "https://raw.githubusercontent.com/aedtpworldawfl/music/main/dj-lexy-paul-grace-1793810178-d1d4a8.mp3",
+            "linkPath": "dj-lexy-paul-grace-1793810178-d1d4a8.mp3",
+            "linkSha": "e72dcd9f1f7b5903876b968fc90bc9583382a80d",
+            "linkRepo": "music",
+            "plays": 1,
+            "downloads": 0,
+            "uploadedAt": "2026-11-04T16:36:24+00:00"
+        },
+        {
+            "id": "trk_bad5b7d698",
+            "username": "djlexypaul",
+            "artistname": "Dj Lexy paul",
+            "title": "Alubarika",
+            "slug": "alubarika",
+            "featuring": "",
+            "genres": [
+                "Afrobeat"
+            ],
+            "album": "TWIC (The Weight I Carried)",
+            "label": "Lexy paul Music Entertainment",
+            "artwork": "https://raw.githubusercontent.com/aedtpworldawfl/artworks/main/dj-lexy-paul-alubarika-1793810301-3d409b.jpg",
+            "artworkPath": "dj-lexy-paul-alubarika-1793810301-3d409b.jpg",
+            "artworkSha": "df36a7f6429584bfadfe10e6172dfa8393d91696",
+            "artworkRepo": "artworks",
+            "link": "https://raw.githubusercontent.com/aedtpworldawfl/music/main/dj-lexy-paul-alubarika-1793810298-2f8952.mp3",
+            "linkPath": "dj-lexy-paul-alubarika-1793810298-2f8952.mp3",
+            "linkSha": "019341ee6650c80b96a81fa1c2d085a4f70d790f",
+            "linkRepo": "music",
+            "plays": 1,
+            "downloads": 0,
+            "uploadedAt": "2026-11-04T16:38:24+00:00"
+        },
+        {
+            "id": "trk_ad2052e5e6",
+            "username": "djlexypaul",
+            "artistname": "Dj Lexy paul",
+            "title": "TWIC (The Weight I Carried)",
+            "slug": "twic-the-weight-i-carried",
+            "featuring": "",
+            "genres": [
+                "R&B"
+            ],
+            "album": "TWIC (The Weight I Carried)",
+            "label": "Lexy paul Music Entertainment",
+            "artwork": "https://raw.githubusercontent.com/aedtpworldawfl/artworks/main/dj-lexy-paul-twic-the-weight-i-carried-1793810457-992b65.jpg",
+            "artworkPath": "dj-lexy-paul-twic-the-weight-i-carried-1793810457-992b65.jpg",
+            "artworkSha": "df36a7f6429584bfadfe10e6172dfa8393d91696",
+            "artworkRepo": "artworks",
+            "link": "https://raw.githubusercontent.com/aedtpworldawfl/music/main/dj-lexy-paul-twic-the-weight-i-carried-1793810455-c8de6c.mp3",
+            "linkPath": "dj-lexy-paul-twic-the-weight-i-carried-1793810455-c8de6c.mp3",
+            "linkSha": "554bd84525c68e2c4d4a67877ec4fbbd05514750",
+            "linkRepo": "music",
+            "plays": 1,
+            "downloads": 0,
+            "uploadedAt": "2026-11-04T16:41:06+00:00"
+        }
+    ]
+}

@@ -30,12 +30,15 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aedtpworld.com/music/alterrproductions/">
 <meta property="og:site_name" content="Blue Melody">
-<meta property="og:image" content="https://aedtpworld.com/icons/bluemelody.png">
+<meta property="og:image" content="https://aedtpworld.com/logo/bluemelody.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ALTERR PRODUCTIONS — Blue Melody on AEDTP WORLD - Music player for everyone. Global Music Discovery, Distribution, Sharing And Streaming .. BMAWFL BLUEMELODYBMAWFL">
 <meta name="twitter:description" content="ALTERR PRODUCTIONS Official | Blue Melody on AEDTP WORLD - Music player for everyone. Global Music Discovery, Distribution, Sharing And Streaming system by AEDTP WORLD.">
-<meta name="twitter:image" content="https://aedtpworld.com/icons/bluemelody.png">
-<link rel="icon" href="https://aedtpworld.com/icons/bluemelody.png" type="image/png">
+<meta name="twitter:image" content="https://aedtpworld.com/logo/bluemelody.png">
+<link rel="image_src" href="https://aedtpworld.com/logo/bluemelody.png">
+<link rel="icon" href="https://aedtpworld.com/logo/bluemelody.png" type="image/png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/logo/bluemelody.png">
+<link rel="stylesheet" href="https://aedtpworld.com/music/assets/style.css?v=1793583487">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 body{background:#f8f5f0;color:#0f172a}
@@ -67,13 +70,14 @@ a{color:inherit;text-decoration:none}
 .viewlink{display:inline-block;margin-top:6px;background:#1d4ed8;color:#fff;padding:9px 20px;border-radius:50px;font-weight:700;font-size:.85rem}
 footer{text-align:center;padding:30px;color:#94a3b8;font-size:.78rem}
 .action-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.bm-badge-wrap{display:inline-flex;align-items:center;gap:2px;margin-left:5px;vertical-align:middle}.bm-badge-plus{font-size:.62rem;font-weight:800;color:#1d4ed8;background:#dbeafe;padding:1px 5px;border-radius:8px;line-height:1.4}
+.bm-badge-wrap{display:inline-flex;align-items:center;gap:2px;margin-left:5px;vertical-align:middle}.bm-badge-plus{font-size:.62rem;font-weight:800;color:#1d4ed8;background:#dbeafe;padding:1px 5px;border-radius:8px;line-height:1.4}.bm-rank{display:inline-flex;align-items:center;gap:1px;font-size:.95em;line-height:1;cursor:default}.bm-rank-plus{font-size:.62rem;font-weight:800;color:#1d4ed8;line-height:1}
 .bm-user-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}.bm-user-card{background:#fff;border-radius:12px;padding:14px 8px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06);display:block}.bm-user-pic{width:56px;height:56px;border-radius:50%;margin:0 auto 8px;background:linear-gradient(135deg,#2563eb,#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;overflow:hidden}.bm-user-pic img{width:100%;height:100%;object-fit:cover}.bm-user-name{font-weight:700;font-size:.8rem;color:#0f1f4a}.bm-user-handle{font-size:.68rem;color:#64748b;margin-top:2px}.bm-empty{color:#94a3b8;font-size:.8rem;grid-column:1/-1}.share-btn{background:#e2e8f0;color:#334155;border:none;padding:10px 22px;border-radius:50px;font-weight:700;cursor:pointer;font-size:.85rem}
 </style>
+<link rel="stylesheet" id="bm-skin" href="https://aedtpworld.com/music/skins/defaultskin.css?v=1793583488">
 </head>
-<body>
+<body class="bm-public">
 <div class="topbar">
-  <a class="brand" href="https://aedtpworld.com/music"><img src="https://aedtpworld.com/icons/bluemelody.png" onerror="this.style.display='none'">Blue Melody</a>
+  <a class="brand" href="https://aedtpworld.com/music"><img src="https://aedtpworld.com/logo/bluemelody.png" onerror="this.style.display='none'">Blue Melody</a>
   <a class="btn" href="https://aedtpworld.com/music">Home</a>
 </div>
 <div class="cover" style="background:linear-gradient(135deg,#1a2f6b,#7c3aed)"></div>
@@ -83,7 +87,7 @@ footer{text-align:center;padding:30px;color:#94a3b8;font-size:.78rem}
   <div class="user">@alterrproductions · KENYA</div>
   <div class="stats">
     <div><div class="n">0</div><div class="l">Tracks</div></div>
-    <div><div class="n" id="followerCount">0</div><div class="l">Followers</div></div>
+    <div><div class="n" id="followerCount">1</div><div class="l">Followers</div></div>
     <div><div class="n">0</div><div class="l">Following</div></div>
     <div><div class="n">0</div><div class="l">Plays</div></div>
     <div><div class="n">0</div><div class="l">Downloads</div></div>
@@ -95,11 +99,12 @@ footer{text-align:center;padding:30px;color:#94a3b8;font-size:.78rem}
   
   <div class="meta-row"><span>AFRO</span><span>alterrproductions</span></div>
   <div class="socials"></div>
+  
   <a class="viewlink" href="./music/">🎵 View Music Library</a>
 </div>
 <div class="section">
-  <h2>Followers (0)</h2>
-  <div class="bm-user-grid"><p class="bm-empty">No followers yet.</p></div>
+  <h2>Followers (1)</h2>
+  <div class="bm-user-grid"><a class="bm-user-card" href="https://aedtpworld.com/music/aedtpworld/"><div class="bm-user-pic"><img src="/icons/aedtpworld.jpg" alt="AEDTP WORLD" loading="lazy"></div><div class="bm-user-name">AEDTP WORLD<span class="bm-badge-wrap"><img class="bm-badge" src="https://aedtpworld.com/verifiedbadges/blue.png" alt="Verified" title="Verified" loading="lazy" style="width:13px;height:13px;min-width:13px;vertical-align:middle;object-fit:contain;display:inline-block"></span></div><div class="bm-user-handle">@aedtpworld</div></a></div>
 </div>
 <div class="section">
   <h2>Following (0)</h2>
@@ -141,5 +146,8 @@ function bmShareProfile(){
   }
 }
 </script>
+<!-- AEDTP_TRACKER_START -->
+<img src="https://aedtpworld.com/stats/stats.php?track=1&page=music/alterrproductions/index.html" style="display:none" alt="" width="1" height="1">
+<!-- AEDTP_TRACKER_END -->
 </body>
 </html>

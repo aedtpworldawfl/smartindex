@@ -4,15 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AWFLWIKIWORLD — AWFLWIKIWORLD — AWFLWIKIWORLD</title>
-<meta name="description" content="AWFLWIKIWORLD is a self-contained, MediaWiki-style wiki engine built in plain PHP. It stores every page as a plain text file, every user as a JSON record, and e...">
+<meta name="description" content="AWFLWIKIWORLD is a self-contained, MediaWiki-style wiki engine built in plain PHP. It stores every page as a plain text file, every user as a JSON record">
+<meta name="keywords" content="AWFLWIKIWORLD, Wiki engine, AEDTP WORLD, AEDTP WORLD FREE LICENSE, AWFL, AWFLWIKIWORLD, WIKI, Discover And Connect">
 <meta name="author" content="AEDTP WORLD">
+<meta name="copyright" content="© AEDTP WORLD">
 <meta name="license" content="AEDTP WORLD FREE LICENSE (AWFL)">
+<meta name="robots" content="index, follow">
+<meta name="application-name" content="AWFLWIKIWORLD">
+<meta name="theme-color" content="#056DC2">
+<meta name="follow.it-verification-code" content="M3JMVuBRN9gJEnAZEJCB">
 <link rel="canonical" href="https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/AWFLWIKIWORLD">
-<meta property="og:title" content="AWFLWIKIWORLD">
-<meta property="og:description" content="AWFLWIKIWORLD is a self-contained, MediaWiki-style wiki engine built in plain PHP. It stores every page as a plain text file, every user as a JSON record, and e...">
+<meta property="og:title" content="AWFLWIKIWORLD — AWFLWIKIWORLD — AWFLWIKIWORLD">
+<meta property="og:description" content="AWFLWIKIWORLD is a self-contained, MediaWiki-style wiki engine built in plain PHP. It stores every page as a plain text file, every user as a JSON record">
+<meta property="og:type" content="article">
 <meta property="og:url" content="https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/AWFLWIKIWORLD">
-<meta property="og:image" content="https://aedtpworld.com/icons/aedtpworld.png">
+<meta property="og:image" content="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
+<meta property="og:site_name" content="AWFLWIKIWORLD">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AWFLWIKIWORLD — AWFLWIKIWORLD — AWFLWIKIWORLD">
+<meta name="twitter:description" content="AWFLWIKIWORLD is a self-contained, MediaWiki-style wiki engine built in plain PHP. It stores every page as a plain text file, every user as a JSON record">
+<meta name="twitter:image" content="https://aedtpworld.com/wikiworld/logo/aedtpworld.svg">
 <link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+<script type="application/ld+json" id="awfl-jsonld-page-awflwikiworld-awflwikiworld">
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/AWFLWIKIWORLD#softwareapplication",
+    "name": "AWFLWIKIWORLD",
+    "description": "AWFLWIKIWORLD is a self-contained, MediaWiki-style wiki engine built in plain PHP. It stores every page as a plain text file, every user as a JSON record",
+    "image": "https://aedtpworld.com/wikiworld/logo/aedtpworld.svg",
+    "url": "https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/AWFLWIKIWORLD",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/AWFLWIKIWORLD"
+    },
+    "inLanguage": "en",
+    "isPartOf": {
+        "@id": "https://aedtpworld.com/wikiworld/#website"
+    },
+    "applicationCategory": "Wiki engine",
+    "author": {
+        "@type": "Organization",
+        "name": "AEDTP WORLD"
+    }
+}
+</script>
+<script type="application/ld+json" id="awfl-jsonld-breadcrumb-awflwikiworld-awflwikiworld">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "AWFLWIKIWORLD",
+            "item": "https://aedtpworld.com/wikiworld/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AWFLWIKIWORLD",
+            "item": "https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/AWFLWIKIWORLD"
+        }
+    ]
+}
+</script>
 <link rel="stylesheet" href="https://aedtpworld.com/wikiworld/assets/site.css">
 <link rel="stylesheet" href="https://aedtpworld.com/wikiworld/skins/vector2022.css">
 <style>.awfl-converted{max-width:1100px;margin:0 auto;padding:16px}.awfl-converted .awfl-article:after{content:"";display:block;clear:both}.awfl-converted img{max-width:100%}.awfl-categories{margin-top:24px;padding-top:10px;border-top:1px solid #a2a9b1;font-size:.9em}</style>
@@ -31,93 +89,85 @@
 <h2 id="what-is-awflwikiworld">What is AWFLWIKIWORLD</h2>
 <p>AWFLWIKIWORLD is a wiki platform: a website anyone (or anyone you allow) can read, and that logged-in users can create and edit pages on, using a simplified text markup called <strong>AWFLWIKITEXT</strong>. Pages are organized under a root namespace or grouped into named <em>spaces</em> (for example, a space called <em>Music</em> could hold a page <em>Music/Buddy DML</em>). Every page can carry an <strong>infobox</strong> — a small fact-table, the same idea as the boxes you see in the top-right corner of Wikipedia articles.</p>
 <p>Unlike most wiki software, AWFLWIKIWORLD keeps everything in ordinary files:</p>
-<ul>
-<li>Each wiki page is one <em>.txt</em> file containing raw AWFLWIKITEXT.</li>
-<li>Each user is one JSON record in <em>users/users.json</em>.</li>
-<li>Each visual theme is one <em>.css</em> file in <em>skins/</em>.</li>
-<li>Uploaded pictures are plain <em>.jpg</em>/<em>.png</em> files in <em>images/</em>.</li>
-</ul>
+<ul><li>Each wiki page is one <em>.txt</em> file containing raw AWFLWIKITEXT.
+</li><li>Each user is one JSON record in <em>users/users.json</em>.
+</li><li>Each visual theme is one <em>.css</em> file in <em>skins/</em>.
+</li><li>Uploaded pictures are plain <em>.jpg</em>/<em>.png</em> files in <em>images/</em>.
+</li></ul>
 <p>This makes the whole wiki easy to back up (copy the folder), easy to inspect (open any file in a text editor), and easy to move between a local computer and a live server.</p>
 <h2 id="why-awflwikiworld">Why AWFLWIKIWORLD</h2>
 <p>AWFLWIKIWORLD was built for people who want a Wikipedia-like knowledge base without running a database server, without installing a heavyweight CMS, and without losing control of their own content. Because every page is a plain text file:</p>
 <blockquote>
 If you can read a text file, you can read the entire wiki. If you can write one, you can back it up, move it, or fix it by hand.
 </blockquote>
-<ul>
-<li>You can read or edit the raw content outside the wiki, with any text editor.</li>
-<li>You can move the wiki by copying a folder — no database export/import.</li>
-<li>You can inspect exactly what the system stores, since nothing is hidden inside binary tables.</li>
-<li>You still get the features people expect from a real wiki: accounts, page history for admin edits, protected pages, image galleries, sitemaps, and a skins system.</li>
-</ul>
+<ul><li>You can read or edit the raw content outside the wiki, with any text editor.
+</li><li>You can move the wiki by copying a folder — no database export/import.
+</li><li>You can inspect exactly what the system stores, since nothing is hidden inside binary tables.
+</li><li>You still get the features people expect from a real wiki: accounts, page history for admin edits, protected pages, image galleries, sitemaps, and a skins system.
+</li></ul>
 <h2 id="how-it-is-built-architecture">How it is Built (Architecture)</h2>
 <p>The engine is a small number of PHP scripts working together:</p>
-<ul>
-<li><strong>config.php</strong> — the single file every other script reads. It defines the site name, the site&#039;s own URL (<em>$Server</em>), the admin login, upload rules, and the URL style.</li>
-<li><strong>includes/functions.php</strong> — the engine room: user accounts, page storage, the AWFLWIKITEXT parser, image handling, and URL building all live here.</li>
-<li><strong>includes/header.php</strong> and <strong>includes/footer.php</strong> — the shared page frame (navigation bar, meta tags, footer) that every page includes.</li>
-<li><strong>index.php</strong> — the main controller. Almost every page you visit — viewing an article, logging in, editing, saving, downloading — passes through this one file. It also serves the built-in Special pages, such as <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3ASearch">Special:Search</a> and <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AMissing">Special:Missing</a>.</li>
-<li><strong>dashboard/index.php</strong> — the admin control panel.</li>
-<li><strong>allusers/index.php</strong> and <strong>allimages/index.php</strong> — public directories of accounts and uploaded pictures.</li>
-<li><strong>sitemap/sitemap.php</strong> — builds the search-engine sitemap.</li>
-</ul>
+<ul><li><strong>config.php</strong> — the single file every other script reads. It defines the site name, the site&#039;s own URL (<em>$Server</em>), the admin login, upload rules, and the URL style.
+</li><li><strong>includes/functions.php</strong> — the engine room: user accounts, page storage, the AWFLWIKITEXT parser, image handling, and URL building all live here.
+</li><li><strong>includes/header.php</strong> and <strong>includes/footer.php</strong> — the shared page frame (navigation bar, meta tags, footer) that every page includes.
+</li><li><strong>index.php</strong> — the main controller. Almost every page you visit — viewing an article, logging in, editing, saving, downloading — passes through this one file. It also serves the built-in Special pages, such as <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3ASearch">Special:Search</a> and <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AMissing">Special:Missing</a>.
+</li><li><strong>dashboard/index.php</strong> — the admin control panel.
+</li><li><strong>allusers/index.php</strong> and <strong>allimages/index.php</strong> — public directories of accounts and uploaded pictures.
+</li><li><strong>sitemap/sitemap.php</strong> — builds the search-engine sitemap.
+</li></ul>
 <h2 id="file-structure">File Structure</h2>
-<ul>
-<li><em>index.php</em> — the interface every visitor loads.</li>
-<li><em>config.php</em> — site settings (see below).</li>
-<li><em>.htaccess</em> — hides raw data files (.txt, .json) from being downloaded directly, and enables pretty URLs.</li>
-<li><em>includes/header.php</em>, <em>includes/footer.php</em>, <em>includes/functions.php</em> — shared page frame and engine code.</li>
-<li><em>users/users.json</em> — every registered account (hashed passwords only).</li>
-<li><em>users/recover.php</em> — the &quot;forgot password&quot; page.</li>
-<li><em>assets/site.css</em>, <em>assets/site.js</em>, <em>assets/search.js</em> — the default look, the editor toolbar script, and the header search-box dropdown script. These never change; skins layer on top of them.</li>
-<li><em>skins/vector2022.css</em> — the default skin. More skins can be added here.</li>
-<li><em>images/</em> — uploaded <em>.jpg</em>/<em>.png</em> files. <em>images/trash/</em> holds images an admin has deleted but not yet permanently removed.</li>
-<li><em>allusers/index.php</em> — public list of accounts.</li>
-<li><em>allimages/index.php</em> — public gallery of uploaded images.</li>
-<li><em>namespaces/{pagename}.txt</em> — a root-level article.</li>
-<li><em>namespaces/{space name}/{pagename}.txt</em> — an article inside a named space.</li>
-<li><em><img src="https://aedtpworld.com/wikiworld/images/logo/aedtpworld.svg" style="width:250px !important;height:auto;" alt=""></em> — the default logo, used whenever <em>$Logo</em> is not overridden.</li>
-<li><em>dashboard/index.php</em> — the admin panel (skins, colors, pages, images).</li>
-<li><em>dashboard/history.json</em>, <em>dashboard/history.php</em> — the admin&#039;s own edit history.</li>
-<li><em>dashboard/protected.json</em> — the list of protected page titles.</li>
-<li><em>sitemap/sitemap.xml</em>, <em>sitemap/sitemap.php</em> — the generated sitemap and the script that builds it.</li>
-</ul>
+<ul><li><em>index.php</em> — the interface every visitor loads.
+</li><li><em>config.php</em> — site settings (see below).
+</li><li><em>.htaccess</em> — hides raw data files (.txt, .json) from being downloaded directly, and enables pretty URLs.
+</li><li><em>includes/header.php</em>, <em>includes/footer.php</em>, <em>includes/functions.php</em> — shared page frame and engine code.
+</li><li><em>users/users.json</em> — every registered account (hashed passwords only).
+</li><li><em>users/recover.php</em> — the &quot;forgot password&quot; page.
+</li><li><em>assets/site.css</em>, <em>assets/site.js</em>, <em>assets/sortable.js</em>, <em>assets/search.js</em> — the default look, the editor toolbar script, the click-to-sort script for sortable tables, and the header search-box dropdown script. These never change; skins layer on top of them.
+</li><li><em>skins/vector2022.css</em> — the default skin. More skins can be added here.
+</li><li><em>images/</em> — uploaded <em>.jpg</em>/<em>.png</em> files. <em>images/trash/</em> holds images an admin has deleted but not yet permanently removed.
+</li><li><em>allusers/index.php</em> — public list of accounts.
+</li><li><em>allimages/index.php</em> — public gallery of uploaded images.
+</li><li><em>namespaces/{pagename}.txt</em> — a root-level article.
+</li><li><em>namespaces/{space name}/{pagename}.txt</em> — an article inside a named space.
+</li><li><em><img src="https://aedtpworld.com/wikiworld/images/logo/aedtpworld.svg" style="width:250px !important;height:auto;" alt=""></em> — the default logo, used whenever <em>$Logo</em> is not overridden.
+</li><li><em>dashboard/index.php</em> — the admin panel (skins, colors, pages, images).
+</li><li><em>dashboard/history.json</em>, <em>dashboard/history.php</em> — the admin&#039;s own edit history.
+</li><li><em>dashboard/protected.json</em> — the list of protected page titles.
+</li><li><em>sitemap/sitemap.xml</em>, <em>sitemap/sitemap.php</em> — the generated sitemap and the script that builds it.
+</li></ul>
 <h2 id="getting-started-installation">Getting Started (Installation)</h2>
-<ol>
-<li>Copy the whole <em>wikiworld</em> folder onto your PHP 8.3 server, or into any folder you will run with PHP&#039;s built-in server for local testing.</li>
-<li>Open <em>config.php</em> in a text editor — this is the <u>only</u> file you need to touch by hand to get a working wiki.</li>
-<li>Set <strong>$Server</strong> to the exact base URL you will use to reach the wiki, for example:</li>
-</ol>
+<ol><li>Copy the whole <em>wikiworld</em> folder onto your PHP 8.3 server, or into any folder you will run with PHP&#039;s built-in server for local testing.
+</li><li>Open <em>config.php</em> in a text editor — this is the <u>only</u> file you need to touch by hand to get a working wiki.
+</li><li>Set <strong>$Server</strong> to the exact base URL you will use to reach the wiki, for example:
+</li></ol>
 <pre><code>$Server = &quot;https://example.com/wiki&quot;;
 // or, for local testing:
 $Server = &quot;http://localhost:8099&quot;;</code></pre>
 <p>This is not auto-detected; you must type it in, because auto-detection breaks on real hosting (reverse proxies, subfolders, and admin/sitemap pages living in subdirectories would each guess a different, wrong URL).</p>
 <p><mark>Set $Server to its real, final address before you invite anyone else to the wiki — every link, download, and image on the site is built from this one value.</mark></p>
-<ol>
-<li>Set <strong>$Sitename</strong>, <strong>$MetaTitle</strong> and <strong>$MetaDescription</strong> to describe your wiki.</li>
-<li>Set <strong>$Username</strong> and <strong>$Password</strong> to your admin login. For $Password, paste a password hash (made in Dashboard → Security) in single quotes; a plain-text password also works but is not recommended.</li>
-<li>Choose an <strong>$route</strong> mode (explained below).</li>
-<li>Visit <em>$Server/index.php</em> in a browser. You should see the built-in Main Page.</li>
-</ol>
+<ol><li>Set <strong>$Sitename</strong>, <strong>$MetaTitle</strong> and <strong>$MetaDescription</strong> to describe your wiki.
+</li><li>Set <strong>$Username</strong> and <strong>$Password</strong> to your admin login. For $Password, paste a password hash (made in Dashboard → Security) in single quotes; a plain-text password also works but is not recommended.
+</li><li>Choose an <strong>$route</strong> mode (explained below).
+</li><li>Visit <em>$Server/index.php</em> in a browser. You should see the built-in Main Page.
+</li></ol>
 <p>If you see a message saying the wiki &quot;is not configured yet,&quot; it means <em>$Server</em> is still blank in <em>config.php</em> — fill it in and reload.</p>
 <h3 id="the-route-modes">The $route modes</h3>
 <p><em>$route</em> controls the shape of every page&#039;s URL:</p>
-<ul>
-<li><strong>&quot;0&quot;</strong> — <em>{$Server}/index.php?title=Pagename</em> (and <em>?title=Space/Pagename</em>). Works everywhere, no server configuration needed. This is the default.</li>
-<li><strong>&quot;1&quot;</strong> — <em>{$Server}/Pagename</em> (and <em>{$Server}/Space/Pagename</em>). Pretty URLs. Requires the supplied <em>.htaccess</em> and an Apache server with <em>mod_rewrite</em> and <em>AllowOverride All</em>.</li>
-<li><strong>&quot;2&quot;</strong> — <em>{$Server}/namespaces/Pagename</em>. Looks like a direct link into the <em>namespaces/</em> folder, but is still served by <em>index.php</em> — the <em>.htaccess</em> rules stop anyone from downloading the raw <em>.txt</em> file directly.</li>
-</ul>
+<ul><li><strong>&quot;0&quot;</strong> — <em>{$Server}/index.php?title=Pagename</em> (and <em>?title=Space/Pagename</em>). Works everywhere, no server configuration needed. This is the default.
+</li><li><strong>&quot;1&quot;</strong> — <em>{$Server}/Pagename</em> (and <em>{$Server}/Space/Pagename</em>). Pretty URLs. Requires the supplied <em>.htaccess</em> and an Apache server with <em>mod_rewrite</em> and <em>AllowOverride All</em>.
+</li><li><strong>&quot;2&quot;</strong> — <em>{$Server}/namespaces/Pagename</em>. Looks like a direct link into the <em>namespaces/</em> folder, but is still served by <em>index.php</em> — the <em>.htaccess</em> rules stop anyone from downloading the raw <em>.txt</em> file directly.
+</li></ul>
 <h2 id="using-awflwikiworld-as-a-visitor-not-logged-in">Using AWFLWIKIWORLD as a Visitor (not logged in)</h2>
 <p>Anyone can:</p>
-<ul>
-<li>Read any page.</li>
-<li>Use the search box in the header: type, and a dropdown offers up to five matching pages, each with its first image — click one to open it. Press Enter to jump straight to a title, or use <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3ASearch">Special:Search</a> for full results.</li>
-<li>Browse <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AAllPages">Special:AllPages</a> to see every page that exists.</li>
-<li>Browse <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AMissing">Special:Missing</a> to see every page that is linked to but doesn&#039;t exist yet.</li>
-<li>Browse the image gallery at <em>allimages/index.php</em> — see every uploaded picture, in a 7-column grid or a sortable detail table, and use the <strong>Copy link</strong> / <strong>Copy name</strong> buttons on any image.</li>
-<li>Browse the account directory at <em>allusers/index.php</em>.</li>
-<li>Download any page as a <strong>.txt</strong> file (the raw AWFLWIKITEXT) or as a self-contained <strong>.html</strong> file (styled the same as the live page, so it looks right even opened offline).</li>
-<li>Print any page (which also lets you &quot;print to PDF&quot; from the browser&#039;s print dialog).</li>
-</ul>
+<ul><li>Read any page.
+</li><li>Use the search box in the header: type, and a dropdown offers up to five matching pages, each with its first image — click one to open it. Press Enter to jump straight to a title, or use <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3ASearch">Special:Search</a> for full results.
+</li><li>Browse <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AAllPages">Special:AllPages</a> to see every page that exists.
+</li><li>Browse <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AMissing">Special:Missing</a> to see every page that is linked to but doesn&#039;t exist yet.
+</li><li>Browse the image gallery at <em>allimages/index.php</em> — see every uploaded picture, in a 7-column grid or a sortable detail table, and use the <strong>Copy link</strong> / <strong>Copy name</strong> buttons on any image.
+</li><li>Browse the account directory at <em>allusers/index.php</em>.
+</li><li>Download any page as a <strong>.txt</strong> file (the raw AWFLWIKITEXT) or as a self-contained <strong>.html</strong> file (styled the same as the live page, so it looks right even opened offline).
+</li><li>Print any page (which also lets you &quot;print to PDF&quot; from the browser&#039;s print dialog).
+</li></ul>
 <p>Visitors cannot create pages, edit pages, or upload images — those require an account.</p>
 <h2 id="using-awflwikiworld-as-a-registered-user">Using AWFLWIKIWORLD as a Registered User</h2>
 <h3 id="creating-an-account">Creating an account</h3>
@@ -126,37 +176,37 @@ $Server = &quot;http://localhost:8099&quot;;</code></pre>
 <p>Open <em>users/recover.php</em>. Enter your username and the email you registered with, then answer your security question, and you can set a brand-new password — no email link required. The site never says whether a username exists: unless the username and email both match, you are shown a placeholder question instead of yours, and every wrong answer gets the same message. After 5 failed tries from the same address for the same username, recovery is locked for 15 minutes. An account registered without an email cannot be recovered this way — ask the admin to set a new password. Passwords and security answers are never stored in plain text; only their hashes are kept, so recovery always works by re-checking your answer, never by revealing the old password.</p>
 <h3 id="creating-and-editing-pages">Creating and editing pages</h3>
 <p>To create a page, search for or navigate to its title and click <strong>Create</strong>. To edit an existing page, click <strong>Edit</strong>. Both open the same editor:</p>
-<ul>
-<li>A <strong>toolbar</strong> with <strong>B</strong> (bold), <strong>I</strong> (italic), <strong>U</strong> (underline), <strong>P</strong> (paragraph break), <strong>List</strong> (bulleted list), <strong>Infobox</strong> (inserts a ready-made infobox template), <strong>Cite</strong> (inserts a footnote) and <strong>References</strong> (adds the section that lists the footnotes) — each wraps or inserts AWFLWIKITEXT around your current text selection.</li>
-<li>A <strong>source editor</strong>, the plain text box where the raw AWFLWIKITEXT lives.</li>
-<li>A <strong>visual editor (preview)</strong> tab, which sends your current text to the server and shows exactly how it will render, without saving anything yet.</li>
-</ul>
+<ul><li>A <strong>toolbar</strong> with <strong>B</strong> (bold), <strong>I</strong> (italic), <strong>U</strong> (underline), <strong>P</strong> (paragraph break), <strong>List</strong> (bulleted list), <strong>1. List</strong> (numbered list), the <strong>arrow buttons</strong> (indent or outdent a list item to nest it), <strong>Table</strong> (inserts a table), <strong>Infobox</strong> (inserts a ready-made infobox template), <strong>Cite</strong> (inserts a footnote) and <strong>References</strong> (adds the section that lists the footnotes) — each wraps or inserts AWFLWIKITEXT around your current text selection.
+</li><li>A <strong>source editor</strong>, the plain text box where the raw AWFLWIKITEXT lives.
+</li><li>A <strong>visual editor (preview)</strong> tab, which sends your current text to the server and shows exactly how it will render, without saving anything yet.
+</li></ul>
 <p>Click <strong>Save page</strong> to publish your changes immediately.</p>
 <p><strong>Note on protected pages:</strong> if an admin has protected a page, only an admin can edit it — the Edit link disappears (or is blocked server-side even if requested directly) for everyone else.</p>
 <h3 id="awflwikitext-the-markup-language">AWFLWIKITEXT — the markup language</h3>
 <p>AWFLWIKITEXT is a small, MediaWiki-inspired markup language. All of it can be typed by hand or inserted with the editor toolbar:</p>
-<ul>
-<li><strong>Bold</strong>: wrap text in three apostrophes, like <span class="awfl-nowiki">&#039;&#039;&#039;this&#039;&#039;&#039;</span>.</li>
-<li><em>Italic</em>: wrap text in two apostrophes, like <span class="awfl-nowiki">&#039;&#039;this&#039;&#039;</span>.</li>
-<li>Underline: wrap text in two underscores, like <span class="awfl-nowiki">__this__</span>.</li>
-<li>Headings: surround a line with one to six equals signs, like <span class="awfl-nowiki">= A Heading =</span> for level 1 or <span class="awfl-nowiki">== A Heading ==</span> for level 2 (more equals signs make progressively smaller headings, down to level 6).</li>
-<li>Bulleted list: start a line with an asterisk and a space, like <span class="awfl-nowiki">* An item</span>.</li>
-<li>Numbered list: start a line with a hash and a space, like <span class="awfl-nowiki"># An item</span>.</li>
-<li>Paragraphs: leave a blank line between blocks of text — each block becomes its own paragraph automatically.</li>
-<li>Internal link: <span class="awfl-nowiki">[[Page Name]]</span>, or <span class="awfl-nowiki">[[Page Name|words to display instead]]</span>. A link to a page that does not exist yet is still shown, in a different style, so you can click it to create that page.</li>
-<li>External link: <span class="awfl-nowiki">[http://example.com link text]</span>.</li>
-<li>Bare images: any line that is just an image filename or URL ending in <em>.jpg</em>, <em>.jpeg</em>, <em>.png</em>, <em>.gif</em>, <em>.svg</em> or <em>.webp</em> is automatically rendered as a picture, shown at 250 pixels wide.</li>
-<li>Strikethrough: wrap text in two tildes, like <span class="awfl-nowiki">~~this~~</span> — for example, a <del>retired</del> feature name.</li>
-<li>Inline code: wrap text in backticks, like <span class="awfl-nowiki">`this`</span> — for example, <code>config.php</code>.</li>
-<li>Superscript: wrap text in two carets, like <span class="awfl-nowiki">^^this^^</span> — for example, E=mc<sup>2</sup>.</li>
-<li>Subscript: wrap text in two commas, like <span class="awfl-nowiki">,,this,,</span> — for example, H<sub>2</sub>O.</li>
-<li>Highlight: wrap text in two percent signs, like <span class="awfl-nowiki">%%this%%</span> — for example, a <mark>highlighted</mark> note.</li>
-<li>Blockquote: start a line with <span class="awfl-nowiki">&gt; </span> — for example, a quoted line stands apart from the surrounding paragraph.</li>
-<li>Horizontal rule: a line of four or more dashes on its own, like <span class="awfl-nowiki">----</span>, draws a divider between sections.</li>
-<li>Code block: wrap one or more lines in triple curly braces, like <span class="awfl-nowiki">{{{ your code here }}}</span>, to show preformatted, monospaced text.</li>
-<li>Footnote: wrap a source or comment in a ref tag pair, like <span class="awfl-nowiki">&lt;ref&gt;Source text, or [https://example.com a link]&lt;/ref&gt;</span>, and it becomes a numbered note.<sup class="awfl-ref" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> Give a note a name to cite it again, and a <span class="awfl-nowiki">== References ==</span> section or a <span class="awfl-nowiki">&lt;references/&gt;</span> tag prints the list.</li>
-<li>Table of contents: any page with four or more headings gets a collapsible &quot;Contents&quot; box automatically, and every heading gets an anchor so it can be linked to directly. Put <span class="awfl-nowiki">__NOTOC__</span> anywhere on a page to leave the box out.</li>
-</ul>
+<ul><li><strong>Bold</strong>: wrap text in three apostrophes, like <span class="awfl-nowiki">&#039;&#039;&#039;this&#039;&#039;&#039;</span>.
+</li><li><em>Italic</em>: wrap text in two apostrophes, like <span class="awfl-nowiki">&#039;&#039;this&#039;&#039;</span>.
+</li><li>Underline: wrap text in two underscores, like <span class="awfl-nowiki">__this__</span>.
+</li><li>Headings: surround a line with one to six equals signs, like <span class="awfl-nowiki">= A Heading =</span> for level 1 or <span class="awfl-nowiki">== A Heading ==</span> for level 2 (more equals signs make progressively smaller headings, down to level 6).
+</li><li>Bulleted list: start a line with an asterisk and a space, like <span class="awfl-nowiki">* An item</span>.
+</li><li>Numbered list: start a line with a hash and a space, like <span class="awfl-nowiki"># An item</span>.
+</li><li>Nested list: repeat the marker to go one level deeper, like <span class="awfl-nowiki">** A sub-item</span> or <span class="awfl-nowiki">## A sub-step</span> (the two kinds can be mixed).
+</li><li>Table: open with <span class="awfl-nowiki">{|</span>, close with <span class="awfl-nowiki">|}</span>, start rows with <span class="awfl-nowiki">|-</span>, write header cells after <span class="awfl-nowiki">!</span> and ordinary cells after <span class="awfl-nowiki">|</span>, add a caption with <span class="awfl-nowiki">|+</span>, and make it click-to-sort with <span class="awfl-nowiki">{| class=&quot;sortable&quot;</span>.
+</li><li>Paragraphs: leave a blank line between blocks of text — each block becomes its own paragraph automatically.
+</li><li>Internal link: <span class="awfl-nowiki">[[Page Name]]</span>, or <span class="awfl-nowiki">[[Page Name|words to display instead]]</span>. A link to a page that does not exist yet is still shown, in a different style, so you can click it to create that page.
+</li><li>External link: <span class="awfl-nowiki">[http://example.com link text]</span>.
+</li><li>Bare images: any line that is just an image filename or URL ending in <em>.jpg</em>, <em>.jpeg</em>, <em>.png</em>, <em>.gif</em>, <em>.svg</em> or <em>.webp</em> is automatically rendered as a picture, shown at 250 pixels wide.
+</li><li>Strikethrough: wrap text in two tildes, like <span class="awfl-nowiki">~~this~~</span> — for example, a <del>retired</del> feature name.
+</li><li>Inline code: wrap text in backticks, like <span class="awfl-nowiki">`this`</span> — for example, <code>config.php</code>.
+</li><li>Superscript: wrap text in two carets, like <span class="awfl-nowiki">^^this^^</span> — for example, E=mc<sup>2</sup>.
+</li><li>Subscript: wrap text in two commas, like <span class="awfl-nowiki">,,this,,</span> — for example, H<sub>2</sub>O.
+</li><li>Highlight: wrap text in two percent signs, like <span class="awfl-nowiki">%%this%%</span> — for example, a <mark>highlighted</mark> note.
+</li><li>Blockquote: start a line with <span class="awfl-nowiki">&gt; </span> — for example, a quoted line stands apart from the surrounding paragraph.
+</li><li>Horizontal rule: a line of four or more dashes on its own, like <span class="awfl-nowiki">----</span>, draws a divider between sections.
+</li><li>Code block: wrap one or more lines in triple curly braces, like <span class="awfl-nowiki">{{{ your code here }}}</span>, to show preformatted, monospaced text.
+</li><li>Footnote: wrap a source or comment in a ref tag pair, like <span class="awfl-nowiki">&lt;ref&gt;Source text, or [https://example.com a link]&lt;/ref&gt;</span>, and it becomes a numbered note.<sup class="awfl-ref" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> Give a note a name to cite it again, and a <span class="awfl-nowiki">== References ==</span> section or a <span class="awfl-nowiki">&lt;references/&gt;</span> tag prints the list.
+</li><li>Table of contents: any page with four or more headings gets a collapsible &quot;Contents&quot; box automatically, and every heading gets an anchor so it can be linked to directly. Put <span class="awfl-nowiki">__NOTOC__</span> anywhere on a page to leave the box out.
+</li></ul>
 <p>This article uses every one of these formats at least once. For the full reference, with a worked example of each format side by side with its raw syntax, see <a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD/AWFLWIKITEXT">AWFLWIKITEXT</a>.</p>
 <h3 id="infoboxes">Infoboxes</h3>
 <p>An infobox is a small fact-table, usually shown floated at the top right of an article — exactly like the one at the top of this page. Write one like this:</p>
@@ -169,57 +219,51 @@ $Server = &quot;http://localhost:8099&quot;;</code></pre>
 |anything=you like|
 &lt;/infobox&gt;</span></p>
 <p>Rules:</p>
-<ul>
-<li><strong>title</strong>, <strong>image</strong> and <strong>caption</strong> are each allowed only <strong>once</strong> per infobox, and always appear in that fixed order — title first, then the image, then the caption underneath it — no matter where you typed them in the block.</li>
-<li>Every other line becomes its own row: the part before the equals sign is shown in <strong>bold</strong> as the row&#039;s label, and the part after it is the value. You can add as many of these as you like, and they appear in the exact order you wrote them.</li>
-<li><strong>image</strong> turns any filename or link ending in an image extension into a real picture, shown at 250 pixels wide.</li>
-<li><strong>caption</strong> is shown under the picture and used as its alt text.</li>
-<li>Outside of an infobox, ordinary images placed directly in the page text are also shown at 250 pixels wide by default.</li>
-</ul>
+<ul><li><strong>title</strong>, <strong>image</strong> and <strong>caption</strong> are each allowed only <strong>once</strong> per infobox, and always appear in that fixed order — title first, then the image, then the caption underneath it — no matter where you typed them in the block.
+</li><li>Every other line becomes its own row: the part before the equals sign is shown in <strong>bold</strong> as the row&#039;s label, and the part after it is the value. You can add as many of these as you like, and they appear in the exact order you wrote them.
+</li><li><strong>image</strong> turns any filename or link ending in an image extension into a real picture, shown at 250 pixels wide.
+</li><li><strong>caption</strong> is shown under the picture and used as its alt text.
+</li><li>Outside of an infobox, ordinary images placed directly in the page text are also shown at 250 pixels wide by default.
+</li></ul>
 <h3 id="uploading-images">Uploading images</h3>
 <p>If the admin has enabled uploads, any logged-in user can add a picture at <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AUpload">Special:Upload</a>. Only <strong>.jpg</strong> and <strong>.png</strong> files are accepted. Once uploaded, an image can be referenced in any page (bare, or inside an infobox) just by its filename, for example <em><img src="https://aedtpworld.com/wikiworld/images/mypicture.jpg" style="width:250px !important;height:auto;" alt=""></em>.</p>
 <h3 id="downloading-and-printing">Downloading and printing</h3>
 <p>Every page offers:</p>
-<ul>
-<li><strong>Download .txt</strong> — the raw AWFLWIKITEXT, exactly as stored.</li>
-<li><strong>Download .html</strong> — a single, self-contained HTML file with the page&#039;s styling embedded in it, so it looks right even with no internet connection.</li>
-<li><strong>Print / PDF</strong> — opens your browser&#039;s print dialog, which on most browsers can also &quot;print&quot; straight to a PDF file.</li>
-</ul>
+<ul><li><strong>Download .txt</strong> — the raw AWFLWIKITEXT, exactly as stored.
+</li><li><strong>Download .html</strong> — a single, self-contained HTML file with the page&#039;s styling embedded in it, so it looks right even with no internet connection.
+</li><li><strong>Print / PDF</strong> — opens your browser&#039;s print dialog, which on most browsers can also &quot;print&quot; straight to a PDF file.
+</li></ul>
 <h2 id="using-awflwikiworld-as-the-administrator">Using AWFLWIKIWORLD as the Administrator</h2>
 <p>Log in with the <strong>$Username</strong> / <strong>$Password</strong> set in <em>config.php</em>. The admin account is not a row in <em>users/users.json</em> — it is defined directly in the configuration file and always has full control.</p>
 <h3 id="the-dashboard">The Dashboard</h3>
 <p>Open the <strong>Dashboard</strong> link in the navigation bar (<em>dashboard/index.php</em>). It has five sections:</p>
-<ul>
-<li><strong>Skins</strong> — pick which skin is active site-wide, or create a brand-new skin by typing its CSS. The default <strong>vector2022</strong> skin can be selected but never edited or deleted; create a new skin instead if you want to change the look.</li>
-<li><strong>Colors</strong> — a small palette for the site&#039;s core colors (header background, header text, buttons, button text, wiki page text, and links). Pick a color visually or type a hex code directly; the change applies across the whole wiki immediately, on top of whichever skin is active.</li>
-<li><strong>Pages</strong> — a list of every page, with a delete button per page and a &quot;Delete all pages&quot; button. This is also where you can trigger the sitemap to regenerate on demand.</li>
-<li><strong>Images</strong> — every uploaded image, with a delete button per image.</li>
-<li><strong>Security</strong> — a checklist (admin password hashed, HTTPS, session cookie, login throttling, private-file rules) and a tool that turns the admin password you type into a hash to paste into <em>config.php</em>.</li>
-</ul>
+<ul><li><strong>Skins</strong> — pick which skin is active site-wide, or create a brand-new skin by typing its CSS. The default <strong>vector2022</strong> skin can be selected but never edited or deleted; create a new skin instead if you want to change the look.
+</li><li><strong>Colors</strong> — a small palette for the site&#039;s core colors (header background, header text, buttons, button text, wiki page text, and links). Pick a color visually or type a hex code directly; the change applies across the whole wiki immediately, on top of whichever skin is active.
+</li><li><strong>Pages</strong> — a list of every page, with a delete button per page and a &quot;Delete all pages&quot; button. This is also where you can trigger the sitemap to regenerate on demand.
+</li><li><strong>Images</strong> — every uploaded image, with a delete button per image.
+</li><li><strong>Security</strong> — a checklist (admin password hashed, HTTPS, session cookie, login throttling, private-file rules) and a tool that turns the admin password you type into a hash to paste into <em>config.php</em>.
+</li></ul>
 <h3 id="managing-users">Managing users</h3>
 <p>The <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AAllPages">All users</a> directory lists every account except the admin&#039;s own. Anyone can view it; only the admin sees extra controls per row to:</p>
-<ul>
-<li><strong>Rename</strong> a user&#039;s username.</li>
-<li><strong>Set</strong> a new password for a user directly — no need to know their old one, since passwords are stored hashed.</li>
-<li><strong>Remove</strong> a user entirely. Removing a user deletes their account record, but <strong>never</strong> deletes the pages or edits they made — those stay exactly as they are.</li>
-</ul>
+<ul><li><strong>Rename</strong> a user&#039;s username.
+</li><li><strong>Set</strong> a new password for a user directly — no need to know their old one, since passwords are stored hashed.
+</li><li><strong>Remove</strong> a user entirely. Removing a user deletes their account record, but <strong>never</strong> deletes the pages or edits they made — those stay exactly as they are.
+</li></ul>
 <p>The admin account can never remove itself. A regular user can remove their own account at any time (through the admin, since only the admin can perform removals) and, likewise, their past contributions are kept.</p>
 <h3 id="managing-images-all-images">Managing images (All Images)</h3>
 <p><em>allimages/index.php</em> is visible to everyone, but the admin sees more:</p>
-<ul>
-<li><strong>Content view</strong> — a seven-column grid of thumbnails, each with <strong>Copy link</strong> and <strong>Copy file name</strong> buttons.</li>
-<li><strong>Detail view</strong> — a sortable table (click any column heading to sort ascending or descending) showing file name, extension, size, and upload date. Everyone gets these four columns; the admin gets a fifth column of checkboxes.</li>
-<li>As admin, above the table you get <strong>Delete selected</strong> (moves the chosen images to <em>images/trash/</em> rather than erasing them outright), <strong>Restore selected</strong> (only shown while viewing the &quot;Deleted&quot; tab, moves images back out of the trash), and <strong>Rename selected</strong> (type a new name into the box next to each checked row, then click to apply).</li>
-</ul>
+<ul><li><strong>Content view</strong> — a seven-column grid of thumbnails, each with <strong>Copy link</strong> and <strong>Copy file name</strong> buttons.
+</li><li><strong>Detail view</strong> — a sortable table (click any column heading to sort ascending or descending) showing file name, extension, size, and upload date. Everyone gets these four columns; the admin gets a fifth column of checkboxes.
+</li><li>As admin, above the table you get <strong>Delete selected</strong> (moves the chosen images to <em>images/trash/</em> rather than erasing them outright), <strong>Restore selected</strong> (only shown while viewing the &quot;Deleted&quot; tab, moves images back out of the trash), and <strong>Rename selected</strong> (type a new name into the box next to each checked row, then click to apply).
+</li></ul>
 <h3 id="page-protection">Page protection</h3>
 <p>Every page has a <strong>Protect</strong> button, visible only to the admin. Protecting a page means only the admin can edit it from then on — anyone else who tries (even by submitting the edit form directly) is blocked with a clear message. Clicking <strong>Unprotect</strong> opens editing back up to every logged-in user. Only the admin can protect or unprotect a page.</p>
 <h3 id="admin-edit-history">Admin edit history</h3>
 <p>Every time the <strong>admin</strong> saves a page, AWFLWIKIWORLD quietly records that exact content in <em>dashboard/history.json</em> — the page&#039;s name, its filename, its space (if any), the date, and the full text. This history holds only the <strong>one latest</strong> admin edit for each page; saving the same page again simply updates that one record rather than creating a new one.</p>
 <p>Open <strong>History</strong> in the navigation bar (admin only) to see every recorded page, sortable by any column. Two actions are available, both requiring on-screen confirmation:</p>
-<ul>
-<li><strong>Delete selected</strong> — permanently removes the chosen history record(s).</li>
-<li><strong>Restore selected</strong> — writes the saved content straight back to the live page, overwriting whatever is there now. This is most useful after a regular user&#039;s edit has changed a page the admin had previously written, since only admin saves are tracked — restoring brings the admin&#039;s version back.</li>
-</ul>
+<ul><li><strong>Delete selected</strong> — permanently removes the chosen history record(s).
+</li><li><strong>Restore selected</strong> — writes the saved content straight back to the live page, overwriting whatever is there now. This is most useful after a regular user&#039;s edit has changed a page the admin had previously written, since only admin saves are tracked — restoring brings the admin&#039;s version back.
+</li></ul>
 <h3 id="sitemap-generation">Sitemap generation</h3>
 <p><em>sitemap/sitemap.php</em> builds a search-engine sitemap of every page. If the list of pages would make a single file larger than roughly 1&amp;nbsp;megabyte, it is automatically split into several files (<em>sitemap-1.xml</em>, <em>sitemap-2.xml</em>, and so on), and <em>sitemap.xml</em> is (re)written as an index that lists every split file. It also writes <em>robots.txt</em> pointing at that index. Because search engines crawl an index and then follow every entry inside it automatically, submitting the single <em>sitemap.xml</em> address once is enough — you never need to resubmit each split by hand.</p>
 <h2 id="namespaces-and-spaces">Namespaces and Spaces</h2>
@@ -228,16 +272,15 @@ $Server = &quot;http://localhost:8099&quot;;</code></pre>
 <h2 id="title-handling">Title Handling</h2>
 <p>Page titles can contain spaces when you type or link them — for example, <em>Buddy DML</em>. Behind the scenes, AWFLWIKIWORLD always <strong>stores and links</strong> that page using underscores instead of spaces (<em>Buddy_DML.txt</em>, linked as <em>Buddy_DML</em>), while still <strong>displaying</strong> the title with spaces wherever it is shown to a reader. This matches how MediaWiki itself handles titles, and it means links, downloads and file names never contain raw spaces.</p>
 <h2 id="security-notes">Security Notes</h2>
-<ul>
-<li>Passwords and security-question answers are never stored as plain text — only their one-way hashes are kept in <em>users/users.json</em>.</li>
-<li>The supplied <em>.htaccess</em> blocks direct web access to every raw <em>.txt</em> and <em>.json</em> file, so page content and account records can never be downloaded straight off the server by guessing a URL — they can only be reached through the wiki&#039;s own pages.</li>
-<li>Only the admin can delete users, delete or protect pages, change the skin or colors, or manage images and history.</li>
-<li>Every form that changes something — saving, deleting and protecting pages, the dashboard, user and image management, log in, register and password recovery — carries a secret per-session token (CSRF protection). A request without it is refused.</li>
-<li>Log in and password recovery are throttled: 5 failed attempts for the same username from the same address lock that pair for 15 minutes. A failed log in never says whether the username exists.</li>
-<li>The session cookie is HttpOnly and SameSite=Lax (and Secure on https), and a fresh session id is issued at log in and log out.</li>
-<li>The admin password in <em>config.php</em> can be a password hash — create one in <strong>Dashboard → Security</strong>. A plain-text password still works, but the dashboard warns you until you replace it.</li>
-<li>The supplied <em>.htaccess</em> also blocks copies of the configuration file, such as <em>config.php.bak</em>.</li>
-</ul>
+<ul><li>Passwords and security-question answers are never stored as plain text — only their one-way hashes are kept in <em>users/users.json</em>.
+</li><li>The supplied <em>.htaccess</em> blocks direct web access to every raw <em>.txt</em> and <em>.json</em> file, so page content and account records can never be downloaded straight off the server by guessing a URL — they can only be reached through the wiki&#039;s own pages.
+</li><li>Only the admin can delete users, delete or protect pages, change the skin or colors, or manage images and history.
+</li><li>Every form that changes something — saving, deleting and protecting pages, the dashboard, user and image management, log in, register and password recovery — carries a secret per-session token (CSRF protection). A request without it is refused.
+</li><li>Log in and password recovery are throttled: 5 failed attempts for the same username from the same address lock that pair for 15 minutes. A failed log in never says whether the username exists.
+</li><li>The session cookie is HttpOnly and SameSite=Lax (and Secure on https), and a fresh session id is issued at log in and log out.
+</li><li>The admin password in <em>config.php</em> can be a password hash — create one in <strong>Dashboard → Security</strong>. A plain-text password still works, but the dashboard warns you until you replace it.
+</li><li>The supplied <em>.htaccess</em> also blocks copies of the configuration file, such as <em>config.php.bak</em>.
+</li></ul>
 <hr>
 <h2 id="searching-and-missing-pages">Searching and Missing Pages</h2>
 <h3 id="the-search-box">The search box</h3>
@@ -248,26 +291,24 @@ $Server = &quot;http://localhost:8099&quot;;</code></pre>
 <p><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AMissing">Special:Missing</a> lists every <strong>red link</strong> on the wiki — every <span class="awfl-nowiki">[[Page Name]]</span> that appears in some page but whose target page doesn&#039;t exist yet. Each missing page is shown as <span class="awfl-nowiki">[[Page Name]]</span>, with a <strong>Linked from</strong> column naming every page that links to it. Click a missing page and it opens directly, ready to be created. Once the page is created, it drops off the list on its own.</p>
 <p>It is a ready-made to-do list for growing the wiki. It ignores category and special-page links, links shown inside code blocks, and links into spaces that don&#039;t exist (an admin must create those first). It is also listed in the Special pages directory.</p>
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
-<ul>
-<li><strong>Do I need a database?</strong> No. Everything is stored in plain text and JSON files.</li>
-<li><strong>Can I move my wiki to another server?</strong> Yes — copy the whole folder, update <em>$Server</em> in <em>config.php</em> to the new address, and you are done.</li>
-<li><strong>Can I change how the wiki looks without touching PHP?</strong> Yes — skins are plain CSS files, created and switched from the Dashboard.</li>
-<li><strong>What happens to a user&#039;s pages if their account is removed?</strong> Nothing — page content is never tied to the account being present, so removing a user never deletes what they wrote.</li>
-<li><strong>What if I delete an image by mistake?</strong> As admin, open the &quot;Deleted&quot; tab in <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AAllPages">All Images</a> and restore it — deleted images go to a trash folder rather than being erased immediately.</li>
-<li><strong>Can a regular user undo someone else&#039;s edit?</strong> AWFLWIKIWORLD does not keep a version history for every user — only the admin&#039;s own latest edit to each page is tracked, in the Dashboard&#039;s History section, precisely so an admin can always restore their own last version.</li>
-</ul>
+<ul><li><strong>Do I need a database?</strong> No. Everything is stored in plain text and JSON files.
+</li><li><strong>Can I move my wiki to another server?</strong> Yes — copy the whole folder, update <em>$Server</em> in <em>config.php</em> to the new address, and you are done.
+</li><li><strong>Can I change how the wiki looks without touching PHP?</strong> Yes — skins are plain CSS files, created and switched from the Dashboard.
+</li><li><strong>What happens to a user&#039;s pages if their account is removed?</strong> Nothing — page content is never tied to the account being present, so removing a user never deletes what they wrote.
+</li><li><strong>What if I delete an image by mistake?</strong> As admin, open the &quot;Deleted&quot; tab in <a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AAllPages">All Images</a> and restore it — deleted images go to a trash folder rather than being erased immediately.
+</li><li><strong>Can a regular user undo someone else&#039;s edit?</strong> AWFLWIKIWORLD does not keep a version history for every user — only the admin&#039;s own latest edit to each page is tracked, in the Dashboard&#039;s History section, precisely so an admin can always restore their own last version.
+</li></ul>
 <h2 id="references">References</h2>
 <ol class="awfl-references" data-source="heading"><li id="cite_note-1"><span class="awfl-ref-backlinks"><a href="#cite_ref-1">^</a></span> <span class="awfl-ref-text">Like this one. Notes are numbered in the order they appear and listed under the References heading at the bottom of this page, each with a ^ link back to the spot it was cited from.</span></li></ol>
 <h2 id="see-also">See Also</h2>
-<ul>
-<li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AAllPages">Special:AllPages</a></li>
-<li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3ASearch">Special:Search</a></li>
-<li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AMissing">Special:Missing</a></li>
-<li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3ARegister">Special:Register</a></li>
-<li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3ALogin">Special:Login</a></li>
-<li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AUpload">Special:Upload</a></li>
-<li><a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD/AWFLWIKITEXT">AWFLWIKITEXT formatting reference</a></li>
-</ul><!--AWFL-ARTICLE-END--></article>
+<ul><li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AAllPages">Special:AllPages</a>
+</li><li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3ASearch">Special:Search</a>
+</li><li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AMissing">Special:Missing</a>
+</li><li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3ARegister">Special:Register</a>
+</li><li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3ALogin">Special:Login</a>
+</li><li><a class="wiki-link new" href="https://aedtpworld.com/wikiworld/index.php/Special%3AUpload">Special:Upload</a>
+</li><li><a class="wiki-link" href="https://aedtpworld.com/wikiworld/index.php/AWFLWIKIWORLD/AWFLWIKITEXT">AWFLWIKITEXT formatting reference</a>
+</li></ul><!--AWFL-ARTICLE-END--></article>
 
 <p class="awfl-footer-copy" style="margin-top:24px;font-size:.85em">© 2026 AEDTP WORLD — content available under the AEDTP WORLD FREE LICENSE (AWFL). <a href="https://aedtpworld.com/wikiworld/AWFLWIKIWORLD/AWFLWIKIWORLD">View live page</a></p>
 </main>

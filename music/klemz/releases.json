@@ -1,0 +1,28 @@
+{
+    "tracks": [
+        {
+            "id": "trk_ed96791786",
+            "username": "klemz",
+            "artistname": "KLEMZ",
+            "title": "AFUFU'NABA",
+            "slug": "afufunaba",
+            "featuring": "",
+            "genres": [
+                "Hip-hop"
+            ],
+            "album": "SCARS TO STAR",
+            "label": "",
+            "artwork": "https://raw.githubusercontent.com/aedtpworldawfl/artworks/main/klemz-afufunaba-1793469225-01dc15.jpg",
+            "artworkPath": "klemz-afufunaba-1793469225-01dc15.jpg",
+            "artworkSha": "bdb24782255b329d985d71ee7d37a10afb2960f8",
+            "artworkRepo": "artworks",
+            "link": "https://raw.githubusercontent.com/aedtpworldawfl/music/main/klemz-afufunaba-1793469222-6daed1.mp3",
+            "linkPath": "klemz-afufunaba-1793469222-6daed1.mp3",
+            "linkSha": "0fdd89aa7462309e5b785bf678f910c56e79f29f",
+            "linkRepo": "music",
+            "plays": 1,
+            "downloads": 0,
+            "uploadedAt": "2026-10-31T17:53:46+00:00"
+        }
+    ]
+}

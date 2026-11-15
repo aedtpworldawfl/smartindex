@@ -4,15 +4,76 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AWFLMETA · AEDTP WORLD Wiki Viewer — AWFLWIKIWORLD</title>
-<meta name="description" content="AWFLMETA Viewer AWFLMETA · AEDTP WORLD Wiki Viewer Is a WIKI system of AEDTP WORLD FREE LICENSE WIKI, a Free Open Encyclopedia, Built And Powered by Forever Con...">
+<meta name="description" content="AWFLMETA Viewer AWFLMETA · AEDTP WORLD Wiki Viewer Is a WIKI system of AEDTP WORLD FREE LICENSE WIKI, a Free Open Encyclopedia, Built And Powered by">
+<meta name="keywords" content="AWFLMETA · AEDTP WORLD Wiki Viewer, Viewer, Wiki, AWFLMETA, Application, AEDTP WORLD, Technology, AEDTP WORLD, AEDTP WORLD FREE LICENSE, AWFL, AWFLWIKIWORLD, WIKI, Discover And Connect">
 <meta name="author" content="AEDTP WORLD">
+<meta name="copyright" content="© AEDTP WORLD">
 <meta name="license" content="AEDTP WORLD FREE LICENSE (AWFL)">
+<meta name="robots" content="index, follow">
+<meta name="application-name" content="AWFLWIKIWORLD">
+<meta name="theme-color" content="#056DC2">
+<meta name="follow.it-verification-code" content="M3JMVuBRN9gJEnAZEJCB">
 <link rel="canonical" href="https://aedtpworld.com/wikiworld/AWFLMETA">
-<meta property="og:title" content="AWFLMETA · AEDTP WORLD Wiki Viewer">
-<meta property="og:description" content="AWFLMETA Viewer AWFLMETA · AEDTP WORLD Wiki Viewer Is a WIKI system of AEDTP WORLD FREE LICENSE WIKI, a Free Open Encyclopedia, Built And Powered by Forever Con...">
+<meta property="og:title" content="AWFLMETA · AEDTP WORLD Wiki Viewer — AWFLWIKIWORLD">
+<meta property="og:description" content="AWFLMETA Viewer AWFLMETA · AEDTP WORLD Wiki Viewer Is a WIKI system of AEDTP WORLD FREE LICENSE WIKI, a Free Open Encyclopedia, Built And Powered by">
+<meta property="og:type" content="article">
 <meta property="og:url" content="https://aedtpworld.com/wikiworld/AWFLMETA">
-<meta property="og:image" content="https://aedtpworld.com/icons/aedtpworld.png">
+<meta property="og:image" content="https://aedtpworld.com/icons/awflmetaawfl.jpg">
+<meta property="og:site_name" content="AWFLWIKIWORLD">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AWFLMETA · AEDTP WORLD Wiki Viewer — AWFLWIKIWORLD">
+<meta name="twitter:description" content="AWFLMETA Viewer AWFLMETA · AEDTP WORLD Wiki Viewer Is a WIKI system of AEDTP WORLD FREE LICENSE WIKI, a Free Open Encyclopedia, Built And Powered by">
+<meta name="twitter:image" content="https://aedtpworld.com/icons/awflmetaawfl.jpg">
 <link rel="icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+<link rel="apple-touch-icon" href="https://aedtpworld.com/icons/aedtpworld.png">
+<script type="application/ld+json" id="awfl-jsonld-page-awflmeta">
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://aedtpworld.com/wikiworld/AWFLMETA#softwareapplication",
+    "name": "AWFLMETA · AEDTP WORLD Wiki Viewer",
+    "description": "AWFLMETA Viewer AWFLMETA · AEDTP WORLD Wiki Viewer Is a WIKI system of AEDTP WORLD FREE LICENSE WIKI, a Free Open Encyclopedia, Built And Powered by",
+    "image": "https://aedtpworld.com/icons/awflmetaawfl.jpg",
+    "url": "https://aedtpworld.com/wikiworld/AWFLMETA",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://aedtpworld.com/wikiworld/AWFLMETA"
+    },
+    "inLanguage": "en",
+    "isPartOf": {
+        "@id": "https://aedtpworld.com/wikiworld/#website"
+    },
+    "applicationCategory": "Viewer, Wiki, AWFLMETA, Application",
+    "author": {
+        "@type": "Organization",
+        "name": "AEDTP WORLD"
+    },
+    "sameAs": [
+        "https://aedtpworld.com/awflmeta/"
+    ]
+}
+</script>
+<script type="application/ld+json" id="awfl-jsonld-breadcrumb-awflmeta">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "AWFLWIKIWORLD",
+            "item": "https://aedtpworld.com/wikiworld/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AWFLMETA · AEDTP WORLD Wiki Viewer",
+            "item": "https://aedtpworld.com/wikiworld/AWFLMETA"
+        }
+    ]
+}
+</script>
 <link rel="stylesheet" href="https://aedtpworld.com/wikiworld/assets/site.css">
 <link rel="stylesheet" href="https://aedtpworld.com/wikiworld/skins/vector2022.css">
 <style>.awfl-converted{max-width:1100px;margin:0 auto;padding:16px}.awfl-converted .awfl-article:after{content:"";display:block;clear:both}.awfl-converted img{max-width:100%}.awfl-categories{margin-top:24px;padding-top:10px;border-top:1px solid #a2a9b1;font-size:.9em}</style>
@@ -29,35 +90,32 @@
 <h2 id="purpose">Purpose</h2>
 <p>Viewer that fetches <code>https://aedtpworld.com/wiki/awflmeta.json</code> index, then loads each <code>https://aedtpworld.com/wiki/{file}</code> HTML, parses body and injects as cards min-height 100vh per fetch, with divider between.</p>
 <h2 id="layout">Layout</h2>
-<ul>
-<li><strong>Fixed Header</strong> — 68px, rgba(11,13,16,0.88) blur 14px saturate 1.3, shadow 0 4px 30px, brand gradient #f0b45a to #f7d78c, brand-link #a8b3c9 left border</li>
-<li><strong>Nav</strong> — Home Update News Create Upload Refresh, active bg rgba(240,180,90,0.18)</li>
-<li><strong>Spacer</strong> — 68px to prevent overlap</li>
-<li><strong>Container</strong> — max-width 1200px padding 1.8rem 2rem 4rem</li>
-<li><strong>Status</strong> — loader-dots 8px #f0b45a pulse-dot 1.2s</li>
-<li><strong>Card</strong> — awflmeta-card bg rgba(22,26,34,0.75) radius 20px border rgba(255,255,255,0.04) shadow 0 12px 40px, padding 2rem 2.2rem margin-bottom 3rem, hover border rgba(240,180,90,0.12)</li>
-<li><strong>Card Header</strong> — h2 gradient #e8edf2 to #bcc7dc, tag 0.68rem uppercase #f0b45a bg rgba(240,180,90,0.12) radius 40px</li>
-<li><strong>Content</strong> — 0.98rem line-height 1.7 #d0d8e6, a #f0b45a, img radius 12px, blockquote left border 3px rgba(240,180,90,0.3), pre/code bg rgba(0,0,0,0.35) JetBrains Mono</li>
-<li><strong>Divider</strong> — hr gradient transparent to rgba(240,180,90,0.2), icon 🌐</li>
-<li><strong>Scrollbar</strong> — 6px thumb rgba(240,180,90,0.3)</li>
-<li><strong>Responsive</strong> — 820px header 62px, 520px header 56px card 14px</li>
-</ul>
+<ul><li><strong>Fixed Header</strong> — 68px, rgba(11,13,16,0.88) blur 14px saturate 1.3, shadow 0 4px 30px, brand gradient #f0b45a to #f7d78c, brand-link #a8b3c9 left border
+</li><li><strong>Nav</strong> — Home Update News Create Upload Refresh, active bg rgba(240,180,90,0.18)
+</li><li><strong>Spacer</strong> — 68px to prevent overlap
+</li><li><strong>Container</strong> — max-width 1200px padding 1.8rem 2rem 4rem
+</li><li><strong>Status</strong> — loader-dots 8px #f0b45a pulse-dot 1.2s
+</li><li><strong>Card</strong> — awflmeta-card bg rgba(22,26,34,0.75) radius 20px border rgba(255,255,255,0.04) shadow 0 12px 40px, padding 2rem 2.2rem margin-bottom 3rem, hover border rgba(240,180,90,0.12)
+</li><li><strong>Card Header</strong> — h2 gradient #e8edf2 to #bcc7dc, tag 0.68rem uppercase #f0b45a bg rgba(240,180,90,0.12) radius 40px
+</li><li><strong>Content</strong> — 0.98rem line-height 1.7 #d0d8e6, a #f0b45a, img radius 12px, blockquote left border 3px rgba(240,180,90,0.3), pre/code bg rgba(0,0,0,0.35) JetBrains Mono
+</li><li><strong>Divider</strong> — hr gradient transparent to rgba(240,180,90,0.2), icon 🌐
+</li><li><strong>Scrollbar</strong> — 6px thumb rgba(240,180,90,0.3)
+</li><li><strong>Responsive</strong> — 820px header 62px, 520px header 56px card 14px
+</li></ul>
 <h2 id="data-flow">Data Flow</h2>
-<ul>
-<li>Fetch awflmeta.json -&gt; array of {name, file}</li>
-<li>For each: fetch /wiki/{file}, DOMParser parse, doc.body.innerHTML inject</li>
-<li>Error card with ERROR tag if fetch fails</li>
-<li>EscapeHtml to prevent XSS</li>
-</ul>
+<ul><li>Fetch awflmeta.json -&gt; array of {name, file}
+</li><li>For each: fetch /wiki/{file}, DOMParser parse, doc.body.innerHTML inject
+</li><li>Error card with ERROR tag if fetch fails
+</li><li>EscapeHtml to prevent XSS
+</li></ul>
 <h2 id="navigation">Navigation</h2>
-<ul>
-<li><a href="https://aedtpworld.com/awflmeta/" target="_blank" rel="noopener noreferrer">Home</a></li>
-<li><a href="https://aedtpworld.com/wiki/awflmeta.php" target="_blank" rel="noopener noreferrer">Update News</a></li>
-<li><a href="https://aedtpworld.com/wiki/" target="_blank" rel="noopener noreferrer">Create</a></li>
-<li><a href="https://aedtpworld.com/awfl/index.php" target="_blank" rel="noopener noreferrer">Upload</a></li>
-<li><a href="https://aedtpworld.com/wiki/awflmeta.php" target="_blank" rel="noopener noreferrer">Refresh</a></li>
-<li><a href="https://aedtpworld.com/" target="_blank" rel="noopener noreferrer">AEDTP WORLD</a></li>
-</ul><!--AWFL-ARTICLE-END--></article>
+<ul><li><a href="https://aedtpworld.com/awflmeta/" target="_blank" rel="noopener noreferrer">Home</a>
+</li><li><a href="https://aedtpworld.com/wiki/awflmeta.php" target="_blank" rel="noopener noreferrer">Update News</a>
+</li><li><a href="https://aedtpworld.com/wiki/" target="_blank" rel="noopener noreferrer">Create</a>
+</li><li><a href="https://aedtpworld.com/awfl/index.php" target="_blank" rel="noopener noreferrer">Upload</a>
+</li><li><a href="https://aedtpworld.com/wiki/awflmeta.php" target="_blank" rel="noopener noreferrer">Refresh</a>
+</li><li><a href="https://aedtpworld.com/" target="_blank" rel="noopener noreferrer">AEDTP WORLD</a>
+</li></ul><!--AWFL-ARTICLE-END--></article>
 <div class="awfl-categories"><strong>Categories:</strong> AEDTP WORLD, Technology</div>
 <p class="awfl-footer-copy" style="margin-top:24px;font-size:.85em">© 2026 AEDTP WORLD — content available under the AEDTP WORLD FREE LICENSE (AWFL). <a href="https://aedtpworld.com/wikiworld/AWFLMETA">View live page</a></p>
 </main>
