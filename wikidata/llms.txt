@@ -1,0 +1,20 @@
+# AWFLWIKIDATAWORLD
+
+> A free, open World's Knowledge Database, Works Similar to Wikidata.org Items, Discover And Connect. AEDTP WORLD AWFLUNIVERSE
+
+Every item is a static page at https://aedtpworld.com/wikidata/Q{number}. Full sitemap: https://aedtpworld.com/wikidata/sitemap.xml
+
+## Items
+
+- [God (Q1)](https://aedtpworld.com/wikidata/Q1): supreme being, creator and sustainer of the universe, eternal and infinite
+- [Universe (Q2)](https://aedtpworld.com/wikidata/Q2): totality of space and time
+- [Earth (Q3)](https://aedtpworld.com/wikidata/Q3): Third planet from the Sun and home to all known life
+- [Life (Q4)](https://aedtpworld.com/wikidata/Q4): property of organisms that distinguishes them from non-living matter, including growth, reproduction
+- [Buddy DML (Q5)](https://aedtpworld.com/wikidata/Q5): Ghanaian singer, rapper and record producer
+- [AEDTP WORLD (Q6)](https://aedtpworld.com/wikidata/Q6): Ghanaian technology company and conglomerate
+- [Emmanuel Deliver Amable (Q7)](https://aedtpworld.com/wikidata/Q7): Founder And CEO of AEDTP WORLD
+- [Human (Q8)](https://aedtpworld.com/wikidata/Q8): A bipedal primate mammal; a highly intelligent person created by God
+- [Meta AI (Q9)](https://aedtpworld.com/wikidata/Q9): Artificial intelligence assistant developed by Meta
+- [ChatGPT (Q10)](https://aedtpworld.com/wikidata/Q10): Artificial intelligence chatbot developed by OpenAI
+- [Labelcaster (Q11)](https://aedtpworld.com/wikidata/Q11): Online Music Distribution Company
+- [AWFL (Q12)](https://aedtpworld.com/wikidata/Q12): Search Engine by AEDTP WORLD

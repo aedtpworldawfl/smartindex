@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>/wikidata/</loc><lastmod>2026-11-13T15:44:20+00:00</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url><loc>/wikidata/</loc><lastmod>2026-11-16T02:38:31+00:00</lastmod></url>
 <url><loc>/wikidata/recent.php</loc><lastmod>2026-11-13T17:23:00+00:00</lastmod></url>
 <url><loc>/wikidata/Q1</loc><lastmod>2026-10-03T19:38:49+00:00</lastmod></url>
-<url><loc>/wikidata/Q2</loc><lastmod>2026-10-05T11:41:46+00:00</lastmod></url>
-<url><loc>/wikidata/Q3</loc><lastmod>2026-10-05T11:42:14+00:00</lastmod></url>
-<url><loc>/wikidata/Q4</loc><lastmod>2026-11-13T15:44:20+00:00</lastmod></url>
-<url><loc>/wikidata/Q5</loc><lastmod>2026-11-13T16:17:16+00:00</lastmod></url>
-<url><loc>/wikidata/Q6</loc><lastmod>2026-11-03T04:19:52+00:00</lastmod></url>
-<url><loc>/wikidata/Q7</loc><lastmod>2026-10-05T11:49:37+00:00</lastmod></url>
-<url><loc>/wikidata/Q8</loc><lastmod>2026-10-06T14:46:55+00:00</lastmod></url>
-<url><loc>/wikidata/Q9</loc><lastmod>2026-11-11T16:01:54+00:00</lastmod></url>
-<url><loc>/wikidata/Q10</loc><lastmod>2026-11-13T11:25:20+00:00</lastmod></url>
-<url><loc>/wikidata/Q11</loc><lastmod>2026-11-12T15:56:46+00:00</lastmod></url>
-<url><loc>/wikidata/Q12</loc><lastmod>2026-11-13T17:23:04+00:00</lastmod></url>
+<url><loc>/wikidata/Q2</loc><lastmod>2026-10-05T11:41:46+00:00</lastmod><image:image><image:loc>https://upload.wikimedia.org/wikipedia/commons/6/69/NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg</image:loc></image:image></url>
+<url><loc>/wikidata/Q3</loc><lastmod>2026-10-05T11:42:14+00:00</lastmod><image:image><image:loc>https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Earth_From_the_Perspective_of_Artemis_II.jpg/1280px-Earth_From_the_Perspective_of_Artemis_II.jpg</image:loc></image:image></url>
+<url><loc>/wikidata/Q4</loc><lastmod>2026-11-16T02:38:31+00:00</lastmod><image:image><image:loc>https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Coral_reef..._South_end_of_my_area_%2814119221571%29.jpg/960px-Coral_reef..._South_end_of_my_area_%2814119221571%29.jpg</image:loc></image:image></url>
+<url><loc>/wikidata/Q5</loc><lastmod>2026-11-13T16:17:16+00:00</lastmod><image:image><image:loc>https://aedtpworld.com/icons/buddydml2.jpg</image:loc></image:image></url>
+<url><loc>/wikidata/Q6</loc><lastmod>2026-11-03T04:19:52+00:00</lastmod><image:image><image:loc>https://aedtpworld.com/icons/aedtpworld.png</image:loc></image:image></url>
+<url><loc>/wikidata/Q7</loc><lastmod>2026-10-05T11:49:37+00:00</lastmod><image:image><image:loc>https://aedtpworld.com/icons/buddydml.jpg</image:loc></image:image></url>
+<url><loc>/wikidata/Q8</loc><lastmod>2026-10-06T14:46:55+00:00</lastmod><image:image><image:loc>https://upload.wikimedia.org/wikipedia/commons/4/43/Anterior_view_of_human_female_and_male%2C_with_labels.svg</image:loc></image:image></url>
+<url><loc>/wikidata/Q9</loc><lastmod>2026-11-11T16:01:54+00:00</lastmod><image:image><image:loc>https://upload.wikimedia.org/wikipedia/commons/2/2f/Meta_AI_Logo_%282026%29.svg</image:loc></image:image></url>
+<url><loc>/wikidata/Q10</loc><lastmod>2026-11-13T11:25:20+00:00</lastmod><image:image><image:loc>https://upload.wikimedia.org/wikipedia/commons/6/66/OpenAI_logo_2025_%28symbol%29.svg</image:loc></image:image></url>
+<url><loc>/wikidata/Q11</loc><lastmod>2026-11-12T15:56:46+00:00</lastmod><image:image><image:loc>https://www.google.com/s2/favicons?domain=labelcaster.com&amp;sz=128</image:loc></image:image></url>
+<url><loc>/wikidata/Q12</loc><lastmod>2026-11-13T17:23:04+00:00</lastmod><image:image><image:loc>https://aedtpworld.com/icons/aedtpworldawfl.png</image:loc></image:image><image:image><image:loc>https://aedtpworld.com/icons/awfl.png</image:loc></image:image></url>
 </urlset>
