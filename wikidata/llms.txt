@@ -18,3 +18,5 @@ Every item is a static page at https://aedtpworld.com/wikidata/Q{number}. Full s
 - [ChatGPT (Q10)](https://aedtpworld.com/wikidata/Q10): Artificial intelligence chatbot developed by OpenAI
 - [Labelcaster (Q11)](https://aedtpworld.com/wikidata/Q11): Online Music Distribution Company
 - [AWFL (Q12)](https://aedtpworld.com/wikidata/Q12): Search Engine by AEDTP WORLD
+- [Emmanuel Deliver Amable and God (Q13)](https://aedtpworld.com/wikidata/Q13): From NASA Lie Source To Home is not a place. Home is God. Love is doing, confession is changing.
+- [AMAIL (Q14)](https://aedtpworld.com/wikidata/Q14): All Mail Platforms by AEDTP WORLD
