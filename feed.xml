@@ -5,9 +5,23 @@
   <link>https://aedtpworld.com/wikiworld/</link>
   <description>A free, open World&apos;s Knowledge (Wiki) Encyclopedia, Works Similar to Wikipedia.org Wiki Pages, Discover And Connect. AEDTP WORLD AWFLUNIVERSE</description>
   <language>en</language>
-  <lastBuildDate>Tue, 24 Nov 2026 10:27:35 -0500</lastBuildDate>
+  <lastBuildDate>Tue, 24 Nov 2026 11:37:30 -0500</lastBuildDate>
   <atom:link href="https://aedtpworld.com/wikiworld/feed.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+  <item>
+    <title>Web search engine</title>
+    <link>https://aedtpworld.com/wikiworld/Web_search_engine</link>
+    <guid isPermaLink="true">https://aedtpworld.com/wikiworld/Web_search_engine</guid>
+    <pubDate>Tue, 24 Nov 2026 11:37:30 -0500</pubDate>
+    <description>A web search engine (or simply search engine ) is a software system that searches the World Wide Web for content matching a user s query and returns a ranked list of web pages, images, videos, news or</description>
+  </item>
+  <item>
+    <title>PHP</title>
+    <link>https://aedtpworld.com/wikiworld/PHP</link>
+    <guid isPermaLink="true">https://aedtpworld.com/wikiworld/PHP</guid>
+    <pubDate>Tue, 24 Nov 2026 11:34:03 -0500</pubDate>
+    <description>PHP (recursive acronym for PHP: Hypertext Preprocessor ) is a general-purpose, server-side scripting language designed mainly for building dynamic web pages. https://www.php.net/manual/en/intro-whatis</description>
+  </item>
   <item>
     <title>Images/image.jpg</title>
     <link>https://aedtpworld.com/wikiworld/Images/image.jpg</link>
@@ -86,25 +100,11 @@
     <description>AEDTP WORLD is a technology company and conglomerate, also recognized under its condensed name form, its free license identity, its universe identity, and its discover and connect motto. History AEDTP</description>
   </item>
   <item>
-    <title>Web search engine</title>
-    <link>https://aedtpworld.com/wikiworld/Web_search_engine</link>
-    <guid isPermaLink="true">https://aedtpworld.com/wikiworld/Web_search_engine</guid>
-    <pubDate>Tue, 24 Nov 2026 10:16:42 -0500</pubDate>
-    <description>A web search engine (or simply search engine ) is a software system that searches the World Wide Web for content matching a user s query and returns a ranked list of web pages, images, videos, news, o</description>
-  </item>
-  <item>
     <title>AMAIL</title>
     <link>https://aedtpworld.com/wikiworld/AMAIL</link>
     <guid isPermaLink="true">https://aedtpworld.com/wikiworld/AMAIL</guid>
     <pubDate>Tue, 24 Nov 2026 10:14:40 -0500</pubDate>
     <description>AMAIL is a “All Mail” platform by AEDTP WORLD, It was created in November, 2026 under AWFL AMAIL DATABASE . AMAIL have been upgraded to have many different platforms apart from Mailing Services . Feat</description>
-  </item>
-  <item>
-    <title>PHP</title>
-    <link>https://aedtpworld.com/wikiworld/PHP</link>
-    <guid isPermaLink="true">https://aedtpworld.com/wikiworld/PHP</guid>
-    <pubDate>Tue, 24 Nov 2026 08:49:39 -0500</pubDate>
-    <description>PHP (recursive acronym for PHP: Hypertext Preprocessor ) is a general-purpose, server-side scripting language designed mainly for building dynamic web pages. https://www.php.net/manual/en/intro-whatis</description>
   </item>
   <item>
     <title>Harvard University</title>
