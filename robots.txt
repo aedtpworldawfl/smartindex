@@ -34,12 +34,14 @@ Disallow: /*?track=
 
 # ============ AEDTP WORLD SYSTEM SITEMAPS ============
 # Main Sitemap - if you have one
-Sitemap: https://aedtpworld.com/sitemap.xml
+Sitemap: https://aedtpworld.com/meta.xml
+Sitemap: https://aedtpworld.com/metaphp.xml
 
 # All Section Sitemaps from your homepage
 Sitemap: https://aedtpworld.com/about/engine/sitemap.php
 Sitemap: https://aedtpworld.com/advertise/sitemap.php
 Sitemap: https://aedtpworld.com/aedtpworldwiki/sitemap.php
+Sitemap: https://aedtpworld.com/amail/sitemap.xml
 Sitemap: https://aedtpworld.com/apps/sitemap.php
 Sitemap: https://aedtpworld.com/awfl/sitemap.php
 Sitemap: https://aedtpworld.com/awflwiki/sitemap.php
@@ -50,12 +52,20 @@ Sitemap: https://aedtpworld.com/kids/sitemap/sitemap.php
 Sitemap: https://aedtpworld.com/lyrics/sitemap.php
 Sitemap: https://aedtpworld.com/music/sitemap.php
 Sitemap: https://aedtpworld.com/project/sitemap.php
+Sitemap: https://aedtpworld.com/sky/sitemap/sitemap.xml
 Sitemap: https://aedtpworld.com/social/sitemap.php
 Sitemap: https://aedtpworld.com/spotifyworld/sitemap.php
 Sitemap: https://aedtpworld.com/wiki/sitemap.php
 Sitemap: https://aedtpworld.com/wikiboss/sitemap.php
 Sitemap: https://aedtpworld.com/wikidata/sitemap.php
 Sitemap: https://aedtpworld.com/wikiworld/sitemap/sitemap.php
+
+
+
+
+
+
+
 
 
 
